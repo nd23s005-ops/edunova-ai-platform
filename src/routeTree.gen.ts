@@ -55,6 +55,7 @@ import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ml-quick-revision-notes'
 import { Route as MarketingResourcesReadMlPdfNotesRouteImport } from './routes/_marketing.resources.read.ml-pdf-notes'
+import { Route as MarketingResourcesReadMlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ml-interview-questions'
 import { Route as MarketingResourcesReadMlCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ml-complete-tutorial'
 import { Route as MarketingResourcesReadMlCheatSheetRouteImport } from './routes/_marketing.resources.read.ml-cheat-sheet'
 import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ml-beginner-guide'
@@ -334,6 +335,12 @@ const MarketingResourcesReadMlPdfNotesRoute =
   MarketingResourcesReadMlPdfNotesRouteImport.update({
     id: '/read/ml-pdf-notes',
     path: '/read/ml-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMlInterviewQuestionsRoute =
+  MarketingResourcesReadMlInterviewQuestionsRouteImport.update({
+    id: '/read/ml-interview-questions',
+    path: '/read/ml-interview-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlCompleteTutorialRoute =
@@ -630,6 +637,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
   '/resources/read/ml-cheat-sheet': typeof MarketingResourcesReadMlCheatSheetRoute
   '/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/resources/read/ml-interview-questions': typeof MarketingResourcesReadMlInterviewQuestionsRoute
   '/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
@@ -711,6 +719,7 @@ export interface FileRoutesByTo {
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
   '/resources/read/ml-cheat-sheet': typeof MarketingResourcesReadMlCheatSheetRoute
   '/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/resources/read/ml-interview-questions': typeof MarketingResourcesReadMlInterviewQuestionsRoute
   '/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
@@ -797,6 +806,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
   '/_marketing/resources/read/ml-cheat-sheet': typeof MarketingResourcesReadMlCheatSheetRoute
   '/_marketing/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/_marketing/resources/read/ml-interview-questions': typeof MarketingResourcesReadMlInterviewQuestionsRoute
   '/_marketing/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/_marketing/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
@@ -881,6 +891,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-beginner-guide'
     | '/resources/read/ml-cheat-sheet'
     | '/resources/read/ml-complete-tutorial'
+    | '/resources/read/ml-interview-questions'
     | '/resources/read/ml-pdf-notes'
     | '/resources/read/ml-quick-revision-notes'
     | '/resources/read/ml-step-by-step-learning-guide'
@@ -962,6 +973,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-beginner-guide'
     | '/resources/read/ml-cheat-sheet'
     | '/resources/read/ml-complete-tutorial'
+    | '/resources/read/ml-interview-questions'
     | '/resources/read/ml-pdf-notes'
     | '/resources/read/ml-quick-revision-notes'
     | '/resources/read/ml-step-by-step-learning-guide'
@@ -1047,6 +1059,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-beginner-guide'
     | '/_marketing/resources/read/ml-cheat-sheet'
     | '/_marketing/resources/read/ml-complete-tutorial'
+    | '/_marketing/resources/read/ml-interview-questions'
     | '/_marketing/resources/read/ml-pdf-notes'
     | '/_marketing/resources/read/ml-quick-revision-notes'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
@@ -1397,6 +1410,13 @@ declare module '@tanstack/react-router' {
       path: '/read/ml-pdf-notes'
       fullPath: '/resources/read/ml-pdf-notes'
       preLoaderRoute: typeof MarketingResourcesReadMlPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ml-interview-questions': {
+      id: '/_marketing/resources/read/ml-interview-questions'
+      path: '/read/ml-interview-questions'
+      fullPath: '/resources/read/ml-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMlInterviewQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-complete-tutorial': {
@@ -1818,6 +1838,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlBeginnerGuideRoute: typeof MarketingResourcesReadMlBeginnerGuideRoute
   MarketingResourcesReadMlCheatSheetRoute: typeof MarketingResourcesReadMlCheatSheetRoute
   MarketingResourcesReadMlCompleteTutorialRoute: typeof MarketingResourcesReadMlCompleteTutorialRoute
+  MarketingResourcesReadMlInterviewQuestionsRoute: typeof MarketingResourcesReadMlInterviewQuestionsRoute
   MarketingResourcesReadMlPdfNotesRoute: typeof MarketingResourcesReadMlPdfNotesRoute
   MarketingResourcesReadMlQuickRevisionNotesRoute: typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
@@ -1872,6 +1893,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlCheatSheetRoute,
   MarketingResourcesReadMlCompleteTutorialRoute:
     MarketingResourcesReadMlCompleteTutorialRoute,
+  MarketingResourcesReadMlInterviewQuestionsRoute:
+    MarketingResourcesReadMlInterviewQuestionsRoute,
   MarketingResourcesReadMlPdfNotesRoute: MarketingResourcesReadMlPdfNotesRoute,
   MarketingResourcesReadMlQuickRevisionNotesRoute:
     MarketingResourcesReadMlQuickRevisionNotesRoute,
