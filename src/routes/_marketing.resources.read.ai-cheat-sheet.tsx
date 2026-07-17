@@ -276,12 +276,12 @@ function AICheatSheetPage() {
           <Card title="AI Workflow" className="md:col-span-2">
             <div className="flex flex-wrap items-center gap-1.5 text-xs">
               {["Problem", "Data Collection", "Data Processing", "Model Training", "Evaluation", "Deployment", "Monitoring"].map((step, i, arr) => (
-                <>
-                  <span key={step} className="inline-flex items-center rounded-lg bg-gradient-to-br from-primary to-primary/70 px-2.5 py-1 font-semibold text-primary-foreground">
+                <span key={step} className="inline-flex items-center gap-1.5">
+                  <span className="inline-flex items-center rounded-lg bg-gradient-to-br from-primary to-primary/70 px-2.5 py-1 font-semibold text-primary-foreground">
                     {step}
                   </span>
-                  {i < arr.length - 1 && <ArrowRight key={`a-${step}`} className="h-3.5 w-3.5 text-muted-foreground" />}
-                </>
+                  {i < arr.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-muted-foreground" />}
+                </span>
               ))}
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
