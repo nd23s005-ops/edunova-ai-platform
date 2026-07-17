@@ -5,7 +5,6 @@ import { Categories } from "@/components/home/Categories";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { AIFeatures } from "@/components/home/AIFeatures";
 import { Mentors } from "@/components/home/Mentors";
-import { ProductPreview } from "@/components/home/ProductPreview";
 import { FAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
@@ -40,7 +39,7 @@ function HomePage() {
       <HowItWorks />
       <AIFeatures />
       <Mentors />
-      <ProductPreview />
+      
       <FAQ />
       <FinalCTA />
     </>
