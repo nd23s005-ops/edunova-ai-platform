@@ -98,6 +98,7 @@ const ADMIN_NAV: NavItem[] = [
   { to: "/dashboard/admin/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", icon: FileText },
   { to: "/dashboard/admin/settings", label: "Settings", icon: Settings },
+];
 const ADMIN_SUPER_ONLY = new Set<string>(["/dashboard/admin/settings"]);
 
 
