@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { redirect } from "@tanstack/react-router";
 import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
