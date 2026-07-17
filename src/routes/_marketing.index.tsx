@@ -37,7 +37,7 @@ function HomePage() {
       <Categories />
       <HowItWorks />
       <AIFeatures />
-      <Mentors />
+      <FAQ />
       <FAQ />
       <FinalCTA />
     </div>
