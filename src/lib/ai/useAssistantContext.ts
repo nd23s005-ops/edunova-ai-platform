@@ -5,6 +5,7 @@ import type { AppRole } from "@/lib/auth/roles";
 
 export type AssistantSurface =
   | "home"
+  | "help_desk"
   | "explore"
   | "community"
   | "about"
@@ -51,6 +52,7 @@ const BOARD_LABEL: Record<string, string> = {
 
 function detectSurface(pathname: string, role: AppRole | null): AssistantSurface {
   if (pathname === "/" || pathname === "") return "home";
+  if (pathname.startsWith("/help-desk") || pathname.startsWith("/help")) return "help_desk";
   if (pathname.startsWith("/explore")) return "explore";
   if (pathname.startsWith("/community")) return "community";
   if (pathname.startsWith("/about")) return "about";
