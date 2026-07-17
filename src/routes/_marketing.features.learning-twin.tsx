@@ -274,7 +274,7 @@ function LearningTwinArticle() {
         </aside>
 
         {/* Article */}
-        <div className="prose-article space-y-16 max-w-3xl">
+        <div className="article-body space-y-16 max-w-3xl [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_strong]:text-foreground [&_strong]:font-semibold [&_em]:text-foreground/90">
           <ArticleSection id="introduction" title="Introduction">
             <p>
               For most of history, learning has been a broadcast. A teacher explains a
