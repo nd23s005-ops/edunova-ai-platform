@@ -13,7 +13,6 @@ export type AssistantSurface =
   | "auth"
   | "onboarding"
   | "dashboard_student"
-  | "dashboard_teacher"
   | "dashboard_organization"
   | "dashboard_admin"
   | "dashboard_professional"
