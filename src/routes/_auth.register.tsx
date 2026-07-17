@@ -66,8 +66,8 @@ function RegisterPage() {
 
         <p className="text-xs text-muted-foreground">
           By creating an account you agree to our{" "}
-          <Link to="/contact" className="underline">Terms</Link> and{" "}
-          <Link to="/contact" className="underline">Privacy Policy</Link>.
+          <Link to="/about" className="underline">Terms</Link> and{" "}
+          <Link to="/about" className="underline">Privacy Policy</Link>.
         </p>
 
         <Button type="submit" className="w-full shadow-elegant" size="lg">Create account</Button>
