@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
+import { ArrowLeft, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,7 +15,8 @@ import { GoogleButton } from "@/components/auth/GoogleButton";
 import { PasswordStrengthMeter } from "@/components/auth/PasswordStrengthMeter";
 import { supabase } from "@/integrations/supabase/client";
 import { registerSchema, type RegisterInput } from "@/lib/auth/schemas";
-import { SELF_SIGNUP_ROLES, ROLE_LABELS } from "@/lib/auth/roles";
+import { SELF_SIGNUP_ROLES, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
+import type { AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_auth/register")({
   head: () => ({
@@ -25,12 +26,23 @@ export const Route = createFileRoute("/_auth/register")({
       { name: "robots", content: "noindex" },
     ],
   }),
+  validateSearch: (search: Record<string, unknown>) => ({
+    role:
+      typeof search.role === "string" && (ALL_ROLES as readonly string[]).includes(search.role)
+        ? (search.role as AppRole)
+        : undefined,
+  }),
   component: RegisterPage,
 });
 
+
 function RegisterPage() {
   const navigate = useNavigate();
+  const { role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
+
+  const initialRole: RegisterInput["role"] =
+    selectedRole && selectedRole !== "admin" ? selectedRole : "student";
 
   const form = useForm<RegisterInput>({
     resolver: zodResolver(registerSchema),
@@ -39,11 +51,18 @@ function RegisterPage() {
       email: "",
       password: "",
       confirmPassword: "",
-      role: "student",
+      role: initialRole,
       acceptTerms: false as unknown as true,
     },
     mode: "onBlur",
   });
+
+  useEffect(() => {
+    if (selectedRole === "admin") {
+      navigate({ to: "/login", search: { role: "admin" } });
+    }
+  }, [selectedRole, navigate]);
+
 
   const password = form.watch("password");
 
@@ -79,10 +98,22 @@ function RegisterPage() {
 
   return (
     <div>
+      <Link
+        to="/onboarding"
+        className="mb-6 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
+      >
+        <ArrowLeft className="h-3.5 w-3.5" /> Back to onboarding
+      </Link>
+      {selectedRole && selectedRole !== "admin" && (
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-semibold">
+          {ROLE_LABELS[selectedRole as AppRole]} sign up
+        </div>
+      )}
       <h1 className="text-3xl font-bold tracking-tight">Create your account</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         Start learning with Nova in less than a minute.
       </p>
+
 
       <form className="mt-8 space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
         <div>
@@ -149,7 +180,7 @@ function RegisterPage() {
           <RadioGroup
             value={form.watch("role")}
             onValueChange={(v) => form.setValue("role", v as RegisterInput["role"])}
-            className="mt-2 grid grid-cols-3 gap-2"
+            className="mt-2 grid grid-cols-2 gap-2"
           >
             {SELF_SIGNUP_ROLES.map((r) => (
               <label

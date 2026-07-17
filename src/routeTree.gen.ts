@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UnauthorizedRouteImport } from './routes/unauthorized'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
@@ -34,6 +35,7 @@ import { Route as MarketingFeaturesSlugRouteImport } from './routes/_marketing.f
 import { Route as DashboardDashboardTeacherRouteImport } from './routes/_dashboard.dashboard.teacher'
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
 import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
+import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_dashboard.dashboard.professional'
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
@@ -46,6 +48,11 @@ const UnauthorizedRoute = UnauthorizedRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarketingRoute = MarketingRouteImport.update({
@@ -163,6 +170,12 @@ const DashboardDashboardProfileRoute =
     path: '/dashboard/profile',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardProfessionalRoute =
+  DashboardDashboardProfessionalRouteImport.update({
+    id: '/dashboard/professional',
+    path: '/dashboard/professional',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDashboardOrganizationRoute =
   DashboardDashboardOrganizationRouteImport.update({
     id: '/dashboard/organization',
@@ -183,6 +196,7 @@ const DashboardDashboardSplatRoute = DashboardDashboardSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/onboarding': typeof OnboardingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/account-created': typeof AuthAccountCreatedRoute
@@ -201,6 +215,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
@@ -210,6 +225,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/onboarding': typeof OnboardingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/account-created': typeof AuthAccountCreatedRoute
@@ -228,6 +244,7 @@ export interface FileRoutesByTo {
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
@@ -240,6 +257,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
+  '/onboarding': typeof OnboardingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/_auth/account-created': typeof AuthAccountCreatedRoute
@@ -259,6 +277,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
   '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRoute
   '/_dashboard/dashboard/teacher': typeof DashboardDashboardTeacherRoute
@@ -270,6 +289,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/$'
     | '/'
+    | '/onboarding'
     | '/sitemap.xml'
     | '/unauthorized'
     | '/account-created'
@@ -288,6 +308,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/organization'
+    | '/dashboard/professional'
     | '/dashboard/profile'
     | '/dashboard/student'
     | '/dashboard/teacher'
@@ -297,6 +318,7 @@ export interface FileRouteTypes {
   to:
     | '/$'
     | '/'
+    | '/onboarding'
     | '/sitemap.xml'
     | '/unauthorized'
     | '/account-created'
@@ -315,6 +337,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/organization'
+    | '/dashboard/professional'
     | '/dashboard/profile'
     | '/dashboard/student'
     | '/dashboard/teacher'
@@ -326,6 +349,7 @@ export interface FileRouteTypes {
     | '/_auth'
     | '/_dashboard'
     | '/_marketing'
+    | '/onboarding'
     | '/sitemap.xml'
     | '/unauthorized'
     | '/_auth/account-created'
@@ -345,6 +369,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/$'
     | '/_dashboard/dashboard/admin'
     | '/_dashboard/dashboard/organization'
+    | '/_dashboard/dashboard/professional'
     | '/_dashboard/dashboard/profile'
     | '/_dashboard/dashboard/student'
     | '/_dashboard/dashboard/teacher'
@@ -357,6 +382,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
+  OnboardingRoute: typeof OnboardingRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UnauthorizedRoute: typeof UnauthorizedRoute
 }
@@ -375,6 +401,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_marketing': {
@@ -538,6 +571,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardProfileRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/professional': {
+      id: '/_dashboard/dashboard/professional'
+      path: '/dashboard/professional'
+      fullPath: '/dashboard/professional'
+      preLoaderRoute: typeof DashboardDashboardProfessionalRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/dashboard/organization': {
       id: '/_dashboard/dashboard/organization'
       path: '/dashboard/organization'
@@ -592,6 +632,7 @@ interface DashboardRouteChildren {
   DashboardDashboardSplatRoute: typeof DashboardDashboardSplatRoute
   DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRoute
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
+  DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
   DashboardDashboardProfileRoute: typeof DashboardDashboardProfileRoute
   DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRoute
   DashboardDashboardTeacherRoute: typeof DashboardDashboardTeacherRoute
@@ -602,6 +643,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardSplatRoute: DashboardDashboardSplatRoute,
   DashboardDashboardAdminRoute: DashboardDashboardAdminRoute,
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
+  DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,
   DashboardDashboardProfileRoute: DashboardDashboardProfileRoute,
   DashboardDashboardStudentRoute: DashboardDashboardStudentRoute,
   DashboardDashboardTeacherRoute: DashboardDashboardTeacherRoute,
@@ -639,6 +681,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
+  OnboardingRoute: OnboardingRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   UnauthorizedRoute: UnauthorizedRoute,
 }
