@@ -344,6 +344,7 @@ function OnboardingPage() {
               >
                 <FinalCard
                   role={role}
+                  primary={entryMode ?? "login"}
                   onLogin={() => goToAuth("login")}
                   onRegister={() => goToAuth("register")}
                 />
