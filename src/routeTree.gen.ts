@@ -34,6 +34,7 @@ import { Route as MarketingFeaturesSlugRouteImport } from './routes/_marketing.f
 import { Route as DashboardDashboardTeacherRouteImport } from './routes/_dashboard.dashboard.teacher'
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
 import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
+import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_dashboard.dashboard.professional'
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
@@ -163,6 +164,12 @@ const DashboardDashboardProfileRoute =
     path: '/dashboard/profile',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardProfessionalRoute =
+  DashboardDashboardProfessionalRouteImport.update({
+    id: '/dashboard/professional',
+    path: '/dashboard/professional',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDashboardOrganizationRoute =
   DashboardDashboardOrganizationRouteImport.update({
     id: '/dashboard/organization',
@@ -201,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
@@ -228,6 +236,7 @@ export interface FileRoutesByTo {
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
@@ -259,6 +268,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
   '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRoute
   '/_dashboard/dashboard/teacher': typeof DashboardDashboardTeacherRoute
@@ -288,6 +298,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/organization'
+    | '/dashboard/professional'
     | '/dashboard/profile'
     | '/dashboard/student'
     | '/dashboard/teacher'
@@ -315,6 +326,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/organization'
+    | '/dashboard/professional'
     | '/dashboard/profile'
     | '/dashboard/student'
     | '/dashboard/teacher'
@@ -345,6 +357,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/$'
     | '/_dashboard/dashboard/admin'
     | '/_dashboard/dashboard/organization'
+    | '/_dashboard/dashboard/professional'
     | '/_dashboard/dashboard/profile'
     | '/_dashboard/dashboard/student'
     | '/_dashboard/dashboard/teacher'
@@ -538,6 +551,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardProfileRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/professional': {
+      id: '/_dashboard/dashboard/professional'
+      path: '/dashboard/professional'
+      fullPath: '/dashboard/professional'
+      preLoaderRoute: typeof DashboardDashboardProfessionalRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/dashboard/organization': {
       id: '/_dashboard/dashboard/organization'
       path: '/dashboard/organization'
@@ -592,6 +612,7 @@ interface DashboardRouteChildren {
   DashboardDashboardSplatRoute: typeof DashboardDashboardSplatRoute
   DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRoute
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
+  DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
   DashboardDashboardProfileRoute: typeof DashboardDashboardProfileRoute
   DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRoute
   DashboardDashboardTeacherRoute: typeof DashboardDashboardTeacherRoute
@@ -602,6 +623,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardSplatRoute: DashboardDashboardSplatRoute,
   DashboardDashboardAdminRoute: DashboardDashboardAdminRoute,
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
+  DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,
   DashboardDashboardProfileRoute: DashboardDashboardProfileRoute,
   DashboardDashboardStudentRoute: DashboardDashboardStudentRoute,
   DashboardDashboardTeacherRoute: DashboardDashboardTeacherRoute,
