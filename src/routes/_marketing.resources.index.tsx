@@ -168,9 +168,16 @@ function ResourcesIndex() {
                 className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
               >
                 <div className={`relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br ${c.gradient}`}>
+                  <img
+                    src={getCourseImage(c)}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-500 group-hover:scale-105"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${c.gradient} opacity-70 mix-blend-multiply`} aria-hidden />
                   <div className="absolute inset-0 bg-grid-fade opacity-30" aria-hidden />
                   <div className="absolute inset-0 grid place-items-center">
-                    <BookOpen className="h-12 w-12 text-white/90 drop-shadow-lg transition group-hover:scale-110" />
+                    <BookOpen className="h-12 w-12 text-white/95 drop-shadow-lg transition group-hover:scale-110" />
                   </div>
                   <span className="absolute left-3 top-3 rounded-full bg-background/95 px-2.5 py-1 text-[11px] font-semibold">
                     {c.category}
