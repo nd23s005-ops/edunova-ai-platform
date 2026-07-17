@@ -55,6 +55,7 @@ import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_
 import { Route as MarketingResourcesReadAiTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-tips-tricks'
 import { Route as MarketingResourcesReadAiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadAiSampleExercisesRouteImport } from './routes/_marketing.resources.read.ai-sample-exercises'
+import { Route as MarketingResourcesReadAiReferenceGuideRouteImport } from './routes/_marketing.resources.read.ai-reference-guide'
 import { Route as MarketingResourcesReadAiRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.ai-real-world-case-study'
 import { Route as MarketingResourcesReadAiQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ai-quick-revision-notes'
 import { Route as MarketingResourcesReadAiProjectGuideRouteImport } from './routes/_marketing.resources.read.ai-project-guide'
@@ -329,6 +330,12 @@ const MarketingResourcesReadAiSampleExercisesRoute =
     path: '/read/ai-sample-exercises',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAiReferenceGuideRoute =
+  MarketingResourcesReadAiReferenceGuideRouteImport.update({
+    id: '/read/ai-reference-guide',
+    path: '/read/ai-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiRealWorldCaseStudyRoute =
   MarketingResourcesReadAiRealWorldCaseStudyRouteImport.update({
     id: '/read/ai-real-world-case-study',
@@ -574,6 +581,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-project-guide': typeof MarketingResourcesReadAiProjectGuideRoute
   '/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/resources/read/ai-real-world-case-study': typeof MarketingResourcesReadAiRealWorldCaseStudyRoute
+  '/resources/read/ai-reference-guide': typeof MarketingResourcesReadAiReferenceGuideRoute
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
@@ -648,6 +656,7 @@ export interface FileRoutesByTo {
   '/resources/read/ai-project-guide': typeof MarketingResourcesReadAiProjectGuideRoute
   '/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/resources/read/ai-real-world-case-study': typeof MarketingResourcesReadAiRealWorldCaseStudyRoute
+  '/resources/read/ai-reference-guide': typeof MarketingResourcesReadAiReferenceGuideRoute
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
@@ -727,6 +736,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-project-guide': typeof MarketingResourcesReadAiProjectGuideRoute
   '/_marketing/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/_marketing/resources/read/ai-real-world-case-study': typeof MarketingResourcesReadAiRealWorldCaseStudyRoute
+  '/_marketing/resources/read/ai-reference-guide': typeof MarketingResourcesReadAiReferenceGuideRoute
   '/_marketing/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/_marketing/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/_marketing/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
@@ -804,6 +814,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-project-guide'
     | '/resources/read/ai-quick-revision-notes'
     | '/resources/read/ai-real-world-case-study'
+    | '/resources/read/ai-reference-guide'
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
@@ -878,6 +889,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-project-guide'
     | '/resources/read/ai-quick-revision-notes'
     | '/resources/read/ai-real-world-case-study'
+    | '/resources/read/ai-reference-guide'
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
@@ -956,6 +968,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-project-guide'
     | '/_marketing/resources/read/ai-quick-revision-notes'
     | '/_marketing/resources/read/ai-real-world-case-study'
+    | '/_marketing/resources/read/ai-reference-guide'
     | '/_marketing/resources/read/ai-sample-exercises'
     | '/_marketing/resources/read/ai-step-by-step-learning-guide'
     | '/_marketing/resources/read/ai-tips-tricks'
@@ -1306,6 +1319,13 @@ declare module '@tanstack/react-router' {
       path: '/read/ai-sample-exercises'
       fullPath: '/resources/read/ai-sample-exercises'
       preLoaderRoute: typeof MarketingResourcesReadAiSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-reference-guide': {
+      id: '/_marketing/resources/read/ai-reference-guide'
+      path: '/read/ai-reference-guide'
+      fullPath: '/resources/read/ai-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAiReferenceGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ai-real-world-case-study': {
@@ -1671,6 +1691,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiProjectGuideRoute: typeof MarketingResourcesReadAiProjectGuideRoute
   MarketingResourcesReadAiQuickRevisionNotesRoute: typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   MarketingResourcesReadAiRealWorldCaseStudyRoute: typeof MarketingResourcesReadAiRealWorldCaseStudyRoute
+  MarketingResourcesReadAiReferenceGuideRoute: typeof MarketingResourcesReadAiReferenceGuideRoute
   MarketingResourcesReadAiSampleExercisesRoute: typeof MarketingResourcesReadAiSampleExercisesRoute
   MarketingResourcesReadAiStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   MarketingResourcesReadAiTipsTricksRoute: typeof MarketingResourcesReadAiTipsTricksRoute
@@ -1711,6 +1732,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAiQuickRevisionNotesRoute,
   MarketingResourcesReadAiRealWorldCaseStudyRoute:
     MarketingResourcesReadAiRealWorldCaseStudyRoute,
+  MarketingResourcesReadAiReferenceGuideRoute:
+    MarketingResourcesReadAiReferenceGuideRoute,
   MarketingResourcesReadAiSampleExercisesRoute:
     MarketingResourcesReadAiSampleExercisesRoute,
   MarketingResourcesReadAiStepByStepLearningGuideRoute:
