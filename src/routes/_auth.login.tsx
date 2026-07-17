@@ -12,6 +12,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { GoogleButton } from "@/components/auth/GoogleButton";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
 import { PhoneInput, createEmptyPhoneValue, type PhoneInputValue } from "@/components/auth/PhoneInput";
 import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
