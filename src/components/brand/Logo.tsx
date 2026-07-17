@@ -1,6 +1,9 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 import { GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { homeForRole, type AppRole } from "@/lib/auth/roles";
 
 interface LogoProps {
   className?: string;
@@ -8,9 +11,29 @@ interface LogoProps {
 }
 
 export function Logo({ className, showWordmark = true }: LogoProps) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const inDashboard = pathname.startsWith("/dashboard");
+
+  const { data: role } = useQuery({
+    queryKey: ["me", "role-lite"],
+    queryFn: async () => {
+      const { data: u } = await supabase.auth.getUser();
+      if (!u.user) return null;
+      const { data: r } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", u.user.id)
+        .maybeSingle();
+      return (r?.role as AppRole | undefined) ?? null;
+    },
+    staleTime: 60_000,
+  });
+
+  const target = inDashboard ? homeForRole(role ?? undefined) : "/";
+
   return (
     <Link
-      to="/"
+      to={target}
       className={cn("group inline-flex items-center gap-2.5", className)}
       aria-label="EduNova AI home"
     >
