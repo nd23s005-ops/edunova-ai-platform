@@ -44,7 +44,6 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
 import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_dashboard.dashboard.student.browse'
-import { Route as DashboardDashboardStudentAiChatRouteImport } from './routes/_dashboard.dashboard.student.ai-chat'
 
 const UnauthorizedRoute = UnauthorizedRouteImport.update({
   id: '/unauthorized',
@@ -227,12 +226,6 @@ const DashboardDashboardStudentBrowseRoute =
     path: '/browse',
     getParentRoute: () => DashboardDashboardStudentRoute,
   } as any)
-const DashboardDashboardStudentAiChatRoute =
-  DashboardDashboardStudentAiChatRouteImport.update({
-    id: '/ai-chat',
-    path: '/ai-chat',
-    getParentRoute: () => DashboardDashboardStudentRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
@@ -265,7 +258,6 @@ export interface FileRoutesByFullPath {
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
-  '/dashboard/student/ai-chat': typeof DashboardDashboardStudentAiChatRoute
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
 }
@@ -300,7 +292,6 @@ export interface FileRoutesByTo {
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
-  '/dashboard/student/ai-chat': typeof DashboardDashboardStudentAiChatRoute
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
 }
@@ -339,7 +330,6 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/_marketing/features/$slug': typeof MarketingFeaturesSlugRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
-  '/_dashboard/dashboard/student/ai-chat': typeof DashboardDashboardStudentAiChatRoute
   '/_dashboard/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
 }
@@ -376,7 +366,6 @@ export interface FileRouteTypes {
     | '/dashboard/teacher'
     | '/features/$slug'
     | '/dashboard/'
-    | '/dashboard/student/ai-chat'
     | '/dashboard/student/browse'
     | '/dashboard/student/my-courses'
   fileRoutesByTo: FileRoutesByTo
@@ -411,7 +400,6 @@ export interface FileRouteTypes {
     | '/dashboard/teacher'
     | '/features/$slug'
     | '/dashboard'
-    | '/dashboard/student/ai-chat'
     | '/dashboard/student/browse'
     | '/dashboard/student/my-courses'
   id:
@@ -449,7 +437,6 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/teacher'
     | '/_marketing/features/$slug'
     | '/_dashboard/dashboard/'
-    | '/_dashboard/dashboard/student/ai-chat'
     | '/_dashboard/dashboard/student/browse'
     | '/_dashboard/dashboard/student/my-courses'
   fileRoutesById: FileRoutesById
@@ -712,13 +699,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardStudentBrowseRouteImport
       parentRoute: typeof DashboardDashboardStudentRoute
     }
-    '/_dashboard/dashboard/student/ai-chat': {
-      id: '/_dashboard/dashboard/student/ai-chat'
-      path: '/ai-chat'
-      fullPath: '/dashboard/student/ai-chat'
-      preLoaderRoute: typeof DashboardDashboardStudentAiChatRouteImport
-      parentRoute: typeof DashboardDashboardStudentRoute
-    }
   }
 }
 
@@ -749,14 +729,12 @@ const AuthRouteChildren: AuthRouteChildren = {
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 interface DashboardDashboardStudentRouteChildren {
-  DashboardDashboardStudentAiChatRoute: typeof DashboardDashboardStudentAiChatRoute
   DashboardDashboardStudentBrowseRoute: typeof DashboardDashboardStudentBrowseRoute
   DashboardDashboardStudentMyCoursesRoute: typeof DashboardDashboardStudentMyCoursesRoute
 }
 
 const DashboardDashboardStudentRouteChildren: DashboardDashboardStudentRouteChildren =
   {
-    DashboardDashboardStudentAiChatRoute: DashboardDashboardStudentAiChatRoute,
     DashboardDashboardStudentBrowseRoute: DashboardDashboardStudentBrowseRoute,
     DashboardDashboardStudentMyCoursesRoute:
       DashboardDashboardStudentMyCoursesRoute,
