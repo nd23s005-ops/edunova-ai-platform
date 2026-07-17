@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { Clock, Layers, ArrowRight, Trophy } from "lucide-react";
+import { Clock, Layers, ArrowRight, Trophy, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
+import { MOCK_TEST_CATEGORIES } from "@/lib/ai/mock-tests.catalog";
 
 export const Route = createFileRoute("/_dashboard/dashboard/mock-tests/")({
   component: MockTestsList,
