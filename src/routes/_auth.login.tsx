@@ -108,50 +108,56 @@ function LoginPage() {
     navigate({ to: dest, replace: true });
   };
 
+  const isAdmin = selectedRole === "admin";
+
   return (
     <div>
       <Link
-        to="/onboarding"
+        to={isAdmin ? "/" : "/onboarding"}
         className="mb-6 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="h-3.5 w-3.5" /> Back to onboarding
+        <ArrowLeft className="h-3.5 w-3.5" /> {isAdmin ? "Back to homepage" : "Back to onboarding"}
       </Link>
       {selectedRole && (
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-semibold">
-          {selectedRole === "admin" && <Shield className="h-3.5 w-3.5" aria-hidden="true" />}
+          {isAdmin && <Shield className="h-3.5 w-3.5" aria-hidden="true" />}
           {ROLE_LABELS[selectedRole as AppRole]} sign in
         </div>
       )}
 
       <h1 className="text-3xl font-bold tracking-tight">
-        {selectedRole === "admin" ? "Administrator sign in" : "Welcome back"}
+        {isAdmin ? "Administrator sign in" : "Welcome back"}
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        {selectedRole === "admin"
+        {isAdmin
           ? "Restricted to authorized personnel only."
           : "Sign in to continue your learning journey with Nova."}
       </p>
 
-      <div className="mt-8 space-y-3">
-        <GoogleButton />
-        <AppleButton />
-      </div>
+      {!isAdmin && (
+        <>
+          <div className="mt-8 space-y-3">
+            <GoogleButton />
+            <AppleButton />
+          </div>
 
-      <div className="relative my-6">
-        <Separator />
-        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background px-3 text-xs uppercase tracking-wider text-muted-foreground">
-          or with email
-        </span>
-      </div>
+          <div className="relative my-6">
+            <Separator />
+            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background px-3 text-xs uppercase tracking-wider text-muted-foreground">
+              or with email
+            </span>
+          </div>
+        </>
+      )}
 
-      <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
+      <form className={`space-y-4 ${isAdmin ? "mt-8" : ""}`} onSubmit={form.handleSubmit(onSubmit)} noValidate>
         <div>
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{isAdmin ? "Admin ID" : "Email"}</Label>
           <Input
             id="email"
             type="email"
-            autoComplete="email"
-            placeholder="you@example.com"
+            autoComplete={isAdmin ? "username" : "email"}
+            placeholder={isAdmin ? "admin@edunova.ai" : "you@example.com"}
             className="mt-1.5"
             aria-invalid={!!form.formState.errors.email}
             {...form.register("email")}
@@ -163,9 +169,11 @@ function LoginPage() {
         <div>
           <div className="flex items-center justify-between">
             <Label htmlFor="password">Password</Label>
-            <Link to="/forgot-password" className="text-xs font-medium text-primary hover:underline">
-              Forgot password?
-            </Link>
+            {!isAdmin && (
+              <Link to="/forgot-password" className="text-xs font-medium text-primary hover:underline">
+                Forgot password?
+              </Link>
+            )}
           </div>
           <PasswordInput
             id="password"
@@ -180,29 +188,33 @@ function LoginPage() {
           )}
         </div>
 
-        <label className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Checkbox
-            id="remember"
-            checked={form.watch("remember")}
-            onCheckedChange={(v) => form.setValue("remember", v === true)}
-          />
-          <span>Remember me for 30 days</span>
-        </label>
+        {!isAdmin && (
+          <label className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Checkbox
+              id="remember"
+              checked={form.watch("remember")}
+              onCheckedChange={(v) => form.setValue("remember", v === true)}
+            />
+            <span>Remember me for 30 days</span>
+          </label>
+        )}
 
         <Button type="submit" className="w-full shadow-elegant" size="lg" disabled={submitting}>
           {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />}
-          {submitting ? "Signing in…" : "Sign in"}
+          {submitting ? "Signing in…" : isAdmin ? "Continue" : "Sign in"}
         </Button>
       </form>
 
-      <p className="mt-8 text-center text-sm text-muted-foreground">
-        New to EduNova AI?{" "}
-        <Link to="/register" className="font-semibold text-primary hover:underline">
-          Create an account
-        </Link>
-      </p>
+      {!isAdmin && (
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          New to EduNova AI?{" "}
+          <Link to="/register" className="font-semibold text-primary hover:underline">
+            Create an account
+          </Link>
+        </p>
+      )}
 
-      <DemoCredentialsPopup />
+      {isAdmin && <DemoCredentialsPopup />}
     </div>
   );
 }
