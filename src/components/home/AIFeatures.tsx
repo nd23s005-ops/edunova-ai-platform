@@ -345,7 +345,7 @@ function AITutorCard() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="max-w-[85%] rounded-2xl rounded-bl-md border border-border/60 bg-white px-3.5 py-2.5 text-sm text-foreground shadow-sm"
+            className="max-w-[85%] rounded-2xl rounded-bl-md border border-border/60 bg-card px-3.5 py-2.5 text-sm text-foreground shadow-sm"
           >
             Sure! Think of a leaf as a tiny kitchen. Sunlight is the stove, water and CO₂ are the ingredients, and the leaf cooks up glucose + oxygen…
           </motion.div>
@@ -354,7 +354,7 @@ function AITutorCard() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.7 }}
-            className="inline-flex items-center gap-1 rounded-2xl rounded-bl-md border border-border/60 bg-white px-3.5 py-2 text-sm text-muted-foreground shadow-sm"
+            className="inline-flex items-center gap-1 rounded-2xl rounded-bl-md border border-border/60 bg-card px-3.5 py-2 text-sm text-muted-foreground shadow-sm"
           >
             <span className="flex gap-1">
               {[0, 1, 2].map((i) => (
@@ -379,7 +379,7 @@ function AITutorCard() {
         </div>
 
         {/* Input */}
-        <div className="mt-4 flex items-center gap-2 rounded-2xl border border-border/60 bg-white px-3 py-2 shadow-sm">
+        <div className="mt-4 flex items-center gap-2 rounded-2xl border border-border/60 bg-card px-3 py-2 shadow-sm">
           <Paperclip className="h-4 w-4 text-muted-foreground" />
           <span className="flex-1 text-sm text-muted-foreground">Ask anything…</span>
           <Mic className="h-4 w-4 text-primary" />
