@@ -14,6 +14,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as HelpDeskRouteImport } from './routes/help-desk'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
@@ -74,6 +75,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpDeskRoute = HelpDeskRouteImport.update({
+  id: '/help-desk',
+  path: '/help-desk',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarketingRoute = MarketingRouteImport.update({
@@ -272,6 +278,7 @@ const DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute =
 export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -312,6 +319,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -355,6 +363,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
+  '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -398,6 +407,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/$'
     | '/'
+    | '/help-desk'
     | '/onboarding'
     | '/privacy'
     | '/sitemap.xml'
@@ -438,6 +448,7 @@ export interface FileRouteTypes {
   to:
     | '/$'
     | '/'
+    | '/help-desk'
     | '/onboarding'
     | '/privacy'
     | '/sitemap.xml'
@@ -480,6 +491,7 @@ export interface FileRouteTypes {
     | '/_auth'
     | '/_dashboard'
     | '/_marketing'
+    | '/help-desk'
     | '/onboarding'
     | '/privacy'
     | '/sitemap.xml'
@@ -524,6 +536,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
+  HelpDeskRoute: typeof HelpDeskRoute
   OnboardingRoute: typeof OnboardingRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -567,6 +580,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help-desk': {
+      id: '/help-desk'
+      path: '/help-desk'
+      fullPath: '/help-desk'
+      preLoaderRoute: typeof HelpDeskRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_marketing': {
@@ -959,6 +979,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
+  HelpDeskRoute: HelpDeskRoute,
   OnboardingRoute: OnboardingRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
