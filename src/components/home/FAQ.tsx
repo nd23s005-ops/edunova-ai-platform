@@ -32,7 +32,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative overflow-hidden py-24 sm:py-32" style={{ background: "#FCFAF7" }}>
+    <section id="faq" className="relative overflow-hidden py-24 sm:py-32" style={{ background: "transparent" }}>
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-primary-glow/10 blur-3xl" />
         <div className="absolute inset-0 bg-grid-fade opacity-25" />
@@ -84,7 +84,7 @@ export function FAQ() {
             >
               <AccordionItem
                 value={`item-${i}`}
-                className="overflow-hidden rounded-[18px] border border-white/60 bg-white/80 px-6 shadow-card backdrop-blur-xl transition-shadow hover:shadow-elegant"
+                className="overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.04] px-6 shadow-card backdrop-blur-xl transition-shadow hover:shadow-elegant"
               >
                 <AccordionTrigger className="py-5 text-left text-base font-semibold hover:no-underline sm:text-lg">
                   {f.q}

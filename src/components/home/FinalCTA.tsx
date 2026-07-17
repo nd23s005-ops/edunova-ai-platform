@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 export function FinalCTA() {
   const reduce = useReducedMotion();
   return (
-    <section className="relative py-20 sm:py-28" style={{ background: "#FCFAF7" }}>
+    <section className="relative py-20 sm:py-28" style={{ background: "transparent" }}>
       <div className="mx-auto w-[92%] max-w-6xl px-2 sm:w-[85%] sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -58,7 +58,7 @@ export function FinalCTA() {
                 return (
                   <motion.span
                     key={i}
-                    className="absolute h-1 w-1 rounded-full bg-white/80 shadow-[0_0_10px_rgba(255,255,255,0.9)]"
+                    className="absolute h-1 w-1 rounded-full bg-white/[0.04] shadow-[0_0_10px_rgba(255,255,255,0.9)]"
                     style={{ left: `${left}%`, top: `${top}%` }}
                     animate={{ y: [0, -20, 0], opacity: [0.2, 0.9, 0.2] }}
                     transition={{
@@ -103,7 +103,7 @@ export function FinalCTA() {
               </Link>
               <Link
                 to="/explore"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/15"
+                className="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:border-white/10 hover:bg-white/15"
               >
                 Explore Courses
               </Link>
