@@ -39,7 +39,17 @@ function NavItem({ to, label, onClick }: { to: (typeof NAV_LINKS)[number]["to"];
   );
 }
 
-function CTAButton({ to, onClick, children }: { to: "/register" | "/onboarding"; onClick?: () => void; children: React.ReactNode }) {
+function CTAButton({
+  to,
+  onClick,
+  children,
+  icon: Icon = ArrowRight,
+}: {
+  to: "/register" | "/onboarding" | "/dashboard";
+  onClick?: () => void;
+  children: React.ReactNode;
+  icon?: typeof ArrowRight;
+}) {
   return (
     <Link
       to={to}
@@ -50,11 +60,12 @@ function CTAButton({ to, onClick, children }: { to: "/register" | "/onboarding";
       }}
     >
       <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+      <Icon className="relative h-3.5 w-3.5" />
       <span className="relative">{children}</span>
-      <ArrowRight className="relative h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
     </Link>
   );
 }
+
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
