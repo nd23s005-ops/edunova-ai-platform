@@ -195,7 +195,10 @@ function ClientOnlyFloatingChat() {
     return () => unsub?.();
   }, []);
   // Admin dashboard must not display any AI chatbot.
-  if (!mounted || !signedIn || isAdmin) return null;
+  // Admin dashboard has no chatbot. Everyone else (guests + signed in) sees the Help Desk chat.
+  if (!mounted || isAdmin) return null;
+  // Suppress the unused-signedIn warning while keeping the state for future logic.
+  void signedIn;
   return <FloatingChat />;
 }
 
