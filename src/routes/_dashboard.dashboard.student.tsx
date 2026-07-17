@@ -263,7 +263,10 @@ function StudentDashboard() {
         </section>
       )}
 
+      <AIDailyQuizWidget />
+
       <section className="mb-8">
+
         <SectionHeader
           title="My courses"
           action={enrolled.length > 0 ? { to: "/dashboard/student/my-courses", label: "View all" } : undefined}
