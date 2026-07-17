@@ -28,6 +28,13 @@ export const Route = createFileRoute("/onboarding")({
       { name: "robots", content: "noindex" },
     ],
   }),
+  validateSearch: (search: Record<string, unknown>) => ({
+    mode:
+      search.mode === "login" || search.mode === "register"
+        ? (search.mode as "login" | "register")
+        : undefined,
+    redirect: typeof search.redirect === "string" ? search.redirect : undefined,
+  }),
   component: OnboardingPage,
 });
 
