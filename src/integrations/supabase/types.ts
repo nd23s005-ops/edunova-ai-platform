@@ -363,6 +363,124 @@ export type Database = {
           },
         ]
       }
+      mock_test_attempts: {
+        Row: {
+          answers: Json
+          created_at: string
+          id: string
+          max_score: number | null
+          score: number | null
+          submitted_at: string | null
+          test_id: string
+          user_id: string
+        }
+        Insert: {
+          answers?: Json
+          created_at?: string
+          id?: string
+          max_score?: number | null
+          score?: number | null
+          submitted_at?: string | null
+          test_id: string
+          user_id: string
+        }
+        Update: {
+          answers?: Json
+          created_at?: string
+          id?: string
+          max_score?: number | null
+          score?: number | null
+          submitted_at?: string | null
+          test_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mock_test_attempts_test_id_fkey"
+            columns: ["test_id"]
+            isOneToOne: false
+            referencedRelation: "mock_tests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      mock_test_questions: {
+        Row: {
+          choices: Json
+          correct_index: number
+          explanation: string | null
+          id: string
+          order_index: number
+          prompt: string
+          test_id: string
+        }
+        Insert: {
+          choices?: Json
+          correct_index: number
+          explanation?: string | null
+          id?: string
+          order_index?: number
+          prompt: string
+          test_id: string
+        }
+        Update: {
+          choices?: Json
+          correct_index?: number
+          explanation?: string | null
+          id?: string
+          order_index?: number
+          prompt?: string
+          test_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mock_test_questions_test_id_fkey"
+            columns: ["test_id"]
+            isOneToOne: false
+            referencedRelation: "mock_tests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      mock_tests: {
+        Row: {
+          audience: string[]
+          category: string
+          created_at: string
+          description: string | null
+          difficulty: string
+          duration_minutes: number
+          id: string
+          is_published: boolean
+          title: string
+          total_questions: number
+        }
+        Insert: {
+          audience?: string[]
+          category: string
+          created_at?: string
+          description?: string | null
+          difficulty?: string
+          duration_minutes?: number
+          id?: string
+          is_published?: boolean
+          title: string
+          total_questions?: number
+        }
+        Update: {
+          audience?: string[]
+          category?: string
+          created_at?: string
+          description?: string | null
+          difficulty?: string
+          duration_minutes?: number
+          id?: string
+          is_published?: boolean
+          title?: string
+          total_questions?: number
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -546,6 +664,35 @@ export type Database = {
             columns: ["chapter_id"]
             isOneToOne: false
             referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      resource_bookmarks: {
+        Row: {
+          created_at: string
+          id: string
+          resource_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          resource_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          resource_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "resource_bookmarks_resource_id_fkey"
+            columns: ["resource_id"]
+            isOneToOne: false
+            referencedRelation: "resources"
             referencedColumns: ["id"]
           },
         ]
@@ -734,6 +881,104 @@ export type Database = {
             columns: ["ticket_id"]
             isOneToOne: false
             referencedRelation: "support_tickets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      upskill_courses: {
+        Row: {
+          audience: string[]
+          category: string
+          cover_url: string | null
+          created_at: string
+          description: string | null
+          difficulty: string
+          estimated_hours: number | null
+          id: string
+          is_featured: boolean
+          is_published: boolean
+          learning_objectives: Json
+          modules: Json
+          prerequisites: Json
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          audience?: string[]
+          category: string
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          difficulty?: string
+          estimated_hours?: number | null
+          id?: string
+          is_featured?: boolean
+          is_published?: boolean
+          learning_objectives?: Json
+          modules?: Json
+          prerequisites?: Json
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          audience?: string[]
+          category?: string
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          difficulty?: string
+          estimated_hours?: number | null
+          id?: string
+          is_featured?: boolean
+          is_published?: boolean
+          learning_objectives?: Json
+          modules?: Json
+          prerequisites?: Json
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      upskill_enrollments: {
+        Row: {
+          completed_modules: Json
+          course_id: string
+          enrolled_at: string
+          id: string
+          progress: number
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          completed_modules?: Json
+          course_id: string
+          enrolled_at?: string
+          id?: string
+          progress?: number
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          completed_modules?: Json
+          course_id?: string
+          enrolled_at?: string
+          id?: string
+          progress?: number
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "upskill_enrollments_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "upskill_courses"
             referencedColumns: ["id"]
           },
         ]
