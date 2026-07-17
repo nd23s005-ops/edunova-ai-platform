@@ -556,25 +556,11 @@ const features: Feature[] = [
     visual: <LearningPathCard />,
   },
   {
-    slug: "ai-tutor",
-    eyebrow: "AI Tutor",
-    title: "24/7 Personal Tutor",
-    body: "Students can ask questions naturally and receive explanations, examples, quizzes, summaries, and coding help — anytime they need it.",
-    visual: <AITutorCard />,
-  },
-  {
     slug: "progress-analytics",
     eyebrow: "Insights",
     title: "Learning Analytics",
     body: "Track progress with intelligent dashboards showing study time, concept mastery, quiz performance, strengths, and improvement trends.",
     visual: <AnalyticsCard />,
-  },
-  {
-    slug: "certificates",
-    eyebrow: "Achievement",
-    title: "Certificates & Milestones",
-    body: "Automatically generate certificates, badges, achievements, and learning milestones after every course completion — celebrating each step forward.",
-    visual: <CertificateCard />,
   },
 ];
 
