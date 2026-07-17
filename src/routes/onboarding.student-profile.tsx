@@ -34,11 +34,6 @@ const BOARDS = [
   { value: "other", label: "Other" },
 ] as const;
 
-const LANGS = [
-  { value: "english", label: "English" },
-  { value: "tamil", label: "Tamil" },
-] as const;
-
 const CLASSES = Array.from({ length: 12 }, (_, i) => i + 1);
 
 function StudentProfileOnboarding() {
@@ -46,7 +41,6 @@ function StudentProfileOnboarding() {
   const qc = useQueryClient();
   const [currentClass, setCurrentClass] = useState<number | null>(null);
   const [board, setBoard] = useState<string>("");
-  const [language, setLanguage] = useState<string>("english");
   const [school, setSchool] = useState("");
 
   const mutation = useMutation({
@@ -59,7 +53,7 @@ function StudentProfileOnboarding() {
         user_id: userData.user.id,
         current_class: currentClass,
         board: board as (typeof BOARDS)[number]["value"],
-        language: language as (typeof LANGS)[number]["value"],
+        language: "english" as const,
         school_name: school.trim() || null,
         onboarded: true,
       };
