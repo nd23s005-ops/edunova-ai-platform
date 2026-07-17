@@ -8,7 +8,7 @@ export const Route = createFileRoute("/_marketing")({
 
 function MarketingLayout() {
   return (
-    <div className="dark flex min-h-dvh flex-col bg-background">
+    <div className="flex min-h-dvh flex-col bg-background text-foreground">
       <Navbar />
       <main className="flex-1">
         <Outlet />
