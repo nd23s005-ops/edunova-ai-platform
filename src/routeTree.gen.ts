@@ -17,6 +17,8 @@ import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
+import { Route as OnboardingStudentProfileRouteImport } from './routes/onboarding.student-profile'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
 import { Route as MarketingExploreRouteImport } from './routes/_marketing.explore'
 import { Route as MarketingCommunityRouteImport } from './routes/_marketing.community'
@@ -39,6 +41,7 @@ import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_da
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
+import { Route as DashboardDashboardStudentAiChatRouteImport } from './routes/_dashboard.dashboard.student.ai-chat'
 
 const UnauthorizedRoute = UnauthorizedRouteImport.update({
   id: '/unauthorized',
@@ -76,6 +79,17 @@ const MarketingIndexRoute = MarketingIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => MarketingRoute,
+} as any)
+const OnboardingStudentProfileRoute =
+  OnboardingStudentProfileRouteImport.update({
+    id: '/student-profile',
+    path: '/student-profile',
+    getParentRoute: () => OnboardingRoute,
+  } as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const MarketingResourcesRoute = MarketingResourcesRouteImport.update({
   id: '/resources',
@@ -192,11 +206,17 @@ const DashboardDashboardSplatRoute = DashboardDashboardSplatRouteImport.update({
   path: '/dashboard/$',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardDashboardStudentAiChatRoute =
+  DashboardDashboardStudentAiChatRouteImport.update({
+    id: '/ai-chat',
+    path: '/ai-chat',
+    getParentRoute: () => DashboardDashboardStudentRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
-  '/onboarding': typeof OnboardingRoute
+  '/onboarding': typeof OnboardingRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/account-created': typeof AuthAccountCreatedRoute
@@ -212,20 +232,23 @@ export interface FileRoutesByFullPath {
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRoute
+  '/api/chat': typeof ApiChatRoute
+  '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
-  '/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
+  '/dashboard/student/ai-chat': typeof DashboardDashboardStudentAiChatRoute
 }
 export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
-  '/onboarding': typeof OnboardingRoute
+  '/onboarding': typeof OnboardingRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/account-created': typeof AuthAccountCreatedRoute
@@ -241,15 +264,18 @@ export interface FileRoutesByTo {
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRoute
+  '/api/chat': typeof ApiChatRoute
+  '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
-  '/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
+  '/dashboard/student/ai-chat': typeof DashboardDashboardStudentAiChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -257,7 +283,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
-  '/onboarding': typeof OnboardingRoute
+  '/onboarding': typeof OnboardingRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/_auth/account-created': typeof AuthAccountCreatedRoute
@@ -273,16 +299,19 @@ export interface FileRoutesById {
   '/_marketing/community': typeof MarketingCommunityRoute
   '/_marketing/explore': typeof MarketingExploreRoute
   '/_marketing/resources': typeof MarketingResourcesRoute
+  '/api/chat': typeof ApiChatRoute
+  '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/_marketing/': typeof MarketingIndexRoute
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
   '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
-  '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/_dashboard/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/_marketing/features/$slug': typeof MarketingFeaturesSlugRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
+  '/_dashboard/dashboard/student/ai-chat': typeof DashboardDashboardStudentAiChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -305,6 +334,8 @@ export interface FileRouteTypes {
     | '/community'
     | '/explore'
     | '/resources'
+    | '/api/chat'
+    | '/onboarding/student-profile'
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/organization'
@@ -314,6 +345,7 @@ export interface FileRouteTypes {
     | '/dashboard/teacher'
     | '/features/$slug'
     | '/dashboard/'
+    | '/dashboard/student/ai-chat'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/$'
@@ -334,6 +366,8 @@ export interface FileRouteTypes {
     | '/community'
     | '/explore'
     | '/resources'
+    | '/api/chat'
+    | '/onboarding/student-profile'
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/organization'
@@ -343,6 +377,7 @@ export interface FileRouteTypes {
     | '/dashboard/teacher'
     | '/features/$slug'
     | '/dashboard'
+    | '/dashboard/student/ai-chat'
   id:
     | '__root__'
     | '/$'
@@ -365,6 +400,8 @@ export interface FileRouteTypes {
     | '/_marketing/community'
     | '/_marketing/explore'
     | '/_marketing/resources'
+    | '/api/chat'
+    | '/onboarding/student-profile'
     | '/_marketing/'
     | '/_dashboard/dashboard/$'
     | '/_dashboard/dashboard/admin'
@@ -375,6 +412,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/teacher'
     | '/_marketing/features/$slug'
     | '/_dashboard/dashboard/'
+    | '/_dashboard/dashboard/student/ai-chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -382,9 +420,10 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
-  OnboardingRoute: typeof OnboardingRoute
+  OnboardingRoute: typeof OnboardingRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UnauthorizedRoute: typeof UnauthorizedRoute
+  ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -444,6 +483,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof MarketingIndexRouteImport
       parentRoute: typeof MarketingRoute
+    }
+    '/onboarding/student-profile': {
+      id: '/onboarding/student-profile'
+      path: '/student-profile'
+      fullPath: '/onboarding/student-profile'
+      preLoaderRoute: typeof OnboardingStudentProfileRouteImport
+      parentRoute: typeof OnboardingRoute
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_marketing/resources': {
       id: '/_marketing/resources'
@@ -599,6 +652,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardSplatRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/student/ai-chat': {
+      id: '/_dashboard/dashboard/student/ai-chat'
+      path: '/ai-chat'
+      fullPath: '/dashboard/student/ai-chat'
+      preLoaderRoute: typeof DashboardDashboardStudentAiChatRouteImport
+      parentRoute: typeof DashboardDashboardStudentRoute
+    }
   }
 }
 
@@ -628,13 +688,27 @@ const AuthRouteChildren: AuthRouteChildren = {
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
+interface DashboardDashboardStudentRouteChildren {
+  DashboardDashboardStudentAiChatRoute: typeof DashboardDashboardStudentAiChatRoute
+}
+
+const DashboardDashboardStudentRouteChildren: DashboardDashboardStudentRouteChildren =
+  {
+    DashboardDashboardStudentAiChatRoute: DashboardDashboardStudentAiChatRoute,
+  }
+
+const DashboardDashboardStudentRouteWithChildren =
+  DashboardDashboardStudentRoute._addFileChildren(
+    DashboardDashboardStudentRouteChildren,
+  )
+
 interface DashboardRouteChildren {
   DashboardDashboardSplatRoute: typeof DashboardDashboardSplatRoute
   DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRoute
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
   DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
   DashboardDashboardProfileRoute: typeof DashboardDashboardProfileRoute
-  DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRoute
+  DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRouteWithChildren
   DashboardDashboardTeacherRoute: typeof DashboardDashboardTeacherRoute
   DashboardDashboardIndexRoute: typeof DashboardDashboardIndexRoute
 }
@@ -645,7 +719,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
   DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,
   DashboardDashboardProfileRoute: DashboardDashboardProfileRoute,
-  DashboardDashboardStudentRoute: DashboardDashboardStudentRoute,
+  DashboardDashboardStudentRoute: DashboardDashboardStudentRouteWithChildren,
   DashboardDashboardTeacherRoute: DashboardDashboardTeacherRoute,
   DashboardDashboardIndexRoute: DashboardDashboardIndexRoute,
 }
@@ -676,14 +750,27 @@ const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
   MarketingRouteChildren,
 )
 
+interface OnboardingRouteChildren {
+  OnboardingStudentProfileRoute: typeof OnboardingStudentProfileRoute
+}
+
+const OnboardingRouteChildren: OnboardingRouteChildren = {
+  OnboardingStudentProfileRoute: OnboardingStudentProfileRoute,
+}
+
+const OnboardingRouteWithChildren = OnboardingRoute._addFileChildren(
+  OnboardingRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   AuthRoute: AuthRouteWithChildren,
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
-  OnboardingRoute: OnboardingRoute,
+  OnboardingRoute: OnboardingRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   UnauthorizedRoute: UnauthorizedRoute,
+  ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
