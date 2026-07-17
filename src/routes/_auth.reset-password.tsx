@@ -86,9 +86,8 @@ function ResetPasswordPage() {
       <form className="mt-8 space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
         <div>
           <Label htmlFor="password">New password</Label>
-          <Input
+          <PasswordInput
             id="password"
-            type="password"
             autoComplete="new-password"
             className="mt-1.5"
             disabled={!ready}
@@ -101,9 +100,8 @@ function ResetPasswordPage() {
         </div>
         <div>
           <Label htmlFor="confirmPassword">Confirm new password</Label>
-          <Input
+          <PasswordInput
             id="confirmPassword"
-            type="password"
             autoComplete="new-password"
             className="mt-1.5"
             disabled={!ready}
