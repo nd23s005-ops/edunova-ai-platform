@@ -89,14 +89,17 @@ const ORG_NAV: NavItem[] = [
   AI_ASSISTANT,
 ];
 
+// Admin sidebar. AI Assistant is intentionally excluded — admin dashboard has no chatbot.
+// Settings is Super Admin only; filtered at render time via useAdminAccess.
 const ADMIN_NAV: NavItem[] = [
   { to: "/dashboard/admin", label: "My workspace", icon: Shield },
   { to: "/dashboard/admin/users", label: "User management", icon: Users },
   { to: "/dashboard/admin/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", icon: FileText },
   { to: "/dashboard/admin/settings", label: "Settings", icon: Settings },
-  AI_ASSISTANT,
 ];
+const ADMIN_SUPER_ONLY = new Set<string>(["/dashboard/admin/settings"]);
+
 
 const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/professional", label: "My workspace", icon: GraduationCap },
