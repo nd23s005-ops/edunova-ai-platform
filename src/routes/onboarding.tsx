@@ -125,6 +125,7 @@ function saveSaved(v: Saved) {
 // ---------------------------------------------------------------- component
 function OnboardingPage() {
   const navigate = useNavigate();
+  const { mode: entryMode } = Route.useSearch();
   const [step, setStep] = useState(1);
   const [role, setRole] = useState<AppRole | null>(null);
   const [language, setLanguage] = useState<string | null>(null);
