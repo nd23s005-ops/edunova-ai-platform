@@ -200,12 +200,13 @@ export function Navbar() {
           ) : (
             <>
               <Link
-                to="/login"
+                to="/onboarding"
+                search={{ mode: "login" } as never}
                 className="text-sm font-medium text-[oklch(0.35_0.02_240)] transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)]"
               >
                 Login
               </Link>
-              <CTAButton to="/register">Create Account</CTAButton>
+              <CTAButton to="/onboarding" search={{ mode: "register" }}>Create Account</CTAButton>
             </>
           )}
         </div>
