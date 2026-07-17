@@ -60,6 +60,7 @@ import { Route as MarketingResourcesReadAiInterviewQuestionsRouteImport } from '
 import { Route as MarketingResourcesReadAiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ai-complete-tutorial'
 import { Route as MarketingResourcesReadAiCheatSheetRouteImport } from './routes/_marketing.resources.read.ai-cheat-sheet'
 import { Route as MarketingResourcesReadAiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ai-beginner-guide'
+import { Route as MarketingResourcesReadAiAnswerKeyRouteImport } from './routes/_marketing.resources.read.ai-answer-key'
 import { Route as DashboardDashboardUpskillingCourseIdRouteImport } from './routes/_dashboard.dashboard.upskilling.$courseId'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
 import { Route as DashboardDashboardStudentDailyQuizRouteImport } from './routes/_dashboard.dashboard.student.daily-quiz'
@@ -347,6 +348,12 @@ const MarketingResourcesReadAiBeginnerGuideRoute =
     path: '/read/ai-beginner-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAiAnswerKeyRoute =
+  MarketingResourcesReadAiAnswerKeyRouteImport.update({
+    id: '/read/ai-answer-key',
+    path: '/read/ai-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const DashboardDashboardUpskillingCourseIdRoute =
   DashboardDashboardUpskillingCourseIdRouteImport.update({
     id: '/dashboard/upskilling/$courseId',
@@ -473,6 +480,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/resources/read/ai-answer-key': typeof MarketingResourcesReadAiAnswerKeyRoute
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
@@ -535,6 +543,7 @@ export interface FileRoutesByTo {
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/resources/read/ai-answer-key': typeof MarketingResourcesReadAiAnswerKeyRoute
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
@@ -602,6 +611,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/_dashboard/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/_marketing/resources/read/ai-answer-key': typeof MarketingResourcesReadAiAnswerKeyRoute
   '/_marketing/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/_marketing/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/_marketing/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
@@ -667,6 +677,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
+    | '/resources/read/ai-answer-key'
     | '/resources/read/ai-beginner-guide'
     | '/resources/read/ai-cheat-sheet'
     | '/resources/read/ai-complete-tutorial'
@@ -729,6 +740,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
+    | '/resources/read/ai-answer-key'
     | '/resources/read/ai-beginner-guide'
     | '/resources/read/ai-cheat-sheet'
     | '/resources/read/ai-complete-tutorial'
@@ -795,6 +807,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student/daily-quiz'
     | '/_dashboard/dashboard/student/my-courses'
     | '/_dashboard/dashboard/upskilling/$courseId'
+    | '/_marketing/resources/read/ai-answer-key'
     | '/_marketing/resources/read/ai-beginner-guide'
     | '/_marketing/resources/read/ai-cheat-sheet'
     | '/_marketing/resources/read/ai-complete-tutorial'
@@ -1187,6 +1200,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAiBeginnerGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ai-answer-key': {
+      id: '/_marketing/resources/read/ai-answer-key'
+      path: '/read/ai-answer-key'
+      fullPath: '/resources/read/ai-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadAiAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_dashboard/dashboard/upskilling/$courseId': {
       id: '/_dashboard/dashboard/upskilling/$courseId'
       path: '/dashboard/upskilling/$courseId'
@@ -1414,6 +1434,7 @@ const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
 interface MarketingResourcesRouteChildren {
   MarketingResourcesCourseSlugRoute: typeof MarketingResourcesCourseSlugRoute
   MarketingResourcesIndexRoute: typeof MarketingResourcesIndexRoute
+  MarketingResourcesReadAiAnswerKeyRoute: typeof MarketingResourcesReadAiAnswerKeyRoute
   MarketingResourcesReadAiBeginnerGuideRoute: typeof MarketingResourcesReadAiBeginnerGuideRoute
   MarketingResourcesReadAiCheatSheetRoute: typeof MarketingResourcesReadAiCheatSheetRoute
   MarketingResourcesReadAiCompleteTutorialRoute: typeof MarketingResourcesReadAiCompleteTutorialRoute
@@ -1427,6 +1448,8 @@ interface MarketingResourcesRouteChildren {
 const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesCourseSlugRoute: MarketingResourcesCourseSlugRoute,
   MarketingResourcesIndexRoute: MarketingResourcesIndexRoute,
+  MarketingResourcesReadAiAnswerKeyRoute:
+    MarketingResourcesReadAiAnswerKeyRoute,
   MarketingResourcesReadAiBeginnerGuideRoute:
     MarketingResourcesReadAiBeginnerGuideRoute,
   MarketingResourcesReadAiCheatSheetRoute:
