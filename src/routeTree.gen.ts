@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MarketingRouteImport } from './routes/_marketing'
+import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
 import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
 import { Route as MarketingPricingRouteImport } from './routes/_marketing.pricing'
@@ -17,9 +18,16 @@ import { Route as MarketingCoursesRouteImport } from './routes/_marketing.course
 import { Route as MarketingContactRouteImport } from './routes/_marketing.contact'
 import { Route as MarketingAiTutorRouteImport } from './routes/_marketing.ai-tutor'
 import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
+import { Route as AuthRegisterRouteImport } from './routes/_auth.register'
+import { Route as AuthLoginRouteImport } from './routes/_auth.login'
+import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-password'
 
 const MarketingRoute = MarketingRouteImport.update({
   id: '/_marketing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/_auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarketingIndexRoute = MarketingIndexRouteImport.update({
@@ -57,9 +65,27 @@ const MarketingAboutRoute = MarketingAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => MarketingRoute,
 } as any)
+const AuthRegisterRoute = AuthRegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => AuthRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof MarketingIndexRoute
+  '/forgot-password': typeof AuthForgotPasswordRoute
+  '/login': typeof AuthLoginRoute
+  '/register': typeof AuthRegisterRoute
   '/about': typeof MarketingAboutRoute
   '/ai-tutor': typeof MarketingAiTutorRoute
   '/contact': typeof MarketingContactRoute
@@ -68,17 +94,24 @@ export interface FileRoutesByFullPath {
   '/resources': typeof MarketingResourcesRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof MarketingIndexRoute
+  '/forgot-password': typeof AuthForgotPasswordRoute
+  '/login': typeof AuthLoginRoute
+  '/register': typeof AuthRegisterRoute
   '/about': typeof MarketingAboutRoute
   '/ai-tutor': typeof MarketingAiTutorRoute
   '/contact': typeof MarketingContactRoute
   '/courses': typeof MarketingCoursesRoute
   '/pricing': typeof MarketingPricingRoute
   '/resources': typeof MarketingResourcesRoute
-  '/': typeof MarketingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/_auth': typeof AuthRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
+  '/_auth/forgot-password': typeof AuthForgotPasswordRoute
+  '/_auth/login': typeof AuthLoginRoute
+  '/_auth/register': typeof AuthRegisterRoute
   '/_marketing/about': typeof MarketingAboutRoute
   '/_marketing/ai-tutor': typeof MarketingAiTutorRoute
   '/_marketing/contact': typeof MarketingContactRoute
@@ -91,6 +124,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
     | '/about'
     | '/ai-tutor'
     | '/contact'
@@ -99,16 +135,23 @@ export interface FileRouteTypes {
     | '/resources'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
     | '/about'
     | '/ai-tutor'
     | '/contact'
     | '/courses'
     | '/pricing'
     | '/resources'
-    | '/'
   id:
     | '__root__'
+    | '/_auth'
     | '/_marketing'
+    | '/_auth/forgot-password'
+    | '/_auth/login'
+    | '/_auth/register'
     | '/_marketing/about'
     | '/_marketing/ai-tutor'
     | '/_marketing/contact'
@@ -119,6 +162,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  AuthRoute: typeof AuthRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
 }
 
@@ -129,6 +173,13 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof MarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth': {
+      id: '/_auth'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_marketing/': {
@@ -180,8 +231,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingAboutRouteImport
       parentRoute: typeof MarketingRoute
     }
+    '/_auth/register': {
+      id: '/_auth/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof AuthRegisterRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/login': {
+      id: '/_auth/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/forgot-password': {
+      id: '/_auth/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof AuthForgotPasswordRouteImport
+      parentRoute: typeof AuthRoute
+    }
   }
 }
+
+interface AuthRouteChildren {
+  AuthForgotPasswordRoute: typeof AuthForgotPasswordRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthRegisterRoute: typeof AuthRegisterRoute
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthForgotPasswordRoute: AuthForgotPasswordRoute,
+  AuthLoginRoute: AuthLoginRoute,
+  AuthRegisterRoute: AuthRegisterRoute,
+}
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 interface MarketingRouteChildren {
   MarketingAboutRoute: typeof MarketingAboutRoute
@@ -208,6 +294,7 @@ const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
 )
 
 const rootRouteChildren: RootRouteChildren = {
+  AuthRoute: AuthRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
 }
 export const routeTree = rootRouteImport
