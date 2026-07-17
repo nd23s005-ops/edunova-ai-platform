@@ -201,7 +201,7 @@ function ProfilePage() {
             </div>
             <div>
               <Label htmlFor="confirmPassword">Confirm new password</Label>
-              <Input id="confirmPassword" type="password" className="mt-1.5" {...passwordForm.register("confirmPassword")} />
+              <PasswordInput id="confirmPassword" className="mt-1.5" autoComplete="new-password" {...passwordForm.register("confirmPassword")} />
               {passwordForm.formState.errors.confirmPassword && (
                 <p className="mt-1 text-xs text-destructive">{passwordForm.formState.errors.confirmPassword.message}</p>
               )}
