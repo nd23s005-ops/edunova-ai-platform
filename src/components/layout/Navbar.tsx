@@ -268,18 +268,18 @@ export function Navbar() {
                 {email ? (
                   <>
                     <Link
-                      to="/dashboard"
+                      to={dashboardHref}
                       onClick={() => setOpen(false)}
-                      className="rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-center text-sm font-semibold text-[oklch(0.18_0.03_240)]"
+                      className="col-span-2 inline-flex items-center justify-center gap-2 rounded-[14px] bg-gradient-to-br from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] px-4 py-2.5 text-sm font-semibold text-white"
                     >
-                      Dashboard
+                      <LayoutDashboard className="h-4 w-4" /> Dashboard
                     </Link>
                     <button
                       onClick={() => {
                         setOpen(false);
                         signOut();
                       }}
-                      className="rounded-[14px] bg-gradient-to-br from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] px-4 py-2.5 text-sm font-semibold text-white"
+                      className="col-span-2 rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-sm font-semibold text-[oklch(0.18_0.03_240)]"
                     >
                       Sign out
                     </button>
@@ -287,17 +287,18 @@ export function Navbar() {
                 ) : (
                   <>
                     <Link
-                      to="/onboarding"
+                      to="/login"
                       onClick={() => setOpen(false)}
                       className="rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-center text-sm font-semibold text-[oklch(0.18_0.03_240)]"
                     >
                       Login
                     </Link>
-                    <CTAButton to="/onboarding" onClick={() => setOpen(false)}>
-                      Get Started
+                    <CTAButton to="/register" onClick={() => setOpen(false)}>
+                      Create Account
                     </CTAButton>
                   </>
                 )}
+
               </motion.div>
             </motion.nav>
           </motion.div>
