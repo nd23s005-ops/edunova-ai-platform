@@ -94,6 +94,7 @@ const ORG_NAV: NavItem[] = [
 const ADMIN_NAV: NavItem[] = [
   { to: "/dashboard/admin", label: "My workspace", icon: Shield },
   { to: "/dashboard/admin/users", label: "User management", icon: Users },
+  { to: "/dashboard/admin/support", label: "Support queue", icon: MessageSquare },
   { to: "/dashboard/admin/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", icon: FileText },
   { to: "/dashboard/admin/settings", label: "Settings", icon: Settings },
