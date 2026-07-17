@@ -319,6 +319,9 @@ const READER_ROUTES: Record<string, string> = {
   "artificial-intelligence--sample-exercises": "/resources/read/ai-sample-exercises",
   "artificial-intelligence--project-guide": "/resources/read/ai-project-guide",
   "artificial-intelligence--project-case-study": "/resources/read/ai-project-case-study",
+  "artificial-intelligence--real-world-case-study": "/resources/read/ai-real-world-case-study",
+  "artificial-intelligence--best-practices": "/resources/read/ai-best-practices",
+  "artificial-intelligence--common-mistakes": "/resources/read/ai-common-mistakes",
 };
 
 export function getResourceReaderPath(id: string): string | null {
