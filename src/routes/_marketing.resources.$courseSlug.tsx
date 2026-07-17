@@ -34,10 +34,12 @@ import {
   getCourseBySlug,
   getCourseImage,
   getRelatedCourses,
+  getResourceReaderPath,
   RESOURCE_KINDS,
   type CourseResource,
 } from "@/lib/resources/catalog";
 import { toast } from "sonner";
+
 
 export const Route = createFileRoute("/_marketing/resources/$courseSlug")({
   loader: ({ params }) => {
