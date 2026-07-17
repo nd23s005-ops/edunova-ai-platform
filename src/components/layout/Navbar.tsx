@@ -292,13 +292,14 @@ export function Navbar() {
                 ) : (
                   <>
                     <Link
-                      to="/login"
+                      to="/onboarding"
+                      search={{ mode: "login" } as never}
                       onClick={() => setOpen(false)}
                       className="rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-center text-sm font-semibold text-[oklch(0.18_0.03_240)]"
                     >
                       Login
                     </Link>
-                    <CTAButton to="/register" onClick={() => setOpen(false)}>
+                    <CTAButton to="/onboarding" search={{ mode: "register" }} onClick={() => setOpen(false)}>
                       Create Account
                     </CTAButton>
                   </>
