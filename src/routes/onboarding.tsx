@@ -97,6 +97,11 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
   organization: [
     { key: "employee", label: "Employee Training", desc: "Structured onboarding & growth tracks." },
     { key: "team", label: "Team Learning", desc: "Cohort programs and shared goals." },
+    { key: "analytics", label: "Corporate Analytics", desc: "Skill dashboards and ROI reports." },
+  ],
+  admin: [],
+};
+
 // ---------------------------------------------------------------- storage
 const KEY = "edunova.onboarding";
 type Saved = { role?: AppRole; preference?: string };
