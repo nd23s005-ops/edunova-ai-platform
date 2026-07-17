@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect, useNavigate } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
@@ -14,7 +14,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/brand/Logo";
-import type { AppRole } from "@/lib/auth/roles";
+import { supabase } from "@/integrations/supabase/client";
+import { homeForRole, type AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/onboarding")({
   head: () => ({
