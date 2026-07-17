@@ -38,7 +38,6 @@ function HomePage() {
       <HowItWorks />
       <AIFeatures />
       <FAQ />
-      <FAQ />
       <FinalCTA />
     </div>
   );
