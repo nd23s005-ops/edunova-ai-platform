@@ -81,10 +81,6 @@ const ROLES: RoleCard[] = [
   },
 ];
 
-const LANGUAGES = [
-  { key: "en", label: "English", native: "English", flag: "🇬🇧" },
-  { key: "ta", label: "Tamil", native: "தமிழ்", flag: "🇮🇳" },
-];
 
 const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[]> = {
   student: [
