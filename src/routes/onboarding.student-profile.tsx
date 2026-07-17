@@ -130,26 +130,6 @@ function StudentProfileOnboarding() {
               </div>
             </div>
 
-            <div>
-              <Label className="mb-2 block">Preferred language *</Label>
-              <div className="grid grid-cols-2 gap-2">
-                {LANGS.map((l) => (
-                  <button
-                    key={l.value}
-                    type="button"
-                    onClick={() => setLanguage(l.value)}
-                    className={
-                      "rounded-lg border px-3 py-2 text-sm font-medium transition " +
-                      (language === l.value
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border/60 bg-background hover:border-primary/50")
-                    }
-                  >
-                    {l.label}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             <div>
               <Label htmlFor="school" className="mb-2 block">
