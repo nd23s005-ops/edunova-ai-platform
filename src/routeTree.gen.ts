@@ -10,32 +10,116 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MarketingRouteImport } from './routes/_marketing'
+import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
+import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
+import { Route as MarketingPricingRouteImport } from './routes/_marketing.pricing'
+import { Route as MarketingCoursesRouteImport } from './routes/_marketing.courses'
+import { Route as MarketingContactRouteImport } from './routes/_marketing.contact'
+import { Route as MarketingAiTutorRouteImport } from './routes/_marketing.ai-tutor'
+import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
 
 const MarketingRoute = MarketingRouteImport.update({
   id: '/_marketing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarketingIndexRoute = MarketingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingResourcesRoute = MarketingResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingPricingRoute = MarketingPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCoursesRoute = MarketingCoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingContactRoute = MarketingContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingAiTutorRoute = MarketingAiTutorRouteImport.update({
+  id: '/ai-tutor',
+  path: '/ai-tutor',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingAboutRoute = MarketingAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => MarketingRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof MarketingRoute
+  '/': typeof MarketingIndexRoute
+  '/about': typeof MarketingAboutRoute
+  '/ai-tutor': typeof MarketingAiTutorRoute
+  '/contact': typeof MarketingContactRoute
+  '/courses': typeof MarketingCoursesRoute
+  '/pricing': typeof MarketingPricingRoute
+  '/resources': typeof MarketingResourcesRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof MarketingRoute
+  '/about': typeof MarketingAboutRoute
+  '/ai-tutor': typeof MarketingAiTutorRoute
+  '/contact': typeof MarketingContactRoute
+  '/courses': typeof MarketingCoursesRoute
+  '/pricing': typeof MarketingPricingRoute
+  '/resources': typeof MarketingResourcesRoute
+  '/': typeof MarketingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/_marketing': typeof MarketingRoute
+  '/_marketing': typeof MarketingRouteWithChildren
+  '/_marketing/about': typeof MarketingAboutRoute
+  '/_marketing/ai-tutor': typeof MarketingAiTutorRoute
+  '/_marketing/contact': typeof MarketingContactRoute
+  '/_marketing/courses': typeof MarketingCoursesRoute
+  '/_marketing/pricing': typeof MarketingPricingRoute
+  '/_marketing/resources': typeof MarketingResourcesRoute
+  '/_marketing/': typeof MarketingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/ai-tutor'
+    | '/contact'
+    | '/courses'
+    | '/pricing'
+    | '/resources'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/_marketing'
+  to:
+    | '/about'
+    | '/ai-tutor'
+    | '/contact'
+    | '/courses'
+    | '/pricing'
+    | '/resources'
+    | '/'
+  id:
+    | '__root__'
+    | '/_marketing'
+    | '/_marketing/about'
+    | '/_marketing/ai-tutor'
+    | '/_marketing/contact'
+    | '/_marketing/courses'
+    | '/_marketing/pricing'
+    | '/_marketing/resources'
+    | '/_marketing/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  MarketingRoute: typeof MarketingRoute
+  MarketingRoute: typeof MarketingRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -47,11 +131,84 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_marketing/': {
+      id: '/_marketing/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof MarketingIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/resources': {
+      id: '/_marketing/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof MarketingResourcesRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/pricing': {
+      id: '/_marketing/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof MarketingPricingRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/courses': {
+      id: '/_marketing/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof MarketingCoursesRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/contact': {
+      id: '/_marketing/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof MarketingContactRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/ai-tutor': {
+      id: '/_marketing/ai-tutor'
+      path: '/ai-tutor'
+      fullPath: '/ai-tutor'
+      preLoaderRoute: typeof MarketingAiTutorRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/about': {
+      id: '/_marketing/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof MarketingAboutRouteImport
+      parentRoute: typeof MarketingRoute
+    }
   }
 }
 
+interface MarketingRouteChildren {
+  MarketingAboutRoute: typeof MarketingAboutRoute
+  MarketingAiTutorRoute: typeof MarketingAiTutorRoute
+  MarketingContactRoute: typeof MarketingContactRoute
+  MarketingCoursesRoute: typeof MarketingCoursesRoute
+  MarketingPricingRoute: typeof MarketingPricingRoute
+  MarketingResourcesRoute: typeof MarketingResourcesRoute
+  MarketingIndexRoute: typeof MarketingIndexRoute
+}
+
+const MarketingRouteChildren: MarketingRouteChildren = {
+  MarketingAboutRoute: MarketingAboutRoute,
+  MarketingAiTutorRoute: MarketingAiTutorRoute,
+  MarketingContactRoute: MarketingContactRoute,
+  MarketingCoursesRoute: MarketingCoursesRoute,
+  MarketingPricingRoute: MarketingPricingRoute,
+  MarketingResourcesRoute: MarketingResourcesRoute,
+  MarketingIndexRoute: MarketingIndexRoute,
+}
+
+const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
+  MarketingRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  MarketingRoute: MarketingRoute,
+  MarketingRoute: MarketingRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
