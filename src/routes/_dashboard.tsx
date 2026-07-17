@@ -127,13 +127,14 @@ function DashboardLayout() {
     queryFn: async () => {
       const [{ data: p }, { data: r }] = await Promise.all([
         supabase.from("profiles").select("full_name, avatar_url").eq("id", userId).maybeSingle(),
-        supabase.from("user_roles").select("role").eq("user_id", userId).maybeSingle(),
+        supabase.from("user_roles").select("role, admin_level").eq("user_id", userId).maybeSingle(),
       ]);
       return {
         email,
         fullName: p?.full_name ?? "",
         avatar: p?.avatar_url ?? null,
         role: (r?.role as AppRole | undefined) ?? null,
+        adminLevel: (r as { admin_level?: string | null } | null)?.admin_level ?? null,
       };
     },
     staleTime: 60_000,
