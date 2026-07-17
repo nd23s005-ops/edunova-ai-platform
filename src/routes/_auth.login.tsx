@@ -34,6 +34,14 @@ export const Route = createFileRoute("/_auth/login")({
         ? (search.role as AppRole)
         : undefined,
   }),
+  beforeLoad: ({ search }) => {
+    if (!search.role) {
+      throw redirect({
+        to: "/onboarding",
+        search: { mode: "login", ...(search.redirect ? { redirect: search.redirect } : {}) } as never,
+      });
+    }
+  },
   component: LoginPage,
 });
 
