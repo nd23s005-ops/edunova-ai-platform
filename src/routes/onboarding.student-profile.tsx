@@ -15,10 +15,10 @@ export const Route = createFileRoute("/onboarding/student-profile")({
     if (!data.user) throw redirect({ to: "/login" });
     const { data: existing } = await supabase
       .from("student_profiles")
-      .select("id")
+      .select("id, onboarded")
       .eq("user_id", data.user.id)
       .maybeSingle();
-    if (existing) throw redirect({ to: "/dashboard/student" });
+    if (existing && existing.onboarded !== false) throw redirect({ to: "/dashboard/student" });
     return {};
   },
   component: StudentProfileOnboarding,
@@ -55,19 +55,26 @@ function StudentProfileOnboarding() {
       if (!userData.user) throw new Error("Not signed in");
       if (!currentClass || !board) throw new Error("Please complete required fields");
 
-      const { error } = await supabase.from("student_profiles").insert({
+      const profile = {
         user_id: userData.user.id,
         current_class: currentClass,
         board: board as (typeof BOARDS)[number]["value"],
         language: language as (typeof LANGS)[number]["value"],
         school_name: school.trim() || null,
-      });
+        onboarded: true,
+      };
+      const { error } = await supabase
+        .from("student_profiles")
+        .upsert(profile, { onConflict: "user_id" });
       if (error) throw error;
+      return { userId: userData.user.id, profile };
     },
-    onSuccess: async () => {
+    onSuccess: async ({ userId, profile }) => {
+      qc.setQueryData(["me", "student_profile", "exists", userId], { exists: true });
+      qc.setQueryData(["me", "student_profile", userId], profile);
       await qc.invalidateQueries();
       toast.success("Profile saved. Welcome to EduNova AI!");
-      navigate({ to: "/dashboard/student" });
+      navigate({ to: "/dashboard/student", replace: true });
     },
     onError: (e: Error) => toast.error(e.message),
   });

@@ -16,6 +16,7 @@ export function Logo({ className, showWordmark = true }: LogoProps) {
 
   const { data: role } = useQuery({
     queryKey: ["me", "role-lite"],
+    enabled: inDashboard,
     queryFn: async () => {
       const { data: u } = await supabase.auth.getUser();
       if (!u.user) return null;
@@ -26,7 +27,8 @@ export function Logo({ className, showWordmark = true }: LogoProps) {
         .maybeSingle();
       return (r?.role as AppRole | undefined) ?? null;
     },
-    staleTime: 60_000,
+    staleTime: 0,
+    refetchOnMount: "always",
   });
 
   const target = inDashboard ? homeForRole(role ?? undefined) : "/";

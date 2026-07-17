@@ -53,7 +53,7 @@ export const Route = createFileRoute("/_dashboard")({
         search: { redirect: location.href },
       });
     }
-    return { userId: data.user.id };
+    return { userId: data.user.id, email: data.user.email ?? "" };
   },
   component: DashboardLayout,
 });
@@ -113,22 +113,21 @@ const NAV_BY_ROLE: Record<AppRole, NavItem[]> = {
 
 
 function DashboardLayout() {
+  const { userId, email } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const { data: profile } = useQuery({
-    queryKey: ["me", "profile"],
+    queryKey: ["me", "profile", userId],
     queryFn: async () => {
-      const { data: userData } = await supabase.auth.getUser();
-      if (!userData.user) return null;
       const [{ data: p }, { data: r }] = await Promise.all([
-        supabase.from("profiles").select("full_name, avatar_url").eq("id", userData.user.id).maybeSingle(),
-        supabase.from("user_roles").select("role").eq("user_id", userData.user.id).maybeSingle(),
+        supabase.from("profiles").select("full_name, avatar_url").eq("id", userId).maybeSingle(),
+        supabase.from("user_roles").select("role").eq("user_id", userId).maybeSingle(),
       ]);
       return {
-        email: userData.user.email ?? "",
+        email,
         fullName: p?.full_name ?? "",
         avatar: p?.avatar_url ?? null,
         role: (r?.role as AppRole | undefined) ?? null,
@@ -139,38 +138,44 @@ function DashboardLayout() {
 
   const role = profile?.role ?? null;
 
-  // Student onboarding gate — redirect students without a student_profile to setup.
-  const { data: studentProfileStatus } = useQuery({
-    queryKey: ["me", "student_profile", "exists"],
+  // Student onboarding gate — use a fresh, user-scoped profile check before redirecting.
+  const {
+    data: studentProfileStatus,
+    isSuccess: studentProfileLoaded,
+    isFetching: studentProfileFetching,
+  } = useQuery({
+    queryKey: ["me", "student_profile", "exists", userId],
     enabled: role === "student",
     queryFn: async () => {
-      const { data: u } = await supabase.auth.getUser();
-      if (!u.user) return { exists: false };
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from("student_profiles")
-        .select("id")
-        .eq("user_id", u.user.id)
+        .select("id, onboarded")
+        .eq("user_id", userId)
         .maybeSingle();
-      return { exists: !!data };
+      if (error) throw error;
+      return { exists: !!data && data.onboarded !== false };
     },
-    staleTime: 60_000,
+    staleTime: 0,
+    refetchOnMount: "always",
   });
 
   useEffect(() => {
     if (
       role === "student" &&
+      studentProfileLoaded &&
+      !studentProfileFetching &&
       studentProfileStatus &&
       !studentProfileStatus.exists &&
       !pathname.startsWith("/onboarding")
     ) {
       navigate({ to: "/onboarding/student-profile", replace: true });
     }
-  }, [role, studentProfileStatus, pathname, navigate]);
+  }, [role, studentProfileLoaded, studentProfileFetching, studentProfileStatus, pathname, navigate]);
 
   const roleNav = role ? NAV_BY_ROLE[role] : [];
   const initials = (profile?.fullName || profile?.email || "N L")
     .split(/\s+/)
-    .map((s) => s[0])
+    .map((s: string) => s[0])
     .filter(Boolean)
     .slice(0, 2)
     .join("")

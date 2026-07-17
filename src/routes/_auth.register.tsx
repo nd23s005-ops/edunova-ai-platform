@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -8,7 +9,6 @@ import { ArrowLeft, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
@@ -66,8 +66,11 @@ function calcAge(dob: string): number | null {
 function RegisterPage() {
   const navigate = useNavigate();
   const router = useRouter();
+  const queryClient = useQueryClient();
   const { role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
 
   const initialRole: RegisterInput["role"] =
     selectedRole && selectedRole !== "admin" ? selectedRole : "student";
@@ -97,9 +100,17 @@ function RegisterPage() {
 
   const password = form.watch("password");
   const dob = form.watch("dob");
-  const acceptTerms = form.watch("acceptTerms") as unknown as boolean;
-  const acceptPrivacy = form.watch("acceptPrivacy") as unknown as boolean;
   const age = useMemo(() => calcAge(dob || ""), [dob]);
+
+  const setConsent = (field: "acceptTerms" | "acceptPrivacy", checked: boolean) => {
+    if (field === "acceptTerms") setTermsAccepted(checked);
+    if (field === "acceptPrivacy") setPrivacyAccepted(checked);
+    form.setValue(field, checked as unknown as true, {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
+    });
+  };
 
   const onSubmit = async (values: RegisterInput) => {
     setSubmitting(true);
@@ -146,8 +157,10 @@ function RegisterPage() {
     }
 
     toast.success("Welcome to EduNova AI!");
+    await queryClient.cancelQueries();
+    queryClient.clear();
     await router.invalidate();
-    navigate({ to: homeForRole(values.role as AppRole) });
+    navigate({ to: homeForRole(values.role as AppRole), replace: true });
   };
 
   return (
@@ -336,14 +349,13 @@ function RegisterPage() {
         </div>
 
         <div className="space-y-2 rounded-lg border border-border/60 bg-muted/20 p-3">
-          <label className="flex items-start gap-2 text-xs text-muted-foreground">
-            <Checkbox
+          <label htmlFor="acceptTerms" className="flex items-start gap-2 text-xs text-muted-foreground">
+            <input
               id="acceptTerms"
-              className="mt-0.5"
-              checked={acceptTerms}
-              onCheckedChange={(v) =>
-                form.setValue("acceptTerms", (v === true) as unknown as true, { shouldValidate: true })
-              }
+              type="checkbox"
+              className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded-sm border border-primary accent-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              checked={termsAccepted}
+              onChange={(event) => setConsent("acceptTerms", event.target.checked)}
             />
             <span>
               I agree to the{" "}
@@ -356,14 +368,13 @@ function RegisterPage() {
           {form.formState.errors.acceptTerms && (
             <p className="text-xs text-destructive">{form.formState.errors.acceptTerms.message}</p>
           )}
-          <label className="flex items-start gap-2 text-xs text-muted-foreground">
-            <Checkbox
+          <label htmlFor="acceptPrivacy" className="flex items-start gap-2 text-xs text-muted-foreground">
+            <input
               id="acceptPrivacy"
-              className="mt-0.5"
-              checked={acceptPrivacy}
-              onCheckedChange={(v) =>
-                form.setValue("acceptPrivacy", (v === true) as unknown as true, { shouldValidate: true })
-              }
+              type="checkbox"
+              className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded-sm border border-primary accent-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              checked={privacyAccepted}
+              onChange={(event) => setConsent("acceptPrivacy", event.target.checked)}
             />
             <span>
               I agree to the{" "}
@@ -382,7 +393,7 @@ function RegisterPage() {
           type="submit"
           className="w-full shadow-elegant"
           size="lg"
-          disabled={submitting || !acceptTerms || !acceptPrivacy}
+          disabled={submitting || !termsAccepted || !privacyAccepted}
         >
           {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />}
           {submitting ? "Creating account…" : "Create account"}
