@@ -61,6 +61,7 @@ import { Route as MarketingResourcesReadAiProjectCaseStudyRouteImport } from './
 import { Route as MarketingResourcesReadAiPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.ai-practice-questions'
 import { Route as MarketingResourcesReadAiPdfNotesRouteImport } from './routes/_marketing.resources.read.ai-pdf-notes'
 import { Route as MarketingResourcesReadAiInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ai-interview-questions'
+import { Route as MarketingResourcesReadAiFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.ai-frequently-asked-questions'
 import { Route as MarketingResourcesReadAiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ai-complete-tutorial'
 import { Route as MarketingResourcesReadAiCommonMistakesRouteImport } from './routes/_marketing.resources.read.ai-common-mistakes'
 import { Route as MarketingResourcesReadAiCheatSheetRouteImport } from './routes/_marketing.resources.read.ai-cheat-sheet'
@@ -360,6 +361,12 @@ const MarketingResourcesReadAiInterviewQuestionsRoute =
     path: '/read/ai-interview-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAiFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadAiFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/ai-frequently-asked-questions',
+    path: '/read/ai-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiCompleteTutorialRoute =
   MarketingResourcesReadAiCompleteTutorialRouteImport.update({
     id: '/read/ai-complete-tutorial',
@@ -528,6 +535,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/resources/read/ai-common-mistakes': typeof MarketingResourcesReadAiCommonMistakesRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
+  '/resources/read/ai-frequently-asked-questions': typeof MarketingResourcesReadAiFrequentlyAskedQuestionsRoute
   '/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
   '/resources/read/ai-practice-questions': typeof MarketingResourcesReadAiPracticeQuestionsRoute
@@ -597,6 +605,7 @@ export interface FileRoutesByTo {
   '/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/resources/read/ai-common-mistakes': typeof MarketingResourcesReadAiCommonMistakesRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
+  '/resources/read/ai-frequently-asked-questions': typeof MarketingResourcesReadAiFrequentlyAskedQuestionsRoute
   '/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
   '/resources/read/ai-practice-questions': typeof MarketingResourcesReadAiPracticeQuestionsRoute
@@ -671,6 +680,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/_marketing/resources/read/ai-common-mistakes': typeof MarketingResourcesReadAiCommonMistakesRoute
   '/_marketing/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
+  '/_marketing/resources/read/ai-frequently-asked-questions': typeof MarketingResourcesReadAiFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/_marketing/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
   '/_marketing/resources/read/ai-practice-questions': typeof MarketingResourcesReadAiPracticeQuestionsRoute
@@ -743,6 +753,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-cheat-sheet'
     | '/resources/read/ai-common-mistakes'
     | '/resources/read/ai-complete-tutorial'
+    | '/resources/read/ai-frequently-asked-questions'
     | '/resources/read/ai-interview-questions'
     | '/resources/read/ai-pdf-notes'
     | '/resources/read/ai-practice-questions'
@@ -812,6 +823,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-cheat-sheet'
     | '/resources/read/ai-common-mistakes'
     | '/resources/read/ai-complete-tutorial'
+    | '/resources/read/ai-frequently-asked-questions'
     | '/resources/read/ai-interview-questions'
     | '/resources/read/ai-pdf-notes'
     | '/resources/read/ai-practice-questions'
@@ -885,6 +897,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-cheat-sheet'
     | '/_marketing/resources/read/ai-common-mistakes'
     | '/_marketing/resources/read/ai-complete-tutorial'
+    | '/_marketing/resources/read/ai-frequently-asked-questions'
     | '/_marketing/resources/read/ai-interview-questions'
     | '/_marketing/resources/read/ai-pdf-notes'
     | '/_marketing/resources/read/ai-practice-questions'
@@ -1285,6 +1298,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAiInterviewQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ai-frequently-asked-questions': {
+      id: '/_marketing/resources/read/ai-frequently-asked-questions'
+      path: '/read/ai-frequently-asked-questions'
+      fullPath: '/resources/read/ai-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAiFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-complete-tutorial': {
       id: '/_marketing/resources/read/ai-complete-tutorial'
       path: '/read/ai-complete-tutorial'
@@ -1560,6 +1580,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiCheatSheetRoute: typeof MarketingResourcesReadAiCheatSheetRoute
   MarketingResourcesReadAiCommonMistakesRoute: typeof MarketingResourcesReadAiCommonMistakesRoute
   MarketingResourcesReadAiCompleteTutorialRoute: typeof MarketingResourcesReadAiCompleteTutorialRoute
+  MarketingResourcesReadAiFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadAiFrequentlyAskedQuestionsRoute
   MarketingResourcesReadAiInterviewQuestionsRoute: typeof MarketingResourcesReadAiInterviewQuestionsRoute
   MarketingResourcesReadAiPdfNotesRoute: typeof MarketingResourcesReadAiPdfNotesRoute
   MarketingResourcesReadAiPracticeQuestionsRoute: typeof MarketingResourcesReadAiPracticeQuestionsRoute
@@ -1586,6 +1607,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAiCommonMistakesRoute,
   MarketingResourcesReadAiCompleteTutorialRoute:
     MarketingResourcesReadAiCompleteTutorialRoute,
+  MarketingResourcesReadAiFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadAiFrequentlyAskedQuestionsRoute,
   MarketingResourcesReadAiInterviewQuestionsRoute:
     MarketingResourcesReadAiInterviewQuestionsRoute,
   MarketingResourcesReadAiPdfNotesRoute: MarketingResourcesReadAiPdfNotesRoute,
