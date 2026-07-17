@@ -54,6 +54,7 @@ import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
 import { Route as MarketingResourcesReadAiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadAiQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ai-quick-revision-notes'
+import { Route as MarketingResourcesReadAiPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.ai-practice-questions'
 import { Route as MarketingResourcesReadAiPdfNotesRouteImport } from './routes/_marketing.resources.read.ai-pdf-notes'
 import { Route as MarketingResourcesReadAiInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ai-interview-questions'
 import { Route as MarketingResourcesReadAiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ai-complete-tutorial'
@@ -310,6 +311,12 @@ const MarketingResourcesReadAiQuickRevisionNotesRoute =
     path: '/read/ai-quick-revision-notes',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAiPracticeQuestionsRoute =
+  MarketingResourcesReadAiPracticeQuestionsRouteImport.update({
+    id: '/read/ai-practice-questions',
+    path: '/read/ai-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiPdfNotesRoute =
   MarketingResourcesReadAiPdfNotesRouteImport.update({
     id: '/read/ai-pdf-notes',
@@ -471,6 +478,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
+  '/resources/read/ai-practice-questions': typeof MarketingResourcesReadAiPracticeQuestionsRoute
   '/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
@@ -532,6 +540,7 @@ export interface FileRoutesByTo {
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
+  '/resources/read/ai-practice-questions': typeof MarketingResourcesReadAiPracticeQuestionsRoute
   '/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
@@ -598,6 +607,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/_marketing/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/_marketing/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
+  '/_marketing/resources/read/ai-practice-questions': typeof MarketingResourcesReadAiPracticeQuestionsRoute
   '/_marketing/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/_marketing/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
@@ -662,6 +672,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-complete-tutorial'
     | '/resources/read/ai-interview-questions'
     | '/resources/read/ai-pdf-notes'
+    | '/resources/read/ai-practice-questions'
     | '/resources/read/ai-quick-revision-notes'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/dashboard/mock-tests/'
@@ -723,6 +734,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-complete-tutorial'
     | '/resources/read/ai-interview-questions'
     | '/resources/read/ai-pdf-notes'
+    | '/resources/read/ai-practice-questions'
     | '/resources/read/ai-quick-revision-notes'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/dashboard/mock-tests'
@@ -788,6 +800,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-complete-tutorial'
     | '/_marketing/resources/read/ai-interview-questions'
     | '/_marketing/resources/read/ai-pdf-notes'
+    | '/_marketing/resources/read/ai-practice-questions'
     | '/_marketing/resources/read/ai-quick-revision-notes'
     | '/_marketing/resources/read/ai-step-by-step-learning-guide'
     | '/_dashboard/dashboard/mock-tests/'
@@ -1132,6 +1145,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAiQuickRevisionNotesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ai-practice-questions': {
+      id: '/_marketing/resources/read/ai-practice-questions'
+      path: '/read/ai-practice-questions'
+      fullPath: '/resources/read/ai-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAiPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-pdf-notes': {
       id: '/_marketing/resources/read/ai-pdf-notes'
       path: '/read/ai-pdf-notes'
@@ -1399,6 +1419,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiCompleteTutorialRoute: typeof MarketingResourcesReadAiCompleteTutorialRoute
   MarketingResourcesReadAiInterviewQuestionsRoute: typeof MarketingResourcesReadAiInterviewQuestionsRoute
   MarketingResourcesReadAiPdfNotesRoute: typeof MarketingResourcesReadAiPdfNotesRoute
+  MarketingResourcesReadAiPracticeQuestionsRoute: typeof MarketingResourcesReadAiPracticeQuestionsRoute
   MarketingResourcesReadAiQuickRevisionNotesRoute: typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   MarketingResourcesReadAiStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
 }
@@ -1415,6 +1436,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesReadAiInterviewQuestionsRoute:
     MarketingResourcesReadAiInterviewQuestionsRoute,
   MarketingResourcesReadAiPdfNotesRoute: MarketingResourcesReadAiPdfNotesRoute,
+  MarketingResourcesReadAiPracticeQuestionsRoute:
+    MarketingResourcesReadAiPracticeQuestionsRoute,
   MarketingResourcesReadAiQuickRevisionNotesRoute:
     MarketingResourcesReadAiQuickRevisionNotesRoute,
   MarketingResourcesReadAiStepByStepLearningGuideRoute:
