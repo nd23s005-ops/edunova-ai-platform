@@ -52,6 +52,7 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as MarketingResourcesReadAiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ai-beginner-guide'
 import { Route as DashboardDashboardUpskillingCourseIdRouteImport } from './routes/_dashboard.dashboard.upskilling.$courseId'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
 import { Route as DashboardDashboardStudentDailyQuizRouteImport } from './routes/_dashboard.dashboard.student.daily-quiz'
@@ -291,6 +292,12 @@ const DashboardDashboardMockTestsIndexRoute =
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
   } as any)
+const MarketingResourcesReadAiBeginnerGuideRoute =
+  MarketingResourcesReadAiBeginnerGuideRouteImport.update({
+    id: '/read/ai-beginner-guide',
+    path: '/read/ai-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const DashboardDashboardUpskillingCourseIdRoute =
   DashboardDashboardUpskillingCourseIdRouteImport.update({
     id: '/dashboard/upskilling/$courseId',
@@ -417,6 +424,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -471,6 +479,7 @@ export interface FileRoutesByTo {
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -530,6 +539,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/_dashboard/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/_marketing/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -587,6 +597,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
+    | '/resources/read/ai-beginner-guide'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -641,6 +652,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
+    | '/resources/read/ai-beginner-guide'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -699,6 +711,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student/daily-quiz'
     | '/_dashboard/dashboard/student/my-courses'
     | '/_dashboard/dashboard/upskilling/$courseId'
+    | '/_marketing/resources/read/ai-beginner-guide'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/mock-tests/ai/$categoryId'
@@ -1027,6 +1040,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_marketing/resources/read/ai-beginner-guide': {
+      id: '/_marketing/resources/read/ai-beginner-guide'
+      path: '/read/ai-beginner-guide'
+      fullPath: '/resources/read/ai-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAiBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_dashboard/dashboard/upskilling/$courseId': {
       id: '/_dashboard/dashboard/upskilling/$courseId'
       path: '/dashboard/upskilling/$courseId'
@@ -1254,11 +1274,14 @@ const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
 interface MarketingResourcesRouteChildren {
   MarketingResourcesCourseSlugRoute: typeof MarketingResourcesCourseSlugRoute
   MarketingResourcesIndexRoute: typeof MarketingResourcesIndexRoute
+  MarketingResourcesReadAiBeginnerGuideRoute: typeof MarketingResourcesReadAiBeginnerGuideRoute
 }
 
 const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesCourseSlugRoute: MarketingResourcesCourseSlugRoute,
   MarketingResourcesIndexRoute: MarketingResourcesIndexRoute,
+  MarketingResourcesReadAiBeginnerGuideRoute:
+    MarketingResourcesReadAiBeginnerGuideRoute,
 }
 
 const MarketingResourcesRouteWithChildren =
