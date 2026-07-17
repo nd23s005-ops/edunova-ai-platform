@@ -193,7 +193,7 @@ function ProfilePage() {
           <form className="grid gap-4 sm:grid-cols-2" onSubmit={passwordForm.handleSubmit(onChangePassword)}>
             <div>
               <Label htmlFor="newPassword">New password</Label>
-              <Input id="newPassword" type="password" className="mt-1.5" {...passwordForm.register("newPassword")} />
+              <PasswordInput id="newPassword" className="mt-1.5" autoComplete="new-password" {...passwordForm.register("newPassword")} />
               <PasswordStrengthMeter password={passwordForm.watch("newPassword") || ""} />
               {passwordForm.formState.errors.newPassword && (
                 <p className="mt-1 text-xs text-destructive">{passwordForm.formState.errors.newPassword.message}</p>
