@@ -135,7 +135,15 @@ export const Route = createFileRoute("/api/chat")({
         });
 
         const messages = body.messages as UIMessage[];
-        const system = buildSystemPrompt(body.context ?? {});
+        // Force English regardless of any language field on the incoming context.
+        const incomingCtx = body.context ?? {};
+        const normalizedCtx: IncomingContext = {
+          ...incomingCtx,
+          student: incomingCtx.student
+            ? { ...incomingCtx.student, language: ACTIVE_LANGUAGE }
+            : incomingCtx.student,
+        };
+        const system = buildSystemPrompt(normalizedCtx);
 
         const result = streamText({
           model: gateway("google/gemini-3-flash-preview"),
