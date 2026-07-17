@@ -14,6 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_mock_test_attempts: {
+        Row: {
+          ai_feedback: string | null
+          answers: Json
+          category_id: string
+          category_name: string
+          category_scores: Json
+          created_at: string
+          difficulty: string
+          id: string
+          questions: Json
+          score: number
+          strengths: Json
+          submitted_at: string
+          time_spent_seconds: number
+          total: number
+          user_id: string
+          weaknesses: Json
+        }
+        Insert: {
+          ai_feedback?: string | null
+          answers?: Json
+          category_id: string
+          category_name: string
+          category_scores?: Json
+          created_at?: string
+          difficulty?: string
+          id?: string
+          questions: Json
+          score?: number
+          strengths?: Json
+          submitted_at?: string
+          time_spent_seconds?: number
+          total?: number
+          user_id: string
+          weaknesses?: Json
+        }
+        Update: {
+          ai_feedback?: string | null
+          answers?: Json
+          category_id?: string
+          category_name?: string
+          category_scores?: Json
+          created_at?: string
+          difficulty?: string
+          id?: string
+          questions?: Json
+          score?: number
+          strengths?: Json
+          submitted_at?: string
+          time_spent_seconds?: number
+          total?: number
+          user_id?: string
+          weaknesses?: Json
+        }
+        Relationships: []
+      }
       assignment_questions: {
         Row: {
           assignment_id: string
