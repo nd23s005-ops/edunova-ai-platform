@@ -124,6 +124,13 @@ function CourseResourcesPage() {
     <>
       {/* Course hero */}
       <div className={`relative overflow-hidden border-b border-border/60 bg-gradient-to-br ${course.gradient}`}>
+        <img
+          src={getCourseImage(course)}
+          alt=""
+          loading="eager"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div className={`absolute inset-0 bg-gradient-to-br ${course.gradient} opacity-70 mix-blend-multiply`} aria-hidden />
         <div className="absolute inset-0 bg-grid-fade opacity-30" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <Link
