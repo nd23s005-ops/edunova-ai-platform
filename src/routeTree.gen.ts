@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UnauthorizedRouteImport } from './routes/unauthorized'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
@@ -50,9 +52,19 @@ const UnauthorizedRoute = UnauthorizedRouteImport.update({
   path: '/unauthorized',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OnboardingRoute = OnboardingRouteImport.update({
@@ -231,7 +243,9 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
   '/onboarding': typeof OnboardingRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/account-created': typeof AuthAccountCreatedRoute
   '/forgot-password': typeof AuthForgotPasswordRoute
@@ -265,7 +279,9 @@ export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
   '/onboarding': typeof OnboardingRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/account-created': typeof AuthAccountCreatedRoute
   '/forgot-password': typeof AuthForgotPasswordRoute
@@ -302,7 +318,9 @@ export interface FileRoutesById {
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
   '/onboarding': typeof OnboardingRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/_auth/account-created': typeof AuthAccountCreatedRoute
   '/_auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -339,7 +357,9 @@ export interface FileRouteTypes {
     | '/$'
     | '/'
     | '/onboarding'
+    | '/privacy'
     | '/sitemap.xml'
+    | '/terms'
     | '/unauthorized'
     | '/account-created'
     | '/forgot-password'
@@ -373,7 +393,9 @@ export interface FileRouteTypes {
     | '/$'
     | '/'
     | '/onboarding'
+    | '/privacy'
     | '/sitemap.xml'
+    | '/terms'
     | '/unauthorized'
     | '/account-created'
     | '/forgot-password'
@@ -409,7 +431,9 @@ export interface FileRouteTypes {
     | '/_dashboard'
     | '/_marketing'
     | '/onboarding'
+    | '/privacy'
     | '/sitemap.xml'
+    | '/terms'
     | '/unauthorized'
     | '/_auth/account-created'
     | '/_auth/forgot-password'
@@ -447,7 +471,9 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
   OnboardingRoute: typeof OnboardingRouteWithChildren
+  PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
   UnauthorizedRoute: typeof UnauthorizedRoute
   ApiChatRoute: typeof ApiChatRoute
 }
@@ -461,11 +487,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UnauthorizedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/onboarding': {
@@ -813,7 +853,9 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
   OnboardingRoute: OnboardingRouteWithChildren,
+  PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
   UnauthorizedRoute: UnauthorizedRoute,
   ApiChatRoute: ApiChatRoute,
 }
