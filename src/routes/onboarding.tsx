@@ -234,51 +234,9 @@ function OnboardingPage() {
               </motion.section>
             )}
 
-            {step === 2 && (
+            {step === 2 && role && role !== "admin" && (
               <motion.section
                 key="step2"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.35 }}
-              >
-                <StepHeading
-                  eyebrow="Language"
-                  title="Choose your preferred language"
-                  subtitle="Nova will speak your language across lessons, assessments, and mentor conversations."
-                />
-                <div className="mx-auto mt-8 grid max-w-2xl gap-4 sm:grid-cols-2">
-                  {LANGUAGES.map((l) => (
-                    <button
-                      key={l.key}
-                      onClick={() => setLanguage(l.key)}
-                      className={`group relative overflow-hidden rounded-2xl border p-6 text-left transition-all ${
-                        language === l.key
-                          ? "border-[oklch(0.7_0.19_40)]/70 bg-white/[0.06] shadow-[0_0_0_1px_oklch(0.7_0.19_40)/40,0_20px_60px_-20px_oklch(0.7_0.19_40)/40]"
-                          : "border-white/[0.08] bg-white/[0.03] hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.05]"
-                      }`}
-                    >
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl">{l.flag}</span>
-                        <div>
-                          <p className="text-lg font-semibold">{l.label}</p>
-                          <p className="text-sm text-white/50">{l.native}</p>
-                        </div>
-                        {language === l.key && (
-                          <span className="ml-auto grid h-8 w-8 place-items-center rounded-full bg-[oklch(0.7_0.19_40)] text-white">
-                            <Check className="h-4 w-4" />
-                          </span>
-                        )}
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </motion.section>
-            )}
-
-            {step === 3 && role && role !== "admin" && (
-              <motion.section
-                key="step3"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
