@@ -328,6 +328,9 @@ const READER_ROUTES: Record<string, string> = {
   "artificial-intelligence--advanced-concepts": "/resources/read/ai-advanced-concepts",
   "artificial-intelligence--glossary": "/resources/read/ai-glossary",
   "artificial-intelligence--reference-guide": "/resources/read/ai-reference-guide",
+  "machine-learning--beginner-guide": "/resources/read/ml-beginner-guide",
+  "machine-learning--complete-tutorial": "/resources/read/ml-complete-tutorial",
+  "machine-learning--step-by-step-learning-guide": "/resources/read/ml-step-by-step-learning-guide",
 };
 
 export function getResourceReaderPath(id: string): string | null {
