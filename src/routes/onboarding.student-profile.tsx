@@ -34,11 +34,6 @@ const BOARDS = [
   { value: "other", label: "Other" },
 ] as const;
 
-const LANGS = [
-  { value: "english", label: "English" },
-  { value: "tamil", label: "Tamil" },
-] as const;
-
 const CLASSES = Array.from({ length: 12 }, (_, i) => i + 1);
 
 function StudentProfileOnboarding() {
@@ -46,7 +41,6 @@ function StudentProfileOnboarding() {
   const qc = useQueryClient();
   const [currentClass, setCurrentClass] = useState<number | null>(null);
   const [board, setBoard] = useState<string>("");
-  const [language, setLanguage] = useState<string>("english");
   const [school, setSchool] = useState("");
 
   const mutation = useMutation({
@@ -59,7 +53,7 @@ function StudentProfileOnboarding() {
         user_id: userData.user.id,
         current_class: currentClass,
         board: board as (typeof BOARDS)[number]["value"],
-        language: language as (typeof LANGS)[number]["value"],
+        language: "english" as const,
         school_name: school.trim() || null,
         onboarded: true,
       };
@@ -136,26 +130,6 @@ function StudentProfileOnboarding() {
               </div>
             </div>
 
-            <div>
-              <Label className="mb-2 block">Preferred language *</Label>
-              <div className="grid grid-cols-2 gap-2">
-                {LANGS.map((l) => (
-                  <button
-                    key={l.value}
-                    type="button"
-                    onClick={() => setLanguage(l.value)}
-                    className={
-                      "rounded-lg border px-3 py-2 text-sm font-medium transition " +
-                      (language === l.value
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border/60 bg-background hover:border-primary/50")
-                    }
-                  >
-                    {l.label}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             <div>
               <Label htmlFor="school" className="mb-2 block">

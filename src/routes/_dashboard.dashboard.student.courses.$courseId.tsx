@@ -161,7 +161,7 @@ function CourseOverviewPage() {
                   ~{course.estimated_hours}h
                 </Badge>
               )}
-              <Badge>{course.language}</Badge>
+              
             </div>
             {course.description && (
               <p className="mt-4 text-sm text-muted-foreground">{course.description}</p>

@@ -81,10 +81,6 @@ const ROLES: RoleCard[] = [
   },
 ];
 
-const LANGUAGES = [
-  { key: "en", label: "English", native: "English", flag: "🇬🇧" },
-  { key: "ta", label: "Tamil", native: "தமிழ்", flag: "🇮🇳" },
-];
 
 const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[]> = {
   student: [
@@ -108,7 +104,7 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
 
 // ---------------------------------------------------------------- storage
 const KEY = "edunova.onboarding";
-type Saved = { role?: AppRole; language?: string; preference?: string };
+type Saved = { role?: AppRole; preference?: string };
 function loadSaved(): Saved {
   if (typeof window === "undefined") return {};
   try {
@@ -128,28 +124,25 @@ function OnboardingPage() {
   const { mode: entryMode } = Route.useSearch();
   const [step, setStep] = useState(1);
   const [role, setRole] = useState<AppRole | null>(null);
-  const [language, setLanguage] = useState<string | null>(null);
   const [preference, setPreference] = useState<string | null>(null);
 
   useEffect(() => {
     const s = loadSaved();
     if (s.role) setRole(s.role);
-    if (s.language) setLanguage(s.language);
     if (s.preference) setPreference(s.preference);
   }, []);
 
   useEffect(() => {
-    saveSaved({ role: role ?? undefined, language: language ?? undefined, preference: preference ?? undefined });
-  }, [role, language, preference]);
+    saveSaved({ role: role ?? undefined, preference: preference ?? undefined });
+  }, [role, preference]);
 
-  const totalSteps = role === "admin" ? 3 : 4;
+  const totalSteps = role === "admin" ? 2 : 3;
   const currentIndex = step;
   const progress = (currentIndex / totalSteps) * 100;
 
   const canNext =
     (step === 1 && role) ||
-    (step === 2 && language) ||
-    (step === 3 && (role === "admin" || preference));
+    (step === 2 && (role === "admin" || preference));
 
   function next() {
     if (!canNext) return;
@@ -241,51 +234,9 @@ function OnboardingPage() {
               </motion.section>
             )}
 
-            {step === 2 && (
+            {step === 2 && role && role !== "admin" && (
               <motion.section
                 key="step2"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.35 }}
-              >
-                <StepHeading
-                  eyebrow="Language"
-                  title="Choose your preferred language"
-                  subtitle="Nova will speak your language across lessons, assessments, and mentor conversations."
-                />
-                <div className="mx-auto mt-8 grid max-w-2xl gap-4 sm:grid-cols-2">
-                  {LANGUAGES.map((l) => (
-                    <button
-                      key={l.key}
-                      onClick={() => setLanguage(l.key)}
-                      className={`group relative overflow-hidden rounded-2xl border p-6 text-left transition-all ${
-                        language === l.key
-                          ? "border-[oklch(0.7_0.19_40)]/70 bg-white/[0.06] shadow-[0_0_0_1px_oklch(0.7_0.19_40)/40,0_20px_60px_-20px_oklch(0.7_0.19_40)/40]"
-                          : "border-white/[0.08] bg-white/[0.03] hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.05]"
-                      }`}
-                    >
-                      <div className="flex items-center gap-4">
-                        <span className="text-4xl">{l.flag}</span>
-                        <div>
-                          <p className="text-lg font-semibold">{l.label}</p>
-                          <p className="text-sm text-white/50">{l.native}</p>
-                        </div>
-                        {language === l.key && (
-                          <span className="ml-auto grid h-8 w-8 place-items-center rounded-full bg-[oklch(0.7_0.19_40)] text-white">
-                            <Check className="h-4 w-4" />
-                          </span>
-                        )}
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </motion.section>
-            )}
-
-            {step === 3 && role && role !== "admin" && (
-              <motion.section
-                key="step3"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
@@ -322,9 +273,9 @@ function OnboardingPage() {
               </motion.section>
             )}
 
-            {step === 3 && role === "admin" && (
+            {step === 2 && role === "admin" && (
               <motion.section
-                key="step3-admin"
+                key="step2-admin"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
@@ -334,9 +285,9 @@ function OnboardingPage() {
               </motion.section>
             )}
 
-            {step === 4 && role && (
+            {step === 3 && role && (
               <motion.section
-                key="step4"
+                key="step3"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
@@ -354,7 +305,7 @@ function OnboardingPage() {
         </main>
 
         {/* Footer nav */}
-        {step < 4 && !(step === 3 && role === "admin") && (
+        {step < 3 && !(step === 2 && role === "admin") && (
           <footer className="flex items-center justify-between gap-3 pb-4">
             <Button variant="ghost" onClick={back} className="gap-2 text-white/70 hover:bg-white/[0.06] hover:text-white">
               <ArrowLeft className="h-4 w-4" /> Back
@@ -365,7 +316,7 @@ function OnboardingPage() {
               size="lg"
               className="gap-2 bg-gradient-to-r from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] px-6 text-white hover:opacity-90 disabled:opacity-40"
             >
-              {step === 3 ? "Almost done" : "Continue"}
+              {step === 2 ? "Almost done" : "Continue"}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </footer>
