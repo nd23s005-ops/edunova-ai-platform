@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
@@ -70,9 +70,10 @@ function CTAButton({
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [email, setEmail] = useState<string | null>(null);
+  const [user, setUser] = useState<{ id: string; email: string } | null>(null);
   const [initials, setInitials] = useState("NL");
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -86,13 +87,13 @@ export function Navbar() {
     supabase.auth.getUser().then(({ data }) => {
       if (!mounted) return;
       const e = data.user?.email ?? null;
-      setEmail(e);
-      if (e) setInitials(e.slice(0, 2).toUpperCase());
+      setUser(data.user && e ? { id: data.user.id, email: e } : null);
+      setInitials(e ? e.slice(0, 2).toUpperCase() : "NL");
     });
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
       const e = session?.user?.email ?? null;
-      setEmail(e);
-      if (e) setInitials(e.slice(0, 2).toUpperCase());
+      setUser(session?.user && e ? { id: session.user.id, email: e } : null);
+      setInitials(e ? e.slice(0, 2).toUpperCase() : "NL");
     });
     return () => {
       mounted = false;
@@ -101,15 +102,13 @@ export function Navbar() {
   }, []);
 
   const { data: role } = useQuery({
-    queryKey: ["me", "role-lite"],
-    enabled: !!email,
+    queryKey: ["me", "role-lite", user?.id],
+    enabled: !!user?.id,
     queryFn: async () => {
-      const { data: u } = await supabase.auth.getUser();
-      if (!u.user) return null;
       const { data: r } = await supabase
         .from("user_roles")
         .select("role")
-        .eq("user_id", u.user.id)
+        .eq("user_id", user!.id)
         .maybeSingle();
       return (r?.role as AppRole | undefined) ?? null;
     },
@@ -119,8 +118,10 @@ export function Navbar() {
   const dashboardHref = homeForRole(role ?? undefined);
 
   const signOut = async () => {
+    await queryClient.cancelQueries();
+    queryClient.clear();
     await supabase.auth.signOut();
-    navigate({ to: "/" });
+    navigate({ to: "/", replace: true });
   };
 
 
@@ -162,7 +163,7 @@ export function Navbar() {
 
         {/* Right: Actions */}
         <div className="hidden items-center gap-3 justify-self-end lg:flex">
-          {email ? (
+          {user ? (
             <>
               <Link
                 to={dashboardHref}
@@ -185,7 +186,7 @@ export function Navbar() {
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
-                  <DropdownMenuLabel className="truncate">{email}</DropdownMenuLabel>
+                  <DropdownMenuLabel className="truncate">{user.email}</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={signOut} className="gap-2">
                     <LogOut className="h-4 w-4" /> Sign out
@@ -265,7 +266,7 @@ export function Navbar() {
                 }}
                 className="mt-3 grid grid-cols-2 gap-2 border-t border-[#ECECEC] pt-4"
               >
-                {email ? (
+                {user ? (
                   <>
                     <Link
                       to={dashboardHref}

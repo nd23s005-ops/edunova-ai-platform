@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -39,6 +40,7 @@ export const Route = createFileRoute("/_auth/login")({
 function LoginPage() {
   const navigate = useNavigate();
   const router = useRouter();
+  const queryClient = useQueryClient();
   const { redirect: redirectTo, role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
 
@@ -82,8 +84,10 @@ function LoginPage() {
         ? redirectTo
         : homeForRole((roleRow?.role as AppRole) ?? null);
     toast.success("Signed in — welcome back!");
+    await queryClient.cancelQueries();
+    queryClient.clear();
     await router.invalidate();
-    navigate({ to: dest });
+    navigate({ to: dest, replace: true });
   };
 
   return (
