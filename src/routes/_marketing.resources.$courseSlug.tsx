@@ -32,6 +32,7 @@ import {
 import {
   buildCourseResources,
   getCourseBySlug,
+  getCourseImage,
   getRelatedCourses,
   RESOURCE_KINDS,
   type CourseResource,
@@ -123,6 +124,13 @@ function CourseResourcesPage() {
     <>
       {/* Course hero */}
       <div className={`relative overflow-hidden border-b border-border/60 bg-gradient-to-br ${course.gradient}`}>
+        <img
+          src={getCourseImage(course)}
+          alt=""
+          loading="eager"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div className={`absolute inset-0 bg-gradient-to-br ${course.gradient} opacity-70 mix-blend-multiply`} aria-hidden />
         <div className="absolute inset-0 bg-grid-fade opacity-30" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <Link
@@ -201,7 +209,7 @@ function CourseResourcesPage() {
         {filtered.length ? (
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map((r, i) => (
-              <ResourceCard key={r.id} r={r} delay={i * 0.02} bookmarked={bookmarks.has(r.id)} onBookmark={() => bookmarks.toggle(r.id)} />
+              <ResourceCard key={r.id} r={r} coverImage={getCourseImage(course)} delay={i * 0.02} bookmarked={bookmarks.has(r.id)} onBookmark={() => bookmarks.toggle(r.id)} />
             ))}
           </div>
         ) : (
@@ -305,11 +313,13 @@ function CourseResourcesPage() {
 
 function ResourceCard({
   r,
+  coverImage,
   delay,
   bookmarked,
   onBookmark,
 }: {
   r: CourseResource;
+  coverImage: string;
   delay: number;
   bookmarked: boolean;
   onBookmark: () => void;
@@ -336,13 +346,21 @@ function ResourceCard({
       className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
     >
       <div className={`relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br ${r.gradient}`}>
+        <img
+          src={coverImage}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-105"
+        />
+        <div className={`absolute inset-0 bg-gradient-to-br ${r.gradient} opacity-70 mix-blend-multiply`} aria-hidden />
         <div className="absolute inset-0 bg-grid-fade opacity-30" aria-hidden />
         <div className="absolute inset-0 grid place-items-center">
-          <FileText className="h-12 w-12 text-white/90 drop-shadow-lg transition group-hover:scale-110" />
+          <FileText className="h-12 w-12 text-white/95 drop-shadow-lg transition group-hover:scale-110" />
         </div>
         <span className="absolute left-3 top-3 rounded-full bg-background/95 px-2.5 py-1 text-[11px] font-semibold">
           {r.kind}
         </span>
+
         <button
           onClick={onBookmark}
           aria-label={bookmarked ? "Remove bookmark" : "Add bookmark"}
