@@ -57,6 +57,7 @@ import { Route as MarketingResourcesReadAiQuickRevisionNotesRouteImport } from '
 import { Route as MarketingResourcesReadAiPdfNotesRouteImport } from './routes/_marketing.resources.read.ai-pdf-notes'
 import { Route as MarketingResourcesReadAiInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ai-interview-questions'
 import { Route as MarketingResourcesReadAiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ai-complete-tutorial'
+import { Route as MarketingResourcesReadAiCheatSheetRouteImport } from './routes/_marketing.resources.read.ai-cheat-sheet'
 import { Route as MarketingResourcesReadAiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ai-beginner-guide'
 import { Route as DashboardDashboardUpskillingCourseIdRouteImport } from './routes/_dashboard.dashboard.upskilling.$courseId'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
@@ -327,6 +328,12 @@ const MarketingResourcesReadAiCompleteTutorialRoute =
     path: '/read/ai-complete-tutorial',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAiCheatSheetRoute =
+  MarketingResourcesReadAiCheatSheetRouteImport.update({
+    id: '/read/ai-cheat-sheet',
+    path: '/read/ai-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiBeginnerGuideRoute =
   MarketingResourcesReadAiBeginnerGuideRouteImport.update({
     id: '/read/ai-beginner-guide',
@@ -460,6 +467,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
+  '/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
@@ -520,6 +528,7 @@ export interface FileRoutesByTo {
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
+  '/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
@@ -585,6 +594,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/_dashboard/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/_marketing/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
+  '/_marketing/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
   '/_marketing/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/_marketing/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/_marketing/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
@@ -648,6 +658,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
     | '/resources/read/ai-beginner-guide'
+    | '/resources/read/ai-cheat-sheet'
     | '/resources/read/ai-complete-tutorial'
     | '/resources/read/ai-interview-questions'
     | '/resources/read/ai-pdf-notes'
@@ -708,6 +719,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
     | '/resources/read/ai-beginner-guide'
+    | '/resources/read/ai-cheat-sheet'
     | '/resources/read/ai-complete-tutorial'
     | '/resources/read/ai-interview-questions'
     | '/resources/read/ai-pdf-notes'
@@ -772,6 +784,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student/my-courses'
     | '/_dashboard/dashboard/upskilling/$courseId'
     | '/_marketing/resources/read/ai-beginner-guide'
+    | '/_marketing/resources/read/ai-cheat-sheet'
     | '/_marketing/resources/read/ai-complete-tutorial'
     | '/_marketing/resources/read/ai-interview-questions'
     | '/_marketing/resources/read/ai-pdf-notes'
@@ -1140,6 +1153,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAiCompleteTutorialRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ai-cheat-sheet': {
+      id: '/_marketing/resources/read/ai-cheat-sheet'
+      path: '/read/ai-cheat-sheet'
+      fullPath: '/resources/read/ai-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadAiCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-beginner-guide': {
       id: '/_marketing/resources/read/ai-beginner-guide'
       path: '/read/ai-beginner-guide'
@@ -1375,6 +1395,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesCourseSlugRoute: typeof MarketingResourcesCourseSlugRoute
   MarketingResourcesIndexRoute: typeof MarketingResourcesIndexRoute
   MarketingResourcesReadAiBeginnerGuideRoute: typeof MarketingResourcesReadAiBeginnerGuideRoute
+  MarketingResourcesReadAiCheatSheetRoute: typeof MarketingResourcesReadAiCheatSheetRoute
   MarketingResourcesReadAiCompleteTutorialRoute: typeof MarketingResourcesReadAiCompleteTutorialRoute
   MarketingResourcesReadAiInterviewQuestionsRoute: typeof MarketingResourcesReadAiInterviewQuestionsRoute
   MarketingResourcesReadAiPdfNotesRoute: typeof MarketingResourcesReadAiPdfNotesRoute
@@ -1387,6 +1408,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesIndexRoute: MarketingResourcesIndexRoute,
   MarketingResourcesReadAiBeginnerGuideRoute:
     MarketingResourcesReadAiBeginnerGuideRoute,
+  MarketingResourcesReadAiCheatSheetRoute:
+    MarketingResourcesReadAiCheatSheetRoute,
   MarketingResourcesReadAiCompleteTutorialRoute:
     MarketingResourcesReadAiCompleteTutorialRoute,
   MarketingResourcesReadAiInterviewQuestionsRoute:
