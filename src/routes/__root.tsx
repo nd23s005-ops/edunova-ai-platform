@@ -168,18 +168,34 @@ function RootComponent() {
 function ClientOnlyFloatingChat() {
   const [mounted, setMounted] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
     setMounted(true);
+    let unsub: (() => void) | undefined;
     (async () => {
       const { supabase } = await import("@/integrations/supabase/client");
-      const { data } = await supabase.auth.getUser();
-      setSignedIn(!!data.user);
-      const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      const checkRole = async (userId: string | undefined) => {
+        if (!userId) return setIsAdmin(false);
+        const { data } = await supabase
+          .from("user_roles")
+          .select("role")
+          .eq("user_id", userId)
+          .maybeSingle();
+        setIsAdmin(data?.role === "admin");
+      };
+      const { data: userData } = await supabase.auth.getUser();
+      setSignedIn(!!userData.user);
+      await checkRole(userData.user?.id);
+      const { data: sub } = supabase.auth.onAuthStateChange(async (_e, session) => {
         setSignedIn(!!session?.user);
+        await checkRole(session?.user?.id);
       });
-      return () => sub.subscription.unsubscribe();
+      unsub = () => sub.subscription.unsubscribe();
     })();
+    return () => unsub?.();
   }, []);
-  if (!mounted || !signedIn) return null;
+  // Admin dashboard must not display any AI chatbot.
+  if (!mounted || !signedIn || isAdmin) return null;
   return <FloatingChat />;
 }
+
