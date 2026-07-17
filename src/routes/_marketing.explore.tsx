@@ -414,6 +414,8 @@ function ExplorePage() {
         </div>
       </Section>
 
+      <SchoolEducation />
+
       {/* Learning Paths */}
       <Section
         className="bg-secondary/40"
