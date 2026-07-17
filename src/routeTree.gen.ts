@@ -53,6 +53,7 @@ import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadMlPdfNotesRouteImport } from './routes/_marketing.resources.read.ml-pdf-notes'
 import { Route as MarketingResourcesReadMlCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ml-complete-tutorial'
 import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ml-beginner-guide'
 import { Route as MarketingResourcesReadAiTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-tips-tricks'
@@ -319,6 +320,12 @@ const MarketingResourcesReadMlStepByStepLearningGuideRoute =
   MarketingResourcesReadMlStepByStepLearningGuideRouteImport.update({
     id: '/read/ml-step-by-step-learning-guide',
     path: '/read/ml-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMlPdfNotesRoute =
+  MarketingResourcesReadMlPdfNotesRouteImport.update({
+    id: '/read/ml-pdf-notes',
+    path: '/read/ml-pdf-notes',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlCompleteTutorialRoute =
@@ -608,6 +615,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
   '/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
@@ -686,6 +694,7 @@ export interface FileRoutesByTo {
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
   '/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
@@ -769,6 +778,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
   '/_marketing/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
   '/_marketing/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/_marketing/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
@@ -850,6 +860,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-tips-tricks'
     | '/resources/read/ml-beginner-guide'
     | '/resources/read/ml-complete-tutorial'
+    | '/resources/read/ml-pdf-notes'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
@@ -928,6 +939,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-tips-tricks'
     | '/resources/read/ml-beginner-guide'
     | '/resources/read/ml-complete-tutorial'
+    | '/resources/read/ml-pdf-notes'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
@@ -1010,6 +1022,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-tips-tricks'
     | '/_marketing/resources/read/ml-beginner-guide'
     | '/_marketing/resources/read/ml-complete-tutorial'
+    | '/_marketing/resources/read/ml-pdf-notes'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
@@ -1344,6 +1357,13 @@ declare module '@tanstack/react-router' {
       path: '/read/ml-step-by-step-learning-guide'
       fullPath: '/resources/read/ml-step-by-step-learning-guide'
       preLoaderRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ml-pdf-notes': {
+      id: '/_marketing/resources/read/ml-pdf-notes'
+      path: '/read/ml-pdf-notes'
+      fullPath: '/resources/read/ml-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadMlPdfNotesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-complete-tutorial': {
@@ -1757,6 +1777,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiTipsTricksRoute: typeof MarketingResourcesReadAiTipsTricksRoute
   MarketingResourcesReadMlBeginnerGuideRoute: typeof MarketingResourcesReadMlBeginnerGuideRoute
   MarketingResourcesReadMlCompleteTutorialRoute: typeof MarketingResourcesReadMlCompleteTutorialRoute
+  MarketingResourcesReadMlPdfNotesRoute: typeof MarketingResourcesReadMlPdfNotesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
 }
 
@@ -1807,6 +1828,7 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlBeginnerGuideRoute,
   MarketingResourcesReadMlCompleteTutorialRoute:
     MarketingResourcesReadMlCompleteTutorialRoute,
+  MarketingResourcesReadMlPdfNotesRoute: MarketingResourcesReadMlPdfNotesRoute,
   MarketingResourcesReadMlStepByStepLearningGuideRoute:
     MarketingResourcesReadMlStepByStepLearningGuideRoute,
 }
