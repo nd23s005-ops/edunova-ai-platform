@@ -47,6 +47,11 @@ export const Route = createFileRoute("/_auth/register")({
         ? (search.role as AppRole)
         : undefined,
   }),
+  beforeLoad: ({ search }) => {
+    if (!search.role || search.role === "admin") {
+      throw redirect({ to: "/onboarding", search: { mode: "register" } as never });
+    }
+  },
   component: RegisterPage,
 });
 
