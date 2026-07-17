@@ -38,7 +38,11 @@ export const Route = createFileRoute("/_auth/register")({
 
 function RegisterPage() {
   const navigate = useNavigate();
+  const { role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
+
+  const initialRole: RegisterInput["role"] =
+    selectedRole && selectedRole !== "admin" ? selectedRole : "student";
 
   const form = useForm<RegisterInput>({
     resolver: zodResolver(registerSchema),
@@ -47,11 +51,18 @@ function RegisterPage() {
       email: "",
       password: "",
       confirmPassword: "",
-      role: "student",
+      role: initialRole,
       acceptTerms: false as unknown as true,
     },
     mode: "onBlur",
   });
+
+  useEffect(() => {
+    if (selectedRole === "admin") {
+      navigate({ to: "/login", search: { role: "admin" } });
+    }
+  }, [selectedRole, navigate]);
+
 
   const password = form.watch("password");
 
