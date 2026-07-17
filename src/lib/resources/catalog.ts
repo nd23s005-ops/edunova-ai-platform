@@ -316,6 +316,9 @@ const READER_ROUTES: Record<string, string> = {
   "artificial-intelligence--interview-questions": "/resources/read/ai-interview-questions",
   "artificial-intelligence--practice-questions": "/resources/read/ai-practice-questions",
   "artificial-intelligence--answer-key": "/resources/read/ai-answer-key",
+  "artificial-intelligence--sample-exercises": "/resources/read/ai-sample-exercises",
+  "artificial-intelligence--project-guide": "/resources/read/ai-project-guide",
+  "artificial-intelligence--project-case-study": "/resources/read/ai-project-case-study",
 };
 
 export function getResourceReaderPath(id: string): string | null {

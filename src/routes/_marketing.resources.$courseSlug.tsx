@@ -398,12 +398,19 @@ function ResourceCard({
             return readerPath ? (
               <>
                 <Button size="sm" className="col-span-2" asChild>
-                  <Link to={readerPath}><BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read</Link>
+                  <a href={readerPath} target="_blank" rel="noopener noreferrer">
+                    <BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read
+                  </a>
                 </Button>
                 <Button size="sm" variant="outline" asChild>
-                  <Link to={readerPath} aria-label={`Open reader: ${r.title}`}>
+                  <a
+                    href={readerPath}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open reader: ${r.title}`}
+                  >
                     <Download className="h-3.5 w-3.5" />
-                  </Link>
+                  </a>
                 </Button>
               </>
             ) : (
