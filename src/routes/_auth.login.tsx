@@ -89,10 +89,27 @@ function LoginPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold tracking-tight">Welcome back</h1>
+      <Link
+        to="/onboarding"
+        className="mb-6 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
+      >
+        <ArrowLeft className="h-3.5 w-3.5" /> Back to onboarding
+      </Link>
+      {selectedRole && (
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-semibold">
+          {selectedRole === "admin" && <Shield className="h-3.5 w-3.5" />}
+          {ROLE_LABELS[selectedRole]} sign in
+        </div>
+      )}
+      <h1 className="text-3xl font-bold tracking-tight">
+        {selectedRole === "admin" ? "Administrator sign in" : "Welcome back"}
+      </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Sign in to continue your learning journey with Nova.
+        {selectedRole === "admin"
+          ? "Restricted to authorized personnel only. Multi-factor authentication may be required."
+          : "Sign in to continue your learning journey with Nova."}
       </p>
+
 
       <form className="mt-8 space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
         <div>
