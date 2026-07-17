@@ -27,7 +27,7 @@ import {
   Newspaper,
   Compass,
 } from "lucide-react";
-import { COURSE_CATALOG, RESOURCE_KINDS } from "@/lib/resources/catalog";
+import { COURSE_CATALOG, RESOURCE_KINDS, getCourseImage } from "@/lib/resources/catalog";
 
 const TITLE = "Resources Library — EduNova AI";
 const DESC =
