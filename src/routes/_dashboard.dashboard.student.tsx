@@ -403,5 +403,3 @@ function fmt(ts: string | null): string {
   return d.toLocaleDateString();
 }
 
-// Unused import guard to satisfy linter when notifications empty
-void Bell;
