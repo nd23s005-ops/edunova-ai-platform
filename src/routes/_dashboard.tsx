@@ -175,7 +175,15 @@ function DashboardLayout() {
     }
   }, [role, studentProfileLoaded, studentProfileFetching, studentProfileStatus, pathname, navigate]);
 
-  const roleNav = role ? NAV_BY_ROLE[role] : [];
+  const rawNav = role ? NAV_BY_ROLE[role] : [];
+  // Hide super-admin-only entries from Demo Admins. We look up admin_level inline
+  // (avoids extra hook dependency) using the same profile query result shape.
+  const adminLevel = (profile as unknown as { adminLevel?: string | null })?.adminLevel ?? null;
+  const roleNav =
+    role === "admin" && adminLevel !== "super"
+      ? rawNav.filter((n) => !ADMIN_SUPER_ONLY.has(n.to))
+      : rawNav;
+
   const initials = (profile?.fullName || profile?.email || "N L")
     .split(/\s+/)
     .map((s: string) => s[0])
