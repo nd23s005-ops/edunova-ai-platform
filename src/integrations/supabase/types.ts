@@ -50,6 +50,42 @@ export type Database = {
         }
         Relationships: []
       }
+      student_profiles: {
+        Row: {
+          board: Database["public"]["Enums"]["education_board"]
+          created_at: string
+          current_class: number
+          id: string
+          language: Database["public"]["Enums"]["preferred_language"]
+          onboarded: boolean
+          school_name: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          board: Database["public"]["Enums"]["education_board"]
+          created_at?: string
+          current_class: number
+          id?: string
+          language?: Database["public"]["Enums"]["preferred_language"]
+          onboarded?: boolean
+          school_name?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          board?: Database["public"]["Enums"]["education_board"]
+          created_at?: string
+          current_class?: number
+          id?: string
+          language?: Database["public"]["Enums"]["preferred_language"]
+          onboarded?: boolean
+          school_name?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -95,6 +131,15 @@ export type Database = {
         | "teacher"
         | "organization"
         | "professional"
+      education_board:
+        | "state_board"
+        | "cbse"
+        | "icse"
+        | "cambridge"
+        | "ib"
+        | "nios"
+        | "other"
+      preferred_language: "english" | "tamil"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -223,6 +268,16 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "student", "teacher", "organization", "professional"],
+      education_board: [
+        "state_board",
+        "cbse",
+        "icse",
+        "cambridge",
+        "ib",
+        "nios",
+        "other",
+      ],
+      preferred_language: ["english", "tamil"],
     },
   },
 } as const
