@@ -34,13 +34,22 @@ export const Route = createFileRoute("/_auth/login")({
         ? (search.role as AppRole)
         : undefined,
   }),
-  beforeLoad: ({ search }) => {
-    if (!search.role) {
-      throw redirect({
-        to: "/onboarding",
-        search: { mode: "login", ...(search.redirect ? { redirect: search.redirect } : {}) } as never,
-      });
+  beforeLoad: async ({ search }) => {
+    // If already signed in, skip login entirely and go straight to the correct dashboard.
+    const { data } = await supabase.auth.getUser();
+    if (data.user) {
+      const { data: r } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", data.user.id)
+        .maybeSingle();
+      const dest =
+        search.redirect && search.redirect.startsWith("/")
+          ? search.redirect
+          : homeForRole((r?.role as AppRole) ?? null);
+      throw redirect({ to: dest });
     }
+    // Unsigned users can sign in without picking a role (role is only needed for new accounts).
   },
   component: LoginPage,
 });
