@@ -5,11 +5,11 @@ import { Brain, Sparkles, Cpu, Atom, Wand2, GraduationCap } from "lucide-react";
 type Particle = { x: number; y: number; vx: number; vy: number; r: number };
 
 /**
- * Premium animated AI background:
- *  - animated dot grid (masked fade)
- *  - floating glowing particles + connection lines (canvas)
- *  - soft gradient blobs (breathing)
- *  - tiny floating AI icons (parallax to mouse)
+ * Dark premium AI hero background:
+ *  - deep navy base (#071018)
+ *  - aurora / teal + orange glow blobs
+ *  - animated neural network canvas (particles + connection lines)
+ *  - floating AI icon chips with parallax
  *  - respects prefers-reduced-motion
  */
 export function AIBackground() {
@@ -21,7 +21,6 @@ export function AIBackground() {
   const [parallax, setParallax] = useState({ x: 0, y: 0 });
   const reduce = useReducedMotion();
 
-  // Canvas particle system
   useEffect(() => {
     const canvas = canvasRef.current;
     const wrap = wrapRef.current;
@@ -43,12 +42,12 @@ export function AIBackground() {
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const count = Math.max(28, Math.min(60, Math.floor((width * height) / 22000)));
+      const count = Math.max(32, Math.min(72, Math.floor((width * height) / 20000)));
       particlesRef.current = Array.from({ length: count }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
+        vx: (Math.random() - 0.5) * 0.28,
+        vy: (Math.random() - 0.5) * 0.28,
         r: 1 + Math.random() * 1.8,
       }));
     };
@@ -56,12 +55,11 @@ export function AIBackground() {
     window.addEventListener("resize", resize);
 
     if (reduce) {
-      // Draw a static frame and stop
       const draw = () => {
         ctx.clearRect(0, 0, width, height);
         for (const p of particlesRef.current) {
           ctx.beginPath();
-          ctx.fillStyle = "rgba(20,140,150,0.35)";
+          ctx.fillStyle = "rgba(120,220,225,0.45)";
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
           ctx.fill();
         }
@@ -77,7 +75,6 @@ export function AIBackground() {
       const my = mouseRef.current.y * height;
 
       for (const p of parts) {
-        // gentle drift + mild attraction to mouse
         p.x += p.vx;
         p.y += p.vy;
         const dxm = mx - p.x;
@@ -87,17 +84,15 @@ export function AIBackground() {
           p.vx += (dxm / dm2) * 0.6;
           p.vy += (dym / dm2) * 0.6;
         }
-        // damping
         p.vx *= 0.985;
         p.vy *= 0.985;
-        // wrap
         if (p.x < -10) p.x = width + 10;
         if (p.x > width + 10) p.x = -10;
         if (p.y < -10) p.y = height + 10;
         if (p.y > height + 10) p.y = -10;
       }
 
-      // connection lines
+      // neural connection lines
       for (let i = 0; i < parts.length; i++) {
         for (let j = i + 1; j < parts.length; j++) {
           const a = parts[i];
@@ -105,10 +100,10 @@ export function AIBackground() {
           const dx = a.x - b.x;
           const dy = a.y - b.y;
           const d2 = dx * dx + dy * dy;
-          const max = 140;
+          const max = 150;
           if (d2 < max * max) {
             const alpha = 1 - Math.sqrt(d2) / max;
-            ctx.strokeStyle = `rgba(20,140,150,${alpha * 0.18})`;
+            ctx.strokeStyle = `rgba(120,220,225,${alpha * 0.22})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -118,18 +113,18 @@ export function AIBackground() {
         }
       }
 
-      // particles with glow
+      // glowing particles
       for (const p of parts) {
-        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 6);
-        grad.addColorStop(0, "rgba(20,140,150,0.55)");
-        grad.addColorStop(1, "rgba(20,140,150,0)");
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 7);
+        grad.addColorStop(0, "rgba(120,220,225,0.55)");
+        grad.addColorStop(1, "rgba(120,220,225,0)");
         ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * 6, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.r * 7, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.beginPath();
-        ctx.fillStyle = "rgba(240,170,60,0.9)";
+        ctx.fillStyle = "rgba(255,190,110,0.95)";
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
       }
@@ -144,7 +139,6 @@ export function AIBackground() {
     };
   }, [reduce]);
 
-  // Mouse parallax
   useEffect(() => {
     if (reduce) return;
     const onMove = (e: MouseEvent) => {
@@ -171,45 +165,48 @@ export function AIBackground() {
 
   return (
     <div ref={wrapRef} className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Base cream/white wash */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,theme(colors.background),theme(colors.background))]" />
+      {/* Deep navy base */}
+      <div className="absolute inset-0" style={{ background: "#071018" }} />
+
+      {/* Aurora radial wash */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(60,120,140,0.35), transparent 60%), radial-gradient(ellipse 60% 50% at 20% 90%, rgba(239,123,36,0.18), transparent 65%), radial-gradient(ellipse 60% 50% at 85% 80%, rgba(80,180,190,0.22), transparent 65%)",
+        }}
+      />
 
       {/* Animated grid */}
       <div
-        className="absolute inset-0 opacity-[0.35] [background-image:linear-gradient(to_right,color-mix(in_oklab,var(--foreground)_7%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_oklab,var(--foreground)_7%,transparent)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_40%,black,transparent_85%)]"
-        style={
-          reduce
-            ? undefined
-            : {
-                animation: "grid-drift 24s linear infinite",
-              }
-        }
+        className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(to_right,rgba(180,220,225,0.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(180,220,225,0.18)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_65%_65%_at_50%_40%,black,transparent_85%)]"
+        style={reduce ? undefined : { animation: "grid-drift 24s linear infinite" }}
       />
 
-      {/* Breathing gradient blobs */}
+      {/* Aurora glow blobs */}
       <motion.div
-        className="absolute -left-32 -top-32 h-[520px] w-[520px] rounded-full blur-3xl"
-        style={{ background: "radial-gradient(closest-side, color-mix(in oklab, var(--primary-glow) 55%, transparent), transparent 70%)" }}
-        animate={reduce ? undefined : { scale: [1, 1.08, 1], opacity: [0.55, 0.75, 0.55] }}
+        className="absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full blur-3xl"
+        style={{ background: "radial-gradient(closest-side, rgba(80,190,200,0.45), transparent 70%)" }}
+        animate={reduce ? undefined : { scale: [1, 1.08, 1], opacity: [0.55, 0.8, 0.55] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -right-40 top-10 h-[560px] w-[560px] rounded-full blur-3xl"
-        style={{ background: "radial-gradient(closest-side, color-mix(in oklab, var(--accent) 55%, transparent), transparent 70%)" }}
-        animate={reduce ? undefined : { scale: [1.05, 1, 1.05], opacity: [0.5, 0.7, 0.5] }}
+        className="absolute -right-44 top-10 h-[600px] w-[600px] rounded-full blur-3xl"
+        style={{ background: "radial-gradient(closest-side, rgba(239,123,36,0.35), transparent 70%)" }}
+        animate={reduce ? undefined : { scale: [1.05, 1, 1.05], opacity: [0.45, 0.7, 0.45] }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute left-1/3 -bottom-40 h-[480px] w-[480px] rounded-full blur-3xl"
-        style={{ background: "radial-gradient(closest-side, color-mix(in oklab, var(--highlight) 40%, transparent), transparent 70%)" }}
-        animate={reduce ? undefined : { scale: [1, 1.1, 1], opacity: [0.35, 0.55, 0.35] }}
+        className="absolute left-1/3 -bottom-48 h-[520px] w-[520px] rounded-full blur-3xl"
+        style={{ background: "radial-gradient(closest-side, rgba(120,220,225,0.28), transparent 70%)" }}
+        animate={reduce ? undefined : { scale: [1, 1.1, 1], opacity: [0.35, 0.6, 0.35] }}
         transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Canvas particles + connections */}
+      {/* Neural network canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
-      {/* Floating AI icons with parallax */}
+      {/* Floating AI icon chips */}
       <div
         className="absolute inset-0"
         style={{ transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`, transition: "transform 400ms cubic-bezier(.2,.7,.2,1)" }}
@@ -217,7 +214,7 @@ export function AIBackground() {
         {floatingIcons.map(({ Icon, delay, ...pos }, i) => (
           <motion.div
             key={i}
-            className="absolute grid h-9 w-9 place-items-center rounded-xl border border-border/60 bg-card/60 text-primary shadow-card backdrop-blur"
+            className="absolute grid h-9 w-9 place-items-center rounded-xl border border-white/15 bg-white/[0.06] text-cyan-200/90 shadow-[0_8px_30px_-10px_rgba(120,220,225,0.35)] backdrop-blur"
             style={pos as React.CSSProperties}
             initial={{ opacity: 0, y: 8 }}
             animate={reduce ? { opacity: 0.9, y: 0 } : { opacity: 0.9, y: [0, -8, 0] }}
@@ -229,8 +226,7 @@ export function AIBackground() {
       </div>
 
       {/* Top vignette to keep navbar clean */}
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#071018] to-transparent" />
     </div>
   );
 }
