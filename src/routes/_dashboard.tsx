@@ -71,6 +71,8 @@ const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student", label: "My workspace", icon: GraduationCap },
   { to: "/dashboard/student/my-courses", label: "My Courses", icon: BookOpen },
   { to: "/dashboard/student/browse", label: "Browse Courses", icon: BookOpen },
+  { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
+  { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   { to: "/dashboard/student/roadmap", label: "Learning Roadmap", icon: Target },
   { to: "/dashboard/student/assignments", label: "Weekly Assignments", icon: ClipboardList },
   { to: "/dashboard/student/quizzes", label: "Quizzes", icon: Target },
@@ -83,6 +85,8 @@ const ORG_NAV: NavItem[] = [
   { to: "/dashboard/organization/employees", label: "Employees", icon: Users },
   { to: "/dashboard/organization/students", label: "Students", icon: GraduationCap },
   { to: "/dashboard/organization/course-assignment", label: "Course assignment", icon: BookOpen },
+  { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
+  { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   { to: "/dashboard/organization/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/organization/reports", label: "Reports", icon: FileText },
   AI_ASSISTANT,
@@ -106,10 +110,13 @@ const ADMIN_SUPER_ONLY = new Set<string>(["/dashboard/admin/settings"]);
 
 const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/professional", label: "My workspace", icon: GraduationCap },
+  { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
   { to: "/dashboard/student/browse", label: "Browse courses", icon: BookOpen },
   { to: "/dashboard/student/my-courses", label: "My courses", icon: BookOpen },
+  { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   AI_ASSISTANT,
 ];
+
 
 const NAV_BY_ROLE: Record<AppRole, NavItem[]> = {
   student: STUDENT_NAV,
