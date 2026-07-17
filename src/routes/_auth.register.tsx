@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
+import { ArrowLeft, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,7 +15,8 @@ import { GoogleButton } from "@/components/auth/GoogleButton";
 import { PasswordStrengthMeter } from "@/components/auth/PasswordStrengthMeter";
 import { supabase } from "@/integrations/supabase/client";
 import { registerSchema, type RegisterInput } from "@/lib/auth/schemas";
-import { SELF_SIGNUP_ROLES, ROLE_LABELS } from "@/lib/auth/roles";
+import { SELF_SIGNUP_ROLES, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
+import type { AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_auth/register")({
   head: () => ({
@@ -25,8 +26,15 @@ export const Route = createFileRoute("/_auth/register")({
       { name: "robots", content: "noindex" },
     ],
   }),
+  validateSearch: (search: Record<string, unknown>) => ({
+    role:
+      typeof search.role === "string" && (ALL_ROLES as readonly string[]).includes(search.role)
+        ? (search.role as AppRole)
+        : undefined,
+  }),
   component: RegisterPage,
 });
+
 
 function RegisterPage() {
   const navigate = useNavigate();
