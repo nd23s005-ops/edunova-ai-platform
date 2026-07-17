@@ -36,7 +36,6 @@ import {
   getRelatedCourses,
   RESOURCE_KINDS,
   type CourseResource,
-  type CourseCatalogEntry,
 } from "@/lib/resources/catalog";
 import { toast } from "sonner";
 
