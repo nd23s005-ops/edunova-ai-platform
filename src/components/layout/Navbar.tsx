@@ -36,7 +36,7 @@ function NavItem({ to, label, onClick }: { to: (typeof NAV_LINKS)[number]["to"];
   );
 }
 
-function CTAButton({ to, onClick, children }: { to: "/register"; onClick?: () => void; children: React.ReactNode }) {
+function CTAButton({ to, onClick, children }: { to: "/register" | "/onboarding"; onClick?: () => void; children: React.ReactNode }) {
   return (
     <Link
       to={to}
@@ -152,12 +152,12 @@ export function Navbar() {
           ) : (
             <>
               <Link
-                to="/login"
+                to="/onboarding"
                 className="text-sm font-medium text-[oklch(0.35_0.02_240)] transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)]"
               >
                 Login
               </Link>
-              <CTAButton to="/register">Get Started</CTAButton>
+              <CTAButton to="/onboarding">Get Started</CTAButton>
             </>
           )}
         </div>
@@ -242,13 +242,13 @@ export function Navbar() {
                 ) : (
                   <>
                     <Link
-                      to="/login"
+                      to="/onboarding"
                       onClick={() => setOpen(false)}
                       className="rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-center text-sm font-semibold text-[oklch(0.18_0.03_240)]"
                     >
                       Login
                     </Link>
-                    <CTAButton to="/register" onClick={() => setOpen(false)}>
+                    <CTAButton to="/onboarding" onClick={() => setOpen(false)}>
                       Get Started
                     </CTAButton>
                   </>
