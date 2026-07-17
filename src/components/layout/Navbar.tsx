@@ -4,6 +4,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { homeForRole, normalizeRole } from "@/lib/auth/roles";
@@ -32,7 +33,7 @@ function NavItem({ to, label, onClick }: { to: (typeof NAV_LINKS)[number]["to"];
       to={to}
       onClick={onClick}
       activeOptions={{ exact: to === "/" }}
-      className="group relative px-1 py-1 text-sm font-medium text-[oklch(0.35_0.02_240)] transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)] data-[status=active]:font-semibold data-[status=active]:text-[oklch(0.7_0.19_40)]"
+      className="group relative px-1 py-1 text-sm font-medium text-foreground/70 transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)] data-[status=active]:font-semibold data-[status=active]:text-[oklch(0.7_0.19_40)]"
     >
       {label}
       <span className="pointer-events-none absolute inset-x-1 -bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-[oklch(0.7_0.19_40)] transition-transform duration-300 group-hover:scale-x-100 group-data-[status=active]:scale-x-100" />
@@ -138,8 +139,8 @@ export function Navbar() {
         "sticky top-0 z-50 transition-all duration-300",
         "border-b",
         scrolled
-          ? "border-[#ECECEC] bg-[#FCFAF7]/85 shadow-[0_4px_20px_-8px_rgba(15,23,42,0.08)] backdrop-blur-2xl"
-          : "border-transparent bg-[#FCFAF7]/95 backdrop-blur-xl",
+          ? "border-border/60 bg-background/85 shadow-[0_4px_20px_-8px_rgba(15,23,42,0.08)] backdrop-blur-2xl"
+          : "border-transparent bg-background/95 backdrop-blur-xl",
       )}
     >
       <div className="mx-auto grid h-[72px] max-w-[1280px] grid-cols-[auto_1fr_auto] items-center gap-6 px-4 sm:px-6 lg:h-20 lg:px-10">
@@ -202,23 +203,25 @@ export function Navbar() {
             <>
               <Link
                 to="/login"
-                className="text-sm font-medium text-[oklch(0.35_0.02_240)] transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)]"
+                className="text-sm font-medium text-foreground/70 transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)]"
               >
                 Login
               </Link>
               <CTAButton to="/onboarding" search={{ mode: "register" }}>Create Account</CTAButton>
             </>
           )}
+          <ThemeToggle />
         </div>
 
 
         {/* Mobile trigger */}
-        <div className="flex items-center justify-self-end lg:hidden">
+        <div className="flex items-center gap-2 justify-self-end lg:hidden">
+          <ThemeToggle />
           <button
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-xl border border-[#ECECEC] bg-white/70 text-[oklch(0.18_0.03_240)] transition-colors hover:border-[oklch(0.7_0.19_40)]/40 hover:text-[oklch(0.7_0.19_40)]"
+            className="grid h-10 w-10 place-items-center rounded-xl border border-border/60 bg-background/70 text-foreground transition-colors hover:border-[oklch(0.7_0.19_40)]/40 hover:text-[oklch(0.7_0.19_40)]"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -233,7 +236,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
-            className="overflow-hidden border-t border-[#ECECEC] bg-[#FCFAF7]/95 backdrop-blur-2xl lg:hidden"
+            className="overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-2xl lg:hidden"
           >
             <motion.nav
               initial="hidden"
@@ -257,7 +260,7 @@ export function Navbar() {
                     to={l.to}
                     onClick={() => setOpen(false)}
                     activeOptions={{ exact: l.to === "/" }}
-                    className="block rounded-xl px-3 py-3 text-base font-medium text-[oklch(0.25_0.02_240)] transition-colors hover:bg-white hover:text-[oklch(0.7_0.19_40)] data-[status=active]:bg-white data-[status=active]:text-[oklch(0.7_0.19_40)]"
+                    className="block rounded-xl px-3 py-3 text-base font-medium text-foreground/80 transition-colors hover:bg-muted hover:text-[oklch(0.7_0.19_40)] data-[status=active]:bg-muted data-[status=active]:text-[oklch(0.7_0.19_40)]"
                   >
                     {l.label}
                   </Link>
@@ -268,7 +271,7 @@ export function Navbar() {
                   hidden: { opacity: 0, y: 8 },
                   visible: { opacity: 1, y: 0 },
                 }}
-                className="mt-3 grid grid-cols-2 gap-2 border-t border-[#ECECEC] pt-4"
+                className="mt-3 grid grid-cols-2 gap-2 border-t border-border/60 pt-4"
               >
                 {user ? (
                   <>
@@ -284,7 +287,7 @@ export function Navbar() {
                         setOpen(false);
                         signOut();
                       }}
-                      className="col-span-2 rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-sm font-semibold text-[oklch(0.18_0.03_240)]"
+                      className="col-span-2 rounded-[14px] border border-border/60 bg-card px-4 py-2.5 text-sm font-semibold text-foreground"
                     >
                       Sign out
                     </button>
@@ -294,7 +297,7 @@ export function Navbar() {
                     <Link
                       to="/login"
                       onClick={() => setOpen(false)}
-                      className="rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-center text-sm font-semibold text-[oklch(0.18_0.03_240)]"
+                      className="rounded-[14px] border border-border/60 bg-card px-4 py-2.5 text-center text-sm font-semibold text-foreground"
                     >
                       Login
                     </Link>
