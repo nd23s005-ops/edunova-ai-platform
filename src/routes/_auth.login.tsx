@@ -98,9 +98,10 @@ function LoginPage() {
       {selectedRole && (
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-semibold">
           {selectedRole === "admin" && <Shield className="h-3.5 w-3.5" />}
-          {ROLE_LABELS[selectedRole]} sign in
+          {ROLE_LABELS[selectedRole as AppRole]} sign in
         </div>
       )}
+
       <h1 className="text-3xl font-bold tracking-tight">
         {selectedRole === "admin" ? "Administrator sign in" : "Welcome back"}
       </h1>
