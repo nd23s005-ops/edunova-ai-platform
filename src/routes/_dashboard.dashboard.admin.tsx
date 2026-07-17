@@ -12,6 +12,7 @@ import {
   Sparkles,
   Lock,
   LifeBuoy,
+  Activity,
 } from "lucide-react";
 import { DashboardHeader, StatCard } from "@/components/dashboard/DashboardShared";
 import { RoleGate } from "@/components/auth/RoleGate";
