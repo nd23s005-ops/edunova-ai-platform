@@ -33,6 +33,8 @@ type Course = {
   class_max: number;
   language: string;
   cover_url: string | null;
+  difficulty: string | null;
+  estimated_hours: number | null;
 };
 
 function BrowseCoursesPage() {
