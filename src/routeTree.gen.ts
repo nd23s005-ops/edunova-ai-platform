@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
@@ -23,8 +24,16 @@ import { Route as AuthRegisterRouteImport } from './routes/_auth.register'
 import { Route as AuthLoginRouteImport } from './routes/_auth.login'
 import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-password'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
+import { Route as DashboardDashboardTeacherRouteImport } from './routes/_dashboard.dashboard.teacher'
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
+import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
+import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MarketingRoute = MarketingRouteImport.update({
   id: '/_marketing',
   getParentRoute: () => rootRouteImport,
@@ -92,15 +101,33 @@ const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
   path: '/dashboard/',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardDashboardTeacherRoute =
+  DashboardDashboardTeacherRouteImport.update({
+    id: '/dashboard/teacher',
+    path: '/dashboard/teacher',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDashboardStudentRoute =
   DashboardDashboardStudentRouteImport.update({
     id: '/dashboard/student',
     path: '/dashboard/student',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardOrganizationRoute =
+  DashboardDashboardOrganizationRouteImport.update({
+    id: '/dashboard/organization',
+    path: '/dashboard/organization',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardAdminRoute = DashboardDashboardAdminRouteImport.update({
+  id: '/dashboard/admin',
+  path: '/dashboard/admin',
+  getParentRoute: () => DashboardRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof MarketingIndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/forgot-password': typeof AuthForgotPasswordRoute
   '/login': typeof AuthLoginRoute
   '/register': typeof AuthRegisterRoute
@@ -110,11 +137,15 @@ export interface FileRoutesByFullPath {
   '/courses': typeof MarketingCoursesRoute
   '/pricing': typeof MarketingPricingRoute
   '/resources': typeof MarketingResourcesRoute
+  '/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof MarketingIndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/forgot-password': typeof AuthForgotPasswordRoute
   '/login': typeof AuthLoginRoute
   '/register': typeof AuthRegisterRoute
@@ -124,7 +155,10 @@ export interface FileRoutesByTo {
   '/courses': typeof MarketingCoursesRoute
   '/pricing': typeof MarketingPricingRoute
   '/resources': typeof MarketingResourcesRoute
+  '/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -132,6 +166,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/_auth/forgot-password': typeof AuthForgotPasswordRoute
   '/_auth/login': typeof AuthLoginRoute
   '/_auth/register': typeof AuthRegisterRoute
@@ -142,13 +177,17 @@ export interface FileRoutesById {
   '/_marketing/pricing': typeof MarketingPricingRoute
   '/_marketing/resources': typeof MarketingResourcesRoute
   '/_marketing/': typeof MarketingIndexRoute
+  '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/_dashboard/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/sitemap.xml'
     | '/forgot-password'
     | '/login'
     | '/register'
@@ -158,11 +197,15 @@ export interface FileRouteTypes {
     | '/courses'
     | '/pricing'
     | '/resources'
+    | '/dashboard/admin'
+    | '/dashboard/organization'
     | '/dashboard/student'
+    | '/dashboard/teacher'
     | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/sitemap.xml'
     | '/forgot-password'
     | '/login'
     | '/register'
@@ -172,13 +215,17 @@ export interface FileRouteTypes {
     | '/courses'
     | '/pricing'
     | '/resources'
+    | '/dashboard/admin'
+    | '/dashboard/organization'
     | '/dashboard/student'
+    | '/dashboard/teacher'
     | '/dashboard'
   id:
     | '__root__'
     | '/_auth'
     | '/_dashboard'
     | '/_marketing'
+    | '/sitemap.xml'
     | '/_auth/forgot-password'
     | '/_auth/login'
     | '/_auth/register'
@@ -189,7 +236,10 @@ export interface FileRouteTypes {
     | '/_marketing/pricing'
     | '/_marketing/resources'
     | '/_marketing/'
+    | '/_dashboard/dashboard/admin'
+    | '/_dashboard/dashboard/organization'
     | '/_dashboard/dashboard/student'
+    | '/_dashboard/dashboard/teacher'
     | '/_dashboard/dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -197,10 +247,18 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_marketing': {
       id: '/_marketing'
       path: ''
@@ -299,11 +357,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/teacher': {
+      id: '/_dashboard/dashboard/teacher'
+      path: '/dashboard/teacher'
+      fullPath: '/dashboard/teacher'
+      preLoaderRoute: typeof DashboardDashboardTeacherRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/dashboard/student': {
       id: '/_dashboard/dashboard/student'
       path: '/dashboard/student'
       fullPath: '/dashboard/student'
       preLoaderRoute: typeof DashboardDashboardStudentRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/organization': {
+      id: '/_dashboard/dashboard/organization'
+      path: '/dashboard/organization'
+      fullPath: '/dashboard/organization'
+      preLoaderRoute: typeof DashboardDashboardOrganizationRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/admin': {
+      id: '/_dashboard/dashboard/admin'
+      path: '/dashboard/admin'
+      fullPath: '/dashboard/admin'
+      preLoaderRoute: typeof DashboardDashboardAdminRouteImport
       parentRoute: typeof DashboardRoute
     }
   }
@@ -324,12 +403,18 @@ const AuthRouteChildren: AuthRouteChildren = {
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 interface DashboardRouteChildren {
+  DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRoute
+  DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
   DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRoute
+  DashboardDashboardTeacherRoute: typeof DashboardDashboardTeacherRoute
   DashboardDashboardIndexRoute: typeof DashboardDashboardIndexRoute
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardDashboardAdminRoute: DashboardDashboardAdminRoute,
+  DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
   DashboardDashboardStudentRoute: DashboardDashboardStudentRoute,
+  DashboardDashboardTeacherRoute: DashboardDashboardTeacherRoute,
   DashboardDashboardIndexRoute: DashboardDashboardIndexRoute,
 }
 
@@ -365,6 +450,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
