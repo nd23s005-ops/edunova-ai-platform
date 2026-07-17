@@ -45,6 +45,7 @@ import { Route as DashboardDashboardAiAssistantRouteImport } from './routes/_das
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
+import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
 import { Route as DashboardDashboardUpskillingCourseIdRouteImport } from './routes/_dashboard.dashboard.upskilling.$courseId'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
 import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_dashboard.dashboard.student.browse'
@@ -239,6 +240,12 @@ const DashboardDashboardUpskillingIndexRoute =
     path: '/dashboard/upskilling/',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardMockTestsIndexRoute =
+  DashboardDashboardMockTestsIndexRouteImport.update({
+    id: '/dashboard/mock-tests/',
+    path: '/dashboard/mock-tests/',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDashboardUpskillingCourseIdRoute =
   DashboardDashboardUpskillingCourseIdRouteImport.update({
     id: '/dashboard/upskilling/$courseId',
@@ -333,6 +340,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
   '/dashboard/student/courses/$courseId/assignments/$assignmentId': typeof DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute
@@ -377,6 +385,7 @@ export interface FileRoutesByTo {
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
   '/dashboard/student/courses/$courseId/assignments/$assignmentId': typeof DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute
@@ -425,6 +434,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/_dashboard/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
+  '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
   '/_dashboard/dashboard/student/courses/$courseId/assignments/$assignmentId': typeof DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute
@@ -471,6 +481,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/browse'
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
+    | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/student/courses/$courseId'
     | '/dashboard/student/courses/$courseId/assignments/$assignmentId'
@@ -515,6 +526,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/browse'
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
+    | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/student/courses/$courseId'
     | '/dashboard/student/courses/$courseId/assignments/$assignmentId'
@@ -562,6 +574,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student/browse'
     | '/_dashboard/dashboard/student/my-courses'
     | '/_dashboard/dashboard/upskilling/$courseId'
+    | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/student/courses/$courseId'
     | '/_dashboard/dashboard/student/courses/$courseId/assignments/$assignmentId'
@@ -838,6 +851,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardUpskillingIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/mock-tests/': {
+      id: '/_dashboard/dashboard/mock-tests/'
+      path: '/dashboard/mock-tests'
+      fullPath: '/dashboard/mock-tests/'
+      preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/dashboard/upskilling/$courseId': {
       id: '/_dashboard/dashboard/upskilling/$courseId'
       path: '/dashboard/upskilling/$courseId'
@@ -998,6 +1018,7 @@ interface DashboardRouteChildren {
   DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRouteWithChildren
   DashboardDashboardIndexRoute: typeof DashboardDashboardIndexRoute
   DashboardDashboardUpskillingCourseIdRoute: typeof DashboardDashboardUpskillingCourseIdRoute
+  DashboardDashboardMockTestsIndexRoute: typeof DashboardDashboardMockTestsIndexRoute
   DashboardDashboardUpskillingIndexRoute: typeof DashboardDashboardUpskillingIndexRoute
 }
 
@@ -1012,6 +1033,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardIndexRoute: DashboardDashboardIndexRoute,
   DashboardDashboardUpskillingCourseIdRoute:
     DashboardDashboardUpskillingCourseIdRoute,
+  DashboardDashboardMockTestsIndexRoute: DashboardDashboardMockTestsIndexRoute,
   DashboardDashboardUpskillingIndexRoute:
     DashboardDashboardUpskillingIndexRoute,
 }
