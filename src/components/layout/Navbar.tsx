@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, LogOut, Menu, User, X } from "lucide-react";
+import { ArrowRight, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
+import { homeForRole, type AppRole } from "@/lib/auth/roles";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +15,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
