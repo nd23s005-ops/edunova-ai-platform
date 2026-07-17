@@ -414,6 +414,8 @@ function ExplorePage() {
         </div>
       </Section>
 
+      <SchoolEducation />
+
       {/* Learning Paths */}
       <Section
         className="bg-secondary/40"
@@ -636,5 +638,347 @@ function CourseCard({ c, delay = 0 }: { c: Course; delay?: number }) {
         </Button>
       </div>
     </motion.article>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────
+   School Education (Grades 1–12)
+   ──────────────────────────────────────────────────────────── */
+
+type Stage = {
+  id: string;
+  label: string;
+  grades: string;
+  desc: string;
+  icon: React.ComponentType<{ className?: string }>;
+  gradient: string;
+  subjects: string[];
+};
+
+const SCHOOL_STAGES: Stage[] = [
+  {
+    id: "primary",
+    label: "Primary School",
+    grades: "Grades 1–5",
+    desc: "Foundational learning across languages, numbers, and the world around us.",
+    icon: BookOpen,
+    gradient: "from-emerald-500 to-teal-500",
+    subjects: [
+      "English",
+      "Mathematics",
+      "Environmental Science (EVS)",
+      "General Knowledge",
+      "Computer Basics",
+      "Physical Education",
+    ],
+  },
+  {
+    id: "middle",
+    label: "Middle School",
+    grades: "Grades 6–8",
+    desc: "Core subjects deepen — algebra, life sciences, civics, and computer fundamentals.",
+    icon: GraduationCap,
+    gradient: "from-sky-500 to-cyan-500",
+    subjects: [
+      "English",
+      "Mathematics",
+      "Science",
+      "Social Science",
+      "Computer Science",
+      "History",
+      "Geography",
+      "Civics",
+      "Physical Education",
+    ],
+  },
+  {
+    id: "high",
+    label: "High School",
+    grades: "Grades 9–10",
+    desc: "Board-prep foundation across sciences, math, social science, and IT.",
+    icon: Trophy,
+    gradient: "from-indigo-500 to-blue-500",
+    subjects: [
+      "English",
+      "Mathematics",
+      "Science",
+      "Social Science",
+      "Information Technology",
+      "Computer Science",
+      "History",
+      "Geography",
+      "Political Science",
+      "Economics",
+    ],
+  },
+  {
+    id: "higher",
+    label: "Higher Secondary",
+    grades: "Grades 11–12",
+    desc: "Stream-based mastery in Science, Commerce, or Arts & Humanities.",
+    icon: Award,
+    gradient: "from-fuchsia-500 to-pink-500",
+    subjects: [], // handled by streams
+  },
+];
+
+const STREAMS: Record<string, { label: string; subjects: string[]; icon: React.ComponentType<{ className?: string }>; gradient: string }> = {
+  science: {
+    label: "Science",
+    icon: Cpu,
+    gradient: "from-violet-500 to-fuchsia-500",
+    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "Zoology", "Botany", "Computer Science"],
+  },
+  commerce: {
+    label: "Commerce",
+    icon: Briefcase,
+    gradient: "from-amber-500 to-orange-500",
+    subjects: ["Accountancy", "Business Studies", "Economics", "Mathematics", "Computer Applications"],
+  },
+  arts: {
+    label: "Arts & Humanities",
+    icon: PenTool,
+    gradient: "from-rose-500 to-pink-500",
+    subjects: ["History", "Geography", "Political Science", "Economics", "Sociology", "Psychology"],
+  },
+};
+
+const BOARDS = ["All Boards", "CBSE", "ICSE", "State Board"] as const;
+
+const SUBJECT_ICON: Record<string, React.ComponentType<{ className?: string }>> = {
+  English: BookOpen,
+  Mathematics: Braces,
+  Science: Cpu,
+  "Environmental Science (EVS)": Globe,
+  "Social Science": Users,
+  Physics: Sparkles,
+  Chemistry: Cpu,
+  Biology: Brain,
+  Zoology: Brain,
+  Botany: Brain,
+  "Computer Science": Code2,
+  "Computer Basics": Code2,
+  "Computer Applications": Code2,
+  "Information Technology": Server,
+  Economics: BarChart3,
+  "Business Studies": Briefcase,
+  Accountancy: LineChart,
+  History: BookOpen,
+  Geography: Globe,
+  "Political Science": Users,
+  Civics: Users,
+  Sociology: Users,
+  Psychology: Brain,
+  "Physical Education": Trophy,
+  "General Knowledge": Compass,
+};
+
+function SchoolEducation() {
+  const [stageId, setStageId] = useState<string>("primary");
+  const [board, setBoard] = useState<(typeof BOARDS)[number]>("All Boards");
+  const [stream, setStream] = useState<keyof typeof STREAMS>("science");
+  const [query, setQuery] = useState("");
+
+  const stage = SCHOOL_STAGES.find((s) => s.id === stageId)!;
+  const isHigher = stage.id === "higher";
+  const subjects = isHigher ? STREAMS[stream].subjects : stage.subjects;
+
+  const filteredSubjects = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return subjects;
+    return subjects.filter(
+      (s) =>
+        s.toLowerCase().includes(q) ||
+        stage.label.toLowerCase().includes(q) ||
+        stage.grades.toLowerCase().includes(q) ||
+        board.toLowerCase().includes(q),
+    );
+  }, [subjects, query, stage, board]);
+
+  return (
+    <Section
+      eyebrow="School Education"
+      title={
+        <>
+          <GraduationCap className="mr-2 inline h-8 w-8 text-primary" /> Grades 1–12 Learning Hub
+        </>
+      }
+      description="Complete K–12 coverage across CBSE, ICSE, and State Boards — organized by grade, stream, and subject."
+    >
+      {/* Search */}
+      <div className="mx-auto mb-8 max-w-2xl">
+        <div className="relative">
+          <Search className="pointer-events-none absolute left-4 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Try: Class 10 Physics, CBSE Biology, Class 12 Chemistry..."
+            className="h-12 rounded-full pl-11 pr-4"
+            aria-label="Search school subjects"
+          />
+        </div>
+      </div>
+
+      {/* Stage tabs */}
+      <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {SCHOOL_STAGES.map((s) => {
+          const Icon = s.icon;
+          const active = s.id === stageId;
+          return (
+            <button
+              key={s.id}
+              onClick={() => setStageId(s.id)}
+              className={`group relative overflow-hidden rounded-2xl border p-4 text-left transition ${
+                active
+                  ? "border-primary/60 bg-primary/5 shadow-lg"
+                  : "border-border/60 bg-card hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+              }`}
+              aria-pressed={active}
+            >
+              <div className={`absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br ${s.gradient} opacity-20 blur-2xl`} />
+              <div className={`relative grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br ${s.gradient} text-white shadow`}>
+                <Icon className="h-5 w-5" />
+              </div>
+              <p className="relative mt-3 text-sm font-semibold">{s.label}</p>
+              <p className="relative text-xs text-muted-foreground">{s.grades}</p>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Board + stream controls */}
+      <div className="mb-6 flex flex-wrap items-center gap-3 rounded-2xl border border-border/60 bg-card p-4 shadow-sm">
+        <div className="flex items-center gap-2 text-sm font-medium">
+          <Filter className="h-4 w-4 text-primary" /> Board
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {BOARDS.map((b) => (
+            <button
+              key={b}
+              onClick={() => setBoard(b)}
+              className={`rounded-full border px-3 py-1 text-xs font-medium transition ${
+                board === b
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-background hover:border-primary/40 hover:text-primary"
+              }`}
+            >
+              {b}
+            </button>
+          ))}
+        </div>
+
+        {isHigher && (
+          <>
+            <div className="ml-2 flex items-center gap-2 text-sm font-medium">
+              <RouteIcon className="h-4 w-4 text-primary" /> Stream
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {(Object.keys(STREAMS) as Array<keyof typeof STREAMS>).map((key) => (
+                <button
+                  key={key}
+                  onClick={() => setStream(key)}
+                  className={`rounded-full border px-3 py-1 text-xs font-medium transition ${
+                    stream === key
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-border bg-background hover:border-primary/40 hover:text-primary"
+                  }`}
+                >
+                  {STREAMS[key].label}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div className="ml-auto text-xs text-muted-foreground">
+          {stage.label} · {isHigher ? STREAMS[stream].label : "Core subjects"} · {board}
+        </div>
+      </div>
+
+      {/* Description strip */}
+      <div className="mb-6 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm text-muted-foreground">
+        <span className="font-semibold text-foreground">{stage.label} ({stage.grades}) — </span>
+        {stage.desc}
+      </div>
+
+      {/* Subjects grid */}
+      {filteredSubjects.length ? (
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {filteredSubjects.map((sub, i) => {
+            const Icon = SUBJECT_ICON[sub] ?? BookOpen;
+            const grad = isHigher ? STREAMS[stream].gradient : stage.gradient;
+            return (
+              <motion.div
+                key={sub}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.25, delay: i * 0.02 }}
+                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-5 shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+              >
+                <div className={`absolute -right-8 -top-8 h-24 w-24 rounded-full bg-gradient-to-br ${grad} opacity-20 blur-2xl transition group-hover:opacity-40`} />
+                <div className={`relative grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br ${grad} text-white shadow`}>
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="relative mt-4 text-base font-semibold leading-tight">{sub}</h3>
+                <p className="relative mt-1 text-xs text-muted-foreground">
+                  {stage.grades} · {board === "All Boards" ? "CBSE / ICSE / State" : board}
+                </p>
+
+                <ul className="relative mt-3 space-y-1 text-xs text-muted-foreground">
+                  <li className="inline-flex items-center gap-1.5"><FileCode2 className="h-3 w-3 text-primary" /> Chapter-wise notes</li>
+                  <li className="inline-flex items-center gap-1.5"><Target className="h-3 w-3 text-primary" /> Practice questions</li>
+                  <li className="inline-flex items-center gap-1.5"><Trophy className="h-3 w-3 text-primary" /> Previous year papers</li>
+                </ul>
+
+                <Button variant="ghost" size="sm" className="relative mt-4 w-full justify-between px-2 hover:bg-primary/10 hover:text-primary" asChild>
+                  <Link to="/register">
+                    Explore course <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </motion.div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="rounded-2xl border border-dashed border-border p-10 text-center">
+          <Compass className="mx-auto h-8 w-8 text-muted-foreground" />
+          <p className="mt-3 font-semibold">No subjects match your search</p>
+          <p className="text-sm text-muted-foreground">Try a different grade, stream, or board.</p>
+        </div>
+      )}
+
+      {/* Resources hint */}
+      <div className="mt-8 grid gap-3 rounded-2xl border border-border/60 bg-secondary/40 p-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex items-center gap-3">
+          <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary"><BookOpen className="h-4 w-4" /></div>
+          <div>
+            <p className="text-sm font-semibold">Complete Notes</p>
+            <p className="text-xs text-muted-foreground">Chapter-wise, exam-ready</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary"><Trophy className="h-4 w-4" /></div>
+          <div>
+            <p className="text-sm font-semibold">Previous Year Papers</p>
+            <p className="text-xs text-muted-foreground">CBSE, ICSE, State</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary"><Target className="h-4 w-4" /></div>
+          <div>
+            <p className="text-sm font-semibold">Practice & Model Papers</p>
+            <p className="text-xs text-muted-foreground">Timed self-tests</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary"><Sparkles className="h-4 w-4" /></div>
+          <div>
+            <p className="text-sm font-semibold">Quick Revision</p>
+            <p className="text-xs text-muted-foreground">Formula sheets & summaries</p>
+          </div>
+        </div>
+      </div>
+    </Section>
   );
 }
