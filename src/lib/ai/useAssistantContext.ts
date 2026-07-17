@@ -161,15 +161,10 @@ export function assistantGreeting(ctx: AssistantContext): { title: string; subti
           ? `I know you're studying Class ${ctx.student.currentClass} · ${boardLabel}. Ask me anything.`
           : "Complete your profile so I can tailor explanations to your class and board.",
       };
-    case "dashboard_teacher":
-      return {
-        title: "Teaching assistant",
-        subtitle: "Ask me to draft lessons, quizzes, assignments, or analyze student performance.",
-      };
     case "dashboard_organization":
       return {
         title: "Organization assistant",
-        subtitle: "Ask about managing students, teachers, analytics, and reports.",
+        subtitle: "Ask about managing learners, employees, analytics, and reports.",
       };
     case "dashboard_admin":
       return {
