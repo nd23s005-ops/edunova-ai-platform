@@ -331,6 +331,9 @@ const READER_ROUTES: Record<string, string> = {
   "machine-learning--beginner-guide": "/resources/read/ml-beginner-guide",
   "machine-learning--complete-tutorial": "/resources/read/ml-complete-tutorial",
   "machine-learning--step-by-step-learning-guide": "/resources/read/ml-step-by-step-learning-guide",
+  "machine-learning--pdf-notes": "/resources/read/ml-pdf-notes",
+  "machine-learning--quick-revision-notes": "/resources/read/ml-quick-revision-notes",
+  "machine-learning--cheat-sheet": "/resources/read/ml-cheat-sheet",
 };
 
 export function getResourceReaderPath(id: string): string | null {
