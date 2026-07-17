@@ -30,9 +30,7 @@ export const registerSchema = z
     password: passwordSchema,
     confirmPassword: z.string().min(1, { message: "Please confirm your password" }),
     role: z.enum(SELF_SIGNUP_ROLES as unknown as [string, ...string[]]),
-    acceptTerms: z.literal(true, {
-      errorMap: () => ({ message: "You must accept the terms to continue" }),
-    }),
+    acceptTerms: z.literal(true, { message: "You must accept the terms to continue" }),
   })
   .refine((v) => v.password === v.confirmPassword, {
     path: ["confirmPassword"],
