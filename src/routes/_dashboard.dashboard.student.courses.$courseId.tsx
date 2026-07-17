@@ -1,14 +1,19 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useEffect } from "react";
 import {
   BookOpen,
+  CheckCircle2,
   ChevronRight,
+  ClipboardList,
   Clock,
   FileText,
   GraduationCap,
   Layers,
   Loader2,
+  PartyPopper,
   ScrollText,
+  Sparkles,
   Target,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -21,11 +26,19 @@ import {
   DIFFICULTY_LABEL,
   Badge,
   EmptyContent,
-  Markdown,
+  ProgressBar,
   ProgressRing,
   Section,
 } from "@/components/courses/CourseUI";
-import { useCourse, useCourseChapters, useCourseProgress } from "@/lib/courses/hooks";
+import {
+  useCourse,
+  useCourseChapters,
+  useCourseProgress,
+  useCourseQuizAssignments,
+  useCourseTotalLessons,
+  useNextCourseRecommendation,
+} from "@/lib/courses/hooks";
+
 
 export const Route = createFileRoute(
   "/_dashboard/dashboard/student/courses/$courseId",
