@@ -178,7 +178,7 @@ function StudentDashboard() {
         .from("courses")
         .select("id, title, subject, difficulty")
         .eq("is_published", true)
-        .eq("board", profile.board)
+        .eq("board", profile.board as never)
         .lte("class_min", profile.current_class)
         .gte("class_max", profile.current_class)
         .limit(12);
