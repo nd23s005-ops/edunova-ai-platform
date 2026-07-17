@@ -181,10 +181,13 @@ export function assistantGreeting(ctx: AssistantContext): { title: string; subti
   const boardLabel = ctx.student ? BOARD_LABEL[ctx.student.board] ?? ctx.student.board : "";
   switch (ctx.surface) {
     case "home":
+    case "help_desk":
       return {
-        title: "Hi, I'm Nova",
-        subtitle: "Your guide to EduNova AI — ask about features, courses, pricing, or getting started.",
+        title: "EduNova AI Help Desk",
+        subtitle:
+          "I can help you with login, dashboards, account setup, and platform questions — not coursework.",
       };
+
     case "explore":
       return {
         title: "Looking for a course?",
@@ -238,7 +241,14 @@ export function assistantGreeting(ctx: AssistantContext): { title: string; subti
 export function assistantQuickPrompts(ctx: AssistantContext): string[] {
   switch (ctx.surface) {
     case "home":
-      return ["What is EduNova AI?", "Show me key features", "How do I get started?"];
+    case "help_desk":
+      return [
+        "I can't log in",
+        "How do I create an account?",
+        "How do I find my dashboard?",
+        "How do I enroll in a course?",
+      ];
+
     case "explore":
       return [
         ctx.student
