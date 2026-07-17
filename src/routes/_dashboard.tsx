@@ -25,7 +25,7 @@ import {
   Sparkles,
   Target,
   Trophy,
-  UserCog,
+  
   Users,
   X,
 } from "lucide-react";
