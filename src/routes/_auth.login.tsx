@@ -17,7 +17,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
 import { homeForRole, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
 import type { AppRole } from "@/lib/auth/roles";
-import type { AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_auth/login")({
   head: () => ({
