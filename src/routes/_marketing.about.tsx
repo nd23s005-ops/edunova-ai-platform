@@ -92,14 +92,8 @@ const audiences = [
   { icon: Rocket, title: "Self Learners", desc: "Lifelong learners exploring new topics on their own schedule." },
 ];
 
-const stats = [
-  { value: "50K+", label: "Active Learners" },
-  { value: "300+", label: "Courses" },
-  { value: "12K+", label: "Study Resources" },
-  { value: "1.5K+", label: "Practice Tests" },
-  { value: "150+", label: "Organizations" },
-  { value: "2M+", label: "Learning Hours" },
-];
+
+
 
 function AboutPage() {
   const reduce = useReducedMotion();
@@ -281,28 +275,8 @@ function AboutPage() {
         </div>
       </Section>
 
-      {/* Stats */}
-      <Section className="bg-muted/30">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.45, delay: reduce ? 0 : i * 0.06 }}
-              className="rounded-2xl border border-border/60 bg-card p-5 text-center shadow-card"
-            >
-              <div className="text-3xl font-bold tracking-tight sm:text-4xl">
-                <span className="text-gradient">{s.value}</span>
-              </div>
-              <div className="mt-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                {s.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
+
+
 
       {/* CTA */}
       <section className="relative py-20 sm:py-28">
