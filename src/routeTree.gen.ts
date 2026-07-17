@@ -15,10 +15,7 @@ import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
 import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
-import { Route as MarketingPricingRouteImport } from './routes/_marketing.pricing'
-import { Route as MarketingCoursesRouteImport } from './routes/_marketing.courses'
-import { Route as MarketingContactRouteImport } from './routes/_marketing.contact'
-import { Route as MarketingAiTutorRouteImport } from './routes/_marketing.ai-tutor'
+import { Route as MarketingExploreRouteImport } from './routes/_marketing.explore'
 import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
 import { Route as AuthRegisterRouteImport } from './routes/_auth.register'
 import { Route as AuthLoginRouteImport } from './routes/_auth.login'
@@ -56,24 +53,9 @@ const MarketingResourcesRoute = MarketingResourcesRouteImport.update({
   path: '/resources',
   getParentRoute: () => MarketingRoute,
 } as any)
-const MarketingPricingRoute = MarketingPricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => MarketingRoute,
-} as any)
-const MarketingCoursesRoute = MarketingCoursesRouteImport.update({
-  id: '/courses',
-  path: '/courses',
-  getParentRoute: () => MarketingRoute,
-} as any)
-const MarketingContactRoute = MarketingContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => MarketingRoute,
-} as any)
-const MarketingAiTutorRoute = MarketingAiTutorRouteImport.update({
-  id: '/ai-tutor',
-  path: '/ai-tutor',
+const MarketingExploreRoute = MarketingExploreRouteImport.update({
+  id: '/explore',
+  path: '/explore',
   getParentRoute: () => MarketingRoute,
 } as any)
 const MarketingAboutRoute = MarketingAboutRouteImport.update({
@@ -132,10 +114,7 @@ export interface FileRoutesByFullPath {
   '/login': typeof AuthLoginRoute
   '/register': typeof AuthRegisterRoute
   '/about': typeof MarketingAboutRoute
-  '/ai-tutor': typeof MarketingAiTutorRoute
-  '/contact': typeof MarketingContactRoute
-  '/courses': typeof MarketingCoursesRoute
-  '/pricing': typeof MarketingPricingRoute
+  '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
@@ -150,10 +129,7 @@ export interface FileRoutesByTo {
   '/login': typeof AuthLoginRoute
   '/register': typeof AuthRegisterRoute
   '/about': typeof MarketingAboutRoute
-  '/ai-tutor': typeof MarketingAiTutorRoute
-  '/contact': typeof MarketingContactRoute
-  '/courses': typeof MarketingCoursesRoute
-  '/pricing': typeof MarketingPricingRoute
+  '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
@@ -171,10 +147,7 @@ export interface FileRoutesById {
   '/_auth/login': typeof AuthLoginRoute
   '/_auth/register': typeof AuthRegisterRoute
   '/_marketing/about': typeof MarketingAboutRoute
-  '/_marketing/ai-tutor': typeof MarketingAiTutorRoute
-  '/_marketing/contact': typeof MarketingContactRoute
-  '/_marketing/courses': typeof MarketingCoursesRoute
-  '/_marketing/pricing': typeof MarketingPricingRoute
+  '/_marketing/explore': typeof MarketingExploreRoute
   '/_marketing/resources': typeof MarketingResourcesRoute
   '/_marketing/': typeof MarketingIndexRoute
   '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRoute
@@ -192,10 +165,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/register'
     | '/about'
-    | '/ai-tutor'
-    | '/contact'
-    | '/courses'
-    | '/pricing'
+    | '/explore'
     | '/resources'
     | '/dashboard/admin'
     | '/dashboard/organization'
@@ -210,10 +180,7 @@ export interface FileRouteTypes {
     | '/login'
     | '/register'
     | '/about'
-    | '/ai-tutor'
-    | '/contact'
-    | '/courses'
-    | '/pricing'
+    | '/explore'
     | '/resources'
     | '/dashboard/admin'
     | '/dashboard/organization'
@@ -230,10 +197,7 @@ export interface FileRouteTypes {
     | '/_auth/login'
     | '/_auth/register'
     | '/_marketing/about'
-    | '/_marketing/ai-tutor'
-    | '/_marketing/contact'
-    | '/_marketing/courses'
-    | '/_marketing/pricing'
+    | '/_marketing/explore'
     | '/_marketing/resources'
     | '/_marketing/'
     | '/_dashboard/dashboard/admin'
@@ -294,32 +258,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesRouteImport
       parentRoute: typeof MarketingRoute
     }
-    '/_marketing/pricing': {
-      id: '/_marketing/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof MarketingPricingRouteImport
-      parentRoute: typeof MarketingRoute
-    }
-    '/_marketing/courses': {
-      id: '/_marketing/courses'
-      path: '/courses'
-      fullPath: '/courses'
-      preLoaderRoute: typeof MarketingCoursesRouteImport
-      parentRoute: typeof MarketingRoute
-    }
-    '/_marketing/contact': {
-      id: '/_marketing/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof MarketingContactRouteImport
-      parentRoute: typeof MarketingRoute
-    }
-    '/_marketing/ai-tutor': {
-      id: '/_marketing/ai-tutor'
-      path: '/ai-tutor'
-      fullPath: '/ai-tutor'
-      preLoaderRoute: typeof MarketingAiTutorRouteImport
+    '/_marketing/explore': {
+      id: '/_marketing/explore'
+      path: '/explore'
+      fullPath: '/explore'
+      preLoaderRoute: typeof MarketingExploreRouteImport
       parentRoute: typeof MarketingRoute
     }
     '/_marketing/about': {
@@ -424,20 +367,14 @@ const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
 
 interface MarketingRouteChildren {
   MarketingAboutRoute: typeof MarketingAboutRoute
-  MarketingAiTutorRoute: typeof MarketingAiTutorRoute
-  MarketingContactRoute: typeof MarketingContactRoute
-  MarketingCoursesRoute: typeof MarketingCoursesRoute
-  MarketingPricingRoute: typeof MarketingPricingRoute
+  MarketingExploreRoute: typeof MarketingExploreRoute
   MarketingResourcesRoute: typeof MarketingResourcesRoute
   MarketingIndexRoute: typeof MarketingIndexRoute
 }
 
 const MarketingRouteChildren: MarketingRouteChildren = {
   MarketingAboutRoute: MarketingAboutRoute,
-  MarketingAiTutorRoute: MarketingAiTutorRoute,
-  MarketingContactRoute: MarketingContactRoute,
-  MarketingCoursesRoute: MarketingCoursesRoute,
-  MarketingPricingRoute: MarketingPricingRoute,
+  MarketingExploreRoute: MarketingExploreRoute,
   MarketingResourcesRoute: MarketingResourcesRoute,
   MarketingIndexRoute: MarketingIndexRoute,
 }
