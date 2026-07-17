@@ -20,7 +20,7 @@ const VALUES = [
   {
     icon: Users,
     title: "Built for Every Learner",
-    desc: "Students, teachers, professionals, and organizations.",
+    desc: "Students, professionals, and organizations.",
   },
   {
     icon: ShieldCheck,
