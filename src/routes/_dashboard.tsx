@@ -26,13 +26,13 @@ export const Route = createFileRoute("/_dashboard")({
   component: DashboardLayout,
 });
 
-const NAV = [
+const NAV: ReadonlyArray<{ to: string; label: string; icon: typeof LayoutDashboard; exact?: boolean }> = [
   { to: "/dashboard", label: "Overview", icon: LayoutDashboard, exact: true },
   { to: "/dashboard/student", label: "Student", icon: GraduationCap },
   { to: "/dashboard/teacher", label: "Teacher", icon: UserCog },
   { to: "/dashboard/organization", label: "Organization", icon: Building2 },
   { to: "/dashboard/admin", label: "Admin", icon: Shield },
-] as const;
+];
 
 const SECONDARY = [
   { to: "/courses", label: "Courses", icon: BookOpen },
