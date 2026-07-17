@@ -155,18 +155,9 @@ function OnboardingPage() {
 
   function next() {
     if (!canNext) return;
-    if (step === 2 && role === "admin") {
-      // skip preferences for admin
-      goToAuth("login");
-      return;
-    }
-    if (step === totalSteps - 0 && (role === "admin" ? step === 2 : step === 3)) {
-      // last preference step
-      goToAuth("login");
-      return;
-    }
     setStep((s) => s + 1);
   }
+
 
   function back() {
     if (step === 1) {
