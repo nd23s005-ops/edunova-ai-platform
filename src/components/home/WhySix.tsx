@@ -18,7 +18,7 @@ export function WhySix() {
             Built for how humans <span className="text-gradient">actually learn</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Six intelligent systems working together in one warm learning space.
+            Intelligent systems working together in one warm learning space.
           </p>
         </div>
 
