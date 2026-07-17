@@ -19,7 +19,7 @@ const values = [
   { icon: Heart, title: "Learners first", desc: "Every product decision starts with the learner in the room." },
   { icon: Sparkles, title: "AI with integrity", desc: "Transparent, explainable, and grounded in real education." },
   { icon: Target, title: "Outcomes over content", desc: "We measure mastery, not just minutes watched." },
-  { icon: Compass, title: "Global by design", desc: "Learning that works across languages, cultures, and contexts." },
+  { icon: Compass, title: "Built for every learner", desc: "Learning that adapts to different backgrounds, goals, and contexts." },
 ];
 
 function AboutPage() {
