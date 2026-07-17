@@ -4,21 +4,23 @@ import { MessageCircle, X, Sparkles } from "lucide-react";
 import { ChatWindow } from "./ChatWindow";
 import { cn } from "@/lib/utils";
 
-const DASHBOARD_CHAT_PATH = "/dashboard/student/ai-chat";
+// Any dedicated Nova workspace page — only one chat surface active at a time.
+const DEDICATED_PATHS = [
+  "/dashboard/ai-assistant",
+  "/dashboard/student/ai-chat",
+];
 
 export function FloatingChat() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
 
-  const onDashboardChat = pathname === DASHBOARD_CHAT_PATH;
+  const onDedicated = DEDICATED_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"));
 
-  // Rule: only one chat interface active at a time.
-  // When the user visits the dedicated dashboard chat page, hide the floating chat entirely.
   useEffect(() => {
-    if (onDashboardChat && open) setOpen(false);
-  }, [onDashboardChat, open]);
+    if (onDedicated && open) setOpen(false);
+  }, [onDedicated, open]);
 
-  if (onDashboardChat) return null;
+  if (onDedicated) return null;
 
   return (
     <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3">
