@@ -103,12 +103,18 @@ const ADMIN_NAV: NavItem[] = [
   { to: "/dashboard/admin/settings", label: "Settings", icon: Settings },
 ];
 
+const PROFESSIONAL_NAV: NavItem[] = [
+  { to: "/dashboard/professional", label: "My workspace", icon: GraduationCap },
+];
+
 const NAV_BY_ROLE: Record<AppRole, NavItem[]> = {
   student: STUDENT_NAV,
   teacher: TEACHER_NAV,
   organization: ORG_NAV,
   admin: ADMIN_NAV,
+  professional: PROFESSIONAL_NAV,
 };
+
 
 function DashboardLayout() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
