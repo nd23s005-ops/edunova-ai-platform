@@ -31,7 +31,7 @@ export const Route = createFileRoute("/_marketing/")({
 
 function HomePage() {
   return (
-    <div className="bg-background text-foreground">
+    <div className="dark" style={{ background: "#071018", color: "#F5F7FA" }}>
       <Hero />
       <WhySix />
       <Categories />
