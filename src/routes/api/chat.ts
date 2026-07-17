@@ -13,6 +13,13 @@ type IncomingContext = {
     language?: string;
     schoolName?: string | null;
   } | null;
+  lesson?: {
+    courseTitle?: string;
+    courseSubject?: string;
+    chapterTitle?: string | null;
+    lessonTitle?: string | null;
+    theoryExcerpt?: string | null;
+  } | null;
 };
 
 const BOARD_LABEL: Record<string, string> = {
