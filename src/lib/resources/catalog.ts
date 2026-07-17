@@ -325,6 +325,9 @@ const READER_ROUTES: Record<string, string> = {
   "artificial-intelligence--frequently-asked-questions": "/resources/read/ai-frequently-asked-questions",
   "artificial-intelligence--learning-roadmap": "/resources/read/ai-learning-roadmap",
   "artificial-intelligence--tips-tricks": "/resources/read/ai-tips-tricks",
+  "artificial-intelligence--advanced-concepts": "/resources/read/ai-advanced-concepts",
+  "artificial-intelligence--glossary": "/resources/read/ai-glossary",
+  "artificial-intelligence--reference-guide": "/resources/read/ai-reference-guide",
 };
 
 export function getResourceReaderPath(id: string): string | null {
