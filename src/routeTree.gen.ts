@@ -37,6 +37,7 @@ import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-pa
 import { Route as AuthAccountCreatedRouteImport } from './routes/_auth.account-created'
 import { Route as MarketingResourcesIndexRouteImport } from './routes/_marketing.resources.index'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
+import { Route as MarketingResourcesCourseSlugRouteImport } from './routes/_marketing.resources.$courseSlug'
 import { Route as MarketingFeaturesSmartLearningPathsRouteImport } from './routes/_marketing.features.smart-learning-paths'
 import { Route as MarketingFeaturesLearningTwinRouteImport } from './routes/_marketing.features.learning-twin'
 import { Route as MarketingFeaturesKnowledgeGapAnalysisRouteImport } from './routes/_marketing.features.knowledge-gap-analysis'
@@ -199,6 +200,12 @@ const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
   path: '/dashboard/',
   getParentRoute: () => DashboardRoute,
 } as any)
+const MarketingResourcesCourseSlugRoute =
+  MarketingResourcesCourseSlugRouteImport.update({
+    id: '/$courseSlug',
+    path: '/$courseSlug',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingFeaturesSmartLearningPathsRoute =
   MarketingFeaturesSmartLearningPathsRouteImport.update({
     id: '/features/smart-learning-paths',
@@ -372,6 +379,7 @@ export interface FileRoutesByFullPath {
   '/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
+  '/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
   '/resources/': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -421,6 +429,7 @@ export interface FileRoutesByTo {
   '/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
+  '/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
   '/resources': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -475,6 +484,7 @@ export interface FileRoutesById {
   '/_marketing/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   '/_marketing/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/_marketing/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
+  '/_marketing/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
   '/_marketing/resources/': typeof MarketingResourcesIndexRoute
   '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -527,6 +537,7 @@ export interface FileRouteTypes {
     | '/features/knowledge-gap-analysis'
     | '/features/learning-twin'
     | '/features/smart-learning-paths'
+    | '/resources/$courseSlug'
     | '/dashboard/'
     | '/resources/'
     | '/dashboard/admin/support'
@@ -576,6 +587,7 @@ export interface FileRouteTypes {
     | '/features/knowledge-gap-analysis'
     | '/features/learning-twin'
     | '/features/smart-learning-paths'
+    | '/resources/$courseSlug'
     | '/dashboard'
     | '/resources'
     | '/dashboard/admin/support'
@@ -629,6 +641,7 @@ export interface FileRouteTypes {
     | '/_marketing/features/knowledge-gap-analysis'
     | '/_marketing/features/learning-twin'
     | '/_marketing/features/smart-learning-paths'
+    | '/_marketing/resources/$courseSlug'
     | '/_dashboard/dashboard/'
     | '/_marketing/resources/'
     | '/_dashboard/dashboard/admin/support'
@@ -856,6 +869,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/'
       preLoaderRoute: typeof DashboardDashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_marketing/resources/$courseSlug': {
+      id: '/_marketing/resources/$courseSlug'
+      path: '/$courseSlug'
+      fullPath: '/resources/$courseSlug'
+      preLoaderRoute: typeof MarketingResourcesCourseSlugRouteImport
+      parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/features/smart-learning-paths': {
       id: '/_marketing/features/smart-learning-paths'
@@ -1143,10 +1163,12 @@ const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
 )
 
 interface MarketingResourcesRouteChildren {
+  MarketingResourcesCourseSlugRoute: typeof MarketingResourcesCourseSlugRoute
   MarketingResourcesIndexRoute: typeof MarketingResourcesIndexRoute
 }
 
 const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
+  MarketingResourcesCourseSlugRoute: MarketingResourcesCourseSlugRoute,
   MarketingResourcesIndexRoute: MarketingResourcesIndexRoute,
 }
 
