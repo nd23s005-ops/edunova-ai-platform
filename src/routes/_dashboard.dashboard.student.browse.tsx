@@ -1,12 +1,30 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { BookOpen, Loader2, Search, Sparkles } from "lucide-react";
-import { useMemo, useState } from "react";
+import {
+  BookOpen,
+  Loader2,
+  Search,
+  Sparkles,
+  GraduationCap,
+  Atom,
+  Calculator,
+  FlaskConical,
+  Globe,
+  Languages,
+  Landmark,
+  Leaf,
+  LineChart,
+  MonitorSmartphone,
+  Scale,
+  Users,
+} from "lucide-react";
+import { useMemo, useState, type ReactNode } from "react";
 import { toast } from "sonner";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
 import { RoleGate } from "@/components/auth/RoleGate";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_dashboard/dashboard/student/browse")({
@@ -37,9 +55,97 @@ type Course = {
   estimated_hours: number | null;
 };
 
+type CategoryKey =
+  | "10"
+  | "11-science"
+  | "11-commerce"
+  | "11-humanities"
+  | "12-science"
+  | "12-commerce"
+  | "12-humanities";
+
+type CategoryDef = {
+  key: CategoryKey;
+  label: string;
+  emoji: string;
+  classNum: 10 | 11 | 12;
+  subjects: string[];
+};
+
+const CATEGORIES: CategoryDef[] = [
+  {
+    key: "10",
+    label: "Class 10",
+    emoji: "📘",
+    classNum: 10,
+    subjects: ["Mathematics", "Science", "English", "Social Science", "Computer Science"],
+  },
+  {
+    key: "11-science",
+    label: "Class 11 · Science",
+    emoji: "📙",
+    classNum: 11,
+    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "Computer Science"],
+  },
+  {
+    key: "11-commerce",
+    label: "Class 11 · Commerce",
+    emoji: "📗",
+    classNum: 11,
+    subjects: ["Accountancy", "Business Studies", "Economics", "Mathematics"],
+  },
+  {
+    key: "11-humanities",
+    label: "Class 11 · Humanities",
+    emoji: "📕",
+    classNum: 11,
+    subjects: ["History", "Geography", "Political Science", "Economics", "Sociology"],
+  },
+  {
+    key: "12-science",
+    label: "Class 12 · Science",
+    emoji: "📘",
+    classNum: 12,
+    subjects: ["Physics", "Chemistry", "Mathematics", "Biology", "Computer Science"],
+  },
+  {
+    key: "12-commerce",
+    label: "Class 12 · Commerce",
+    emoji: "📙",
+    classNum: 12,
+    subjects: ["Accountancy", "Business Studies", "Economics", "Mathematics"],
+  },
+  {
+    key: "12-humanities",
+    label: "Class 12 · Humanities",
+    emoji: "📗",
+    classNum: 12,
+    subjects: ["History", "Geography", "Political Science", "Economics", "Sociology"],
+  },
+];
+
+const SUBJECT_ICON: Record<string, ReactNode> = {
+  Mathematics: <Calculator className="h-5 w-5" />,
+  Science: <FlaskConical className="h-5 w-5" />,
+  Physics: <Atom className="h-5 w-5" />,
+  Chemistry: <FlaskConical className="h-5 w-5" />,
+  Biology: <Leaf className="h-5 w-5" />,
+  English: <Languages className="h-5 w-5" />,
+  "Social Science": <Globe className="h-5 w-5" />,
+  "Computer Science": <MonitorSmartphone className="h-5 w-5" />,
+  Accountancy: <LineChart className="h-5 w-5" />,
+  "Business Studies": <LineChart className="h-5 w-5" />,
+  Economics: <LineChart className="h-5 w-5" />,
+  History: <Landmark className="h-5 w-5" />,
+  Geography: <Globe className="h-5 w-5" />,
+  "Political Science": <Scale className="h-5 w-5" />,
+  Sociology: <Users className="h-5 w-5" />,
+};
+
 function BrowseCoursesPage() {
   const qc = useQueryClient();
   const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState<CategoryKey>("10");
 
   const { data: profile } = useQuery({
     queryKey: ["me", "student_profile"],
@@ -56,7 +162,22 @@ function BrowseCoursesPage() {
     staleTime: 60_000,
   });
 
-  const { data: courses, isLoading } = useQuery({
+  const { data: schoolCourses = [] } = useQuery({
+    queryKey: ["school-courses", profile?.board],
+    enabled: !!profile,
+    queryFn: async () => {
+      const { data } = await supabase
+        .from("courses")
+        .select("id, title, description, subject, board, class_min, class_max, language, cover_url, difficulty, estimated_hours")
+        .eq("board", profile!.board)
+        .eq("is_published", true)
+        .lte("class_min", 12)
+        .gte("class_max", 10);
+      return (data ?? []) as Course[];
+    },
+  });
+
+  const { data: profileCourses, isLoading } = useQuery({
     queryKey: ["courses", "for-profile", profile?.board, profile?.current_class],
     enabled: !!profile,
     queryFn: async () => {
@@ -105,7 +226,7 @@ function BrowseCoursesPage() {
   });
 
   const filtered = useMemo(() => {
-    if (!courses) return [];
+    const courses = profileCourses ?? [];
     const q = query.trim().toLowerCase();
     if (!q) return courses;
     return courses.filter(
@@ -114,7 +235,23 @@ function BrowseCoursesPage() {
         c.subject.toLowerCase().includes(q) ||
         (c.description ?? "").toLowerCase().includes(q),
     );
-  }, [courses, query]);
+  }, [profileCourses, query]);
+
+  const activeCat = CATEGORIES.find((c) => c.key === activeCategory)!;
+
+  const findSubjectCourse = (classNum: number, subject: string): Course | null => {
+    const s = subject.toLowerCase();
+    return (
+      schoolCourses.find(
+        (c) =>
+          c.class_min <= classNum &&
+          c.class_max >= classNum &&
+          (c.subject.toLowerCase() === s ||
+            c.subject.toLowerCase().includes(s) ||
+            c.title.toLowerCase().includes(s)),
+      ) ?? null
+    );
+  };
 
   return (
     <RoleGate allow={["student"]}>
@@ -126,6 +263,90 @@ function BrowseCoursesPage() {
             : "Loading your profile…"
         }
       />
+
+      {/* School Education categorized catalog */}
+      <section className="mb-8 rounded-2xl border border-border/60 bg-card p-5 shadow-card">
+        <div className="mb-4 flex items-start justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+              <GraduationCap className="h-5 w-5" />
+            </div>
+            <div>
+              <h2 className="text-base font-semibold tracking-tight">School Education</h2>
+              <p className="text-xs text-muted-foreground">
+                Grades 10–12 · Category-wise subjects
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-4 flex flex-wrap gap-2">
+          {CATEGORIES.map((c) => (
+            <button
+              key={c.key}
+              type="button"
+              onClick={() => setActiveCategory(c.key)}
+              className={cn(
+                "rounded-full border px-3 py-1.5 text-xs font-medium transition",
+                activeCategory === c.key
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border/60 bg-background hover:border-primary/40",
+              )}
+            >
+              <span className="mr-1">{c.emoji}</span>
+              {c.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {activeCat.subjects.map((subject) => {
+            const match = findSubjectCourse(activeCat.classNum, subject);
+            const icon = SUBJECT_ICON[subject] ?? <BookOpen className="h-5 w-5" />;
+            if (match) {
+              return (
+                <Link
+                  key={subject}
+                  to="/dashboard/student/courses/$courseId"
+                  params={{ courseId: match.id }}
+                  className="group flex items-center gap-3 rounded-xl border border-border/60 bg-background p-4 transition hover:border-primary/50 hover:shadow-card"
+                >
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
+                    {icon}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-semibold group-hover:text-primary">
+                      {subject}
+                    </p>
+                    <p className="truncate text-xs text-muted-foreground">
+                      Class {activeCat.classNum} · {match.title}
+                    </p>
+                  </div>
+                  <span className="text-xs font-medium text-primary opacity-0 transition group-hover:opacity-100">
+                    Open →
+                  </span>
+                </Link>
+              );
+            }
+            return (
+              <div
+                key={subject}
+                className="flex items-center gap-3 rounded-xl border border-dashed border-border/60 bg-muted/20 p-4"
+              >
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-muted text-muted-foreground">
+                  {icon}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-semibold">{subject}</p>
+                  <p className="truncate text-xs text-muted-foreground">
+                    Class {activeCat.classNum} · Coming soon
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       <div className="mb-6 flex items-center gap-2 rounded-xl border border-border/60 bg-card px-3 py-2 shadow-card">
         <Search className="h-4 w-4 text-muted-foreground" />
