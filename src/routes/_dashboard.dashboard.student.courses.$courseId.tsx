@@ -442,3 +442,35 @@ function CourseOverviewPage() {
     </RoleGate>
   );
 }
+
+function NextStepList({
+  icon,
+  title,
+  empty,
+  items,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  empty: string;
+  items: Array<{ key: string; label: string; sub?: string }>;
+}) {
+  return (
+    <div className="rounded-xl border border-border/60 bg-background/60 p-4">
+      <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        {icon} {title}
+      </p>
+      {items.length === 0 ? (
+        <p className="mt-2 text-xs text-muted-foreground">{empty}</p>
+      ) : (
+        <ul className="mt-2 space-y-1.5">
+          {items.map((it) => (
+            <li key={it.key} className="text-xs">
+              <p className="truncate font-medium text-foreground">{it.label}</p>
+              {it.sub && <p className="truncate text-[11px] text-muted-foreground">{it.sub}</p>}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
