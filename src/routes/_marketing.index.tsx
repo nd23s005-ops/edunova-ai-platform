@@ -4,7 +4,6 @@ import { WhySix } from "@/components/home/WhySix";
 import { Categories } from "@/components/home/Categories";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { AIFeatures } from "@/components/home/AIFeatures";
-import { Mentors } from "@/components/home/Mentors";
 import { FAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
