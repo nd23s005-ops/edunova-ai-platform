@@ -1,15 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import {
-  Github,
-  Instagram,
-  Linkedin,
-  MessageSquare,
-  Twitter,
-  Youtube,
-  ArrowRight,
-  Heart,
-} from "lucide-react";
+import { useState } from "react";
+import { Github, Instagram, Mail, Copy, Check, Heart } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 
 type LinkItem =
@@ -17,13 +9,15 @@ type LinkItem =
   | { label: string; to: "/features/$slug"; params: { slug: string } }
   | { label: string; href: string };
 
+const SUPPORT_EMAIL = "support@edunova.ai";
+
 const company: LinkItem[] = [
   { label: "About", to: "/about" },
   { label: "Features", href: "#ai-features" },
   { label: "Community", to: "/community" },
   { label: "Careers", href: "#" },
   { label: "Blog", href: "#" },
-  { label: "Contact", href: "mailto:hello@edunova.ai" },
+  { label: "Contact", href: `mailto:${SUPPORT_EMAIL}` },
 ];
 
 const resources: LinkItem[] = [
@@ -46,12 +40,8 @@ const legal: LinkItem[] = [
 ];
 
 const socials = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: MessageSquare, label: "Discord", href: "#" },
-  { icon: Youtube, label: "YouTube", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Twitter, label: "X (Twitter)", href: "#" },
+  { icon: Github, label: "GitHub", href: "https://github.com" },
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com" },
 ];
 
 function FooterLink({ item }: { item: LinkItem }) {
@@ -98,6 +88,54 @@ function LinkColumn({ title, items, delay }: { title: string; items: LinkItem[];
   );
 }
 
+function SupportColumn() {
+  const [copied, setCopied] = useState(false);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(SUPPORT_EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // ignore
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
+      <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-foreground">Support</h3>
+      <p className="mt-4 text-sm text-muted-foreground">
+        Need help? Our team is here to assist you.
+      </p>
+
+      <div className="mt-4 flex items-center gap-1.5 rounded-full border border-border bg-white p-1 pl-3 shadow-sm transition-shadow hover:shadow-glow">
+        <Mail className="h-4 w-4 shrink-0 text-primary" />
+        <a
+          href={`mailto:${SUPPORT_EMAIL}`}
+          className="min-w-0 flex-1 truncate text-sm font-medium text-foreground transition-colors hover:text-primary"
+        >
+          {SUPPORT_EMAIL}
+        </a>
+        <button
+          type="button"
+          onClick={copy}
+          aria-label={copied ? "Email copied" : "Copy email"}
+          className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+        >
+          {copied ? <Check className="h-4 w-4 text-success" /> : <Copy className="h-4 w-4" />}
+        </button>
+      </div>
+
+      <p className="mt-3 text-[11px] text-muted-foreground">Usually replies within 24 hours.</p>
+    </motion.div>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="relative mt-8 border-t border-border/60" style={{ background: "#FCFAF7" }}>
@@ -124,6 +162,8 @@ export function Footer() {
                 <motion.a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={s.label}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -145,56 +185,20 @@ export function Footer() {
             <LinkColumn title="Legal" items={legal} delay={0.15} />
           </div>
 
-          {/* Column 5: Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-3"
-          >
-            <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-foreground">
-              Stay Updated
-            </h3>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Learning tips, product updates, and new AI mentors.
-            </p>
-            <form
-              className="mt-4 flex items-center gap-2 rounded-full border border-border bg-white p-1 shadow-sm transition-shadow focus-within:shadow-glow"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <label htmlFor="newsletter" className="sr-only">
-                Email Address
-              </label>
-              <input
-                id="newsletter"
-                type="email"
-                required
-                placeholder="Email Address"
-                className="min-w-0 flex-1 bg-transparent px-3 py-1.5 text-sm outline-none placeholder:text-muted-foreground"
-              />
-              <button
-                type="submit"
-                className="group inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-primary to-highlight px-3.5 py-1.5 text-xs font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
-              >
-                Subscribe
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </button>
-            </form>
-            <p className="mt-2 text-[11px] text-muted-foreground">
-              We respect your privacy. No spam.
-            </p>
-          </motion.div>
+          {/* Column 5: Support */}
+          <div className="lg:col-span-3">
+            <SupportColumn />
+          </div>
         </div>
 
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-border/60 pt-6 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} EduNova AI · All Rights Reserved.
+            © {new Date().getFullYear()} EduNova AI. All Rights Reserved.
           </p>
           <p className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-            Made with <Heart className="h-3.5 w-3.5 fill-destructive text-destructive" /> for
-            lifelong learners.
+            Built with <Heart className="h-3.5 w-3.5 fill-destructive text-destructive" /> to
+            empower learners worldwide.
           </p>
         </div>
       </div>
