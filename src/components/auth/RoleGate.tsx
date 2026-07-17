@@ -1,14 +1,11 @@
-import { createFileRoute, Navigate } from "@tanstack/react-router";
+import type { ReactNode } from "react";
+import { Navigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { homeForRole, type AppRole } from "@/lib/auth/roles";
+import type { AppRole } from "@/lib/auth/roles";
 
-export const Route = createFileRoute("/_dashboard/dashboard/")({
-  component: DashboardIndex,
-});
-
-function DashboardIndex() {
+export function RoleGate({ allow, children }: { allow: AppRole[]; children: ReactNode }) {
   const { data, isLoading } = useQuery({
     queryKey: ["me", "role"],
     queryFn: async () => {
@@ -32,6 +29,9 @@ function DashboardIndex() {
     );
   }
 
-  const dest = homeForRole(data);
-  return <Navigate to={dest} replace />;
+  if (!data || !allow.includes(data)) {
+    return <Navigate to="/unauthorized" replace />;
+  }
+
+  return <>{children}</>;
 }

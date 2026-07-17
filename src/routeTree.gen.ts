@@ -9,25 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UnauthorizedRouteImport } from './routes/unauthorized'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
 import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
 import { Route as MarketingExploreRouteImport } from './routes/_marketing.explore'
 import { Route as MarketingCommunityRouteImport } from './routes/_marketing.community'
 import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
+import { Route as AuthVerifySuccessRouteImport } from './routes/_auth.verify-success'
+import { Route as AuthVerifyFailedRouteImport } from './routes/_auth.verify-failed'
+import { Route as AuthVerifyEmailRouteImport } from './routes/_auth.verify-email'
+import { Route as AuthSessionExpiredRouteImport } from './routes/_auth.session-expired'
+import { Route as AuthResetPasswordRouteImport } from './routes/_auth.reset-password'
 import { Route as AuthRegisterRouteImport } from './routes/_auth.register'
 import { Route as AuthLoginRouteImport } from './routes/_auth.login'
 import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-password'
+import { Route as AuthAccountCreatedRouteImport } from './routes/_auth.account-created'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
 import { Route as MarketingFeaturesSlugRouteImport } from './routes/_marketing.features.$slug'
 import { Route as DashboardDashboardTeacherRouteImport } from './routes/_dashboard.dashboard.teacher'
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
+import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
+import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 
+const UnauthorizedRoute = UnauthorizedRouteImport.update({
+  id: '/unauthorized',
+  path: '/unauthorized',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -43,6 +58,11 @@ const DashboardRoute = DashboardRouteImport.update({
 } as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/_auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarketingIndexRoute = MarketingIndexRouteImport.update({
@@ -70,6 +90,31 @@ const MarketingAboutRoute = MarketingAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => MarketingRoute,
 } as any)
+const AuthVerifySuccessRoute = AuthVerifySuccessRouteImport.update({
+  id: '/verify-success',
+  path: '/verify-success',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthVerifyFailedRoute = AuthVerifyFailedRouteImport.update({
+  id: '/verify-failed',
+  path: '/verify-failed',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthVerifyEmailRoute = AuthVerifyEmailRouteImport.update({
+  id: '/verify-email',
+  path: '/verify-email',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthSessionExpiredRoute = AuthSessionExpiredRouteImport.update({
+  id: '/session-expired',
+  path: '/session-expired',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => AuthRoute,
+} as any)
 const AuthRegisterRoute = AuthRegisterRouteImport.update({
   id: '/register',
   path: '/register',
@@ -83,6 +128,11 @@ const AuthLoginRoute = AuthLoginRouteImport.update({
 const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
   id: '/forgot-password',
   path: '/forgot-password',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthAccountCreatedRoute = AuthAccountCreatedRouteImport.update({
+  id: '/account-created',
+  path: '/account-created',
   getParentRoute: () => AuthRoute,
 } as any)
 const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
@@ -107,6 +157,12 @@ const DashboardDashboardStudentRoute =
     path: '/dashboard/student',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardProfileRoute =
+  DashboardDashboardProfileRouteImport.update({
+    id: '/dashboard/profile',
+    path: '/dashboard/profile',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDashboardOrganizationRoute =
   DashboardDashboardOrganizationRouteImport.update({
     id: '/dashboard/organization',
@@ -118,36 +174,61 @@ const DashboardDashboardAdminRoute = DashboardDashboardAdminRouteImport.update({
   path: '/dashboard/admin',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardDashboardSplatRoute = DashboardDashboardSplatRouteImport.update({
+  id: '/dashboard/$',
+  path: '/dashboard/$',
+  getParentRoute: () => DashboardRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
+  '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/unauthorized': typeof UnauthorizedRoute
+  '/account-created': typeof AuthAccountCreatedRoute
   '/forgot-password': typeof AuthForgotPasswordRoute
   '/login': typeof AuthLoginRoute
   '/register': typeof AuthRegisterRoute
+  '/reset-password': typeof AuthResetPasswordRoute
+  '/session-expired': typeof AuthSessionExpiredRoute
+  '/verify-email': typeof AuthVerifyEmailRoute
+  '/verify-failed': typeof AuthVerifyFailedRoute
+  '/verify-success': typeof AuthVerifySuccessRoute
   '/about': typeof MarketingAboutRoute
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRoute
+  '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
 }
 export interface FileRoutesByTo {
+  '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/unauthorized': typeof UnauthorizedRoute
+  '/account-created': typeof AuthAccountCreatedRoute
   '/forgot-password': typeof AuthForgotPasswordRoute
   '/login': typeof AuthLoginRoute
   '/register': typeof AuthRegisterRoute
+  '/reset-password': typeof AuthResetPasswordRoute
+  '/session-expired': typeof AuthSessionExpiredRoute
+  '/verify-email': typeof AuthVerifyEmailRoute
+  '/verify-failed': typeof AuthVerifyFailedRoute
+  '/verify-success': typeof AuthVerifySuccessRoute
   '/about': typeof MarketingAboutRoute
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRoute
+  '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/features/$slug': typeof MarketingFeaturesSlugRoute
@@ -155,20 +236,30 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/$': typeof SplatRoute
   '/_auth': typeof AuthRouteWithChildren
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/unauthorized': typeof UnauthorizedRoute
+  '/_auth/account-created': typeof AuthAccountCreatedRoute
   '/_auth/forgot-password': typeof AuthForgotPasswordRoute
   '/_auth/login': typeof AuthLoginRoute
   '/_auth/register': typeof AuthRegisterRoute
+  '/_auth/reset-password': typeof AuthResetPasswordRoute
+  '/_auth/session-expired': typeof AuthSessionExpiredRoute
+  '/_auth/verify-email': typeof AuthVerifyEmailRoute
+  '/_auth/verify-failed': typeof AuthVerifyFailedRoute
+  '/_auth/verify-success': typeof AuthVerifySuccessRoute
   '/_marketing/about': typeof MarketingAboutRoute
   '/_marketing/community': typeof MarketingCommunityRoute
   '/_marketing/explore': typeof MarketingExploreRoute
   '/_marketing/resources': typeof MarketingResourcesRoute
   '/_marketing/': typeof MarketingIndexRoute
+  '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
   '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRoute
   '/_dashboard/dashboard/teacher': typeof DashboardDashboardTeacherRoute
   '/_marketing/features/$slug': typeof MarketingFeaturesSlugRoute
@@ -177,54 +268,84 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/$'
     | '/'
     | '/sitemap.xml'
+    | '/unauthorized'
+    | '/account-created'
     | '/forgot-password'
     | '/login'
     | '/register'
+    | '/reset-password'
+    | '/session-expired'
+    | '/verify-email'
+    | '/verify-failed'
+    | '/verify-success'
     | '/about'
     | '/community'
     | '/explore'
     | '/resources'
+    | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/organization'
+    | '/dashboard/profile'
     | '/dashboard/student'
     | '/dashboard/teacher'
     | '/features/$slug'
     | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/$'
     | '/'
     | '/sitemap.xml'
+    | '/unauthorized'
+    | '/account-created'
     | '/forgot-password'
     | '/login'
     | '/register'
+    | '/reset-password'
+    | '/session-expired'
+    | '/verify-email'
+    | '/verify-failed'
+    | '/verify-success'
     | '/about'
     | '/community'
     | '/explore'
     | '/resources'
+    | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/organization'
+    | '/dashboard/profile'
     | '/dashboard/student'
     | '/dashboard/teacher'
     | '/features/$slug'
     | '/dashboard'
   id:
     | '__root__'
+    | '/$'
     | '/_auth'
     | '/_dashboard'
     | '/_marketing'
     | '/sitemap.xml'
+    | '/unauthorized'
+    | '/_auth/account-created'
     | '/_auth/forgot-password'
     | '/_auth/login'
     | '/_auth/register'
+    | '/_auth/reset-password'
+    | '/_auth/session-expired'
+    | '/_auth/verify-email'
+    | '/_auth/verify-failed'
+    | '/_auth/verify-success'
     | '/_marketing/about'
     | '/_marketing/community'
     | '/_marketing/explore'
     | '/_marketing/resources'
     | '/_marketing/'
+    | '/_dashboard/dashboard/$'
     | '/_dashboard/dashboard/admin'
     | '/_dashboard/dashboard/organization'
+    | '/_dashboard/dashboard/profile'
     | '/_dashboard/dashboard/student'
     | '/_dashboard/dashboard/teacher'
     | '/_marketing/features/$slug'
@@ -232,14 +353,23 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  SplatRoute: typeof SplatRoute
   AuthRoute: typeof AuthRouteWithChildren
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  UnauthorizedRoute: typeof UnauthorizedRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/unauthorized': {
+      id: '/unauthorized'
+      path: '/unauthorized'
+      fullPath: '/unauthorized'
+      preLoaderRoute: typeof UnauthorizedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -266,6 +396,13 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_marketing/': {
@@ -303,6 +440,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingAboutRouteImport
       parentRoute: typeof MarketingRoute
     }
+    '/_auth/verify-success': {
+      id: '/_auth/verify-success'
+      path: '/verify-success'
+      fullPath: '/verify-success'
+      preLoaderRoute: typeof AuthVerifySuccessRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/verify-failed': {
+      id: '/_auth/verify-failed'
+      path: '/verify-failed'
+      fullPath: '/verify-failed'
+      preLoaderRoute: typeof AuthVerifyFailedRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/verify-email': {
+      id: '/_auth/verify-email'
+      path: '/verify-email'
+      fullPath: '/verify-email'
+      preLoaderRoute: typeof AuthVerifyEmailRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/session-expired': {
+      id: '/_auth/session-expired'
+      path: '/session-expired'
+      fullPath: '/session-expired'
+      preLoaderRoute: typeof AuthSessionExpiredRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/reset-password': {
+      id: '/_auth/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof AuthResetPasswordRouteImport
+      parentRoute: typeof AuthRoute
+    }
     '/_auth/register': {
       id: '/_auth/register'
       path: '/register'
@@ -322,6 +494,13 @@ declare module '@tanstack/react-router' {
       path: '/forgot-password'
       fullPath: '/forgot-password'
       preLoaderRoute: typeof AuthForgotPasswordRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/account-created': {
+      id: '/_auth/account-created'
+      path: '/account-created'
+      fullPath: '/account-created'
+      preLoaderRoute: typeof AuthAccountCreatedRouteImport
       parentRoute: typeof AuthRoute
     }
     '/_dashboard/dashboard/': {
@@ -352,6 +531,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardStudentRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/profile': {
+      id: '/_dashboard/dashboard/profile'
+      path: '/dashboard/profile'
+      fullPath: '/dashboard/profile'
+      preLoaderRoute: typeof DashboardDashboardProfileRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/dashboard/organization': {
       id: '/_dashboard/dashboard/organization'
       path: '/dashboard/organization'
@@ -366,34 +552,57 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardAdminRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/$': {
+      id: '/_dashboard/dashboard/$'
+      path: '/dashboard/$'
+      fullPath: '/dashboard/$'
+      preLoaderRoute: typeof DashboardDashboardSplatRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
 interface AuthRouteChildren {
+  AuthAccountCreatedRoute: typeof AuthAccountCreatedRoute
   AuthForgotPasswordRoute: typeof AuthForgotPasswordRoute
   AuthLoginRoute: typeof AuthLoginRoute
   AuthRegisterRoute: typeof AuthRegisterRoute
+  AuthResetPasswordRoute: typeof AuthResetPasswordRoute
+  AuthSessionExpiredRoute: typeof AuthSessionExpiredRoute
+  AuthVerifyEmailRoute: typeof AuthVerifyEmailRoute
+  AuthVerifyFailedRoute: typeof AuthVerifyFailedRoute
+  AuthVerifySuccessRoute: typeof AuthVerifySuccessRoute
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
+  AuthAccountCreatedRoute: AuthAccountCreatedRoute,
   AuthForgotPasswordRoute: AuthForgotPasswordRoute,
   AuthLoginRoute: AuthLoginRoute,
   AuthRegisterRoute: AuthRegisterRoute,
+  AuthResetPasswordRoute: AuthResetPasswordRoute,
+  AuthSessionExpiredRoute: AuthSessionExpiredRoute,
+  AuthVerifyEmailRoute: AuthVerifyEmailRoute,
+  AuthVerifyFailedRoute: AuthVerifyFailedRoute,
+  AuthVerifySuccessRoute: AuthVerifySuccessRoute,
 }
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 interface DashboardRouteChildren {
+  DashboardDashboardSplatRoute: typeof DashboardDashboardSplatRoute
   DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRoute
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
+  DashboardDashboardProfileRoute: typeof DashboardDashboardProfileRoute
   DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRoute
   DashboardDashboardTeacherRoute: typeof DashboardDashboardTeacherRoute
   DashboardDashboardIndexRoute: typeof DashboardDashboardIndexRoute
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardDashboardSplatRoute: DashboardDashboardSplatRoute,
   DashboardDashboardAdminRoute: DashboardDashboardAdminRoute,
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
+  DashboardDashboardProfileRoute: DashboardDashboardProfileRoute,
   DashboardDashboardStudentRoute: DashboardDashboardStudentRoute,
   DashboardDashboardTeacherRoute: DashboardDashboardTeacherRoute,
   DashboardDashboardIndexRoute: DashboardDashboardIndexRoute,
@@ -426,21 +635,13 @@ const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
 )
 
 const rootRouteChildren: RootRouteChildren = {
+  SplatRoute: SplatRoute,
   AuthRoute: AuthRouteWithChildren,
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  UnauthorizedRoute: UnauthorizedRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
