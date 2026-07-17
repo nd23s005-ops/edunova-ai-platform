@@ -39,7 +39,7 @@ function HomePage() {
       <HowItWorks />
       <AIFeatures />
       <Mentors />
-      <ProductPreview />
+      
       <FAQ />
       <FinalCTA />
     </>
