@@ -305,7 +305,7 @@ function OnboardingPage() {
         </main>
 
         {/* Footer nav */}
-        {step < 4 && !(step === 3 && role === "admin") && (
+        {step < 3 && !(step === 2 && role === "admin") && (
           <footer className="flex items-center justify-between gap-3 pb-4">
             <Button variant="ghost" onClick={back} className="gap-2 text-white/70 hover:bg-white/[0.06] hover:text-white">
               <ArrowLeft className="h-4 w-4" /> Back
@@ -316,7 +316,7 @@ function OnboardingPage() {
               size="lg"
               className="gap-2 bg-gradient-to-r from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] px-6 text-white hover:opacity-90 disabled:opacity-40"
             >
-              {step === 3 ? "Almost done" : "Continue"}
+              {step === 2 ? "Almost done" : "Continue"}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </footer>
