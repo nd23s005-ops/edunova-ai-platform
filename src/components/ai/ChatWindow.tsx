@@ -164,6 +164,7 @@ function serializeContext(ctx: AssistantContext) {
           schoolName: ctx.student.schoolName,
         }
       : null,
+    lesson: ctx.lesson ?? null,
   };
 }
 
