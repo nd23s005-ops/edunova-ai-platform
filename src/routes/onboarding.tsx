@@ -50,12 +50,13 @@ const ROLES: RoleCard[] = [
     accent: "from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)]",
   },
   {
-    key: "teacher",
-    title: "Teacher",
-    description: "Design lessons, auto-grade, and see mastery across every student.",
-    icon: BookOpen,
-    accent: "from-[oklch(0.75_0.14_180)] to-[oklch(0.6_0.16_200)]",
+    key: "professional",
+    title: "Working Professional",
+    description: "Upskill, switch careers, or prep for certifications with focused AI mentors.",
+    icon: Briefcase,
+    accent: "from-[oklch(0.78_0.15_140)] to-[oklch(0.6_0.17_150)]",
   },
+
   {
     key: "organization",
     title: "Organization",
