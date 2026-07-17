@@ -46,6 +46,7 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
 import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_dashboard.dashboard.student.browse'
+import { Route as DashboardDashboardAdminSupportRouteImport } from './routes/_dashboard.dashboard.admin.support'
 import { Route as DashboardDashboardStudentCoursesCourseIdRouteImport } from './routes/_dashboard.dashboard.student.courses.$courseId'
 import { Route as DashboardDashboardStudentCoursesCourseIdQuizQuizIdRouteImport } from './routes/_dashboard.dashboard.student.courses.$courseId.quiz.$quizId'
 import { Route as DashboardDashboardStudentCoursesCourseIdLessonsLessonIdRouteImport } from './routes/_dashboard.dashboard.student.courses.$courseId.lessons.$lessonId'
@@ -242,6 +243,12 @@ const DashboardDashboardStudentBrowseRoute =
     path: '/browse',
     getParentRoute: () => DashboardDashboardStudentRoute,
   } as any)
+const DashboardDashboardAdminSupportRoute =
+  DashboardDashboardAdminSupportRouteImport.update({
+    id: '/support',
+    path: '/support',
+    getParentRoute: () => DashboardDashboardAdminRoute,
+  } as any)
 const DashboardDashboardStudentCoursesCourseIdRoute =
   DashboardDashboardStudentCoursesCourseIdRouteImport.update({
     id: '/courses/$courseId',
@@ -300,7 +307,7 @@ export interface FileRoutesByFullPath {
   '/api/chat': typeof ApiChatRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
-  '/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
@@ -308,6 +315,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
+  '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
@@ -341,7 +349,7 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
-  '/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
@@ -349,6 +357,7 @@ export interface FileRoutesByTo {
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
+  '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
@@ -386,7 +395,7 @@ export interface FileRoutesById {
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/_marketing/': typeof MarketingIndexRoute
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
-  '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/_dashboard/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
@@ -394,6 +403,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/_marketing/features/$slug': typeof MarketingFeaturesSlugRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
+  '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/_dashboard/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/_dashboard/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
@@ -437,6 +447,7 @@ export interface FileRouteTypes {
     | '/dashboard/student'
     | '/features/$slug'
     | '/dashboard/'
+    | '/dashboard/admin/support'
     | '/dashboard/student/browse'
     | '/dashboard/student/my-courses'
     | '/dashboard/student/courses/$courseId'
@@ -478,6 +489,7 @@ export interface FileRouteTypes {
     | '/dashboard/student'
     | '/features/$slug'
     | '/dashboard'
+    | '/dashboard/admin/support'
     | '/dashboard/student/browse'
     | '/dashboard/student/my-courses'
     | '/dashboard/student/courses/$courseId'
@@ -522,6 +534,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student'
     | '/_marketing/features/$slug'
     | '/_dashboard/dashboard/'
+    | '/_dashboard/dashboard/admin/support'
     | '/_dashboard/dashboard/student/browse'
     | '/_dashboard/dashboard/student/my-courses'
     | '/_dashboard/dashboard/student/courses/$courseId'
@@ -806,6 +819,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardStudentBrowseRouteImport
       parentRoute: typeof DashboardDashboardStudentRoute
     }
+    '/_dashboard/dashboard/admin/support': {
+      id: '/_dashboard/dashboard/admin/support'
+      path: '/support'
+      fullPath: '/dashboard/admin/support'
+      preLoaderRoute: typeof DashboardDashboardAdminSupportRouteImport
+      parentRoute: typeof DashboardDashboardAdminRoute
+    }
     '/_dashboard/dashboard/student/courses/$courseId': {
       id: '/_dashboard/dashboard/student/courses/$courseId'
       path: '/courses/$courseId'
@@ -870,6 +890,20 @@ const AuthRouteChildren: AuthRouteChildren = {
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
+interface DashboardDashboardAdminRouteChildren {
+  DashboardDashboardAdminSupportRoute: typeof DashboardDashboardAdminSupportRoute
+}
+
+const DashboardDashboardAdminRouteChildren: DashboardDashboardAdminRouteChildren =
+  {
+    DashboardDashboardAdminSupportRoute: DashboardDashboardAdminSupportRoute,
+  }
+
+const DashboardDashboardAdminRouteWithChildren =
+  DashboardDashboardAdminRoute._addFileChildren(
+    DashboardDashboardAdminRouteChildren,
+  )
+
 interface DashboardDashboardStudentCoursesCourseIdRouteChildren {
   DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute: typeof DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute
   DashboardDashboardStudentCoursesCourseIdChaptersChapterIdRoute: typeof DashboardDashboardStudentCoursesCourseIdChaptersChapterIdRoute
@@ -916,7 +950,7 @@ const DashboardDashboardStudentRouteWithChildren =
 
 interface DashboardRouteChildren {
   DashboardDashboardSplatRoute: typeof DashboardDashboardSplatRoute
-  DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRoute
+  DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRouteWithChildren
   DashboardDashboardAiAssistantRoute: typeof DashboardDashboardAiAssistantRoute
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
   DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
@@ -927,7 +961,7 @@ interface DashboardRouteChildren {
 
 const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardSplatRoute: DashboardDashboardSplatRoute,
-  DashboardDashboardAdminRoute: DashboardDashboardAdminRoute,
+  DashboardDashboardAdminRoute: DashboardDashboardAdminRouteWithChildren,
   DashboardDashboardAiAssistantRoute: DashboardDashboardAiAssistantRoute,
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
   DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,

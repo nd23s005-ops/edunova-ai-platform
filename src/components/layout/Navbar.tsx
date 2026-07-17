@@ -23,6 +23,7 @@ const NAV_LINKS = [
   { label: "Resources", to: "/resources" },
   { label: "Community", to: "/community" },
   { label: "About", to: "/about" },
+  { label: "Help", to: "/help-desk" },
 ] as const;
 
 function NavItem({ to, label, onClick }: { to: (typeof NAV_LINKS)[number]["to"]; label: string; onClick?: () => void }) {
