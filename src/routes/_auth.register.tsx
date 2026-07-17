@@ -82,7 +82,7 @@ function RegisterPage() {
   const navigate = useNavigate();
   const router = useRouter();
   const queryClient = useQueryClient();
-  const { role: selectedRole } = Route.useSearch();
+  const { role: selectedRole, preference: selectedPref } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
@@ -100,7 +100,7 @@ function RegisterPage() {
       country: DEFAULT_COUNTRY,
       password: "",
       confirmPassword: "",
-      role: initialRole,
+      role: initialRole, preference: selectedPref,
       acceptTerms: false as unknown as true,
       acceptPrivacy: false as unknown as true,
     },
@@ -139,7 +139,7 @@ function RegisterPage() {
           role: values.role,
           phone: values.phone ?? "",
           dob: values.dob,
-          country: values.country,
+          country: values.country, preference: values.preference,
         },
       },
     });
@@ -197,8 +197,8 @@ function RegisterPage() {
       </p>
 
       <div className="mt-8 space-y-3">
-        <GoogleButton label="Sign up with Google" />
-        <AppleButton label="Sign up with Apple" />
+        <GoogleButton label="Sign up with Google" selectedRole={selectedRole} />
+        <AppleButton label="Sign up with Apple" selectedRole={selectedRole} />
       </div>
 
       <div className="relative my-6">
@@ -312,22 +312,26 @@ function RegisterPage() {
         </div>
 
         <div>
-          <Label>I'm joining as</Label>
-          <RadioGroup
-            value={form.watch("role")}
-            onValueChange={(v) => form.setValue("role", v as RegisterInput["role"])}
-            className="mt-2 grid grid-cols-2 gap-2"
-          >
-            {SELF_SIGNUP_ROLES.map((r) => (
-              <label
-                key={r}
-                className="flex cursor-pointer items-center gap-2 rounded-lg border border-border bg-card px-3 py-2.5 text-sm has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/5"
+          {!selectedRole && (
+            <>
+              <Label>I'm joining as</Label>
+              <RadioGroup
+                value={form.watch("role")}
+                onValueChange={(v) => form.setValue("role", v as RegisterInput["role"])}
+                className="mt-2 grid grid-cols-2 gap-2"
               >
-                <RadioGroupItem value={r} id={`role-${r}`} />
-                <span>{ROLE_LABELS[r]}</span>
-              </label>
-            ))}
-          </RadioGroup>
+                {SELF_SIGNUP_ROLES.map((r) => (
+                  <label
+                    key={r}
+                    className="flex cursor-pointer items-center gap-2 rounded-lg border border-border bg-card px-3 py-2.5 text-sm has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/5"
+                  >
+                    <RadioGroupItem value={r} id={`role-${r}`} />
+                    <span>{ROLE_LABELS[r]}</span>
+                  </label>
+                ))}
+              </RadioGroup>
+            </>
+          )}
         </div>
 
         <div>

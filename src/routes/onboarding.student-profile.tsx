@@ -14,11 +14,11 @@ export const Route = createFileRoute("/onboarding/student-profile")({
     const { data } = await supabase.auth.getUser();
     if (!data.user) throw redirect({ to: "/login" });
     const { data: existing } = await supabase
-      .from("student_profiles")
-      .select("id, onboarded")
-      .eq("user_id", data.user.id)
+      .from("profiles")
+      .select("onboarding_completed")
+      .eq("id", data.user.id)
       .maybeSingle();
-    if (existing && existing.onboarded !== false) throw redirect({ to: "/dashboard/student" });
+    if (existing?.onboarding_completed) throw redirect({ to: "/dashboard/student" });
     return {};
   },
   component: StudentProfileOnboarding,
@@ -61,6 +61,11 @@ function StudentProfileOnboarding() {
         .from("student_profiles")
         .upsert(profile, { onConflict: "user_id" });
       if (error) throw error;
+      const { error: profileError } = await supabase
+        .from("profiles")
+        .update({ onboarding_completed: true })
+        .eq("id", userData.user.id);
+      if (profileError) throw profileError;
       return { userId: userData.user.id, profile };
     },
     onSuccess: async ({ userId, profile }) => {

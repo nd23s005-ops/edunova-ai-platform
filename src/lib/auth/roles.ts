@@ -27,7 +27,16 @@ export const ROLE_HOME: Record<AppRole, string> = {
   professional: "/dashboard/professional",
 };
 
-export function homeForRole(role: AppRole | null | undefined): string {
-  if (role && role in ROLE_HOME) return ROLE_HOME[role];
+export function normalizeRole(role: string | null | undefined): AppRole | null {
+  if (role === "school_student" || role === "college_student") return "student";
+  if (role === "admin" || role === "student" || role === "organization" || role === "professional") {
+    return role;
+  }
+  return null;
+}
+
+export function homeForRole(role: string | null | undefined): string {
+  const normalized = normalizeRole(role);
+  if (normalized) return ROLE_HOME[normalized];
   return "/dashboard";
 }

@@ -35,7 +35,7 @@ import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
-import { homeForRole, ROLE_LABELS, type AppRole } from "@/lib/auth/roles";
+import { homeForRole, normalizeRole, ROLE_LABELS, type AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_dashboard")({
   head: () => ({
@@ -127,15 +127,16 @@ function DashboardLayout() {
     queryKey: ["me", "profile", userId],
     queryFn: async () => {
       const [{ data: p }, { data: r }] = await Promise.all([
-        supabase.from("profiles").select("full_name, avatar_url").eq("id", userId).maybeSingle(),
+        supabase.from("profiles").select("full_name, avatar_url, onboarding_completed").eq("id", userId).maybeSingle(),
         supabase.from("user_roles").select("role, admin_level").eq("user_id", userId).maybeSingle(),
       ]);
       return {
         email,
         fullName: p?.full_name ?? "",
         avatar: p?.avatar_url ?? null,
-        role: (r?.role as AppRole | undefined) ?? null,
+        role: normalizeRole((r?.role as string | undefined) ?? null),
         adminLevel: (r as { admin_level?: string | null } | null)?.admin_level ?? null,
+        onboardingCompleted: p?.onboarding_completed ?? false,
       };
     },
     staleTime: 60_000,
@@ -143,39 +144,15 @@ function DashboardLayout() {
 
   const role = profile?.role ?? null;
 
-  // Student onboarding gate — use a fresh, user-scoped profile check before redirecting.
-  const {
-    data: studentProfileStatus,
-    isSuccess: studentProfileLoaded,
-    isFetching: studentProfileFetching,
-  } = useQuery({
-    queryKey: ["me", "student_profile", "exists", userId],
-    enabled: role === "student",
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("student_profiles")
-        .select("id, onboarded")
-        .eq("user_id", userId)
-        .maybeSingle();
-      if (error) throw error;
-      return { exists: !!data && data.onboarded !== false };
-    },
-    staleTime: 0,
-    refetchOnMount: "always",
-  });
-
   useEffect(() => {
     if (
       role === "student" &&
-      studentProfileLoaded &&
-      !studentProfileFetching &&
-      studentProfileStatus &&
-      !studentProfileStatus.exists &&
+      profile?.onboardingCompleted === false &&
       !pathname.startsWith("/onboarding")
     ) {
       navigate({ to: "/onboarding/student-profile", replace: true });
     }
-  }, [role, studentProfileLoaded, studentProfileFetching, studentProfileStatus, pathname, navigate]);
+  }, [role, profile?.onboardingCompleted, pathname, navigate]);
 
   const rawNav = role ? NAV_BY_ROLE[role] : [];
   // Hide super-admin-only entries from Demo Admins. We look up admin_level inline

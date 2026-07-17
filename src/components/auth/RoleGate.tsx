@@ -3,7 +3,7 @@ import { Navigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import type { AppRole } from "@/lib/auth/roles";
+import { normalizeRole, type AppRole } from "@/lib/auth/roles";
 
 export function RoleGate({ allow, children }: { allow: AppRole[]; children: ReactNode }) {
   const { data, isLoading } = useQuery({
@@ -16,7 +16,7 @@ export function RoleGate({ allow, children }: { allow: AppRole[]; children: Reac
         .select("role")
         .eq("user_id", userData.user.id)
         .maybeSingle();
-      return (r?.role as AppRole | undefined) ?? null;
+      return normalizeRole((r?.role as string | undefined) ?? null);
     },
     staleTime: 60_000,
   });

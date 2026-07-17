@@ -373,6 +373,7 @@ export type Database = {
           full_name: string | null
           id: string
           notif_prefs: Json
+          onboarding_completed: boolean
           phone: string | null
           theme_pref: string | null
           updated_at: string
@@ -386,6 +387,7 @@ export type Database = {
           full_name?: string | null
           id: string
           notif_prefs?: Json
+          onboarding_completed?: boolean
           phone?: string | null
           theme_pref?: string | null
           updated_at?: string
@@ -399,6 +401,7 @@ export type Database = {
           full_name?: string | null
           id?: string
           notif_prefs?: Json
+          onboarding_completed?: boolean
           phone?: string | null
           theme_pref?: string | null
           updated_at?: string
@@ -764,6 +767,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      complete_auth_role_selection: {
+        Args: { requested_role: Database["public"]["Enums"]["app_role"] }
+        Returns: Database["public"]["Enums"]["app_role"]
+      }
       get_my_role: {
         Args: never
         Returns: Database["public"]["Enums"]["app_role"]
@@ -785,6 +792,8 @@ export type Database = {
         | "teacher"
         | "organization"
         | "professional"
+        | "school_student"
+        | "college_student"
       assignment_answer_type: "short" | "long" | "worksheet"
       assignment_status: "draft" | "submitted" | "graded"
       course_difficulty: "beginner" | "intermediate" | "advanced"
@@ -944,7 +953,15 @@ export const Constants = {
   public: {
     Enums: {
       admin_level: ["demo", "super"],
-      app_role: ["admin", "student", "teacher", "organization", "professional"],
+      app_role: [
+        "admin",
+        "student",
+        "teacher",
+        "organization",
+        "professional",
+        "school_student",
+        "college_student",
+      ],
       assignment_answer_type: ["short", "long", "worksheet"],
       assignment_status: ["draft", "submitted", "graded"],
       course_difficulty: ["beginner", "intermediate", "advanced"],
