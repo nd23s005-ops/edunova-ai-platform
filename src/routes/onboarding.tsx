@@ -366,7 +366,7 @@ function OnboardingPage() {
               size="lg"
               className="gap-2 bg-gradient-to-r from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] px-6 text-white hover:opacity-90 disabled:opacity-40"
             >
-              {step === 3 ? "Continue to sign in" : "Continue"}
+              {step === 3 ? "Almost done" : "Continue"}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </footer>
