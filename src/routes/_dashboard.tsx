@@ -140,6 +140,35 @@ function DashboardLayout() {
   });
 
   const role = profile?.role ?? null;
+
+  // Student onboarding gate — redirect students without a student_profile to setup.
+  const { data: studentProfileStatus } = useQuery({
+    queryKey: ["me", "student_profile", "exists"],
+    enabled: role === "student",
+    queryFn: async () => {
+      const { data: u } = await supabase.auth.getUser();
+      if (!u.user) return { exists: false };
+      const { data } = await supabase
+        .from("student_profiles")
+        .select("id")
+        .eq("user_id", u.user.id)
+        .maybeSingle();
+      return { exists: !!data };
+    },
+    staleTime: 60_000,
+  });
+
+  useEffect(() => {
+    if (
+      role === "student" &&
+      studentProfileStatus &&
+      !studentProfileStatus.exists &&
+      !pathname.startsWith("/onboarding")
+    ) {
+      navigate({ to: "/onboarding/student-profile", replace: true });
+    }
+  }, [role, studentProfileStatus, pathname, navigate]);
+
   const roleNav = role ? NAV_BY_ROLE[role] : [];
   const initials = (profile?.fullName || profile?.email || "N L")
     .split(/\s+/)
