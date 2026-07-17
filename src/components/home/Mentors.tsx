@@ -76,7 +76,7 @@ export function Mentors() {
     <section
       id="mentors"
       className="relative overflow-hidden py-24 sm:py-32"
-      style={{ background: "#FCFAF7" }}
+      style={{ background: "transparent" }}
     >
       {/* Ambient background */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -141,7 +141,7 @@ export function Mentors() {
                   aria-hidden="true"
                 />
                 {/* Card body */}
-                <div className="relative flex h-full flex-col rounded-[calc(1.5rem-1px)] border border-white/60 bg-white/80 p-6 backdrop-blur-xl">
+                <div className="relative flex h-full flex-col rounded-[calc(1.5rem-1px)] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
                   {/* Soft gradient wash */}
                   <div
                     className="pointer-events-none absolute inset-0 rounded-[calc(1.5rem-1px)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"

@@ -32,7 +32,7 @@ function LearningTwinCard() {
       <motion.div
         animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+        className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
         <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(closest-side,rgba(120,220,225,0.35),transparent_70%)] blur-2xl" />
 
@@ -156,7 +156,7 @@ function KnowledgeGapCard() {
       <motion.div
         animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+        className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
         <div className="flex items-center justify-between">
           <div>
@@ -228,7 +228,7 @@ function LearningPathCard() {
       <motion.div
         animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+        className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
         <div className="flex items-center justify-between">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Personalized Roadmap</p>
@@ -280,7 +280,7 @@ function LearningPathCard() {
                   <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${bg}`}>
                     <Icon className="h-4 w-4" />
                   </span>
-                  <div className="flex flex-1 items-center justify-between rounded-xl border border-border/60 bg-white/70 px-3 py-2">
+                  <div className="flex flex-1 items-center justify-between rounded-xl border border-border/60 bg-white/[0.05] px-3 py-2">
                     <span className="text-sm font-semibold text-foreground">{s.title}</span>
                     {s.state === "current" && (
                       <span className="text-[11px] font-bold uppercase tracking-wider text-primary">In Progress</span>
@@ -317,7 +317,7 @@ function AITutorCard() {
       <motion.div
         animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
-        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+        className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
         <div className="flex items-center gap-3 border-b border-border/50 pb-4">
           <div className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-highlight text-primary-foreground">
@@ -345,7 +345,7 @@ function AITutorCard() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="max-w-[85%] rounded-2xl rounded-bl-md border border-border/60 bg-white px-3.5 py-2.5 text-sm text-foreground shadow-sm"
+            className="max-w-[85%] rounded-2xl rounded-bl-md border border-border/60 bg-card px-3.5 py-2.5 text-sm text-foreground shadow-sm"
           >
             Sure! Think of a leaf as a tiny kitchen. Sunlight is the stove, water and CO₂ are the ingredients, and the leaf cooks up glucose + oxygen…
           </motion.div>
@@ -354,7 +354,7 @@ function AITutorCard() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.7 }}
-            className="inline-flex items-center gap-1 rounded-2xl rounded-bl-md border border-border/60 bg-white px-3.5 py-2 text-sm text-muted-foreground shadow-sm"
+            className="inline-flex items-center gap-1 rounded-2xl rounded-bl-md border border-border/60 bg-card px-3.5 py-2 text-sm text-muted-foreground shadow-sm"
           >
             <span className="flex gap-1">
               {[0, 1, 2].map((i) => (
@@ -379,7 +379,7 @@ function AITutorCard() {
         </div>
 
         {/* Input */}
-        <div className="mt-4 flex items-center gap-2 rounded-2xl border border-border/60 bg-white px-3 py-2 shadow-sm">
+        <div className="mt-4 flex items-center gap-2 rounded-2xl border border-border/60 bg-card px-3 py-2 shadow-sm">
           <Paperclip className="h-4 w-4 text-muted-foreground" />
           <span className="flex-1 text-sm text-muted-foreground">Ask anything…</span>
           <Mic className="h-4 w-4 text-primary" />
@@ -404,7 +404,7 @@ function AnalyticsCard() {
       <motion.div
         animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+        className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
         <div className="flex items-center justify-between">
           <div>
@@ -461,7 +461,7 @@ function AnalyticsCard() {
 
 function Metric({ icon: Icon, label, value }: { icon: typeof Zap; label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-border/60 bg-white/80 p-2.5">
+    <div className="rounded-xl border border-border/60 bg-white/[0.04] p-2.5">
       <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
         <Icon className="h-3 w-3 text-primary" /> {label}
       </div>
@@ -481,7 +481,7 @@ function CertificateCard() {
       <motion.div
         animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
-        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+        className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
         {/* Certificate */}
         <div className="relative overflow-hidden rounded-2xl border-2 border-primary/25 bg-gradient-to-br from-white via-secondary/40 to-white p-5 shadow-inner">
@@ -521,7 +521,7 @@ function CertificateCard() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 + i * 0.1 }}
-              className="flex flex-col items-center rounded-xl border border-border/60 bg-white/80 p-3 text-center"
+              className="flex flex-col items-center rounded-xl border border-border/60 bg-white/[0.04] p-3 text-center"
             >
               <div className={`grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br ${b.grad} text-white shadow-md`}>
                 <b.Icon className="h-4 w-4" />
@@ -685,7 +685,7 @@ function Heading() {
 
 export function AIFeatures() {
   return (
-    <section id="ai-features" className="relative overflow-hidden py-24 sm:py-32" style={{ background: "#FCFAF7" }}>
+    <section id="ai-features" className="relative overflow-hidden py-24 sm:py-32" style={{ background: "transparent" }}>
       {/* Background wash */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div
@@ -705,7 +705,7 @@ export function AIFeatures() {
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary backdrop-blur"
+            className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-white/[0.05] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary backdrop-blur"
           >
             <Sparkles className="h-3.5 w-3.5" /> AI-Powered Learning
           </motion.span>

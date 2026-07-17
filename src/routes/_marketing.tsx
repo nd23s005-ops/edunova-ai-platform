@@ -8,12 +8,13 @@ export const Route = createFileRoute("/_marketing")({
 
 function MarketingLayout() {
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <div className="dark flex min-h-dvh flex-col bg-background">
       <Navbar />
       <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
     </div>
+
   );
 }

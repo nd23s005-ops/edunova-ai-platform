@@ -142,37 +142,17 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Smooth transition to light section */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-48">
-        {/* Soft glow accent */}
-        <div
-          className="absolute inset-x-0 bottom-16 h-24 opacity-70"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 100% at 50% 100%, rgba(239,123,36,0.18), transparent 70%)",
-          }}
-        />
-        {/* Gradient fade */}
+      {/* Soft fade into next dark section */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(7,16,24,0) 0%, rgba(7,16,24,0.4) 35%, rgba(252,250,247,0.75) 78%, #FCFAF7 100%)",
+              "linear-gradient(to bottom, rgba(7,16,24,0) 0%, rgba(7,16,24,0.6) 60%, #071018 100%)",
           }}
         />
-        {/* Curved divider */}
-        <svg
-          className="absolute inset-x-0 bottom-0 h-16 w-full"
-          viewBox="0 0 1440 80"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M0,80 C240,20 480,0 720,20 C960,40 1200,70 1440,30 L1440,80 L0,80 Z"
-            fill="#FCFAF7"
-          />
-        </svg>
       </div>
+
     </section>
   );
 }
