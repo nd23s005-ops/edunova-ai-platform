@@ -1,16 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/home/Hero";
-import { Features } from "@/components/home/Features";
-import { WhyChoose } from "@/components/home/WhyChoose";
-import { AIExperience } from "@/components/home/AIExperience";
-import { CourseCategories } from "@/components/home/CourseCategories";
-import { ResourceLibrary } from "@/components/home/ResourceLibrary";
-import { Testimonials } from "@/components/home/Testimonials";
-import { PricingPreview } from "@/components/home/PricingPreview";
+import { WhySix } from "@/components/home/WhySix";
+import { Categories } from "@/components/home/Categories";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { AIFeatures } from "@/components/home/AIFeatures";
+import { Mentors } from "@/components/home/Mentors";
+import { ProductPreview } from "@/components/home/ProductPreview";
 import { FAQ } from "@/components/home/FAQ";
-import { CTA } from "@/components/home/CTA";
+import { FinalCTA } from "@/components/home/FinalCTA";
 
 export const Route = createFileRoute("/_marketing/")({
+  head: () => ({
+    meta: [
+      { title: "EduNova AI — Learn faster with an AI that adapts to you" },
+      {
+        name: "description",
+        content:
+          "EduNova AI blends adaptive lessons, an always-on AI tutor, and teacher tools into one warm, calm learning space for students and educators.",
+      },
+      { property: "og:title", content: "EduNova AI — Adaptive AI Learning" },
+      {
+        property: "og:description",
+        content:
+          "Adaptive lessons, specialist AI mentors, and analytics that actually help — for students, teachers, and organizations.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: HomePage,
 });
 
@@ -18,15 +35,14 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <Features />
-      <WhyChoose />
-      <AIExperience />
-      <CourseCategories />
-      <ResourceLibrary />
-      <Testimonials />
-      <PricingPreview />
+      <WhySix />
+      <Categories />
+      <HowItWorks />
+      <AIFeatures />
+      <Mentors />
+      <ProductPreview />
       <FAQ />
-      <CTA />
+      <FinalCTA />
     </>
   );
 }

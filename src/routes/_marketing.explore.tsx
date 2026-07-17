@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Search, Star, Users } from "lucide-react";
 
-export const Route = createFileRoute("/_marketing/courses")({
+export const Route = createFileRoute("/_marketing/explore")({
   head: () => ({
     meta: [
       { title: "Courses — EduNova AI" },
