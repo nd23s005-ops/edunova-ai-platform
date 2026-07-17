@@ -242,7 +242,7 @@ export function assistantQuickPrompts(ctx: AssistantContext): string[] {
         ctx.student
           ? `Recommend Class ${ctx.student.currentClass} ${BOARD_LABEL[ctx.student.board] ?? ""} courses`
           : "Recommend Class 10 CBSE Science",
-        "Filter by language",
+        "Show popular subjects",
         "How do I enroll in a course?",
       ];
     case "community":

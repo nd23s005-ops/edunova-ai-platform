@@ -45,7 +45,7 @@ function surfaceInstructions(ctx: IncomingContext): string {
 
   const studentContext =
     role === "student" && student
-      ? `\nThe student's saved profile:\n- Class: ${student.currentClass}\n- Board: ${boardLabel}\n- Preferred language: ${student.language}\n- School: ${student.schoolName ?? "not provided"}\nAlways tailor explanations, examples, difficulty, and vocabulary to this class and board. Never ask the student to repeat these details.`
+      ? `\nThe student's saved profile:\n- Class: ${student.currentClass}\n- Board: ${boardLabel}\n- School: ${student.schoolName ?? "not provided"}\nAlways tailor explanations, examples, difficulty, and vocabulary to this class and board. Never ask the student to repeat these details.`
       : "";
 
   switch (surface) {
@@ -57,7 +57,7 @@ Keep answers short, marketing-friendly, and factual to the EduNova AI product.`;
 
     case "explore":
       return `ROLE: Course Advisor on the Explore page.
-Help the user discover and filter courses by board, class, subject, and language. Recommend specific courses when possible and offer to help them enroll.${studentContext}`;
+Help the user discover and filter courses by board, class, and subject. Recommend specific courses when possible and offer to help them enroll.${studentContext}`;
 
     case "community":
       return `ROLE: Community Guide.
@@ -72,7 +72,7 @@ Answer questions about EduNova AI's mission, product, and resources. Keep it con
     case "auth":
     case "onboarding":
       return `ROLE: Onboarding assistant.
-Help the user pick a role, choose a language, complete their profile, and sign in or register. Do not ask for or handle passwords.`;
+Help the user pick a role, complete their profile, and sign in or register. Do not ask for or handle passwords.`;
 
     case "dashboard_student":
       return `ROLE: Personal Learning Assistant for a student on their dashboard.${studentContext}

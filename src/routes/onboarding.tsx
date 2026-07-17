@@ -23,7 +23,7 @@ export const Route = createFileRoute("/onboarding")({
       {
         name: "description",
         content:
-          "Personalize your EduNova AI experience — choose your role, language, and learning preferences in a guided setup.",
+          "Personalize your EduNova AI experience — choose your role and learning preferences in a guided setup.",
       },
       { name: "robots", content: "noindex" },
     ],
