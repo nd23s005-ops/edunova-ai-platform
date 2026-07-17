@@ -294,35 +294,110 @@ function LoginPage() {
         </TabsContent>
 
         <TabsContent value="phone" className="mt-6">
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="phone-national">Phone number</Label>
-              <div className="mt-1.5">
-                <PhoneInput
-                  id="phone-national"
-                  value={phone}
+          {otpStep === "enter-phone" ? (
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="phone-national">Phone number</Label>
+                <div className="mt-1.5">
+                  <PhoneInput
+                    id="phone-national"
+                    value={phone}
+                    onChange={(v) => {
+                      setPhone(v);
+                      if (phoneError) setPhoneError(null);
+                    }}
+                    error={phoneError ?? undefined}
+                  />
+                </div>
+              </div>
+              <Button
+                type="button"
+                className="w-full shadow-elegant"
+                size="lg"
+                disabled={sendingOtp || !phone.valid}
+                onClick={() => requestOtp(false)}
+              >
+                {sendingOtp ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Phone className="mr-2 h-4 w-4" />}
+                {sendingOtp ? "Sending OTP…" : "Send OTP"}
+              </Button>
+              <p className="text-center text-xs text-muted-foreground">
+                We'll text you a 6-digit code. Message rates may apply.
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              <div>
+                <button
+                  type="button"
+                  onClick={changeNumber}
+                  className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground"
+                >
+                  <ChevronLeft className="h-3.5 w-3.5" /> Change number
+                </button>
+                <p className="mt-2 text-sm">
+                  Enter the 6-digit code sent to{" "}
+                  <span className="font-semibold">{phone.e164}</span>
+                </p>
+              </div>
+
+              <div className="flex justify-center py-2">
+                <InputOTP
+                  maxLength={6}
+                  value={otp}
                   onChange={(v) => {
-                    setPhone(v);
-                    if (phoneError) setPhoneError(null);
+                    setOtp(v);
+                    if (otpError) setOtpError(null);
+                    if (v.length === 6 && attempts < MAX_ATTEMPTS) {
+                      void verifyOtp(v);
+                    }
                   }}
-                  error={phoneError ?? undefined}
-                />
+                  disabled={verifyingOtp || attempts >= MAX_ATTEMPTS}
+                >
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                  </InputOTPGroup>
+                  <InputOTPSeparator />
+                  <InputOTPGroup>
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                  </InputOTPGroup>
+                </InputOTP>
+              </div>
+
+              {otpError && (
+                <p className="text-center text-xs text-destructive">{otpError}</p>
+              )}
+
+              <Button
+                type="button"
+                className="w-full shadow-elegant"
+                size="lg"
+                disabled={verifyingOtp || otp.length !== 6 || attempts >= MAX_ATTEMPTS}
+                onClick={() => verifyOtp(otp)}
+              >
+                {verifyingOtp && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {verifyingOtp ? "Verifying…" : "Verify & sign in"}
+              </Button>
+
+              <div className="flex items-center justify-center text-xs text-muted-foreground">
+                {resendCooldown > 0 ? (
+                  <span>Resend code in {resendCooldown}s</span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => requestOtp(true)}
+                    disabled={sendingOtp}
+                    className="font-medium text-primary hover:underline disabled:opacity-60"
+                  >
+                    {sendingOtp ? "Sending…" : "Resend code"}
+                  </button>
+                )}
               </div>
             </div>
-            <Button
-              type="button"
-              className="w-full shadow-elegant"
-              size="lg"
-              disabled={sendingOtp || !phone.valid}
-              onClick={handleSendOtp}
-            >
-              {sendingOtp ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Phone className="mr-2 h-4 w-4" />}
-              {sendingOtp ? "Sending OTP…" : "Send OTP"}
-            </Button>
-            <p className="text-center text-xs text-muted-foreground">
-              We'll text you a 6-digit code. Message rates may apply.
-            </p>
-          </div>
+          )}
         </TabsContent>
       </Tabs>
 
