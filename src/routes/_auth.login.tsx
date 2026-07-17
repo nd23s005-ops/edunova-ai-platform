@@ -12,6 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import { GoogleButton } from "@/components/auth/GoogleButton";
 import { AppleButton } from "@/components/auth/AppleButton";
+import { PasswordInput } from "@/components/auth/PasswordInput";
 import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
 import { homeForRole, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
@@ -144,9 +145,8 @@ function LoginPage() {
               Forgot password?
             </Link>
           </div>
-          <Input
+          <PasswordInput
             id="password"
-            type="password"
             autoComplete="current-password"
             placeholder="••••••••"
             className="mt-1.5"

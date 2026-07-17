@@ -21,6 +21,7 @@ import {
 import { GoogleButton } from "@/components/auth/GoogleButton";
 import { AppleButton } from "@/components/auth/AppleButton";
 import { PasswordStrengthMeter } from "@/components/auth/PasswordStrengthMeter";
+import { PasswordInput } from "@/components/auth/PasswordInput";
 import { supabase } from "@/integrations/supabase/client";
 import { registerSchema, type RegisterInput } from "@/lib/auth/schemas";
 import {
@@ -303,9 +304,8 @@ function RegisterPage() {
 
         <div>
           <Label htmlFor="password">Password</Label>
-          <Input
+          <PasswordInput
             id="password"
-            type="password"
             autoComplete="new-password"
             placeholder="At least 8 characters"
             className="mt-1.5"
@@ -320,9 +320,8 @@ function RegisterPage() {
 
         <div>
           <Label htmlFor="confirmPassword">Confirm password</Label>
-          <Input
+          <PasswordInput
             id="confirmPassword"
-            type="password"
             autoComplete="new-password"
             placeholder="Re-enter password"
             className="mt-1.5"

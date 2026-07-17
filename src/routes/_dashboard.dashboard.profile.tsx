@@ -14,6 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { PasswordStrengthMeter } from "@/components/auth/PasswordStrengthMeter";
+import { PasswordInput } from "@/components/auth/PasswordInput";
 import { supabase } from "@/integrations/supabase/client";
 import { profileSchema, type ProfileInput, passwordSchema } from "@/lib/auth/schemas";
 import { ROLE_LABELS, type AppRole } from "@/lib/auth/roles";
@@ -192,7 +193,7 @@ function ProfilePage() {
           <form className="grid gap-4 sm:grid-cols-2" onSubmit={passwordForm.handleSubmit(onChangePassword)}>
             <div>
               <Label htmlFor="newPassword">New password</Label>
-              <Input id="newPassword" type="password" className="mt-1.5" {...passwordForm.register("newPassword")} />
+              <PasswordInput id="newPassword" className="mt-1.5" autoComplete="new-password" {...passwordForm.register("newPassword")} />
               <PasswordStrengthMeter password={passwordForm.watch("newPassword") || ""} />
               {passwordForm.formState.errors.newPassword && (
                 <p className="mt-1 text-xs text-destructive">{passwordForm.formState.errors.newPassword.message}</p>
@@ -200,7 +201,7 @@ function ProfilePage() {
             </div>
             <div>
               <Label htmlFor="confirmPassword">Confirm new password</Label>
-              <Input id="confirmPassword" type="password" className="mt-1.5" {...passwordForm.register("confirmPassword")} />
+              <PasswordInput id="confirmPassword" className="mt-1.5" autoComplete="new-password" {...passwordForm.register("confirmPassword")} />
               {passwordForm.formState.errors.confirmPassword && (
                 <p className="mt-1 text-xs text-destructive">{passwordForm.formState.errors.confirmPassword.message}</p>
               )}
