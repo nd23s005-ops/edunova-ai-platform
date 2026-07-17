@@ -159,14 +159,28 @@ function BrowseCoursesPage() {
                 {c.description && (
                   <p className="mt-1 line-clamp-3 text-sm text-muted-foreground">{c.description}</p>
                 )}
-                <div className="mt-4">
+                <div className="mt-3 flex flex-wrap gap-1.5 text-[10px] font-medium uppercase tracking-wider">
+                  {c.difficulty && (
+                    <span className="rounded-full bg-primary/10 px-2 py-0.5 text-primary">
+                      {c.difficulty}
+                    </span>
+                  )}
+                  {c.estimated_hours && (
+                    <span className="rounded-full bg-muted px-2 py-0.5 text-muted-foreground">
+                      ~{c.estimated_hours}h
+                    </span>
+                  )}
+                </div>
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <Link
+                    to="/dashboard/student/courses/$courseId"
+                    params={{ courseId: c.id }}
+                    className="text-sm font-medium text-primary hover:underline"
+                  >
+                    View details →
+                  </Link>
                   {enrolled ? (
-                    <Link
-                      to="/dashboard/student/my-courses"
-                      className="text-sm font-medium text-primary hover:underline"
-                    >
-                      View in My Courses →
-                    </Link>
+                    <span className="text-xs text-muted-foreground">Enrolled</span>
                   ) : (
                     <Button
                       size="sm"
