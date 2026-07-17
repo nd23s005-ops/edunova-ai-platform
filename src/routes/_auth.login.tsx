@@ -50,20 +50,116 @@ function LoginPage() {
   const [submitting, setSubmitting] = useState(false);
   const [phone, setPhone] = useState<PhoneInputValue>(() => createEmptyPhoneValue());
   const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [otpStep, setOtpStep] = useState<"enter-phone" | "enter-otp">("enter-phone");
+  const [otp, setOtp] = useState("");
+  const [otpError, setOtpError] = useState<string | null>(null);
   const [sendingOtp, setSendingOtp] = useState(false);
+  const [verifyingOtp, setVerifyingOtp] = useState(false);
+  const [attempts, setAttempts] = useState(0);
+  const [resendCooldown, setResendCooldown] = useState(0);
+  const cooldownTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const handleSendOtp = async () => {
+  const MAX_ATTEMPTS = 5;
+  const RESEND_SECONDS = 30;
+
+  useEffect(() => {
+    return () => {
+      if (cooldownTimer.current) clearInterval(cooldownTimer.current);
+    };
+  }, []);
+
+  const startCooldown = () => {
+    setResendCooldown(RESEND_SECONDS);
+    if (cooldownTimer.current) clearInterval(cooldownTimer.current);
+    cooldownTimer.current = setInterval(() => {
+      setResendCooldown((s) => {
+        if (s <= 1) {
+          if (cooldownTimer.current) clearInterval(cooldownTimer.current);
+          return 0;
+        }
+        return s - 1;
+      });
+    }, 1000);
+  };
+
+  const requestOtp = async (isResend = false) => {
     if (!phone.valid || !phone.e164) {
       setPhoneError("Enter a valid phone number for the selected country.");
       return;
     }
     setPhoneError(null);
     setSendingOtp(true);
-    // OTP delivery backend (Twilio Verify) not yet wired.
-    // The number is already normalized to E.164 for downstream use: phone.e164
-    await new Promise((r) => setTimeout(r, 400));
+    const { error } = await supabase.auth.signInWithOtp({
+      phone: phone.e164,
+      options: { channel: "sms" },
+    });
     setSendingOtp(false);
-    toast.info("SMS OTP isn't connected yet — number captured as " + phone.e164);
+    if (error) {
+      const msg = error.message ?? "Could not send OTP.";
+      if (/provider|disabled|not enabled|unsupported/i.test(msg)) {
+        toast.error("SMS provider isn't configured on the backend yet.");
+      } else if (/rate|too many/i.test(msg)) {
+        toast.error("Too many requests. Try again in a minute.");
+      } else {
+        toast.error(msg);
+      }
+      return;
+    }
+    toast.success(isResend ? "New code sent." : `Code sent to ${phone.e164}`);
+    setOtp("");
+    setOtpError(null);
+    setAttempts(0);
+    setOtpStep("enter-otp");
+    startCooldown();
+  };
+
+  const verifyOtp = async (code: string) => {
+    if (!phone.e164) return;
+    if (code.length !== 6) {
+      setOtpError("Enter the 6-digit code.");
+      return;
+    }
+    setOtpError(null);
+    setVerifyingOtp(true);
+    const { data, error } = await supabase.auth.verifyOtp({
+      phone: phone.e164,
+      token: code,
+      type: "sms",
+    });
+    setVerifyingOtp(false);
+
+    if (error || !data.session) {
+      const nextAttempts = attempts + 1;
+      setAttempts(nextAttempts);
+      if (nextAttempts >= MAX_ATTEMPTS) {
+        setOtpError("Too many incorrect attempts. Request a new code.");
+        toast.error("Too many incorrect attempts.");
+      } else {
+        setOtpError(`Invalid or expired code. ${MAX_ATTEMPTS - nextAttempts} attempts left.`);
+      }
+      return;
+    }
+
+    // Signed in — resolve role and route
+    const { data: roleRow } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", data.session.user.id)
+      .maybeSingle();
+    const dest =
+      redirectTo && redirectTo.startsWith("/")
+        ? redirectTo
+        : homeForRole((roleRow?.role as AppRole) ?? null);
+    toast.success("Signed in — welcome!");
+    await router.invalidate();
+    navigate({ to: dest });
+  };
+
+  const changeNumber = () => {
+    setOtpStep("enter-phone");
+    setOtp("");
+    setOtpError(null);
+    setAttempts(0);
   };
 
 
