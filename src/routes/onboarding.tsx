@@ -97,14 +97,9 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
   organization: [
     { key: "employee", label: "Employee Training", desc: "Structured onboarding & growth tracks." },
     { key: "team", label: "Team Learning", desc: "Cohort programs and shared goals." },
-    { key: "analytics", label: "Corporate Analytics", desc: "Skill dashboards and ROI reports." },
-  ],
-  admin: [],
-};
-
 // ---------------------------------------------------------------- storage
 const KEY = "edunova.onboarding";
-type Saved = { role?: AppRole; language?: string; preference?: string };
+type Saved = { role?: AppRole; preference?: string };
 function loadSaved(): Saved {
   if (typeof window === "undefined") return {};
   try {
@@ -124,28 +119,25 @@ function OnboardingPage() {
   const { mode: entryMode } = Route.useSearch();
   const [step, setStep] = useState(1);
   const [role, setRole] = useState<AppRole | null>(null);
-  const [language, setLanguage] = useState<string | null>(null);
   const [preference, setPreference] = useState<string | null>(null);
 
   useEffect(() => {
     const s = loadSaved();
     if (s.role) setRole(s.role);
-    if (s.language) setLanguage(s.language);
     if (s.preference) setPreference(s.preference);
   }, []);
 
   useEffect(() => {
-    saveSaved({ role: role ?? undefined, language: language ?? undefined, preference: preference ?? undefined });
-  }, [role, language, preference]);
+    saveSaved({ role: role ?? undefined, preference: preference ?? undefined });
+  }, [role, preference]);
 
-  const totalSteps = role === "admin" ? 3 : 4;
+  const totalSteps = role === "admin" ? 2 : 3;
   const currentIndex = step;
   const progress = (currentIndex / totalSteps) * 100;
 
   const canNext =
     (step === 1 && role) ||
-    (step === 2 && language) ||
-    (step === 3 && (role === "admin" || preference));
+    (step === 2 && (role === "admin" || preference));
 
   function next() {
     if (!canNext) return;
