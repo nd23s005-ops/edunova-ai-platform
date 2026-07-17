@@ -209,7 +209,7 @@ function CourseResourcesPage() {
         {filtered.length ? (
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map((r, i) => (
-              <ResourceCard key={r.id} r={r} delay={i * 0.02} bookmarked={bookmarks.has(r.id)} onBookmark={() => bookmarks.toggle(r.id)} />
+              <ResourceCard key={r.id} r={r} coverImage={getCourseImage(course)} delay={i * 0.02} bookmarked={bookmarks.has(r.id)} onBookmark={() => bookmarks.toggle(r.id)} />
             ))}
           </div>
         ) : (
