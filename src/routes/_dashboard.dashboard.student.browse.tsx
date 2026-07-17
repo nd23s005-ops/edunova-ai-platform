@@ -62,7 +62,7 @@ function BrowseCoursesPage() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("courses")
-        .select("id, title, description, subject, board, class_min, class_max, language, cover_url")
+        .select("id, title, description, subject, board, class_min, class_max, language, cover_url, difficulty, estimated_hours")
         .eq("board", profile!.board)
         .lte("class_min", profile!.current_class)
         .gte("class_max", profile!.current_class)
