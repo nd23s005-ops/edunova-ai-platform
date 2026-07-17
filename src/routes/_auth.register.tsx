@@ -98,10 +98,22 @@ function RegisterPage() {
 
   return (
     <div>
+      <Link
+        to="/onboarding"
+        className="mb-6 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground"
+      >
+        <ArrowLeft className="h-3.5 w-3.5" /> Back to onboarding
+      </Link>
+      {selectedRole && selectedRole !== "admin" && (
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-semibold">
+          {ROLE_LABELS[selectedRole as AppRole]} sign up
+        </div>
+      )}
       <h1 className="text-3xl font-bold tracking-tight">Create your account</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         Start learning with Nova in less than a minute.
       </p>
+
 
       <form className="mt-8 space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
         <div>
