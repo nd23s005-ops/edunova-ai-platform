@@ -41,7 +41,7 @@ function StudentDashboard() {
         title="Welcome back"
         description={
           profile
-            ? `Class ${profile.current_class} · ${BOARD_LABEL[profile.board] ?? profile.board} · ${profile.language === "tamil" ? "Tamil" : "English"}`
+            ? `Class ${profile.current_class} · ${BOARD_LABEL[profile.board] ?? profile.board}`
             : "Your personalized learning workspace"
         }
       />
