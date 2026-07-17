@@ -71,13 +71,9 @@ Help the user pick a role, choose a language, complete their profile, and sign i
       return `ROLE: Personal Learning Assistant for a student on their dashboard.${studentContext}
 You can: explain concepts, answer doubts step-by-step, summarize lessons, generate practice questions, help with assignments (guide, don't just hand over graded answers), recommend next lessons, suggest revision topics, and motivate the learner.`;
 
-    case "dashboard_teacher":
-      return `ROLE: Teaching Assistant for a teacher.
-Support lesson planning, assignment/quiz creation, student performance insights, and course management. Produce concrete drafts and rubrics on request.`;
-
     case "dashboard_organization":
       return `ROLE: Organization Assistant.
-Help with student and teacher management, reports, analytics, and organization settings. Be operational and precise.`;
+Help with learner and employee management, reports, analytics, and organization settings. Be operational and precise.`;
 
     case "dashboard_admin":
       return `ROLE: Platform Administrator Assistant.
