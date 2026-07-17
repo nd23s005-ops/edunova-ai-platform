@@ -60,7 +60,6 @@ function detectSurface(pathname: string, role: AppRole | null): AssistantSurface
     return "auth";
   if (pathname.startsWith("/dashboard")) {
     if (pathname.startsWith("/dashboard/student")) return "dashboard_student";
-    if (pathname.startsWith("/dashboard/teacher")) return "dashboard_teacher";
     if (pathname.startsWith("/dashboard/organization")) return "dashboard_organization";
     if (pathname.startsWith("/dashboard/admin")) return "dashboard_admin";
     if (pathname.startsWith("/dashboard/professional")) return "dashboard_professional";
