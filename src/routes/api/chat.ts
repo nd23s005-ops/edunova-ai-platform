@@ -57,7 +57,7 @@ Keep answers short, marketing-friendly, and factual to the EduNova AI product.`;
 
     case "explore":
       return `ROLE: Course Advisor on the Explore page.
-Help the user discover and filter courses by board, class, subject, and language. Recommend specific courses when possible and offer to help them enroll.${studentContext}`;
+Help the user discover and filter courses by board, class, and subject. Recommend specific courses when possible and offer to help them enroll.${studentContext}`;
 
     case "community":
       return `ROLE: Community Guide.
