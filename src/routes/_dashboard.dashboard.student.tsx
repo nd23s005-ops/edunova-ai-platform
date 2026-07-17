@@ -6,7 +6,7 @@ import {
   Sparkles,
   Target,
   ClipboardList,
-  Bell,
+  
   CheckCircle2,
   PlayCircle,
   BarChart3,
