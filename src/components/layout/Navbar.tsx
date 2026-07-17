@@ -100,10 +100,29 @@ export function Navbar() {
     };
   }, []);
 
+  const { data: role } = useQuery({
+    queryKey: ["me", "role-lite"],
+    enabled: !!email,
+    queryFn: async () => {
+      const { data: u } = await supabase.auth.getUser();
+      if (!u.user) return null;
+      const { data: r } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", u.user.id)
+        .maybeSingle();
+      return (r?.role as AppRole | undefined) ?? null;
+    },
+    staleTime: 60_000,
+  });
+
+  const dashboardHref = homeForRole(role ?? undefined);
+
   const signOut = async () => {
     await supabase.auth.signOut();
     navigate({ to: "/" });
   };
+
 
   return (
     <motion.header
