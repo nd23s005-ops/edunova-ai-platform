@@ -1,104 +1,145 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Sparkles, BookOpen, Users } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { AIBackground } from "./AIBackground";
 
-const trust = ["Schools", "Colleges", "Universities", "Organizations", "Govt. Exam Aspirants"];
+const HEADLINE_LINE_1 = "Learn faster with an";
+const HEADLINE_HIGHLIGHT = "AI that adapts";
+const HEADLINE_LINE_3 = "to you.";
 
-const introCards = [
-  {
-    icon: Sparkles,
-    title: "Adaptive AI tutor",
-    body: "Personalized guidance that adjusts to how each student learns best.",
-  },
-  {
-    icon: BookOpen,
-    title: "Structured courses",
-    body: "Lessons, checkpoints, and progress tracking that actually stick.",
-  },
-  {
-    icon: Users,
-    title: "For students & teachers",
-    body: "Role-based dashboards designed for classrooms of any size.",
-  },
-];
+function Words({ text, delay = 0 }: { text: string; delay?: number }) {
+  const reduce = useReducedMotion();
+  const words = text.split(" ");
+  return (
+    <>
+      {words.map((w, i) => (
+        <span key={i} className="inline-block overflow-hidden align-bottom">
+          <motion.span
+            className="inline-block"
+            initial={reduce ? { opacity: 0 } : { y: "110%", opacity: 0 }}
+            animate={reduce ? { opacity: 1 } : { y: "0%", opacity: 1 }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: delay + i * 0.06 }}
+          >
+            {w}
+            {i < words.length - 1 ? "\u00A0" : ""}
+          </motion.span>
+        </span>
+      ))}
+    </>
+  );
+}
 
 export function Hero() {
+  const reduce = useReducedMotion();
+
   return (
-    <section className="relative overflow-hidden">
-      {/* Ambient hero background */}
-      <div className="absolute inset-0 bg-hero-gradient" aria-hidden="true" />
-      <div className="absolute inset-0 bg-grid-fade opacity-70" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute left-1/4 top-24 h-2 w-2 rounded-full bg-primary/70 blur-[2px]" />
-        <div className="absolute right-1/4 top-40 h-1.5 w-1.5 rounded-full bg-accent/80 blur-[1px]" />
-        <div className="absolute left-1/3 bottom-24 h-1.5 w-1.5 rounded-full bg-highlight/80 blur-[1px]" />
-        <div className="absolute right-1/3 bottom-40 h-2 w-2 rounded-full bg-primary/60 blur-[2px]" />
-      </div>
+    <section className="relative isolate overflow-hidden">
+      <AIBackground />
 
-      <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-14 sm:px-6 sm:pt-24 lg:px-8 lg:pt-28">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-background/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
-            <Sparkles className="h-3.5 w-3.5" />
-            New: Adaptive AI tutor
+      <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col items-center justify-center px-4 pt-20 pb-24 text-center sm:px-6 lg:px-8">
+        {/* Badge */}
+        <motion.a
+          href="#features"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="group pointer-events-auto inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-3.5 py-1.5 text-xs font-semibold text-foreground/80 shadow-card backdrop-blur-xl transition hover:border-primary/40 hover:text-foreground"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className={`absolute inline-flex h-full w-full rounded-full bg-accent opacity-70 ${reduce ? "" : "animate-ping"}`} />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
+          <Sparkles className="h-3.5 w-3.5 text-accent" />
+          <span className="tracking-wide">New · Adaptive AI Tutor</span>
+          <ArrowRight className="h-3.5 w-3.5 -translate-x-0.5 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+        </motion.a>
 
-          <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-            Learn faster with an <span className="text-gradient">AI that adapts</span> to you.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            EduNova AI blends adaptive lessons, an always-on tutor, and teacher tools into one warm,
-            calm learning space for students and educators alike.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button asChild size="lg" className="shadow-elegant">
-              <Link to="/" hash="features">
-                Explore features
-                <ArrowRight />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href="https://docs.lovable.dev/" target="_blank" rel="noreferrer">
-                Read the docs
-              </a>
-            </Button>
-          </div>
-        </div>
-
-        <div id="features" className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {introCards.map((c) => (
-            <div
-              key={c.title}
-              className="rounded-2xl border border-border/60 bg-card p-6 shadow-card transition hover:-translate-y-0.5 hover:shadow-elegant"
-            >
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                <c.icon className="h-5 w-5" />
+        {/* Headline */}
+        <h1 className="mt-8 max-w-5xl font-display text-[42px] font-semibold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-6xl lg:text-7xl xl:text-[88px]">
+          <span className="block">
+            <Words text={HEADLINE_LINE_1} delay={0.15} />
+          </span>
+          <span className="mt-2 block">
+            <span className="relative inline-block">
+              <motion.span
+                aria-hidden="true"
+                className="absolute -inset-x-3 -inset-y-1 -z-10 rounded-2xl bg-[linear-gradient(90deg,color-mix(in_oklab,var(--accent)_35%,transparent),color-mix(in_oklab,var(--primary-glow)_25%,transparent),transparent)] blur-2xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.2, delay: 0.8 }}
+              />
+              <span className="bg-[linear-gradient(92deg,#F19A3E_0%,#EF7B24_35%,#E85A9E_65%,#7C6BFF_100%)] bg-[length:220%_100%] bg-clip-text text-transparent [animation:gradient-shift_8s_ease_infinite]">
+                <Words text={HEADLINE_HIGHLIGHT} delay={0.45} />
               </span>
-              <h3 className="mt-5 text-lg font-semibold">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+            </span>{" "}
+            <Words text={HEADLINE_LINE_3} delay={0.75} />
+          </span>
+        </h1>
 
-      {/* Trust bar */}
-      <div className="relative border-t border-border/60 bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Trusted by learners and educators
-          </p>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-            {trust.map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground shadow-sm"
-              >
-                {t}
+        {/* Subheading */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.05, ease: "easeOut" }}
+          className="mx-auto mt-7 max-w-[680px] text-balance text-base leading-relaxed text-muted-foreground sm:text-lg"
+        >
+          EduNova AI is a next-generation learning platform where adaptive lessons, specialist AI
+          mentors, and calm teacher tools work together — so every learner moves forward at their
+          own pace.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.2, ease: "easeOut" }}
+          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="group relative h-12 overflow-hidden rounded-full border-0 bg-[linear-gradient(92deg,#F19A3E,#EF7B24_55%,#E85A9E)] px-7 text-base font-semibold text-white shadow-[0_10px_40px_-10px_rgba(239,123,36,0.7)] transition-all hover:shadow-[0_16px_60px_-10px_rgba(239,123,36,0.9)] hover:-translate-y-0.5"
+          >
+            <Link to="/" hash="features">
+              <span className="relative z-10 flex items-center gap-2">
+                Explore Features
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </span>
-            ))}
-          </div>
-        </div>
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent)] transition-transform duration-700 group-hover:translate-x-full" />
+            </Link>
+          </Button>
+
+          <Button
+            asChild
+            size="lg"
+            variant="ghost"
+            className="group h-12 rounded-full px-6 text-base font-medium text-foreground hover:bg-transparent"
+          >
+            <a href="https://docs.lovable.dev/" target="_blank" rel="noreferrer">
+              <span className="relative">
+                Read Documentation
+                <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-foreground/70 transition-transform duration-300 group-hover:scale-x-100" />
+              </span>
+            </a>
+          </Button>
+        </motion.div>
+
+        {/* Trust footnote */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+          className="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground/80"
+        >
+          <span>Schools</span>
+          <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
+          <span>Universities</span>
+          <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
+          <span>Educators</span>
+          <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
+          <span>Exam Aspirants</span>
+        </motion.div>
       </div>
     </section>
   );
