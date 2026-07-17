@@ -148,6 +148,72 @@ export function getRelatedCourses(slug: string, limit = 4) {
 }
 
 // ---------------------------------------------------------------------------
+// Topic-relevant imagery. Curated Unsplash photo IDs mapped per category with
+// slug-level overrides for major courses so covers stay consistent across the
+// library while remaining specific to each topic.
+// ---------------------------------------------------------------------------
+
+const CATEGORY_IMAGE: Record<string, string> = {
+  "AI & Data": "photo-1620712943543-bcc4688e7485",
+  "Programming": "photo-1461749280684-dccba630e2f6",
+  "Web Development": "photo-1547658719-da2b51169166",
+  "Mobile": "photo-1512941937669-90a1b58e7e9c",
+  "Databases": "photo-1544383835-bda2bc66a55d",
+  "Data & Analytics": "photo-1551288049-bebda4e38f71",
+  "Cloud & DevOps": "photo-1451187580459-43490279c0fa",
+  "Security": "photo-1550751827-4bd374c3f58b",
+  "Design": "photo-1561070791-2526d30994b8",
+  "CS Core": "photo-1518770660439-4636190af475",
+};
+
+const SLUG_IMAGE: Record<string, string> = {
+  "artificial-intelligence": "photo-1620712943543-bcc4688e7485",
+  "machine-learning": "photo-1555949963-aa79dcee981c",
+  "deep-learning": "photo-1677442136019-21780ecad995",
+  "generative-ai": "photo-1673187456554-11de9df2f83e",
+  "prompt-engineering": "photo-1526378787940-576a539ba69d",
+  "ai-agents": "photo-1535378917042-10a22c95931a",
+  "python": "photo-1526379095098-d400fd0bf935",
+  "javascript": "photo-1579468118864-1b9ea3c0db4a",
+  "typescript": "photo-1587620962725-abab7fe55159",
+  "react": "photo-1633356122544-f134324a6cee",
+  "nextjs": "photo-1555066931-4365d14bab8c",
+  "nodejs": "photo-1627398242454-45a1465c2479",
+  "html5": "photo-1621839673705-6617adf9e890",
+  "css3": "photo-1507721999472-8ed4421c4af2",
+  "flutter": "photo-1607252650355-f7fd0460ccdb",
+  "android": "photo-1607252650355-f7fd0460ccdb",
+  "swift-ios": "photo-1512941937669-90a1b58e7e9c",
+  "sql": "photo-1544383835-bda2bc66a55d",
+  "postgresql": "photo-1633412802994-5c058f151b66",
+  "mongodb": "photo-1633412802994-5c058f151b66",
+  "data-science": "photo-1460925895917-afdab827c52f",
+  "data-analytics": "photo-1551288049-bebda4e38f71",
+  "aws": "photo-1451187580459-43490279c0fa",
+  "azure": "photo-1451187580459-43490279c0fa",
+  "gcp": "photo-1451187580459-43490279c0fa",
+  "docker": "photo-1605745341112-85968b19335b",
+  "kubernetes": "photo-1667372393119-3d4c48d07fc9",
+  "devops": "photo-1607705703571-c5a8695f18f6",
+  "cyber-security": "photo-1563986768609-322da13575f3",
+  "ethical-hacking": "photo-1526628953301-3e589a6a8b74",
+  "network-security": "photo-1544197150-b99a580bb7a8",
+  "penetration-testing": "photo-1550751827-4bd374c3f58b",
+  "ui-design": "photo-1561070791-2526d30994b8",
+  "ux-design": "photo-1586717791821-3f44a563fa4c",
+  "figma": "photo-1609921212029-bb5a28e60960",
+  "dsa": "photo-1518770660439-4636190af475",
+  "operating-systems": "photo-1518770660439-4636190af475",
+  "computer-networks": "photo-1544197150-b99a580bb7a8",
+  "system-design": "photo-1518770660439-4636190af475",
+};
+
+export function getCourseImage(course: { slug: string; category: string }): string {
+  const id = SLUG_IMAGE[course.slug] ?? CATEGORY_IMAGE[course.category] ?? "photo-1518770660439-4636190af475";
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=80`;
+}
+
+// ---------------------------------------------------------------------------
 // Deterministic resource metadata generation. Given a course + resource kind,
 // produce consistent title, summary, reading time, pages, tags. Keeps the
 // library scalable to thousands of resources without hand-writing each one.
