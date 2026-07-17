@@ -17,8 +17,8 @@ const faqs = [
     a: "Yes. Dedicated AI Mentors support UPSC, SSC, Banking, TNPSC, NEET, JEE, GATE, CAT, placement preparation, aptitude, interview practice, and many other competitive exams with syllabus-aware guidance.",
   },
   {
-    q: "Can teachers create courses?",
-    a: "Teachers can build structured courses, upload notes, PDFs, videos, assignments, quizzes, coding exercises, and monitor student performance through their dedicated dashboard.",
+    q: "Can organizations run learning programs?",
+    a: "Organizations can enroll teams, assign structured courses, track cohort progress, and view analytics on skills, engagement, and outcomes from a dedicated dashboard.",
   },
   {
     q: "Is my data secure?",

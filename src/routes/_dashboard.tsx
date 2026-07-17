@@ -25,7 +25,7 @@ import {
   Sparkles,
   Target,
   Trophy,
-  UserCog,
+  
   Users,
   X,
 } from "lucide-react";
@@ -79,18 +79,6 @@ const STUDENT_NAV: NavItem[] = [
   AI_ASSISTANT,
 ];
 
-const TEACHER_NAV: NavItem[] = [
-  { to: "/dashboard/teacher", label: "My workspace", icon: UserCog },
-  { to: "/dashboard/teacher/courses", label: "Courses", icon: BookOpen },
-  { to: "/dashboard/teacher/lessons", label: "Lessons", icon: FileText },
-  { to: "/dashboard/teacher/assignments", label: "Assignments", icon: ClipboardList },
-  { to: "/dashboard/teacher/quizzes", label: "Quizzes", icon: Target },
-  { to: "/dashboard/teacher/student-progress", label: "Student progress", icon: BarChart3 },
-  { to: "/dashboard/teacher/reports", label: "Reports", icon: FileText },
-  { to: "/dashboard/teacher/resources", label: "Resources", icon: FileText },
-  AI_ASSISTANT,
-];
-
 const ORG_NAV: NavItem[] = [
   { to: "/dashboard/organization", label: "My workspace", icon: Building2 },
   { to: "/dashboard/organization/employees", label: "Employees", icon: Users },
@@ -117,11 +105,11 @@ const PROFESSIONAL_NAV: NavItem[] = [
 
 const NAV_BY_ROLE: Record<AppRole, NavItem[]> = {
   student: STUDENT_NAV,
-  teacher: TEACHER_NAV,
   organization: ORG_NAV,
   admin: ADMIN_NAV,
   professional: PROFESSIONAL_NAV,
 };
+
 
 
 function DashboardLayout() {

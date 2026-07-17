@@ -177,8 +177,6 @@ function surfaceLabel(ctx: AssistantContext): string {
       return "Community guide";
     case "dashboard_student":
       return "Personal learning assistant";
-    case "dashboard_teacher":
-      return "Teaching assistant";
     case "dashboard_organization":
       return "Organization assistant";
     case "dashboard_admin":

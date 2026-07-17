@@ -7,7 +7,7 @@ export const Route = createFileRoute("/_marketing/about")({
   head: () => ({
     meta: [
       { title: "About — EduNova AI" },
-      { name: "description", content: "EduNova AI is on a mission to make world-class, adaptive learning accessible to every student, teacher, and organization." },
+      { name: "description", content: "EduNova AI is on a mission to make world-class, adaptive self-learning accessible to every student, professional, and organization." },
       { property: "og:title", content: "About EduNova AI" },
       { property: "og:description", content: "Our mission: adaptive learning for everyone." },
     ],

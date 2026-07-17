@@ -84,8 +84,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 1.05, ease: "easeOut" }}
           className="mx-auto mt-7 max-w-[680px] text-balance text-base leading-relaxed text-white/70 sm:text-lg"
         >
-          EduNova AI is a next-generation learning platform where adaptive lessons, specialist AI
-          mentors, and calm teacher tools work together — so every learner moves forward at their
+          EduNova AI is a next-generation self-learning platform where adaptive lessons and
+          specialist AI mentors work together — so every learner moves forward at their
           own pace.
         </motion.p>
 

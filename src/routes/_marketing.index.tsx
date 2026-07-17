@@ -15,13 +15,13 @@ export const Route = createFileRoute("/_marketing/")({
       {
         name: "description",
         content:
-          "EduNova AI blends adaptive lessons, an always-on AI tutor, and teacher tools into one warm, calm learning space for students and educators.",
+          "EduNova AI is an AI-powered self-learning platform that blends adaptive lessons and an always-on AI tutor into one warm, calm space for students, professionals, and organizations.",
       },
       { property: "og:title", content: "EduNova AI — Adaptive AI Learning" },
       {
         property: "og:description",
         content:
-          "Adaptive lessons, specialist AI mentors, and analytics that actually help — for students, teachers, and organizations.",
+          "Adaptive lessons, specialist AI mentors, and analytics that actually help — for students, professionals, and organizations.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

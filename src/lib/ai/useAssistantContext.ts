@@ -13,7 +13,6 @@ export type AssistantSurface =
   | "auth"
   | "onboarding"
   | "dashboard_student"
-  | "dashboard_teacher"
   | "dashboard_organization"
   | "dashboard_admin"
   | "dashboard_professional"
@@ -61,7 +60,6 @@ function detectSurface(pathname: string, role: AppRole | null): AssistantSurface
     return "auth";
   if (pathname.startsWith("/dashboard")) {
     if (pathname.startsWith("/dashboard/student")) return "dashboard_student";
-    if (pathname.startsWith("/dashboard/teacher")) return "dashboard_teacher";
     if (pathname.startsWith("/dashboard/organization")) return "dashboard_organization";
     if (pathname.startsWith("/dashboard/admin")) return "dashboard_admin";
     if (pathname.startsWith("/dashboard/professional")) return "dashboard_professional";
@@ -163,15 +161,10 @@ export function assistantGreeting(ctx: AssistantContext): { title: string; subti
           ? `I know you're studying Class ${ctx.student.currentClass} · ${boardLabel}. Ask me anything.`
           : "Complete your profile so I can tailor explanations to your class and board.",
       };
-    case "dashboard_teacher":
-      return {
-        title: "Teaching assistant",
-        subtitle: "Ask me to draft lessons, quizzes, assignments, or analyze student performance.",
-      };
     case "dashboard_organization":
       return {
         title: "Organization assistant",
-        subtitle: "Ask about managing students, teachers, analytics, and reports.",
+        subtitle: "Ask about managing learners, employees, analytics, and reports.",
       };
     case "dashboard_admin":
       return {
@@ -211,12 +204,6 @@ export function assistantQuickPrompts(ctx: AssistantContext): string[] {
             "Plan my week of revision",
           ]
         : ["Complete my student profile", "Recommend a course", "How does the roadmap work?"];
-    case "dashboard_teacher":
-      return [
-        "Draft a lesson plan",
-        "Generate a 10-question quiz",
-        "Summarize student performance",
-      ];
     case "dashboard_organization":
       return ["Onboard new employees", "Assign courses to a team", "Summarize weekly analytics"];
     case "dashboard_admin":

@@ -3,7 +3,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
-  BookOpen,
+  
   Building2,
   Briefcase,
   Shield,
@@ -50,11 +50,11 @@ const ROLES: RoleCard[] = [
     accent: "from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)]",
   },
   {
-    key: "teacher",
-    title: "Teacher",
-    description: "Design lessons, auto-grade, and see mastery across every student.",
-    icon: BookOpen,
-    accent: "from-[oklch(0.75_0.14_180)] to-[oklch(0.6_0.16_200)]",
+    key: "professional",
+    title: "Working Professional",
+    description: "Upskill, switch careers, or prep for certifications with focused AI mentors.",
+    icon: Briefcase,
+    accent: "from-[oklch(0.78_0.15_140)] to-[oklch(0.6_0.17_150)]",
   },
   {
     key: "organization",
@@ -63,13 +63,7 @@ const ROLES: RoleCard[] = [
     icon: Building2,
     accent: "from-[oklch(0.7_0.15_280)] to-[oklch(0.55_0.18_290)]",
   },
-  {
-    key: "professional",
-    title: "Working Professional",
-    description: "Upskill, switch careers, or prep for certifications with focused AI mentors.",
-    icon: Briefcase,
-    accent: "from-[oklch(0.78_0.15_140)] to-[oklch(0.6_0.17_150)]",
-  },
+
   {
     key: "admin",
     title: "Administrator",
@@ -91,11 +85,7 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
     { key: "college", label: "College Student", desc: "University subjects, projects, research support." },
     { key: "exam", label: "Competitive Exam Aspirant", desc: "JEE, NEET, UPSC, GRE — targeted practice." },
   ],
-  teacher: [
-    { key: "school", label: "School Teacher", desc: "Class planning, grading, K-12 pedagogy." },
-    { key: "college", label: "College Faculty", desc: "Lecture design, research, higher-ed tools." },
-    { key: "tutor", label: "Private Tutor", desc: "1:1 learners, custom plans, progress tracking." },
-  ],
+
   professional: [
     { key: "upskill", label: "Upskilling", desc: "Stay sharp in your current role." },
     { key: "switch", label: "Career Switch", desc: "Move into a new domain confidently." },

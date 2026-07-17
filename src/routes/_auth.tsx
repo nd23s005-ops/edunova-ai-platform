@@ -20,7 +20,7 @@ const VALUES = [
   {
     icon: Users,
     title: "Built for Every Learner",
-    desc: "Students, teachers, professionals, and organizations.",
+    desc: "Students, professionals, and organizations.",
   },
   {
     icon: ShieldCheck,
@@ -75,8 +75,8 @@ function AuthLayout() {
                 </span>
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                EduNova AI is built to make learning more personal, practical, and intelligent.
-                Whether you're a student, teacher, professional, or organization, our AI-powered
+                EduNova AI is built to make self-learning more personal, practical, and intelligent.
+                Whether you're a student, professional, or organization, our AI-powered
                 platform helps you learn with clarity, confidence, and purpose.
               </p>
             </div>
