@@ -28,10 +28,7 @@ function LearningTwinCard() {
   const reduce = useReducedMotion();
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(239,123,36,0.18),transparent_70%)] blur-2xl" />
       <motion.div
-        animate={reduce ? undefined : { y: [0, -6, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
         <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(closest-side,rgba(120,220,225,0.35),transparent_70%)] blur-2xl" />
@@ -152,9 +149,7 @@ function KnowledgeGapCard() {
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(120,220,225,0.22),transparent_70%)] blur-2xl" />
       <motion.div
-        animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
@@ -224,9 +219,7 @@ function LearningPathCard() {
   ];
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(239,123,36,0.18),transparent_70%)] blur-2xl" />
       <motion.div
-        animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
         className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
@@ -313,9 +306,7 @@ function AITutorCard() {
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(120,220,225,0.22),transparent_70%)] blur-2xl" />
       <motion.div
-        animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
         className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
@@ -400,9 +391,7 @@ function AnalyticsCard() {
   const bars = [40, 62, 48, 78, 66, 88, 72];
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(239,123,36,0.18),transparent_70%)] blur-2xl" />
       <motion.div
-        animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
@@ -477,9 +466,7 @@ function CertificateCard() {
   const reduce = useReducedMotion();
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(120,220,225,0.22),transparent_70%)] blur-2xl" />
       <motion.div
-        animate={reduce ? undefined : { y: [0, -6, 0] }}
         transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
         className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
       >
