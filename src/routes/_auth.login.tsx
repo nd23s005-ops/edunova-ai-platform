@@ -3,7 +3,7 @@ import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-r
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
+import { ArrowLeft, Loader2, Shield } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,7 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { GoogleButton } from "@/components/auth/GoogleButton";
 import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
-import { homeForRole } from "@/lib/auth/roles";
+import { homeForRole, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
 import type { AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_auth/login")({
@@ -26,9 +26,14 @@ export const Route = createFileRoute("/_auth/login")({
   }),
   validateSearch: (search: Record<string, unknown>) => ({
     redirect: typeof search.redirect === "string" ? search.redirect : undefined,
+    role:
+      typeof search.role === "string" && (ALL_ROLES as readonly string[]).includes(search.role)
+        ? (search.role as AppRole)
+        : undefined,
   }),
   component: LoginPage,
 });
+
 
 function LoginPage() {
   const navigate = useNavigate();

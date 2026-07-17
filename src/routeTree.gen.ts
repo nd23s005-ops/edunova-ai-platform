@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UnauthorizedRouteImport } from './routes/unauthorized'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
@@ -47,6 +48,11 @@ const UnauthorizedRoute = UnauthorizedRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarketingRoute = MarketingRouteImport.update({
@@ -190,6 +196,7 @@ const DashboardDashboardSplatRoute = DashboardDashboardSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/onboarding': typeof OnboardingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/account-created': typeof AuthAccountCreatedRoute
@@ -218,6 +225,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/onboarding': typeof OnboardingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/account-created': typeof AuthAccountCreatedRoute
@@ -249,6 +257,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
+  '/onboarding': typeof OnboardingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unauthorized': typeof UnauthorizedRoute
   '/_auth/account-created': typeof AuthAccountCreatedRoute
@@ -280,6 +289,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/$'
     | '/'
+    | '/onboarding'
     | '/sitemap.xml'
     | '/unauthorized'
     | '/account-created'
@@ -308,6 +318,7 @@ export interface FileRouteTypes {
   to:
     | '/$'
     | '/'
+    | '/onboarding'
     | '/sitemap.xml'
     | '/unauthorized'
     | '/account-created'
@@ -338,6 +349,7 @@ export interface FileRouteTypes {
     | '/_auth'
     | '/_dashboard'
     | '/_marketing'
+    | '/onboarding'
     | '/sitemap.xml'
     | '/unauthorized'
     | '/_auth/account-created'
@@ -370,6 +382,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
+  OnboardingRoute: typeof OnboardingRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UnauthorizedRoute: typeof UnauthorizedRoute
 }
@@ -388,6 +401,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_marketing': {
@@ -661,6 +681,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
+  OnboardingRoute: OnboardingRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   UnauthorizedRoute: UnauthorizedRoute,
 }
