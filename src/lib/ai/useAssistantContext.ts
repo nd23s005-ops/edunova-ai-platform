@@ -204,12 +204,6 @@ export function assistantQuickPrompts(ctx: AssistantContext): string[] {
             "Plan my week of revision",
           ]
         : ["Complete my student profile", "Recommend a course", "How does the roadmap work?"];
-    case "dashboard_teacher":
-      return [
-        "Draft a lesson plan",
-        "Generate a 10-question quiz",
-        "Summarize student performance",
-      ];
     case "dashboard_organization":
       return ["Onboard new employees", "Assign courses to a team", "Summarize weekly analytics"];
     case "dashboard_admin":
