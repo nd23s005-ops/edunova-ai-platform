@@ -90,6 +90,7 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
     { key: "college", label: "College Faculty", desc: "Lecture design, research, higher-ed tools." },
     { key: "tutor", label: "Private Tutor", desc: "1:1 learners, custom plans, progress tracking." },
   ],
+
   professional: [
     { key: "upskill", label: "Upskilling", desc: "Stay sharp in your current role." },
     { key: "switch", label: "Career Switch", desc: "Move into a new domain confidently." },
