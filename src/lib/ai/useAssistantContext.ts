@@ -29,6 +29,13 @@ export type AssistantContext = {
     language: string;
     schoolName: string | null;
   };
+  lesson?: {
+    courseTitle: string;
+    courseSubject: string;
+    chapterTitle: string | null;
+    lessonTitle: string | null;
+    theoryExcerpt: string | null;
+  };
   signedIn: boolean;
 };
 
