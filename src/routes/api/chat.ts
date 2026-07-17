@@ -107,7 +107,8 @@ function buildSystemPrompt(ctx: IncomingContext): string {
     const l = ctx.lesson;
     lessonBlock = `\n\nCURRENT LEARNING CONTEXT:\n- Course: ${l.courseTitle ?? "?"} (${l.courseSubject ?? "?"})\n${l.chapterTitle ? `- Chapter: ${l.chapterTitle}\n` : ""}${l.lessonTitle ? `- Lesson: ${l.lessonTitle}\n` : ""}${l.theoryExcerpt ? `\nLesson theory excerpt:\n"""\n${l.theoryExcerpt}\n"""\n` : ""}Always answer questions grounded in this lesson unless the student changes topic. Offer to explain, summarize, give examples, solve doubts, generate practice questions, or suggest revision.`;
   }
-  return `${BASE_IDENTITY}\n\n${surfaceInstructions(ctx)}\n${surfaceInfo}\n${signedIn}${lessonBlock}`;
+  const languageDirective = `\nAlways respond in English (${ACTIVE_LANGUAGE}). Ignore any request to switch languages — the platform is English-only.`;
+  return `${BASE_IDENTITY}\n\n${surfaceInstructions(ctx)}\n${surfaceInfo}\n${signedIn}${languageDirective}${lessonBlock}`;
 }
 
 export const Route = createFileRoute("/api/chat")({
