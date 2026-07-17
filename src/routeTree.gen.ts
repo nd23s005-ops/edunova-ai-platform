@@ -37,6 +37,7 @@ import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-pa
 import { Route as AuthAccountCreatedRouteImport } from './routes/_auth.account-created'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
 import { Route as MarketingFeaturesLearningTwinRouteImport } from './routes/_marketing.features.learning-twin'
+import { Route as MarketingFeaturesKnowledgeGapAnalysisRouteImport } from './routes/_marketing.features.knowledge-gap-analysis'
 import { Route as MarketingFeaturesSlugRouteImport } from './routes/_marketing.features.$slug'
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
 import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
@@ -197,6 +198,12 @@ const MarketingFeaturesLearningTwinRoute =
     path: '/features/learning-twin',
     getParentRoute: () => MarketingRoute,
   } as any)
+const MarketingFeaturesKnowledgeGapAnalysisRoute =
+  MarketingFeaturesKnowledgeGapAnalysisRouteImport.update({
+    id: '/features/knowledge-gap-analysis',
+    path: '/features/knowledge-gap-analysis',
+    getParentRoute: () => MarketingRoute,
+  } as any)
 const MarketingFeaturesSlugRoute = MarketingFeaturesSlugRouteImport.update({
   id: '/features/$slug',
   path: '/features/$slug',
@@ -349,6 +356,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/features/$slug': typeof MarketingFeaturesSlugRoute
+  '/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -396,6 +404,7 @@ export interface FileRoutesByTo {
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/features/$slug': typeof MarketingFeaturesSlugRoute
+  '/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -447,6 +456,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/_marketing/features/$slug': typeof MarketingFeaturesSlugRoute
+  '/_marketing/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   '/_marketing/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
   '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -496,6 +506,7 @@ export interface FileRouteTypes {
     | '/dashboard/profile'
     | '/dashboard/student'
     | '/features/$slug'
+    | '/features/knowledge-gap-analysis'
     | '/features/learning-twin'
     | '/dashboard/'
     | '/dashboard/admin/support'
@@ -543,6 +554,7 @@ export interface FileRouteTypes {
     | '/dashboard/profile'
     | '/dashboard/student'
     | '/features/$slug'
+    | '/features/knowledge-gap-analysis'
     | '/features/learning-twin'
     | '/dashboard'
     | '/dashboard/admin/support'
@@ -593,6 +605,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/profile'
     | '/_dashboard/dashboard/student'
     | '/_marketing/features/$slug'
+    | '/_marketing/features/knowledge-gap-analysis'
     | '/_marketing/features/learning-twin'
     | '/_dashboard/dashboard/'
     | '/_dashboard/dashboard/admin/support'
@@ -819,6 +832,13 @@ declare module '@tanstack/react-router' {
       path: '/features/learning-twin'
       fullPath: '/features/learning-twin'
       preLoaderRoute: typeof MarketingFeaturesLearningTwinRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/features/knowledge-gap-analysis': {
+      id: '/_marketing/features/knowledge-gap-analysis'
+      path: '/features/knowledge-gap-analysis'
+      fullPath: '/features/knowledge-gap-analysis'
+      preLoaderRoute: typeof MarketingFeaturesKnowledgeGapAnalysisRouteImport
       parentRoute: typeof MarketingRoute
     }
     '/_marketing/features/$slug': {
@@ -1092,6 +1112,7 @@ interface MarketingRouteChildren {
   MarketingResourcesRoute: typeof MarketingResourcesRoute
   MarketingIndexRoute: typeof MarketingIndexRoute
   MarketingFeaturesSlugRoute: typeof MarketingFeaturesSlugRoute
+  MarketingFeaturesKnowledgeGapAnalysisRoute: typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   MarketingFeaturesLearningTwinRoute: typeof MarketingFeaturesLearningTwinRoute
 }
 
@@ -1102,6 +1123,8 @@ const MarketingRouteChildren: MarketingRouteChildren = {
   MarketingResourcesRoute: MarketingResourcesRoute,
   MarketingIndexRoute: MarketingIndexRoute,
   MarketingFeaturesSlugRoute: MarketingFeaturesSlugRoute,
+  MarketingFeaturesKnowledgeGapAnalysisRoute:
+    MarketingFeaturesKnowledgeGapAnalysisRoute,
   MarketingFeaturesLearningTwinRoute: MarketingFeaturesLearningTwinRoute,
 }
 
