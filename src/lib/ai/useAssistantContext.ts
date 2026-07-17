@@ -261,7 +261,7 @@ export function assistantQuickPrompts(ctx: AssistantContext): string[] {
     case "dashboard_admin":
       return ["Show platform health", "Recent user signups", "Suggest moderation actions"];
     case "dashboard_professional":
-      return ["Recommend upskilling paths", "Plan a 4-week learning sprint", "Certifications for my role"];
+      return ["Recommend upskilling paths", "Plan a 4-week learning sprint", "Suggest next course for my role"];
     default:
       return ["What can you help with?"];
   }

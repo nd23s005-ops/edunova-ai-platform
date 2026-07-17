@@ -74,7 +74,7 @@ const ROLES: RoleCard[] = [
   {
     key: "professional",
     title: "Working Professional",
-    description: "Upskill, switch careers, or prep for certifications with focused AI mentors.",
+    description: "Upskill or switch careers with focused AI mentors.",
     icon: Briefcase,
     accent: "from-[oklch(0.78_0.15_140)] to-[oklch(0.6_0.17_150)]",
   },
@@ -107,7 +107,7 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
   professional: [
     { key: "upskill", label: "Upskilling", desc: "Stay sharp in your current role." },
     { key: "switch", label: "Career Switch", desc: "Move into a new domain confidently." },
-    { key: "cert", label: "Certification Prep", desc: "AWS, PMP, CFA, and more." },
+    { key: "skills", label: "New Skills", desc: "Master in-demand tools and topics." },
   ],
   organization: [
     { key: "employee", label: "Employee Training", desc: "Structured onboarding & growth tracks." },
