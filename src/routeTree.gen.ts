@@ -16,11 +16,13 @@ import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
 import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
 import { Route as MarketingExploreRouteImport } from './routes/_marketing.explore'
+import { Route as MarketingCommunityRouteImport } from './routes/_marketing.community'
 import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
 import { Route as AuthRegisterRouteImport } from './routes/_auth.register'
 import { Route as AuthLoginRouteImport } from './routes/_auth.login'
 import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-password'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
+import { Route as MarketingFeaturesSlugRouteImport } from './routes/_marketing.features.$slug'
 import { Route as DashboardDashboardTeacherRouteImport } from './routes/_dashboard.dashboard.teacher'
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
@@ -58,6 +60,11 @@ const MarketingExploreRoute = MarketingExploreRouteImport.update({
   path: '/explore',
   getParentRoute: () => MarketingRoute,
 } as any)
+const MarketingCommunityRoute = MarketingCommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => MarketingRoute,
+} as any)
 const MarketingAboutRoute = MarketingAboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -82,6 +89,11 @@ const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
   getParentRoute: () => DashboardRoute,
+} as any)
+const MarketingFeaturesSlugRoute = MarketingFeaturesSlugRouteImport.update({
+  id: '/features/$slug',
+  path: '/features/$slug',
+  getParentRoute: () => MarketingRoute,
 } as any)
 const DashboardDashboardTeacherRoute =
   DashboardDashboardTeacherRouteImport.update({
@@ -114,12 +126,14 @@ export interface FileRoutesByFullPath {
   '/login': typeof AuthLoginRoute
   '/register': typeof AuthRegisterRoute
   '/about': typeof MarketingAboutRoute
+  '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
+  '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
 }
 export interface FileRoutesByTo {
@@ -129,12 +143,14 @@ export interface FileRoutesByTo {
   '/login': typeof AuthLoginRoute
   '/register': typeof AuthRegisterRoute
   '/about': typeof MarketingAboutRoute
+  '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/student': typeof DashboardDashboardStudentRoute
   '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
+  '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -147,6 +163,7 @@ export interface FileRoutesById {
   '/_auth/login': typeof AuthLoginRoute
   '/_auth/register': typeof AuthRegisterRoute
   '/_marketing/about': typeof MarketingAboutRoute
+  '/_marketing/community': typeof MarketingCommunityRoute
   '/_marketing/explore': typeof MarketingExploreRoute
   '/_marketing/resources': typeof MarketingResourcesRoute
   '/_marketing/': typeof MarketingIndexRoute
@@ -154,6 +171,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRoute
   '/_dashboard/dashboard/teacher': typeof DashboardDashboardTeacherRoute
+  '/_marketing/features/$slug': typeof MarketingFeaturesSlugRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
 }
 export interface FileRouteTypes {
@@ -165,12 +183,14 @@ export interface FileRouteTypes {
     | '/login'
     | '/register'
     | '/about'
+    | '/community'
     | '/explore'
     | '/resources'
     | '/dashboard/admin'
     | '/dashboard/organization'
     | '/dashboard/student'
     | '/dashboard/teacher'
+    | '/features/$slug'
     | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -180,12 +200,14 @@ export interface FileRouteTypes {
     | '/login'
     | '/register'
     | '/about'
+    | '/community'
     | '/explore'
     | '/resources'
     | '/dashboard/admin'
     | '/dashboard/organization'
     | '/dashboard/student'
     | '/dashboard/teacher'
+    | '/features/$slug'
     | '/dashboard'
   id:
     | '__root__'
@@ -197,6 +219,7 @@ export interface FileRouteTypes {
     | '/_auth/login'
     | '/_auth/register'
     | '/_marketing/about'
+    | '/_marketing/community'
     | '/_marketing/explore'
     | '/_marketing/resources'
     | '/_marketing/'
@@ -204,6 +227,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/organization'
     | '/_dashboard/dashboard/student'
     | '/_dashboard/dashboard/teacher'
+    | '/_marketing/features/$slug'
     | '/_dashboard/dashboard/'
   fileRoutesById: FileRoutesById
 }
@@ -265,6 +289,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingExploreRouteImport
       parentRoute: typeof MarketingRoute
     }
+    '/_marketing/community': {
+      id: '/_marketing/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof MarketingCommunityRouteImport
+      parentRoute: typeof MarketingRoute
+    }
     '/_marketing/about': {
       id: '/_marketing/about'
       path: '/about'
@@ -299,6 +330,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/'
       preLoaderRoute: typeof DashboardDashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_marketing/features/$slug': {
+      id: '/_marketing/features/$slug'
+      path: '/features/$slug'
+      fullPath: '/features/$slug'
+      preLoaderRoute: typeof MarketingFeaturesSlugRouteImport
+      parentRoute: typeof MarketingRoute
     }
     '/_dashboard/dashboard/teacher': {
       id: '/_dashboard/dashboard/teacher'
@@ -367,16 +405,20 @@ const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
 
 interface MarketingRouteChildren {
   MarketingAboutRoute: typeof MarketingAboutRoute
+  MarketingCommunityRoute: typeof MarketingCommunityRoute
   MarketingExploreRoute: typeof MarketingExploreRoute
   MarketingResourcesRoute: typeof MarketingResourcesRoute
   MarketingIndexRoute: typeof MarketingIndexRoute
+  MarketingFeaturesSlugRoute: typeof MarketingFeaturesSlugRoute
 }
 
 const MarketingRouteChildren: MarketingRouteChildren = {
   MarketingAboutRoute: MarketingAboutRoute,
+  MarketingCommunityRoute: MarketingCommunityRoute,
   MarketingExploreRoute: MarketingExploreRoute,
   MarketingResourcesRoute: MarketingResourcesRoute,
   MarketingIndexRoute: MarketingIndexRoute,
+  MarketingFeaturesSlugRoute: MarketingFeaturesSlugRoute,
 }
 
 const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
