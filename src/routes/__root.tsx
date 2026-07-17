@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "EduNova AI (Nova Learn AI) is an AI-powered adaptive learning platform for students, teachers, and organizations. Personalized courses, AI tutoring, and rich resources.",
+          "EduNova AI (Nova Learn AI) is an AI-powered self-learning platform for students, professionals, and organizations. Personalized courses, AI tutoring, and rich resources.",
       },
       { name: "author", content: "EduNova AI" },
       { name: "theme-color", content: "#0e6b7a" },
@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Adaptive AI learning for students, teachers, and organizations. Personalized paths, AI tutoring, and a premium resource library.",
+          "Adaptive AI learning for students, professionals, and organizations. Personalized paths, AI tutoring, and a premium resource library.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
