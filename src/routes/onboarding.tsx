@@ -3,7 +3,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
-  BookOpen,
+  
   Building2,
   Briefcase,
   Shield,
