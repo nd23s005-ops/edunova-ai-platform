@@ -61,7 +61,7 @@ const mentors: Mentor[] = [
     icon: Cloud,
     name: "AI Cloud Mentor",
     tag: "Cloud Computing",
-    body: "Learn AWS, Microsoft Azure, and Google Cloud through guided labs, architecture diagrams, certifications, and real-world projects.",
+    body: "Learn AWS, Microsoft Azure, and Google Cloud through guided labs, architecture diagrams, and real-world projects.",
   },
   {
     icon: ShieldCheck,

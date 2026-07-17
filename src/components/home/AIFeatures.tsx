@@ -8,7 +8,6 @@ import {
   MessagesSquare,
   LineChart as LineChartIcon,
   Route as RouteIcon,
-  Award,
   User,
   Cpu,
   Mic,
@@ -459,68 +458,6 @@ function Metric({ icon: Icon, label, value }: { icon: typeof Zap; label: string;
   );
 }
 
-/* -------------------------------------------------------------------------- */
-/*  Feature 6 · Certificates & Milestones                                     */
-/* -------------------------------------------------------------------------- */
-function CertificateCard() {
-  const reduce = useReducedMotion();
-  return (
-    <div className="relative">
-      <motion.div
-        transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
-        className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-elegant backdrop-blur-xl"
-      >
-        {/* Certificate */}
-        <div className="relative overflow-hidden rounded-2xl border-2 border-primary/25 bg-gradient-to-br from-white via-secondary/40 to-white p-5 shadow-inner">
-          <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[radial-gradient(closest-side,rgba(239,123,36,0.25),transparent_70%)]" />
-          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Certificate of Completion</p>
-          <p className="mt-2 font-display text-xl font-bold text-foreground">Aarav Sharma</p>
-          <p className="mt-1 text-xs text-muted-foreground">has completed the course</p>
-          <p className="mt-1 text-sm font-semibold text-foreground">Applied Machine Learning · Foundations</p>
-
-          <div className="mt-4 flex items-end justify-between">
-            <div>
-              <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Issued</p>
-              <p className="text-xs font-bold text-foreground">Nov 2026</p>
-            </div>
-            <motion.div
-              initial={{ rotate: -14, scale: 0.6, opacity: 0 }}
-              whileInView={{ rotate: -14, scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, type: "spring", stiffness: 180 }}
-              className="rounded-full border-2 border-primary/70 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-primary"
-            >
-              Verified
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Badges */}
-        <div className="mt-5 grid grid-cols-3 gap-3">
-          {[
-            { Icon: Award, label: "Top Learner", grad: "from-amber-400 to-orange-500" },
-            { Icon: Star, label: "5-Day Streak", grad: "from-primary to-highlight" },
-            { Icon: TrendingUp, label: "Fast Grower", grad: "from-teal-400 to-cyan-500" },
-          ].map((b, i) => (
-            <motion.div
-              key={b.label}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 + i * 0.1 }}
-              className="flex flex-col items-center rounded-xl border border-border/60 bg-white/[0.04] p-3 text-center"
-            >
-              <div className={`grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br ${b.grad} text-white shadow-md`}>
-                <b.Icon className="h-4 w-4" />
-              </div>
-              <p className="mt-1.5 text-[11px] font-bold text-foreground">{b.label}</p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </div>
-  );
-}
 
 /* -------------------------------------------------------------------------- */
 /*  Feature copy + rows                                                       */
