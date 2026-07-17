@@ -92,14 +92,8 @@ const audiences = [
   { icon: Rocket, title: "Self Learners", desc: "Lifelong learners exploring new topics on their own schedule." },
 ];
 
-const stats = [
-  { value: "50K+", label: "Active Learners" },
-  { value: "300+", label: "Courses" },
-  { value: "12K+", label: "Study Resources" },
-  { value: "1.5K+", label: "Practice Tests" },
-  { value: "150+", label: "Organizations" },
-  { value: "2M+", label: "Learning Hours" },
-];
+
+
 
 function AboutPage() {
   const reduce = useReducedMotion();
