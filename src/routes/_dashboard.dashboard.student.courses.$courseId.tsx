@@ -54,6 +54,9 @@ function CourseOverviewPage() {
   const { data: course, isLoading } = useCourse(courseId);
   const { data: chapters } = useCourseChapters(courseId);
   const { data: progress } = useCourseProgress(courseId);
+  const { data: totalLessons } = useCourseTotalLessons(courseId);
+  const { data: qa } = useCourseQuizAssignments(courseId);
+  const { data: nextCourse } = useNextCourseRecommendation(courseId);
 
   const { data: enrollment } = useQuery({
     queryKey: ["me", "enrollment", courseId],
@@ -100,6 +103,26 @@ function CourseOverviewPage() {
     onError: (e: Error) => toast.error(e.message),
   });
 
+  const completedCount = progress?.completedLessons.length ?? 0;
+  const total = totalLessons ?? 0;
+  const percent = total > 0 ? Math.round((completedCount / total) * 100) : 0;
+  const isEnrolled = !!enrollment;
+  const isCompleted = total > 0 && completedCount >= total;
+
+  // Sync computed progress back to enrollment row so tiles elsewhere stay in sync.
+  useEffect(() => {
+    if (!enrollment || total === 0) return;
+    if ((enrollment.progress ?? 0) === percent) return;
+    supabase
+      .from("course_enrollments")
+      .update({ progress: percent })
+      .eq("id", enrollment.id)
+      .then(() => {
+        qc.invalidateQueries({ queryKey: ["me", "enrollments"] });
+        qc.invalidateQueries({ queryKey: ["me", "enrollment", courseId] });
+      });
+  }, [percent, total, enrollment, courseId, qc]);
+
   if (isLoading) {
     return (
       <RoleGate allow={["student"]}>
@@ -124,11 +147,15 @@ function CourseOverviewPage() {
   const weekly = Array.isArray(course.weekly_plan)
     ? (course.weekly_plan as Array<{ week?: number; title?: string; focus?: string }>)
     : [];
-  const completedCount = progress?.completedLessons.length ?? 0;
-  const isEnrolled = !!enrollment;
 
-  // Rough progress %: enrollment.progress if set, else lesson-based
-  const percent = enrollment?.progress ?? 0;
+  const completedQuizIds = new Set((progress?.quizAttempts ?? []).map((a) => a.quiz_id));
+  const submittedAssignmentIds = new Set(
+    (progress?.assignments ?? []).filter((a) => a.status === "submitted" || a.status === "graded").map((a) => a.assignment_id),
+  );
+  const chapterById = new Map((qa?.chapters ?? []).map((c) => [c.id, c] as const));
+  const upcomingQuizzes = (qa?.quizzes ?? []).filter((q) => !completedQuizIds.has(q.id));
+  const upcomingAssignments = (qa?.assignments ?? []).filter((a) => !submittedAssignmentIds.has(a.id));
+
 
   return (
     <RoleGate allow={["student"]}>
