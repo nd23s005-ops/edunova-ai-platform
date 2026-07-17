@@ -131,57 +131,98 @@ function LoginPage() {
       </p>
 
 
-      <form className="mt-8 space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
-        <div>
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            type="email"
-            autoComplete="email"
-            placeholder="you@example.com"
-            className="mt-1.5"
-            aria-invalid={!!form.formState.errors.email}
-            {...form.register("email")}
-          />
-          {form.formState.errors.email && (
-            <p className="mt-1 text-xs text-destructive">{form.formState.errors.email.message}</p>
-          )}
-        </div>
-        <div>
-          <div className="flex items-center justify-between">
-            <Label htmlFor="password">Password</Label>
-            <Link to="/forgot-password" className="text-xs font-medium text-primary hover:underline">
-              Forgot password?
-            </Link>
+      <Tabs defaultValue="email" className="mt-8">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="email">Email</TabsTrigger>
+          <TabsTrigger value="phone">Phone</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="email" className="mt-6">
+          <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                autoComplete="email"
+                placeholder="you@example.com"
+                className="mt-1.5"
+                aria-invalid={!!form.formState.errors.email}
+                {...form.register("email")}
+              />
+              {form.formState.errors.email && (
+                <p className="mt-1 text-xs text-destructive">{form.formState.errors.email.message}</p>
+              )}
+            </div>
+            <div>
+              <div className="flex items-center justify-between">
+                <Label htmlFor="password">Password</Label>
+                <Link to="/forgot-password" className="text-xs font-medium text-primary hover:underline">
+                  Forgot password?
+                </Link>
+              </div>
+              <Input
+                id="password"
+                type="password"
+                autoComplete="current-password"
+                placeholder="••••••••"
+                className="mt-1.5"
+                aria-invalid={!!form.formState.errors.password}
+                {...form.register("password")}
+              />
+              {form.formState.errors.password && (
+                <p className="mt-1 text-xs text-destructive">{form.formState.errors.password.message}</p>
+              )}
+            </div>
+
+            <label className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Checkbox
+                id="remember"
+                checked={form.watch("remember")}
+                onCheckedChange={(v) => form.setValue("remember", v === true)}
+              />
+              <span>Remember me for 30 days</span>
+            </label>
+
+            <Button type="submit" className="w-full shadow-elegant" size="lg" disabled={submitting}>
+              {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              {submitting ? "Signing in…" : "Sign in"}
+            </Button>
+          </form>
+        </TabsContent>
+
+        <TabsContent value="phone" className="mt-6">
+          <div className="space-y-4">
+            <div>
+              <Label htmlFor="phone-national">Phone number</Label>
+              <div className="mt-1.5">
+                <PhoneInput
+                  id="phone-national"
+                  value={phone}
+                  onChange={(v) => {
+                    setPhone(v);
+                    if (phoneError) setPhoneError(null);
+                  }}
+                  error={phoneError ?? undefined}
+                />
+              </div>
+            </div>
+            <Button
+              type="button"
+              className="w-full shadow-elegant"
+              size="lg"
+              disabled={sendingOtp || !phone.valid}
+              onClick={handleSendOtp}
+            >
+              {sendingOtp ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Phone className="mr-2 h-4 w-4" />}
+              {sendingOtp ? "Sending OTP…" : "Send OTP"}
+            </Button>
+            <p className="text-center text-xs text-muted-foreground">
+              We'll text you a 6-digit code. Message rates may apply.
+            </p>
           </div>
-          <Input
-            id="password"
-            type="password"
-            autoComplete="current-password"
-            placeholder="••••••••"
-            className="mt-1.5"
-            aria-invalid={!!form.formState.errors.password}
-            {...form.register("password")}
-          />
-          {form.formState.errors.password && (
-            <p className="mt-1 text-xs text-destructive">{form.formState.errors.password.message}</p>
-          )}
-        </div>
-
-        <label className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Checkbox
-            id="remember"
-            checked={form.watch("remember")}
-            onCheckedChange={(v) => form.setValue("remember", v === true)}
-          />
-          <span>Remember me for 30 days</span>
-        </label>
-
-        <Button type="submit" className="w-full shadow-elegant" size="lg" disabled={submitting}>
-          {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          {submitting ? "Signing in…" : "Sign in"}
-        </Button>
-      </form>
+        </TabsContent>
+      </Tabs>
 
       <div className="relative my-6">
         <Separator />
