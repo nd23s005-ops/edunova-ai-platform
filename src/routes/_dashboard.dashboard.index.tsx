@@ -32,6 +32,9 @@ function DashboardIndex() {
     );
   }
 
+  // If the signed-in user somehow has no role row, send them through onboarding
+  // once instead of looping on /dashboard → homeForRole(null) → /dashboard.
+  if (!data) return <Navigate to="/onboarding" replace />;
   const dest = homeForRole(data);
   return <Navigate to={dest} replace />;
 }
