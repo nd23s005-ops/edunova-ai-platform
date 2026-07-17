@@ -14,6 +14,7 @@ import { Separator } from "@/components/ui/separator";
 import { GoogleButton } from "@/components/auth/GoogleButton";
 import { AppleButton } from "@/components/auth/AppleButton";
 import { PasswordInput } from "@/components/auth/PasswordInput";
+import { DemoCredentialsPopup } from "@/components/admin/DemoCredentialsPopup";
 import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
 import { homeForRole, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
@@ -200,6 +201,8 @@ function LoginPage() {
           Create an account
         </Link>
       </p>
+
+      <DemoCredentialsPopup />
     </div>
   );
 }

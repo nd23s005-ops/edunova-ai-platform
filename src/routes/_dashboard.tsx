@@ -89,14 +89,17 @@ const ORG_NAV: NavItem[] = [
   AI_ASSISTANT,
 ];
 
+// Admin sidebar. AI Assistant is intentionally excluded — admin dashboard has no chatbot.
+// Settings is Super Admin only; filtered at render time via useAdminAccess.
 const ADMIN_NAV: NavItem[] = [
   { to: "/dashboard/admin", label: "My workspace", icon: Shield },
   { to: "/dashboard/admin/users", label: "User management", icon: Users },
   { to: "/dashboard/admin/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", icon: FileText },
   { to: "/dashboard/admin/settings", label: "Settings", icon: Settings },
-  AI_ASSISTANT,
 ];
+const ADMIN_SUPER_ONLY = new Set<string>(["/dashboard/admin/settings"]);
+
 
 const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/professional", label: "My workspace", icon: GraduationCap },
@@ -124,13 +127,14 @@ function DashboardLayout() {
     queryFn: async () => {
       const [{ data: p }, { data: r }] = await Promise.all([
         supabase.from("profiles").select("full_name, avatar_url").eq("id", userId).maybeSingle(),
-        supabase.from("user_roles").select("role").eq("user_id", userId).maybeSingle(),
+        supabase.from("user_roles").select("role, admin_level").eq("user_id", userId).maybeSingle(),
       ]);
       return {
         email,
         fullName: p?.full_name ?? "",
         avatar: p?.avatar_url ?? null,
         role: (r?.role as AppRole | undefined) ?? null,
+        adminLevel: (r as { admin_level?: string | null } | null)?.admin_level ?? null,
       };
     },
     staleTime: 60_000,
@@ -172,7 +176,15 @@ function DashboardLayout() {
     }
   }, [role, studentProfileLoaded, studentProfileFetching, studentProfileStatus, pathname, navigate]);
 
-  const roleNav = role ? NAV_BY_ROLE[role] : [];
+  const rawNav = role ? NAV_BY_ROLE[role] : [];
+  // Hide super-admin-only entries from Demo Admins. We look up admin_level inline
+  // (avoids extra hook dependency) using the same profile query result shape.
+  const adminLevel = (profile as unknown as { adminLevel?: string | null })?.adminLevel ?? null;
+  const roleNav =
+    role === "admin" && adminLevel !== "super"
+      ? rawNav.filter((n) => !ADMIN_SUPER_ONLY.has(n.to))
+      : rawNav;
+
   const initials = (profile?.fullName || profile?.email || "N L")
     .split(/\s+/)
     .map((s: string) => s[0])
