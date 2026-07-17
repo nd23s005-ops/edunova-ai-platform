@@ -35,6 +35,7 @@ import { Route as AuthRegisterRouteImport } from './routes/_auth.register'
 import { Route as AuthLoginRouteImport } from './routes/_auth.login'
 import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-password'
 import { Route as AuthAccountCreatedRouteImport } from './routes/_auth.account-created'
+import { Route as MarketingResourcesIndexRouteImport } from './routes/_marketing.resources.index'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
 import { Route as MarketingFeaturesSmartLearningPathsRouteImport } from './routes/_marketing.features.smart-learning-paths'
 import { Route as MarketingFeaturesLearningTwinRouteImport } from './routes/_marketing.features.learning-twin'
@@ -187,6 +188,11 @@ const AuthAccountCreatedRoute = AuthAccountCreatedRouteImport.update({
   id: '/account-created',
   path: '/account-created',
   getParentRoute: () => AuthRoute,
+} as any)
+const MarketingResourcesIndexRoute = MarketingResourcesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MarketingResourcesRoute,
 } as any)
 const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
   id: '/dashboard/',
@@ -352,7 +358,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof MarketingAboutRoute
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
-  '/resources': typeof MarketingResourcesRoute
+  '/resources': typeof MarketingResourcesRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
@@ -367,6 +373,7 @@ export interface FileRoutesByFullPath {
   '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
+  '/resources/': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
@@ -401,7 +408,6 @@ export interface FileRoutesByTo {
   '/about': typeof MarketingAboutRoute
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
-  '/resources': typeof MarketingResourcesRoute
   '/api/chat': typeof ApiChatRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
@@ -416,6 +422,7 @@ export interface FileRoutesByTo {
   '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
+  '/resources': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
@@ -453,7 +460,7 @@ export interface FileRoutesById {
   '/_marketing/about': typeof MarketingAboutRoute
   '/_marketing/community': typeof MarketingCommunityRoute
   '/_marketing/explore': typeof MarketingExploreRoute
-  '/_marketing/resources': typeof MarketingResourcesRoute
+  '/_marketing/resources': typeof MarketingResourcesRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/_marketing/': typeof MarketingIndexRoute
@@ -469,6 +476,7 @@ export interface FileRoutesById {
   '/_marketing/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/_marketing/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
+  '/_marketing/resources/': typeof MarketingResourcesIndexRoute
   '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/_dashboard/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/_dashboard/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
@@ -520,6 +528,7 @@ export interface FileRouteTypes {
     | '/features/learning-twin'
     | '/features/smart-learning-paths'
     | '/dashboard/'
+    | '/resources/'
     | '/dashboard/admin/support'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/browse'
@@ -554,7 +563,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/community'
     | '/explore'
-    | '/resources'
     | '/api/chat'
     | '/onboarding/student-profile'
     | '/dashboard/$'
@@ -569,6 +577,7 @@ export interface FileRouteTypes {
     | '/features/learning-twin'
     | '/features/smart-learning-paths'
     | '/dashboard'
+    | '/resources'
     | '/dashboard/admin/support'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/browse'
@@ -621,6 +630,7 @@ export interface FileRouteTypes {
     | '/_marketing/features/learning-twin'
     | '/_marketing/features/smart-learning-paths'
     | '/_dashboard/dashboard/'
+    | '/_marketing/resources/'
     | '/_dashboard/dashboard/admin/support'
     | '/_dashboard/dashboard/mock-tests/$testId'
     | '/_dashboard/dashboard/student/browse'
@@ -832,6 +842,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/account-created'
       preLoaderRoute: typeof AuthAccountCreatedRouteImport
       parentRoute: typeof AuthRoute
+    }
+    '/_marketing/resources/': {
+      id: '/_marketing/resources/'
+      path: '/'
+      fullPath: '/resources/'
+      preLoaderRoute: typeof MarketingResourcesIndexRouteImport
+      parentRoute: typeof MarketingResourcesRoute
     }
     '/_dashboard/dashboard/': {
       id: '/_dashboard/dashboard/'
@@ -1125,11 +1142,22 @@ const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
   DashboardRouteChildren,
 )
 
+interface MarketingResourcesRouteChildren {
+  MarketingResourcesIndexRoute: typeof MarketingResourcesIndexRoute
+}
+
+const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
+  MarketingResourcesIndexRoute: MarketingResourcesIndexRoute,
+}
+
+const MarketingResourcesRouteWithChildren =
+  MarketingResourcesRoute._addFileChildren(MarketingResourcesRouteChildren)
+
 interface MarketingRouteChildren {
   MarketingAboutRoute: typeof MarketingAboutRoute
   MarketingCommunityRoute: typeof MarketingCommunityRoute
   MarketingExploreRoute: typeof MarketingExploreRoute
-  MarketingResourcesRoute: typeof MarketingResourcesRoute
+  MarketingResourcesRoute: typeof MarketingResourcesRouteWithChildren
   MarketingIndexRoute: typeof MarketingIndexRoute
   MarketingFeaturesSlugRoute: typeof MarketingFeaturesSlugRoute
   MarketingFeaturesKnowledgeGapAnalysisRoute: typeof MarketingFeaturesKnowledgeGapAnalysisRoute
@@ -1141,7 +1169,7 @@ const MarketingRouteChildren: MarketingRouteChildren = {
   MarketingAboutRoute: MarketingAboutRoute,
   MarketingCommunityRoute: MarketingCommunityRoute,
   MarketingExploreRoute: MarketingExploreRoute,
-  MarketingResourcesRoute: MarketingResourcesRoute,
+  MarketingResourcesRoute: MarketingResourcesRouteWithChildren,
   MarketingIndexRoute: MarketingIndexRoute,
   MarketingFeaturesSlugRoute: MarketingFeaturesSlugRoute,
   MarketingFeaturesKnowledgeGapAnalysisRoute:
