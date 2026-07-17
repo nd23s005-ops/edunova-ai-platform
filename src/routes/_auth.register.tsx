@@ -69,6 +69,8 @@ function RegisterPage() {
   const queryClient = useQueryClient();
   const { role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
 
   const initialRole: RegisterInput["role"] =
     selectedRole && selectedRole !== "admin" ? selectedRole : "student";
@@ -98,9 +100,17 @@ function RegisterPage() {
 
   const password = form.watch("password");
   const dob = form.watch("dob");
-  const acceptTerms = form.watch("acceptTerms") as unknown as boolean;
-  const acceptPrivacy = form.watch("acceptPrivacy") as unknown as boolean;
   const age = useMemo(() => calcAge(dob || ""), [dob]);
+
+  const setConsent = (field: "acceptTerms" | "acceptPrivacy", checked: boolean) => {
+    if (field === "acceptTerms") setTermsAccepted(checked);
+    if (field === "acceptPrivacy") setPrivacyAccepted(checked);
+    form.setValue(field, checked as unknown as true, {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
+    });
+  };
 
   const onSubmit = async (values: RegisterInput) => {
     setSubmitting(true);
@@ -344,10 +354,8 @@ function RegisterPage() {
               id="acceptTerms"
               type="checkbox"
               className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded-sm border border-primary accent-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              checked={acceptTerms}
-              onChange={(event) =>
-                form.setValue("acceptTerms", event.target.checked as unknown as true, { shouldValidate: true })
-              }
+              checked={termsAccepted}
+              onChange={(event) => setConsent("acceptTerms", event.target.checked)}
             />
             <span>
               I agree to the{" "}
@@ -365,10 +373,8 @@ function RegisterPage() {
               id="acceptPrivacy"
               type="checkbox"
               className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded-sm border border-primary accent-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              checked={acceptPrivacy}
-              onChange={(event) =>
-                form.setValue("acceptPrivacy", event.target.checked as unknown as true, { shouldValidate: true })
-              }
+              checked={privacyAccepted}
+              onChange={(event) => setConsent("acceptPrivacy", event.target.checked)}
             />
             <span>
               I agree to the{" "}
@@ -387,7 +393,7 @@ function RegisterPage() {
           type="submit"
           className="w-full shadow-elegant"
           size="lg"
-          disabled={submitting || !acceptTerms || !acceptPrivacy}
+          disabled={submitting || !termsAccepted || !privacyAccepted}
         >
           {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />}
           {submitting ? "Creating account…" : "Create account"}
