@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Users, TrendingUp, Award } from "lucide-react";
 import { DashboardHeader, PlaceholderPanel, StatCard } from "@/components/dashboard/DashboardShared";
+import { RoleGate } from "@/components/auth/RoleGate";
 
 export const Route = createFileRoute("/_dashboard/dashboard/organization")({
   component: OrganizationDashboard,
@@ -8,7 +9,7 @@ export const Route = createFileRoute("/_dashboard/dashboard/organization")({
 
 function OrganizationDashboard() {
   return (
-    <>
+    <RoleGate allow={["organization"]}>
       <DashboardHeader
         title="Organization workspace"
         description="Cohort analytics, team management, and organization-wide rollout."
@@ -23,6 +24,6 @@ function OrganizationDashboard() {
         <PlaceholderPanel title="Cohort analytics" />
         <PlaceholderPanel title="Team management" />
       </div>
-    </>
+    </RoleGate>
   );
 }

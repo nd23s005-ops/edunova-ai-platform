@@ -1,9 +1,20 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
+import { GoogleButton } from "@/components/auth/GoogleButton";
+import { supabase } from "@/integrations/supabase/client";
+import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
+import { homeForRole } from "@/lib/auth/roles";
+import type { AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_auth/login")({
   head: () => ({
@@ -13,10 +24,63 @@ export const Route = createFileRoute("/_auth/login")({
       { name: "robots", content: "noindex" },
     ],
   }),
+  validateSearch: (search: Record<string, unknown>) => ({
+    redirect: typeof search.redirect === "string" ? search.redirect : undefined,
+  }),
   component: LoginPage,
 });
 
 function LoginPage() {
+  const navigate = useNavigate();
+  const router = useRouter();
+  const { redirect: redirectTo } = Route.useSearch();
+  const [submitting, setSubmitting] = useState(false);
+
+  const form = useForm<LoginInput>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: { email: "", password: "", remember: true },
+  });
+
+  const onSubmit = async (values: LoginInput) => {
+    setSubmitting(true);
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: values.email,
+      password: values.password,
+    });
+
+    if (error) {
+      const msg = error.message.toLowerCase();
+      if (msg.includes("not confirmed") || msg.includes("email not confirmed")) {
+        toast.error("Please verify your email before signing in.");
+        navigate({ to: "/verify-email", search: { email: values.email } });
+      } else if (msg.includes("invalid")) {
+        toast.error("Invalid email or password.");
+      } else {
+        toast.error(error.message);
+      }
+      setSubmitting(false);
+      return;
+    }
+
+    if (!data.session) {
+      toast.error("Could not start session. Try again.");
+      setSubmitting(false);
+      return;
+    }
+
+    // Fetch role for role-based redirect
+    const { data: roleRow } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", data.session.user.id)
+      .maybeSingle();
+
+    const dest = redirectTo && redirectTo.startsWith("/") ? redirectTo : homeForRole((roleRow?.role as AppRole) ?? null);
+    toast.success("Signed in — welcome back!");
+    await router.invalidate();
+    navigate({ to: dest });
+  };
+
   return (
     <div>
       <h1 className="text-3xl font-bold tracking-tight">Welcome back</h1>
@@ -24,10 +88,21 @@ function LoginPage() {
         Sign in to continue your learning journey with Nova.
       </p>
 
-      <form className="mt-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
+      <form className="mt-8 space-y-4" onSubmit={form.handleSubmit(onSubmit)} noValidate>
         <div>
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="you@example.com" className="mt-1.5" />
+          <Input
+            id="email"
+            type="email"
+            autoComplete="email"
+            placeholder="you@example.com"
+            className="mt-1.5"
+            aria-invalid={!!form.formState.errors.email}
+            {...form.register("email")}
+          />
+          {form.formState.errors.email && (
+            <p className="mt-1 text-xs text-destructive">{form.formState.errors.email.message}</p>
+          )}
         </div>
         <div>
           <div className="flex items-center justify-between">
@@ -36,14 +111,33 @@ function LoginPage() {
               Forgot password?
             </Link>
           </div>
-          <Input id="password" type="password" placeholder="••••••••" className="mt-1.5" />
+          <Input
+            id="password"
+            type="password"
+            autoComplete="current-password"
+            placeholder="••••••••"
+            className="mt-1.5"
+            aria-invalid={!!form.formState.errors.password}
+            {...form.register("password")}
+          />
+          {form.formState.errors.password && (
+            <p className="mt-1 text-xs text-destructive">{form.formState.errors.password.message}</p>
+          )}
         </div>
 
         <label className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Checkbox id="remember" /> <span>Remember me for 30 days</span>
+          <Checkbox
+            id="remember"
+            checked={form.watch("remember")}
+            onCheckedChange={(v) => form.setValue("remember", v === true)}
+          />
+          <span>Remember me for 30 days</span>
         </label>
 
-        <Button type="submit" className="w-full shadow-elegant" size="lg">Sign in</Button>
+        <Button type="submit" className="w-full shadow-elegant" size="lg" disabled={submitting}>
+          {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {submitting ? "Signing in…" : "Sign in"}
+        </Button>
       </form>
 
       <div className="relative my-6">
@@ -53,10 +147,7 @@ function LoginPage() {
         </span>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
-        <Button variant="outline" size="lg">Google</Button>
-        <Button variant="outline" size="lg">Microsoft</Button>
-      </div>
+      <GoogleButton />
 
       <p className="mt-8 text-center text-sm text-muted-foreground">
         New to EduNova AI?{" "}

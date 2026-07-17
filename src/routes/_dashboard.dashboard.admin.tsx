@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Shield, Server, AlertTriangle, Users } from "lucide-react";
 import { DashboardHeader, PlaceholderPanel, StatCard } from "@/components/dashboard/DashboardShared";
+import { RoleGate } from "@/components/auth/RoleGate";
 
 export const Route = createFileRoute("/_dashboard/dashboard/admin")({
   component: AdminDashboard,
@@ -8,7 +9,7 @@ export const Route = createFileRoute("/_dashboard/dashboard/admin")({
 
 function AdminDashboard() {
   return (
-    <>
+    <RoleGate allow={["admin"]}>
       <DashboardHeader
         title="Administrator workspace"
         description="Platform governance, user management, and system health."
@@ -23,6 +24,6 @@ function AdminDashboard() {
         <PlaceholderPanel title="User management" />
         <PlaceholderPanel title="System settings" />
       </div>
-    </>
+    </RoleGate>
   );
 }

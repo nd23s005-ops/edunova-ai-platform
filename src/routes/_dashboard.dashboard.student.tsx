@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BookOpen, Brain, Flame, Trophy } from "lucide-react";
 import { DashboardHeader, PlaceholderPanel, StatCard } from "@/components/dashboard/DashboardShared";
+import { RoleGate } from "@/components/auth/RoleGate";
 
 export const Route = createFileRoute("/_dashboard/dashboard/student")({
   component: StudentDashboard,
@@ -8,7 +9,7 @@ export const Route = createFileRoute("/_dashboard/dashboard/student")({
 
 function StudentDashboard() {
   return (
-    <>
+    <RoleGate allow={["student"]}>
       <DashboardHeader
         title="Student workspace"
         description="Your personalized learning hub — courses, streaks, and Nova AI sessions."
@@ -23,6 +24,6 @@ function StudentDashboard() {
         <div className="lg:col-span-2"><PlaceholderPanel title="Your learning path">Continue where you left off — full course viewer coming soon.</PlaceholderPanel></div>
         <PlaceholderPanel title="Nova AI Tutor">Chat with Nova, practice drills, get feedback.</PlaceholderPanel>
       </div>
-    </>
+    </RoleGate>
   );
 }

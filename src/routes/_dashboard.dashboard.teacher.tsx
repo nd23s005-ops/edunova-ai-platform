@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Users, ClipboardList, LineChart, CheckCircle2 } from "lucide-react";
 import { DashboardHeader, PlaceholderPanel, StatCard } from "@/components/dashboard/DashboardShared";
+import { RoleGate } from "@/components/auth/RoleGate";
 
 export const Route = createFileRoute("/_dashboard/dashboard/teacher")({
   component: TeacherDashboard,
@@ -8,7 +9,7 @@ export const Route = createFileRoute("/_dashboard/dashboard/teacher")({
 
 function TeacherDashboard() {
   return (
-    <>
+    <RoleGate allow={["teacher"]}>
       <DashboardHeader
         title="Teacher workspace"
         description="Manage classes, assignments, and see mastery across every student."
@@ -24,6 +25,6 @@ function TeacherDashboard() {
         <PlaceholderPanel title="Assignments" />
         <PlaceholderPanel title="Student analytics" />
       </div>
-    </>
+    </RoleGate>
   );
 }
