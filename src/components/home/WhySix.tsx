@@ -1,4 +1,4 @@
-import { Brain, Map, ClipboardCheck, Route, BarChart3, Languages } from "lucide-react";
+import { Brain, Map, ClipboardCheck, Route, BarChart3 } from "lucide-react";
 
 const items = [
   { icon: Brain, title: "AI Learning Twin", body: "A digital twin of your knowledge — always learning with you." },
@@ -6,7 +6,6 @@ const items = [
   { icon: ClipboardCheck, title: "AI Exam Simulator", body: "Realistic mock exams generated for your syllabus." },
   { icon: Route, title: "Personalized Paths", body: "Lesson plans that adapt after every attempt." },
   { icon: BarChart3, title: "Smart Analytics", body: "See progress, blockers, and momentum at a glance." },
-  { icon: Languages, title: "Multi-language Learning", body: "Learn in English, தமிழ், हिन्दी, తెలుగు and more." },
 ];
 
 export function WhySix() {
@@ -19,7 +18,7 @@ export function WhySix() {
             Built for how humans <span className="text-gradient">actually learn</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Six intelligent systems working together in one warm learning space.
+            Intelligent systems working together in one warm learning space.
           </p>
         </div>
 

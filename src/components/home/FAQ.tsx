@@ -24,10 +24,6 @@ const faqs = [
     q: "Is my data secure?",
     a: "Yes. We use encrypted authentication, secure cloud storage, role-based permissions, and industry-standard security practices to protect all learning data and personal information.",
   },
-  {
-    q: "Do you support multiple languages?",
-    a: "Yes. EduNova AI is designed to support multilingual learning with AI-powered explanations, translated resources, and localized educational content.",
-  },
 ];
 
 export function FAQ() {
