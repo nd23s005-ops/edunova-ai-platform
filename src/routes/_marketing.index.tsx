@@ -34,14 +34,16 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <WhySix />
-      <Categories />
-      <HowItWorks />
-      <AIFeatures />
-      <Mentors />
-      
-      <FAQ />
-      <FinalCTA />
+      <div style={{ background: "#FCFAF7" }}>
+        <WhySix />
+        <Categories />
+        <HowItWorks />
+        <AIFeatures />
+        <Mentors />
+        <FAQ />
+        <FinalCTA />
+      </div>
     </>
   );
 }
+
