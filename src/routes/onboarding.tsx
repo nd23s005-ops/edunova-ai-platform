@@ -36,6 +36,20 @@ export const Route = createFileRoute("/onboarding")({
         : undefined,
     redirect: typeof search.redirect === "string" ? search.redirect : undefined,
   }),
+  beforeLoad: async () => {
+    // A signed-in user with a role should never see role selection again.
+    const { data } = await supabase.auth.getUser();
+    if (data.user) {
+      const { data: r } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", data.user.id)
+        .maybeSingle();
+      if (r?.role) {
+        throw redirect({ to: homeForRole(r.role as AppRole) });
+      }
+    }
+  },
   component: OnboardingPage,
 });
 
