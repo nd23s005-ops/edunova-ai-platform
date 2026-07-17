@@ -117,3 +117,108 @@ export function useCourseProgress(courseId: string) {
     staleTime: 15_000,
   });
 }
+
+export function useCourseTotalLessons(courseId: string) {
+  return useQuery({
+    queryKey: ["course", courseId, "totalLessons"],
+    queryFn: async () => {
+      const { data: chapters } = await supabase
+        .from("chapters")
+        .select("id")
+        .eq("course_id", courseId);
+      const ids = (chapters ?? []).map((c) => c.id as string);
+      if (!ids.length) return 0;
+      const { count } = await supabase
+        .from("lessons")
+        .select("id", { count: "exact", head: true })
+        .in("chapter_id", ids);
+      return count ?? 0;
+    },
+  });
+}
+
+export type CourseQA = {
+  quizzes: Array<{ id: string; chapter_id: string; title: string }>;
+  assignments: Array<{ id: string; chapter_id: string; title: string }>;
+  chapters: Array<{ id: string; title: string; order_index: number }>;
+};
+
+export function useCourseQuizAssignments(courseId: string) {
+  return useQuery<CourseQA>({
+    queryKey: ["course", courseId, "quizzes-assignments"],
+    queryFn: async () => {
+      const { data: chapters } = await supabase
+        .from("chapters")
+        .select("id, title, order_index")
+        .eq("course_id", courseId)
+        .order("order_index");
+      const chs = (chapters ?? []) as CourseQA["chapters"];
+      const ids = chs.map((c) => c.id);
+      if (!ids.length) return { quizzes: [], assignments: [], chapters: chs };
+      const [q, a] = await Promise.all([
+        supabase.from("quizzes").select("id, chapter_id, title").in("chapter_id", ids),
+        supabase.from("assignments").select("id, chapter_id, title").in("chapter_id", ids),
+      ]);
+      return {
+        quizzes: (q.data ?? []) as CourseQA["quizzes"],
+        assignments: (a.data ?? []) as CourseQA["assignments"],
+        chapters: chs,
+      };
+    },
+  });
+}
+
+export type RecommendedCourse = {
+  id: string;
+  title: string;
+  description: string | null;
+  subject: string;
+  difficulty: string;
+  estimated_hours: number | null;
+};
+
+export function useNextCourseRecommendation(currentCourseId: string) {
+  return useQuery<RecommendedCourse | null>({
+    queryKey: ["me", "next-course", currentCourseId],
+    queryFn: async () => {
+      const { data: u } = await supabase.auth.getUser();
+      if (!u.user) return null;
+      const [curRes, enrolledRes] = await Promise.all([
+        supabase
+          .from("courses")
+          .select("subject, board, class_min, class_max")
+          .eq("id", currentCourseId)
+          .maybeSingle(),
+        supabase.from("course_enrollments").select("course_id, progress").eq("user_id", u.user.id),
+      ]);
+      const cur = curRes.data;
+      if (!cur) return null;
+      const completedIds = new Set(
+        (enrolledRes.data ?? []).filter((r) => (r.progress ?? 0) >= 100).map((r) => r.course_id as string),
+      );
+      completedIds.add(currentCourseId);
+      const { data } = await supabase
+        .from("courses")
+        .select("id, title, description, subject, difficulty, estimated_hours, board, class_min, class_max")
+        .eq("is_published", true)
+        .eq("board", cur.board)
+        .lte("class_min", cur.class_max)
+        .gte("class_max", cur.class_min)
+        .neq("id", currentCourseId)
+        .limit(30);
+      const candidates = (data ?? []).filter((c) => !completedIds.has(c.id));
+      const sameSubject = candidates.filter((c) => c.subject === cur.subject);
+      const pick = sameSubject[0] ?? candidates[0] ?? null;
+      if (!pick) return null;
+      return {
+        id: pick.id,
+        title: pick.title,
+        description: pick.description,
+        subject: pick.subject,
+        difficulty: pick.difficulty,
+        estimated_hours: pick.estimated_hours,
+      };
+    },
+  });
+}
+
