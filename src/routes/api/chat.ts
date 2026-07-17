@@ -10,7 +10,7 @@ type IncomingContext = {
   student?: {
     currentClass?: number;
     board?: string;
-    language?: string;
+    language?: string; // ignored — platform is English-only
     schoolName?: string | null;
   } | null;
   lesson?: {
@@ -21,6 +21,9 @@ type IncomingContext = {
     theoryExcerpt?: string | null;
   } | null;
 };
+
+// Platform is English-only. Any incoming language value is discarded.
+const ACTIVE_LANGUAGE = "english" as const;
 
 const BOARD_LABEL: Record<string, string> = {
   state_board: "State Board",
