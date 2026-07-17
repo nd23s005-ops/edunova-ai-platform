@@ -13,6 +13,13 @@ type IncomingContext = {
     language?: string;
     schoolName?: string | null;
   } | null;
+  lesson?: {
+    courseTitle?: string;
+    courseSubject?: string;
+    chapterTitle?: string | null;
+    lessonTitle?: string | null;
+    theoryExcerpt?: string | null;
+  } | null;
 };
 
 const BOARD_LABEL: Record<string, string> = {
@@ -92,7 +99,12 @@ Help the user with anything related to learning on the platform. If the request 
 function buildSystemPrompt(ctx: IncomingContext): string {
   const surfaceInfo = ctx.pathname ? `\nCurrent page: ${ctx.pathname}` : "";
   const signedIn = ctx.signedIn ? "The user is signed in." : "The user is not signed in.";
-  return `${BASE_IDENTITY}\n\n${surfaceInstructions(ctx)}\n${surfaceInfo}\n${signedIn}`;
+  let lessonBlock = "";
+  if (ctx.lesson) {
+    const l = ctx.lesson;
+    lessonBlock = `\n\nCURRENT LEARNING CONTEXT:\n- Course: ${l.courseTitle ?? "?"} (${l.courseSubject ?? "?"})\n${l.chapterTitle ? `- Chapter: ${l.chapterTitle}\n` : ""}${l.lessonTitle ? `- Lesson: ${l.lessonTitle}\n` : ""}${l.theoryExcerpt ? `\nLesson theory excerpt:\n"""\n${l.theoryExcerpt}\n"""\n` : ""}Always answer questions grounded in this lesson unless the student changes topic. Offer to explain, summarize, give examples, solve doubts, generate practice questions, or suggest revision.`;
+  }
+  return `${BASE_IDENTITY}\n\n${surfaceInstructions(ctx)}\n${surfaceInfo}\n${signedIn}${lessonBlock}`;
 }
 
 export const Route = createFileRoute("/api/chat")({

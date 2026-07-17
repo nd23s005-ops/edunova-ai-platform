@@ -1,101 +1,81 @@
-# Prompt 2 — Authentication & User Management Plan
+## EduNova AI — Student Course Learning System (Phase 1)
 
-## Current state (audit)
+Goal: Build a **reusable, production-ready course engine** for school students. No placeholder syllabus — the schema and UI are ready to receive official board content later.
 
-Already in place from Prompt 1:
-- `_auth` layout (`src/routes/_auth.tsx`) with split-screen visual, testimonial, stats
-- `_auth/login`, `_auth/register`, `_auth/forgot-password` — visual only, no logic
-- `_dashboard` layout with sidebar + role dashboards: `index`, `student`, `teacher`, `organization`, `admin` (placeholder panels)
-- Branding, tokens, ThemeProvider, Navbar/Footer — MUST NOT be redesigned
+### 1. Data model (Lovable Cloud migration)
 
-Gaps vs Prompt 2 spec:
-- No backend (Lovable Cloud not enabled) → no real auth, roles, sessions
-- Missing pages: reset-password, verify-email, verify-success, verify-failed, account-created, session-expired, 403, 404
-- Missing features: password strength, confirm-password, form validation, role-based redirect, route guards, profile pages, session hydration, Google sign-in
-- Sidebar links point to placeholders; no per-role nav filtering
+Extend existing `courses` + `course_enrollments` with a full content hierarchy:
 
-## Decision needed before I build
+```
+courses (exists)
+ └─ chapters         (order, title, intro, summary)
+     └─ lessons      (order, title, theory MD, illustrations JSON, key_notes MD)
+         ├─ examples (JSON blocks)
+         └─ practice_items (JSON)
+ └─ quizzes          (chapter_id, title, time_limit, pass_score)
+     └─ quiz_questions (type: mcq | true_false | fill_blank | match, options JSON, answer JSON, explanation)
+ └─ assignments      (chapter_id, title, instructions)
+     └─ assignment_questions (type: short | long | worksheet, prompt, rubric)
+ └─ resources        (course_id or chapter_id, kind: notes | pdf | worksheet | formula | qbank | pyq | mindmap | cheatsheet, title, url/content)
+```
 
-The spec requires real auth (hashing, tokens, email verification, Google sign-in, refresh sessions, protected APIs). That requires a backend. Two paths:
+Progress tracking tables:
+- `lesson_progress` (user, lesson, completed_at)
+- `quiz_attempts` (user, quiz, answers JSON, score, submitted_at, time_taken)
+- `assignment_submissions` (user, assignment, answers JSON, status, submitted_at)
 
-**Path A — Enable Lovable Cloud now (recommended).**
-Gives real email/password auth, Google OAuth (managed), email verification, password reset, sessions, RLS, and a `profiles` + `user_roles` table. Everything in the spec becomes actually functional.
+All tables: RLS scoped to `auth.uid()`, GRANTs to `authenticated` + `service_role`, published content readable when parent course `is_published`.
 
-**Path B — Frontend-only scaffolding.**
-Build every page, form, validation, guard, and role-routing against a mocked in-memory auth store. Zero real security. Later prompt swaps the store for Cloud. Faster, but "Security" section of the spec (hashing, protected APIs, CSRF, rate limiting) is deferred.
+Enums: reuse `board`, `preferred_language`; add `difficulty` (beginner/intermediate/advanced), `question_type`, `resource_kind`.
 
-I recommend **Path A**. Confirm which one, and for Path A confirm:
-- User profile fields to store (name, avatar, phone, bio, role) — I'll create a `profiles` table + `user_roles` (separate table, per security rules) + `has_role()` SECURITY DEFINER function
-- Google sign-in: yes (managed via Cloud) — confirm
-- Roles enum: `admin | student | teacher | organization` — confirm
-- Default role on self-signup: `student`, with role picker in register form gated (organization/admin require invite/approval) — confirm or relax
+**No seed syllabus** — empty tables ready for real content.
 
-## Implementation roadmap (once approved)
+### 2. Subject taxonomy
 
-### Phase 1 — Backend (Path A only)
-1. Enable Lovable Cloud
-2. Migration:
-   - `app_role` enum
-   - `profiles` (id fk auth.users, full_name, avatar_url, phone, bio, theme_pref, notif_prefs jsonb) + RLS + GRANTs
-   - `user_roles` (user_id, role) + RLS + GRANTs + unique
-   - `has_role(_user_id, _role)` SECURITY DEFINER
-   - Trigger `handle_new_user` → insert profile + default role
-3. Configure Supabase social auth: Google
-4. Enable HIBP leaked-password check
+Add a `subjects` reference table (slug, name, icon) seeded with the 15 subjects listed (Mathematics … Logical Reasoning). Courses reference `subject_slug`. This is taxonomy, not syllabus content.
 
-### Phase 2 — Auth pages (match existing `_auth` layout exactly)
-- `login.tsx` — wire to `supabase.auth.signInWithPassword`; Remember Me; Google button (`lovable.auth.signInWithOAuth("google")`); error states (invalid creds, unverified, disabled)
-- `register.tsx` — full name, email, password + confirm, role radio, terms checkbox; zod schema; password strength meter component; duplicate-email handling; `emailRedirectTo`
-- `forgot-password.tsx` — `resetPasswordForEmail` with `redirectTo: /reset-password`
-- `reset-password.tsx` **(new, public route)** — detects `type=recovery`, `updateUser({password})`, strength meter
-- `verify-email.tsx` **(new)** — "check your inbox" state after signup
-- `verify-success.tsx` / `verify-failed.tsx` **(new)** — landing pages for email confirm callback (expired/invalid/already-verified branches)
-- `account-created.tsx` **(new)** — post-signup confirmation
-- `session-expired.tsx` **(new)** — shown when refresh fails
+### 3. Routes (TanStack Start, under `_authenticated`)
 
-### Phase 3 — Error routes (top-level, not under `_auth`)
-- `src/routes/unauthorized.tsx` (403)
-- `src/routes/$.tsx` splat → 404 (already partial; formalize)
+- `/dashboard/courses` — Catalog: filter by board / class / language / subject / difficulty. Cards show thumbnail, subject, class range, board, duration, difficulty, progress bar, Enroll button.
+- `/dashboard/my-courses` — Enrolled courses with progress.
+- `/dashboard/courses/$courseId` — Course overview: description, objectives, weekly plan, chapter list, progress ring, resources tab, AI assistant panel.
+- `/dashboard/courses/$courseId/chapters/$chapterId` — Chapter view: intro → lessons list → summary → quiz + assignment CTAs.
+- `/dashboard/courses/$courseId/lessons/$lessonId` — Lesson player: theory (markdown), illustrations, examples, key notes, practice, "Mark complete" + Next.
+- `/dashboard/courses/$courseId/quiz/$quizId` — Quiz runner: timer, progress bar, question nav, autosave to `quiz_attempts`, instant results + explanations.
+- `/dashboard/courses/$courseId/assignments/$assignmentId` — Assignment: short/long answer + worksheet, autosave, submit.
+- `/dashboard/courses/$courseId/complete` — Completion summary + recommended next.
 
-### Phase 4 — Route protection
-- Rename `_dashboard` → `_authenticated` layout with `ssr:false` + `beforeLoad` calling `supabase.auth.getUser()`, redirect to `/login` on miss, preserving `redirect` search param
-- Nested `_authenticated/_admin`, `_authenticated/_teacher`, `_authenticated/_organization`, `_authenticated/_student` pathless layouts each running `has_role` gate → redirect to `/unauthorized`
-- Root route: `onAuthStateChange` → `router.invalidate()` + query invalidation (filtered)
-- Login page: if already authed, redirect to role's home
-- Sign-out: cancelQueries → clear → signOut → replace to `/login`
+### 4. Course engine components
 
-### Phase 5 — Role-based dashboard redirect
-- `/dashboard` index reads role → `Navigate` to `/dashboard/{role}`
-- Sidebar filtered by role, with the full role-specific nav lists from the spec (student: Courses, AI Tutor, Chat, Resources, Certificates, Progress, Assignments, Mock Tests, Notes, Profile; teacher/org/admin similarly). Links point to placeholder pages that ship as empty "coming in Prompt N" panels using existing `PlaceholderPanel` — NOT new features, just navigable stubs so the sidebar isn't broken.
+- `CourseCard`, `CourseFilters`, `ChapterList`, `LessonPlayer`, `QuizRunner`, `AssignmentForm`, `ResourceLibrary`, `ProgressRing`, `WeeklyPlan`, `AiAssistantPanel`.
+- Progress computed from `lesson_progress` + `quiz_attempts` + `assignment_submissions` vs. total course content (server fn).
 
-### Phase 6 — Profile page (per role, same layout)
-- `_authenticated/profile.tsx` — avatar upload (Storage), name, phone, bio, password change (`updateUser`), theme preference, notification prefs
-- Server fn `updateMyProfile` via `requireSupabaseAuth`
+### 5. AI Learning Assistant
 
-### Phase 7 — Shared primitives
-- `src/lib/auth/schemas.ts` — zod schemas (login, register, reset, profile)
-- `src/lib/auth/passwordStrength.ts` — scoring + labels
-- `src/components/auth/PasswordStrength.tsx`
-- `src/components/auth/AuthCard.tsx` (keeps consistent visual)
-- Toast-based success/error via existing `sonner`
-- Form animations reuse existing Tailwind transitions; no new motion lib
+Reuse existing `/api/chat` route. Extend `useAssistantContext` to inject: student class, board, language, current course/chapter/lesson title + theory excerpt. Preset prompts: Explain, Summarize, Examples, Solve doubt, Generate practice, Revision tips.
 
-## Out of scope for this prompt (explicit)
-- Feature pages behind the sidebar (Courses, AI Tutor, etc.) — remain placeholders
-- "Logout from all devices" UI — flagged future-ready per spec
-- Rate limiting / CSRF beyond what Supabase provides — noted; server routes we add use signature/token verification patterns per Lovable rules
+### 6. Enrollment flow
 
-## Files created / modified (Path A summary)
-- New: 8 auth pages, 2 error pages, profile page, password-strength component, auth schemas, migration
-- Modified: `_auth.tsx` (unchanged visually), existing login/register/forgot (wire up), `_dashboard*` → renamed under `_authenticated` with guards, `__root.tsx` (auth listener), sidebar (role filter), `start.ts` (bearer middleware)
-- Unchanged: all marketing pages, brand tokens, Navbar/Footer, home sections
+Enroll → insert `course_enrollments` → toast success → redirect to course overview. Unenroll from My Courses.
+
+### 7. UX
+
+- Responsive (mobile/tablet/desktop).
+- Uses existing design tokens.
+- Loading skeletons, empty states ("Syllabus coming soon" when a course has no chapters yet), error boundaries.
+
+### 8. Out of scope (Phase 1)
+
+- No actual syllabus content (empty content-ready tables).
+- No admin CMS UI to author content (content will be inserted by admins via migrations or a future Phase 2 CMS).
+- No certificates, gamification, payments.
+
+### Technical details
+
+- Server functions in `src/lib/courses.functions.ts`, `quizzes.functions.ts`, `progress.functions.ts` with `requireSupabaseAuth`.
+- TanStack Query for all reads (`ensureQueryData` + `useSuspenseQuery`).
+- Timer/autosave in QuizRunner uses `setInterval` + debounced upsert to `quiz_attempts.answers`.
 
 ---
 
-**Please confirm:**
-1. Path A (enable Cloud) or Path B (mock)?
-2. Roles: `admin | student | teacher | organization` OK?
-3. Self-signup allowed roles: student + teacher only, or all four?
-4. Profile fields listed above OK, or add/remove any?
-
-Once you approve, I'll execute phases 1→7 in order.
+**Confirm and I'll ship it.** This is a large build (~1 migration, ~10 routes, ~15 components, ~5 server-fn modules). Want me to proceed as-is, or trim anything (e.g., defer assignments or resource library to Phase 1.5)?

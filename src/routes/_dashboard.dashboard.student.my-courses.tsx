@@ -154,7 +154,14 @@ function MyCoursesPage() {
                     />
                   </div>
                 </div>
-                <div className="mt-4 flex items-center justify-end">
+                <div className="mt-4 flex items-center justify-between gap-2">
+                  <Link
+                    to="/dashboard/student/courses/$courseId"
+                    params={{ courseId: c.id }}
+                    className="text-sm font-medium text-primary hover:underline"
+                  >
+                    Continue →
+                  </Link>
                   <button
                     onClick={() => unenroll.mutate(row.id)}
                     disabled={unenroll.isPending}

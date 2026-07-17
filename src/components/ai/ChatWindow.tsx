@@ -27,7 +27,7 @@ export function ChatWindow({
         body: () => ({ context: serializeContext(context) }),
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [context.surface, context.role, context.student?.currentClass, context.student?.board],
+    [context.surface, context.role, context.student?.currentClass, context.student?.board, context.lesson?.lessonTitle, context.lesson?.courseTitle],
   );
 
   const { messages, sendMessage, status, error, setMessages } = useChat({
@@ -164,6 +164,7 @@ function serializeContext(ctx: AssistantContext) {
           schoolName: ctx.student.schoolName,
         }
       : null,
+    lesson: ctx.lesson ?? null,
   };
 }
 

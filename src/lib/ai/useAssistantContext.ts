@@ -29,6 +29,13 @@ export type AssistantContext = {
     language: string;
     schoolName: string | null;
   };
+  lesson?: {
+    courseTitle: string;
+    courseSubject: string;
+    chapterTitle: string | null;
+    lessonTitle: string | null;
+    theoryExcerpt: string | null;
+  };
   signedIn: boolean;
 };
 
@@ -107,6 +114,50 @@ export function useAssistantContext(): AssistantContext {
 
   const surface = detectSurface(pathname, role);
 
+  // Parse course/lesson IDs from pathname if present
+  const courseMatch = pathname.match(/\/courses\/([0-9a-f-]{36})/);
+  const lessonMatch = pathname.match(/\/lessons\/([0-9a-f-]{36})/);
+  const courseId = courseMatch?.[1];
+  const lessonId = lessonMatch?.[1];
+
+  const { data: lessonCtx } = useQuery({
+    queryKey: ["assistant", "lesson-ctx", courseId, lessonId],
+    enabled: !!courseId,
+    queryFn: async () => {
+      if (!courseId) return null;
+      const { data: course } = await supabase
+        .from("courses")
+        .select("title, subject")
+        .eq("id", courseId)
+        .maybeSingle();
+      if (!course) return null;
+      let chapterTitle: string | null = null;
+      let lessonTitle: string | null = null;
+      let theoryExcerpt: string | null = null;
+      if (lessonId) {
+        const { data: l } = await supabase
+          .from("lessons")
+          .select("title, theory, chapter_id, chapters:chapter_id(title)")
+          .eq("id", lessonId)
+          .maybeSingle();
+        if (l) {
+          lessonTitle = l.title;
+          const ch = (l as unknown as { chapters?: { title?: string } | null }).chapters;
+          chapterTitle = ch?.title ?? null;
+          theoryExcerpt = l.theory ? l.theory.slice(0, 1200) : null;
+        }
+      }
+      return {
+        courseTitle: course.title,
+        courseSubject: course.subject,
+        chapterTitle,
+        lessonTitle,
+        theoryExcerpt,
+      };
+    },
+    staleTime: 60_000,
+  });
+
   return {
     surface,
     pathname,
@@ -120,6 +171,7 @@ export function useAssistantContext(): AssistantContext {
           schoolName: student.school_name,
         }
       : undefined,
+    lesson: lessonCtx ?? undefined,
   };
 }
 
