@@ -580,7 +580,7 @@ function ResultScreen({
         <Link to="/dashboard/student/browse">
           <Button variant="ghost">Explore courses</Button>
         </Link>
-        <Link to="/dashboard/resources">
+        <Link to="/resources">
           <Button variant="ghost">Browse resources</Button>
         </Link>
       </div>
