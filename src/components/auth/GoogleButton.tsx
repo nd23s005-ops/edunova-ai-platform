@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useNavigate, useRouter } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { lovable } from "@/integrations/lovable";
+import { supabase } from "@/integrations/supabase/client";
+import { homeForRole, type AppRole } from "@/lib/auth/roles";
 import { toast } from "sonner";
 
 const GoogleIcon = () => (
@@ -14,6 +18,10 @@ const GoogleIcon = () => (
 
 export function GoogleButton({ label = "Continue with Google" }: { label?: string }) {
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const router = useRouter();
+  const queryClient = useQueryClient();
+
   const handle = async () => {
     setLoading(true);
     try {
@@ -25,7 +33,27 @@ export function GoogleButton({ label = "Continue with Google" }: { label?: strin
         setLoading(false);
         return;
       }
-      // If redirected, browser navigates away; otherwise session is set, root listener will react.
+      if (result.redirected) {
+        // Browser navigating away; nothing more to do here.
+        return;
+      }
+      // Popup flow: session is set. Resolve role from DB and route once.
+      const { data: userData } = await supabase.auth.getUser();
+      if (!userData.user) {
+        toast.error("Sign-in did not complete. Please try again.");
+        setLoading(false);
+        return;
+      }
+      const { data: r } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", userData.user.id)
+        .maybeSingle();
+      const dest = homeForRole((r?.role as AppRole) ?? null);
+      await queryClient.cancelQueries();
+      queryClient.clear();
+      await router.invalidate();
+      navigate({ to: dest, replace: true });
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Google sign-in failed");
       setLoading(false);

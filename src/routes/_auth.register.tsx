@@ -47,7 +47,17 @@ export const Route = createFileRoute("/_auth/register")({
         ? (search.role as AppRole)
         : undefined,
   }),
-  beforeLoad: ({ search }) => {
+  beforeLoad: async ({ search }) => {
+    // Already signed in? Send to their dashboard, never back through role selection.
+    const { data } = await supabase.auth.getUser();
+    if (data.user) {
+      const { data: r } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", data.user.id)
+        .maybeSingle();
+      throw redirect({ to: homeForRole((r?.role as AppRole) ?? null) });
+    }
     if (!search.role || search.role === "admin") {
       throw redirect({ to: "/onboarding", search: { mode: "register" } as never });
     }

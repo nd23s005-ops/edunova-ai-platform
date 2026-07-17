@@ -200,8 +200,7 @@ export function Navbar() {
           ) : (
             <>
               <Link
-                to="/onboarding"
-                search={{ mode: "login" } as never}
+                to="/login"
                 className="text-sm font-medium text-[oklch(0.35_0.02_240)] transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)]"
               >
                 Login
@@ -292,8 +291,7 @@ export function Navbar() {
                 ) : (
                   <>
                     <Link
-                      to="/onboarding"
-                      search={{ mode: "login" } as never}
+                      to="/login"
                       onClick={() => setOpen(false)}
                       className="rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-center text-sm font-semibold text-[oklch(0.18_0.03_240)]"
                     >
