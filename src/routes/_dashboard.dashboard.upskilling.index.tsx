@@ -28,6 +28,39 @@ type UpskillCourse = {
 
 const DIFFICULTIES = ["all", "beginner", "intermediate", "advanced"] as const;
 
+const FEATURED_SKILLS: string[] = [
+  "Python Programming",
+  "Java Programming",
+  "JavaScript",
+  "HTML & CSS",
+  "React.js",
+  "Node.js",
+  "Full Stack MERN Development",
+  "Artificial Intelligence",
+  "Machine Learning",
+  "Data Science",
+  "SQL & Databases",
+  "Cloud Computing (AWS)",
+  "Cyber Security",
+  "UI/UX Design",
+  "Git & GitHub",
+  "Communication Skills",
+  "Resume Building",
+  "Interview Preparation",
+  "Aptitude & Logical Reasoning",
+];
+
+function matchesFeatured(course: { title: string; category: string }): boolean {
+  const hay = `${course.title} ${course.category}`.toLowerCase();
+  return FEATURED_SKILLS.some((s) => {
+    const needle = s.toLowerCase();
+    if (hay.includes(needle)) return true;
+    // Fallback: match first significant token (e.g. "Python" from "Python Programming")
+    const token = needle.split(/[^a-z0-9+.#]+/).filter((t) => t.length > 2)[0];
+    return token ? hay.includes(token) : false;
+  });
+}
+
 function UpskillingHub() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<string>("all");
