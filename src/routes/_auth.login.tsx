@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { ArrowLeft, Loader2, Shield, Phone } from "lucide-react";
+import { ArrowLeft, Loader2, Shield, Phone, ChevronLeft } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { GoogleButton } from "@/components/auth/GoogleButton";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
 import { PhoneInput, createEmptyPhoneValue, type PhoneInputValue } from "@/components/auth/PhoneInput";
 import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
@@ -44,20 +50,116 @@ function LoginPage() {
   const [submitting, setSubmitting] = useState(false);
   const [phone, setPhone] = useState<PhoneInputValue>(() => createEmptyPhoneValue());
   const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [otpStep, setOtpStep] = useState<"enter-phone" | "enter-otp">("enter-phone");
+  const [otp, setOtp] = useState("");
+  const [otpError, setOtpError] = useState<string | null>(null);
   const [sendingOtp, setSendingOtp] = useState(false);
+  const [verifyingOtp, setVerifyingOtp] = useState(false);
+  const [attempts, setAttempts] = useState(0);
+  const [resendCooldown, setResendCooldown] = useState(0);
+  const cooldownTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const handleSendOtp = async () => {
+  const MAX_ATTEMPTS = 5;
+  const RESEND_SECONDS = 30;
+
+  useEffect(() => {
+    return () => {
+      if (cooldownTimer.current) clearInterval(cooldownTimer.current);
+    };
+  }, []);
+
+  const startCooldown = () => {
+    setResendCooldown(RESEND_SECONDS);
+    if (cooldownTimer.current) clearInterval(cooldownTimer.current);
+    cooldownTimer.current = setInterval(() => {
+      setResendCooldown((s) => {
+        if (s <= 1) {
+          if (cooldownTimer.current) clearInterval(cooldownTimer.current);
+          return 0;
+        }
+        return s - 1;
+      });
+    }, 1000);
+  };
+
+  const requestOtp = async (isResend = false) => {
     if (!phone.valid || !phone.e164) {
       setPhoneError("Enter a valid phone number for the selected country.");
       return;
     }
     setPhoneError(null);
     setSendingOtp(true);
-    // OTP delivery backend (Twilio Verify) not yet wired.
-    // The number is already normalized to E.164 for downstream use: phone.e164
-    await new Promise((r) => setTimeout(r, 400));
+    const { error } = await supabase.auth.signInWithOtp({
+      phone: phone.e164,
+      options: { channel: "sms" },
+    });
     setSendingOtp(false);
-    toast.info("SMS OTP isn't connected yet — number captured as " + phone.e164);
+    if (error) {
+      const msg = error.message ?? "Could not send OTP.";
+      if (/provider|disabled|not enabled|unsupported/i.test(msg)) {
+        toast.error("SMS provider isn't configured on the backend yet.");
+      } else if (/rate|too many/i.test(msg)) {
+        toast.error("Too many requests. Try again in a minute.");
+      } else {
+        toast.error(msg);
+      }
+      return;
+    }
+    toast.success(isResend ? "New code sent." : `Code sent to ${phone.e164}`);
+    setOtp("");
+    setOtpError(null);
+    setAttempts(0);
+    setOtpStep("enter-otp");
+    startCooldown();
+  };
+
+  const verifyOtp = async (code: string) => {
+    if (!phone.e164) return;
+    if (code.length !== 6) {
+      setOtpError("Enter the 6-digit code.");
+      return;
+    }
+    setOtpError(null);
+    setVerifyingOtp(true);
+    const { data, error } = await supabase.auth.verifyOtp({
+      phone: phone.e164,
+      token: code,
+      type: "sms",
+    });
+    setVerifyingOtp(false);
+
+    if (error || !data.session) {
+      const nextAttempts = attempts + 1;
+      setAttempts(nextAttempts);
+      if (nextAttempts >= MAX_ATTEMPTS) {
+        setOtpError("Too many incorrect attempts. Request a new code.");
+        toast.error("Too many incorrect attempts.");
+      } else {
+        setOtpError(`Invalid or expired code. ${MAX_ATTEMPTS - nextAttempts} attempts left.`);
+      }
+      return;
+    }
+
+    // Signed in — resolve role and route
+    const { data: roleRow } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", data.session.user.id)
+      .maybeSingle();
+    const dest =
+      redirectTo && redirectTo.startsWith("/")
+        ? redirectTo
+        : homeForRole((roleRow?.role as AppRole) ?? null);
+    toast.success("Signed in — welcome!");
+    await router.invalidate();
+    navigate({ to: dest });
+  };
+
+  const changeNumber = () => {
+    setOtpStep("enter-phone");
+    setOtp("");
+    setOtpError(null);
+    setAttempts(0);
   };
 
 
@@ -192,35 +294,110 @@ function LoginPage() {
         </TabsContent>
 
         <TabsContent value="phone" className="mt-6">
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="phone-national">Phone number</Label>
-              <div className="mt-1.5">
-                <PhoneInput
-                  id="phone-national"
-                  value={phone}
+          {otpStep === "enter-phone" ? (
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="phone-national">Phone number</Label>
+                <div className="mt-1.5">
+                  <PhoneInput
+                    id="phone-national"
+                    value={phone}
+                    onChange={(v) => {
+                      setPhone(v);
+                      if (phoneError) setPhoneError(null);
+                    }}
+                    error={phoneError ?? undefined}
+                  />
+                </div>
+              </div>
+              <Button
+                type="button"
+                className="w-full shadow-elegant"
+                size="lg"
+                disabled={sendingOtp || !phone.valid}
+                onClick={() => requestOtp(false)}
+              >
+                {sendingOtp ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Phone className="mr-2 h-4 w-4" />}
+                {sendingOtp ? "Sending OTP…" : "Send OTP"}
+              </Button>
+              <p className="text-center text-xs text-muted-foreground">
+                We'll text you a 6-digit code. Message rates may apply.
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              <div>
+                <button
+                  type="button"
+                  onClick={changeNumber}
+                  className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground"
+                >
+                  <ChevronLeft className="h-3.5 w-3.5" /> Change number
+                </button>
+                <p className="mt-2 text-sm">
+                  Enter the 6-digit code sent to{" "}
+                  <span className="font-semibold">{phone.e164}</span>
+                </p>
+              </div>
+
+              <div className="flex justify-center py-2">
+                <InputOTP
+                  maxLength={6}
+                  value={otp}
                   onChange={(v) => {
-                    setPhone(v);
-                    if (phoneError) setPhoneError(null);
+                    setOtp(v);
+                    if (otpError) setOtpError(null);
+                    if (v.length === 6 && attempts < MAX_ATTEMPTS) {
+                      void verifyOtp(v);
+                    }
                   }}
-                  error={phoneError ?? undefined}
-                />
+                  disabled={verifyingOtp || attempts >= MAX_ATTEMPTS}
+                >
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                  </InputOTPGroup>
+                  <InputOTPSeparator />
+                  <InputOTPGroup>
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                  </InputOTPGroup>
+                </InputOTP>
+              </div>
+
+              {otpError && (
+                <p className="text-center text-xs text-destructive">{otpError}</p>
+              )}
+
+              <Button
+                type="button"
+                className="w-full shadow-elegant"
+                size="lg"
+                disabled={verifyingOtp || otp.length !== 6 || attempts >= MAX_ATTEMPTS}
+                onClick={() => verifyOtp(otp)}
+              >
+                {verifyingOtp && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {verifyingOtp ? "Verifying…" : "Verify & sign in"}
+              </Button>
+
+              <div className="flex items-center justify-center text-xs text-muted-foreground">
+                {resendCooldown > 0 ? (
+                  <span>Resend code in {resendCooldown}s</span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => requestOtp(true)}
+                    disabled={sendingOtp}
+                    className="font-medium text-primary hover:underline disabled:opacity-60"
+                  >
+                    {sendingOtp ? "Sending…" : "Resend code"}
+                  </button>
+                )}
               </div>
             </div>
-            <Button
-              type="button"
-              className="w-full shadow-elegant"
-              size="lg"
-              disabled={sendingOtp || !phone.valid}
-              onClick={handleSendOtp}
-            >
-              {sendingOtp ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Phone className="mr-2 h-4 w-4" />}
-              {sendingOtp ? "Sending OTP…" : "Send OTP"}
-            </Button>
-            <p className="text-center text-xs text-muted-foreground">
-              We'll text you a 6-digit code. Message rates may apply.
-            </p>
-          </div>
+          )}
         </TabsContent>
       </Tabs>
 
