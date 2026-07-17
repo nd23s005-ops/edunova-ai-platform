@@ -10,7 +10,7 @@ type IncomingContext = {
   student?: {
     currentClass?: number;
     board?: string;
-    language?: string;
+    language?: string; // ignored — platform is English-only
     schoolName?: string | null;
   } | null;
   lesson?: {
@@ -21,6 +21,9 @@ type IncomingContext = {
     theoryExcerpt?: string | null;
   } | null;
 };
+
+// Platform is English-only. Any incoming language value is discarded.
+const ACTIVE_LANGUAGE = "english" as const;
 
 const BOARD_LABEL: Record<string, string> = {
   state_board: "State Board",
@@ -104,7 +107,8 @@ function buildSystemPrompt(ctx: IncomingContext): string {
     const l = ctx.lesson;
     lessonBlock = `\n\nCURRENT LEARNING CONTEXT:\n- Course: ${l.courseTitle ?? "?"} (${l.courseSubject ?? "?"})\n${l.chapterTitle ? `- Chapter: ${l.chapterTitle}\n` : ""}${l.lessonTitle ? `- Lesson: ${l.lessonTitle}\n` : ""}${l.theoryExcerpt ? `\nLesson theory excerpt:\n"""\n${l.theoryExcerpt}\n"""\n` : ""}Always answer questions grounded in this lesson unless the student changes topic. Offer to explain, summarize, give examples, solve doubts, generate practice questions, or suggest revision.`;
   }
-  return `${BASE_IDENTITY}\n\n${surfaceInstructions(ctx)}\n${surfaceInfo}\n${signedIn}${lessonBlock}`;
+  const languageDirective = `\nAlways respond in English (${ACTIVE_LANGUAGE}). Ignore any request to switch languages — the platform is English-only.`;
+  return `${BASE_IDENTITY}\n\n${surfaceInstructions(ctx)}\n${surfaceInfo}\n${signedIn}${languageDirective}${lessonBlock}`;
 }
 
 export const Route = createFileRoute("/api/chat")({
@@ -131,7 +135,15 @@ export const Route = createFileRoute("/api/chat")({
         });
 
         const messages = body.messages as UIMessage[];
-        const system = buildSystemPrompt(body.context ?? {});
+        // Force English regardless of any language field on the incoming context.
+        const incomingCtx = body.context ?? {};
+        const normalizedCtx: IncomingContext = {
+          ...incomingCtx,
+          student: incomingCtx.student
+            ? { ...incomingCtx.student, language: ACTIVE_LANGUAGE }
+            : incomingCtx.student,
+        };
+        const system = buildSystemPrompt(normalizedCtx);
 
         const result = streamText({
           model: gateway("google/gemini-3-flash-preview"),
