@@ -1,22 +1,549 @@
 import { Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   ArrowRight,
   Brain,
   Sparkles,
   MessagesSquare,
-  ClipboardList,
-  LineChart,
+  LineChart as LineChartIcon,
   Route as RouteIcon,
-  type LucideIcon,
+  Award,
+  User,
+  Cpu,
+  Mic,
+  Paperclip,
+  Check,
+  CircleDot,
+  Lock,
+  TrendingUp,
+  Star,
+  Zap,
 } from "lucide-react";
 
+/* -------------------------------------------------------------------------- */
+/*  Feature 1 · Learning Twin                                                 */
+/* -------------------------------------------------------------------------- */
+function LearningTwinCard() {
+  const reduce = useReducedMotion();
+  return (
+    <div className="relative">
+      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(239,123,36,0.18),transparent_70%)] blur-2xl" />
+      <motion.div
+        animate={reduce ? undefined : { y: [0, -6, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+      >
+        <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(closest-side,rgba(120,220,225,0.35),transparent_70%)] blur-2xl" />
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <span className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-highlight blur-md opacity-60" />
+              <div className="relative grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-primary to-highlight text-primary-foreground">
+                <User className="h-5 w-5" />
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">Learner</p>
+              <p className="text-sm font-bold text-foreground">Aarav · Grade 11</p>
+            </div>
+          </div>
+          <motion.div
+            animate={reduce ? undefined : { rotate: [0, 8, -4, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-accent/25 to-primary/20 text-accent-foreground shadow-glow"
+          >
+            <Brain className="h-5 w-5 text-primary" />
+          </motion.div>
+        </div>
+
+        {/* Connection line */}
+        <svg viewBox="0 0 320 60" className="mt-4 h-12 w-full" aria-hidden="true">
+          <motion.path
+            d="M20,30 C90,-10 220,70 300,30"
+            fill="none"
+            stroke="url(#twinGrad)"
+            strokeWidth="2"
+            strokeDasharray="4 6"
+            initial={{ pathLength: 0 }}
+            whileInView={{ pathLength: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.6, ease: "easeInOut" }}
+          />
+          <defs>
+            <linearGradient id="twinGrad" x1="0" x2="1">
+              <stop offset="0%" stopColor="#EF7B24" />
+              <stop offset="100%" stopColor="#3FB8B0" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div className="mt-2 space-y-3">
+          <MasteryRow label="Algebra" value={92} tone="primary" />
+          <MasteryRow label="Trigonometry" value={74} tone="accent" />
+          <MasteryRow label="Calculus" value={58} tone="warn" />
+        </div>
+
+        <div className="mt-5 flex items-center justify-between rounded-2xl border border-border/60 bg-secondary/40 px-4 py-3">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">Knowledge Score</p>
+            <p className="mt-0.5 font-display text-2xl font-bold text-foreground">
+              8.4<span className="text-base text-muted-foreground">/10</span>
+            </p>
+          </div>
+          <div className="text-right">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">This Week</p>
+            <p className="mt-0.5 inline-flex items-center gap-1 text-sm font-bold text-success">
+              <TrendingUp className="h-4 w-4" /> +12%
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+function MasteryRow({ label, value, tone }: { label: string; value: number; tone: "primary" | "accent" | "warn" }) {
+  const color =
+    tone === "primary"
+      ? "from-primary to-highlight"
+      : tone === "accent"
+      ? "from-accent to-primary-glow"
+      : "from-amber-400 to-rose-400";
+  return (
+    <div>
+      <div className="mb-1 flex items-center justify-between text-xs">
+        <span className="font-medium text-foreground">{label}</span>
+        <span className="font-bold text-muted-foreground">{value}%</span>
+      </div>
+      <div className="h-2 overflow-hidden rounded-full bg-secondary">
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: `${value}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: [0.2, 0.7, 0.2, 1] }}
+          className={`h-full rounded-full bg-gradient-to-r ${color}`}
+        />
+      </div>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Feature 2 · Knowledge Gap Heatmap                                         */
+/* -------------------------------------------------------------------------- */
+function KnowledgeGapCard() {
+  const reduce = useReducedMotion();
+  // 0 mastered · 1 review · 2 weak
+  const grid = [
+    0, 0, 1, 0, 0, 2,
+    0, 1, 0, 0, 2, 0,
+    0, 0, 0, 1, 0, 0,
+    1, 0, 0, 0, 0, 0,
+    0, 0, 2, 0, 1, 0,
+  ];
+  const swatch = (v: number) =>
+    v === 0
+      ? "bg-emerald-400/85"
+      : v === 1
+      ? "bg-orange-400/85"
+      : "bg-rose-500/85";
+
+  return (
+    <div className="relative">
+      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(120,220,225,0.22),transparent_70%)] blur-2xl" />
+      <motion.div
+        animate={reduce ? undefined : { y: [0, -6, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+      >
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Concept Heatmap</p>
+            <p className="mt-1 font-display text-lg font-bold text-foreground">Physics · Chapter Review</p>
+          </div>
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="inline-flex items-center gap-1.5 rounded-full border border-rose-300/60 bg-rose-50 px-3 py-1 text-[11px] font-bold text-rose-600 shadow-sm"
+          >
+            <span className={`h-1.5 w-1.5 rounded-full bg-rose-500 ${reduce ? "" : "animate-pulse"}`} />
+            3 Gaps Detected
+          </motion.div>
+        </div>
+
+        <div className="mt-5 grid grid-cols-6 gap-2">
+          {grid.map((v, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.6 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.015, duration: 0.35 }}
+              className={`aspect-square rounded-lg ${swatch(v)} shadow-sm`}
+            />
+          ))}
+        </div>
+
+        <div className="mt-5 flex items-center justify-between text-[11px] font-medium text-muted-foreground">
+          <Legend color="bg-emerald-400" label="Mastered" />
+          <Legend color="bg-orange-400" label="Needs Review" />
+          <Legend color="bg-rose-500" label="Weak" />
+        </div>
+
+        <div className="mt-5 rounded-2xl border border-border/60 bg-secondary/40 p-3">
+          <p className="text-xs font-semibold text-foreground">Recommended next: <span className="text-primary">Newton's Third Law</span></p>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+function Legend({ color, label }: { color: string; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span className={`h-2 w-2 rounded-sm ${color}`} /> {label}
+    </span>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Feature 3 · Smart Learning Paths                                          */
+/* -------------------------------------------------------------------------- */
+function LearningPathCard() {
+  const reduce = useReducedMotion();
+  const steps = [
+    { title: "Foundations", state: "done" as const, icon: Check },
+    { title: "Core Concepts", state: "done" as const, icon: Check },
+    { title: "Practice & Quizzes", state: "current" as const, icon: CircleDot },
+    { title: "Advanced Topics", state: "next" as const, icon: Sparkles },
+    { title: "Capstone Project", state: "locked" as const, icon: Lock },
+  ];
+  return (
+    <div className="relative">
+      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(239,123,36,0.18),transparent_70%)] blur-2xl" />
+      <motion.div
+        animate={reduce ? undefined : { y: [0, -6, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+      >
+        <div className="flex items-center justify-between">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Personalized Roadmap</p>
+          <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-bold text-primary">Data Science</span>
+        </div>
+
+        <div className="relative mt-5 pl-3">
+          {/* animated vertical path */}
+          <svg className="absolute left-3 top-2 h-[calc(100%-16px)] w-6" viewBox="0 0 24 300" preserveAspectRatio="none" aria-hidden="true">
+            <motion.path
+              d="M12,4 C22,60 4,120 12,180 C20,220 6,260 12,296"
+              fill="none"
+              stroke="url(#pathGrad)"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.8, ease: "easeInOut" }}
+            />
+            <defs>
+              <linearGradient id="pathGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="#EF7B24" />
+                <stop offset="100%" stopColor="#3FB8B0" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <ul className="relative space-y-3">
+            {steps.map((s, i) => {
+              const Icon = s.icon;
+              const bg =
+                s.state === "done"
+                  ? "bg-gradient-to-br from-emerald-400 to-teal-500 text-white"
+                  : s.state === "current"
+                  ? "bg-gradient-to-br from-primary to-highlight text-primary-foreground shadow-glow"
+                  : s.state === "next"
+                  ? "bg-accent/20 text-accent-foreground"
+                  : "bg-secondary text-muted-foreground";
+              return (
+                <motion.li
+                  key={s.title}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center gap-3 pl-6"
+                >
+                  <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${bg}`}>
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <div className="flex flex-1 items-center justify-between rounded-xl border border-border/60 bg-white/70 px-3 py-2">
+                    <span className="text-sm font-semibold text-foreground">{s.title}</span>
+                    {s.state === "current" && (
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-primary">In Progress</span>
+                    )}
+                    {s.state === "next" && (
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-accent-foreground">AI Pick</span>
+                    )}
+                  </div>
+                </motion.li>
+              );
+            })}
+          </ul>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Feature 4 · AI Tutor Chat                                                 */
+/* -------------------------------------------------------------------------- */
+function AITutorCard() {
+  const reduce = useReducedMotion();
+  const [dots, setDots] = useState(1);
+  useEffect(() => {
+    if (reduce) return;
+    const id = setInterval(() => setDots((d) => (d % 3) + 1), 450);
+    return () => clearInterval(id);
+  }, [reduce]);
+
+  return (
+    <div className="relative">
+      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(120,220,225,0.22),transparent_70%)] blur-2xl" />
+      <motion.div
+        animate={reduce ? undefined : { y: [0, -6, 0] }}
+        transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
+        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+      >
+        <div className="flex items-center gap-3 border-b border-border/50 pb-4">
+          <div className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-highlight text-primary-foreground">
+            <Cpu className="h-4 w-4" />
+          </div>
+          <div>
+            <p className="text-sm font-bold text-foreground">EduNova AI Tutor</p>
+            <p className="inline-flex items-center gap-1.5 text-[11px] font-medium text-emerald-600">
+              <span className={`h-1.5 w-1.5 rounded-full bg-emerald-500 ${reduce ? "" : "animate-pulse"}`} /> Online
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 space-y-3">
+          <motion.div
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="ml-auto max-w-[80%] rounded-2xl rounded-br-md bg-primary px-3.5 py-2.5 text-sm text-primary-foreground shadow-sm"
+          >
+            Can you explain photosynthesis with a simple example?
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="max-w-[85%] rounded-2xl rounded-bl-md border border-border/60 bg-white px-3.5 py-2.5 text-sm text-foreground shadow-sm"
+          >
+            Sure! Think of a leaf as a tiny kitchen. Sunlight is the stove, water and CO₂ are the ingredients, and the leaf cooks up glucose + oxygen…
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.7 }}
+            className="inline-flex items-center gap-1 rounded-2xl rounded-bl-md border border-border/60 bg-white px-3.5 py-2 text-sm text-muted-foreground shadow-sm"
+          >
+            <span className="flex gap-1">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className={`h-1.5 w-1.5 rounded-full bg-primary/70 transition-opacity ${
+                    dots > i ? "opacity-100" : "opacity-30"
+                  }`}
+                />
+              ))}
+            </span>
+          </motion.div>
+        </div>
+
+        {/* Prompt chips */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {["Give a quiz", "Simpler please", "Show diagram"].map((p) => (
+            <button key={p} className="rounded-full border border-border/60 bg-secondary/50 px-3 py-1 text-xs font-medium text-foreground transition hover:border-primary/40 hover:text-primary">
+              {p}
+            </button>
+          ))}
+        </div>
+
+        {/* Input */}
+        <div className="mt-4 flex items-center gap-2 rounded-2xl border border-border/60 bg-white px-3 py-2 shadow-sm">
+          <Paperclip className="h-4 w-4 text-muted-foreground" />
+          <span className="flex-1 text-sm text-muted-foreground">Ask anything…</span>
+          <Mic className="h-4 w-4 text-primary" />
+          <span className="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-primary to-highlight text-primary-foreground">
+            <ArrowRight className="h-3.5 w-3.5" />
+          </span>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Feature 5 · Learning Analytics                                            */
+/* -------------------------------------------------------------------------- */
+function AnalyticsCard() {
+  const reduce = useReducedMotion();
+  const bars = [40, 62, 48, 78, 66, 88, 72];
+  return (
+    <div className="relative">
+      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(239,123,36,0.18),transparent_70%)] blur-2xl" />
+      <motion.div
+        animate={reduce ? undefined : { y: [0, -6, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+      >
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Weekly Progress</p>
+            <p className="mt-1 font-display text-lg font-bold text-foreground">14h 32m studied</p>
+          </div>
+          <div className="relative grid place-items-center">
+            <svg viewBox="0 0 60 60" className="h-14 w-14 -rotate-90">
+              <circle cx="30" cy="30" r="24" fill="none" stroke="rgb(230,230,230)" strokeWidth="6" />
+              <motion.circle
+                cx="30" cy="30" r="24" fill="none"
+                stroke="url(#circGrad)" strokeWidth="6" strokeLinecap="round"
+                strokeDasharray={2 * Math.PI * 24}
+                initial={{ strokeDashoffset: 2 * Math.PI * 24 }}
+                whileInView={{ strokeDashoffset: 2 * Math.PI * 24 * (1 - 0.78) }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.4, ease: [0.2, 0.7, 0.2, 1] }}
+              />
+              <defs>
+                <linearGradient id="circGrad" x1="0" x2="1">
+                  <stop offset="0%" stopColor="#EF7B24" />
+                  <stop offset="100%" stopColor="#3FB8B0" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span className="absolute font-display text-sm font-bold text-foreground">78%</span>
+          </div>
+        </div>
+
+        {/* Bar chart */}
+        <div className="mt-5 flex h-32 items-end gap-2 rounded-2xl bg-secondary/40 p-3">
+          {bars.map((v, i) => (
+            <motion.div
+              key={i}
+              initial={{ height: 0 }}
+              whileInView={{ height: `${v}%` }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
+              className="flex-1 rounded-lg bg-gradient-to-t from-primary to-highlight shadow-sm"
+            />
+          ))}
+        </div>
+
+        {/* Metric cards */}
+        <div className="mt-4 grid grid-cols-3 gap-2">
+          <Metric icon={Zap} label="Streak" value="12d" />
+          <Metric icon={Star} label="Mastery" value="84%" />
+          <Metric icon={TrendingUp} label="Trend" value="+18%" />
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+function Metric({ icon: Icon, label, value }: { icon: typeof Zap; label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-border/60 bg-white/80 p-2.5">
+      <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+        <Icon className="h-3 w-3 text-primary" /> {label}
+      </div>
+      <p className="mt-0.5 font-display text-sm font-bold text-foreground">{value}</p>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Feature 6 · Certificates & Milestones                                     */
+/* -------------------------------------------------------------------------- */
+function CertificateCard() {
+  const reduce = useReducedMotion();
+  return (
+    <div className="relative">
+      <div className="pointer-events-none absolute -inset-6 rounded-[36px] bg-[radial-gradient(closest-side,rgba(120,220,225,0.22),transparent_70%)] blur-2xl" />
+      <motion.div
+        animate={reduce ? undefined : { y: [0, -6, 0] }}
+        transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut" }}
+        className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/85 p-6 shadow-elegant backdrop-blur-xl"
+      >
+        {/* Certificate */}
+        <div className="relative overflow-hidden rounded-2xl border-2 border-primary/25 bg-gradient-to-br from-white via-secondary/40 to-white p-5 shadow-inner">
+          <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[radial-gradient(closest-side,rgba(239,123,36,0.25),transparent_70%)]" />
+          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Certificate of Completion</p>
+          <p className="mt-2 font-display text-xl font-bold text-foreground">Aarav Sharma</p>
+          <p className="mt-1 text-xs text-muted-foreground">has completed the course</p>
+          <p className="mt-1 text-sm font-semibold text-foreground">Applied Machine Learning · Foundations</p>
+
+          <div className="mt-4 flex items-end justify-between">
+            <div>
+              <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Issued</p>
+              <p className="text-xs font-bold text-foreground">Nov 2026</p>
+            </div>
+            <motion.div
+              initial={{ rotate: -14, scale: 0.6, opacity: 0 }}
+              whileInView={{ rotate: -14, scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, type: "spring", stiffness: 180 }}
+              className="rounded-full border-2 border-primary/70 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-primary"
+            >
+              Verified
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Badges */}
+        <div className="mt-5 grid grid-cols-3 gap-3">
+          {[
+            { Icon: Award, label: "Top Learner", grad: "from-amber-400 to-orange-500" },
+            { Icon: Star, label: "5-Day Streak", grad: "from-primary to-highlight" },
+            { Icon: TrendingUp, label: "Fast Grower", grad: "from-teal-400 to-cyan-500" },
+          ].map((b, i) => (
+            <motion.div
+              key={b.label}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 + i * 0.1 }}
+              className="flex flex-col items-center rounded-xl border border-border/60 bg-white/80 p-3 text-center"
+            >
+              <div className={`grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br ${b.grad} text-white shadow-md`}>
+                <b.Icon className="h-4 w-4" />
+              </div>
+              <p className="mt-1.5 text-[11px] font-bold text-foreground">{b.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Feature copy + rows                                                       */
+/* -------------------------------------------------------------------------- */
 type Feature = {
   slug: string;
   eyebrow: string;
   title: string;
   body: string;
-  Icon: LucideIcon;
+  visual: ReactNode;
 };
 
 const features: Feature[] = [
@@ -24,46 +551,94 @@ const features: Feature[] = [
     slug: "learning-twin",
     eyebrow: "Personalized",
     title: "Learning Twin",
-    body: "The Learning Twin creates a living knowledge profile for every learner. It continuously adapts future lessons, quizzes, revision plans, and recommendations based on strengths, weaknesses, learning pace, and goals.",
-    Icon: Brain,
+    body: "The Learning Twin builds a personalized knowledge model for every learner — tracking concepts, strengths, weaknesses, quizzes, and progress over time — and continuously adapts future lessons and recommendations.",
+    visual: <LearningTwinCard />,
   },
   {
     slug: "knowledge-gap",
     eyebrow: "Proactive",
     title: "Knowledge Gap Analysis",
-    body: "EduNova AI detects weak concepts before they become learning barriers. It analyzes quiz performance, identifies gaps, and recommends targeted revision — so nothing quietly slips through.",
-    Icon: Sparkles,
-  },
-  {
-    slug: "ai-tutor",
-    eyebrow: "24/7",
-    title: "AI Tutor",
-    body: "An intelligent tutor that answers questions instantly with visual explanations, worked examples, interactive hints, code support, and personalized feedback — right when you need it.",
-    Icon: MessagesSquare,
-  },
-  {
-    slug: "exam-generator",
-    eyebrow: "Exam-Ready",
-    title: "Exam Generator",
-    body: "Generate realistic exams from syllabus coverage, previous performance, learning gaps, and difficulty settings — with AI-generated explanations for every question.",
-    Icon: ClipboardList,
-  },
-  {
-    slug: "progress-analytics",
-    eyebrow: "Insights",
-    title: "Progress Analytics",
-    body: "Track learning with intelligent dashboards showing concept mastery, study time, quiz performance, completion rates, streaks, and AI-powered recommendations.",
-    Icon: LineChart,
+    body: "EduNova AI automatically detects weak concepts before exams, identifies learning gaps, recommends targeted revision, and helps students improve before they struggle.",
+    visual: <KnowledgeGapCard />,
   },
   {
     slug: "learning-paths",
     eyebrow: "Adaptive",
     title: "Smart Learning Paths",
-    body: "AI automatically builds personalized roadmaps from your goals, progress, strengths, career interests, and available study time — and reroutes as you grow.",
-    Icon: RouteIcon,
+    body: "AI generates personalized learning roadmaps based on each student's goals, learning speed, performance, and interests — and reroutes as they grow.",
+    visual: <LearningPathCard />,
+  },
+  {
+    slug: "ai-tutor",
+    eyebrow: "AI Tutor",
+    title: "24/7 Personal Tutor",
+    body: "Students can ask questions naturally and receive explanations, examples, quizzes, summaries, and coding help — anytime they need it.",
+    visual: <AITutorCard />,
+  },
+  {
+    slug: "progress-analytics",
+    eyebrow: "Insights",
+    title: "Learning Analytics",
+    body: "Track progress with intelligent dashboards showing study time, concept mastery, quiz performance, strengths, and improvement trends.",
+    visual: <AnalyticsCard />,
+  },
+  {
+    slug: "certificates",
+    eyebrow: "Achievement",
+    title: "Certificates & Milestones",
+    body: "Automatically generate certificates, badges, achievements, and learning milestones after every course completion — celebrating each step forward.",
+    visual: <CertificateCard />,
   },
 ];
 
+function Row({ feature, index }: { feature: Feature; index: number }) {
+  const visualLeft = index % 2 === 1;
+  return (
+    <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      {/* Copy */}
+      <motion.div
+        initial={{ opacity: 0, x: visualLeft ? 40 : -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
+        className={visualLeft ? "lg:order-2" : "lg:order-1"}
+      >
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/[0.06] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+          <Sparkles className="h-3 w-3" /> {feature.eyebrow}
+        </span>
+        <h3 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          {feature.title}
+        </h3>
+        <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
+          {feature.body}
+        </p>
+        <Link
+          to="/features/$slug"
+          params={{ slug: feature.slug }}
+          className="group mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-primary transition-all hover:gap-2.5"
+        >
+          Learn More
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+        </Link>
+      </motion.div>
+
+      {/* Visual */}
+      <motion.div
+        initial={{ opacity: 0, x: visualLeft ? -40 : 40, scale: 0.96 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.8, ease: [0.2, 0.7, 0.2, 1] }}
+        className={visualLeft ? "lg:order-1" : "lg:order-2"}
+      >
+        {feature.visual}
+      </motion.div>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Section                                                                    */
+/* -------------------------------------------------------------------------- */
 const wordReveal = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.06 } },
@@ -78,37 +653,49 @@ const wordItem = {
 };
 
 function Heading() {
-  const words = ["An", "AI", "Stack", "for", "Real", "Learning"];
+  const words = ["An", "AI", "stack", "for", "real", "learning"];
   return (
     <motion.h2
       variants={wordReveal}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
-      className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+      className="mt-4 font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-[56px]"
     >
-      {words.map((w, i) => (
-        <motion.span
-          key={i}
-          variants={wordItem}
-          className={`inline-block ${i === 1 || i === 2 ? "text-gradient bg-[length:200%_100%] [animation:gradient-shift_6s_ease_infinite]" : ""}`}
-          style={{ marginRight: "0.28em" }}
-        >
-          {w}
-        </motion.span>
-      ))}
+      {words.map((w, i) => {
+        const highlight = i === 1 || i === 2;
+        return (
+          <motion.span
+            key={i}
+            variants={wordItem}
+            className={
+              highlight
+                ? "inline-block bg-[linear-gradient(92deg,#F19A3E_0%,#EF7B24_45%,#E85A9E_100%)] bg-[length:220%_100%] bg-clip-text text-transparent [animation:gradient-shift_7s_ease_infinite]"
+                : "inline-block"
+            }
+            style={{ marginRight: "0.28em" }}
+          >
+            {w}
+          </motion.span>
+        );
+      })}
     </motion.h2>
   );
 }
 
 export function AIFeatures() {
   return (
-    <section id="ai-features" className="relative overflow-hidden bg-background py-24 sm:py-32">
+    <section id="ai-features" className="relative overflow-hidden py-24 sm:py-32" style={{ background: "#FCFAF7" }}>
       {/* Background wash */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute left-1/2 top-0 h-[520px] w-[880px] -translate-x-1/2 rounded-full bg-primary-glow/10 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-[420px] w-[520px] rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute inset-0 bg-grid-fade opacity-40" />
+        <div
+          className="absolute left-1/4 top-40 h-[420px] w-[720px] -translate-x-1/2 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(closest-side, rgba(239,123,36,0.14), transparent 70%)" }}
+        />
+        <div
+          className="absolute bottom-40 right-0 h-[420px] w-[520px] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(closest-side, rgba(120,220,225,0.18), transparent 70%)" }}
+        />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -118,9 +705,9 @@ export function AIFeatures() {
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary backdrop-blur"
+            className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary backdrop-blur"
           >
-            <Sparkles className="h-3.5 w-3.5" /> AI Powered Learning
+            <Sparkles className="h-3.5 w-3.5" /> AI-Powered Learning
           </motion.span>
           <Heading />
           <motion.p
@@ -130,71 +717,16 @@ export function AIFeatures() {
             transition={{ delay: 0.3 }}
             className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
-            Every AI capability works together to personalize education, improve understanding,
-            identify weak areas, and help learners achieve their goals faster.
+            Every AI feature works together to personalize learning, identify knowledge gaps,
+            recommend the next best lesson, and accelerate student success.
           </motion.p>
         </div>
 
-        {/* Feature grid */}
-        <div className="mt-16 grid gap-6 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f, i) => {
-            const { Icon } = f;
-            return (
-              <motion.div
-                key={f.slug}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.06, ease: [0.2, 0.7, 0.2, 1] }}
-                whileHover={{ y: -4 }}
-                className="group relative rounded-3xl border border-white/60 bg-white/70 p-7 shadow-card backdrop-blur-xl transition-shadow hover:shadow-elegant dark:border-white/10 dark:bg-card/60"
-              >
-                <div
-                  className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, color-mix(in oklab, var(--primary-glow) 10%, transparent), transparent 45%, color-mix(in oklab, var(--accent) 10%, transparent))",
-                  }}
-                  aria-hidden="true"
-                />
-                <div className="relative">
-                  <div className="relative inline-flex">
-                    <span
-                      className="absolute inset-0 rounded-2xl blur-xl opacity-70"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, var(--primary-glow), var(--accent))",
-                      }}
-                      aria-hidden="true"
-                    />
-                    <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-primary to-highlight text-primary-foreground shadow-glow">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                  </div>
-
-                  <span className="mt-5 inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-accent-foreground">
-                    {f.eyebrow}
-                  </span>
-
-                  <h3 className="mt-3 font-display text-xl font-bold tracking-tight sm:text-2xl">
-                    {f.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {f.body}
-                  </p>
-
-                  <Link
-                    to="/features/$slug"
-                    params={{ slug: f.slug }}
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-2.5"
-                  >
-                    Learn More
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* Alternating rows */}
+        <div className="mt-24 space-y-28 sm:mt-28 sm:space-y-32">
+          {features.map((f, i) => (
+            <Row key={f.slug} feature={f} index={i} />
+          ))}
         </div>
       </div>
     </section>
