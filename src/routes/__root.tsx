@@ -181,6 +181,5 @@ function ClientOnlyFloatingChat() {
     })();
   }, []);
   if (!mounted || !signedIn) return null;
-  const LazyFloatingChat = FloatingChatLazy;
-  return <LazyFloatingChat />;
+  return <FloatingChat />;
 }
