@@ -85,11 +85,6 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
     { key: "college", label: "College Student", desc: "University subjects, projects, research support." },
     { key: "exam", label: "Competitive Exam Aspirant", desc: "JEE, NEET, UPSC, GRE — targeted practice." },
   ],
-  teacher: [
-    { key: "school", label: "School Teacher", desc: "Class planning, grading, K-12 pedagogy." },
-    { key: "college", label: "College Faculty", desc: "Lecture design, research, higher-ed tools." },
-    { key: "tutor", label: "Private Tutor", desc: "1:1 learners, custom plans, progress tracking." },
-  ],
 
   professional: [
     { key: "upskill", label: "Upskilling", desc: "Stay sharp in your current role." },
