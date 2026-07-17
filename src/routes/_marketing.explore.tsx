@@ -14,745 +14,627 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  BookOpen,
-  Library,
-  Sparkles,
-  ClipboardList,
-  FileCheck2,
-  Route as RouteIcon,
-  Users,
-  Building2,
-  Newspaper,
-  Megaphone,
   Search,
-  Clock,
-  Star,
-  Play,
-  Download,
-  FileText,
-  Presentation,
-  Video,
-  FileQuestion,
-  BookMarked,
-  ScrollText,
+  Sparkles,
   Brain,
-  Target,
-  Gauge,
-  Compass,
-  BarChart3,
+  Cpu,
   Bot,
-  ArrowRight,
-  Calendar,
-  MessageCircle,
-  Trophy,
+  MessageSquare,
   Code2,
-  Cloud,
-  ShieldCheck,
-  Database,
+  Braces,
+  FileCode2,
+  Terminal,
+  Layout,
   Palette,
   Layers,
+  Boxes,
+  Globe,
+  Server,
+  Smartphone,
+  Database,
+  HardDrive,
+  BarChart3,
+  LineChart,
+  PieChart,
+  Cloud,
+  Container,
+  GitBranch,
+  ShieldCheck,
+  Lock,
+  Bug,
+  Network,
+  Figma,
+  PenTool,
+  BookOpen,
+  GraduationCap,
+  Briefcase,
+  Award,
+  Users,
+  Building2,
+  Rocket,
+  Star,
+  Clock,
   TrendingUp,
+  ArrowRight,
   Filter,
+  Compass,
+  Route as RouteIcon,
+  Target,
   Zap,
+  Trophy,
+  Play,
 } from "lucide-react";
-
-const TITLE = "Explore — EduNova AI";
-const DESCRIPTION =
-  "Discover courses, resources, AI tools, learning paths, and more on EduNova AI — the central hub to explore everything the platform offers.";
 
 export const Route = createFileRoute("/_marketing/explore")({
   head: () => ({
     meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Explore Courses — EduNova AI" },
+      {
+        name: "description",
+        content:
+          "Discover thousands of courses and learning paths across AI, programming, cloud, cyber security, design, and career development.",
+      },
+      { property: "og:title", content: "Explore Courses — EduNova AI" },
+      {
+        property: "og:description",
+        content:
+          "Discover thousands of courses and learning paths across every subject, skill level, and career.",
+      },
     ],
   }),
   component: ExplorePage,
 });
 
-// ---------------------------------------------------------------------------
-// Data
-// ---------------------------------------------------------------------------
+/* ────────────────────────────────────────────────────────────
+   Data
+   ──────────────────────────────────────────────────────────── */
 
-const quickCategories = [
-  { icon: BookOpen, label: "Courses", desc: "Structured, board-aligned courses.", to: "/register" as const },
-  { icon: Library, label: "Resource Library", desc: "Notes, PPTs, and reference material.", to: "/resources" as const },
-  { icon: Sparkles, label: "AI Features", desc: "Learning Twin, tutor, and more.", to: "/features/$slug" as const, params: { slug: "learning-twin" } },
-  { icon: ClipboardList, label: "Assessments", desc: "Chapter tests and adaptive quizzes.", to: "/register" as const },
-  { icon: FileCheck2, label: "Mock Tests", desc: "Timed, exam-realistic practice.", to: "/register" as const },
-  { icon: RouteIcon, label: "Learning Paths", desc: "Curated multi-course tracks.", to: "/register" as const },
-  { icon: Users, label: "Community", desc: "Study groups and discussions.", to: "/community" as const },
-  { icon: Building2, label: "Organizations", desc: "Teams learning together.", to: "/about" as const },
-  { icon: Newspaper, label: "Articles", desc: "In-depth product deep-dives.", to: "/features/$slug" as const, params: { slug: "learning-twin" } },
-  { icon: Megaphone, label: "News & Updates", desc: "Latest platform announcements.", to: "/resources" as const },
+type Cat = {
+  name: string;
+  group: string;
+  icon: React.ComponentType<{ className?: string }>;
+  tint: string;
+};
+
+const CATEGORIES: Cat[] = [
+  // AI
+  { name: "Artificial Intelligence", group: "AI & Data", icon: Brain, tint: "from-violet-500/20 to-fuchsia-500/20 text-violet-500" },
+  { name: "Machine Learning", group: "AI & Data", icon: Cpu, tint: "from-violet-500/20 to-fuchsia-500/20 text-violet-500" },
+  { name: "Deep Learning", group: "AI & Data", icon: Sparkles, tint: "from-violet-500/20 to-fuchsia-500/20 text-violet-500" },
+  { name: "Generative AI", group: "AI & Data", icon: Sparkles, tint: "from-violet-500/20 to-fuchsia-500/20 text-violet-500" },
+  { name: "Prompt Engineering", group: "AI & Data", icon: MessageSquare, tint: "from-violet-500/20 to-fuchsia-500/20 text-violet-500" },
+  { name: "AI Agents", group: "AI & Data", icon: Bot, tint: "from-violet-500/20 to-fuchsia-500/20 text-violet-500" },
+
+  // Programming languages
+  { name: "Python", group: "Programming", icon: Code2, tint: "from-sky-500/20 to-cyan-500/20 text-sky-500" },
+  { name: "Java", group: "Programming", icon: Code2, tint: "from-sky-500/20 to-cyan-500/20 text-sky-500" },
+  { name: "C", group: "Programming", icon: Terminal, tint: "from-sky-500/20 to-cyan-500/20 text-sky-500" },
+  { name: "C++", group: "Programming", icon: Terminal, tint: "from-sky-500/20 to-cyan-500/20 text-sky-500" },
+  { name: "JavaScript", group: "Programming", icon: Braces, tint: "from-sky-500/20 to-cyan-500/20 text-sky-500" },
+  { name: "TypeScript", group: "Programming", icon: Braces, tint: "from-sky-500/20 to-cyan-500/20 text-sky-500" },
+  { name: "Go", group: "Programming", icon: FileCode2, tint: "from-sky-500/20 to-cyan-500/20 text-sky-500" },
+  { name: "Rust", group: "Programming", icon: FileCode2, tint: "from-sky-500/20 to-cyan-500/20 text-sky-500" },
+
+  // Web
+  { name: "HTML5", group: "Web Development", icon: Layout, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "CSS3", group: "Web Development", icon: Palette, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "Bootstrap", group: "Web Development", icon: Layers, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "Tailwind CSS", group: "Web Development", icon: Layers, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "React.js", group: "Web Development", icon: Boxes, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "Next.js", group: "Web Development", icon: Boxes, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "Angular", group: "Web Development", icon: Boxes, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "Vue.js", group: "Web Development", icon: Boxes, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "Node.js", group: "Web Development", icon: Server, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "Express.js", group: "Web Development", icon: Server, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+  { name: "MERN Stack", group: "Web Development", icon: Globe, tint: "from-orange-500/20 to-amber-500/20 text-orange-500" },
+
+  // Mobile
+  { name: "Flutter", group: "Mobile", icon: Smartphone, tint: "from-emerald-500/20 to-teal-500/20 text-emerald-500" },
+  { name: "Android Development", group: "Mobile", icon: Smartphone, tint: "from-emerald-500/20 to-teal-500/20 text-emerald-500" },
+  { name: "Kotlin", group: "Mobile", icon: Smartphone, tint: "from-emerald-500/20 to-teal-500/20 text-emerald-500" },
+  { name: "Swift (iOS)", group: "Mobile", icon: Smartphone, tint: "from-emerald-500/20 to-teal-500/20 text-emerald-500" },
+
+  // Data / DB
+  { name: "SQL", group: "Databases", icon: Database, tint: "from-indigo-500/20 to-blue-500/20 text-indigo-500" },
+  { name: "MySQL", group: "Databases", icon: Database, tint: "from-indigo-500/20 to-blue-500/20 text-indigo-500" },
+  { name: "PostgreSQL", group: "Databases", icon: Database, tint: "from-indigo-500/20 to-blue-500/20 text-indigo-500" },
+  { name: "MongoDB", group: "Databases", icon: HardDrive, tint: "from-indigo-500/20 to-blue-500/20 text-indigo-500" },
+  { name: "Firebase", group: "Databases", icon: HardDrive, tint: "from-indigo-500/20 to-blue-500/20 text-indigo-500" },
+
+  // Data Science
+  { name: "Data Science", group: "Data & Analytics", icon: BarChart3, tint: "from-pink-500/20 to-rose-500/20 text-pink-500" },
+  { name: "Data Analytics", group: "Data & Analytics", icon: LineChart, tint: "from-pink-500/20 to-rose-500/20 text-pink-500" },
+  { name: "NumPy", group: "Data & Analytics", icon: PieChart, tint: "from-pink-500/20 to-rose-500/20 text-pink-500" },
+  { name: "Pandas", group: "Data & Analytics", icon: PieChart, tint: "from-pink-500/20 to-rose-500/20 text-pink-500" },
+  { name: "Statistics", group: "Data & Analytics", icon: BarChart3, tint: "from-pink-500/20 to-rose-500/20 text-pink-500" },
+  { name: "Power BI", group: "Data & Analytics", icon: BarChart3, tint: "from-pink-500/20 to-rose-500/20 text-pink-500" },
+  { name: "Tableau", group: "Data & Analytics", icon: BarChart3, tint: "from-pink-500/20 to-rose-500/20 text-pink-500" },
+
+  // Cloud & DevOps
+  { name: "Cloud Computing", group: "Cloud & DevOps", icon: Cloud, tint: "from-cyan-500/20 to-sky-500/20 text-cyan-500" },
+  { name: "AWS", group: "Cloud & DevOps", icon: Cloud, tint: "from-cyan-500/20 to-sky-500/20 text-cyan-500" },
+  { name: "Microsoft Azure", group: "Cloud & DevOps", icon: Cloud, tint: "from-cyan-500/20 to-sky-500/20 text-cyan-500" },
+  { name: "Google Cloud Platform", group: "Cloud & DevOps", icon: Cloud, tint: "from-cyan-500/20 to-sky-500/20 text-cyan-500" },
+  { name: "Docker", group: "Cloud & DevOps", icon: Container, tint: "from-cyan-500/20 to-sky-500/20 text-cyan-500" },
+  { name: "Kubernetes", group: "Cloud & DevOps", icon: Container, tint: "from-cyan-500/20 to-sky-500/20 text-cyan-500" },
+  { name: "DevOps", group: "Cloud & DevOps", icon: GitBranch, tint: "from-cyan-500/20 to-sky-500/20 text-cyan-500" },
+
+  // Security
+  { name: "Cyber Security", group: "Security", icon: ShieldCheck, tint: "from-red-500/20 to-orange-500/20 text-red-500" },
+  { name: "Ethical Hacking", group: "Security", icon: Bug, tint: "from-red-500/20 to-orange-500/20 text-red-500" },
+  { name: "Network Security", group: "Security", icon: Network, tint: "from-red-500/20 to-orange-500/20 text-red-500" },
+  { name: "Penetration Testing", group: "Security", icon: Lock, tint: "from-red-500/20 to-orange-500/20 text-red-500" },
+  { name: "Digital Forensics", group: "Security", icon: ShieldCheck, tint: "from-red-500/20 to-orange-500/20 text-red-500" },
+  { name: "SOC Operations", group: "Security", icon: ShieldCheck, tint: "from-red-500/20 to-orange-500/20 text-red-500" },
+
+  // Design
+  { name: "UI Design", group: "Design", icon: Palette, tint: "from-fuchsia-500/20 to-pink-500/20 text-fuchsia-500" },
+  { name: "UX Design", group: "Design", icon: PenTool, tint: "from-fuchsia-500/20 to-pink-500/20 text-fuchsia-500" },
+  { name: "Figma", group: "Design", icon: Figma, tint: "from-fuchsia-500/20 to-pink-500/20 text-fuchsia-500" },
+  { name: "Adobe XD", group: "Design", icon: PenTool, tint: "from-fuchsia-500/20 to-pink-500/20 text-fuchsia-500" },
+  { name: "Design Systems", group: "Design", icon: Layers, tint: "from-fuchsia-500/20 to-pink-500/20 text-fuchsia-500" },
+
+  // CS Core
+  { name: "Data Structures & Algorithms", group: "CS Core", icon: Braces, tint: "from-blue-500/20 to-indigo-500/20 text-blue-500" },
+  { name: "Operating Systems", group: "CS Core", icon: Terminal, tint: "from-blue-500/20 to-indigo-500/20 text-blue-500" },
+  { name: "Computer Networks", group: "CS Core", icon: Network, tint: "from-blue-500/20 to-indigo-500/20 text-blue-500" },
+  { name: "DBMS", group: "CS Core", icon: Database, tint: "from-blue-500/20 to-indigo-500/20 text-blue-500" },
+  { name: "Object-Oriented Programming", group: "CS Core", icon: Code2, tint: "from-blue-500/20 to-indigo-500/20 text-blue-500" },
+  { name: "Software Engineering", group: "CS Core", icon: Layers, tint: "from-blue-500/20 to-indigo-500/20 text-blue-500" },
+  { name: "System Design", group: "CS Core", icon: Boxes, tint: "from-blue-500/20 to-indigo-500/20 text-blue-500" },
+
+  // Placement / Exams
+  { name: "Aptitude", group: "Placements & Exams", icon: Target, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "Logical Reasoning", group: "Placements & Exams", icon: Compass, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "Verbal Ability", group: "Placements & Exams", icon: BookOpen, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "Communication Skills", group: "Placements & Exams", icon: MessageSquare, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "Resume Building", group: "Placements & Exams", icon: Briefcase, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "LinkedIn Optimization", group: "Placements & Exams", icon: Briefcase, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "Interview Preparation", group: "Placements & Exams", icon: Users, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "Campus Placement Preparation", group: "Placements & Exams", icon: Trophy, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "GATE Computer Science", group: "Placements & Exams", icon: Award, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+  { name: "TANCET MCA", group: "Placements & Exams", icon: Award, tint: "from-amber-500/20 to-yellow-500/20 text-amber-500" },
+
+  // Academics
+  { name: "School Education (Grades 1–12)", group: "Academics", icon: GraduationCap, tint: "from-teal-500/20 to-emerald-500/20 text-teal-500" },
+  { name: "Undergraduate Courses", group: "Academics", icon: GraduationCap, tint: "from-teal-500/20 to-emerald-500/20 text-teal-500" },
+  { name: "Postgraduate Courses", group: "Academics", icon: GraduationCap, tint: "from-teal-500/20 to-emerald-500/20 text-teal-500" },
+  { name: "Professional Certification Courses", group: "Academics", icon: Award, tint: "from-teal-500/20 to-emerald-500/20 text-teal-500" },
+  { name: "Career Development", group: "Academics", icon: Rocket, tint: "from-teal-500/20 to-emerald-500/20 text-teal-500" },
 ];
 
-const trending = [
-  "Machine Learning",
-  "JEE Physics",
-  "React 19",
-  "Data Structures",
-  "System Design",
-  "Prompt Engineering",
-  "Financial Modeling",
-  "UI/UX",
+const CATEGORY_GROUPS = Array.from(new Set(CATEGORIES.map((c) => c.group)));
+
+type Path = {
+  title: string;
+  desc: string;
+  courses: number;
+  months: string;
+  icon: React.ComponentType<{ className?: string }>;
+  gradient: string;
+};
+
+const PATHS: Path[] = [
+  { title: "AI Engineer", desc: "Python → ML → Deep Learning → LLMs → Agents.", courses: 12, months: "6 months", icon: Brain, gradient: "from-violet-500 to-fuchsia-500" },
+  { title: "Machine Learning Engineer", desc: "Statistics, scikit-learn, MLOps, deployment.", courses: 10, months: "5 months", icon: Cpu, gradient: "from-violet-500 to-purple-500" },
+  { title: "Data Scientist", desc: "Analytics, ML, visualization, storytelling.", courses: 11, months: "6 months", icon: BarChart3, gradient: "from-pink-500 to-rose-500" },
+  { title: "Full Stack Developer", desc: "HTML/CSS, JS, React, Node, databases, deploy.", courses: 14, months: "7 months", icon: Layers, gradient: "from-orange-500 to-amber-500" },
+  { title: "Frontend Developer", desc: "React, Next.js, Tailwind, TypeScript, testing.", courses: 9, months: "4 months", icon: Layout, gradient: "from-sky-500 to-cyan-500" },
+  { title: "Backend Developer", desc: "Node/Express, APIs, databases, auth, scale.", courses: 9, months: "4 months", icon: Server, gradient: "from-indigo-500 to-blue-500" },
+  { title: "MERN Stack Developer", desc: "Mongo, Express, React, Node — end to end.", courses: 10, months: "5 months", icon: Globe, gradient: "from-emerald-500 to-teal-500" },
+  { title: "Python Developer", desc: "Python core, Django/FastAPI, DBs, deployment.", courses: 8, months: "4 months", icon: Code2, gradient: "from-blue-500 to-cyan-500" },
+  { title: "Java Developer", desc: "Java, OOP, Spring Boot, microservices.", courses: 9, months: "5 months", icon: Code2, gradient: "from-red-500 to-orange-500" },
+  { title: "Cloud Engineer", desc: "AWS/Azure/GCP, IaC, networking, security.", courses: 10, months: "5 months", icon: Cloud, gradient: "from-cyan-500 to-sky-500" },
+  { title: "DevOps Engineer", desc: "Docker, Kubernetes, CI/CD, observability.", courses: 9, months: "5 months", icon: GitBranch, gradient: "from-teal-500 to-emerald-500" },
+  { title: "Cyber Security Analyst", desc: "Threats, SOC, forensics, pen-testing basics.", courses: 10, months: "6 months", icon: ShieldCheck, gradient: "from-red-500 to-rose-500" },
+  { title: "Mobile App Developer", desc: "Flutter or Android/Kotlin — build & ship.", courses: 8, months: "4 months", icon: Smartphone, gradient: "from-emerald-500 to-lime-500" },
+  { title: "UI/UX Designer", desc: "Research, wireframing, Figma, design systems.", courses: 7, months: "4 months", icon: Palette, gradient: "from-fuchsia-500 to-pink-500" },
+  { title: "Software Engineer", desc: "DSA, OOP, system design, one full stack.", courses: 12, months: "7 months", icon: Boxes, gradient: "from-indigo-500 to-violet-500" },
+  { title: "Data Analyst", desc: "SQL, Excel, Python, Power BI/Tableau.", courses: 8, months: "4 months", icon: LineChart, gradient: "from-pink-500 to-fuchsia-500" },
 ];
 
-const featuredCourses = [
-  { title: "Foundations of Machine Learning", org: "EduNova AI · Nova Labs", cat: "Computer Science", level: "Intermediate", hours: 12, learners: "48.2k", rating: 4.9 },
-  { title: "AP Calculus AB — Complete Path", org: "EduNova AI · Math Faculty", cat: "Mathematics", level: "Advanced", hours: 24, learners: "31.7k", rating: 4.8 },
-  { title: "Modern Web Development", org: "EduNova AI · Engineering", cat: "Computer Science", level: "Intermediate", hours: 30, learners: "84.5k", rating: 4.9 },
-  { title: "Financial Modeling in Excel", org: "EduNova AI · Business", cat: "Business", level: "Intermediate", hours: 9, learners: "22.1k", rating: 4.7 },
-  { title: "Physics: Mechanics & Motion", org: "EduNova AI · Sciences", cat: "Science", level: "Intermediate", hours: 15, learners: "19.3k", rating: 4.8 },
-  { title: "UX Design Fundamentals", org: "EduNova AI · Design Studio", cat: "Design", level: "Beginner", hours: 11, learners: "27.8k", rating: 4.8 },
+type Course = {
+  title: string;
+  desc: string;
+  category: string;
+  difficulty: "Beginner" | "Intermediate" | "Advanced";
+  duration: string;
+  rating: number;
+  learners: string;
+  instructor: string;
+  trending?: boolean;
+  gradient: string;
+  icon: React.ComponentType<{ className?: string }>;
+};
+
+const COURSES: Course[] = [
+  { title: "Generative AI Masterclass", desc: "Master LLMs, diffusion models, and real-world GenAI product building.", category: "Generative AI", difficulty: "Advanced", duration: "24h", rating: 4.9, learners: "48.2k", instructor: "EduNova AI Lab", trending: true, gradient: "from-violet-500 to-fuchsia-500", icon: Sparkles },
+  { title: "AI Agents Development", desc: "Design autonomous agents with tools, memory, and multi-step reasoning.", category: "AI Agents", difficulty: "Advanced", duration: "18h", rating: 4.8, learners: "22.1k", instructor: "Nova Research", trending: true, gradient: "from-fuchsia-500 to-pink-500", icon: Bot },
+  { title: "Prompt Engineering", desc: "Craft reliable prompts, chains, and evaluations for production LLMs.", category: "Prompt Engineering", difficulty: "Intermediate", duration: "10h", rating: 4.8, learners: "61.4k", instructor: "EduNova AI Lab", trending: true, gradient: "from-purple-500 to-violet-500", icon: MessageSquare },
+  { title: "Python for Beginners", desc: "From syntax to projects — the fastest path to fluent Python.", category: "Python", difficulty: "Beginner", duration: "20h", rating: 4.9, learners: "184k", instructor: "Nova Academy", trending: true, gradient: "from-sky-500 to-cyan-500", icon: Code2 },
+  { title: "Java Programming", desc: "OOP, collections, streams, and the JVM you'll actually use at work.", category: "Java", difficulty: "Beginner", duration: "22h", rating: 4.7, learners: "97k", instructor: "Nova Academy", gradient: "from-red-500 to-orange-500", icon: Code2 },
+  { title: "React.js Masterclass", desc: "Hooks, state, routing, and modern patterns for production React apps.", category: "React.js", difficulty: "Intermediate", duration: "16h", rating: 4.9, learners: "142k", instructor: "Nova Academy", trending: true, gradient: "from-cyan-500 to-blue-500", icon: Boxes },
+  { title: "Full Stack MERN Development", desc: "Ship end-to-end apps with MongoDB, Express, React, and Node.", category: "MERN Stack", difficulty: "Intermediate", duration: "40h", rating: 4.8, learners: "76.8k", instructor: "Nova Academy", trending: true, gradient: "from-emerald-500 to-teal-500", icon: Globe },
+  { title: "Data Structures & Algorithms", desc: "Crack coding interviews — patterns, complexity, and 200+ problems.", category: "Data Structures & Algorithms", difficulty: "Intermediate", duration: "35h", rating: 4.9, learners: "212k", instructor: "Nova Placement", trending: true, gradient: "from-blue-500 to-indigo-500", icon: Braces },
+  { title: "AWS Cloud Practitioner", desc: "Core AWS services, architecture principles, and exam-ready practice.", category: "AWS", difficulty: "Beginner", duration: "14h", rating: 4.7, learners: "58.3k", instructor: "Nova Cloud", gradient: "from-cyan-500 to-sky-500", icon: Cloud },
+  { title: "Docker & Kubernetes", desc: "Containerize, orchestrate, and deploy resilient microservices.", category: "Kubernetes", difficulty: "Intermediate", duration: "18h", rating: 4.8, learners: "41.7k", instructor: "Nova Cloud", trending: true, gradient: "from-sky-500 to-blue-500", icon: Container },
+  { title: "Cyber Security Essentials", desc: "Threats, defenses, and hands-on labs to build a security mindset.", category: "Cyber Security", difficulty: "Beginner", duration: "16h", rating: 4.7, learners: "39.2k", instructor: "Nova Security", gradient: "from-red-500 to-rose-500", icon: ShieldCheck },
+  { title: "Ethical Hacking", desc: "Recon, exploitation, and reporting — the offensive-security toolkit.", category: "Ethical Hacking", difficulty: "Advanced", duration: "24h", rating: 4.8, learners: "33.5k", instructor: "Nova Security", trending: true, gradient: "from-orange-500 to-red-500", icon: Bug },
+  { title: "Machine Learning with Python", desc: "Regression, classification, ensembles — with scikit-learn projects.", category: "Machine Learning", difficulty: "Intermediate", duration: "26h", rating: 4.9, learners: "118k", instructor: "EduNova AI Lab", trending: true, gradient: "from-violet-500 to-purple-500", icon: Cpu },
+  { title: "SQL for Data Analysis", desc: "Query, join, and analyze real datasets like a working data analyst.", category: "SQL", difficulty: "Beginner", duration: "12h", rating: 4.8, learners: "89.6k", instructor: "Nova Data", gradient: "from-indigo-500 to-blue-500", icon: Database },
+  { title: "MongoDB Complete Guide", desc: "Schema design, aggregation, indexing, and production best practices.", category: "MongoDB", difficulty: "Intermediate", duration: "14h", rating: 4.7, learners: "34.9k", instructor: "Nova Data", gradient: "from-emerald-500 to-green-500", icon: HardDrive },
+  { title: "Flutter App Development", desc: "Build beautiful cross-platform mobile apps with a single codebase.", category: "Flutter", difficulty: "Intermediate", duration: "20h", rating: 4.8, learners: "52.1k", instructor: "Nova Mobile", trending: true, gradient: "from-teal-500 to-cyan-500", icon: Smartphone },
+  { title: "UI/UX with Figma", desc: "Research, wireframes, prototypes, and shipping polished interfaces.", category: "Figma", difficulty: "Beginner", duration: "12h", rating: 4.9, learners: "67.4k", instructor: "Nova Design", trending: true, gradient: "from-fuchsia-500 to-pink-500", icon: Figma },
+  { title: "System Design Fundamentals", desc: "Scalable architectures, trade-offs, and interview-ready case studies.", category: "System Design", difficulty: "Advanced", duration: "22h", rating: 4.9, learners: "88.3k", instructor: "Nova Engineering", trending: true, gradient: "from-indigo-500 to-violet-500", icon: Boxes },
 ];
 
-const featuredResources = [
-  { type: "PDF Notes", cat: "Physics · Class 12", downloads: "24.1k", rating: 4.9, icon: FileText },
-  { type: "PPT Presentations", cat: "Business Studies", downloads: "9.4k", rating: 4.7, icon: Presentation },
-  { type: "Video Tutorials", cat: "React & TypeScript", downloads: "38.6k", rating: 4.9, icon: Video },
-  { type: "Previous Year Papers", cat: "CBSE Class 10", downloads: "51.3k", rating: 4.8, icon: ScrollText },
-  { type: "Question Banks", cat: "JEE Main · Maths", downloads: "42.7k", rating: 4.9, icon: FileQuestion },
-  { type: "Cheat Sheets", cat: "SQL & Databases", downloads: "17.9k", rating: 4.8, icon: BookMarked },
-  { type: "E-books", cat: "Data Science Primer", downloads: "12.2k", rating: 4.7, icon: BookOpen },
-];
+const LEVELS = ["All", "Beginner", "Intermediate", "Advanced"] as const;
+const DURATIONS = ["All", "0–10h", "10–20h", "20h+"] as const;
+const SORTS = ["Popular", "Top rated", "Newest"] as const;
 
-const aiFeatures = [
-  { icon: Brain, title: "AI Learning Twin", desc: "A private, evolving model of what you know — refined after every lesson and quiz.", slug: "learning-twin" },
-  { icon: Target, title: "Knowledge Gap Mapper", desc: "Traces wrong answers back to their root concept, then prescribes targeted revision.", slug: "knowledge-gap" },
-  { icon: Gauge, title: "AI Exam Simulator", desc: "Realistic mock exams tuned to your syllabus, performance, and target difficulty.", slug: "exam-generator" },
-  { icon: Compass, title: "Personalized Learning Paths", desc: "Adaptive sequencing that respects your goals, pace, and calendar.", slug: "adaptive-recommendations" },
-  { icon: BarChart3, title: "Smart Analytics", desc: "Streaks, mastery, and time-on-task designed to be read at a glance.", slug: "progress-analytics" },
-  { icon: Bot, title: "AI Study Assistant", desc: "A patient tutor that meets you at your level and adapts until it clicks.", slug: "ai-tutor" },
-];
-
-const learningPaths = [
-  { icon: Code2, title: "Full Stack Development", level: "Beginner → Advanced", duration: "6 months", skills: ["React", "Node.js", "PostgreSQL", "System Design"] },
-  { icon: Brain, title: "Artificial Intelligence", level: "Intermediate", duration: "5 months", skills: ["Python", "PyTorch", "LLMs", "Agents"] },
-  { icon: Database, title: "Data Science", level: "Beginner → Intermediate", duration: "4 months", skills: ["Statistics", "Pandas", "ML", "Visualization"] },
-  { icon: Cloud, title: "Cloud Computing", level: "Intermediate", duration: "3 months", skills: ["AWS", "Docker", "Kubernetes", "IaC"] },
-  { icon: ShieldCheck, title: "Cyber Security", level: "Beginner → Advanced", duration: "5 months", skills: ["Networks", "Web Sec", "Cryptography", "Blue Team"] },
-  { icon: Palette, title: "UI/UX Design", level: "Beginner", duration: "3 months", skills: ["Figma", "Wireframing", "Prototyping", "Design Systems"] },
-];
-
-const practice = [
-  { icon: ClipboardList, title: "Practice Quizzes", desc: "Short, adaptive quizzes that reinforce each concept as you learn." },
-  { icon: FileCheck2, title: "Mock Tests", desc: "Full-length, timed simulations of real board and entrance exams." },
-  { icon: ScrollText, title: "Previous Year Questions", desc: "Curated PYQ sets with solutions and difficulty tagging." },
-  { icon: Code2, title: "Coding Challenges", desc: "Language-agnostic problem sets with automated evaluation." },
-];
-
-const communityItems = [
-  { icon: MessageCircle, title: "Trending Discussions", desc: "\"How to approach Class 12 Physics numericals\" · 342 replies" },
-  { icon: Users, title: "Popular Study Groups", desc: "JEE 2027 · Full-Stack Devs · UPSC Aspirants · CS Fundamentals" },
-  { icon: Calendar, title: "Upcoming Events", desc: "AMA with ML engineers · Mock Test Marathon · Career Q&A" },
-  { icon: Trophy, title: "Project Showcase", desc: "Student projects: portfolio sites, ML notebooks, mobile apps" },
-];
-
-const articles = [
-  { category: "AI", title: "How Learning Twin Personalizes Every Lesson", author: "Nova Learning Team", date: "Mar 4, 2026", read: "8 min", slug: "learning-twin" },
-  { category: "Product", title: "Inside the Knowledge Gap Mapper", author: "Nova Learning Team", date: "Feb 18, 2026", read: "6 min", slug: "knowledge-gap" },
-  { category: "Learning", title: "Adaptive Recommendations Explained", author: "Nova Learning Team", date: "Feb 2, 2026", read: "7 min", slug: "adaptive-recommendations" },
-];
-
-const announcements = [
-  { icon: Sparkles, tag: "New Courses", title: "10 new upskilling tracks added this month", date: "This week" },
-  { icon: Zap, tag: "Feature Update", title: "Learning Twin now supports weekly review reports", date: "Mar 2026" },
-  { icon: Calendar, tag: "Event", title: "Live AMA with Nova ML engineers", date: "Mar 22, 2026" },
-  { icon: ShieldCheck, tag: "Maintenance", title: "Scheduled DB upgrade — brief downtime", date: "Mar 30, 2026 · 02:00 UTC" },
-];
-
-const globalCategories = ["All", "Courses", "Resources", "Articles", "AI Features", "Communities"];
-const difficulties = ["Any", "Beginner", "Intermediate", "Advanced"];
-const durations = ["Any", "< 5h", "5–15h", "15h+"];
-const resourceTypes = ["Any", "PDF", "PPT", "Video", "PYQ", "Question Bank", "Cheat Sheet", "E-book"];
-const languages = ["English"];
-
-// ---------------------------------------------------------------------------
-// Component
-// ---------------------------------------------------------------------------
+/* ────────────────────────────────────────────────────────────
+   Page
+   ──────────────────────────────────────────────────────────── */
 
 function ExplorePage() {
-  const [query, setQuery] = useState("");
-  const [filters, setFilters] = useState({
-    category: "All",
-    difficulty: "Any",
-    duration: "Any",
-    type: "Any",
-    language: "English",
-  });
+  const [q, setQ] = useState("");
+  const [level, setLevel] = useState<(typeof LEVELS)[number]>("All");
+  const [duration, setDuration] = useState<(typeof DURATIONS)[number]>("All");
+  const [sort, setSort] = useState<(typeof SORTS)[number]>("Popular");
+  const [activeCat, setActiveCat] = useState<string>("All");
 
-  const allSearchable = useMemo(
-    () => [
-      ...featuredCourses.map((c) => ({ kind: "Courses", label: c.title, sub: c.cat })),
-      ...featuredResources.map((r) => ({ kind: "Resources", label: r.type, sub: r.cat })),
-      ...articles.map((a) => ({ kind: "Articles", label: a.title, sub: a.category })),
-      ...aiFeatures.map((a) => ({ kind: "AI Features", label: a.title, sub: "AI" })),
-      ...communityItems.map((c) => ({ kind: "Communities", label: c.title, sub: "Community" })),
-    ],
-    []
-  );
+  const filtered = useMemo(() => {
+    let list = COURSES.slice();
+    const s = q.trim().toLowerCase();
+    if (s) {
+      list = list.filter(
+        (c) =>
+          c.title.toLowerCase().includes(s) ||
+          c.desc.toLowerCase().includes(s) ||
+          c.category.toLowerCase().includes(s),
+      );
+    }
+    if (level !== "All") list = list.filter((c) => c.difficulty === level);
+    if (duration !== "All") {
+      list = list.filter((c) => {
+        const h = parseInt(c.duration, 10);
+        if (duration === "0–10h") return h <= 10;
+        if (duration === "10–20h") return h > 10 && h <= 20;
+        return h > 20;
+      });
+    }
+    if (activeCat !== "All") list = list.filter((c) => c.category === activeCat);
+    if (sort === "Top rated") list.sort((a, b) => b.rating - a.rating);
+    if (sort === "Newest") list.reverse();
+    if (sort === "Popular")
+      list.sort(
+        (a, b) => parseFloat(b.learners) - parseFloat(a.learners),
+      );
+    return list;
+  }, [q, level, duration, sort, activeCat]);
 
-  const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return [];
-    return allSearchable
-      .filter((r) => filters.category === "All" || r.kind === filters.category)
-      .filter(
-        (r) =>
-          r.label.toLowerCase().includes(q) || r.sub.toLowerCase().includes(q)
-      )
-      .slice(0, 8);
-  }, [query, filters.category, allSearchable]);
+  const trending = COURSES.filter((c) => c.trending);
 
   return (
     <>
-      {/* Hero */}
       <PageHeader
-        eyebrow="Explore"
+        eyebrow="Course Discovery"
         title={
           <>
-            Discover everything <span className="text-gradient">EduNova AI</span> offers
+            Explore <span className="text-gradient">Courses</span>
           </>
         }
-        description="Discover courses, resources, AI tools, learning paths, and more — your central hub for exploring the entire platform."
+        description="Discover thousands of courses and learning paths across every subject, skill level, and career."
       >
-        <div className="w-full max-w-2xl space-y-6">
-          {/* Search */}
+        <div className="mx-auto w-full max-w-2xl">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
             <Input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search courses, resources, AI features, articles…"
-              aria-label="Global search"
-              className="h-12 rounded-full bg-background/80 pl-11 pr-32 backdrop-blur shadow-card"
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="Search courses, skills, technologies, exams, or careers..."
+              className="h-14 rounded-full border-primary/20 bg-background/80 pl-12 pr-32 text-base shadow-lg backdrop-blur focus-visible:ring-primary/40"
+              aria-label="Search courses"
             />
             <Button
               size="sm"
-              className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full"
-              onClick={() => setQuery(query.trim())}
+              className="absolute right-2 top-1/2 h-10 -translate-y-1/2 rounded-full px-5"
+              onClick={() => {
+                const el = document.getElementById("all-courses");
+                el?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
             >
-              Search
+              <Sparkles className="mr-1.5 h-4 w-4" /> AI Search
             </Button>
-
-            {query && results.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="absolute left-0 right-0 top-full z-30 mt-2 rounded-2xl border border-border/60 bg-popover p-2 text-left shadow-elegant backdrop-blur"
-              >
-                {results.map((r, i) => (
-                  <div
-                    key={`${r.kind}-${i}`}
-                    className="flex items-center justify-between gap-3 rounded-lg px-3 py-2 hover:bg-muted/60"
-                  >
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-medium">{r.label}</p>
-                      <p className="truncate text-xs text-muted-foreground">{r.sub}</p>
-                    </div>
-                    <Badge variant="secondary" className="shrink-0 text-[10px]">
-                      {r.kind}
-                    </Badge>
-                  </div>
-                ))}
-              </motion.div>
-            )}
           </div>
-
-          {/* Trending topics */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              <TrendingUp className="h-3.5 w-3.5" /> Trending
-            </span>
-            {trending.map((t) => (
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-muted-foreground">
+            <span className="font-medium">Try:</span>
+            {["Generative AI", "React.js", "DSA", "AWS", "Figma", "Python"].map((t) => (
               <button
                 key={t}
-                onClick={() => setQuery(t)}
-                className="rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur transition hover:-translate-y-0.5 hover:border-primary/40 hover:text-foreground"
+                onClick={() => setQ(t)}
+                className="rounded-full border border-border/60 bg-background/60 px-3 py-1 transition hover:border-primary/40 hover:text-primary"
               >
                 {t}
               </button>
             ))}
           </div>
-
-          {/* Featured paths quick chips */}
-          <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
-            <span className="text-muted-foreground">Featured paths:</span>
-            {learningPaths.slice(0, 4).map((p) => (
-              <span
-                key={p.title}
-                className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-1 text-primary"
-              >
-                <p.icon className="h-3 w-3" /> {p.title}
-              </span>
-            ))}
-          </div>
         </div>
       </PageHeader>
 
-      {/* Quick Explore Categories */}
+      {/* Categories */}
       <Section
-        eyebrow="Quick explore"
-        title={<>Where do you want to <span className="text-gradient">start</span>?</>}
-        description="Jump straight into the corner of EduNova AI that matters to you right now."
+        eyebrow="Browse by Category"
+        title="Featured Course Categories"
+        description="From AI and full-stack development to design, cloud, and career prep — pick your path."
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {quickCategories.map((c, i) => (
-            <motion.div
-              key={c.label}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.35, delay: i * 0.03 }}
-            >
-              <Link
-                to={c.to as never}
-                params={(c as { params?: Record<string, string> }).params as never}
-                className="group flex h-full flex-col rounded-2xl border border-border/60 bg-card p-5 shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant"
-              >
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary transition group-hover:scale-110">
-                  <c.icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 text-sm font-semibold">{c.label}</h3>
-                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
-                  {c.desc}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition group-hover:opacity-100">
-                  Open <ArrowRight className="h-3 w-3" />
-                </span>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Featured Courses */}
-      <Section
-        eyebrow="Featured courses"
-        title={<>Hand-picked <span className="text-gradient">courses</span> for you</>}
-        description="Popular, high-rated courses across every subject and level."
-      >
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredCourses.map((c) => (
-            <div
-              key={c.title}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card transition hover:-translate-y-1 hover:shadow-elegant"
-            >
-              <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-primary/20 via-highlight/20 to-accent/20">
-                <div className="absolute inset-0 bg-grid-fade opacity-40" />
-                <span className="absolute right-3 top-3 rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary backdrop-blur">
-                  {c.level}
-                </span>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition group-hover:opacity-100">
-                  <span className="grid h-14 w-14 place-items-center rounded-full bg-background/90 text-primary shadow-elegant backdrop-blur">
-                    <Play className="h-6 w-6 fill-current" />
-                  </span>
+        <div className="space-y-10">
+          {CATEGORY_GROUPS.map((group) => {
+            const items = CATEGORIES.filter((c) => c.group === group);
+            return (
+              <div key={group}>
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                    {group}
+                  </h3>
+                  <span className="text-xs text-muted-foreground">{items.length} categories</span>
+                </div>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                  {items.map((cat, i) => {
+                    const Icon = cat.icon;
+                    return (
+                      <motion.button
+                        key={cat.name}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.25, delay: i * 0.015 }}
+                        onClick={() => {
+                          setActiveCat(cat.name);
+                          document.getElementById("all-courses")?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="group relative flex flex-col items-start gap-3 overflow-hidden rounded-2xl border border-border/60 bg-card p-4 text-left transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg"
+                      >
+                        <div
+                          className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${cat.tint}`}
+                        >
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="truncate text-sm font-semibold leading-tight">{cat.name}</p>
+                          <p className="mt-0.5 text-xs text-muted-foreground">Explore →</p>
+                        </div>
+                      </motion.button>
+                    );
+                  })}
                 </div>
               </div>
-              <div className="flex flex-1 flex-col p-5">
-                <Badge variant="secondary" className="w-fit">{c.cat}</Badge>
-                <h3 className="mt-3 line-clamp-2 text-base font-semibold">{c.title}</h3>
-                <p className="mt-1 text-xs text-muted-foreground">{c.org}</p>
-                <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{c.hours}h</span>
-                  <span className="flex items-center gap-1"><Users className="h-3.5 w-3.5" />{c.learners}</span>
-                  <span className="flex items-center gap-1 text-accent-foreground"><Star className="h-3.5 w-3.5 fill-current text-accent" />{c.rating}</span>
-                </div>
-                <Button asChild size="sm" className="mt-5">
-                  <Link to="/register">Continue learning</Link>
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Featured Resources */}
-      <Section
-        eyebrow="Resource library"
-        title={<>Study material, <span className="text-gradient">ready when you are</span></>}
-        description="Notes, presentations, videos, and question banks curated by our learning team."
-      >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {featuredResources.map((r) => (
-            <div
-              key={r.type}
-              className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant"
-            >
-              <div className="flex items-center justify-between">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <r.icon className="h-5 w-5" />
-                </span>
-                <span className="inline-flex items-center gap-1 text-xs text-accent-foreground">
-                  <Star className="h-3.5 w-3.5 fill-current text-accent" />
-                  {r.rating}
-                </span>
-              </div>
-              <h3 className="mt-4 text-sm font-semibold">{r.type}</h3>
-              <p className="mt-1 text-xs text-muted-foreground">{r.cat}</p>
-              <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1">
-                  <Download className="h-3.5 w-3.5" /> {r.downloads}
-                </span>
-                <Button asChild size="sm" variant="outline" className="h-8">
-                  <Link to="/resources">Preview</Link>
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* AI Features */}
-      <Section
-        eyebrow="AI features"
-        title={<>Meet <span className="text-gradient">Nova AI</span></>}
-        description="Six AI capabilities that work quietly in the background to make your learning genuinely personal."
-      >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {aiFeatures.map((f) => (
-            <div
-              key={f.title}
-              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant"
-            >
-              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/10 blur-2xl transition group-hover:bg-primary/20" />
-              <span className="relative grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                <f.icon className="h-5 w-5" />
-              </span>
-              <h3 className="relative mt-4 text-base font-semibold">{f.title}</h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">
-                {f.desc}
-              </p>
-              <Button asChild size="sm" variant="outline" className="relative mt-5">
-                <Link to="/features/$slug" params={{ slug: f.slug }}>
-                  Learn more <ArrowRight className="ml-1 h-3.5 w-3.5" />
-                </Link>
-              </Button>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 
       {/* Learning Paths */}
       <Section
-        eyebrow="Learning paths"
-        title={<>Curated <span className="text-gradient">multi-course tracks</span></>}
-        description="Follow a proven roadmap from fundamentals to real-world capability."
+        className="bg-secondary/40"
+        eyebrow="Career Roadmaps"
+        title="Featured Learning Paths"
+        description="Curated, sequenced courses that take you from zero to job-ready in a chosen career."
       >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {learningPaths.map((p) => (
-            <div
-              key={p.title}
-              className="group flex flex-col rounded-2xl border border-border/60 bg-card p-6 shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant"
-            >
-              <div className="flex items-center justify-between">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary transition group-hover:scale-110">
-                  <p.icon className="h-5 w-5" />
-                </span>
-                <Badge variant="secondary" className="text-[10px] uppercase tracking-wider">
-                  {p.level}
-                </Badge>
-              </div>
-              <h3 className="mt-4 text-base font-semibold">{p.title}</h3>
-              <p className="mt-1 inline-flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock className="h-3.5 w-3.5" /> {p.duration}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.skills.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-border/60 bg-background/60 px-2 py-0.5 text-[11px] text-muted-foreground"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-              <Button asChild size="sm" variant="outline" className="mt-5 w-fit">
-                <Link to="/register">Start path</Link>
-              </Button>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Practice & Assessment */}
-      <Section
-        eyebrow="Practice & assessment"
-        title={<>Test what you <span className="text-gradient">actually know</span></>}
-        description="Adaptive practice, timed simulations, and problem sets calibrated to your level."
-      >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {practice.map((p) => (
-            <div
-              key={p.title}
-              className="rounded-2xl border border-border/60 bg-card p-6 shadow-card transition hover:-translate-y-1 hover:border-primary/40"
-            >
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                <p.icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 text-sm font-semibold">{p.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Community Highlights */}
-      <Section
-        eyebrow="Community"
-        title={<>Learn <span className="text-gradient">together</span></>}
-        description="Discussions, study groups, events, and projects from learners like you."
-      >
-        <div className="grid gap-4 sm:grid-cols-2">
-          {communityItems.map((c) => (
-            <div
-              key={c.title}
-              className="flex items-start gap-4 rounded-2xl border border-border/60 bg-card p-5 shadow-card transition hover:-translate-y-1 hover:border-primary/40"
-            >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
-                <c.icon className="h-5 w-5" />
-              </span>
-              <div className="min-w-0">
-                <h3 className="text-sm font-semibold">{c.title}</h3>
-                <p className="mt-1 text-xs text-muted-foreground">{c.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Latest Articles */}
-      <Section
-        eyebrow="Articles"
-        title={<>From the <span className="text-gradient">Nova blog</span></>}
-        description="Product deep-dives and learning science from our team."
-      >
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((a) => (
-            <Link
-              key={a.title}
-              to="/features/$slug"
-              params={{ slug: a.slug }}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant"
-            >
-              <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-primary/25 via-highlight/20 to-accent/20">
-                <div className="absolute inset-0 bg-grid-fade opacity-40" />
-                <Badge className="absolute left-3 top-3 bg-background/90 text-foreground backdrop-blur">
-                  {a.category}
-                </Badge>
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="line-clamp-2 text-base font-semibold group-hover:text-primary">
-                  {a.title}
-                </h3>
-                <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
-                  <span>{a.author}</span>
-                  <span>{a.date}</span>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {PATHS.map((p, i) => {
+            const Icon = p.icon;
+            return (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.03 }}
+                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card p-5 shadow-card transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div
+                  className={`absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br ${p.gradient} opacity-20 blur-2xl transition group-hover:opacity-40`}
+                />
+                <div className={`relative grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br ${p.gradient} text-white shadow-lg`}>
+                  <Icon className="h-5 w-5" />
                 </div>
-                <div className="mt-4 flex items-center justify-between border-t border-border/60 pt-3 text-xs">
-                  <span className="inline-flex items-center gap-1 text-muted-foreground">
-                    <Clock className="h-3.5 w-3.5" /> {a.read}
-                  </span>
-                  <span className="inline-flex items-center gap-1 font-medium text-primary">
-                    Read article <ArrowRight className="h-3 w-3" />
-                  </span>
+                <h3 className="relative mt-4 text-base font-semibold">{p.title}</h3>
+                <p className="relative mt-1 text-sm text-muted-foreground">{p.desc}</p>
+                <div className="relative mt-4 flex items-center justify-between text-xs text-muted-foreground">
+                  <span className="inline-flex items-center gap-1"><RouteIcon className="h-3.5 w-3.5" /> {p.courses} courses</span>
+                  <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {p.months}</span>
                 </div>
-              </div>
-            </Link>
+                <Button variant="ghost" size="sm" className="relative mt-3 w-full justify-between px-2 hover:bg-primary/10 hover:text-primary" asChild>
+                  <Link to="/explore">
+                    Start path <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </motion.div>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* Trending */}
+      <Section
+        eyebrow="Hot This Week"
+        title={<><TrendingUp className="mr-2 inline h-8 w-8 text-primary" /> Trending Courses</>}
+        description="What learners across EduNova AI are picking up right now."
+      >
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {trending.map((c, i) => (
+            <CourseCard key={c.title} c={c} delay={i * 0.03} />
           ))}
         </div>
       </Section>
 
-      {/* Announcements */}
+      {/* All Courses + Filters */}
       <Section
-        eyebrow="Announcements"
-        title={<>What's <span className="text-gradient">new</span></>}
-        description="The latest from the EduNova AI team."
+        id="all-courses"
+        className="bg-secondary/40"
+        eyebrow="Full Catalog"
+        title="All Courses"
+        description="Filter by category, level, and duration to find the perfect course."
       >
-        <div className="grid gap-4 sm:grid-cols-2">
-          {announcements.map((a) => (
-            <div
-              key={a.title}
-              className="flex items-start gap-4 rounded-2xl border border-border/60 bg-card p-5 shadow-card transition hover:-translate-y-1 hover:border-primary/40"
+        <div className="mb-6 flex flex-wrap items-center gap-3 rounded-2xl border border-border/60 bg-card p-4 shadow-sm">
+          <div className="flex items-center gap-2 text-sm font-medium">
+            <Filter className="h-4 w-4 text-primary" /> Filters
+          </div>
+          <Select value={activeCat} onValueChange={setActiveCat}>
+            <SelectTrigger className="h-9 w-[200px]">
+              <SelectValue placeholder="Category" />
+            </SelectTrigger>
+            <SelectContent className="max-h-72">
+              <SelectItem value="All">All categories</SelectItem>
+              {CATEGORIES.map((c) => (
+                <SelectItem key={c.name} value={c.name}>{c.name}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Select value={level} onValueChange={(v) => setLevel(v as typeof level)}>
+            <SelectTrigger className="h-9 w-[150px]"><SelectValue placeholder="Level" /></SelectTrigger>
+            <SelectContent>
+              {LEVELS.map((l) => <SelectItem key={l} value={l}>{l}</SelectItem>)}
+            </SelectContent>
+          </Select>
+          <Select value={duration} onValueChange={(v) => setDuration(v as typeof duration)}>
+            <SelectTrigger className="h-9 w-[150px]"><SelectValue placeholder="Duration" /></SelectTrigger>
+            <SelectContent>
+              {DURATIONS.map((d) => <SelectItem key={d} value={d}>{d}</SelectItem>)}
+            </SelectContent>
+          </Select>
+          <Select value={sort} onValueChange={(v) => setSort(v as typeof sort)}>
+            <SelectTrigger className="h-9 w-[150px]"><SelectValue placeholder="Sort" /></SelectTrigger>
+            <SelectContent>
+              {SORTS.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+            </SelectContent>
+          </Select>
+          <div className="ml-auto text-xs text-muted-foreground">
+            Showing <span className="font-semibold text-foreground">{filtered.length}</span> of {COURSES.length} courses
+          </div>
+          {(activeCat !== "All" || level !== "All" || duration !== "All" || q) && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => { setActiveCat("All"); setLevel("All"); setDuration("All"); setQ(""); }}
             >
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
-                <a.icon className="h-5 w-5" />
-              </span>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <Badge variant="secondary" className="text-[10px] uppercase tracking-wider">
-                    {a.tag}
-                  </Badge>
-                  <span className="text-[11px] text-muted-foreground">{a.date}</span>
-                </div>
-                <h3 className="mt-2 text-sm font-semibold">{a.title}</h3>
-              </div>
-            </div>
-          ))}
+              Clear
+            </Button>
+          )}
         </div>
-      </Section>
 
-      {/* Global Search / Filters */}
-      <Section
-        eyebrow="Global search"
-        title={<>Search <span className="text-gradient">everything</span></>}
-        description="Refine across courses, resources, articles, AI features, and communities."
-      >
-        <div className="rounded-3xl border border-border/60 bg-card/80 p-6 shadow-card backdrop-blur">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Type to search across the platform…"
-              aria-label="Global platform search"
-              className="h-12 rounded-full pl-11"
-            />
+        {filtered.length ? (
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {filtered.map((c, i) => (
+              <CourseCard key={c.title} c={c} delay={i * 0.02} />
+            ))}
           </div>
-
-          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            <FilterSelect
-              label="Category"
-              value={filters.category}
-              onChange={(v) => setFilters((f) => ({ ...f, category: v }))}
-              options={globalCategories}
-            />
-            <FilterSelect
-              label="Difficulty"
-              value={filters.difficulty}
-              onChange={(v) => setFilters((f) => ({ ...f, difficulty: v }))}
-              options={difficulties}
-            />
-            <FilterSelect
-              label="Duration"
-              value={filters.duration}
-              onChange={(v) => setFilters((f) => ({ ...f, duration: v }))}
-              options={durations}
-            />
-            <FilterSelect
-              label="Resource type"
-              value={filters.type}
-              onChange={(v) => setFilters((f) => ({ ...f, type: v }))}
-              options={resourceTypes}
-            />
-            <FilterSelect
-              label="Language"
-              value={filters.language}
-              onChange={(v) => setFilters((f) => ({ ...f, language: v }))}
-              options={languages}
-            />
+        ) : (
+          <div className="rounded-2xl border border-dashed border-border p-12 text-center">
+            <Compass className="mx-auto h-10 w-10 text-muted-foreground" />
+            <p className="mt-3 font-semibold">No courses match your filters</p>
+            <p className="text-sm text-muted-foreground">Try clearing filters or a different search.</p>
           </div>
-
-          <div className="mt-6">
-            {query.trim() === "" ? (
-              <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                <Filter className="h-4 w-4" /> Start typing to see live results across the platform.
-              </p>
-            ) : results.length === 0 ? (
-              <p className="text-sm text-muted-foreground">
-                No matches for <span className="font-medium text-foreground">"{query}"</span>. Try
-                a different keyword or broaden your filters.
-              </p>
-            ) : (
-              <ul className="divide-y divide-border/60 overflow-hidden rounded-xl border border-border/60">
-                {results.map((r, i) => (
-                  <li
-                    key={`gs-${i}`}
-                    className="flex items-center justify-between gap-3 bg-background/40 px-4 py-3"
-                  >
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-medium">{r.label}</p>
-                      <p className="truncate text-xs text-muted-foreground">{r.sub}</p>
-                    </div>
-                    <Badge variant="secondary" className="shrink-0 text-[10px]">
-                      {r.kind}
-                    </Badge>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
+        )}
       </Section>
 
       {/* CTA */}
-      <section className="relative py-20 sm:py-28">
-        <div className="mx-auto w-[92%] max-w-6xl px-2 sm:w-[85%] sm:px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
-            className="relative overflow-hidden rounded-[32px] px-6 py-14 text-center sm:px-12 sm:py-20"
-            style={{
-              background:
-                "linear-gradient(135deg, oklch(0.18 0.03 240) 0%, oklch(0.22 0.05 260) 50%, oklch(0.16 0.04 240) 100%)",
-            }}
-          >
-            <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_20%_10%,rgba(255,255,255,0.18),transparent_40%),radial-gradient(circle_at_80%_90%,rgba(120,119,198,0.35),transparent_45%)]" />
-            <div className="relative mx-auto max-w-2xl space-y-6 text-white">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs backdrop-blur">
-                <Layers className="h-3.5 w-3.5" /> One platform · Everything you need
-              </span>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                Ready to make learning genuinely yours?
-              </h2>
-              <p className="text-white/80">
-                Start a course, dive into resources, or join a community — everything on
-                EduNova AI is designed to fit around you.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-                <Button asChild size="lg" className="rounded-full">
-                  <Link to="/register">Start learning</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full border-white/30 bg-white/10 text-white hover:bg-white/20">
-                  <Link to="/resources">Explore resources</Link>
-                </Button>
-                <Button asChild size="lg" variant="ghost" className="rounded-full text-white hover:bg-white/10">
-                  <Link to="/community">Join the community</Link>
-                </Button>
-              </div>
+      <Section>
+        <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-fuchsia-500/5 to-cyan-500/10 p-10 text-center shadow-xl sm:p-14">
+          <div className="absolute inset-0 bg-grid-fade opacity-40" aria-hidden />
+          <div className="relative mx-auto max-w-2xl">
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
+              <Zap className="h-7 w-7" />
             </div>
-          </motion.div>
+            <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
+              Not sure where to start?
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Let EduNova AI build a personalized learning path from your goals, current skills, and available study hours.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Button size="lg" asChild>
+                <Link to="/register">Get my learning path <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/features/smart-learning-paths">How it works</Link>
+              </Button>
+            </div>
+          </div>
         </div>
-      </section>
+      </Section>
     </>
   );
 }
 
-function FilterSelect({
-  label,
-  value,
-  onChange,
-  options,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  options: string[];
-}) {
+/* ────────────────────────────────────────────────────────────
+   Course Card
+   ──────────────────────────────────────────────────────────── */
+
+function CourseCard({ c, delay = 0 }: { c: Course; delay?: number }) {
+  const Icon = c.icon;
+  const diffTone =
+    c.difficulty === "Beginner"
+      ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
+      : c.difficulty === "Intermediate"
+        ? "bg-amber-500/15 text-amber-600 dark:text-amber-400"
+        : "bg-rose-500/15 text-rose-600 dark:text-rose-400";
+
   return (
-    <div className="space-y-1.5">
-      <label className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-        {label}
-      </label>
-      <Select value={value} onValueChange={onChange}>
-        <SelectTrigger className="h-10 rounded-lg">
-          <SelectValue />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((o) => (
-            <SelectItem key={o} value={o}>
-              {o}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    </div>
+    <motion.article
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3, delay }}
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+    >
+      {/* Thumbnail */}
+      <div className={`relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br ${c.gradient}`}>
+        <div className="absolute inset-0 bg-grid-fade opacity-30" aria-hidden />
+        <div className="absolute inset-0 grid place-items-center">
+          <Icon className="h-14 w-14 text-white/90 drop-shadow-lg transition group-hover:scale-110" />
+        </div>
+        {c.trending && (
+          <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-background/95 px-2.5 py-1 text-[11px] font-semibold text-primary shadow">
+            <TrendingUp className="h-3 w-3" /> Trending
+          </span>
+        )}
+        <span className="absolute right-3 top-3 rounded-full bg-background/95 px-2.5 py-1 text-[11px] font-medium">
+          {c.category}
+        </span>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-center gap-2 text-xs">
+          <Badge className={diffTone} variant="secondary">{c.difficulty}</Badge>
+          <span className="inline-flex items-center gap-1 text-muted-foreground">
+            <Clock className="h-3.5 w-3.5" /> {c.duration}
+          </span>
+          <span className="ml-auto inline-flex items-center gap-1 font-medium">
+            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" /> {c.rating}
+          </span>
+        </div>
+
+        <h3 className="mt-3 line-clamp-2 text-base font-semibold leading-snug">{c.title}</h3>
+        <p className="mt-1.5 line-clamp-2 text-sm text-muted-foreground">{c.desc}</p>
+
+        <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
+          <div className="grid h-6 w-6 place-items-center rounded-full bg-primary/10 text-primary">
+            <Building2 className="h-3.5 w-3.5" />
+          </div>
+          <span className="truncate">{c.instructor}</span>
+          <span className="ml-auto inline-flex items-center gap-1">
+            <Users className="h-3.5 w-3.5" /> {c.learners}
+          </span>
+        </div>
+
+        <Button className="mt-5 w-full" asChild>
+          <Link to="/register">
+            <Play className="mr-1.5 h-4 w-4" /> Explore Course
+          </Link>
+        </Button>
+      </div>
+    </motion.article>
   );
 }
