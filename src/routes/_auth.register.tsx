@@ -180,7 +180,7 @@ function RegisterPage() {
           <RadioGroup
             value={form.watch("role")}
             onValueChange={(v) => form.setValue("role", v as RegisterInput["role"])}
-            className="mt-2 grid grid-cols-3 gap-2"
+            className="mt-2 grid grid-cols-2 gap-2"
           >
             {SELF_SIGNUP_ROLES.map((r) => (
               <label
