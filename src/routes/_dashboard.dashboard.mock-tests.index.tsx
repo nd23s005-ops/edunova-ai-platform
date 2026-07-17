@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { Clock, Layers, ArrowRight, Trophy } from "lucide-react";
+import { Clock, Layers, ArrowRight, Trophy, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
+import { MOCK_TEST_CATEGORIES } from "@/lib/ai/mock-tests.catalog";
 
 export const Route = createFileRoute("/_dashboard/dashboard/mock-tests/")({
   component: MockTestsList,
@@ -58,6 +59,50 @@ function MockTestsList() {
         title="Mock tests"
         description="Practice under timed conditions across skills and exam categories."
       />
+
+      {/* AI Mock Test Center entry */}
+      <Link
+        to="/dashboard/mock-tests/ai"
+        className="group relative mb-8 flex flex-col gap-4 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-primary/5 to-background p-6 shadow-card transition hover:border-primary/60 hover:shadow-elegant md:flex-row md:items-center md:justify-between"
+      >
+        <div className="flex items-start gap-4">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/15 text-primary">
+            <Sparkles className="h-6 w-6" />
+          </span>
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-primary">
+              New · AI-powered
+            </p>
+            <h2 className="mt-0.5 text-xl font-bold group-hover:text-primary">
+              📝 AI Mock Test Center
+            </h2>
+            <p className="mt-1 max-w-xl text-sm text-muted-foreground">
+              Aptitude, reasoning, GK, programming, AI, school & placement prep — 30 fresh MCQs
+              every attempt, with personalised AI feedback and topic-wise insights.
+            </p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {MOCK_TEST_CATEGORIES.slice(0, 6).map((c) => (
+                <span
+                  key={c.id}
+                  className="rounded-full border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] text-muted-foreground backdrop-blur"
+                >
+                  {c.emoji} {c.name}
+                </span>
+              ))}
+              <span className="rounded-full px-2 py-0.5 text-[10px] text-muted-foreground">
+                +{Math.max(0, MOCK_TEST_CATEGORIES.length - 6)} more
+              </span>
+            </div>
+          </div>
+        </div>
+        <span className="inline-flex items-center gap-1 self-start rounded-full border border-primary/40 bg-background/70 px-3 py-1.5 text-sm font-medium text-primary backdrop-blur md:self-auto">
+          Open Center <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+        </span>
+      </Link>
+
+      <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+        Curated tests
+      </h2>
 
       {tests.length === 0 ? (
         <p className="rounded-xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
