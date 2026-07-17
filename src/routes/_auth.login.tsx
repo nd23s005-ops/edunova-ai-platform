@@ -42,6 +42,23 @@ function LoginPage() {
   const router = useRouter();
   const { redirect: redirectTo, role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
+  const [phone, setPhone] = useState<PhoneInputValue>(() => createEmptyPhoneValue());
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [sendingOtp, setSendingOtp] = useState(false);
+
+  const handleSendOtp = async () => {
+    if (!phone.valid || !phone.e164) {
+      setPhoneError("Enter a valid phone number for the selected country.");
+      return;
+    }
+    setPhoneError(null);
+    setSendingOtp(true);
+    // OTP delivery backend (Twilio Verify) not yet wired.
+    // The number is already normalized to E.164 for downstream use: phone.e164
+    await new Promise((r) => setTimeout(r, 400));
+    setSendingOtp(false);
+    toast.info("SMS OTP isn't connected yet — number captured as " + phone.e164);
+  };
 
 
   const form = useForm<LoginInput>({
