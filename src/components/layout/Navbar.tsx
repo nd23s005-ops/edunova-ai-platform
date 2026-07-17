@@ -8,12 +8,10 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
-  { label: "Courses", to: "/courses" },
+  { label: "Explore", to: "/explore" },
   { label: "Resources", to: "/resources" },
-  { label: "AI Tutor", to: "/ai-tutor" },
-  { label: "Pricing", to: "/pricing" },
+  { label: "Community", to: "/community" },
   { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
 ] as const;
 
 export function Navbar() {
@@ -45,7 +43,7 @@ export function Navbar() {
             <Link to="/login">Login</Link>
           </Button>
           <Button asChild size="sm" className="shadow-elegant">
-            <Link to="/register">Get Started</Link>
+            <Link to="/register">Get started</Link>
           </Button>
         </div>
 
@@ -87,7 +85,7 @@ export function Navbar() {
               <Link to="/login" onClick={() => setOpen(false)}>Login</Link>
             </Button>
             <Button asChild>
-              <Link to="/register" onClick={() => setOpen(false)}>Get Started</Link>
+              <Link to="/register" onClick={() => setOpen(false)}>Get started</Link>
             </Button>
           </div>
         </nav>
