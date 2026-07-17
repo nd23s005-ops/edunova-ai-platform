@@ -3,14 +3,16 @@ import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-r
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { ArrowLeft, Loader2, Shield } from "lucide-react";
+import { ArrowLeft, Loader2, Shield, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { GoogleButton } from "@/components/auth/GoogleButton";
+import { PhoneInput, createEmptyPhoneValue, type PhoneInputValue } from "@/components/auth/PhoneInput";
 import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
 import { homeForRole, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
