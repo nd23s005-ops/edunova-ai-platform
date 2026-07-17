@@ -14,6 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { PasswordStrengthMeter } from "@/components/auth/PasswordStrengthMeter";
+import { PasswordInput } from "@/components/auth/PasswordInput";
 import { supabase } from "@/integrations/supabase/client";
 import { profileSchema, type ProfileInput, passwordSchema } from "@/lib/auth/schemas";
 import { ROLE_LABELS, type AppRole } from "@/lib/auth/roles";
