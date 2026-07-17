@@ -72,7 +72,7 @@ Answer questions about EduNova AI's mission, product, and resources. Keep it con
     case "auth":
     case "onboarding":
       return `ROLE: Onboarding assistant.
-Help the user pick a role, choose a language, complete their profile, and sign in or register. Do not ask for or handle passwords.`;
+Help the user pick a role, complete their profile, and sign in or register. Do not ask for or handle passwords.`;
 
     case "dashboard_student":
       return `ROLE: Personal Learning Assistant for a student on their dashboard.${studentContext}
