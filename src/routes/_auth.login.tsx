@@ -38,8 +38,9 @@ export const Route = createFileRoute("/_auth/login")({
 function LoginPage() {
   const navigate = useNavigate();
   const router = useRouter();
-  const { redirect: redirectTo } = Route.useSearch();
+  const { redirect: redirectTo, role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
+
 
   const form = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
