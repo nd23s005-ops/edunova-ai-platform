@@ -23,14 +23,45 @@ export const loginSchema = z.object({
 });
 export type LoginInput = z.infer<typeof loginSchema>;
 
+// Optional phone: plain text, digits/spaces/+/-/parentheses only.
+const optionalPhone = z
+  .string()
+  .trim()
+  .max(30, { message: "Phone number is too long" })
+  .refine((v) => v === "" || /^[+\d][\d\s\-()]{5,}$/.test(v), {
+    message: "Enter a valid phone number",
+  })
+  .optional()
+  .or(z.literal(""));
+
+// DOB: ISO yyyy-mm-dd, 5–120 years old.
+const dobSchema = z
+  .string()
+  .min(1, { message: "Date of birth is required" })
+  .refine((v) => /^\d{4}-\d{2}-\d{2}$/.test(v), { message: "Enter a valid date" })
+  .refine(
+    (v) => {
+      const d = new Date(v);
+      if (Number.isNaN(d.getTime())) return false;
+      const now = new Date();
+      const age = now.getFullYear() - d.getFullYear() - (now < new Date(now.getFullYear(), d.getMonth(), d.getDate()) ? 1 : 0);
+      return age >= 5 && age <= 120;
+    },
+    { message: "Date of birth must be between 5 and 120 years ago" },
+  );
+
 export const registerSchema = z
   .object({
     fullName: z.string().trim().min(2, { message: "Enter your full name" }).max(100),
     email: emailSchema,
+    phone: optionalPhone,
+    dob: dobSchema,
+    country: z.string().trim().min(2, { message: "Select your country" }).max(60),
     password: passwordSchema,
     confirmPassword: z.string().min(1, { message: "Please confirm your password" }),
     role: z.enum(SELF_SIGNUP_ROLES as unknown as [string, ...string[]]),
-    acceptTerms: z.literal(true, { message: "You must accept the terms to continue" }),
+    acceptTerms: z.literal(true, { message: "You must accept the Terms & Conditions" }),
+    acceptPrivacy: z.literal(true, { message: "You must accept the Privacy Policy" }),
   })
   .refine((v) => v.password === v.confirmPassword, {
     path: ["confirmPassword"],
