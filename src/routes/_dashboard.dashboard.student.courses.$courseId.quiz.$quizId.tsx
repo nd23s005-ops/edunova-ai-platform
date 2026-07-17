@@ -161,7 +161,7 @@ function QuizPage() {
   useEffect(() => {
     if (!attemptId || submitted) return;
     const t = setTimeout(async () => {
-      await supabase.from("quiz_attempts").update({ answers }).eq("id", attemptId);
+      await supabase.from("quiz_attempts").update({ answers: answers as never }).eq("id", attemptId);
     }, 600);
     return () => clearTimeout(t);
   }, [answers, attemptId, submitted]);
@@ -182,7 +182,7 @@ function QuizPage() {
       const { error } = await supabase
         .from("quiz_attempts")
         .update({
-          answers,
+          answers: answers as never,
           score: percent,
           max_score: 100,
           time_taken_seconds: elapsed,
