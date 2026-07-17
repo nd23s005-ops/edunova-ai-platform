@@ -121,6 +121,7 @@ function UpskillingHub() {
   const filtered = useMemo(() => {
     const s = search.trim().toLowerCase();
     return courses.filter((c) => {
+      if (!matchesFeatured(c)) return false;
       if (role && !c.audience.includes(role)) return false;
       if (category !== "all" && c.category !== category) return false;
       if (difficulty !== "all" && c.difficulty !== difficulty) return false;
@@ -133,14 +134,23 @@ function UpskillingHub() {
     });
   }, [courses, role, category, difficulty, duration, search]);
 
-  const featured = filtered.filter((c) => c.is_featured).slice(0, 3);
-  const recent = [...filtered].sort((a, b) => b.created_at.localeCompare(a.created_at)).slice(0, 4);
+  const skillTiles = useMemo(() => {
+    return FEATURED_SKILLS.map((skill) => {
+      const needle = skill.toLowerCase();
+      const token = needle.split(/[^a-z0-9+.#]+/).filter((t) => t.length > 2)[0];
+      const match = filtered.find((c) => {
+        const hay = `${c.title} ${c.category}`.toLowerCase();
+        return hay.includes(needle) || (token ? hay.includes(token) : false);
+      });
+      return { skill, course: match ?? null };
+    });
+  }, [filtered]);
 
   return (
     <>
       <DashboardHeader
-        title="Upskilling Hub"
-        description="Career-ready courses across programming, AI, design, communication and more."
+        title="Skill Up"
+        description="Career-oriented, high-demand skills for higher education, internships and placements."
         actions={
           <Link to="/dashboard/mock-tests">
             <Button variant="outline" size="sm" className="gap-2">
@@ -157,9 +167,9 @@ function UpskillingHub() {
             <Input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search courses, categories, skills…"
+              placeholder="Search skills…"
               className="pl-9"
-              aria-label="Search upskilling courses"
+              aria-label="Search skill up courses"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -180,52 +190,44 @@ function UpskillingHub() {
       </div>
 
       {isLoading ? (
-        <p className="text-sm text-muted-foreground">Loading courses…</p>
+        <p className="text-sm text-muted-foreground">Loading skills…</p>
       ) : (
-        <>
-          {featured.length > 0 && (
-            <section className="mb-8">
-              <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
-                <Sparkles className="h-4 w-4 text-primary" /> Featured for you
-              </h2>
-              <div className="grid gap-4 md:grid-cols-3">
-                {featured.map((c) => (
-                  <CourseCard key={c.id} course={c} enrolled={enrolledIds.has(c.id)} featured />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {recent.length > 0 && (
-            <section className="mb-8">
-              <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
-                <Star className="h-4 w-4 text-primary" /> Recently added
-              </h2>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                {recent.map((c) => (
-                  <CourseCard key={c.id} course={c} enrolled={enrolledIds.has(c.id)} compact />
-                ))}
-              </div>
-            </section>
-          )}
-
-          <section>
-            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
-              <BookOpen className="h-4 w-4 text-primary" /> All courses ({filtered.length})
-            </h2>
-            {filtered.length === 0 ? (
-              <p className="rounded-xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
-                No courses match your filters.
-              </p>
-            ) : (
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {filtered.map((c) => (
-                  <CourseCard key={c.id} course={c} enrolled={enrolledIds.has(c.id)} />
-                ))}
-              </div>
+        <section>
+          <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+            <Sparkles className="h-4 w-4 text-primary" /> Featured career skills
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {skillTiles.map(({ skill, course }) =>
+              course ? (
+                <CourseCard
+                  key={skill}
+                  course={course}
+                  enrolled={enrolledIds.has(course.id)}
+                  featured
+                  displayTitle={skill}
+                />
+              ) : (
+                <div
+                  key={skill}
+                  className="flex flex-col rounded-2xl border border-dashed border-border/60 bg-muted/20 p-5"
+                >
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                      Skill
+                    </span>
+                  </div>
+                  <h3 className="text-base font-semibold leading-snug">{skill}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">Coming soon.</p>
+                  <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
+                    <span className="inline-flex items-center gap-1">
+                      <BookOpen className="h-3.5 w-3.5" /> Career-ready
+                    </span>
+                  </div>
+                </div>
+              ),
             )}
-          </section>
-        </>
+          </div>
+        </section>
       )}
     </>
   );
@@ -262,11 +264,13 @@ function CourseCard({
   enrolled,
   featured,
   compact,
+  displayTitle,
 }: {
   course: UpskillCourse;
   enrolled: boolean;
   featured?: boolean;
   compact?: boolean;
+  displayTitle?: string;
 }) {
   return (
     <Link
@@ -285,7 +289,9 @@ function CourseCard({
           {course.difficulty}
         </span>
       </div>
-      <h3 className="text-base font-semibold leading-snug group-hover:text-primary">{course.title}</h3>
+      <h3 className="text-base font-semibold leading-snug group-hover:text-primary">
+        {displayTitle ?? course.title}
+      </h3>
       {!compact && course.description && (
         <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{course.description}</p>
       )}
