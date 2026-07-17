@@ -53,6 +53,7 @@ import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
 import { Route as MarketingResourcesReadAiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadAiQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ai-quick-revision-notes'
 import { Route as MarketingResourcesReadAiPdfNotesRouteImport } from './routes/_marketing.resources.read.ai-pdf-notes'
 import { Route as MarketingResourcesReadAiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ai-complete-tutorial'
 import { Route as MarketingResourcesReadAiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ai-beginner-guide'
@@ -301,6 +302,12 @@ const MarketingResourcesReadAiStepByStepLearningGuideRoute =
     path: '/read/ai-step-by-step-learning-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAiQuickRevisionNotesRoute =
+  MarketingResourcesReadAiQuickRevisionNotesRouteImport.update({
+    id: '/read/ai-quick-revision-notes',
+    path: '/read/ai-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiPdfNotesRoute =
   MarketingResourcesReadAiPdfNotesRouteImport.update({
     id: '/read/ai-pdf-notes',
@@ -448,6 +455,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
+  '/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
@@ -506,6 +514,7 @@ export interface FileRoutesByTo {
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
+  '/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
@@ -569,6 +578,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/_marketing/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/_marketing/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
+  '/_marketing/resources/read/ai-quick-revision-notes': typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   '/_marketing/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
@@ -630,6 +640,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-beginner-guide'
     | '/resources/read/ai-complete-tutorial'
     | '/resources/read/ai-pdf-notes'
+    | '/resources/read/ai-quick-revision-notes'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
@@ -688,6 +699,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-beginner-guide'
     | '/resources/read/ai-complete-tutorial'
     | '/resources/read/ai-pdf-notes'
+    | '/resources/read/ai-quick-revision-notes'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
@@ -750,6 +762,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-beginner-guide'
     | '/_marketing/resources/read/ai-complete-tutorial'
     | '/_marketing/resources/read/ai-pdf-notes'
+    | '/_marketing/resources/read/ai-quick-revision-notes'
     | '/_marketing/resources/read/ai-step-by-step-learning-guide'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
@@ -1086,6 +1099,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ai-quick-revision-notes': {
+      id: '/_marketing/resources/read/ai-quick-revision-notes'
+      path: '/read/ai-quick-revision-notes'
+      fullPath: '/resources/read/ai-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAiQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-pdf-notes': {
       id: '/_marketing/resources/read/ai-pdf-notes'
       path: '/read/ai-pdf-notes'
@@ -1337,6 +1357,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiBeginnerGuideRoute: typeof MarketingResourcesReadAiBeginnerGuideRoute
   MarketingResourcesReadAiCompleteTutorialRoute: typeof MarketingResourcesReadAiCompleteTutorialRoute
   MarketingResourcesReadAiPdfNotesRoute: typeof MarketingResourcesReadAiPdfNotesRoute
+  MarketingResourcesReadAiQuickRevisionNotesRoute: typeof MarketingResourcesReadAiQuickRevisionNotesRoute
   MarketingResourcesReadAiStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
 }
 
@@ -1348,6 +1369,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesReadAiCompleteTutorialRoute:
     MarketingResourcesReadAiCompleteTutorialRoute,
   MarketingResourcesReadAiPdfNotesRoute: MarketingResourcesReadAiPdfNotesRoute,
+  MarketingResourcesReadAiQuickRevisionNotesRoute:
+    MarketingResourcesReadAiQuickRevisionNotesRoute,
   MarketingResourcesReadAiStepByStepLearningGuideRoute:
     MarketingResourcesReadAiStepByStepLearningGuideRoute,
 }
