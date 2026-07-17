@@ -157,8 +157,29 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <Outlet />
+        <ClientOnlyFloatingChat />
         <Toaster />
       </ThemeProvider>
     </QueryClientProvider>
   );
+}
+
+function ClientOnlyFloatingChat() {
+  const [mounted, setMounted] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+    (async () => {
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { data } = await supabase.auth.getUser();
+      setSignedIn(!!data.user);
+      const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+        setSignedIn(!!session?.user);
+      });
+      return () => sub.subscription.unsubscribe();
+    })();
+  }, []);
+  if (!mounted || !signedIn) return null;
+  const LazyFloatingChat = FloatingChatLazy;
+  return <LazyFloatingChat />;
 }
