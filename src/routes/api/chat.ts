@@ -45,7 +45,7 @@ function surfaceInstructions(ctx: IncomingContext): string {
 
   const studentContext =
     role === "student" && student
-      ? `\nThe student's saved profile:\n- Class: ${student.currentClass}\n- Board: ${boardLabel}\n- Preferred language: ${student.language}\n- School: ${student.schoolName ?? "not provided"}\nAlways tailor explanations, examples, difficulty, and vocabulary to this class and board. Never ask the student to repeat these details.`
+      ? `\nThe student's saved profile:\n- Class: ${student.currentClass}\n- Board: ${boardLabel}\n- School: ${student.schoolName ?? "not provided"}\nAlways tailor explanations, examples, difficulty, and vocabulary to this class and board. Never ask the student to repeat these details.`
       : "";
 
   switch (surface) {
