@@ -767,10 +767,6 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      complete_auth_role_selection: {
-        Args: { requested_role: Database["public"]["Enums"]["app_role"] }
-        Returns: Database["public"]["Enums"]["app_role"]
-      }
       get_my_role: {
         Args: never
         Returns: Database["public"]["Enums"]["app_role"]
