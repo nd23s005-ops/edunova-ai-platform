@@ -273,9 +273,9 @@ function OnboardingPage() {
               </motion.section>
             )}
 
-            {step === 3 && role === "admin" && (
+            {step === 2 && role === "admin" && (
               <motion.section
-                key="step3-admin"
+                key="step2-admin"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
@@ -285,9 +285,9 @@ function OnboardingPage() {
               </motion.section>
             )}
 
-            {step === 4 && role && (
+            {step === 3 && role && (
               <motion.section
-                key="step4"
+                key="step3"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
