@@ -271,6 +271,83 @@ export type Database = {
         }
         Relationships: []
       }
+      daily_quiz_attempts: {
+        Row: {
+          answers: Json
+          category_scores: Json
+          id: string
+          quiz_id: string
+          score: number
+          strengths: string[]
+          submitted_at: string
+          time_spent_seconds: number
+          total: number
+          user_id: string
+          weaknesses: string[]
+        }
+        Insert: {
+          answers?: Json
+          category_scores?: Json
+          id?: string
+          quiz_id: string
+          score?: number
+          strengths?: string[]
+          submitted_at?: string
+          time_spent_seconds?: number
+          total?: number
+          user_id: string
+          weaknesses?: string[]
+        }
+        Update: {
+          answers?: Json
+          category_scores?: Json
+          id?: string
+          quiz_id?: string
+          score?: number
+          strengths?: string[]
+          submitted_at?: string
+          time_spent_seconds?: number
+          total?: number
+          user_id?: string
+          weaknesses?: string[]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "daily_quiz_attempts_quiz_id_fkey"
+            columns: ["quiz_id"]
+            isOneToOne: false
+            referencedRelation: "daily_quizzes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      daily_quizzes: {
+        Row: {
+          created_at: string
+          difficulty: string
+          id: string
+          questions: Json
+          quiz_date: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          difficulty?: string
+          id?: string
+          questions: Json
+          quiz_date?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          difficulty?: string
+          id?: string
+          questions?: Json
+          quiz_date?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       lesson_progress: {
         Row: {
           completed_at: string

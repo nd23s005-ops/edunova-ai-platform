@@ -25,6 +25,7 @@ import {
 } from "@/components/dashboard/DashboardWidgets";
 import { RoleGate } from "@/components/auth/RoleGate";
 import { ProgressBar } from "@/components/courses/CourseUI";
+import { AIDailyQuizWidget } from "@/components/dashboard/AIDailyQuizWidget";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_dashboard/dashboard/student")({
@@ -262,7 +263,10 @@ function StudentDashboard() {
         </section>
       )}
 
+      <AIDailyQuizWidget />
+
       <section className="mb-8">
+
         <SectionHeader
           title="My courses"
           action={enrolled.length > 0 ? { to: "/dashboard/student/my-courses", label: "View all" } : undefined}
