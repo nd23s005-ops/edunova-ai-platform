@@ -62,6 +62,7 @@ import { Route as MarketingResourcesReadAiPracticeQuestionsRouteImport } from '.
 import { Route as MarketingResourcesReadAiPdfNotesRouteImport } from './routes/_marketing.resources.read.ai-pdf-notes'
 import { Route as MarketingResourcesReadAiInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ai-interview-questions'
 import { Route as MarketingResourcesReadAiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ai-complete-tutorial'
+import { Route as MarketingResourcesReadAiCommonMistakesRouteImport } from './routes/_marketing.resources.read.ai-common-mistakes'
 import { Route as MarketingResourcesReadAiCheatSheetRouteImport } from './routes/_marketing.resources.read.ai-cheat-sheet'
 import { Route as MarketingResourcesReadAiBestPracticesRouteImport } from './routes/_marketing.resources.read.ai-best-practices'
 import { Route as MarketingResourcesReadAiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ai-beginner-guide'
@@ -365,6 +366,12 @@ const MarketingResourcesReadAiCompleteTutorialRoute =
     path: '/read/ai-complete-tutorial',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAiCommonMistakesRoute =
+  MarketingResourcesReadAiCommonMistakesRouteImport.update({
+    id: '/read/ai-common-mistakes',
+    path: '/read/ai-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiCheatSheetRoute =
   MarketingResourcesReadAiCheatSheetRouteImport.update({
     id: '/read/ai-cheat-sheet',
@@ -519,6 +526,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/resources/read/ai-best-practices': typeof MarketingResourcesReadAiBestPracticesRoute
   '/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
+  '/resources/read/ai-common-mistakes': typeof MarketingResourcesReadAiCommonMistakesRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
@@ -587,6 +595,7 @@ export interface FileRoutesByTo {
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/resources/read/ai-best-practices': typeof MarketingResourcesReadAiBestPracticesRoute
   '/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
+  '/resources/read/ai-common-mistakes': typeof MarketingResourcesReadAiCommonMistakesRoute
   '/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
@@ -660,6 +669,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/_marketing/resources/read/ai-best-practices': typeof MarketingResourcesReadAiBestPracticesRoute
   '/_marketing/resources/read/ai-cheat-sheet': typeof MarketingResourcesReadAiCheatSheetRoute
+  '/_marketing/resources/read/ai-common-mistakes': typeof MarketingResourcesReadAiCommonMistakesRoute
   '/_marketing/resources/read/ai-complete-tutorial': typeof MarketingResourcesReadAiCompleteTutorialRoute
   '/_marketing/resources/read/ai-interview-questions': typeof MarketingResourcesReadAiInterviewQuestionsRoute
   '/_marketing/resources/read/ai-pdf-notes': typeof MarketingResourcesReadAiPdfNotesRoute
@@ -731,6 +741,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-beginner-guide'
     | '/resources/read/ai-best-practices'
     | '/resources/read/ai-cheat-sheet'
+    | '/resources/read/ai-common-mistakes'
     | '/resources/read/ai-complete-tutorial'
     | '/resources/read/ai-interview-questions'
     | '/resources/read/ai-pdf-notes'
@@ -799,6 +810,7 @@ export interface FileRouteTypes {
     | '/resources/read/ai-beginner-guide'
     | '/resources/read/ai-best-practices'
     | '/resources/read/ai-cheat-sheet'
+    | '/resources/read/ai-common-mistakes'
     | '/resources/read/ai-complete-tutorial'
     | '/resources/read/ai-interview-questions'
     | '/resources/read/ai-pdf-notes'
@@ -871,6 +883,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-beginner-guide'
     | '/_marketing/resources/read/ai-best-practices'
     | '/_marketing/resources/read/ai-cheat-sheet'
+    | '/_marketing/resources/read/ai-common-mistakes'
     | '/_marketing/resources/read/ai-complete-tutorial'
     | '/_marketing/resources/read/ai-interview-questions'
     | '/_marketing/resources/read/ai-pdf-notes'
@@ -1279,6 +1292,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAiCompleteTutorialRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ai-common-mistakes': {
+      id: '/_marketing/resources/read/ai-common-mistakes'
+      path: '/read/ai-common-mistakes'
+      fullPath: '/resources/read/ai-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadAiCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-cheat-sheet': {
       id: '/_marketing/resources/read/ai-cheat-sheet'
       path: '/read/ai-cheat-sheet'
@@ -1538,6 +1558,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiBeginnerGuideRoute: typeof MarketingResourcesReadAiBeginnerGuideRoute
   MarketingResourcesReadAiBestPracticesRoute: typeof MarketingResourcesReadAiBestPracticesRoute
   MarketingResourcesReadAiCheatSheetRoute: typeof MarketingResourcesReadAiCheatSheetRoute
+  MarketingResourcesReadAiCommonMistakesRoute: typeof MarketingResourcesReadAiCommonMistakesRoute
   MarketingResourcesReadAiCompleteTutorialRoute: typeof MarketingResourcesReadAiCompleteTutorialRoute
   MarketingResourcesReadAiInterviewQuestionsRoute: typeof MarketingResourcesReadAiInterviewQuestionsRoute
   MarketingResourcesReadAiPdfNotesRoute: typeof MarketingResourcesReadAiPdfNotesRoute
@@ -1561,6 +1582,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAiBestPracticesRoute,
   MarketingResourcesReadAiCheatSheetRoute:
     MarketingResourcesReadAiCheatSheetRoute,
+  MarketingResourcesReadAiCommonMistakesRoute:
+    MarketingResourcesReadAiCommonMistakesRoute,
   MarketingResourcesReadAiCompleteTutorialRoute:
     MarketingResourcesReadAiCompleteTutorialRoute,
   MarketingResourcesReadAiInterviewQuestionsRoute:
