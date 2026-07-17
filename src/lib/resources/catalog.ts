@@ -337,6 +337,9 @@ const READER_ROUTES: Record<string, string> = {
   "machine-learning--interview-questions": "/resources/read/ml-interview-questions",
   "machine-learning--practice-questions": "/resources/read/ml-practice-questions",
   "machine-learning--answer-key": "/resources/read/ml-answer-key",
+  "machine-learning--sample-exercises": "/resources/read/ml-sample-exercises",
+  "machine-learning--project-guide": "/resources/read/ml-project-guide",
+  "machine-learning--project-case-study": "/resources/read/ml-project-case-study",
 };
 
 export function getResourceReaderPath(id: string): string | null {
