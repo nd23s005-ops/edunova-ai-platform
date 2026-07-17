@@ -21,9 +21,10 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputPro
           onClick={() => setVisible((v) => !v)}
           disabled={props.disabled}
           aria-label={visible ? "Hide password" : "Show password"}
+          aria-controls={props.id}
           aria-pressed={visible}
-          tabIndex={-1}
-          className="absolute inset-y-0 right-0 flex items-center px-3 text-muted-foreground transition-colors hover:text-foreground focus:outline-none focus-visible:text-foreground disabled:opacity-50"
+          title={visible ? "Hide password" : "Show password"}
+          className="absolute inset-y-0 right-0 flex items-center justify-center rounded-md px-3 text-muted-foreground transition-colors hover:text-foreground focus:outline-none focus-visible:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50"
         >
           <span className="relative block h-4 w-4">
             <Eye
