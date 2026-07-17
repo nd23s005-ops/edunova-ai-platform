@@ -325,25 +325,41 @@ function LoginPage() {
               </p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-4" role="region" aria-labelledby="otp-heading">
               <div>
                 <button
                   type="button"
                   onClick={changeNumber}
-                  className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground"
+                  className="inline-flex items-center gap-1 rounded text-xs font-medium text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  aria-label="Change phone number and go back"
                 >
-                  <ChevronLeft className="h-3.5 w-3.5" /> Change number
+                  <ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" /> Change number
                 </button>
-                <p className="mt-2 text-sm">
+                <p id="otp-heading" className="mt-2 text-sm">
                   Enter the 6-digit code sent to{" "}
                   <span className="font-semibold">{phone.e164}</span>
                 </p>
+              </div>
+
+              <div
+                aria-live="polite"
+                aria-atomic="true"
+                className="sr-only"
+              >
+                {verifyingOtp
+                  ? "Verifying your code…"
+                  : otpError
+                    ? otpError
+                    : otp.length === 6
+                      ? "Code complete."
+                      : ""}
               </div>
 
               <div className="flex justify-center py-2">
                 <InputOTP
                   maxLength={6}
                   value={otp}
+                  autoFocus
                   onChange={(v) => {
                     setOtp(v);
                     if (otpError) setOtpError(null);
@@ -352,13 +368,17 @@ function LoginPage() {
                     }
                   }}
                   disabled={verifyingOtp || attempts >= MAX_ATTEMPTS}
+                  aria-label="6-digit verification code"
+                  aria-describedby={otpError ? "otp-error" : "otp-help"}
+                  aria-invalid={!!otpError}
+                  containerClassName="gap-2"
                 >
                   <InputOTPGroup>
                     <InputOTPSlot index={0} />
                     <InputOTPSlot index={1} />
                     <InputOTPSlot index={2} />
                   </InputOTPGroup>
-                  <InputOTPSeparator />
+                  <InputOTPSeparator aria-hidden="true" />
                   <InputOTPGroup>
                     <InputOTPSlot index={3} />
                     <InputOTPSlot index={4} />
@@ -367,8 +387,18 @@ function LoginPage() {
                 </InputOTP>
               </div>
 
-              {otpError && (
-                <p className="text-center text-xs text-destructive">{otpError}</p>
+              {otpError ? (
+                <p
+                  id="otp-error"
+                  role="alert"
+                  className="text-center text-xs font-medium text-destructive"
+                >
+                  {otpError}
+                </p>
+              ) : (
+                <p id="otp-help" className="text-center text-xs text-muted-foreground">
+                  Paste or type the 6-digit code. It expires in a few minutes.
+                </p>
               )}
 
               <Button
@@ -377,20 +407,22 @@ function LoginPage() {
                 size="lg"
                 disabled={verifyingOtp || otp.length !== 6 || attempts >= MAX_ATTEMPTS}
                 onClick={() => verifyOtp(otp)}
+                aria-describedby={otpError ? "otp-error" : undefined}
               >
-                {verifyingOtp && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {verifyingOtp && <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />}
                 {verifyingOtp ? "Verifying…" : "Verify & sign in"}
               </Button>
 
               <div className="flex items-center justify-center text-xs text-muted-foreground">
                 {resendCooldown > 0 ? (
-                  <span>Resend code in {resendCooldown}s</span>
+                  <span aria-live="polite">Resend code available in {resendCooldown}s</span>
                 ) : (
                   <button
                     type="button"
                     onClick={() => requestOtp(true)}
                     disabled={sendingOtp}
-                    className="font-medium text-primary hover:underline disabled:opacity-60"
+                    className="rounded font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-60"
+                    aria-label="Resend verification code"
                   >
                     {sendingOtp ? "Sending…" : "Resend code"}
                   </button>
@@ -398,6 +430,7 @@ function LoginPage() {
               </div>
             </div>
           )}
+
         </TabsContent>
       </Tabs>
 
