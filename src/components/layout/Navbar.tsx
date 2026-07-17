@@ -6,7 +6,7 @@ import { ArrowRight, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
-import { homeForRole, type AppRole } from "@/lib/auth/roles";
+import { homeForRole, normalizeRole } from "@/lib/auth/roles";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -114,7 +114,7 @@ export function Navbar() {
         .select("role")
         .eq("user_id", user!.id)
         .maybeSingle();
-      return (r?.role as AppRole | undefined) ?? null;
+      return normalizeRole((r?.role as string | undefined) ?? null);
     },
     staleTime: 60_000,
   });

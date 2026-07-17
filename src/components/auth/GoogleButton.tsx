@@ -4,7 +4,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { lovable } from "@/integrations/lovable";
 import { supabase } from "@/integrations/supabase/client";
-import { homeForRole, type AppRole } from "@/lib/auth/roles";
+import { completeAuthRoleSelection } from "@/lib/auth/role-selection.functions";
+import { homeForRole, SELF_SIGNUP_ROLES, type AppRole } from "@/lib/auth/roles";
 import { toast } from "sonner";
 
 const GoogleIcon = () => (
@@ -16,7 +17,25 @@ const GoogleIcon = () => (
   </svg>
 );
 
-export function GoogleButton({ label = "Continue with Google" }: { label?: string }) {
+function getSavedSignupRole(role?: AppRole): AppRole | undefined {
+  if (role && (SELF_SIGNUP_ROLES as readonly string[]).includes(role)) return role;
+  try {
+    const saved = JSON.parse(sessionStorage.getItem("edunova.onboarding") || "{}") as { role?: string };
+    return saved.role && (SELF_SIGNUP_ROLES as readonly string[]).includes(saved.role)
+      ? (saved.role as AppRole)
+      : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+export function GoogleButton({
+  label = "Continue with Google",
+  selectedRole,
+}: {
+  label?: string;
+  selectedRole?: AppRole;
+}) {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const router = useRouter();
@@ -43,6 +62,10 @@ export function GoogleButton({ label = "Continue with Google" }: { label?: strin
         toast.error("Sign-in did not complete. Please try again.");
         setLoading(false);
         return;
+      }
+      const requestedRole = getSavedSignupRole(selectedRole);
+      if (requestedRole) {
+        await completeAuthRoleSelection({ data: requestedRole });
       }
       const { data: r } = await supabase
         .from("user_roles")

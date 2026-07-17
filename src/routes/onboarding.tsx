@@ -178,7 +178,7 @@ function OnboardingPage() {
     if (role === "admin" && mode === "register") return; // no public register
     navigate({
       to: mode === "login" ? "/login" : "/register",
-      search: { role } as never,
+      search: { role, preference: preference ?? undefined } as never,
     });
   }
 

@@ -186,9 +186,9 @@ function ClientOnlyFloatingChat() {
       const { data: userData } = await supabase.auth.getUser();
       setSignedIn(!!userData.user);
       await checkRole(userData.user?.id);
-      const { data: sub } = supabase.auth.onAuthStateChange(async (_e, session) => {
+      const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
         setSignedIn(!!session?.user);
-        await checkRole(session?.user?.id);
+        void checkRole(session?.user?.id);
       });
       unsub = () => sub.subscription.unsubscribe();
     })();

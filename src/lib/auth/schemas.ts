@@ -59,7 +59,7 @@ export const registerSchema = z
     country: z.string().trim().min(2, { message: "Select your country" }).max(60),
     password: passwordSchema,
     confirmPassword: z.string().min(1, { message: "Please confirm your password" }),
-    role: z.enum(SELF_SIGNUP_ROLES as unknown as [string, ...string[]]),
+    role: z.enum(SELF_SIGNUP_ROLES as unknown as [string, ...string[]]), preference: z.string().optional(),
     acceptTerms: z.literal(true, { message: "You must accept the Terms & Conditions" }),
     acceptPrivacy: z.literal(true, { message: "You must accept the Privacy Policy" }),
   })

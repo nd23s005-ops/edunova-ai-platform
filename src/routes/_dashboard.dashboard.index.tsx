@@ -2,7 +2,7 @@ import { createFileRoute, Navigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { homeForRole, type AppRole } from "@/lib/auth/roles";
+import { homeForRole, normalizeRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_dashboard/dashboard/")({
   component: DashboardIndex,
@@ -19,7 +19,7 @@ function DashboardIndex() {
         .select("role")
         .eq("user_id", userData.user.id)
         .maybeSingle();
-      return (r?.role as AppRole | undefined) ?? null;
+      return normalizeRole((r?.role as string | undefined) ?? null);
     },
     staleTime: 60_000,
   });

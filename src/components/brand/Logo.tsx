@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
-import { homeForRole, type AppRole } from "@/lib/auth/roles";
+import { homeForRole, normalizeRole } from "@/lib/auth/roles";
 
 interface LogoProps {
   className?: string;
@@ -25,7 +25,7 @@ export function Logo({ className, showWordmark = true }: LogoProps) {
         .select("role")
         .eq("user_id", u.user.id)
         .maybeSingle();
-      return (r?.role as AppRole | undefined) ?? null;
+      return normalizeRole((r?.role as string | undefined) ?? null);
     },
     staleTime: 0,
     refetchOnMount: "always",

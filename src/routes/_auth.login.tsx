@@ -137,8 +137,8 @@ function LoginPage() {
       {!isAdmin && (
         <>
           <div className="mt-8 space-y-3">
-            <GoogleButton />
-            <AppleButton />
+            <GoogleButton selectedRole={selectedRole} />
+            <AppleButton selectedRole={selectedRole} />
           </div>
 
           <div className="relative my-6">
