@@ -41,11 +41,13 @@ function NavItem({ to, label, onClick }: { to: (typeof NAV_LINKS)[number]["to"];
 
 function CTAButton({
   to,
+  search,
   onClick,
   children,
   icon: Icon = ArrowRight,
 }: {
   to: "/register" | "/onboarding" | "/dashboard";
+  search?: Record<string, string>;
   onClick?: () => void;
   children: React.ReactNode;
   icon?: typeof ArrowRight;
@@ -53,6 +55,7 @@ function CTAButton({
   return (
     <Link
       to={to}
+      search={search as never}
       onClick={onClick}
       className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-[14px] px-4 py-2 text-sm font-semibold text-white shadow-[0_8px_24px_-10px_oklch(0.72_0.16_50/0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-8px_oklch(0.72_0.16_50/0.85)]"
       style={{
@@ -197,12 +200,13 @@ export function Navbar() {
           ) : (
             <>
               <Link
-                to="/login"
+                to="/onboarding"
+                search={{ mode: "login" } as never}
                 className="text-sm font-medium text-[oklch(0.35_0.02_240)] transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)]"
               >
                 Login
               </Link>
-              <CTAButton to="/register">Create Account</CTAButton>
+              <CTAButton to="/onboarding" search={{ mode: "register" }}>Create Account</CTAButton>
             </>
           )}
         </div>
@@ -288,13 +292,14 @@ export function Navbar() {
                 ) : (
                   <>
                     <Link
-                      to="/login"
+                      to="/onboarding"
+                      search={{ mode: "login" } as never}
                       onClick={() => setOpen(false)}
                       className="rounded-[14px] border border-[#ECECEC] bg-white px-4 py-2.5 text-center text-sm font-semibold text-[oklch(0.18_0.03_240)]"
                     >
                       Login
                     </Link>
-                    <CTAButton to="/register" onClick={() => setOpen(false)}>
+                    <CTAButton to="/onboarding" search={{ mode: "register" }} onClick={() => setOpen(false)}>
                       Create Account
                     </CTAButton>
                   </>

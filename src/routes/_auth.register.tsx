@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect, useNavigate, useRouter } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -47,6 +47,11 @@ export const Route = createFileRoute("/_auth/register")({
         ? (search.role as AppRole)
         : undefined,
   }),
+  beforeLoad: ({ search }) => {
+    if (!search.role || search.role === "admin") {
+      throw redirect({ to: "/onboarding", search: { mode: "register" } as never });
+    }
+  },
   component: RegisterPage,
 });
 

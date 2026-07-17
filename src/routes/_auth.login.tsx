@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect, useNavigate, useRouter } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -34,6 +34,14 @@ export const Route = createFileRoute("/_auth/login")({
         ? (search.role as AppRole)
         : undefined,
   }),
+  beforeLoad: ({ search }) => {
+    if (!search.role) {
+      throw redirect({
+        to: "/onboarding",
+        search: { mode: "login", ...(search.redirect ? { redirect: search.redirect } : {}) } as never,
+      });
+    }
+  },
   component: LoginPage,
 });
 

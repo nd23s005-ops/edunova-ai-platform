@@ -28,6 +28,13 @@ export const Route = createFileRoute("/onboarding")({
       { name: "robots", content: "noindex" },
     ],
   }),
+  validateSearch: (search: Record<string, unknown>) => ({
+    mode:
+      search.mode === "login" || search.mode === "register"
+        ? (search.mode as "login" | "register")
+        : undefined,
+    redirect: typeof search.redirect === "string" ? search.redirect : undefined,
+  }),
   component: OnboardingPage,
 });
 
@@ -118,6 +125,7 @@ function saveSaved(v: Saved) {
 // ---------------------------------------------------------------- component
 function OnboardingPage() {
   const navigate = useNavigate();
+  const { mode: entryMode } = Route.useSearch();
   const [step, setStep] = useState(1);
   const [role, setRole] = useState<AppRole | null>(null);
   const [language, setLanguage] = useState<string | null>(null);
@@ -336,6 +344,7 @@ function OnboardingPage() {
               >
                 <FinalCard
                   role={role}
+                  primary={entryMode ?? "login"}
                   onLogin={() => goToAuth("login")}
                   onRegister={() => goToAuth("register")}
                 />
@@ -466,15 +475,38 @@ function AdminAccessCard({ onContinue }: { onContinue: () => void }) {
 
 function FinalCard({
   role,
+  primary = "login",
   onLogin,
   onRegister,
 }: {
   role: AppRole;
+  primary?: "login" | "register";
   onLogin: () => void;
   onRegister: () => void;
 }) {
   const cfg = ROLES.find((r) => r.key === role)!;
   const Icon = cfg.icon;
+  const primaryBtn = (
+    <Button
+      key="login"
+      onClick={onLogin}
+      size="lg"
+      className="bg-gradient-to-r from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] text-white hover:opacity-90"
+    >
+      Login
+    </Button>
+  );
+  const secondaryBtn = (
+    <Button
+      key="register"
+      onClick={onRegister}
+      variant="outline"
+      size="lg"
+      className="border-white/15 bg-white/[0.04] text-white hover:bg-white/[0.08]"
+    >
+      Create Account
+    </Button>
+  );
   return (
     <div className="mx-auto max-w-xl">
       <div className="rounded-3xl border border-white/[0.08] bg-white/[0.04] p-8 text-center backdrop-blur-xl">
@@ -486,24 +518,12 @@ function FinalCard({
         </p>
         <h2 className="mt-2 text-2xl font-bold">Ready when you are</h2>
         <p className="mt-2 text-sm text-white/60">
-          Sign in to continue, or create your {cfg.title.toLowerCase()} account to get started with Nova.
+          {primary === "register"
+            ? `Create your ${cfg.title.toLowerCase()} account to get started with Nova, or sign in if you already have one.`
+            : `Sign in to continue, or create your ${cfg.title.toLowerCase()} account to get started with Nova.`}
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          <Button
-            onClick={onLogin}
-            size="lg"
-            className="bg-gradient-to-r from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] text-white hover:opacity-90"
-          >
-            Login
-          </Button>
-          <Button
-            onClick={onRegister}
-            variant="outline"
-            size="lg"
-            className="border-white/15 bg-white/[0.04] text-white hover:bg-white/[0.08]"
-          >
-            Register
-          </Button>
+          {primary === "register" ? [secondaryBtn, primaryBtn] : [primaryBtn, secondaryBtn]}
         </div>
       </div>
     </div>
