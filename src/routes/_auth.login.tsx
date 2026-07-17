@@ -200,6 +200,8 @@ function LoginPage() {
           Create an account
         </Link>
       </p>
+
+      <DemoCredentialsPopup />
     </div>
   );
 }
