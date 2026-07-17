@@ -64,15 +64,13 @@ const OVERVIEW: NavItem = { to: "/dashboard", label: "Overview", icon: LayoutDas
 
 const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student", label: "My workspace", icon: GraduationCap },
-  { to: "/dashboard/student/courses", label: "Courses", icon: BookOpen },
-  { to: "/dashboard/student/ai-tutor", label: "AI Tutor", icon: Sparkles },
-  { to: "/dashboard/student/ai-chat", label: "AI Chat", icon: MessageSquare },
-  { to: "/dashboard/student/assignments", label: "Assignments", icon: ClipboardList },
-  { to: "/dashboard/student/mock-tests", label: "Mock Tests", icon: Target },
-  { to: "/dashboard/student/progress", label: "Progress", icon: BarChart3 },
-  { to: "/dashboard/student/certificates", label: "Certificates", icon: Trophy },
-  { to: "/dashboard/student/notes", label: "Notes", icon: Notebook },
-  { to: "/dashboard/student/resources", label: "Resources", icon: FileText },
+  { to: "/dashboard/student/my-courses", label: "My Courses", icon: BookOpen },
+  { to: "/dashboard/student/browse", label: "Browse Courses", icon: BookOpen },
+  { to: "/dashboard/student/roadmap", label: "Learning Roadmap", icon: Target },
+  { to: "/dashboard/student/assignments", label: "Weekly Assignments", icon: ClipboardList },
+  { to: "/dashboard/student/quizzes", label: "Quizzes", icon: Target },
+  { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
+  { to: "/dashboard/student/ai-chat", label: "AI Chat Assistant", icon: MessageSquare },
 ];
 
 const TEACHER_NAV: NavItem[] = [
