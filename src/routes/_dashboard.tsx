@@ -62,6 +62,12 @@ type NavItem = { to: string; label: string; icon: typeof LayoutDashboard };
 
 const OVERVIEW: NavItem = { to: "/dashboard", label: "Overview", icon: LayoutDashboard };
 
+const AI_ASSISTANT: NavItem = {
+  to: "/dashboard/ai-assistant",
+  label: "AI Assistant",
+  icon: MessageSquare,
+};
+
 const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student", label: "My workspace", icon: GraduationCap },
   { to: "/dashboard/student/my-courses", label: "My Courses", icon: BookOpen },
@@ -70,7 +76,7 @@ const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student/assignments", label: "Weekly Assignments", icon: ClipboardList },
   { to: "/dashboard/student/quizzes", label: "Quizzes", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
-  { to: "/dashboard/student/ai-chat", label: "AI Chat Assistant", icon: MessageSquare },
+  AI_ASSISTANT,
 ];
 
 const TEACHER_NAV: NavItem[] = [
@@ -82,6 +88,7 @@ const TEACHER_NAV: NavItem[] = [
   { to: "/dashboard/teacher/student-progress", label: "Student progress", icon: BarChart3 },
   { to: "/dashboard/teacher/reports", label: "Reports", icon: FileText },
   { to: "/dashboard/teacher/resources", label: "Resources", icon: FileText },
+  AI_ASSISTANT,
 ];
 
 const ORG_NAV: NavItem[] = [
@@ -91,6 +98,7 @@ const ORG_NAV: NavItem[] = [
   { to: "/dashboard/organization/course-assignment", label: "Course assignment", icon: BookOpen },
   { to: "/dashboard/organization/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/organization/reports", label: "Reports", icon: FileText },
+  AI_ASSISTANT,
 ];
 
 const ADMIN_NAV: NavItem[] = [
@@ -99,10 +107,12 @@ const ADMIN_NAV: NavItem[] = [
   { to: "/dashboard/admin/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", icon: FileText },
   { to: "/dashboard/admin/settings", label: "Settings", icon: Settings },
+  AI_ASSISTANT,
 ];
 
 const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/professional", label: "My workspace", icon: GraduationCap },
+  AI_ASSISTANT,
 ];
 
 const NAV_BY_ROLE: Record<AppRole, NavItem[]> = {
