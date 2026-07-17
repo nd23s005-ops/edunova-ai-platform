@@ -90,12 +90,19 @@ export function useChapterLessons(chapterId: string | undefined) {
   });
 }
 
+export type CourseProgress = {
+  completedLessons: string[];
+  quizAttempts: Array<{ id: string; quiz_id: string; score: number | null; max_score: number | null; submitted_at: string | null }>;
+  assignments: Array<{ id: string; assignment_id: string; status: string }>;
+};
+
 export function useCourseProgress(courseId: string) {
-  return useQuery({
+  return useQuery<CourseProgress>({
     queryKey: ["course", courseId, "progress"],
     queryFn: async () => {
+      const empty: CourseProgress = { completedLessons: [], quizAttempts: [], assignments: [] };
       const { data: u } = await supabase.auth.getUser();
-      if (!u.user) return { completedLessons: [] as string[], quizAttempts: 0, assignments: 0 };
+      if (!u.user) return empty;
       const [lp, qa, as_] = await Promise.all([
         supabase.from("lesson_progress").select("lesson_id").eq("user_id", u.user.id).eq("course_id", courseId),
         supabase.from("quiz_attempts").select("id, quiz_id, score, max_score, submitted_at").eq("user_id", u.user.id).eq("course_id", courseId),
@@ -103,8 +110,8 @@ export function useCourseProgress(courseId: string) {
       ]);
       return {
         completedLessons: (lp.data ?? []).map((r) => r.lesson_id as string),
-        quizAttempts: qa.data ?? [],
-        assignments: as_.data ?? [],
+        quizAttempts: (qa.data ?? []) as CourseProgress["quizAttempts"],
+        assignments: (as_.data ?? []) as CourseProgress["assignments"],
       };
     },
     staleTime: 15_000,
