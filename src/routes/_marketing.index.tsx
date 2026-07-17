@@ -33,8 +33,9 @@ export const Route = createFileRoute("/_marketing/")({
 function HomePage() {
   return (
     <>
+    <div className="dark" style={{ background: "#071018", color: "#F5F7FA" }}>
       <Hero />
-      <div style={{ background: "#FCFAF7" }}>
+      <div>
         <WhySix />
         <Categories />
         <HowItWorks />
@@ -43,6 +44,8 @@ function HomePage() {
         <FAQ />
         <FinalCTA />
       </div>
+    </div>
+
     </>
   );
 }
