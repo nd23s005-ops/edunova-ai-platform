@@ -163,37 +163,49 @@ export function Navbar() {
         {/* Right: Actions */}
         <div className="hidden items-center gap-3 justify-self-end lg:flex">
           {email ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] text-sm font-semibold text-white shadow-[0_6px_18px_-8px_oklch(0.7_0.19_40/0.7)]">
-                  {initials}
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel className="truncate">{email}</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link to="/dashboard" className="flex w-full items-center gap-2">
-                    <User className="h-4 w-4" /> Dashboard
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={signOut} className="gap-2">
-                  <LogOut className="h-4 w-4" /> Sign out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <>
+              <Link
+                to={dashboardHref}
+                className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-[14px] px-4 py-2 text-sm font-semibold text-white shadow-[0_8px_24px_-10px_oklch(0.72_0.16_50/0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-8px_oklch(0.72_0.16_50/0.85)]"
+                style={{
+                  background: "linear-gradient(135deg, oklch(0.82 0.16 55) 0%, oklch(0.7 0.19 40) 100%)",
+                }}
+              >
+                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                <LayoutDashboard className="relative h-4 w-4" />
+                <span className="relative">Dashboard</span>
+              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    aria-label="Account menu"
+                    className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] text-sm font-semibold text-white shadow-[0_6px_18px_-8px_oklch(0.7_0.19_40/0.7)]"
+                  >
+                    {initials}
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  <DropdownMenuLabel className="truncate">{email}</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={signOut} className="gap-2">
+                    <LogOut className="h-4 w-4" /> Sign out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </>
           ) : (
             <>
               <Link
-                to="/onboarding"
+                to="/login"
                 className="text-sm font-medium text-[oklch(0.35_0.02_240)] transition-colors duration-300 hover:text-[oklch(0.7_0.19_40)]"
               >
                 Login
               </Link>
-              <CTAButton to="/onboarding">Get Started</CTAButton>
+              <CTAButton to="/register">Create Account</CTAButton>
             </>
           )}
         </div>
+
 
         {/* Mobile trigger */}
         <div className="flex items-center justify-self-end lg:hidden">
