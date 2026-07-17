@@ -303,9 +303,8 @@ function RegisterPage() {
 
         <div>
           <Label htmlFor="password">Password</Label>
-          <Input
+          <PasswordInput
             id="password"
-            type="password"
             autoComplete="new-password"
             placeholder="At least 8 characters"
             className="mt-1.5"
@@ -320,9 +319,8 @@ function RegisterPage() {
 
         <div>
           <Label htmlFor="confirmPassword">Confirm password</Label>
-          <Input
+          <PasswordInput
             id="confirmPassword"
-            type="password"
             autoComplete="new-password"
             placeholder="Re-enter password"
             className="mt-1.5"
