@@ -224,3 +224,13 @@
     letter-spacing: -0.02em;
   }
 }
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes grid-drift {
+  0% { background-position: 0px 0px, 0px 0px; }
+  100% { background-position: 48px 48px, 48px 48px; }
+}
