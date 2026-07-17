@@ -76,7 +76,10 @@ export function Footer() {
         {/* Bottom bar — centered copyright */}
         <div className="mt-12 border-t border-border/60 pt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} EduNova AI. All Rights Reserved.
+            © {new Date().getFullYear()} EduNova AI. All Rights Reserved. ·{" "}
+            <a href="/help-desk" className="hover:text-primary">
+              Help Desk
+            </a>
           </p>
         </div>
       </div>

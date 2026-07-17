@@ -33,6 +33,7 @@ type Section = {
 
 const SECTIONS: Section[] = [
   { to: "/dashboard/admin/users", label: "User Management", description: "View users across the platform.", icon: Users },
+  { to: "/dashboard/admin/support", label: "Support Queue", description: "Review and respond to help desk tickets.", icon: LifeBuoy },
   { to: "/dashboard/admin/courses", label: "Course Management", description: "Browse the course catalog.", icon: BookOpen },
   { to: "/dashboard/admin/organizations", label: "Organizations", description: "Review connected organizations.", icon: Building2 },
   { to: "/dashboard/admin/analytics", label: "Analytics", description: "Platform-wide learning analytics.", icon: BarChart3 },
