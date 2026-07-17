@@ -34,10 +34,12 @@ import {
   getCourseBySlug,
   getCourseImage,
   getRelatedCourses,
+  getResourceReaderPath,
   RESOURCE_KINDS,
   type CourseResource,
 } from "@/lib/resources/catalog";
 import { toast } from "sonner";
+
 
 export const Route = createFileRoute("/_marketing/resources/$courseSlug")({
   loader: ({ params }) => {
@@ -391,18 +393,37 @@ function ResourceCard({
         <p className="mt-3 text-[11px] text-muted-foreground">Last updated {r.lastUpdated}</p>
 
         <div className="mt-4 grid grid-cols-4 gap-1.5">
-          <Button size="sm" className="col-span-2" asChild>
-            <Link to="/register"><BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read</Link>
-          </Button>
-          <Button size="sm" variant="outline" asChild>
-            <Link to="/register" aria-label={`Download PDF: ${r.title}`}>
-              <Download className="h-3.5 w-3.5" />
-            </Link>
-          </Button>
+          {(() => {
+            const readerPath = getResourceReaderPath(r.id);
+            return readerPath ? (
+              <>
+                <Button size="sm" className="col-span-2" asChild>
+                  <Link to={readerPath}><BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read</Link>
+                </Button>
+                <Button size="sm" variant="outline" asChild>
+                  <Link to={readerPath} aria-label={`Open reader: ${r.title}`}>
+                    <Download className="h-3.5 w-3.5" />
+                  </Link>
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button size="sm" className="col-span-2" asChild>
+                  <Link to="/register"><BookOpen className="mr-1.5 h-3.5 w-3.5" /> Read</Link>
+                </Button>
+                <Button size="sm" variant="outline" asChild>
+                  <Link to="/register" aria-label={`Download PDF: ${r.title}`}>
+                    <Download className="h-3.5 w-3.5" />
+                  </Link>
+                </Button>
+              </>
+            );
+          })()}
           <Button size="sm" variant="outline" onClick={share} aria-label={`Share ${r.title}`}>
             <Share2 className="h-3.5 w-3.5" />
           </Button>
         </div>
+
       </div>
     </motion.article>
   );

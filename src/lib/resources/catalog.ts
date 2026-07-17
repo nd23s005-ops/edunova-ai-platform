@@ -302,3 +302,23 @@ export function buildCourseResources(course: CourseCatalogEntry): CourseResource
     };
   });
 }
+
+// Reader routes physically implemented under src/routes/_marketing.resources.read.*
+// Keyed by resource id (`<courseSlug>--<kind-slug>`). Add entries here as new
+// dedicated reader pages are built.
+const READER_ROUTES: Record<string, string> = {
+  "artificial-intelligence--beginner-guide": "/resources/read/ai-beginner-guide",
+  "artificial-intelligence--complete-tutorial": "/resources/read/ai-complete-tutorial",
+  "artificial-intelligence--step-by-step-learning-guide": "/resources/read/ai-step-by-step-learning-guide",
+  "artificial-intelligence--pdf-notes": "/resources/read/ai-pdf-notes",
+  "artificial-intelligence--quick-revision-notes": "/resources/read/ai-quick-revision-notes",
+  "artificial-intelligence--cheat-sheet": "/resources/read/ai-cheat-sheet",
+  "artificial-intelligence--interview-questions": "/resources/read/ai-interview-questions",
+  "artificial-intelligence--practice-questions": "/resources/read/ai-practice-questions",
+  "artificial-intelligence--answer-key": "/resources/read/ai-answer-key",
+};
+
+export function getResourceReaderPath(id: string): string | null {
+  return READER_ROUTES[id] ?? null;
+}
+

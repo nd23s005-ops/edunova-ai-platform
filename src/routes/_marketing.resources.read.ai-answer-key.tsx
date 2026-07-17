@@ -22,8 +22,8 @@ import {
   Share2,
   Sparkles,
   Tag,
-  Target,
   Trophy,
+
   AlertTriangle,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -1308,5 +1308,5 @@ function Callout({
   );
 }
 
-// avoid unused-import warnings
-void Target;
+
+
