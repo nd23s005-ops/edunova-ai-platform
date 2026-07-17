@@ -9,61 +9,449 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as MarketingRouteImport } from './routes/_marketing'
+import { Route as DashboardRouteImport } from './routes/_dashboard'
+import { Route as AuthRouteImport } from './routes/_auth'
+import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
+import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
+import { Route as MarketingPricingRouteImport } from './routes/_marketing.pricing'
+import { Route as MarketingCoursesRouteImport } from './routes/_marketing.courses'
+import { Route as MarketingContactRouteImport } from './routes/_marketing.contact'
+import { Route as MarketingAiTutorRouteImport } from './routes/_marketing.ai-tutor'
+import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
+import { Route as AuthRegisterRouteImport } from './routes/_auth.register'
+import { Route as AuthLoginRouteImport } from './routes/_auth.login'
+import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-password'
+import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
+import { Route as DashboardDashboardTeacherRouteImport } from './routes/_dashboard.dashboard.teacher'
+import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
+import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
+import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 
-const IndexRoute = IndexRouteImport.update({
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketingRoute = MarketingRouteImport.update({
+  id: '/_marketing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/_dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/_auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketingIndexRoute = MarketingIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingResourcesRoute = MarketingResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingPricingRoute = MarketingPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingCoursesRoute = MarketingCoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingContactRoute = MarketingContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingAiTutorRoute = MarketingAiTutorRouteImport.update({
+  id: '/ai-tutor',
+  path: '/ai-tutor',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const MarketingAboutRoute = MarketingAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => MarketingRoute,
+} as any)
+const AuthRegisterRoute = AuthRegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => AuthRoute,
+} as any)
+const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
+  id: '/dashboard/',
+  path: '/dashboard/',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDashboardTeacherRoute =
+  DashboardDashboardTeacherRouteImport.update({
+    id: '/dashboard/teacher',
+    path: '/dashboard/teacher',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardStudentRoute =
+  DashboardDashboardStudentRouteImport.update({
+    id: '/dashboard/student',
+    path: '/dashboard/student',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardOrganizationRoute =
+  DashboardDashboardOrganizationRouteImport.update({
+    id: '/dashboard/organization',
+    path: '/dashboard/organization',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardAdminRoute = DashboardDashboardAdminRouteImport.update({
+  id: '/dashboard/admin',
+  path: '/dashboard/admin',
+  getParentRoute: () => DashboardRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof MarketingIndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/forgot-password': typeof AuthForgotPasswordRoute
+  '/login': typeof AuthLoginRoute
+  '/register': typeof AuthRegisterRoute
+  '/about': typeof MarketingAboutRoute
+  '/ai-tutor': typeof MarketingAiTutorRoute
+  '/contact': typeof MarketingContactRoute
+  '/courses': typeof MarketingCoursesRoute
+  '/pricing': typeof MarketingPricingRoute
+  '/resources': typeof MarketingResourcesRoute
+  '/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
+  '/dashboard/': typeof DashboardDashboardIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/': typeof MarketingIndexRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/forgot-password': typeof AuthForgotPasswordRoute
+  '/login': typeof AuthLoginRoute
+  '/register': typeof AuthRegisterRoute
+  '/about': typeof MarketingAboutRoute
+  '/ai-tutor': typeof MarketingAiTutorRoute
+  '/contact': typeof MarketingContactRoute
+  '/courses': typeof MarketingCoursesRoute
+  '/pricing': typeof MarketingPricingRoute
+  '/resources': typeof MarketingResourcesRoute
+  '/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/dashboard/teacher': typeof DashboardDashboardTeacherRoute
+  '/dashboard': typeof DashboardDashboardIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_auth': typeof AuthRouteWithChildren
+  '/_dashboard': typeof DashboardRouteWithChildren
+  '/_marketing': typeof MarketingRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/_auth/forgot-password': typeof AuthForgotPasswordRoute
+  '/_auth/login': typeof AuthLoginRoute
+  '/_auth/register': typeof AuthRegisterRoute
+  '/_marketing/about': typeof MarketingAboutRoute
+  '/_marketing/ai-tutor': typeof MarketingAiTutorRoute
+  '/_marketing/contact': typeof MarketingContactRoute
+  '/_marketing/courses': typeof MarketingCoursesRoute
+  '/_marketing/pricing': typeof MarketingPricingRoute
+  '/_marketing/resources': typeof MarketingResourcesRoute
+  '/_marketing/': typeof MarketingIndexRoute
+  '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRoute
+  '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
+  '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRoute
+  '/_dashboard/dashboard/teacher': typeof DashboardDashboardTeacherRoute
+  '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/sitemap.xml'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/about'
+    | '/ai-tutor'
+    | '/contact'
+    | '/courses'
+    | '/pricing'
+    | '/resources'
+    | '/dashboard/admin'
+    | '/dashboard/organization'
+    | '/dashboard/student'
+    | '/dashboard/teacher'
+    | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/sitemap.xml'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/about'
+    | '/ai-tutor'
+    | '/contact'
+    | '/courses'
+    | '/pricing'
+    | '/resources'
+    | '/dashboard/admin'
+    | '/dashboard/organization'
+    | '/dashboard/student'
+    | '/dashboard/teacher'
+    | '/dashboard'
+  id:
+    | '__root__'
+    | '/_auth'
+    | '/_dashboard'
+    | '/_marketing'
+    | '/sitemap.xml'
+    | '/_auth/forgot-password'
+    | '/_auth/login'
+    | '/_auth/register'
+    | '/_marketing/about'
+    | '/_marketing/ai-tutor'
+    | '/_marketing/contact'
+    | '/_marketing/courses'
+    | '/_marketing/pricing'
+    | '/_marketing/resources'
+    | '/_marketing/'
+    | '/_dashboard/dashboard/admin'
+    | '/_dashboard/dashboard/organization'
+    | '/_dashboard/dashboard/student'
+    | '/_dashboard/dashboard/teacher'
+    | '/_dashboard/dashboard/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRouteWithChildren
+  DashboardRoute: typeof DashboardRouteWithChildren
+  MarketingRoute: typeof MarketingRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_marketing': {
+      id: '/_marketing'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof MarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_dashboard': {
+      id: '/_dashboard'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_auth': {
+      id: '/_auth'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_marketing/': {
+      id: '/_marketing/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof MarketingIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/resources': {
+      id: '/_marketing/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof MarketingResourcesRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/pricing': {
+      id: '/_marketing/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof MarketingPricingRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/courses': {
+      id: '/_marketing/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof MarketingCoursesRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/contact': {
+      id: '/_marketing/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof MarketingContactRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/ai-tutor': {
+      id: '/_marketing/ai-tutor'
+      path: '/ai-tutor'
+      fullPath: '/ai-tutor'
+      preLoaderRoute: typeof MarketingAiTutorRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/about': {
+      id: '/_marketing/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof MarketingAboutRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_auth/register': {
+      id: '/_auth/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof AuthRegisterRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/login': {
+      id: '/_auth/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_auth/forgot-password': {
+      id: '/_auth/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof AuthForgotPasswordRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/_dashboard/dashboard/': {
+      id: '/_dashboard/dashboard/'
+      path: '/dashboard'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardDashboardIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/teacher': {
+      id: '/_dashboard/dashboard/teacher'
+      path: '/dashboard/teacher'
+      fullPath: '/dashboard/teacher'
+      preLoaderRoute: typeof DashboardDashboardTeacherRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/student': {
+      id: '/_dashboard/dashboard/student'
+      path: '/dashboard/student'
+      fullPath: '/dashboard/student'
+      preLoaderRoute: typeof DashboardDashboardStudentRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/organization': {
+      id: '/_dashboard/dashboard/organization'
+      path: '/dashboard/organization'
+      fullPath: '/dashboard/organization'
+      preLoaderRoute: typeof DashboardDashboardOrganizationRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/admin': {
+      id: '/_dashboard/dashboard/admin'
+      path: '/dashboard/admin'
+      fullPath: '/dashboard/admin'
+      preLoaderRoute: typeof DashboardDashboardAdminRouteImport
+      parentRoute: typeof DashboardRoute
     }
   }
 }
 
+interface AuthRouteChildren {
+  AuthForgotPasswordRoute: typeof AuthForgotPasswordRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthRegisterRoute: typeof AuthRegisterRoute
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthForgotPasswordRoute: AuthForgotPasswordRoute,
+  AuthLoginRoute: AuthLoginRoute,
+  AuthRegisterRoute: AuthRegisterRoute,
+}
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+
+interface DashboardRouteChildren {
+  DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRoute
+  DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
+  DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRoute
+  DashboardDashboardTeacherRoute: typeof DashboardDashboardTeacherRoute
+  DashboardDashboardIndexRoute: typeof DashboardDashboardIndexRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardDashboardAdminRoute: DashboardDashboardAdminRoute,
+  DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
+  DashboardDashboardStudentRoute: DashboardDashboardStudentRoute,
+  DashboardDashboardTeacherRoute: DashboardDashboardTeacherRoute,
+  DashboardDashboardIndexRoute: DashboardDashboardIndexRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
+interface MarketingRouteChildren {
+  MarketingAboutRoute: typeof MarketingAboutRoute
+  MarketingAiTutorRoute: typeof MarketingAiTutorRoute
+  MarketingContactRoute: typeof MarketingContactRoute
+  MarketingCoursesRoute: typeof MarketingCoursesRoute
+  MarketingPricingRoute: typeof MarketingPricingRoute
+  MarketingResourcesRoute: typeof MarketingResourcesRoute
+  MarketingIndexRoute: typeof MarketingIndexRoute
+}
+
+const MarketingRouteChildren: MarketingRouteChildren = {
+  MarketingAboutRoute: MarketingAboutRoute,
+  MarketingAiTutorRoute: MarketingAiTutorRoute,
+  MarketingContactRoute: MarketingContactRoute,
+  MarketingCoursesRoute: MarketingCoursesRoute,
+  MarketingPricingRoute: MarketingPricingRoute,
+  MarketingResourcesRoute: MarketingResourcesRoute,
+  MarketingIndexRoute: MarketingIndexRoute,
+}
+
+const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
+  MarketingRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  AuthRoute: AuthRouteWithChildren,
+  DashboardRoute: DashboardRouteWithChildren,
+  MarketingRoute: MarketingRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
