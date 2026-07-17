@@ -36,6 +36,7 @@ import { Route as AuthLoginRouteImport } from './routes/_auth.login'
 import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-password'
 import { Route as AuthAccountCreatedRouteImport } from './routes/_auth.account-created'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
+import { Route as MarketingFeaturesLearningTwinRouteImport } from './routes/_marketing.features.learning-twin'
 import { Route as MarketingFeaturesSlugRouteImport } from './routes/_marketing.features.$slug'
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
 import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
@@ -190,6 +191,12 @@ const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
   path: '/dashboard/',
   getParentRoute: () => DashboardRoute,
 } as any)
+const MarketingFeaturesLearningTwinRoute =
+  MarketingFeaturesLearningTwinRouteImport.update({
+    id: '/features/learning-twin',
+    path: '/features/learning-twin',
+    getParentRoute: () => MarketingRoute,
+  } as any)
 const MarketingFeaturesSlugRoute = MarketingFeaturesSlugRouteImport.update({
   id: '/features/$slug',
   path: '/features/$slug',
@@ -342,6 +349,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/features/$slug': typeof MarketingFeaturesSlugRoute
+  '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
@@ -388,6 +396,7 @@ export interface FileRoutesByTo {
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/features/$slug': typeof MarketingFeaturesSlugRoute
+  '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
@@ -438,6 +447,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/_marketing/features/$slug': typeof MarketingFeaturesSlugRoute
+  '/_marketing/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
   '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/_dashboard/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
@@ -486,6 +496,7 @@ export interface FileRouteTypes {
     | '/dashboard/profile'
     | '/dashboard/student'
     | '/features/$slug'
+    | '/features/learning-twin'
     | '/dashboard/'
     | '/dashboard/admin/support'
     | '/dashboard/mock-tests/$testId'
@@ -532,6 +543,7 @@ export interface FileRouteTypes {
     | '/dashboard/profile'
     | '/dashboard/student'
     | '/features/$slug'
+    | '/features/learning-twin'
     | '/dashboard'
     | '/dashboard/admin/support'
     | '/dashboard/mock-tests/$testId'
@@ -581,6 +593,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/profile'
     | '/_dashboard/dashboard/student'
     | '/_marketing/features/$slug'
+    | '/_marketing/features/learning-twin'
     | '/_dashboard/dashboard/'
     | '/_dashboard/dashboard/admin/support'
     | '/_dashboard/dashboard/mock-tests/$testId'
@@ -800,6 +813,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/'
       preLoaderRoute: typeof DashboardDashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_marketing/features/learning-twin': {
+      id: '/_marketing/features/learning-twin'
+      path: '/features/learning-twin'
+      fullPath: '/features/learning-twin'
+      preLoaderRoute: typeof MarketingFeaturesLearningTwinRouteImport
+      parentRoute: typeof MarketingRoute
     }
     '/_marketing/features/$slug': {
       id: '/_marketing/features/$slug'
@@ -1072,6 +1092,7 @@ interface MarketingRouteChildren {
   MarketingResourcesRoute: typeof MarketingResourcesRoute
   MarketingIndexRoute: typeof MarketingIndexRoute
   MarketingFeaturesSlugRoute: typeof MarketingFeaturesSlugRoute
+  MarketingFeaturesLearningTwinRoute: typeof MarketingFeaturesLearningTwinRoute
 }
 
 const MarketingRouteChildren: MarketingRouteChildren = {
@@ -1081,6 +1102,7 @@ const MarketingRouteChildren: MarketingRouteChildren = {
   MarketingResourcesRoute: MarketingResourcesRoute,
   MarketingIndexRoute: MarketingIndexRoute,
   MarketingFeaturesSlugRoute: MarketingFeaturesSlugRoute,
+  MarketingFeaturesLearningTwinRoute: MarketingFeaturesLearningTwinRoute,
 }
 
 const MarketingRouteWithChildren = MarketingRoute._addFileChildren(
