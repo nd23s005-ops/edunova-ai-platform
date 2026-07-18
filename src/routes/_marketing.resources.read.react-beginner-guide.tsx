@@ -103,7 +103,7 @@ function Counter() {
   const [n, setN] = useState(0);
   return <button onClick={() => setN(n + 1)}>Clicked {n}</button>;
 }`}</Code>
-        <Callout tone="warn" title="Never mutate state">Always create new objects/arrays — <code>setUser({ ...user, age: 30 })</code>, not <code>user.age = 30</code>.</Callout>
+        <Callout tone="warn" title="Never mutate state">Always create new objects/arrays — use the spread operator to copy then override, not direct assignment like <code>user.age = 30</code>.</Callout>
       </Section>
 
       <Section id="s5" title="5. Conditional Rendering & Lists">
