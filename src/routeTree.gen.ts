@@ -146,6 +146,27 @@ import { Route as MarketingResourcesReadReactBestPracticesRouteImport } from './
 import { Route as MarketingResourcesReadReactBeginnerGuideRouteImport } from './routes/_marketing.resources.read.react-beginner-guide'
 import { Route as MarketingResourcesReadReactAnswerKeyRouteImport } from './routes/_marketing.resources.read.react-answer-key'
 import { Route as MarketingResourcesReadReactAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.react-advanced-concepts'
+import { Route as MarketingResourcesReadPowerBiTipsTricksRouteImport } from './routes/_marketing.resources.read.power-bi-tips-tricks'
+import { Route as MarketingResourcesReadPowerBiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.power-bi-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadPowerBiSampleExercisesRouteImport } from './routes/_marketing.resources.read.power-bi-sample-exercises'
+import { Route as MarketingResourcesReadPowerBiReferenceGuideRouteImport } from './routes/_marketing.resources.read.power-bi-reference-guide'
+import { Route as MarketingResourcesReadPowerBiRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.power-bi-real-world-case-study'
+import { Route as MarketingResourcesReadPowerBiQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.power-bi-quick-revision-notes'
+import { Route as MarketingResourcesReadPowerBiProjectGuideRouteImport } from './routes/_marketing.resources.read.power-bi-project-guide'
+import { Route as MarketingResourcesReadPowerBiProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.power-bi-project-case-study'
+import { Route as MarketingResourcesReadPowerBiPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.power-bi-practice-questions'
+import { Route as MarketingResourcesReadPowerBiPdfNotesRouteImport } from './routes/_marketing.resources.read.power-bi-pdf-notes'
+import { Route as MarketingResourcesReadPowerBiLearningRoadmapRouteImport } from './routes/_marketing.resources.read.power-bi-learning-roadmap'
+import { Route as MarketingResourcesReadPowerBiInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.power-bi-interview-questions'
+import { Route as MarketingResourcesReadPowerBiGlossaryRouteImport } from './routes/_marketing.resources.read.power-bi-glossary'
+import { Route as MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.power-bi-frequently-asked-questions'
+import { Route as MarketingResourcesReadPowerBiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.power-bi-complete-tutorial'
+import { Route as MarketingResourcesReadPowerBiCommonMistakesRouteImport } from './routes/_marketing.resources.read.power-bi-common-mistakes'
+import { Route as MarketingResourcesReadPowerBiCheatSheetRouteImport } from './routes/_marketing.resources.read.power-bi-cheat-sheet'
+import { Route as MarketingResourcesReadPowerBiBestPracticesRouteImport } from './routes/_marketing.resources.read.power-bi-best-practices'
+import { Route as MarketingResourcesReadPowerBiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.power-bi-beginner-guide'
+import { Route as MarketingResourcesReadPowerBiAnswerKeyRouteImport } from './routes/_marketing.resources.read.power-bi-answer-key'
+import { Route as MarketingResourcesReadPowerBiAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.power-bi-advanced-concepts'
 import { Route as MarketingResourcesReadPenetrationTestingTipsTricksRouteImport } from './routes/_marketing.resources.read.penetration-testing-tips-tricks'
 import { Route as MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.penetration-testing-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPenetrationTestingSampleExercisesRouteImport } from './routes/_marketing.resources.read.penetration-testing-sample-exercises'
@@ -1367,6 +1388,132 @@ const MarketingResourcesReadReactAdvancedConceptsRoute =
   MarketingResourcesReadReactAdvancedConceptsRouteImport.update({
     id: '/read/react-advanced-concepts',
     path: '/read/react-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiTipsTricksRoute =
+  MarketingResourcesReadPowerBiTipsTricksRouteImport.update({
+    id: '/read/power-bi-tips-tricks',
+    path: '/read/power-bi-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiStepByStepLearningGuideRoute =
+  MarketingResourcesReadPowerBiStepByStepLearningGuideRouteImport.update({
+    id: '/read/power-bi-step-by-step-learning-guide',
+    path: '/read/power-bi-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiSampleExercisesRoute =
+  MarketingResourcesReadPowerBiSampleExercisesRouteImport.update({
+    id: '/read/power-bi-sample-exercises',
+    path: '/read/power-bi-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiReferenceGuideRoute =
+  MarketingResourcesReadPowerBiReferenceGuideRouteImport.update({
+    id: '/read/power-bi-reference-guide',
+    path: '/read/power-bi-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiRealWorldCaseStudyRoute =
+  MarketingResourcesReadPowerBiRealWorldCaseStudyRouteImport.update({
+    id: '/read/power-bi-real-world-case-study',
+    path: '/read/power-bi-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiQuickRevisionNotesRoute =
+  MarketingResourcesReadPowerBiQuickRevisionNotesRouteImport.update({
+    id: '/read/power-bi-quick-revision-notes',
+    path: '/read/power-bi-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiProjectGuideRoute =
+  MarketingResourcesReadPowerBiProjectGuideRouteImport.update({
+    id: '/read/power-bi-project-guide',
+    path: '/read/power-bi-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiProjectCaseStudyRoute =
+  MarketingResourcesReadPowerBiProjectCaseStudyRouteImport.update({
+    id: '/read/power-bi-project-case-study',
+    path: '/read/power-bi-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiPracticeQuestionsRoute =
+  MarketingResourcesReadPowerBiPracticeQuestionsRouteImport.update({
+    id: '/read/power-bi-practice-questions',
+    path: '/read/power-bi-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiPdfNotesRoute =
+  MarketingResourcesReadPowerBiPdfNotesRouteImport.update({
+    id: '/read/power-bi-pdf-notes',
+    path: '/read/power-bi-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiLearningRoadmapRoute =
+  MarketingResourcesReadPowerBiLearningRoadmapRouteImport.update({
+    id: '/read/power-bi-learning-roadmap',
+    path: '/read/power-bi-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiInterviewQuestionsRoute =
+  MarketingResourcesReadPowerBiInterviewQuestionsRouteImport.update({
+    id: '/read/power-bi-interview-questions',
+    path: '/read/power-bi-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiGlossaryRoute =
+  MarketingResourcesReadPowerBiGlossaryRouteImport.update({
+    id: '/read/power-bi-glossary',
+    path: '/read/power-bi-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/power-bi-frequently-asked-questions',
+    path: '/read/power-bi-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiCompleteTutorialRoute =
+  MarketingResourcesReadPowerBiCompleteTutorialRouteImport.update({
+    id: '/read/power-bi-complete-tutorial',
+    path: '/read/power-bi-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiCommonMistakesRoute =
+  MarketingResourcesReadPowerBiCommonMistakesRouteImport.update({
+    id: '/read/power-bi-common-mistakes',
+    path: '/read/power-bi-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiCheatSheetRoute =
+  MarketingResourcesReadPowerBiCheatSheetRouteImport.update({
+    id: '/read/power-bi-cheat-sheet',
+    path: '/read/power-bi-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiBestPracticesRoute =
+  MarketingResourcesReadPowerBiBestPracticesRouteImport.update({
+    id: '/read/power-bi-best-practices',
+    path: '/read/power-bi-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiBeginnerGuideRoute =
+  MarketingResourcesReadPowerBiBeginnerGuideRouteImport.update({
+    id: '/read/power-bi-beginner-guide',
+    path: '/read/power-bi-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiAnswerKeyRoute =
+  MarketingResourcesReadPowerBiAnswerKeyRouteImport.update({
+    id: '/read/power-bi-answer-key',
+    path: '/read/power-bi-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPowerBiAdvancedConceptsRoute =
+  MarketingResourcesReadPowerBiAdvancedConceptsRouteImport.update({
+    id: '/read/power-bi-advanced-concepts',
+    path: '/read/power-bi-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPenetrationTestingTipsTricksRoute =
@@ -4458,6 +4605,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
   '/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
   '/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
+  '/resources/read/power-bi-advanced-concepts': typeof MarketingResourcesReadPowerBiAdvancedConceptsRoute
+  '/resources/read/power-bi-answer-key': typeof MarketingResourcesReadPowerBiAnswerKeyRoute
+  '/resources/read/power-bi-beginner-guide': typeof MarketingResourcesReadPowerBiBeginnerGuideRoute
+  '/resources/read/power-bi-best-practices': typeof MarketingResourcesReadPowerBiBestPracticesRoute
+  '/resources/read/power-bi-cheat-sheet': typeof MarketingResourcesReadPowerBiCheatSheetRoute
+  '/resources/read/power-bi-common-mistakes': typeof MarketingResourcesReadPowerBiCommonMistakesRoute
+  '/resources/read/power-bi-complete-tutorial': typeof MarketingResourcesReadPowerBiCompleteTutorialRoute
+  '/resources/read/power-bi-frequently-asked-questions': typeof MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRoute
+  '/resources/read/power-bi-glossary': typeof MarketingResourcesReadPowerBiGlossaryRoute
+  '/resources/read/power-bi-interview-questions': typeof MarketingResourcesReadPowerBiInterviewQuestionsRoute
+  '/resources/read/power-bi-learning-roadmap': typeof MarketingResourcesReadPowerBiLearningRoadmapRoute
+  '/resources/read/power-bi-pdf-notes': typeof MarketingResourcesReadPowerBiPdfNotesRoute
+  '/resources/read/power-bi-practice-questions': typeof MarketingResourcesReadPowerBiPracticeQuestionsRoute
+  '/resources/read/power-bi-project-case-study': typeof MarketingResourcesReadPowerBiProjectCaseStudyRoute
+  '/resources/read/power-bi-project-guide': typeof MarketingResourcesReadPowerBiProjectGuideRoute
+  '/resources/read/power-bi-quick-revision-notes': typeof MarketingResourcesReadPowerBiQuickRevisionNotesRoute
+  '/resources/read/power-bi-real-world-case-study': typeof MarketingResourcesReadPowerBiRealWorldCaseStudyRoute
+  '/resources/read/power-bi-reference-guide': typeof MarketingResourcesReadPowerBiReferenceGuideRoute
+  '/resources/read/power-bi-sample-exercises': typeof MarketingResourcesReadPowerBiSampleExercisesRoute
+  '/resources/read/power-bi-step-by-step-learning-guide': typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRoute
+  '/resources/read/power-bi-tips-tricks': typeof MarketingResourcesReadPowerBiTipsTricksRoute
   '/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -5026,6 +5194,27 @@ export interface FileRoutesByTo {
   '/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
   '/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
   '/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
+  '/resources/read/power-bi-advanced-concepts': typeof MarketingResourcesReadPowerBiAdvancedConceptsRoute
+  '/resources/read/power-bi-answer-key': typeof MarketingResourcesReadPowerBiAnswerKeyRoute
+  '/resources/read/power-bi-beginner-guide': typeof MarketingResourcesReadPowerBiBeginnerGuideRoute
+  '/resources/read/power-bi-best-practices': typeof MarketingResourcesReadPowerBiBestPracticesRoute
+  '/resources/read/power-bi-cheat-sheet': typeof MarketingResourcesReadPowerBiCheatSheetRoute
+  '/resources/read/power-bi-common-mistakes': typeof MarketingResourcesReadPowerBiCommonMistakesRoute
+  '/resources/read/power-bi-complete-tutorial': typeof MarketingResourcesReadPowerBiCompleteTutorialRoute
+  '/resources/read/power-bi-frequently-asked-questions': typeof MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRoute
+  '/resources/read/power-bi-glossary': typeof MarketingResourcesReadPowerBiGlossaryRoute
+  '/resources/read/power-bi-interview-questions': typeof MarketingResourcesReadPowerBiInterviewQuestionsRoute
+  '/resources/read/power-bi-learning-roadmap': typeof MarketingResourcesReadPowerBiLearningRoadmapRoute
+  '/resources/read/power-bi-pdf-notes': typeof MarketingResourcesReadPowerBiPdfNotesRoute
+  '/resources/read/power-bi-practice-questions': typeof MarketingResourcesReadPowerBiPracticeQuestionsRoute
+  '/resources/read/power-bi-project-case-study': typeof MarketingResourcesReadPowerBiProjectCaseStudyRoute
+  '/resources/read/power-bi-project-guide': typeof MarketingResourcesReadPowerBiProjectGuideRoute
+  '/resources/read/power-bi-quick-revision-notes': typeof MarketingResourcesReadPowerBiQuickRevisionNotesRoute
+  '/resources/read/power-bi-real-world-case-study': typeof MarketingResourcesReadPowerBiRealWorldCaseStudyRoute
+  '/resources/read/power-bi-reference-guide': typeof MarketingResourcesReadPowerBiReferenceGuideRoute
+  '/resources/read/power-bi-sample-exercises': typeof MarketingResourcesReadPowerBiSampleExercisesRoute
+  '/resources/read/power-bi-step-by-step-learning-guide': typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRoute
+  '/resources/read/power-bi-tips-tricks': typeof MarketingResourcesReadPowerBiTipsTricksRoute
   '/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -5599,6 +5788,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
   '/_marketing/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
   '/_marketing/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
+  '/_marketing/resources/read/power-bi-advanced-concepts': typeof MarketingResourcesReadPowerBiAdvancedConceptsRoute
+  '/_marketing/resources/read/power-bi-answer-key': typeof MarketingResourcesReadPowerBiAnswerKeyRoute
+  '/_marketing/resources/read/power-bi-beginner-guide': typeof MarketingResourcesReadPowerBiBeginnerGuideRoute
+  '/_marketing/resources/read/power-bi-best-practices': typeof MarketingResourcesReadPowerBiBestPracticesRoute
+  '/_marketing/resources/read/power-bi-cheat-sheet': typeof MarketingResourcesReadPowerBiCheatSheetRoute
+  '/_marketing/resources/read/power-bi-common-mistakes': typeof MarketingResourcesReadPowerBiCommonMistakesRoute
+  '/_marketing/resources/read/power-bi-complete-tutorial': typeof MarketingResourcesReadPowerBiCompleteTutorialRoute
+  '/_marketing/resources/read/power-bi-frequently-asked-questions': typeof MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/power-bi-glossary': typeof MarketingResourcesReadPowerBiGlossaryRoute
+  '/_marketing/resources/read/power-bi-interview-questions': typeof MarketingResourcesReadPowerBiInterviewQuestionsRoute
+  '/_marketing/resources/read/power-bi-learning-roadmap': typeof MarketingResourcesReadPowerBiLearningRoadmapRoute
+  '/_marketing/resources/read/power-bi-pdf-notes': typeof MarketingResourcesReadPowerBiPdfNotesRoute
+  '/_marketing/resources/read/power-bi-practice-questions': typeof MarketingResourcesReadPowerBiPracticeQuestionsRoute
+  '/_marketing/resources/read/power-bi-project-case-study': typeof MarketingResourcesReadPowerBiProjectCaseStudyRoute
+  '/_marketing/resources/read/power-bi-project-guide': typeof MarketingResourcesReadPowerBiProjectGuideRoute
+  '/_marketing/resources/read/power-bi-quick-revision-notes': typeof MarketingResourcesReadPowerBiQuickRevisionNotesRoute
+  '/_marketing/resources/read/power-bi-real-world-case-study': typeof MarketingResourcesReadPowerBiRealWorldCaseStudyRoute
+  '/_marketing/resources/read/power-bi-reference-guide': typeof MarketingResourcesReadPowerBiReferenceGuideRoute
+  '/_marketing/resources/read/power-bi-sample-exercises': typeof MarketingResourcesReadPowerBiSampleExercisesRoute
+  '/_marketing/resources/read/power-bi-step-by-step-learning-guide': typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRoute
+  '/_marketing/resources/read/power-bi-tips-tricks': typeof MarketingResourcesReadPowerBiTipsTricksRoute
   '/_marketing/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/_marketing/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/_marketing/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -6170,6 +6380,27 @@ export interface FileRouteTypes {
     | '/resources/read/penetration-testing-sample-exercises'
     | '/resources/read/penetration-testing-step-by-step-learning-guide'
     | '/resources/read/penetration-testing-tips-tricks'
+    | '/resources/read/power-bi-advanced-concepts'
+    | '/resources/read/power-bi-answer-key'
+    | '/resources/read/power-bi-beginner-guide'
+    | '/resources/read/power-bi-best-practices'
+    | '/resources/read/power-bi-cheat-sheet'
+    | '/resources/read/power-bi-common-mistakes'
+    | '/resources/read/power-bi-complete-tutorial'
+    | '/resources/read/power-bi-frequently-asked-questions'
+    | '/resources/read/power-bi-glossary'
+    | '/resources/read/power-bi-interview-questions'
+    | '/resources/read/power-bi-learning-roadmap'
+    | '/resources/read/power-bi-pdf-notes'
+    | '/resources/read/power-bi-practice-questions'
+    | '/resources/read/power-bi-project-case-study'
+    | '/resources/read/power-bi-project-guide'
+    | '/resources/read/power-bi-quick-revision-notes'
+    | '/resources/read/power-bi-real-world-case-study'
+    | '/resources/read/power-bi-reference-guide'
+    | '/resources/read/power-bi-sample-exercises'
+    | '/resources/read/power-bi-step-by-step-learning-guide'
+    | '/resources/read/power-bi-tips-tricks'
     | '/resources/read/react-advanced-concepts'
     | '/resources/read/react-answer-key'
     | '/resources/read/react-beginner-guide'
@@ -6738,6 +6969,27 @@ export interface FileRouteTypes {
     | '/resources/read/penetration-testing-sample-exercises'
     | '/resources/read/penetration-testing-step-by-step-learning-guide'
     | '/resources/read/penetration-testing-tips-tricks'
+    | '/resources/read/power-bi-advanced-concepts'
+    | '/resources/read/power-bi-answer-key'
+    | '/resources/read/power-bi-beginner-guide'
+    | '/resources/read/power-bi-best-practices'
+    | '/resources/read/power-bi-cheat-sheet'
+    | '/resources/read/power-bi-common-mistakes'
+    | '/resources/read/power-bi-complete-tutorial'
+    | '/resources/read/power-bi-frequently-asked-questions'
+    | '/resources/read/power-bi-glossary'
+    | '/resources/read/power-bi-interview-questions'
+    | '/resources/read/power-bi-learning-roadmap'
+    | '/resources/read/power-bi-pdf-notes'
+    | '/resources/read/power-bi-practice-questions'
+    | '/resources/read/power-bi-project-case-study'
+    | '/resources/read/power-bi-project-guide'
+    | '/resources/read/power-bi-quick-revision-notes'
+    | '/resources/read/power-bi-real-world-case-study'
+    | '/resources/read/power-bi-reference-guide'
+    | '/resources/read/power-bi-sample-exercises'
+    | '/resources/read/power-bi-step-by-step-learning-guide'
+    | '/resources/read/power-bi-tips-tricks'
     | '/resources/read/react-advanced-concepts'
     | '/resources/read/react-answer-key'
     | '/resources/read/react-beginner-guide'
@@ -7310,6 +7562,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/penetration-testing-sample-exercises'
     | '/_marketing/resources/read/penetration-testing-step-by-step-learning-guide'
     | '/_marketing/resources/read/penetration-testing-tips-tricks'
+    | '/_marketing/resources/read/power-bi-advanced-concepts'
+    | '/_marketing/resources/read/power-bi-answer-key'
+    | '/_marketing/resources/read/power-bi-beginner-guide'
+    | '/_marketing/resources/read/power-bi-best-practices'
+    | '/_marketing/resources/read/power-bi-cheat-sheet'
+    | '/_marketing/resources/read/power-bi-common-mistakes'
+    | '/_marketing/resources/read/power-bi-complete-tutorial'
+    | '/_marketing/resources/read/power-bi-frequently-asked-questions'
+    | '/_marketing/resources/read/power-bi-glossary'
+    | '/_marketing/resources/read/power-bi-interview-questions'
+    | '/_marketing/resources/read/power-bi-learning-roadmap'
+    | '/_marketing/resources/read/power-bi-pdf-notes'
+    | '/_marketing/resources/read/power-bi-practice-questions'
+    | '/_marketing/resources/read/power-bi-project-case-study'
+    | '/_marketing/resources/read/power-bi-project-guide'
+    | '/_marketing/resources/read/power-bi-quick-revision-notes'
+    | '/_marketing/resources/read/power-bi-real-world-case-study'
+    | '/_marketing/resources/read/power-bi-reference-guide'
+    | '/_marketing/resources/read/power-bi-sample-exercises'
+    | '/_marketing/resources/read/power-bi-step-by-step-learning-guide'
+    | '/_marketing/resources/read/power-bi-tips-tricks'
     | '/_marketing/resources/read/react-advanced-concepts'
     | '/_marketing/resources/read/react-answer-key'
     | '/_marketing/resources/read/react-beginner-guide'
@@ -8387,6 +8660,153 @@ declare module '@tanstack/react-router' {
       path: '/read/react-advanced-concepts'
       fullPath: '/resources/read/react-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadReactAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-tips-tricks': {
+      id: '/_marketing/resources/read/power-bi-tips-tricks'
+      path: '/read/power-bi-tips-tricks'
+      fullPath: '/resources/read/power-bi-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/power-bi-step-by-step-learning-guide'
+      path: '/read/power-bi-step-by-step-learning-guide'
+      fullPath: '/resources/read/power-bi-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-sample-exercises': {
+      id: '/_marketing/resources/read/power-bi-sample-exercises'
+      path: '/read/power-bi-sample-exercises'
+      fullPath: '/resources/read/power-bi-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-reference-guide': {
+      id: '/_marketing/resources/read/power-bi-reference-guide'
+      path: '/read/power-bi-reference-guide'
+      fullPath: '/resources/read/power-bi-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-real-world-case-study': {
+      id: '/_marketing/resources/read/power-bi-real-world-case-study'
+      path: '/read/power-bi-real-world-case-study'
+      fullPath: '/resources/read/power-bi-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-quick-revision-notes': {
+      id: '/_marketing/resources/read/power-bi-quick-revision-notes'
+      path: '/read/power-bi-quick-revision-notes'
+      fullPath: '/resources/read/power-bi-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-project-guide': {
+      id: '/_marketing/resources/read/power-bi-project-guide'
+      path: '/read/power-bi-project-guide'
+      fullPath: '/resources/read/power-bi-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-project-case-study': {
+      id: '/_marketing/resources/read/power-bi-project-case-study'
+      path: '/read/power-bi-project-case-study'
+      fullPath: '/resources/read/power-bi-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-practice-questions': {
+      id: '/_marketing/resources/read/power-bi-practice-questions'
+      path: '/read/power-bi-practice-questions'
+      fullPath: '/resources/read/power-bi-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-pdf-notes': {
+      id: '/_marketing/resources/read/power-bi-pdf-notes'
+      path: '/read/power-bi-pdf-notes'
+      fullPath: '/resources/read/power-bi-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-learning-roadmap': {
+      id: '/_marketing/resources/read/power-bi-learning-roadmap'
+      path: '/read/power-bi-learning-roadmap'
+      fullPath: '/resources/read/power-bi-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-interview-questions': {
+      id: '/_marketing/resources/read/power-bi-interview-questions'
+      path: '/read/power-bi-interview-questions'
+      fullPath: '/resources/read/power-bi-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-glossary': {
+      id: '/_marketing/resources/read/power-bi-glossary'
+      path: '/read/power-bi-glossary'
+      fullPath: '/resources/read/power-bi-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-frequently-asked-questions': {
+      id: '/_marketing/resources/read/power-bi-frequently-asked-questions'
+      path: '/read/power-bi-frequently-asked-questions'
+      fullPath: '/resources/read/power-bi-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-complete-tutorial': {
+      id: '/_marketing/resources/read/power-bi-complete-tutorial'
+      path: '/read/power-bi-complete-tutorial'
+      fullPath: '/resources/read/power-bi-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-common-mistakes': {
+      id: '/_marketing/resources/read/power-bi-common-mistakes'
+      path: '/read/power-bi-common-mistakes'
+      fullPath: '/resources/read/power-bi-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-cheat-sheet': {
+      id: '/_marketing/resources/read/power-bi-cheat-sheet'
+      path: '/read/power-bi-cheat-sheet'
+      fullPath: '/resources/read/power-bi-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-best-practices': {
+      id: '/_marketing/resources/read/power-bi-best-practices'
+      path: '/read/power-bi-best-practices'
+      fullPath: '/resources/read/power-bi-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-beginner-guide': {
+      id: '/_marketing/resources/read/power-bi-beginner-guide'
+      path: '/read/power-bi-beginner-guide'
+      fullPath: '/resources/read/power-bi-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-answer-key': {
+      id: '/_marketing/resources/read/power-bi-answer-key'
+      path: '/read/power-bi-answer-key'
+      fullPath: '/resources/read/power-bi-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/power-bi-advanced-concepts': {
+      id: '/_marketing/resources/read/power-bi-advanced-concepts'
+      path: '/read/power-bi-advanced-concepts'
+      fullPath: '/resources/read/power-bi-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadPowerBiAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/penetration-testing-tips-tricks': {
@@ -11976,6 +12396,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPenetrationTestingSampleExercisesRoute: typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
   MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute: typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
   MarketingResourcesReadPenetrationTestingTipsTricksRoute: typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
+  MarketingResourcesReadPowerBiAdvancedConceptsRoute: typeof MarketingResourcesReadPowerBiAdvancedConceptsRoute
+  MarketingResourcesReadPowerBiAnswerKeyRoute: typeof MarketingResourcesReadPowerBiAnswerKeyRoute
+  MarketingResourcesReadPowerBiBeginnerGuideRoute: typeof MarketingResourcesReadPowerBiBeginnerGuideRoute
+  MarketingResourcesReadPowerBiBestPracticesRoute: typeof MarketingResourcesReadPowerBiBestPracticesRoute
+  MarketingResourcesReadPowerBiCheatSheetRoute: typeof MarketingResourcesReadPowerBiCheatSheetRoute
+  MarketingResourcesReadPowerBiCommonMistakesRoute: typeof MarketingResourcesReadPowerBiCommonMistakesRoute
+  MarketingResourcesReadPowerBiCompleteTutorialRoute: typeof MarketingResourcesReadPowerBiCompleteTutorialRoute
+  MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadPowerBiGlossaryRoute: typeof MarketingResourcesReadPowerBiGlossaryRoute
+  MarketingResourcesReadPowerBiInterviewQuestionsRoute: typeof MarketingResourcesReadPowerBiInterviewQuestionsRoute
+  MarketingResourcesReadPowerBiLearningRoadmapRoute: typeof MarketingResourcesReadPowerBiLearningRoadmapRoute
+  MarketingResourcesReadPowerBiPdfNotesRoute: typeof MarketingResourcesReadPowerBiPdfNotesRoute
+  MarketingResourcesReadPowerBiPracticeQuestionsRoute: typeof MarketingResourcesReadPowerBiPracticeQuestionsRoute
+  MarketingResourcesReadPowerBiProjectCaseStudyRoute: typeof MarketingResourcesReadPowerBiProjectCaseStudyRoute
+  MarketingResourcesReadPowerBiProjectGuideRoute: typeof MarketingResourcesReadPowerBiProjectGuideRoute
+  MarketingResourcesReadPowerBiQuickRevisionNotesRoute: typeof MarketingResourcesReadPowerBiQuickRevisionNotesRoute
+  MarketingResourcesReadPowerBiRealWorldCaseStudyRoute: typeof MarketingResourcesReadPowerBiRealWorldCaseStudyRoute
+  MarketingResourcesReadPowerBiReferenceGuideRoute: typeof MarketingResourcesReadPowerBiReferenceGuideRoute
+  MarketingResourcesReadPowerBiSampleExercisesRoute: typeof MarketingResourcesReadPowerBiSampleExercisesRoute
+  MarketingResourcesReadPowerBiStepByStepLearningGuideRoute: typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRoute
+  MarketingResourcesReadPowerBiTipsTricksRoute: typeof MarketingResourcesReadPowerBiTipsTricksRoute
   MarketingResourcesReadReactAdvancedConceptsRoute: typeof MarketingResourcesReadReactAdvancedConceptsRoute
   MarketingResourcesReadReactAnswerKeyRoute: typeof MarketingResourcesReadReactAnswerKeyRoute
   MarketingResourcesReadReactBeginnerGuideRoute: typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -12904,6 +13345,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute,
   MarketingResourcesReadPenetrationTestingTipsTricksRoute:
     MarketingResourcesReadPenetrationTestingTipsTricksRoute,
+  MarketingResourcesReadPowerBiAdvancedConceptsRoute:
+    MarketingResourcesReadPowerBiAdvancedConceptsRoute,
+  MarketingResourcesReadPowerBiAnswerKeyRoute:
+    MarketingResourcesReadPowerBiAnswerKeyRoute,
+  MarketingResourcesReadPowerBiBeginnerGuideRoute:
+    MarketingResourcesReadPowerBiBeginnerGuideRoute,
+  MarketingResourcesReadPowerBiBestPracticesRoute:
+    MarketingResourcesReadPowerBiBestPracticesRoute,
+  MarketingResourcesReadPowerBiCheatSheetRoute:
+    MarketingResourcesReadPowerBiCheatSheetRoute,
+  MarketingResourcesReadPowerBiCommonMistakesRoute:
+    MarketingResourcesReadPowerBiCommonMistakesRoute,
+  MarketingResourcesReadPowerBiCompleteTutorialRoute:
+    MarketingResourcesReadPowerBiCompleteTutorialRoute,
+  MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadPowerBiFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadPowerBiGlossaryRoute:
+    MarketingResourcesReadPowerBiGlossaryRoute,
+  MarketingResourcesReadPowerBiInterviewQuestionsRoute:
+    MarketingResourcesReadPowerBiInterviewQuestionsRoute,
+  MarketingResourcesReadPowerBiLearningRoadmapRoute:
+    MarketingResourcesReadPowerBiLearningRoadmapRoute,
+  MarketingResourcesReadPowerBiPdfNotesRoute:
+    MarketingResourcesReadPowerBiPdfNotesRoute,
+  MarketingResourcesReadPowerBiPracticeQuestionsRoute:
+    MarketingResourcesReadPowerBiPracticeQuestionsRoute,
+  MarketingResourcesReadPowerBiProjectCaseStudyRoute:
+    MarketingResourcesReadPowerBiProjectCaseStudyRoute,
+  MarketingResourcesReadPowerBiProjectGuideRoute:
+    MarketingResourcesReadPowerBiProjectGuideRoute,
+  MarketingResourcesReadPowerBiQuickRevisionNotesRoute:
+    MarketingResourcesReadPowerBiQuickRevisionNotesRoute,
+  MarketingResourcesReadPowerBiRealWorldCaseStudyRoute:
+    MarketingResourcesReadPowerBiRealWorldCaseStudyRoute,
+  MarketingResourcesReadPowerBiReferenceGuideRoute:
+    MarketingResourcesReadPowerBiReferenceGuideRoute,
+  MarketingResourcesReadPowerBiSampleExercisesRoute:
+    MarketingResourcesReadPowerBiSampleExercisesRoute,
+  MarketingResourcesReadPowerBiStepByStepLearningGuideRoute:
+    MarketingResourcesReadPowerBiStepByStepLearningGuideRoute,
+  MarketingResourcesReadPowerBiTipsTricksRoute:
+    MarketingResourcesReadPowerBiTipsTricksRoute,
   MarketingResourcesReadReactAdvancedConceptsRoute:
     MarketingResourcesReadReactAdvancedConceptsRoute,
   MarketingResourcesReadReactAnswerKeyRoute:
