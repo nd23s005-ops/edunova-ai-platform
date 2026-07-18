@@ -79,15 +79,18 @@ import { Route as MarketingResourcesReadDlStepByStepLearningGuideRouteImport } f
 import { Route as MarketingResourcesReadDlSampleExercisesRouteImport } from './routes/_marketing.resources.read.dl-sample-exercises'
 import { Route as MarketingResourcesReadDlReferenceGuideRouteImport } from './routes/_marketing.resources.read.dl-reference-guide'
 import { Route as MarketingResourcesReadDlRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.dl-real-world-case-study'
+import { Route as MarketingResourcesReadDlQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.dl-quick-revision-notes'
 import { Route as MarketingResourcesReadDlProjectGuideRouteImport } from './routes/_marketing.resources.read.dl-project-guide'
 import { Route as MarketingResourcesReadDlProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.dl-project-case-study'
 import { Route as MarketingResourcesReadDlPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.dl-practice-questions'
+import { Route as MarketingResourcesReadDlPdfNotesRouteImport } from './routes/_marketing.resources.read.dl-pdf-notes'
 import { Route as MarketingResourcesReadDlLearningRoadmapRouteImport } from './routes/_marketing.resources.read.dl-learning-roadmap'
 import { Route as MarketingResourcesReadDlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.dl-interview-questions'
 import { Route as MarketingResourcesReadDlGlossaryRouteImport } from './routes/_marketing.resources.read.dl-glossary'
 import { Route as MarketingResourcesReadDlFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.dl-frequently-asked-questions'
 import { Route as MarketingResourcesReadDlCompleteTutorialRouteImport } from './routes/_marketing.resources.read.dl-complete-tutorial'
 import { Route as MarketingResourcesReadDlCommonMistakesRouteImport } from './routes/_marketing.resources.read.dl-common-mistakes'
+import { Route as MarketingResourcesReadDlCheatSheetRouteImport } from './routes/_marketing.resources.read.dl-cheat-sheet'
 import { Route as MarketingResourcesReadDlBestPracticesRouteImport } from './routes/_marketing.resources.read.dl-best-practices'
 import { Route as MarketingResourcesReadDlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dl-beginner-guide'
 import { Route as MarketingResourcesReadDlAnswerKeyRouteImport } from './routes/_marketing.resources.read.dl-answer-key'
@@ -514,6 +517,12 @@ const MarketingResourcesReadDlRealWorldCaseStudyRoute =
     path: '/read/dl-real-world-case-study',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDlQuickRevisionNotesRoute =
+  MarketingResourcesReadDlQuickRevisionNotesRouteImport.update({
+    id: '/read/dl-quick-revision-notes',
+    path: '/read/dl-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDlProjectGuideRoute =
   MarketingResourcesReadDlProjectGuideRouteImport.update({
     id: '/read/dl-project-guide',
@@ -530,6 +539,12 @@ const MarketingResourcesReadDlPracticeQuestionsRoute =
   MarketingResourcesReadDlPracticeQuestionsRouteImport.update({
     id: '/read/dl-practice-questions',
     path: '/read/dl-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDlPdfNotesRoute =
+  MarketingResourcesReadDlPdfNotesRouteImport.update({
+    id: '/read/dl-pdf-notes',
+    path: '/read/dl-pdf-notes',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadDlLearningRoadmapRoute =
@@ -566,6 +581,12 @@ const MarketingResourcesReadDlCommonMistakesRoute =
   MarketingResourcesReadDlCommonMistakesRouteImport.update({
     id: '/read/dl-common-mistakes',
     path: '/read/dl-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDlCheatSheetRoute =
+  MarketingResourcesReadDlCheatSheetRouteImport.update({
+    id: '/read/dl-cheat-sheet',
+    path: '/read/dl-cheat-sheet',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadDlBestPracticesRoute =
@@ -870,15 +891,18 @@ export interface FileRoutesByFullPath {
   '/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
   '/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
   '/resources/read/dl-best-practices': typeof MarketingResourcesReadDlBestPracticesRoute
+  '/resources/read/dl-cheat-sheet': typeof MarketingResourcesReadDlCheatSheetRoute
   '/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
   '/resources/read/dl-complete-tutorial': typeof MarketingResourcesReadDlCompleteTutorialRoute
   '/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
+  '/resources/read/dl-pdf-notes': typeof MarketingResourcesReadDlPdfNotesRoute
   '/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/resources/read/dl-project-case-study': typeof MarketingResourcesReadDlProjectCaseStudyRoute
   '/resources/read/dl-project-guide': typeof MarketingResourcesReadDlProjectGuideRoute
+  '/resources/read/dl-quick-revision-notes': typeof MarketingResourcesReadDlQuickRevisionNotesRoute
   '/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
   '/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
@@ -985,15 +1009,18 @@ export interface FileRoutesByTo {
   '/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
   '/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
   '/resources/read/dl-best-practices': typeof MarketingResourcesReadDlBestPracticesRoute
+  '/resources/read/dl-cheat-sheet': typeof MarketingResourcesReadDlCheatSheetRoute
   '/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
   '/resources/read/dl-complete-tutorial': typeof MarketingResourcesReadDlCompleteTutorialRoute
   '/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
+  '/resources/read/dl-pdf-notes': typeof MarketingResourcesReadDlPdfNotesRoute
   '/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/resources/read/dl-project-case-study': typeof MarketingResourcesReadDlProjectCaseStudyRoute
   '/resources/read/dl-project-guide': typeof MarketingResourcesReadDlProjectGuideRoute
+  '/resources/read/dl-quick-revision-notes': typeof MarketingResourcesReadDlQuickRevisionNotesRoute
   '/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
   '/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
@@ -1105,15 +1132,18 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
   '/_marketing/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
   '/_marketing/resources/read/dl-best-practices': typeof MarketingResourcesReadDlBestPracticesRoute
+  '/_marketing/resources/read/dl-cheat-sheet': typeof MarketingResourcesReadDlCheatSheetRoute
   '/_marketing/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
   '/_marketing/resources/read/dl-complete-tutorial': typeof MarketingResourcesReadDlCompleteTutorialRoute
   '/_marketing/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/_marketing/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/_marketing/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
+  '/_marketing/resources/read/dl-pdf-notes': typeof MarketingResourcesReadDlPdfNotesRoute
   '/_marketing/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/_marketing/resources/read/dl-project-case-study': typeof MarketingResourcesReadDlProjectCaseStudyRoute
   '/_marketing/resources/read/dl-project-guide': typeof MarketingResourcesReadDlProjectGuideRoute
+  '/_marketing/resources/read/dl-quick-revision-notes': typeof MarketingResourcesReadDlQuickRevisionNotesRoute
   '/_marketing/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/_marketing/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
   '/_marketing/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
@@ -1223,15 +1253,18 @@ export interface FileRouteTypes {
     | '/resources/read/dl-answer-key'
     | '/resources/read/dl-beginner-guide'
     | '/resources/read/dl-best-practices'
+    | '/resources/read/dl-cheat-sheet'
     | '/resources/read/dl-common-mistakes'
     | '/resources/read/dl-complete-tutorial'
     | '/resources/read/dl-frequently-asked-questions'
     | '/resources/read/dl-glossary'
     | '/resources/read/dl-interview-questions'
     | '/resources/read/dl-learning-roadmap'
+    | '/resources/read/dl-pdf-notes'
     | '/resources/read/dl-practice-questions'
     | '/resources/read/dl-project-case-study'
     | '/resources/read/dl-project-guide'
+    | '/resources/read/dl-quick-revision-notes'
     | '/resources/read/dl-real-world-case-study'
     | '/resources/read/dl-reference-guide'
     | '/resources/read/dl-sample-exercises'
@@ -1338,15 +1371,18 @@ export interface FileRouteTypes {
     | '/resources/read/dl-answer-key'
     | '/resources/read/dl-beginner-guide'
     | '/resources/read/dl-best-practices'
+    | '/resources/read/dl-cheat-sheet'
     | '/resources/read/dl-common-mistakes'
     | '/resources/read/dl-complete-tutorial'
     | '/resources/read/dl-frequently-asked-questions'
     | '/resources/read/dl-glossary'
     | '/resources/read/dl-interview-questions'
     | '/resources/read/dl-learning-roadmap'
+    | '/resources/read/dl-pdf-notes'
     | '/resources/read/dl-practice-questions'
     | '/resources/read/dl-project-case-study'
     | '/resources/read/dl-project-guide'
+    | '/resources/read/dl-quick-revision-notes'
     | '/resources/read/dl-real-world-case-study'
     | '/resources/read/dl-reference-guide'
     | '/resources/read/dl-sample-exercises'
@@ -1457,15 +1493,18 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dl-answer-key'
     | '/_marketing/resources/read/dl-beginner-guide'
     | '/_marketing/resources/read/dl-best-practices'
+    | '/_marketing/resources/read/dl-cheat-sheet'
     | '/_marketing/resources/read/dl-common-mistakes'
     | '/_marketing/resources/read/dl-complete-tutorial'
     | '/_marketing/resources/read/dl-frequently-asked-questions'
     | '/_marketing/resources/read/dl-glossary'
     | '/_marketing/resources/read/dl-interview-questions'
     | '/_marketing/resources/read/dl-learning-roadmap'
+    | '/_marketing/resources/read/dl-pdf-notes'
     | '/_marketing/resources/read/dl-practice-questions'
     | '/_marketing/resources/read/dl-project-case-study'
     | '/_marketing/resources/read/dl-project-guide'
+    | '/_marketing/resources/read/dl-quick-revision-notes'
     | '/_marketing/resources/read/dl-real-world-case-study'
     | '/_marketing/resources/read/dl-reference-guide'
     | '/_marketing/resources/read/dl-sample-exercises'
@@ -2009,6 +2048,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDlRealWorldCaseStudyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/dl-quick-revision-notes': {
+      id: '/_marketing/resources/read/dl-quick-revision-notes'
+      path: '/read/dl-quick-revision-notes'
+      fullPath: '/resources/read/dl-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDlQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dl-project-guide': {
       id: '/_marketing/resources/read/dl-project-guide'
       path: '/read/dl-project-guide'
@@ -2028,6 +2074,13 @@ declare module '@tanstack/react-router' {
       path: '/read/dl-practice-questions'
       fullPath: '/resources/read/dl-practice-questions'
       preLoaderRoute: typeof MarketingResourcesReadDlPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dl-pdf-notes': {
+      id: '/_marketing/resources/read/dl-pdf-notes'
+      path: '/read/dl-pdf-notes'
+      fullPath: '/resources/read/dl-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDlPdfNotesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/dl-learning-roadmap': {
@@ -2070,6 +2123,13 @@ declare module '@tanstack/react-router' {
       path: '/read/dl-common-mistakes'
       fullPath: '/resources/read/dl-common-mistakes'
       preLoaderRoute: typeof MarketingResourcesReadDlCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dl-cheat-sheet': {
+      id: '/_marketing/resources/read/dl-cheat-sheet'
+      path: '/read/dl-cheat-sheet'
+      fullPath: '/resources/read/dl-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadDlCheatSheetRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/dl-best-practices': {
@@ -2499,15 +2559,18 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDlAnswerKeyRoute: typeof MarketingResourcesReadDlAnswerKeyRoute
   MarketingResourcesReadDlBeginnerGuideRoute: typeof MarketingResourcesReadDlBeginnerGuideRoute
   MarketingResourcesReadDlBestPracticesRoute: typeof MarketingResourcesReadDlBestPracticesRoute
+  MarketingResourcesReadDlCheatSheetRoute: typeof MarketingResourcesReadDlCheatSheetRoute
   MarketingResourcesReadDlCommonMistakesRoute: typeof MarketingResourcesReadDlCommonMistakesRoute
   MarketingResourcesReadDlCompleteTutorialRoute: typeof MarketingResourcesReadDlCompleteTutorialRoute
   MarketingResourcesReadDlFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   MarketingResourcesReadDlGlossaryRoute: typeof MarketingResourcesReadDlGlossaryRoute
   MarketingResourcesReadDlInterviewQuestionsRoute: typeof MarketingResourcesReadDlInterviewQuestionsRoute
   MarketingResourcesReadDlLearningRoadmapRoute: typeof MarketingResourcesReadDlLearningRoadmapRoute
+  MarketingResourcesReadDlPdfNotesRoute: typeof MarketingResourcesReadDlPdfNotesRoute
   MarketingResourcesReadDlPracticeQuestionsRoute: typeof MarketingResourcesReadDlPracticeQuestionsRoute
   MarketingResourcesReadDlProjectCaseStudyRoute: typeof MarketingResourcesReadDlProjectCaseStudyRoute
   MarketingResourcesReadDlProjectGuideRoute: typeof MarketingResourcesReadDlProjectGuideRoute
+  MarketingResourcesReadDlQuickRevisionNotesRoute: typeof MarketingResourcesReadDlQuickRevisionNotesRoute
   MarketingResourcesReadDlRealWorldCaseStudyRoute: typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   MarketingResourcesReadDlReferenceGuideRoute: typeof MarketingResourcesReadDlReferenceGuideRoute
   MarketingResourcesReadDlSampleExercisesRoute: typeof MarketingResourcesReadDlSampleExercisesRoute
@@ -2587,6 +2650,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDlBeginnerGuideRoute,
   MarketingResourcesReadDlBestPracticesRoute:
     MarketingResourcesReadDlBestPracticesRoute,
+  MarketingResourcesReadDlCheatSheetRoute:
+    MarketingResourcesReadDlCheatSheetRoute,
   MarketingResourcesReadDlCommonMistakesRoute:
     MarketingResourcesReadDlCommonMistakesRoute,
   MarketingResourcesReadDlCompleteTutorialRoute:
@@ -2598,12 +2663,15 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDlInterviewQuestionsRoute,
   MarketingResourcesReadDlLearningRoadmapRoute:
     MarketingResourcesReadDlLearningRoadmapRoute,
+  MarketingResourcesReadDlPdfNotesRoute: MarketingResourcesReadDlPdfNotesRoute,
   MarketingResourcesReadDlPracticeQuestionsRoute:
     MarketingResourcesReadDlPracticeQuestionsRoute,
   MarketingResourcesReadDlProjectCaseStudyRoute:
     MarketingResourcesReadDlProjectCaseStudyRoute,
   MarketingResourcesReadDlProjectGuideRoute:
     MarketingResourcesReadDlProjectGuideRoute,
+  MarketingResourcesReadDlQuickRevisionNotesRoute:
+    MarketingResourcesReadDlQuickRevisionNotesRoute,
   MarketingResourcesReadDlRealWorldCaseStudyRoute:
     MarketingResourcesReadDlRealWorldCaseStudyRoute,
   MarketingResourcesReadDlReferenceGuideRoute:
