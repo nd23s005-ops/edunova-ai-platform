@@ -373,6 +373,7 @@ const READER_ROUTES: Record<string, string> = {
   "generative-ai--beginner-guide": "/resources/read/genai-beginner-guide",
   "generative-ai--complete-tutorial": "/resources/read/genai-complete-tutorial",
   "generative-ai--interview-questions": "/resources/read/genai-interview-questions",
+  "generative-ai--practice-questions": "/resources/read/genai-practice-questions",
 
 
 

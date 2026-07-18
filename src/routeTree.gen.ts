@@ -74,6 +74,7 @@ import { Route as MarketingResourcesReadMlBestPracticesRouteImport } from './rou
 import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ml-beginner-guide'
 import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/_marketing.resources.read.ml-answer-key'
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
+import { Route as MarketingResourcesReadGenaiPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.genai-practice-questions'
 import { Route as MarketingResourcesReadGenaiInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.genai-interview-questions'
 import { Route as MarketingResourcesReadGenaiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.genai-complete-tutorial'
 import { Route as MarketingResourcesReadGenaiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.genai-beginner-guide'
@@ -488,6 +489,12 @@ const MarketingResourcesReadMlAdvancedConceptsRoute =
   MarketingResourcesReadMlAdvancedConceptsRouteImport.update({
     id: '/read/ml-advanced-concepts',
     path: '/read/ml-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGenaiPracticeQuestionsRoute =
+  MarketingResourcesReadGenaiPracticeQuestionsRouteImport.update({
+    id: '/read/genai-practice-questions',
+    path: '/read/genai-practice-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadGenaiInterviewQuestionsRoute =
@@ -932,6 +939,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
+  '/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -1053,6 +1061,7 @@ export interface FileRoutesByTo {
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
+  '/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -1179,6 +1188,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/_marketing/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/_marketing/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
+  '/_marketing/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/_marketing/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/_marketing/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -1303,6 +1313,7 @@ export interface FileRouteTypes {
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
     | '/resources/read/genai-interview-questions'
+    | '/resources/read/genai-practice-questions'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
     | '/resources/read/ml-beginner-guide'
@@ -1424,6 +1435,7 @@ export interface FileRouteTypes {
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
     | '/resources/read/genai-interview-questions'
+    | '/resources/read/genai-practice-questions'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
     | '/resources/read/ml-beginner-guide'
@@ -1549,6 +1561,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/genai-beginner-guide'
     | '/_marketing/resources/read/genai-complete-tutorial'
     | '/_marketing/resources/read/genai-interview-questions'
+    | '/_marketing/resources/read/genai-practice-questions'
     | '/_marketing/resources/read/ml-advanced-concepts'
     | '/_marketing/resources/read/ml-answer-key'
     | '/_marketing/resources/read/ml-beginner-guide'
@@ -2050,6 +2063,13 @@ declare module '@tanstack/react-router' {
       path: '/read/ml-advanced-concepts'
       fullPath: '/resources/read/ml-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadMlAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/genai-practice-questions': {
+      id: '/_marketing/resources/read/genai-practice-questions'
+      path: '/read/genai-practice-questions'
+      fullPath: '/resources/read/genai-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadGenaiPracticeQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/genai-interview-questions': {
@@ -2639,6 +2659,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadGenaiBeginnerGuideRoute: typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   MarketingResourcesReadGenaiCompleteTutorialRoute: typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   MarketingResourcesReadGenaiInterviewQuestionsRoute: typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
+  MarketingResourcesReadGenaiPracticeQuestionsRoute: typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
   MarketingResourcesReadMlAnswerKeyRoute: typeof MarketingResourcesReadMlAnswerKeyRoute
   MarketingResourcesReadMlBeginnerGuideRoute: typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -2751,6 +2772,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadGenaiCompleteTutorialRoute,
   MarketingResourcesReadGenaiInterviewQuestionsRoute:
     MarketingResourcesReadGenaiInterviewQuestionsRoute,
+  MarketingResourcesReadGenaiPracticeQuestionsRoute:
+    MarketingResourcesReadGenaiPracticeQuestionsRoute,
   MarketingResourcesReadMlAdvancedConceptsRoute:
     MarketingResourcesReadMlAdvancedConceptsRoute,
   MarketingResourcesReadMlAnswerKeyRoute:
