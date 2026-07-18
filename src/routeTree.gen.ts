@@ -170,6 +170,27 @@ import { Route as MarketingResourcesReadJavascriptBestPracticesRouteImport } fro
 import { Route as MarketingResourcesReadJavascriptBeginnerGuideRouteImport } from './routes/_marketing.resources.read.javascript-beginner-guide'
 import { Route as MarketingResourcesReadJavascriptAnswerKeyRouteImport } from './routes/_marketing.resources.read.javascript-answer-key'
 import { Route as MarketingResourcesReadJavascriptAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.javascript-advanced-concepts'
+import { Route as MarketingResourcesReadHtml5TipsAndTricksRouteImport } from './routes/_marketing.resources.read.html5-tips-and-tricks'
+import { Route as MarketingResourcesReadHtml5StepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.html5-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadHtml5SampleExercisesRouteImport } from './routes/_marketing.resources.read.html5-sample-exercises'
+import { Route as MarketingResourcesReadHtml5ReferenceGuideRouteImport } from './routes/_marketing.resources.read.html5-reference-guide'
+import { Route as MarketingResourcesReadHtml5RealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.html5-real-world-case-study'
+import { Route as MarketingResourcesReadHtml5QuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.html5-quick-revision-notes'
+import { Route as MarketingResourcesReadHtml5ProjectGuideRouteImport } from './routes/_marketing.resources.read.html5-project-guide'
+import { Route as MarketingResourcesReadHtml5ProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.html5-project-case-study'
+import { Route as MarketingResourcesReadHtml5PracticeQuestionsRouteImport } from './routes/_marketing.resources.read.html5-practice-questions'
+import { Route as MarketingResourcesReadHtml5PdfNotesRouteImport } from './routes/_marketing.resources.read.html5-pdf-notes'
+import { Route as MarketingResourcesReadHtml5LearningRoadmapRouteImport } from './routes/_marketing.resources.read.html5-learning-roadmap'
+import { Route as MarketingResourcesReadHtml5InterviewQuestionsRouteImport } from './routes/_marketing.resources.read.html5-interview-questions'
+import { Route as MarketingResourcesReadHtml5GlossaryRouteImport } from './routes/_marketing.resources.read.html5-glossary'
+import { Route as MarketingResourcesReadHtml5FrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.html5-frequently-asked-questions'
+import { Route as MarketingResourcesReadHtml5CompleteTutorialRouteImport } from './routes/_marketing.resources.read.html5-complete-tutorial'
+import { Route as MarketingResourcesReadHtml5CommonMistakesRouteImport } from './routes/_marketing.resources.read.html5-common-mistakes'
+import { Route as MarketingResourcesReadHtml5CheatSheetRouteImport } from './routes/_marketing.resources.read.html5-cheat-sheet'
+import { Route as MarketingResourcesReadHtml5BestPracticesRouteImport } from './routes/_marketing.resources.read.html5-best-practices'
+import { Route as MarketingResourcesReadHtml5BeginnerGuideRouteImport } from './routes/_marketing.resources.read.html5-beginner-guide'
+import { Route as MarketingResourcesReadHtml5AnswerKeyRouteImport } from './routes/_marketing.resources.read.html5-answer-key'
+import { Route as MarketingResourcesReadHtml5AdvancedConceptsRouteImport } from './routes/_marketing.resources.read.html5-advanced-concepts'
 import { Route as MarketingResourcesReadGoTipsAndTricksRouteImport } from './routes/_marketing.resources.read.go-tips-and-tricks'
 import { Route as MarketingResourcesReadGoStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.go-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadGoSampleExercisesRouteImport } from './routes/_marketing.resources.read.go-sample-exercises'
@@ -1228,6 +1249,132 @@ const MarketingResourcesReadJavascriptAdvancedConceptsRoute =
     path: '/read/javascript-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadHtml5TipsAndTricksRoute =
+  MarketingResourcesReadHtml5TipsAndTricksRouteImport.update({
+    id: '/read/html5-tips-and-tricks',
+    path: '/read/html5-tips-and-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5StepByStepLearningGuideRoute =
+  MarketingResourcesReadHtml5StepByStepLearningGuideRouteImport.update({
+    id: '/read/html5-step-by-step-learning-guide',
+    path: '/read/html5-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5SampleExercisesRoute =
+  MarketingResourcesReadHtml5SampleExercisesRouteImport.update({
+    id: '/read/html5-sample-exercises',
+    path: '/read/html5-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5ReferenceGuideRoute =
+  MarketingResourcesReadHtml5ReferenceGuideRouteImport.update({
+    id: '/read/html5-reference-guide',
+    path: '/read/html5-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5RealWorldCaseStudyRoute =
+  MarketingResourcesReadHtml5RealWorldCaseStudyRouteImport.update({
+    id: '/read/html5-real-world-case-study',
+    path: '/read/html5-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5QuickRevisionNotesRoute =
+  MarketingResourcesReadHtml5QuickRevisionNotesRouteImport.update({
+    id: '/read/html5-quick-revision-notes',
+    path: '/read/html5-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5ProjectGuideRoute =
+  MarketingResourcesReadHtml5ProjectGuideRouteImport.update({
+    id: '/read/html5-project-guide',
+    path: '/read/html5-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5ProjectCaseStudyRoute =
+  MarketingResourcesReadHtml5ProjectCaseStudyRouteImport.update({
+    id: '/read/html5-project-case-study',
+    path: '/read/html5-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5PracticeQuestionsRoute =
+  MarketingResourcesReadHtml5PracticeQuestionsRouteImport.update({
+    id: '/read/html5-practice-questions',
+    path: '/read/html5-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5PdfNotesRoute =
+  MarketingResourcesReadHtml5PdfNotesRouteImport.update({
+    id: '/read/html5-pdf-notes',
+    path: '/read/html5-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5LearningRoadmapRoute =
+  MarketingResourcesReadHtml5LearningRoadmapRouteImport.update({
+    id: '/read/html5-learning-roadmap',
+    path: '/read/html5-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5InterviewQuestionsRoute =
+  MarketingResourcesReadHtml5InterviewQuestionsRouteImport.update({
+    id: '/read/html5-interview-questions',
+    path: '/read/html5-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5GlossaryRoute =
+  MarketingResourcesReadHtml5GlossaryRouteImport.update({
+    id: '/read/html5-glossary',
+    path: '/read/html5-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5FrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadHtml5FrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/html5-frequently-asked-questions',
+    path: '/read/html5-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5CompleteTutorialRoute =
+  MarketingResourcesReadHtml5CompleteTutorialRouteImport.update({
+    id: '/read/html5-complete-tutorial',
+    path: '/read/html5-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5CommonMistakesRoute =
+  MarketingResourcesReadHtml5CommonMistakesRouteImport.update({
+    id: '/read/html5-common-mistakes',
+    path: '/read/html5-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5CheatSheetRoute =
+  MarketingResourcesReadHtml5CheatSheetRouteImport.update({
+    id: '/read/html5-cheat-sheet',
+    path: '/read/html5-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5BestPracticesRoute =
+  MarketingResourcesReadHtml5BestPracticesRouteImport.update({
+    id: '/read/html5-best-practices',
+    path: '/read/html5-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5BeginnerGuideRoute =
+  MarketingResourcesReadHtml5BeginnerGuideRouteImport.update({
+    id: '/read/html5-beginner-guide',
+    path: '/read/html5-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5AnswerKeyRoute =
+  MarketingResourcesReadHtml5AnswerKeyRouteImport.update({
+    id: '/read/html5-answer-key',
+    path: '/read/html5-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadHtml5AdvancedConceptsRoute =
+  MarketingResourcesReadHtml5AdvancedConceptsRouteImport.update({
+    id: '/read/html5-advanced-concepts',
+    path: '/read/html5-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadGoTipsAndTricksRoute =
   MarketingResourcesReadGoTipsAndTricksRouteImport.update({
     id: '/read/go-tips-and-tricks',
@@ -2136,6 +2283,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/go-tips-and-tricks': typeof MarketingResourcesReadGoTipsAndTricksRoute
+  '/resources/read/html5-advanced-concepts': typeof MarketingResourcesReadHtml5AdvancedConceptsRoute
+  '/resources/read/html5-answer-key': typeof MarketingResourcesReadHtml5AnswerKeyRoute
+  '/resources/read/html5-beginner-guide': typeof MarketingResourcesReadHtml5BeginnerGuideRoute
+  '/resources/read/html5-best-practices': typeof MarketingResourcesReadHtml5BestPracticesRoute
+  '/resources/read/html5-cheat-sheet': typeof MarketingResourcesReadHtml5CheatSheetRoute
+  '/resources/read/html5-common-mistakes': typeof MarketingResourcesReadHtml5CommonMistakesRoute
+  '/resources/read/html5-complete-tutorial': typeof MarketingResourcesReadHtml5CompleteTutorialRoute
+  '/resources/read/html5-frequently-asked-questions': typeof MarketingResourcesReadHtml5FrequentlyAskedQuestionsRoute
+  '/resources/read/html5-glossary': typeof MarketingResourcesReadHtml5GlossaryRoute
+  '/resources/read/html5-interview-questions': typeof MarketingResourcesReadHtml5InterviewQuestionsRoute
+  '/resources/read/html5-learning-roadmap': typeof MarketingResourcesReadHtml5LearningRoadmapRoute
+  '/resources/read/html5-pdf-notes': typeof MarketingResourcesReadHtml5PdfNotesRoute
+  '/resources/read/html5-practice-questions': typeof MarketingResourcesReadHtml5PracticeQuestionsRoute
+  '/resources/read/html5-project-case-study': typeof MarketingResourcesReadHtml5ProjectCaseStudyRoute
+  '/resources/read/html5-project-guide': typeof MarketingResourcesReadHtml5ProjectGuideRoute
+  '/resources/read/html5-quick-revision-notes': typeof MarketingResourcesReadHtml5QuickRevisionNotesRoute
+  '/resources/read/html5-real-world-case-study': typeof MarketingResourcesReadHtml5RealWorldCaseStudyRoute
+  '/resources/read/html5-reference-guide': typeof MarketingResourcesReadHtml5ReferenceGuideRoute
+  '/resources/read/html5-sample-exercises': typeof MarketingResourcesReadHtml5SampleExercisesRoute
+  '/resources/read/html5-step-by-step-learning-guide': typeof MarketingResourcesReadHtml5StepByStepLearningGuideRoute
+  '/resources/read/html5-tips-and-tricks': typeof MarketingResourcesReadHtml5TipsAndTricksRoute
   '/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
   '/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
   '/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
@@ -2419,6 +2587,27 @@ export interface FileRoutesByTo {
   '/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/go-tips-and-tricks': typeof MarketingResourcesReadGoTipsAndTricksRoute
+  '/resources/read/html5-advanced-concepts': typeof MarketingResourcesReadHtml5AdvancedConceptsRoute
+  '/resources/read/html5-answer-key': typeof MarketingResourcesReadHtml5AnswerKeyRoute
+  '/resources/read/html5-beginner-guide': typeof MarketingResourcesReadHtml5BeginnerGuideRoute
+  '/resources/read/html5-best-practices': typeof MarketingResourcesReadHtml5BestPracticesRoute
+  '/resources/read/html5-cheat-sheet': typeof MarketingResourcesReadHtml5CheatSheetRoute
+  '/resources/read/html5-common-mistakes': typeof MarketingResourcesReadHtml5CommonMistakesRoute
+  '/resources/read/html5-complete-tutorial': typeof MarketingResourcesReadHtml5CompleteTutorialRoute
+  '/resources/read/html5-frequently-asked-questions': typeof MarketingResourcesReadHtml5FrequentlyAskedQuestionsRoute
+  '/resources/read/html5-glossary': typeof MarketingResourcesReadHtml5GlossaryRoute
+  '/resources/read/html5-interview-questions': typeof MarketingResourcesReadHtml5InterviewQuestionsRoute
+  '/resources/read/html5-learning-roadmap': typeof MarketingResourcesReadHtml5LearningRoadmapRoute
+  '/resources/read/html5-pdf-notes': typeof MarketingResourcesReadHtml5PdfNotesRoute
+  '/resources/read/html5-practice-questions': typeof MarketingResourcesReadHtml5PracticeQuestionsRoute
+  '/resources/read/html5-project-case-study': typeof MarketingResourcesReadHtml5ProjectCaseStudyRoute
+  '/resources/read/html5-project-guide': typeof MarketingResourcesReadHtml5ProjectGuideRoute
+  '/resources/read/html5-quick-revision-notes': typeof MarketingResourcesReadHtml5QuickRevisionNotesRoute
+  '/resources/read/html5-real-world-case-study': typeof MarketingResourcesReadHtml5RealWorldCaseStudyRoute
+  '/resources/read/html5-reference-guide': typeof MarketingResourcesReadHtml5ReferenceGuideRoute
+  '/resources/read/html5-sample-exercises': typeof MarketingResourcesReadHtml5SampleExercisesRoute
+  '/resources/read/html5-step-by-step-learning-guide': typeof MarketingResourcesReadHtml5StepByStepLearningGuideRoute
+  '/resources/read/html5-tips-and-tricks': typeof MarketingResourcesReadHtml5TipsAndTricksRoute
   '/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
   '/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
   '/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
@@ -2707,6 +2896,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/_marketing/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/_marketing/resources/read/go-tips-and-tricks': typeof MarketingResourcesReadGoTipsAndTricksRoute
+  '/_marketing/resources/read/html5-advanced-concepts': typeof MarketingResourcesReadHtml5AdvancedConceptsRoute
+  '/_marketing/resources/read/html5-answer-key': typeof MarketingResourcesReadHtml5AnswerKeyRoute
+  '/_marketing/resources/read/html5-beginner-guide': typeof MarketingResourcesReadHtml5BeginnerGuideRoute
+  '/_marketing/resources/read/html5-best-practices': typeof MarketingResourcesReadHtml5BestPracticesRoute
+  '/_marketing/resources/read/html5-cheat-sheet': typeof MarketingResourcesReadHtml5CheatSheetRoute
+  '/_marketing/resources/read/html5-common-mistakes': typeof MarketingResourcesReadHtml5CommonMistakesRoute
+  '/_marketing/resources/read/html5-complete-tutorial': typeof MarketingResourcesReadHtml5CompleteTutorialRoute
+  '/_marketing/resources/read/html5-frequently-asked-questions': typeof MarketingResourcesReadHtml5FrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/html5-glossary': typeof MarketingResourcesReadHtml5GlossaryRoute
+  '/_marketing/resources/read/html5-interview-questions': typeof MarketingResourcesReadHtml5InterviewQuestionsRoute
+  '/_marketing/resources/read/html5-learning-roadmap': typeof MarketingResourcesReadHtml5LearningRoadmapRoute
+  '/_marketing/resources/read/html5-pdf-notes': typeof MarketingResourcesReadHtml5PdfNotesRoute
+  '/_marketing/resources/read/html5-practice-questions': typeof MarketingResourcesReadHtml5PracticeQuestionsRoute
+  '/_marketing/resources/read/html5-project-case-study': typeof MarketingResourcesReadHtml5ProjectCaseStudyRoute
+  '/_marketing/resources/read/html5-project-guide': typeof MarketingResourcesReadHtml5ProjectGuideRoute
+  '/_marketing/resources/read/html5-quick-revision-notes': typeof MarketingResourcesReadHtml5QuickRevisionNotesRoute
+  '/_marketing/resources/read/html5-real-world-case-study': typeof MarketingResourcesReadHtml5RealWorldCaseStudyRoute
+  '/_marketing/resources/read/html5-reference-guide': typeof MarketingResourcesReadHtml5ReferenceGuideRoute
+  '/_marketing/resources/read/html5-sample-exercises': typeof MarketingResourcesReadHtml5SampleExercisesRoute
+  '/_marketing/resources/read/html5-step-by-step-learning-guide': typeof MarketingResourcesReadHtml5StepByStepLearningGuideRoute
+  '/_marketing/resources/read/html5-tips-and-tricks': typeof MarketingResourcesReadHtml5TipsAndTricksRoute
   '/_marketing/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
   '/_marketing/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
   '/_marketing/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
@@ -2993,6 +3203,27 @@ export interface FileRouteTypes {
     | '/resources/read/go-sample-exercises'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/go-tips-and-tricks'
+    | '/resources/read/html5-advanced-concepts'
+    | '/resources/read/html5-answer-key'
+    | '/resources/read/html5-beginner-guide'
+    | '/resources/read/html5-best-practices'
+    | '/resources/read/html5-cheat-sheet'
+    | '/resources/read/html5-common-mistakes'
+    | '/resources/read/html5-complete-tutorial'
+    | '/resources/read/html5-frequently-asked-questions'
+    | '/resources/read/html5-glossary'
+    | '/resources/read/html5-interview-questions'
+    | '/resources/read/html5-learning-roadmap'
+    | '/resources/read/html5-pdf-notes'
+    | '/resources/read/html5-practice-questions'
+    | '/resources/read/html5-project-case-study'
+    | '/resources/read/html5-project-guide'
+    | '/resources/read/html5-quick-revision-notes'
+    | '/resources/read/html5-real-world-case-study'
+    | '/resources/read/html5-reference-guide'
+    | '/resources/read/html5-sample-exercises'
+    | '/resources/read/html5-step-by-step-learning-guide'
+    | '/resources/read/html5-tips-and-tricks'
     | '/resources/read/javascript-advanced-concepts'
     | '/resources/read/javascript-answer-key'
     | '/resources/read/javascript-beginner-guide'
@@ -3276,6 +3507,27 @@ export interface FileRouteTypes {
     | '/resources/read/go-sample-exercises'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/go-tips-and-tricks'
+    | '/resources/read/html5-advanced-concepts'
+    | '/resources/read/html5-answer-key'
+    | '/resources/read/html5-beginner-guide'
+    | '/resources/read/html5-best-practices'
+    | '/resources/read/html5-cheat-sheet'
+    | '/resources/read/html5-common-mistakes'
+    | '/resources/read/html5-complete-tutorial'
+    | '/resources/read/html5-frequently-asked-questions'
+    | '/resources/read/html5-glossary'
+    | '/resources/read/html5-interview-questions'
+    | '/resources/read/html5-learning-roadmap'
+    | '/resources/read/html5-pdf-notes'
+    | '/resources/read/html5-practice-questions'
+    | '/resources/read/html5-project-case-study'
+    | '/resources/read/html5-project-guide'
+    | '/resources/read/html5-quick-revision-notes'
+    | '/resources/read/html5-real-world-case-study'
+    | '/resources/read/html5-reference-guide'
+    | '/resources/read/html5-sample-exercises'
+    | '/resources/read/html5-step-by-step-learning-guide'
+    | '/resources/read/html5-tips-and-tricks'
     | '/resources/read/javascript-advanced-concepts'
     | '/resources/read/javascript-answer-key'
     | '/resources/read/javascript-beginner-guide'
@@ -3563,6 +3815,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/go-sample-exercises'
     | '/_marketing/resources/read/go-step-by-step-learning-guide'
     | '/_marketing/resources/read/go-tips-and-tricks'
+    | '/_marketing/resources/read/html5-advanced-concepts'
+    | '/_marketing/resources/read/html5-answer-key'
+    | '/_marketing/resources/read/html5-beginner-guide'
+    | '/_marketing/resources/read/html5-best-practices'
+    | '/_marketing/resources/read/html5-cheat-sheet'
+    | '/_marketing/resources/read/html5-common-mistakes'
+    | '/_marketing/resources/read/html5-complete-tutorial'
+    | '/_marketing/resources/read/html5-frequently-asked-questions'
+    | '/_marketing/resources/read/html5-glossary'
+    | '/_marketing/resources/read/html5-interview-questions'
+    | '/_marketing/resources/read/html5-learning-roadmap'
+    | '/_marketing/resources/read/html5-pdf-notes'
+    | '/_marketing/resources/read/html5-practice-questions'
+    | '/_marketing/resources/read/html5-project-case-study'
+    | '/_marketing/resources/read/html5-project-guide'
+    | '/_marketing/resources/read/html5-quick-revision-notes'
+    | '/_marketing/resources/read/html5-real-world-case-study'
+    | '/_marketing/resources/read/html5-reference-guide'
+    | '/_marketing/resources/read/html5-sample-exercises'
+    | '/_marketing/resources/read/html5-step-by-step-learning-guide'
+    | '/_marketing/resources/read/html5-tips-and-tricks'
     | '/_marketing/resources/read/javascript-advanced-concepts'
     | '/_marketing/resources/read/javascript-answer-key'
     | '/_marketing/resources/read/javascript-beginner-guide'
@@ -4834,6 +5107,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadJavascriptAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/html5-tips-and-tricks': {
+      id: '/_marketing/resources/read/html5-tips-and-tricks'
+      path: '/read/html5-tips-and-tricks'
+      fullPath: '/resources/read/html5-tips-and-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5TipsAndTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/html5-step-by-step-learning-guide'
+      path: '/read/html5-step-by-step-learning-guide'
+      fullPath: '/resources/read/html5-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5StepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-sample-exercises': {
+      id: '/_marketing/resources/read/html5-sample-exercises'
+      path: '/read/html5-sample-exercises'
+      fullPath: '/resources/read/html5-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5SampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-reference-guide': {
+      id: '/_marketing/resources/read/html5-reference-guide'
+      path: '/read/html5-reference-guide'
+      fullPath: '/resources/read/html5-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5ReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-real-world-case-study': {
+      id: '/_marketing/resources/read/html5-real-world-case-study'
+      path: '/read/html5-real-world-case-study'
+      fullPath: '/resources/read/html5-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5RealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-quick-revision-notes': {
+      id: '/_marketing/resources/read/html5-quick-revision-notes'
+      path: '/read/html5-quick-revision-notes'
+      fullPath: '/resources/read/html5-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5QuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-project-guide': {
+      id: '/_marketing/resources/read/html5-project-guide'
+      path: '/read/html5-project-guide'
+      fullPath: '/resources/read/html5-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5ProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-project-case-study': {
+      id: '/_marketing/resources/read/html5-project-case-study'
+      path: '/read/html5-project-case-study'
+      fullPath: '/resources/read/html5-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5ProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-practice-questions': {
+      id: '/_marketing/resources/read/html5-practice-questions'
+      path: '/read/html5-practice-questions'
+      fullPath: '/resources/read/html5-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5PracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-pdf-notes': {
+      id: '/_marketing/resources/read/html5-pdf-notes'
+      path: '/read/html5-pdf-notes'
+      fullPath: '/resources/read/html5-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5PdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-learning-roadmap': {
+      id: '/_marketing/resources/read/html5-learning-roadmap'
+      path: '/read/html5-learning-roadmap'
+      fullPath: '/resources/read/html5-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5LearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-interview-questions': {
+      id: '/_marketing/resources/read/html5-interview-questions'
+      path: '/read/html5-interview-questions'
+      fullPath: '/resources/read/html5-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5InterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-glossary': {
+      id: '/_marketing/resources/read/html5-glossary'
+      path: '/read/html5-glossary'
+      fullPath: '/resources/read/html5-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5GlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-frequently-asked-questions': {
+      id: '/_marketing/resources/read/html5-frequently-asked-questions'
+      path: '/read/html5-frequently-asked-questions'
+      fullPath: '/resources/read/html5-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5FrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-complete-tutorial': {
+      id: '/_marketing/resources/read/html5-complete-tutorial'
+      path: '/read/html5-complete-tutorial'
+      fullPath: '/resources/read/html5-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5CompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-common-mistakes': {
+      id: '/_marketing/resources/read/html5-common-mistakes'
+      path: '/read/html5-common-mistakes'
+      fullPath: '/resources/read/html5-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5CommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-cheat-sheet': {
+      id: '/_marketing/resources/read/html5-cheat-sheet'
+      path: '/read/html5-cheat-sheet'
+      fullPath: '/resources/read/html5-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5CheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-best-practices': {
+      id: '/_marketing/resources/read/html5-best-practices'
+      path: '/read/html5-best-practices'
+      fullPath: '/resources/read/html5-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5BestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-beginner-guide': {
+      id: '/_marketing/resources/read/html5-beginner-guide'
+      path: '/read/html5-beginner-guide'
+      fullPath: '/resources/read/html5-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5BeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-answer-key': {
+      id: '/_marketing/resources/read/html5-answer-key'
+      path: '/read/html5-answer-key'
+      fullPath: '/resources/read/html5-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5AnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/html5-advanced-concepts': {
+      id: '/_marketing/resources/read/html5-advanced-concepts'
+      path: '/read/html5-advanced-concepts'
+      fullPath: '/resources/read/html5-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadHtml5AdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/go-tips-and-tricks': {
       id: '/_marketing/resources/read/go-tips-and-tricks'
       path: '/read/go-tips-and-tricks'
@@ -5949,6 +6369,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadGoSampleExercisesRoute: typeof MarketingResourcesReadGoSampleExercisesRoute
   MarketingResourcesReadGoStepByStepLearningGuideRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   MarketingResourcesReadGoTipsAndTricksRoute: typeof MarketingResourcesReadGoTipsAndTricksRoute
+  MarketingResourcesReadHtml5AdvancedConceptsRoute: typeof MarketingResourcesReadHtml5AdvancedConceptsRoute
+  MarketingResourcesReadHtml5AnswerKeyRoute: typeof MarketingResourcesReadHtml5AnswerKeyRoute
+  MarketingResourcesReadHtml5BeginnerGuideRoute: typeof MarketingResourcesReadHtml5BeginnerGuideRoute
+  MarketingResourcesReadHtml5BestPracticesRoute: typeof MarketingResourcesReadHtml5BestPracticesRoute
+  MarketingResourcesReadHtml5CheatSheetRoute: typeof MarketingResourcesReadHtml5CheatSheetRoute
+  MarketingResourcesReadHtml5CommonMistakesRoute: typeof MarketingResourcesReadHtml5CommonMistakesRoute
+  MarketingResourcesReadHtml5CompleteTutorialRoute: typeof MarketingResourcesReadHtml5CompleteTutorialRoute
+  MarketingResourcesReadHtml5FrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadHtml5FrequentlyAskedQuestionsRoute
+  MarketingResourcesReadHtml5GlossaryRoute: typeof MarketingResourcesReadHtml5GlossaryRoute
+  MarketingResourcesReadHtml5InterviewQuestionsRoute: typeof MarketingResourcesReadHtml5InterviewQuestionsRoute
+  MarketingResourcesReadHtml5LearningRoadmapRoute: typeof MarketingResourcesReadHtml5LearningRoadmapRoute
+  MarketingResourcesReadHtml5PdfNotesRoute: typeof MarketingResourcesReadHtml5PdfNotesRoute
+  MarketingResourcesReadHtml5PracticeQuestionsRoute: typeof MarketingResourcesReadHtml5PracticeQuestionsRoute
+  MarketingResourcesReadHtml5ProjectCaseStudyRoute: typeof MarketingResourcesReadHtml5ProjectCaseStudyRoute
+  MarketingResourcesReadHtml5ProjectGuideRoute: typeof MarketingResourcesReadHtml5ProjectGuideRoute
+  MarketingResourcesReadHtml5QuickRevisionNotesRoute: typeof MarketingResourcesReadHtml5QuickRevisionNotesRoute
+  MarketingResourcesReadHtml5RealWorldCaseStudyRoute: typeof MarketingResourcesReadHtml5RealWorldCaseStudyRoute
+  MarketingResourcesReadHtml5ReferenceGuideRoute: typeof MarketingResourcesReadHtml5ReferenceGuideRoute
+  MarketingResourcesReadHtml5SampleExercisesRoute: typeof MarketingResourcesReadHtml5SampleExercisesRoute
+  MarketingResourcesReadHtml5StepByStepLearningGuideRoute: typeof MarketingResourcesReadHtml5StepByStepLearningGuideRoute
+  MarketingResourcesReadHtml5TipsAndTricksRoute: typeof MarketingResourcesReadHtml5TipsAndTricksRoute
   MarketingResourcesReadJavascriptAdvancedConceptsRoute: typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
   MarketingResourcesReadJavascriptAnswerKeyRoute: typeof MarketingResourcesReadJavascriptAnswerKeyRoute
   MarketingResourcesReadJavascriptBeginnerGuideRoute: typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
@@ -6287,6 +6728,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadGoStepByStepLearningGuideRoute,
   MarketingResourcesReadGoTipsAndTricksRoute:
     MarketingResourcesReadGoTipsAndTricksRoute,
+  MarketingResourcesReadHtml5AdvancedConceptsRoute:
+    MarketingResourcesReadHtml5AdvancedConceptsRoute,
+  MarketingResourcesReadHtml5AnswerKeyRoute:
+    MarketingResourcesReadHtml5AnswerKeyRoute,
+  MarketingResourcesReadHtml5BeginnerGuideRoute:
+    MarketingResourcesReadHtml5BeginnerGuideRoute,
+  MarketingResourcesReadHtml5BestPracticesRoute:
+    MarketingResourcesReadHtml5BestPracticesRoute,
+  MarketingResourcesReadHtml5CheatSheetRoute:
+    MarketingResourcesReadHtml5CheatSheetRoute,
+  MarketingResourcesReadHtml5CommonMistakesRoute:
+    MarketingResourcesReadHtml5CommonMistakesRoute,
+  MarketingResourcesReadHtml5CompleteTutorialRoute:
+    MarketingResourcesReadHtml5CompleteTutorialRoute,
+  MarketingResourcesReadHtml5FrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadHtml5FrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadHtml5GlossaryRoute:
+    MarketingResourcesReadHtml5GlossaryRoute,
+  MarketingResourcesReadHtml5InterviewQuestionsRoute:
+    MarketingResourcesReadHtml5InterviewQuestionsRoute,
+  MarketingResourcesReadHtml5LearningRoadmapRoute:
+    MarketingResourcesReadHtml5LearningRoadmapRoute,
+  MarketingResourcesReadHtml5PdfNotesRoute:
+    MarketingResourcesReadHtml5PdfNotesRoute,
+  MarketingResourcesReadHtml5PracticeQuestionsRoute:
+    MarketingResourcesReadHtml5PracticeQuestionsRoute,
+  MarketingResourcesReadHtml5ProjectCaseStudyRoute:
+    MarketingResourcesReadHtml5ProjectCaseStudyRoute,
+  MarketingResourcesReadHtml5ProjectGuideRoute:
+    MarketingResourcesReadHtml5ProjectGuideRoute,
+  MarketingResourcesReadHtml5QuickRevisionNotesRoute:
+    MarketingResourcesReadHtml5QuickRevisionNotesRoute,
+  MarketingResourcesReadHtml5RealWorldCaseStudyRoute:
+    MarketingResourcesReadHtml5RealWorldCaseStudyRoute,
+  MarketingResourcesReadHtml5ReferenceGuideRoute:
+    MarketingResourcesReadHtml5ReferenceGuideRoute,
+  MarketingResourcesReadHtml5SampleExercisesRoute:
+    MarketingResourcesReadHtml5SampleExercisesRoute,
+  MarketingResourcesReadHtml5StepByStepLearningGuideRoute:
+    MarketingResourcesReadHtml5StepByStepLearningGuideRoute,
+  MarketingResourcesReadHtml5TipsAndTricksRoute:
+    MarketingResourcesReadHtml5TipsAndTricksRoute,
   MarketingResourcesReadJavascriptAdvancedConceptsRoute:
     MarketingResourcesReadJavascriptAdvancedConceptsRoute,
   MarketingResourcesReadJavascriptAnswerKeyRoute:
