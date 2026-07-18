@@ -146,6 +146,27 @@ import { Route as MarketingResourcesReadReactBestPracticesRouteImport } from './
 import { Route as MarketingResourcesReadReactBeginnerGuideRouteImport } from './routes/_marketing.resources.read.react-beginner-guide'
 import { Route as MarketingResourcesReadReactAnswerKeyRouteImport } from './routes/_marketing.resources.read.react-answer-key'
 import { Route as MarketingResourcesReadReactAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.react-advanced-concepts'
+import { Route as MarketingResourcesReadPythonTipsTricksRouteImport } from './routes/_marketing.resources.read.python-tips-tricks'
+import { Route as MarketingResourcesReadPythonStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.python-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadPythonSampleExercisesRouteImport } from './routes/_marketing.resources.read.python-sample-exercises'
+import { Route as MarketingResourcesReadPythonReferenceGuideRouteImport } from './routes/_marketing.resources.read.python-reference-guide'
+import { Route as MarketingResourcesReadPythonRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.python-real-world-case-study'
+import { Route as MarketingResourcesReadPythonQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.python-quick-revision-notes'
+import { Route as MarketingResourcesReadPythonProjectGuideRouteImport } from './routes/_marketing.resources.read.python-project-guide'
+import { Route as MarketingResourcesReadPythonProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.python-project-case-study'
+import { Route as MarketingResourcesReadPythonPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.python-practice-questions'
+import { Route as MarketingResourcesReadPythonPdfNotesRouteImport } from './routes/_marketing.resources.read.python-pdf-notes'
+import { Route as MarketingResourcesReadPythonLearningRoadmapRouteImport } from './routes/_marketing.resources.read.python-learning-roadmap'
+import { Route as MarketingResourcesReadPythonInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.python-interview-questions'
+import { Route as MarketingResourcesReadPythonGlossaryRouteImport } from './routes/_marketing.resources.read.python-glossary'
+import { Route as MarketingResourcesReadPythonFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.python-frequently-asked-questions'
+import { Route as MarketingResourcesReadPythonCompleteTutorialRouteImport } from './routes/_marketing.resources.read.python-complete-tutorial'
+import { Route as MarketingResourcesReadPythonCommonMistakesRouteImport } from './routes/_marketing.resources.read.python-common-mistakes'
+import { Route as MarketingResourcesReadPythonCheatSheetRouteImport } from './routes/_marketing.resources.read.python-cheat-sheet'
+import { Route as MarketingResourcesReadPythonBestPracticesRouteImport } from './routes/_marketing.resources.read.python-best-practices'
+import { Route as MarketingResourcesReadPythonBeginnerGuideRouteImport } from './routes/_marketing.resources.read.python-beginner-guide'
+import { Route as MarketingResourcesReadPythonAnswerKeyRouteImport } from './routes/_marketing.resources.read.python-answer-key'
+import { Route as MarketingResourcesReadPythonAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.python-advanced-concepts'
 import { Route as MarketingResourcesReadPowerBiTipsTricksRouteImport } from './routes/_marketing.resources.read.power-bi-tips-tricks'
 import { Route as MarketingResourcesReadPowerBiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.power-bi-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPowerBiSampleExercisesRouteImport } from './routes/_marketing.resources.read.power-bi-sample-exercises'
@@ -1451,6 +1472,132 @@ const MarketingResourcesReadReactAdvancedConceptsRoute =
   MarketingResourcesReadReactAdvancedConceptsRouteImport.update({
     id: '/read/react-advanced-concepts',
     path: '/read/react-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonTipsTricksRoute =
+  MarketingResourcesReadPythonTipsTricksRouteImport.update({
+    id: '/read/python-tips-tricks',
+    path: '/read/python-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonStepByStepLearningGuideRoute =
+  MarketingResourcesReadPythonStepByStepLearningGuideRouteImport.update({
+    id: '/read/python-step-by-step-learning-guide',
+    path: '/read/python-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonSampleExercisesRoute =
+  MarketingResourcesReadPythonSampleExercisesRouteImport.update({
+    id: '/read/python-sample-exercises',
+    path: '/read/python-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonReferenceGuideRoute =
+  MarketingResourcesReadPythonReferenceGuideRouteImport.update({
+    id: '/read/python-reference-guide',
+    path: '/read/python-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonRealWorldCaseStudyRoute =
+  MarketingResourcesReadPythonRealWorldCaseStudyRouteImport.update({
+    id: '/read/python-real-world-case-study',
+    path: '/read/python-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonQuickRevisionNotesRoute =
+  MarketingResourcesReadPythonQuickRevisionNotesRouteImport.update({
+    id: '/read/python-quick-revision-notes',
+    path: '/read/python-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonProjectGuideRoute =
+  MarketingResourcesReadPythonProjectGuideRouteImport.update({
+    id: '/read/python-project-guide',
+    path: '/read/python-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonProjectCaseStudyRoute =
+  MarketingResourcesReadPythonProjectCaseStudyRouteImport.update({
+    id: '/read/python-project-case-study',
+    path: '/read/python-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonPracticeQuestionsRoute =
+  MarketingResourcesReadPythonPracticeQuestionsRouteImport.update({
+    id: '/read/python-practice-questions',
+    path: '/read/python-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonPdfNotesRoute =
+  MarketingResourcesReadPythonPdfNotesRouteImport.update({
+    id: '/read/python-pdf-notes',
+    path: '/read/python-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonLearningRoadmapRoute =
+  MarketingResourcesReadPythonLearningRoadmapRouteImport.update({
+    id: '/read/python-learning-roadmap',
+    path: '/read/python-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonInterviewQuestionsRoute =
+  MarketingResourcesReadPythonInterviewQuestionsRouteImport.update({
+    id: '/read/python-interview-questions',
+    path: '/read/python-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonGlossaryRoute =
+  MarketingResourcesReadPythonGlossaryRouteImport.update({
+    id: '/read/python-glossary',
+    path: '/read/python-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadPythonFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/python-frequently-asked-questions',
+    path: '/read/python-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonCompleteTutorialRoute =
+  MarketingResourcesReadPythonCompleteTutorialRouteImport.update({
+    id: '/read/python-complete-tutorial',
+    path: '/read/python-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonCommonMistakesRoute =
+  MarketingResourcesReadPythonCommonMistakesRouteImport.update({
+    id: '/read/python-common-mistakes',
+    path: '/read/python-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonCheatSheetRoute =
+  MarketingResourcesReadPythonCheatSheetRouteImport.update({
+    id: '/read/python-cheat-sheet',
+    path: '/read/python-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonBestPracticesRoute =
+  MarketingResourcesReadPythonBestPracticesRouteImport.update({
+    id: '/read/python-best-practices',
+    path: '/read/python-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonBeginnerGuideRoute =
+  MarketingResourcesReadPythonBeginnerGuideRouteImport.update({
+    id: '/read/python-beginner-guide',
+    path: '/read/python-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonAnswerKeyRoute =
+  MarketingResourcesReadPythonAnswerKeyRouteImport.update({
+    id: '/read/python-answer-key',
+    path: '/read/python-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPythonAdvancedConceptsRoute =
+  MarketingResourcesReadPythonAdvancedConceptsRouteImport.update({
+    id: '/read/python-advanced-concepts',
+    path: '/read/python-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPowerBiTipsTricksRoute =
@@ -5130,6 +5277,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/power-bi-sample-exercises': typeof MarketingResourcesReadPowerBiSampleExercisesRoute
   '/resources/read/power-bi-step-by-step-learning-guide': typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRoute
   '/resources/read/power-bi-tips-tricks': typeof MarketingResourcesReadPowerBiTipsTricksRoute
+  '/resources/read/python-advanced-concepts': typeof MarketingResourcesReadPythonAdvancedConceptsRoute
+  '/resources/read/python-answer-key': typeof MarketingResourcesReadPythonAnswerKeyRoute
+  '/resources/read/python-beginner-guide': typeof MarketingResourcesReadPythonBeginnerGuideRoute
+  '/resources/read/python-best-practices': typeof MarketingResourcesReadPythonBestPracticesRoute
+  '/resources/read/python-cheat-sheet': typeof MarketingResourcesReadPythonCheatSheetRoute
+  '/resources/read/python-common-mistakes': typeof MarketingResourcesReadPythonCommonMistakesRoute
+  '/resources/read/python-complete-tutorial': typeof MarketingResourcesReadPythonCompleteTutorialRoute
+  '/resources/read/python-frequently-asked-questions': typeof MarketingResourcesReadPythonFrequentlyAskedQuestionsRoute
+  '/resources/read/python-glossary': typeof MarketingResourcesReadPythonGlossaryRoute
+  '/resources/read/python-interview-questions': typeof MarketingResourcesReadPythonInterviewQuestionsRoute
+  '/resources/read/python-learning-roadmap': typeof MarketingResourcesReadPythonLearningRoadmapRoute
+  '/resources/read/python-pdf-notes': typeof MarketingResourcesReadPythonPdfNotesRoute
+  '/resources/read/python-practice-questions': typeof MarketingResourcesReadPythonPracticeQuestionsRoute
+  '/resources/read/python-project-case-study': typeof MarketingResourcesReadPythonProjectCaseStudyRoute
+  '/resources/read/python-project-guide': typeof MarketingResourcesReadPythonProjectGuideRoute
+  '/resources/read/python-quick-revision-notes': typeof MarketingResourcesReadPythonQuickRevisionNotesRoute
+  '/resources/read/python-real-world-case-study': typeof MarketingResourcesReadPythonRealWorldCaseStudyRoute
+  '/resources/read/python-reference-guide': typeof MarketingResourcesReadPythonReferenceGuideRoute
+  '/resources/read/python-sample-exercises': typeof MarketingResourcesReadPythonSampleExercisesRoute
+  '/resources/read/python-step-by-step-learning-guide': typeof MarketingResourcesReadPythonStepByStepLearningGuideRoute
+  '/resources/read/python-tips-tricks': typeof MarketingResourcesReadPythonTipsTricksRoute
   '/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -5782,6 +5950,27 @@ export interface FileRoutesByTo {
   '/resources/read/power-bi-sample-exercises': typeof MarketingResourcesReadPowerBiSampleExercisesRoute
   '/resources/read/power-bi-step-by-step-learning-guide': typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRoute
   '/resources/read/power-bi-tips-tricks': typeof MarketingResourcesReadPowerBiTipsTricksRoute
+  '/resources/read/python-advanced-concepts': typeof MarketingResourcesReadPythonAdvancedConceptsRoute
+  '/resources/read/python-answer-key': typeof MarketingResourcesReadPythonAnswerKeyRoute
+  '/resources/read/python-beginner-guide': typeof MarketingResourcesReadPythonBeginnerGuideRoute
+  '/resources/read/python-best-practices': typeof MarketingResourcesReadPythonBestPracticesRoute
+  '/resources/read/python-cheat-sheet': typeof MarketingResourcesReadPythonCheatSheetRoute
+  '/resources/read/python-common-mistakes': typeof MarketingResourcesReadPythonCommonMistakesRoute
+  '/resources/read/python-complete-tutorial': typeof MarketingResourcesReadPythonCompleteTutorialRoute
+  '/resources/read/python-frequently-asked-questions': typeof MarketingResourcesReadPythonFrequentlyAskedQuestionsRoute
+  '/resources/read/python-glossary': typeof MarketingResourcesReadPythonGlossaryRoute
+  '/resources/read/python-interview-questions': typeof MarketingResourcesReadPythonInterviewQuestionsRoute
+  '/resources/read/python-learning-roadmap': typeof MarketingResourcesReadPythonLearningRoadmapRoute
+  '/resources/read/python-pdf-notes': typeof MarketingResourcesReadPythonPdfNotesRoute
+  '/resources/read/python-practice-questions': typeof MarketingResourcesReadPythonPracticeQuestionsRoute
+  '/resources/read/python-project-case-study': typeof MarketingResourcesReadPythonProjectCaseStudyRoute
+  '/resources/read/python-project-guide': typeof MarketingResourcesReadPythonProjectGuideRoute
+  '/resources/read/python-quick-revision-notes': typeof MarketingResourcesReadPythonQuickRevisionNotesRoute
+  '/resources/read/python-real-world-case-study': typeof MarketingResourcesReadPythonRealWorldCaseStudyRoute
+  '/resources/read/python-reference-guide': typeof MarketingResourcesReadPythonReferenceGuideRoute
+  '/resources/read/python-sample-exercises': typeof MarketingResourcesReadPythonSampleExercisesRoute
+  '/resources/read/python-step-by-step-learning-guide': typeof MarketingResourcesReadPythonStepByStepLearningGuideRoute
+  '/resources/read/python-tips-tricks': typeof MarketingResourcesReadPythonTipsTricksRoute
   '/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -6439,6 +6628,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/power-bi-sample-exercises': typeof MarketingResourcesReadPowerBiSampleExercisesRoute
   '/_marketing/resources/read/power-bi-step-by-step-learning-guide': typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRoute
   '/_marketing/resources/read/power-bi-tips-tricks': typeof MarketingResourcesReadPowerBiTipsTricksRoute
+  '/_marketing/resources/read/python-advanced-concepts': typeof MarketingResourcesReadPythonAdvancedConceptsRoute
+  '/_marketing/resources/read/python-answer-key': typeof MarketingResourcesReadPythonAnswerKeyRoute
+  '/_marketing/resources/read/python-beginner-guide': typeof MarketingResourcesReadPythonBeginnerGuideRoute
+  '/_marketing/resources/read/python-best-practices': typeof MarketingResourcesReadPythonBestPracticesRoute
+  '/_marketing/resources/read/python-cheat-sheet': typeof MarketingResourcesReadPythonCheatSheetRoute
+  '/_marketing/resources/read/python-common-mistakes': typeof MarketingResourcesReadPythonCommonMistakesRoute
+  '/_marketing/resources/read/python-complete-tutorial': typeof MarketingResourcesReadPythonCompleteTutorialRoute
+  '/_marketing/resources/read/python-frequently-asked-questions': typeof MarketingResourcesReadPythonFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/python-glossary': typeof MarketingResourcesReadPythonGlossaryRoute
+  '/_marketing/resources/read/python-interview-questions': typeof MarketingResourcesReadPythonInterviewQuestionsRoute
+  '/_marketing/resources/read/python-learning-roadmap': typeof MarketingResourcesReadPythonLearningRoadmapRoute
+  '/_marketing/resources/read/python-pdf-notes': typeof MarketingResourcesReadPythonPdfNotesRoute
+  '/_marketing/resources/read/python-practice-questions': typeof MarketingResourcesReadPythonPracticeQuestionsRoute
+  '/_marketing/resources/read/python-project-case-study': typeof MarketingResourcesReadPythonProjectCaseStudyRoute
+  '/_marketing/resources/read/python-project-guide': typeof MarketingResourcesReadPythonProjectGuideRoute
+  '/_marketing/resources/read/python-quick-revision-notes': typeof MarketingResourcesReadPythonQuickRevisionNotesRoute
+  '/_marketing/resources/read/python-real-world-case-study': typeof MarketingResourcesReadPythonRealWorldCaseStudyRoute
+  '/_marketing/resources/read/python-reference-guide': typeof MarketingResourcesReadPythonReferenceGuideRoute
+  '/_marketing/resources/read/python-sample-exercises': typeof MarketingResourcesReadPythonSampleExercisesRoute
+  '/_marketing/resources/read/python-step-by-step-learning-guide': typeof MarketingResourcesReadPythonStepByStepLearningGuideRoute
+  '/_marketing/resources/read/python-tips-tricks': typeof MarketingResourcesReadPythonTipsTricksRoute
   '/_marketing/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/_marketing/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/_marketing/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -7094,6 +7304,27 @@ export interface FileRouteTypes {
     | '/resources/read/power-bi-sample-exercises'
     | '/resources/read/power-bi-step-by-step-learning-guide'
     | '/resources/read/power-bi-tips-tricks'
+    | '/resources/read/python-advanced-concepts'
+    | '/resources/read/python-answer-key'
+    | '/resources/read/python-beginner-guide'
+    | '/resources/read/python-best-practices'
+    | '/resources/read/python-cheat-sheet'
+    | '/resources/read/python-common-mistakes'
+    | '/resources/read/python-complete-tutorial'
+    | '/resources/read/python-frequently-asked-questions'
+    | '/resources/read/python-glossary'
+    | '/resources/read/python-interview-questions'
+    | '/resources/read/python-learning-roadmap'
+    | '/resources/read/python-pdf-notes'
+    | '/resources/read/python-practice-questions'
+    | '/resources/read/python-project-case-study'
+    | '/resources/read/python-project-guide'
+    | '/resources/read/python-quick-revision-notes'
+    | '/resources/read/python-real-world-case-study'
+    | '/resources/read/python-reference-guide'
+    | '/resources/read/python-sample-exercises'
+    | '/resources/read/python-step-by-step-learning-guide'
+    | '/resources/read/python-tips-tricks'
     | '/resources/read/react-advanced-concepts'
     | '/resources/read/react-answer-key'
     | '/resources/read/react-beginner-guide'
@@ -7746,6 +7977,27 @@ export interface FileRouteTypes {
     | '/resources/read/power-bi-sample-exercises'
     | '/resources/read/power-bi-step-by-step-learning-guide'
     | '/resources/read/power-bi-tips-tricks'
+    | '/resources/read/python-advanced-concepts'
+    | '/resources/read/python-answer-key'
+    | '/resources/read/python-beginner-guide'
+    | '/resources/read/python-best-practices'
+    | '/resources/read/python-cheat-sheet'
+    | '/resources/read/python-common-mistakes'
+    | '/resources/read/python-complete-tutorial'
+    | '/resources/read/python-frequently-asked-questions'
+    | '/resources/read/python-glossary'
+    | '/resources/read/python-interview-questions'
+    | '/resources/read/python-learning-roadmap'
+    | '/resources/read/python-pdf-notes'
+    | '/resources/read/python-practice-questions'
+    | '/resources/read/python-project-case-study'
+    | '/resources/read/python-project-guide'
+    | '/resources/read/python-quick-revision-notes'
+    | '/resources/read/python-real-world-case-study'
+    | '/resources/read/python-reference-guide'
+    | '/resources/read/python-sample-exercises'
+    | '/resources/read/python-step-by-step-learning-guide'
+    | '/resources/read/python-tips-tricks'
     | '/resources/read/react-advanced-concepts'
     | '/resources/read/react-answer-key'
     | '/resources/read/react-beginner-guide'
@@ -8402,6 +8654,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/power-bi-sample-exercises'
     | '/_marketing/resources/read/power-bi-step-by-step-learning-guide'
     | '/_marketing/resources/read/power-bi-tips-tricks'
+    | '/_marketing/resources/read/python-advanced-concepts'
+    | '/_marketing/resources/read/python-answer-key'
+    | '/_marketing/resources/read/python-beginner-guide'
+    | '/_marketing/resources/read/python-best-practices'
+    | '/_marketing/resources/read/python-cheat-sheet'
+    | '/_marketing/resources/read/python-common-mistakes'
+    | '/_marketing/resources/read/python-complete-tutorial'
+    | '/_marketing/resources/read/python-frequently-asked-questions'
+    | '/_marketing/resources/read/python-glossary'
+    | '/_marketing/resources/read/python-interview-questions'
+    | '/_marketing/resources/read/python-learning-roadmap'
+    | '/_marketing/resources/read/python-pdf-notes'
+    | '/_marketing/resources/read/python-practice-questions'
+    | '/_marketing/resources/read/python-project-case-study'
+    | '/_marketing/resources/read/python-project-guide'
+    | '/_marketing/resources/read/python-quick-revision-notes'
+    | '/_marketing/resources/read/python-real-world-case-study'
+    | '/_marketing/resources/read/python-reference-guide'
+    | '/_marketing/resources/read/python-sample-exercises'
+    | '/_marketing/resources/read/python-step-by-step-learning-guide'
+    | '/_marketing/resources/read/python-tips-tricks'
     | '/_marketing/resources/read/react-advanced-concepts'
     | '/_marketing/resources/read/react-answer-key'
     | '/_marketing/resources/read/react-beginner-guide'
@@ -9479,6 +9752,153 @@ declare module '@tanstack/react-router' {
       path: '/read/react-advanced-concepts'
       fullPath: '/resources/read/react-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadReactAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-tips-tricks': {
+      id: '/_marketing/resources/read/python-tips-tricks'
+      path: '/read/python-tips-tricks'
+      fullPath: '/resources/read/python-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadPythonTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/python-step-by-step-learning-guide'
+      path: '/read/python-step-by-step-learning-guide'
+      fullPath: '/resources/read/python-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPythonStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-sample-exercises': {
+      id: '/_marketing/resources/read/python-sample-exercises'
+      path: '/read/python-sample-exercises'
+      fullPath: '/resources/read/python-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadPythonSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-reference-guide': {
+      id: '/_marketing/resources/read/python-reference-guide'
+      path: '/read/python-reference-guide'
+      fullPath: '/resources/read/python-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPythonReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-real-world-case-study': {
+      id: '/_marketing/resources/read/python-real-world-case-study'
+      path: '/read/python-real-world-case-study'
+      fullPath: '/resources/read/python-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPythonRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-quick-revision-notes': {
+      id: '/_marketing/resources/read/python-quick-revision-notes'
+      path: '/read/python-quick-revision-notes'
+      fullPath: '/resources/read/python-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPythonQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-project-guide': {
+      id: '/_marketing/resources/read/python-project-guide'
+      path: '/read/python-project-guide'
+      fullPath: '/resources/read/python-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPythonProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-project-case-study': {
+      id: '/_marketing/resources/read/python-project-case-study'
+      path: '/read/python-project-case-study'
+      fullPath: '/resources/read/python-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPythonProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-practice-questions': {
+      id: '/_marketing/resources/read/python-practice-questions'
+      path: '/read/python-practice-questions'
+      fullPath: '/resources/read/python-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPythonPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-pdf-notes': {
+      id: '/_marketing/resources/read/python-pdf-notes'
+      path: '/read/python-pdf-notes'
+      fullPath: '/resources/read/python-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPythonPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-learning-roadmap': {
+      id: '/_marketing/resources/read/python-learning-roadmap'
+      path: '/read/python-learning-roadmap'
+      fullPath: '/resources/read/python-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadPythonLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-interview-questions': {
+      id: '/_marketing/resources/read/python-interview-questions'
+      path: '/read/python-interview-questions'
+      fullPath: '/resources/read/python-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPythonInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-glossary': {
+      id: '/_marketing/resources/read/python-glossary'
+      path: '/read/python-glossary'
+      fullPath: '/resources/read/python-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadPythonGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-frequently-asked-questions': {
+      id: '/_marketing/resources/read/python-frequently-asked-questions'
+      path: '/read/python-frequently-asked-questions'
+      fullPath: '/resources/read/python-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPythonFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-complete-tutorial': {
+      id: '/_marketing/resources/read/python-complete-tutorial'
+      path: '/read/python-complete-tutorial'
+      fullPath: '/resources/read/python-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadPythonCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-common-mistakes': {
+      id: '/_marketing/resources/read/python-common-mistakes'
+      path: '/read/python-common-mistakes'
+      fullPath: '/resources/read/python-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadPythonCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-cheat-sheet': {
+      id: '/_marketing/resources/read/python-cheat-sheet'
+      path: '/read/python-cheat-sheet'
+      fullPath: '/resources/read/python-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadPythonCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-best-practices': {
+      id: '/_marketing/resources/read/python-best-practices'
+      path: '/read/python-best-practices'
+      fullPath: '/resources/read/python-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadPythonBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-beginner-guide': {
+      id: '/_marketing/resources/read/python-beginner-guide'
+      path: '/read/python-beginner-guide'
+      fullPath: '/resources/read/python-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPythonBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-answer-key': {
+      id: '/_marketing/resources/read/python-answer-key'
+      path: '/read/python-answer-key'
+      fullPath: '/resources/read/python-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadPythonAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/python-advanced-concepts': {
+      id: '/_marketing/resources/read/python-advanced-concepts'
+      path: '/read/python-advanced-concepts'
+      fullPath: '/resources/read/python-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadPythonAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/power-bi-tips-tricks': {
@@ -13740,6 +14160,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPowerBiSampleExercisesRoute: typeof MarketingResourcesReadPowerBiSampleExercisesRoute
   MarketingResourcesReadPowerBiStepByStepLearningGuideRoute: typeof MarketingResourcesReadPowerBiStepByStepLearningGuideRoute
   MarketingResourcesReadPowerBiTipsTricksRoute: typeof MarketingResourcesReadPowerBiTipsTricksRoute
+  MarketingResourcesReadPythonAdvancedConceptsRoute: typeof MarketingResourcesReadPythonAdvancedConceptsRoute
+  MarketingResourcesReadPythonAnswerKeyRoute: typeof MarketingResourcesReadPythonAnswerKeyRoute
+  MarketingResourcesReadPythonBeginnerGuideRoute: typeof MarketingResourcesReadPythonBeginnerGuideRoute
+  MarketingResourcesReadPythonBestPracticesRoute: typeof MarketingResourcesReadPythonBestPracticesRoute
+  MarketingResourcesReadPythonCheatSheetRoute: typeof MarketingResourcesReadPythonCheatSheetRoute
+  MarketingResourcesReadPythonCommonMistakesRoute: typeof MarketingResourcesReadPythonCommonMistakesRoute
+  MarketingResourcesReadPythonCompleteTutorialRoute: typeof MarketingResourcesReadPythonCompleteTutorialRoute
+  MarketingResourcesReadPythonFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadPythonFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadPythonGlossaryRoute: typeof MarketingResourcesReadPythonGlossaryRoute
+  MarketingResourcesReadPythonInterviewQuestionsRoute: typeof MarketingResourcesReadPythonInterviewQuestionsRoute
+  MarketingResourcesReadPythonLearningRoadmapRoute: typeof MarketingResourcesReadPythonLearningRoadmapRoute
+  MarketingResourcesReadPythonPdfNotesRoute: typeof MarketingResourcesReadPythonPdfNotesRoute
+  MarketingResourcesReadPythonPracticeQuestionsRoute: typeof MarketingResourcesReadPythonPracticeQuestionsRoute
+  MarketingResourcesReadPythonProjectCaseStudyRoute: typeof MarketingResourcesReadPythonProjectCaseStudyRoute
+  MarketingResourcesReadPythonProjectGuideRoute: typeof MarketingResourcesReadPythonProjectGuideRoute
+  MarketingResourcesReadPythonQuickRevisionNotesRoute: typeof MarketingResourcesReadPythonQuickRevisionNotesRoute
+  MarketingResourcesReadPythonRealWorldCaseStudyRoute: typeof MarketingResourcesReadPythonRealWorldCaseStudyRoute
+  MarketingResourcesReadPythonReferenceGuideRoute: typeof MarketingResourcesReadPythonReferenceGuideRoute
+  MarketingResourcesReadPythonSampleExercisesRoute: typeof MarketingResourcesReadPythonSampleExercisesRoute
+  MarketingResourcesReadPythonStepByStepLearningGuideRoute: typeof MarketingResourcesReadPythonStepByStepLearningGuideRoute
+  MarketingResourcesReadPythonTipsTricksRoute: typeof MarketingResourcesReadPythonTipsTricksRoute
   MarketingResourcesReadReactAdvancedConceptsRoute: typeof MarketingResourcesReadReactAdvancedConceptsRoute
   MarketingResourcesReadReactAnswerKeyRoute: typeof MarketingResourcesReadReactAnswerKeyRoute
   MarketingResourcesReadReactBeginnerGuideRoute: typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -14836,6 +15277,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPowerBiStepByStepLearningGuideRoute,
   MarketingResourcesReadPowerBiTipsTricksRoute:
     MarketingResourcesReadPowerBiTipsTricksRoute,
+  MarketingResourcesReadPythonAdvancedConceptsRoute:
+    MarketingResourcesReadPythonAdvancedConceptsRoute,
+  MarketingResourcesReadPythonAnswerKeyRoute:
+    MarketingResourcesReadPythonAnswerKeyRoute,
+  MarketingResourcesReadPythonBeginnerGuideRoute:
+    MarketingResourcesReadPythonBeginnerGuideRoute,
+  MarketingResourcesReadPythonBestPracticesRoute:
+    MarketingResourcesReadPythonBestPracticesRoute,
+  MarketingResourcesReadPythonCheatSheetRoute:
+    MarketingResourcesReadPythonCheatSheetRoute,
+  MarketingResourcesReadPythonCommonMistakesRoute:
+    MarketingResourcesReadPythonCommonMistakesRoute,
+  MarketingResourcesReadPythonCompleteTutorialRoute:
+    MarketingResourcesReadPythonCompleteTutorialRoute,
+  MarketingResourcesReadPythonFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadPythonFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadPythonGlossaryRoute:
+    MarketingResourcesReadPythonGlossaryRoute,
+  MarketingResourcesReadPythonInterviewQuestionsRoute:
+    MarketingResourcesReadPythonInterviewQuestionsRoute,
+  MarketingResourcesReadPythonLearningRoadmapRoute:
+    MarketingResourcesReadPythonLearningRoadmapRoute,
+  MarketingResourcesReadPythonPdfNotesRoute:
+    MarketingResourcesReadPythonPdfNotesRoute,
+  MarketingResourcesReadPythonPracticeQuestionsRoute:
+    MarketingResourcesReadPythonPracticeQuestionsRoute,
+  MarketingResourcesReadPythonProjectCaseStudyRoute:
+    MarketingResourcesReadPythonProjectCaseStudyRoute,
+  MarketingResourcesReadPythonProjectGuideRoute:
+    MarketingResourcesReadPythonProjectGuideRoute,
+  MarketingResourcesReadPythonQuickRevisionNotesRoute:
+    MarketingResourcesReadPythonQuickRevisionNotesRoute,
+  MarketingResourcesReadPythonRealWorldCaseStudyRoute:
+    MarketingResourcesReadPythonRealWorldCaseStudyRoute,
+  MarketingResourcesReadPythonReferenceGuideRoute:
+    MarketingResourcesReadPythonReferenceGuideRoute,
+  MarketingResourcesReadPythonSampleExercisesRoute:
+    MarketingResourcesReadPythonSampleExercisesRoute,
+  MarketingResourcesReadPythonStepByStepLearningGuideRoute:
+    MarketingResourcesReadPythonStepByStepLearningGuideRoute,
+  MarketingResourcesReadPythonTipsTricksRoute:
+    MarketingResourcesReadPythonTipsTricksRoute,
   MarketingResourcesReadReactAdvancedConceptsRoute:
     MarketingResourcesReadReactAdvancedConceptsRoute,
   MarketingResourcesReadReactAnswerKeyRoute:
