@@ -78,6 +78,7 @@ import { Route as MarketingResourcesReadDlTipsTricksRouteImport } from './routes
 import { Route as MarketingResourcesReadDlReferenceGuideRouteImport } from './routes/_marketing.resources.read.dl-reference-guide'
 import { Route as MarketingResourcesReadDlRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.dl-real-world-case-study'
 import { Route as MarketingResourcesReadDlLearningRoadmapRouteImport } from './routes/_marketing.resources.read.dl-learning-roadmap'
+import { Route as MarketingResourcesReadDlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.dl-interview-questions'
 import { Route as MarketingResourcesReadDlGlossaryRouteImport } from './routes/_marketing.resources.read.dl-glossary'
 import { Route as MarketingResourcesReadDlFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.dl-frequently-asked-questions'
 import { Route as MarketingResourcesReadDlCommonMistakesRouteImport } from './routes/_marketing.resources.read.dl-common-mistakes'
@@ -499,6 +500,12 @@ const MarketingResourcesReadDlLearningRoadmapRoute =
     path: '/read/dl-learning-roadmap',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDlInterviewQuestionsRoute =
+  MarketingResourcesReadDlInterviewQuestionsRouteImport.update({
+    id: '/read/dl-interview-questions',
+    path: '/read/dl-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDlGlossaryRoute =
   MarketingResourcesReadDlGlossaryRouteImport.update({
     id: '/read/dl-glossary',
@@ -808,6 +815,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
   '/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
+  '/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
   '/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
@@ -914,6 +922,7 @@ export interface FileRoutesByTo {
   '/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
   '/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
+  '/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
   '/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
@@ -1025,6 +1034,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
   '/_marketing/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
+  '/_marketing/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/_marketing/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
   '/_marketing/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/_marketing/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
@@ -1134,6 +1144,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-common-mistakes'
     | '/resources/read/dl-frequently-asked-questions'
     | '/resources/read/dl-glossary'
+    | '/resources/read/dl-interview-questions'
     | '/resources/read/dl-learning-roadmap'
     | '/resources/read/dl-real-world-case-study'
     | '/resources/read/dl-reference-guide'
@@ -1240,6 +1251,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-common-mistakes'
     | '/resources/read/dl-frequently-asked-questions'
     | '/resources/read/dl-glossary'
+    | '/resources/read/dl-interview-questions'
     | '/resources/read/dl-learning-roadmap'
     | '/resources/read/dl-real-world-case-study'
     | '/resources/read/dl-reference-guide'
@@ -1350,6 +1362,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dl-common-mistakes'
     | '/_marketing/resources/read/dl-frequently-asked-questions'
     | '/_marketing/resources/read/dl-glossary'
+    | '/_marketing/resources/read/dl-interview-questions'
     | '/_marketing/resources/read/dl-learning-roadmap'
     | '/_marketing/resources/read/dl-real-world-case-study'
     | '/_marketing/resources/read/dl-reference-guide'
@@ -1885,6 +1898,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDlLearningRoadmapRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/dl-interview-questions': {
+      id: '/_marketing/resources/read/dl-interview-questions'
+      path: '/read/dl-interview-questions'
+      fullPath: '/resources/read/dl-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDlInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dl-glossary': {
       id: '/_marketing/resources/read/dl-glossary'
       path: '/read/dl-glossary'
@@ -2320,6 +2340,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDlCommonMistakesRoute: typeof MarketingResourcesReadDlCommonMistakesRoute
   MarketingResourcesReadDlFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   MarketingResourcesReadDlGlossaryRoute: typeof MarketingResourcesReadDlGlossaryRoute
+  MarketingResourcesReadDlInterviewQuestionsRoute: typeof MarketingResourcesReadDlInterviewQuestionsRoute
   MarketingResourcesReadDlLearningRoadmapRoute: typeof MarketingResourcesReadDlLearningRoadmapRoute
   MarketingResourcesReadDlRealWorldCaseStudyRoute: typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   MarketingResourcesReadDlReferenceGuideRoute: typeof MarketingResourcesReadDlReferenceGuideRoute
@@ -2399,6 +2420,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesReadDlFrequentlyAskedQuestionsRoute:
     MarketingResourcesReadDlFrequentlyAskedQuestionsRoute,
   MarketingResourcesReadDlGlossaryRoute: MarketingResourcesReadDlGlossaryRoute,
+  MarketingResourcesReadDlInterviewQuestionsRoute:
+    MarketingResourcesReadDlInterviewQuestionsRoute,
   MarketingResourcesReadDlLearningRoadmapRoute:
     MarketingResourcesReadDlLearningRoadmapRoute,
   MarketingResourcesReadDlRealWorldCaseStudyRoute:
