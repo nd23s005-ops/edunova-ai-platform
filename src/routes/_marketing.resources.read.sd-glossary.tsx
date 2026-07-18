@@ -80,7 +80,7 @@ const ENTRIES: Record<string, { term: string; def: string }[]> = {
     { term: "Heartbeat", def: "A periodic signal indicating a node is alive." },
     { term: "Horizontal Scaling", def: "Adding more machines rather than upgrading one." },
     { term: "HTTP/2", def: "A binary, multiplexed transport for HTTP." },
-    Object.freeze({ term: "HTTP/3", def: "HTTP built on QUIC (UDP), improving performance on lossy networks." }) as { term: string; def: string },
+    { term: "HTTP/3", def: "HTTP built on QUIC (UDP), improving performance on lossy networks." },
   ],
   "3. I–L": [
     { term: "IaC", def: "Infrastructure as Code — managing infrastructure with declarative files (e.g., Terraform)." },
