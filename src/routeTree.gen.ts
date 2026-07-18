@@ -497,6 +497,27 @@ import { Route as MarketingResourcesReadMlBestPracticesRouteImport } from './rou
 import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ml-beginner-guide'
 import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/_marketing.resources.read.ml-answer-key'
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
+import { Route as MarketingResourcesReadMernStackTipsTricksRouteImport } from './routes/_marketing.resources.read.mern-stack-tips-tricks'
+import { Route as MarketingResourcesReadMernStackStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.mern-stack-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadMernStackSampleExercisesRouteImport } from './routes/_marketing.resources.read.mern-stack-sample-exercises'
+import { Route as MarketingResourcesReadMernStackReferenceGuideRouteImport } from './routes/_marketing.resources.read.mern-stack-reference-guide'
+import { Route as MarketingResourcesReadMernStackRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.mern-stack-real-world-case-study'
+import { Route as MarketingResourcesReadMernStackQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.mern-stack-quick-revision-notes'
+import { Route as MarketingResourcesReadMernStackProjectGuideRouteImport } from './routes/_marketing.resources.read.mern-stack-project-guide'
+import { Route as MarketingResourcesReadMernStackProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.mern-stack-project-case-study'
+import { Route as MarketingResourcesReadMernStackPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.mern-stack-practice-questions'
+import { Route as MarketingResourcesReadMernStackPdfNotesRouteImport } from './routes/_marketing.resources.read.mern-stack-pdf-notes'
+import { Route as MarketingResourcesReadMernStackLearningRoadmapRouteImport } from './routes/_marketing.resources.read.mern-stack-learning-roadmap'
+import { Route as MarketingResourcesReadMernStackInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.mern-stack-interview-questions'
+import { Route as MarketingResourcesReadMernStackGlossaryRouteImport } from './routes/_marketing.resources.read.mern-stack-glossary'
+import { Route as MarketingResourcesReadMernStackFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.mern-stack-frequently-asked-questions'
+import { Route as MarketingResourcesReadMernStackCompleteTutorialRouteImport } from './routes/_marketing.resources.read.mern-stack-complete-tutorial'
+import { Route as MarketingResourcesReadMernStackCommonMistakesRouteImport } from './routes/_marketing.resources.read.mern-stack-common-mistakes'
+import { Route as MarketingResourcesReadMernStackCheatSheetRouteImport } from './routes/_marketing.resources.read.mern-stack-cheat-sheet'
+import { Route as MarketingResourcesReadMernStackBestPracticesRouteImport } from './routes/_marketing.resources.read.mern-stack-best-practices'
+import { Route as MarketingResourcesReadMernStackBeginnerGuideRouteImport } from './routes/_marketing.resources.read.mern-stack-beginner-guide'
+import { Route as MarketingResourcesReadMernStackAnswerKeyRouteImport } from './routes/_marketing.resources.read.mern-stack-answer-key'
+import { Route as MarketingResourcesReadMernStackAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.mern-stack-advanced-concepts'
 import { Route as MarketingResourcesReadKubernetesTipsTricksRouteImport } from './routes/_marketing.resources.read.kubernetes-tips-tricks'
 import { Route as MarketingResourcesReadKubernetesStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.kubernetes-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadKubernetesSampleExercisesRouteImport } from './routes/_marketing.resources.read.kubernetes-sample-exercises'
@@ -3926,6 +3947,132 @@ const MarketingResourcesReadMlAdvancedConceptsRoute =
   MarketingResourcesReadMlAdvancedConceptsRouteImport.update({
     id: '/read/ml-advanced-concepts',
     path: '/read/ml-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackTipsTricksRoute =
+  MarketingResourcesReadMernStackTipsTricksRouteImport.update({
+    id: '/read/mern-stack-tips-tricks',
+    path: '/read/mern-stack-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackStepByStepLearningGuideRoute =
+  MarketingResourcesReadMernStackStepByStepLearningGuideRouteImport.update({
+    id: '/read/mern-stack-step-by-step-learning-guide',
+    path: '/read/mern-stack-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackSampleExercisesRoute =
+  MarketingResourcesReadMernStackSampleExercisesRouteImport.update({
+    id: '/read/mern-stack-sample-exercises',
+    path: '/read/mern-stack-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackReferenceGuideRoute =
+  MarketingResourcesReadMernStackReferenceGuideRouteImport.update({
+    id: '/read/mern-stack-reference-guide',
+    path: '/read/mern-stack-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackRealWorldCaseStudyRoute =
+  MarketingResourcesReadMernStackRealWorldCaseStudyRouteImport.update({
+    id: '/read/mern-stack-real-world-case-study',
+    path: '/read/mern-stack-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackQuickRevisionNotesRoute =
+  MarketingResourcesReadMernStackQuickRevisionNotesRouteImport.update({
+    id: '/read/mern-stack-quick-revision-notes',
+    path: '/read/mern-stack-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackProjectGuideRoute =
+  MarketingResourcesReadMernStackProjectGuideRouteImport.update({
+    id: '/read/mern-stack-project-guide',
+    path: '/read/mern-stack-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackProjectCaseStudyRoute =
+  MarketingResourcesReadMernStackProjectCaseStudyRouteImport.update({
+    id: '/read/mern-stack-project-case-study',
+    path: '/read/mern-stack-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackPracticeQuestionsRoute =
+  MarketingResourcesReadMernStackPracticeQuestionsRouteImport.update({
+    id: '/read/mern-stack-practice-questions',
+    path: '/read/mern-stack-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackPdfNotesRoute =
+  MarketingResourcesReadMernStackPdfNotesRouteImport.update({
+    id: '/read/mern-stack-pdf-notes',
+    path: '/read/mern-stack-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackLearningRoadmapRoute =
+  MarketingResourcesReadMernStackLearningRoadmapRouteImport.update({
+    id: '/read/mern-stack-learning-roadmap',
+    path: '/read/mern-stack-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackInterviewQuestionsRoute =
+  MarketingResourcesReadMernStackInterviewQuestionsRouteImport.update({
+    id: '/read/mern-stack-interview-questions',
+    path: '/read/mern-stack-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackGlossaryRoute =
+  MarketingResourcesReadMernStackGlossaryRouteImport.update({
+    id: '/read/mern-stack-glossary',
+    path: '/read/mern-stack-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadMernStackFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/mern-stack-frequently-asked-questions',
+    path: '/read/mern-stack-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackCompleteTutorialRoute =
+  MarketingResourcesReadMernStackCompleteTutorialRouteImport.update({
+    id: '/read/mern-stack-complete-tutorial',
+    path: '/read/mern-stack-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackCommonMistakesRoute =
+  MarketingResourcesReadMernStackCommonMistakesRouteImport.update({
+    id: '/read/mern-stack-common-mistakes',
+    path: '/read/mern-stack-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackCheatSheetRoute =
+  MarketingResourcesReadMernStackCheatSheetRouteImport.update({
+    id: '/read/mern-stack-cheat-sheet',
+    path: '/read/mern-stack-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackBestPracticesRoute =
+  MarketingResourcesReadMernStackBestPracticesRouteImport.update({
+    id: '/read/mern-stack-best-practices',
+    path: '/read/mern-stack-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackBeginnerGuideRoute =
+  MarketingResourcesReadMernStackBeginnerGuideRouteImport.update({
+    id: '/read/mern-stack-beginner-guide',
+    path: '/read/mern-stack-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackAnswerKeyRoute =
+  MarketingResourcesReadMernStackAnswerKeyRouteImport.update({
+    id: '/read/mern-stack-answer-key',
+    path: '/read/mern-stack-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMernStackAdvancedConceptsRoute =
+  MarketingResourcesReadMernStackAdvancedConceptsRouteImport.update({
+    id: '/read/mern-stack-advanced-concepts',
+    path: '/read/mern-stack-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadKubernetesTipsTricksRoute =
@@ -7635,6 +7782,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/kubernetes-sample-exercises': typeof MarketingResourcesReadKubernetesSampleExercisesRoute
   '/resources/read/kubernetes-step-by-step-learning-guide': typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRoute
   '/resources/read/kubernetes-tips-tricks': typeof MarketingResourcesReadKubernetesTipsTricksRoute
+  '/resources/read/mern-stack-advanced-concepts': typeof MarketingResourcesReadMernStackAdvancedConceptsRoute
+  '/resources/read/mern-stack-answer-key': typeof MarketingResourcesReadMernStackAnswerKeyRoute
+  '/resources/read/mern-stack-beginner-guide': typeof MarketingResourcesReadMernStackBeginnerGuideRoute
+  '/resources/read/mern-stack-best-practices': typeof MarketingResourcesReadMernStackBestPracticesRoute
+  '/resources/read/mern-stack-cheat-sheet': typeof MarketingResourcesReadMernStackCheatSheetRoute
+  '/resources/read/mern-stack-common-mistakes': typeof MarketingResourcesReadMernStackCommonMistakesRoute
+  '/resources/read/mern-stack-complete-tutorial': typeof MarketingResourcesReadMernStackCompleteTutorialRoute
+  '/resources/read/mern-stack-frequently-asked-questions': typeof MarketingResourcesReadMernStackFrequentlyAskedQuestionsRoute
+  '/resources/read/mern-stack-glossary': typeof MarketingResourcesReadMernStackGlossaryRoute
+  '/resources/read/mern-stack-interview-questions': typeof MarketingResourcesReadMernStackInterviewQuestionsRoute
+  '/resources/read/mern-stack-learning-roadmap': typeof MarketingResourcesReadMernStackLearningRoadmapRoute
+  '/resources/read/mern-stack-pdf-notes': typeof MarketingResourcesReadMernStackPdfNotesRoute
+  '/resources/read/mern-stack-practice-questions': typeof MarketingResourcesReadMernStackPracticeQuestionsRoute
+  '/resources/read/mern-stack-project-case-study': typeof MarketingResourcesReadMernStackProjectCaseStudyRoute
+  '/resources/read/mern-stack-project-guide': typeof MarketingResourcesReadMernStackProjectGuideRoute
+  '/resources/read/mern-stack-quick-revision-notes': typeof MarketingResourcesReadMernStackQuickRevisionNotesRoute
+  '/resources/read/mern-stack-real-world-case-study': typeof MarketingResourcesReadMernStackRealWorldCaseStudyRoute
+  '/resources/read/mern-stack-reference-guide': typeof MarketingResourcesReadMernStackReferenceGuideRoute
+  '/resources/read/mern-stack-sample-exercises': typeof MarketingResourcesReadMernStackSampleExercisesRoute
+  '/resources/read/mern-stack-step-by-step-learning-guide': typeof MarketingResourcesReadMernStackStepByStepLearningGuideRoute
+  '/resources/read/mern-stack-tips-tricks': typeof MarketingResourcesReadMernStackTipsTricksRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -8644,6 +8812,27 @@ export interface FileRoutesByTo {
   '/resources/read/kubernetes-sample-exercises': typeof MarketingResourcesReadKubernetesSampleExercisesRoute
   '/resources/read/kubernetes-step-by-step-learning-guide': typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRoute
   '/resources/read/kubernetes-tips-tricks': typeof MarketingResourcesReadKubernetesTipsTricksRoute
+  '/resources/read/mern-stack-advanced-concepts': typeof MarketingResourcesReadMernStackAdvancedConceptsRoute
+  '/resources/read/mern-stack-answer-key': typeof MarketingResourcesReadMernStackAnswerKeyRoute
+  '/resources/read/mern-stack-beginner-guide': typeof MarketingResourcesReadMernStackBeginnerGuideRoute
+  '/resources/read/mern-stack-best-practices': typeof MarketingResourcesReadMernStackBestPracticesRoute
+  '/resources/read/mern-stack-cheat-sheet': typeof MarketingResourcesReadMernStackCheatSheetRoute
+  '/resources/read/mern-stack-common-mistakes': typeof MarketingResourcesReadMernStackCommonMistakesRoute
+  '/resources/read/mern-stack-complete-tutorial': typeof MarketingResourcesReadMernStackCompleteTutorialRoute
+  '/resources/read/mern-stack-frequently-asked-questions': typeof MarketingResourcesReadMernStackFrequentlyAskedQuestionsRoute
+  '/resources/read/mern-stack-glossary': typeof MarketingResourcesReadMernStackGlossaryRoute
+  '/resources/read/mern-stack-interview-questions': typeof MarketingResourcesReadMernStackInterviewQuestionsRoute
+  '/resources/read/mern-stack-learning-roadmap': typeof MarketingResourcesReadMernStackLearningRoadmapRoute
+  '/resources/read/mern-stack-pdf-notes': typeof MarketingResourcesReadMernStackPdfNotesRoute
+  '/resources/read/mern-stack-practice-questions': typeof MarketingResourcesReadMernStackPracticeQuestionsRoute
+  '/resources/read/mern-stack-project-case-study': typeof MarketingResourcesReadMernStackProjectCaseStudyRoute
+  '/resources/read/mern-stack-project-guide': typeof MarketingResourcesReadMernStackProjectGuideRoute
+  '/resources/read/mern-stack-quick-revision-notes': typeof MarketingResourcesReadMernStackQuickRevisionNotesRoute
+  '/resources/read/mern-stack-real-world-case-study': typeof MarketingResourcesReadMernStackRealWorldCaseStudyRoute
+  '/resources/read/mern-stack-reference-guide': typeof MarketingResourcesReadMernStackReferenceGuideRoute
+  '/resources/read/mern-stack-sample-exercises': typeof MarketingResourcesReadMernStackSampleExercisesRoute
+  '/resources/read/mern-stack-step-by-step-learning-guide': typeof MarketingResourcesReadMernStackStepByStepLearningGuideRoute
+  '/resources/read/mern-stack-tips-tricks': typeof MarketingResourcesReadMernStackTipsTricksRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -9658,6 +9847,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/kubernetes-sample-exercises': typeof MarketingResourcesReadKubernetesSampleExercisesRoute
   '/_marketing/resources/read/kubernetes-step-by-step-learning-guide': typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRoute
   '/_marketing/resources/read/kubernetes-tips-tricks': typeof MarketingResourcesReadKubernetesTipsTricksRoute
+  '/_marketing/resources/read/mern-stack-advanced-concepts': typeof MarketingResourcesReadMernStackAdvancedConceptsRoute
+  '/_marketing/resources/read/mern-stack-answer-key': typeof MarketingResourcesReadMernStackAnswerKeyRoute
+  '/_marketing/resources/read/mern-stack-beginner-guide': typeof MarketingResourcesReadMernStackBeginnerGuideRoute
+  '/_marketing/resources/read/mern-stack-best-practices': typeof MarketingResourcesReadMernStackBestPracticesRoute
+  '/_marketing/resources/read/mern-stack-cheat-sheet': typeof MarketingResourcesReadMernStackCheatSheetRoute
+  '/_marketing/resources/read/mern-stack-common-mistakes': typeof MarketingResourcesReadMernStackCommonMistakesRoute
+  '/_marketing/resources/read/mern-stack-complete-tutorial': typeof MarketingResourcesReadMernStackCompleteTutorialRoute
+  '/_marketing/resources/read/mern-stack-frequently-asked-questions': typeof MarketingResourcesReadMernStackFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/mern-stack-glossary': typeof MarketingResourcesReadMernStackGlossaryRoute
+  '/_marketing/resources/read/mern-stack-interview-questions': typeof MarketingResourcesReadMernStackInterviewQuestionsRoute
+  '/_marketing/resources/read/mern-stack-learning-roadmap': typeof MarketingResourcesReadMernStackLearningRoadmapRoute
+  '/_marketing/resources/read/mern-stack-pdf-notes': typeof MarketingResourcesReadMernStackPdfNotesRoute
+  '/_marketing/resources/read/mern-stack-practice-questions': typeof MarketingResourcesReadMernStackPracticeQuestionsRoute
+  '/_marketing/resources/read/mern-stack-project-case-study': typeof MarketingResourcesReadMernStackProjectCaseStudyRoute
+  '/_marketing/resources/read/mern-stack-project-guide': typeof MarketingResourcesReadMernStackProjectGuideRoute
+  '/_marketing/resources/read/mern-stack-quick-revision-notes': typeof MarketingResourcesReadMernStackQuickRevisionNotesRoute
+  '/_marketing/resources/read/mern-stack-real-world-case-study': typeof MarketingResourcesReadMernStackRealWorldCaseStudyRoute
+  '/_marketing/resources/read/mern-stack-reference-guide': typeof MarketingResourcesReadMernStackReferenceGuideRoute
+  '/_marketing/resources/read/mern-stack-sample-exercises': typeof MarketingResourcesReadMernStackSampleExercisesRoute
+  '/_marketing/resources/read/mern-stack-step-by-step-learning-guide': typeof MarketingResourcesReadMernStackStepByStepLearningGuideRoute
+  '/_marketing/resources/read/mern-stack-tips-tricks': typeof MarketingResourcesReadMernStackTipsTricksRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/_marketing/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/_marketing/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -10670,6 +10880,27 @@ export interface FileRouteTypes {
     | '/resources/read/kubernetes-sample-exercises'
     | '/resources/read/kubernetes-step-by-step-learning-guide'
     | '/resources/read/kubernetes-tips-tricks'
+    | '/resources/read/mern-stack-advanced-concepts'
+    | '/resources/read/mern-stack-answer-key'
+    | '/resources/read/mern-stack-beginner-guide'
+    | '/resources/read/mern-stack-best-practices'
+    | '/resources/read/mern-stack-cheat-sheet'
+    | '/resources/read/mern-stack-common-mistakes'
+    | '/resources/read/mern-stack-complete-tutorial'
+    | '/resources/read/mern-stack-frequently-asked-questions'
+    | '/resources/read/mern-stack-glossary'
+    | '/resources/read/mern-stack-interview-questions'
+    | '/resources/read/mern-stack-learning-roadmap'
+    | '/resources/read/mern-stack-pdf-notes'
+    | '/resources/read/mern-stack-practice-questions'
+    | '/resources/read/mern-stack-project-case-study'
+    | '/resources/read/mern-stack-project-guide'
+    | '/resources/read/mern-stack-quick-revision-notes'
+    | '/resources/read/mern-stack-real-world-case-study'
+    | '/resources/read/mern-stack-reference-guide'
+    | '/resources/read/mern-stack-sample-exercises'
+    | '/resources/read/mern-stack-step-by-step-learning-guide'
+    | '/resources/read/mern-stack-tips-tricks'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
     | '/resources/read/ml-beginner-guide'
@@ -11679,6 +11910,27 @@ export interface FileRouteTypes {
     | '/resources/read/kubernetes-sample-exercises'
     | '/resources/read/kubernetes-step-by-step-learning-guide'
     | '/resources/read/kubernetes-tips-tricks'
+    | '/resources/read/mern-stack-advanced-concepts'
+    | '/resources/read/mern-stack-answer-key'
+    | '/resources/read/mern-stack-beginner-guide'
+    | '/resources/read/mern-stack-best-practices'
+    | '/resources/read/mern-stack-cheat-sheet'
+    | '/resources/read/mern-stack-common-mistakes'
+    | '/resources/read/mern-stack-complete-tutorial'
+    | '/resources/read/mern-stack-frequently-asked-questions'
+    | '/resources/read/mern-stack-glossary'
+    | '/resources/read/mern-stack-interview-questions'
+    | '/resources/read/mern-stack-learning-roadmap'
+    | '/resources/read/mern-stack-pdf-notes'
+    | '/resources/read/mern-stack-practice-questions'
+    | '/resources/read/mern-stack-project-case-study'
+    | '/resources/read/mern-stack-project-guide'
+    | '/resources/read/mern-stack-quick-revision-notes'
+    | '/resources/read/mern-stack-real-world-case-study'
+    | '/resources/read/mern-stack-reference-guide'
+    | '/resources/read/mern-stack-sample-exercises'
+    | '/resources/read/mern-stack-step-by-step-learning-guide'
+    | '/resources/read/mern-stack-tips-tricks'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
     | '/resources/read/ml-beginner-guide'
@@ -12692,6 +12944,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/kubernetes-sample-exercises'
     | '/_marketing/resources/read/kubernetes-step-by-step-learning-guide'
     | '/_marketing/resources/read/kubernetes-tips-tricks'
+    | '/_marketing/resources/read/mern-stack-advanced-concepts'
+    | '/_marketing/resources/read/mern-stack-answer-key'
+    | '/_marketing/resources/read/mern-stack-beginner-guide'
+    | '/_marketing/resources/read/mern-stack-best-practices'
+    | '/_marketing/resources/read/mern-stack-cheat-sheet'
+    | '/_marketing/resources/read/mern-stack-common-mistakes'
+    | '/_marketing/resources/read/mern-stack-complete-tutorial'
+    | '/_marketing/resources/read/mern-stack-frequently-asked-questions'
+    | '/_marketing/resources/read/mern-stack-glossary'
+    | '/_marketing/resources/read/mern-stack-interview-questions'
+    | '/_marketing/resources/read/mern-stack-learning-roadmap'
+    | '/_marketing/resources/read/mern-stack-pdf-notes'
+    | '/_marketing/resources/read/mern-stack-practice-questions'
+    | '/_marketing/resources/read/mern-stack-project-case-study'
+    | '/_marketing/resources/read/mern-stack-project-guide'
+    | '/_marketing/resources/read/mern-stack-quick-revision-notes'
+    | '/_marketing/resources/read/mern-stack-real-world-case-study'
+    | '/_marketing/resources/read/mern-stack-reference-guide'
+    | '/_marketing/resources/read/mern-stack-sample-exercises'
+    | '/_marketing/resources/read/mern-stack-step-by-step-learning-guide'
+    | '/_marketing/resources/read/mern-stack-tips-tricks'
     | '/_marketing/resources/read/ml-advanced-concepts'
     | '/_marketing/resources/read/ml-answer-key'
     | '/_marketing/resources/read/ml-beginner-guide'
@@ -16577,6 +16850,153 @@ declare module '@tanstack/react-router' {
       path: '/read/ml-advanced-concepts'
       fullPath: '/resources/read/ml-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadMlAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-tips-tricks': {
+      id: '/_marketing/resources/read/mern-stack-tips-tricks'
+      path: '/read/mern-stack-tips-tricks'
+      fullPath: '/resources/read/mern-stack-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/mern-stack-step-by-step-learning-guide'
+      path: '/read/mern-stack-step-by-step-learning-guide'
+      fullPath: '/resources/read/mern-stack-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-sample-exercises': {
+      id: '/_marketing/resources/read/mern-stack-sample-exercises'
+      path: '/read/mern-stack-sample-exercises'
+      fullPath: '/resources/read/mern-stack-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-reference-guide': {
+      id: '/_marketing/resources/read/mern-stack-reference-guide'
+      path: '/read/mern-stack-reference-guide'
+      fullPath: '/resources/read/mern-stack-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-real-world-case-study': {
+      id: '/_marketing/resources/read/mern-stack-real-world-case-study'
+      path: '/read/mern-stack-real-world-case-study'
+      fullPath: '/resources/read/mern-stack-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-quick-revision-notes': {
+      id: '/_marketing/resources/read/mern-stack-quick-revision-notes'
+      path: '/read/mern-stack-quick-revision-notes'
+      fullPath: '/resources/read/mern-stack-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-project-guide': {
+      id: '/_marketing/resources/read/mern-stack-project-guide'
+      path: '/read/mern-stack-project-guide'
+      fullPath: '/resources/read/mern-stack-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-project-case-study': {
+      id: '/_marketing/resources/read/mern-stack-project-case-study'
+      path: '/read/mern-stack-project-case-study'
+      fullPath: '/resources/read/mern-stack-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-practice-questions': {
+      id: '/_marketing/resources/read/mern-stack-practice-questions'
+      path: '/read/mern-stack-practice-questions'
+      fullPath: '/resources/read/mern-stack-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-pdf-notes': {
+      id: '/_marketing/resources/read/mern-stack-pdf-notes'
+      path: '/read/mern-stack-pdf-notes'
+      fullPath: '/resources/read/mern-stack-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-learning-roadmap': {
+      id: '/_marketing/resources/read/mern-stack-learning-roadmap'
+      path: '/read/mern-stack-learning-roadmap'
+      fullPath: '/resources/read/mern-stack-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-interview-questions': {
+      id: '/_marketing/resources/read/mern-stack-interview-questions'
+      path: '/read/mern-stack-interview-questions'
+      fullPath: '/resources/read/mern-stack-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-glossary': {
+      id: '/_marketing/resources/read/mern-stack-glossary'
+      path: '/read/mern-stack-glossary'
+      fullPath: '/resources/read/mern-stack-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-frequently-asked-questions': {
+      id: '/_marketing/resources/read/mern-stack-frequently-asked-questions'
+      path: '/read/mern-stack-frequently-asked-questions'
+      fullPath: '/resources/read/mern-stack-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-complete-tutorial': {
+      id: '/_marketing/resources/read/mern-stack-complete-tutorial'
+      path: '/read/mern-stack-complete-tutorial'
+      fullPath: '/resources/read/mern-stack-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-common-mistakes': {
+      id: '/_marketing/resources/read/mern-stack-common-mistakes'
+      path: '/read/mern-stack-common-mistakes'
+      fullPath: '/resources/read/mern-stack-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-cheat-sheet': {
+      id: '/_marketing/resources/read/mern-stack-cheat-sheet'
+      path: '/read/mern-stack-cheat-sheet'
+      fullPath: '/resources/read/mern-stack-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-best-practices': {
+      id: '/_marketing/resources/read/mern-stack-best-practices'
+      path: '/read/mern-stack-best-practices'
+      fullPath: '/resources/read/mern-stack-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-beginner-guide': {
+      id: '/_marketing/resources/read/mern-stack-beginner-guide'
+      path: '/read/mern-stack-beginner-guide'
+      fullPath: '/resources/read/mern-stack-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-answer-key': {
+      id: '/_marketing/resources/read/mern-stack-answer-key'
+      path: '/read/mern-stack-answer-key'
+      fullPath: '/resources/read/mern-stack-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mern-stack-advanced-concepts': {
+      id: '/_marketing/resources/read/mern-stack-advanced-concepts'
+      path: '/read/mern-stack-advanced-concepts'
+      fullPath: '/resources/read/mern-stack-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadMernStackAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/kubernetes-tips-tricks': {
@@ -20886,6 +21306,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadKubernetesSampleExercisesRoute: typeof MarketingResourcesReadKubernetesSampleExercisesRoute
   MarketingResourcesReadKubernetesStepByStepLearningGuideRoute: typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRoute
   MarketingResourcesReadKubernetesTipsTricksRoute: typeof MarketingResourcesReadKubernetesTipsTricksRoute
+  MarketingResourcesReadMernStackAdvancedConceptsRoute: typeof MarketingResourcesReadMernStackAdvancedConceptsRoute
+  MarketingResourcesReadMernStackAnswerKeyRoute: typeof MarketingResourcesReadMernStackAnswerKeyRoute
+  MarketingResourcesReadMernStackBeginnerGuideRoute: typeof MarketingResourcesReadMernStackBeginnerGuideRoute
+  MarketingResourcesReadMernStackBestPracticesRoute: typeof MarketingResourcesReadMernStackBestPracticesRoute
+  MarketingResourcesReadMernStackCheatSheetRoute: typeof MarketingResourcesReadMernStackCheatSheetRoute
+  MarketingResourcesReadMernStackCommonMistakesRoute: typeof MarketingResourcesReadMernStackCommonMistakesRoute
+  MarketingResourcesReadMernStackCompleteTutorialRoute: typeof MarketingResourcesReadMernStackCompleteTutorialRoute
+  MarketingResourcesReadMernStackFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadMernStackFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadMernStackGlossaryRoute: typeof MarketingResourcesReadMernStackGlossaryRoute
+  MarketingResourcesReadMernStackInterviewQuestionsRoute: typeof MarketingResourcesReadMernStackInterviewQuestionsRoute
+  MarketingResourcesReadMernStackLearningRoadmapRoute: typeof MarketingResourcesReadMernStackLearningRoadmapRoute
+  MarketingResourcesReadMernStackPdfNotesRoute: typeof MarketingResourcesReadMernStackPdfNotesRoute
+  MarketingResourcesReadMernStackPracticeQuestionsRoute: typeof MarketingResourcesReadMernStackPracticeQuestionsRoute
+  MarketingResourcesReadMernStackProjectCaseStudyRoute: typeof MarketingResourcesReadMernStackProjectCaseStudyRoute
+  MarketingResourcesReadMernStackProjectGuideRoute: typeof MarketingResourcesReadMernStackProjectGuideRoute
+  MarketingResourcesReadMernStackQuickRevisionNotesRoute: typeof MarketingResourcesReadMernStackQuickRevisionNotesRoute
+  MarketingResourcesReadMernStackRealWorldCaseStudyRoute: typeof MarketingResourcesReadMernStackRealWorldCaseStudyRoute
+  MarketingResourcesReadMernStackReferenceGuideRoute: typeof MarketingResourcesReadMernStackReferenceGuideRoute
+  MarketingResourcesReadMernStackSampleExercisesRoute: typeof MarketingResourcesReadMernStackSampleExercisesRoute
+  MarketingResourcesReadMernStackStepByStepLearningGuideRoute: typeof MarketingResourcesReadMernStackStepByStepLearningGuideRoute
+  MarketingResourcesReadMernStackTipsTricksRoute: typeof MarketingResourcesReadMernStackTipsTricksRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
   MarketingResourcesReadMlAnswerKeyRoute: typeof MarketingResourcesReadMlAnswerKeyRoute
   MarketingResourcesReadMlBeginnerGuideRoute: typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -22349,6 +22790,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadKubernetesStepByStepLearningGuideRoute,
   MarketingResourcesReadKubernetesTipsTricksRoute:
     MarketingResourcesReadKubernetesTipsTricksRoute,
+  MarketingResourcesReadMernStackAdvancedConceptsRoute:
+    MarketingResourcesReadMernStackAdvancedConceptsRoute,
+  MarketingResourcesReadMernStackAnswerKeyRoute:
+    MarketingResourcesReadMernStackAnswerKeyRoute,
+  MarketingResourcesReadMernStackBeginnerGuideRoute:
+    MarketingResourcesReadMernStackBeginnerGuideRoute,
+  MarketingResourcesReadMernStackBestPracticesRoute:
+    MarketingResourcesReadMernStackBestPracticesRoute,
+  MarketingResourcesReadMernStackCheatSheetRoute:
+    MarketingResourcesReadMernStackCheatSheetRoute,
+  MarketingResourcesReadMernStackCommonMistakesRoute:
+    MarketingResourcesReadMernStackCommonMistakesRoute,
+  MarketingResourcesReadMernStackCompleteTutorialRoute:
+    MarketingResourcesReadMernStackCompleteTutorialRoute,
+  MarketingResourcesReadMernStackFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadMernStackFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadMernStackGlossaryRoute:
+    MarketingResourcesReadMernStackGlossaryRoute,
+  MarketingResourcesReadMernStackInterviewQuestionsRoute:
+    MarketingResourcesReadMernStackInterviewQuestionsRoute,
+  MarketingResourcesReadMernStackLearningRoadmapRoute:
+    MarketingResourcesReadMernStackLearningRoadmapRoute,
+  MarketingResourcesReadMernStackPdfNotesRoute:
+    MarketingResourcesReadMernStackPdfNotesRoute,
+  MarketingResourcesReadMernStackPracticeQuestionsRoute:
+    MarketingResourcesReadMernStackPracticeQuestionsRoute,
+  MarketingResourcesReadMernStackProjectCaseStudyRoute:
+    MarketingResourcesReadMernStackProjectCaseStudyRoute,
+  MarketingResourcesReadMernStackProjectGuideRoute:
+    MarketingResourcesReadMernStackProjectGuideRoute,
+  MarketingResourcesReadMernStackQuickRevisionNotesRoute:
+    MarketingResourcesReadMernStackQuickRevisionNotesRoute,
+  MarketingResourcesReadMernStackRealWorldCaseStudyRoute:
+    MarketingResourcesReadMernStackRealWorldCaseStudyRoute,
+  MarketingResourcesReadMernStackReferenceGuideRoute:
+    MarketingResourcesReadMernStackReferenceGuideRoute,
+  MarketingResourcesReadMernStackSampleExercisesRoute:
+    MarketingResourcesReadMernStackSampleExercisesRoute,
+  MarketingResourcesReadMernStackStepByStepLearningGuideRoute:
+    MarketingResourcesReadMernStackStepByStepLearningGuideRoute,
+  MarketingResourcesReadMernStackTipsTricksRoute:
+    MarketingResourcesReadMernStackTipsTricksRoute,
   MarketingResourcesReadMlAdvancedConceptsRoute:
     MarketingResourcesReadMlAdvancedConceptsRoute,
   MarketingResourcesReadMlAnswerKeyRoute:
