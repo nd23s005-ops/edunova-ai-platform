@@ -692,6 +692,27 @@ import { Route as MarketingResourcesReadCyberSecurityBestPracticesRouteImport } 
 import { Route as MarketingResourcesReadCyberSecurityBeginnerGuideRouteImport } from './routes/_marketing.resources.read.cyber-security-beginner-guide'
 import { Route as MarketingResourcesReadCyberSecurityAnswerKeyRouteImport } from './routes/_marketing.resources.read.cyber-security-answer-key'
 import { Route as MarketingResourcesReadCyberSecurityAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.cyber-security-advanced-concepts'
+import { Route as MarketingResourcesReadCss3TipsTricksRouteImport } from './routes/_marketing.resources.read.css3-tips-tricks'
+import { Route as MarketingResourcesReadCss3StepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.css3-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadCss3SampleExercisesRouteImport } from './routes/_marketing.resources.read.css3-sample-exercises'
+import { Route as MarketingResourcesReadCss3ReferenceGuideRouteImport } from './routes/_marketing.resources.read.css3-reference-guide'
+import { Route as MarketingResourcesReadCss3RealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.css3-real-world-case-study'
+import { Route as MarketingResourcesReadCss3QuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.css3-quick-revision-notes'
+import { Route as MarketingResourcesReadCss3ProjectGuideRouteImport } from './routes/_marketing.resources.read.css3-project-guide'
+import { Route as MarketingResourcesReadCss3ProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.css3-project-case-study'
+import { Route as MarketingResourcesReadCss3PracticeQuestionsRouteImport } from './routes/_marketing.resources.read.css3-practice-questions'
+import { Route as MarketingResourcesReadCss3PdfNotesRouteImport } from './routes/_marketing.resources.read.css3-pdf-notes'
+import { Route as MarketingResourcesReadCss3LearningRoadmapRouteImport } from './routes/_marketing.resources.read.css3-learning-roadmap'
+import { Route as MarketingResourcesReadCss3InterviewQuestionsRouteImport } from './routes/_marketing.resources.read.css3-interview-questions'
+import { Route as MarketingResourcesReadCss3GlossaryRouteImport } from './routes/_marketing.resources.read.css3-glossary'
+import { Route as MarketingResourcesReadCss3FrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.css3-frequently-asked-questions'
+import { Route as MarketingResourcesReadCss3CompleteTutorialRouteImport } from './routes/_marketing.resources.read.css3-complete-tutorial'
+import { Route as MarketingResourcesReadCss3CommonMistakesRouteImport } from './routes/_marketing.resources.read.css3-common-mistakes'
+import { Route as MarketingResourcesReadCss3CheatSheetRouteImport } from './routes/_marketing.resources.read.css3-cheat-sheet'
+import { Route as MarketingResourcesReadCss3BestPracticesRouteImport } from './routes/_marketing.resources.read.css3-best-practices'
+import { Route as MarketingResourcesReadCss3BeginnerGuideRouteImport } from './routes/_marketing.resources.read.css3-beginner-guide'
+import { Route as MarketingResourcesReadCss3AnswerKeyRouteImport } from './routes/_marketing.resources.read.css3-answer-key'
+import { Route as MarketingResourcesReadCss3AdvancedConceptsRouteImport } from './routes/_marketing.resources.read.css3-advanced-concepts'
 import { Route as MarketingResourcesReadCppTipsTricksRouteImport } from './routes/_marketing.resources.read.cpp-tips-tricks'
 import { Route as MarketingResourcesReadCppStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.cpp-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadCppSampleExercisesRouteImport } from './routes/_marketing.resources.read.cpp-sample-exercises'
@@ -4936,6 +4957,132 @@ const MarketingResourcesReadCyberSecurityAdvancedConceptsRoute =
     path: '/read/cyber-security-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadCss3TipsTricksRoute =
+  MarketingResourcesReadCss3TipsTricksRouteImport.update({
+    id: '/read/css3-tips-tricks',
+    path: '/read/css3-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3StepByStepLearningGuideRoute =
+  MarketingResourcesReadCss3StepByStepLearningGuideRouteImport.update({
+    id: '/read/css3-step-by-step-learning-guide',
+    path: '/read/css3-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3SampleExercisesRoute =
+  MarketingResourcesReadCss3SampleExercisesRouteImport.update({
+    id: '/read/css3-sample-exercises',
+    path: '/read/css3-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3ReferenceGuideRoute =
+  MarketingResourcesReadCss3ReferenceGuideRouteImport.update({
+    id: '/read/css3-reference-guide',
+    path: '/read/css3-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3RealWorldCaseStudyRoute =
+  MarketingResourcesReadCss3RealWorldCaseStudyRouteImport.update({
+    id: '/read/css3-real-world-case-study',
+    path: '/read/css3-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3QuickRevisionNotesRoute =
+  MarketingResourcesReadCss3QuickRevisionNotesRouteImport.update({
+    id: '/read/css3-quick-revision-notes',
+    path: '/read/css3-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3ProjectGuideRoute =
+  MarketingResourcesReadCss3ProjectGuideRouteImport.update({
+    id: '/read/css3-project-guide',
+    path: '/read/css3-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3ProjectCaseStudyRoute =
+  MarketingResourcesReadCss3ProjectCaseStudyRouteImport.update({
+    id: '/read/css3-project-case-study',
+    path: '/read/css3-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3PracticeQuestionsRoute =
+  MarketingResourcesReadCss3PracticeQuestionsRouteImport.update({
+    id: '/read/css3-practice-questions',
+    path: '/read/css3-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3PdfNotesRoute =
+  MarketingResourcesReadCss3PdfNotesRouteImport.update({
+    id: '/read/css3-pdf-notes',
+    path: '/read/css3-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3LearningRoadmapRoute =
+  MarketingResourcesReadCss3LearningRoadmapRouteImport.update({
+    id: '/read/css3-learning-roadmap',
+    path: '/read/css3-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3InterviewQuestionsRoute =
+  MarketingResourcesReadCss3InterviewQuestionsRouteImport.update({
+    id: '/read/css3-interview-questions',
+    path: '/read/css3-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3GlossaryRoute =
+  MarketingResourcesReadCss3GlossaryRouteImport.update({
+    id: '/read/css3-glossary',
+    path: '/read/css3-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3FrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadCss3FrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/css3-frequently-asked-questions',
+    path: '/read/css3-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3CompleteTutorialRoute =
+  MarketingResourcesReadCss3CompleteTutorialRouteImport.update({
+    id: '/read/css3-complete-tutorial',
+    path: '/read/css3-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3CommonMistakesRoute =
+  MarketingResourcesReadCss3CommonMistakesRouteImport.update({
+    id: '/read/css3-common-mistakes',
+    path: '/read/css3-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3CheatSheetRoute =
+  MarketingResourcesReadCss3CheatSheetRouteImport.update({
+    id: '/read/css3-cheat-sheet',
+    path: '/read/css3-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3BestPracticesRoute =
+  MarketingResourcesReadCss3BestPracticesRouteImport.update({
+    id: '/read/css3-best-practices',
+    path: '/read/css3-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3BeginnerGuideRoute =
+  MarketingResourcesReadCss3BeginnerGuideRouteImport.update({
+    id: '/read/css3-beginner-guide',
+    path: '/read/css3-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3AnswerKeyRoute =
+  MarketingResourcesReadCss3AnswerKeyRouteImport.update({
+    id: '/read/css3-answer-key',
+    path: '/read/css3-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCss3AdvancedConceptsRoute =
+  MarketingResourcesReadCss3AdvancedConceptsRouteImport.update({
+    id: '/read/css3-advanced-concepts',
+    path: '/read/css3-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadCppTipsTricksRoute =
   MarketingResourcesReadCppTipsTricksRouteImport.update({
     id: '/read/cpp-tips-tricks',
@@ -6096,6 +6243,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/cpp-sample-exercises': typeof MarketingResourcesReadCppSampleExercisesRoute
   '/resources/read/cpp-step-by-step-learning-guide': typeof MarketingResourcesReadCppStepByStepLearningGuideRoute
   '/resources/read/cpp-tips-tricks': typeof MarketingResourcesReadCppTipsTricksRoute
+  '/resources/read/css3-advanced-concepts': typeof MarketingResourcesReadCss3AdvancedConceptsRoute
+  '/resources/read/css3-answer-key': typeof MarketingResourcesReadCss3AnswerKeyRoute
+  '/resources/read/css3-beginner-guide': typeof MarketingResourcesReadCss3BeginnerGuideRoute
+  '/resources/read/css3-best-practices': typeof MarketingResourcesReadCss3BestPracticesRoute
+  '/resources/read/css3-cheat-sheet': typeof MarketingResourcesReadCss3CheatSheetRoute
+  '/resources/read/css3-common-mistakes': typeof MarketingResourcesReadCss3CommonMistakesRoute
+  '/resources/read/css3-complete-tutorial': typeof MarketingResourcesReadCss3CompleteTutorialRoute
+  '/resources/read/css3-frequently-asked-questions': typeof MarketingResourcesReadCss3FrequentlyAskedQuestionsRoute
+  '/resources/read/css3-glossary': typeof MarketingResourcesReadCss3GlossaryRoute
+  '/resources/read/css3-interview-questions': typeof MarketingResourcesReadCss3InterviewQuestionsRoute
+  '/resources/read/css3-learning-roadmap': typeof MarketingResourcesReadCss3LearningRoadmapRoute
+  '/resources/read/css3-pdf-notes': typeof MarketingResourcesReadCss3PdfNotesRoute
+  '/resources/read/css3-practice-questions': typeof MarketingResourcesReadCss3PracticeQuestionsRoute
+  '/resources/read/css3-project-case-study': typeof MarketingResourcesReadCss3ProjectCaseStudyRoute
+  '/resources/read/css3-project-guide': typeof MarketingResourcesReadCss3ProjectGuideRoute
+  '/resources/read/css3-quick-revision-notes': typeof MarketingResourcesReadCss3QuickRevisionNotesRoute
+  '/resources/read/css3-real-world-case-study': typeof MarketingResourcesReadCss3RealWorldCaseStudyRoute
+  '/resources/read/css3-reference-guide': typeof MarketingResourcesReadCss3ReferenceGuideRoute
+  '/resources/read/css3-sample-exercises': typeof MarketingResourcesReadCss3SampleExercisesRoute
+  '/resources/read/css3-step-by-step-learning-guide': typeof MarketingResourcesReadCss3StepByStepLearningGuideRoute
+  '/resources/read/css3-tips-tricks': typeof MarketingResourcesReadCss3TipsTricksRoute
   '/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
   '/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
   '/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
@@ -6937,6 +7105,27 @@ export interface FileRoutesByTo {
   '/resources/read/cpp-sample-exercises': typeof MarketingResourcesReadCppSampleExercisesRoute
   '/resources/read/cpp-step-by-step-learning-guide': typeof MarketingResourcesReadCppStepByStepLearningGuideRoute
   '/resources/read/cpp-tips-tricks': typeof MarketingResourcesReadCppTipsTricksRoute
+  '/resources/read/css3-advanced-concepts': typeof MarketingResourcesReadCss3AdvancedConceptsRoute
+  '/resources/read/css3-answer-key': typeof MarketingResourcesReadCss3AnswerKeyRoute
+  '/resources/read/css3-beginner-guide': typeof MarketingResourcesReadCss3BeginnerGuideRoute
+  '/resources/read/css3-best-practices': typeof MarketingResourcesReadCss3BestPracticesRoute
+  '/resources/read/css3-cheat-sheet': typeof MarketingResourcesReadCss3CheatSheetRoute
+  '/resources/read/css3-common-mistakes': typeof MarketingResourcesReadCss3CommonMistakesRoute
+  '/resources/read/css3-complete-tutorial': typeof MarketingResourcesReadCss3CompleteTutorialRoute
+  '/resources/read/css3-frequently-asked-questions': typeof MarketingResourcesReadCss3FrequentlyAskedQuestionsRoute
+  '/resources/read/css3-glossary': typeof MarketingResourcesReadCss3GlossaryRoute
+  '/resources/read/css3-interview-questions': typeof MarketingResourcesReadCss3InterviewQuestionsRoute
+  '/resources/read/css3-learning-roadmap': typeof MarketingResourcesReadCss3LearningRoadmapRoute
+  '/resources/read/css3-pdf-notes': typeof MarketingResourcesReadCss3PdfNotesRoute
+  '/resources/read/css3-practice-questions': typeof MarketingResourcesReadCss3PracticeQuestionsRoute
+  '/resources/read/css3-project-case-study': typeof MarketingResourcesReadCss3ProjectCaseStudyRoute
+  '/resources/read/css3-project-guide': typeof MarketingResourcesReadCss3ProjectGuideRoute
+  '/resources/read/css3-quick-revision-notes': typeof MarketingResourcesReadCss3QuickRevisionNotesRoute
+  '/resources/read/css3-real-world-case-study': typeof MarketingResourcesReadCss3RealWorldCaseStudyRoute
+  '/resources/read/css3-reference-guide': typeof MarketingResourcesReadCss3ReferenceGuideRoute
+  '/resources/read/css3-sample-exercises': typeof MarketingResourcesReadCss3SampleExercisesRoute
+  '/resources/read/css3-step-by-step-learning-guide': typeof MarketingResourcesReadCss3StepByStepLearningGuideRoute
+  '/resources/read/css3-tips-tricks': typeof MarketingResourcesReadCss3TipsTricksRoute
   '/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
   '/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
   '/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
@@ -7783,6 +7972,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/cpp-sample-exercises': typeof MarketingResourcesReadCppSampleExercisesRoute
   '/_marketing/resources/read/cpp-step-by-step-learning-guide': typeof MarketingResourcesReadCppStepByStepLearningGuideRoute
   '/_marketing/resources/read/cpp-tips-tricks': typeof MarketingResourcesReadCppTipsTricksRoute
+  '/_marketing/resources/read/css3-advanced-concepts': typeof MarketingResourcesReadCss3AdvancedConceptsRoute
+  '/_marketing/resources/read/css3-answer-key': typeof MarketingResourcesReadCss3AnswerKeyRoute
+  '/_marketing/resources/read/css3-beginner-guide': typeof MarketingResourcesReadCss3BeginnerGuideRoute
+  '/_marketing/resources/read/css3-best-practices': typeof MarketingResourcesReadCss3BestPracticesRoute
+  '/_marketing/resources/read/css3-cheat-sheet': typeof MarketingResourcesReadCss3CheatSheetRoute
+  '/_marketing/resources/read/css3-common-mistakes': typeof MarketingResourcesReadCss3CommonMistakesRoute
+  '/_marketing/resources/read/css3-complete-tutorial': typeof MarketingResourcesReadCss3CompleteTutorialRoute
+  '/_marketing/resources/read/css3-frequently-asked-questions': typeof MarketingResourcesReadCss3FrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/css3-glossary': typeof MarketingResourcesReadCss3GlossaryRoute
+  '/_marketing/resources/read/css3-interview-questions': typeof MarketingResourcesReadCss3InterviewQuestionsRoute
+  '/_marketing/resources/read/css3-learning-roadmap': typeof MarketingResourcesReadCss3LearningRoadmapRoute
+  '/_marketing/resources/read/css3-pdf-notes': typeof MarketingResourcesReadCss3PdfNotesRoute
+  '/_marketing/resources/read/css3-practice-questions': typeof MarketingResourcesReadCss3PracticeQuestionsRoute
+  '/_marketing/resources/read/css3-project-case-study': typeof MarketingResourcesReadCss3ProjectCaseStudyRoute
+  '/_marketing/resources/read/css3-project-guide': typeof MarketingResourcesReadCss3ProjectGuideRoute
+  '/_marketing/resources/read/css3-quick-revision-notes': typeof MarketingResourcesReadCss3QuickRevisionNotesRoute
+  '/_marketing/resources/read/css3-real-world-case-study': typeof MarketingResourcesReadCss3RealWorldCaseStudyRoute
+  '/_marketing/resources/read/css3-reference-guide': typeof MarketingResourcesReadCss3ReferenceGuideRoute
+  '/_marketing/resources/read/css3-sample-exercises': typeof MarketingResourcesReadCss3SampleExercisesRoute
+  '/_marketing/resources/read/css3-step-by-step-learning-guide': typeof MarketingResourcesReadCss3StepByStepLearningGuideRoute
+  '/_marketing/resources/read/css3-tips-tricks': typeof MarketingResourcesReadCss3TipsTricksRoute
   '/_marketing/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
   '/_marketing/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
   '/_marketing/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
@@ -8627,6 +8837,27 @@ export interface FileRouteTypes {
     | '/resources/read/cpp-sample-exercises'
     | '/resources/read/cpp-step-by-step-learning-guide'
     | '/resources/read/cpp-tips-tricks'
+    | '/resources/read/css3-advanced-concepts'
+    | '/resources/read/css3-answer-key'
+    | '/resources/read/css3-beginner-guide'
+    | '/resources/read/css3-best-practices'
+    | '/resources/read/css3-cheat-sheet'
+    | '/resources/read/css3-common-mistakes'
+    | '/resources/read/css3-complete-tutorial'
+    | '/resources/read/css3-frequently-asked-questions'
+    | '/resources/read/css3-glossary'
+    | '/resources/read/css3-interview-questions'
+    | '/resources/read/css3-learning-roadmap'
+    | '/resources/read/css3-pdf-notes'
+    | '/resources/read/css3-practice-questions'
+    | '/resources/read/css3-project-case-study'
+    | '/resources/read/css3-project-guide'
+    | '/resources/read/css3-quick-revision-notes'
+    | '/resources/read/css3-real-world-case-study'
+    | '/resources/read/css3-reference-guide'
+    | '/resources/read/css3-sample-exercises'
+    | '/resources/read/css3-step-by-step-learning-guide'
+    | '/resources/read/css3-tips-tricks'
     | '/resources/read/cyber-security-advanced-concepts'
     | '/resources/read/cyber-security-answer-key'
     | '/resources/read/cyber-security-beginner-guide'
@@ -9468,6 +9699,27 @@ export interface FileRouteTypes {
     | '/resources/read/cpp-sample-exercises'
     | '/resources/read/cpp-step-by-step-learning-guide'
     | '/resources/read/cpp-tips-tricks'
+    | '/resources/read/css3-advanced-concepts'
+    | '/resources/read/css3-answer-key'
+    | '/resources/read/css3-beginner-guide'
+    | '/resources/read/css3-best-practices'
+    | '/resources/read/css3-cheat-sheet'
+    | '/resources/read/css3-common-mistakes'
+    | '/resources/read/css3-complete-tutorial'
+    | '/resources/read/css3-frequently-asked-questions'
+    | '/resources/read/css3-glossary'
+    | '/resources/read/css3-interview-questions'
+    | '/resources/read/css3-learning-roadmap'
+    | '/resources/read/css3-pdf-notes'
+    | '/resources/read/css3-practice-questions'
+    | '/resources/read/css3-project-case-study'
+    | '/resources/read/css3-project-guide'
+    | '/resources/read/css3-quick-revision-notes'
+    | '/resources/read/css3-real-world-case-study'
+    | '/resources/read/css3-reference-guide'
+    | '/resources/read/css3-sample-exercises'
+    | '/resources/read/css3-step-by-step-learning-guide'
+    | '/resources/read/css3-tips-tricks'
     | '/resources/read/cyber-security-advanced-concepts'
     | '/resources/read/cyber-security-answer-key'
     | '/resources/read/cyber-security-beginner-guide'
@@ -10313,6 +10565,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/cpp-sample-exercises'
     | '/_marketing/resources/read/cpp-step-by-step-learning-guide'
     | '/_marketing/resources/read/cpp-tips-tricks'
+    | '/_marketing/resources/read/css3-advanced-concepts'
+    | '/_marketing/resources/read/css3-answer-key'
+    | '/_marketing/resources/read/css3-beginner-guide'
+    | '/_marketing/resources/read/css3-best-practices'
+    | '/_marketing/resources/read/css3-cheat-sheet'
+    | '/_marketing/resources/read/css3-common-mistakes'
+    | '/_marketing/resources/read/css3-complete-tutorial'
+    | '/_marketing/resources/read/css3-frequently-asked-questions'
+    | '/_marketing/resources/read/css3-glossary'
+    | '/_marketing/resources/read/css3-interview-questions'
+    | '/_marketing/resources/read/css3-learning-roadmap'
+    | '/_marketing/resources/read/css3-pdf-notes'
+    | '/_marketing/resources/read/css3-practice-questions'
+    | '/_marketing/resources/read/css3-project-case-study'
+    | '/_marketing/resources/read/css3-project-guide'
+    | '/_marketing/resources/read/css3-quick-revision-notes'
+    | '/_marketing/resources/read/css3-real-world-case-study'
+    | '/_marketing/resources/read/css3-reference-guide'
+    | '/_marketing/resources/read/css3-sample-exercises'
+    | '/_marketing/resources/read/css3-step-by-step-learning-guide'
+    | '/_marketing/resources/read/css3-tips-tricks'
     | '/_marketing/resources/read/cyber-security-advanced-concepts'
     | '/_marketing/resources/read/cyber-security-answer-key'
     | '/_marketing/resources/read/cyber-security-beginner-guide'
@@ -15760,6 +16033,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/css3-tips-tricks': {
+      id: '/_marketing/resources/read/css3-tips-tricks'
+      path: '/read/css3-tips-tricks'
+      fullPath: '/resources/read/css3-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadCss3TipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/css3-step-by-step-learning-guide'
+      path: '/read/css3-step-by-step-learning-guide'
+      fullPath: '/resources/read/css3-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCss3StepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-sample-exercises': {
+      id: '/_marketing/resources/read/css3-sample-exercises'
+      path: '/read/css3-sample-exercises'
+      fullPath: '/resources/read/css3-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadCss3SampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-reference-guide': {
+      id: '/_marketing/resources/read/css3-reference-guide'
+      path: '/read/css3-reference-guide'
+      fullPath: '/resources/read/css3-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCss3ReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-real-world-case-study': {
+      id: '/_marketing/resources/read/css3-real-world-case-study'
+      path: '/read/css3-real-world-case-study'
+      fullPath: '/resources/read/css3-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadCss3RealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-quick-revision-notes': {
+      id: '/_marketing/resources/read/css3-quick-revision-notes'
+      path: '/read/css3-quick-revision-notes'
+      fullPath: '/resources/read/css3-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadCss3QuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-project-guide': {
+      id: '/_marketing/resources/read/css3-project-guide'
+      path: '/read/css3-project-guide'
+      fullPath: '/resources/read/css3-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCss3ProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-project-case-study': {
+      id: '/_marketing/resources/read/css3-project-case-study'
+      path: '/read/css3-project-case-study'
+      fullPath: '/resources/read/css3-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadCss3ProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-practice-questions': {
+      id: '/_marketing/resources/read/css3-practice-questions'
+      path: '/read/css3-practice-questions'
+      fullPath: '/resources/read/css3-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCss3PracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-pdf-notes': {
+      id: '/_marketing/resources/read/css3-pdf-notes'
+      path: '/read/css3-pdf-notes'
+      fullPath: '/resources/read/css3-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadCss3PdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-learning-roadmap': {
+      id: '/_marketing/resources/read/css3-learning-roadmap'
+      path: '/read/css3-learning-roadmap'
+      fullPath: '/resources/read/css3-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadCss3LearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-interview-questions': {
+      id: '/_marketing/resources/read/css3-interview-questions'
+      path: '/read/css3-interview-questions'
+      fullPath: '/resources/read/css3-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCss3InterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-glossary': {
+      id: '/_marketing/resources/read/css3-glossary'
+      path: '/read/css3-glossary'
+      fullPath: '/resources/read/css3-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadCss3GlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-frequently-asked-questions': {
+      id: '/_marketing/resources/read/css3-frequently-asked-questions'
+      path: '/read/css3-frequently-asked-questions'
+      fullPath: '/resources/read/css3-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCss3FrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-complete-tutorial': {
+      id: '/_marketing/resources/read/css3-complete-tutorial'
+      path: '/read/css3-complete-tutorial'
+      fullPath: '/resources/read/css3-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadCss3CompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-common-mistakes': {
+      id: '/_marketing/resources/read/css3-common-mistakes'
+      path: '/read/css3-common-mistakes'
+      fullPath: '/resources/read/css3-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadCss3CommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-cheat-sheet': {
+      id: '/_marketing/resources/read/css3-cheat-sheet'
+      path: '/read/css3-cheat-sheet'
+      fullPath: '/resources/read/css3-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadCss3CheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-best-practices': {
+      id: '/_marketing/resources/read/css3-best-practices'
+      path: '/read/css3-best-practices'
+      fullPath: '/resources/read/css3-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadCss3BestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-beginner-guide': {
+      id: '/_marketing/resources/read/css3-beginner-guide'
+      path: '/read/css3-beginner-guide'
+      fullPath: '/resources/read/css3-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCss3BeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-answer-key': {
+      id: '/_marketing/resources/read/css3-answer-key'
+      path: '/read/css3-answer-key'
+      fullPath: '/resources/read/css3-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadCss3AnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/css3-advanced-concepts': {
+      id: '/_marketing/resources/read/css3-advanced-concepts'
+      path: '/read/css3-advanced-concepts'
+      fullPath: '/resources/read/css3-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadCss3AdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/cpp-tips-tricks': {
       id: '/_marketing/resources/read/cpp-tips-tricks'
       path: '/read/cpp-tips-tricks'
@@ -17163,6 +17583,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadCppSampleExercisesRoute: typeof MarketingResourcesReadCppSampleExercisesRoute
   MarketingResourcesReadCppStepByStepLearningGuideRoute: typeof MarketingResourcesReadCppStepByStepLearningGuideRoute
   MarketingResourcesReadCppTipsTricksRoute: typeof MarketingResourcesReadCppTipsTricksRoute
+  MarketingResourcesReadCss3AdvancedConceptsRoute: typeof MarketingResourcesReadCss3AdvancedConceptsRoute
+  MarketingResourcesReadCss3AnswerKeyRoute: typeof MarketingResourcesReadCss3AnswerKeyRoute
+  MarketingResourcesReadCss3BeginnerGuideRoute: typeof MarketingResourcesReadCss3BeginnerGuideRoute
+  MarketingResourcesReadCss3BestPracticesRoute: typeof MarketingResourcesReadCss3BestPracticesRoute
+  MarketingResourcesReadCss3CheatSheetRoute: typeof MarketingResourcesReadCss3CheatSheetRoute
+  MarketingResourcesReadCss3CommonMistakesRoute: typeof MarketingResourcesReadCss3CommonMistakesRoute
+  MarketingResourcesReadCss3CompleteTutorialRoute: typeof MarketingResourcesReadCss3CompleteTutorialRoute
+  MarketingResourcesReadCss3FrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadCss3FrequentlyAskedQuestionsRoute
+  MarketingResourcesReadCss3GlossaryRoute: typeof MarketingResourcesReadCss3GlossaryRoute
+  MarketingResourcesReadCss3InterviewQuestionsRoute: typeof MarketingResourcesReadCss3InterviewQuestionsRoute
+  MarketingResourcesReadCss3LearningRoadmapRoute: typeof MarketingResourcesReadCss3LearningRoadmapRoute
+  MarketingResourcesReadCss3PdfNotesRoute: typeof MarketingResourcesReadCss3PdfNotesRoute
+  MarketingResourcesReadCss3PracticeQuestionsRoute: typeof MarketingResourcesReadCss3PracticeQuestionsRoute
+  MarketingResourcesReadCss3ProjectCaseStudyRoute: typeof MarketingResourcesReadCss3ProjectCaseStudyRoute
+  MarketingResourcesReadCss3ProjectGuideRoute: typeof MarketingResourcesReadCss3ProjectGuideRoute
+  MarketingResourcesReadCss3QuickRevisionNotesRoute: typeof MarketingResourcesReadCss3QuickRevisionNotesRoute
+  MarketingResourcesReadCss3RealWorldCaseStudyRoute: typeof MarketingResourcesReadCss3RealWorldCaseStudyRoute
+  MarketingResourcesReadCss3ReferenceGuideRoute: typeof MarketingResourcesReadCss3ReferenceGuideRoute
+  MarketingResourcesReadCss3SampleExercisesRoute: typeof MarketingResourcesReadCss3SampleExercisesRoute
+  MarketingResourcesReadCss3StepByStepLearningGuideRoute: typeof MarketingResourcesReadCss3StepByStepLearningGuideRoute
+  MarketingResourcesReadCss3TipsTricksRoute: typeof MarketingResourcesReadCss3TipsTricksRoute
   MarketingResourcesReadCyberSecurityAdvancedConceptsRoute: typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
   MarketingResourcesReadCyberSecurityAnswerKeyRoute: typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
   MarketingResourcesReadCyberSecurityBeginnerGuideRoute: typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
@@ -18099,6 +18540,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadCppStepByStepLearningGuideRoute,
   MarketingResourcesReadCppTipsTricksRoute:
     MarketingResourcesReadCppTipsTricksRoute,
+  MarketingResourcesReadCss3AdvancedConceptsRoute:
+    MarketingResourcesReadCss3AdvancedConceptsRoute,
+  MarketingResourcesReadCss3AnswerKeyRoute:
+    MarketingResourcesReadCss3AnswerKeyRoute,
+  MarketingResourcesReadCss3BeginnerGuideRoute:
+    MarketingResourcesReadCss3BeginnerGuideRoute,
+  MarketingResourcesReadCss3BestPracticesRoute:
+    MarketingResourcesReadCss3BestPracticesRoute,
+  MarketingResourcesReadCss3CheatSheetRoute:
+    MarketingResourcesReadCss3CheatSheetRoute,
+  MarketingResourcesReadCss3CommonMistakesRoute:
+    MarketingResourcesReadCss3CommonMistakesRoute,
+  MarketingResourcesReadCss3CompleteTutorialRoute:
+    MarketingResourcesReadCss3CompleteTutorialRoute,
+  MarketingResourcesReadCss3FrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadCss3FrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadCss3GlossaryRoute:
+    MarketingResourcesReadCss3GlossaryRoute,
+  MarketingResourcesReadCss3InterviewQuestionsRoute:
+    MarketingResourcesReadCss3InterviewQuestionsRoute,
+  MarketingResourcesReadCss3LearningRoadmapRoute:
+    MarketingResourcesReadCss3LearningRoadmapRoute,
+  MarketingResourcesReadCss3PdfNotesRoute:
+    MarketingResourcesReadCss3PdfNotesRoute,
+  MarketingResourcesReadCss3PracticeQuestionsRoute:
+    MarketingResourcesReadCss3PracticeQuestionsRoute,
+  MarketingResourcesReadCss3ProjectCaseStudyRoute:
+    MarketingResourcesReadCss3ProjectCaseStudyRoute,
+  MarketingResourcesReadCss3ProjectGuideRoute:
+    MarketingResourcesReadCss3ProjectGuideRoute,
+  MarketingResourcesReadCss3QuickRevisionNotesRoute:
+    MarketingResourcesReadCss3QuickRevisionNotesRoute,
+  MarketingResourcesReadCss3RealWorldCaseStudyRoute:
+    MarketingResourcesReadCss3RealWorldCaseStudyRoute,
+  MarketingResourcesReadCss3ReferenceGuideRoute:
+    MarketingResourcesReadCss3ReferenceGuideRoute,
+  MarketingResourcesReadCss3SampleExercisesRoute:
+    MarketingResourcesReadCss3SampleExercisesRoute,
+  MarketingResourcesReadCss3StepByStepLearningGuideRoute:
+    MarketingResourcesReadCss3StepByStepLearningGuideRoute,
+  MarketingResourcesReadCss3TipsTricksRoute:
+    MarketingResourcesReadCss3TipsTricksRoute,
   MarketingResourcesReadCyberSecurityAdvancedConceptsRoute:
     MarketingResourcesReadCyberSecurityAdvancedConceptsRoute,
   MarketingResourcesReadCyberSecurityAnswerKeyRoute:
