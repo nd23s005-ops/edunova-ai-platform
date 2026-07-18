@@ -92,6 +92,27 @@ import { Route as MarketingResourcesReadTypescriptBestPracticesRouteImport } fro
 import { Route as MarketingResourcesReadTypescriptBeginnerGuideRouteImport } from './routes/_marketing.resources.read.typescript-beginner-guide'
 import { Route as MarketingResourcesReadTypescriptAnswerKeyRouteImport } from './routes/_marketing.resources.read.typescript-answer-key'
 import { Route as MarketingResourcesReadTypescriptAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.typescript-advanced-concepts'
+import { Route as MarketingResourcesReadTailwindCssTipsTricksRouteImport } from './routes/_marketing.resources.read.tailwind-css-tips-tricks'
+import { Route as MarketingResourcesReadTailwindCssStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.tailwind-css-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadTailwindCssSampleExercisesRouteImport } from './routes/_marketing.resources.read.tailwind-css-sample-exercises'
+import { Route as MarketingResourcesReadTailwindCssReferenceGuideRouteImport } from './routes/_marketing.resources.read.tailwind-css-reference-guide'
+import { Route as MarketingResourcesReadTailwindCssRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.tailwind-css-real-world-case-study'
+import { Route as MarketingResourcesReadTailwindCssQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.tailwind-css-quick-revision-notes'
+import { Route as MarketingResourcesReadTailwindCssProjectGuideRouteImport } from './routes/_marketing.resources.read.tailwind-css-project-guide'
+import { Route as MarketingResourcesReadTailwindCssProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.tailwind-css-project-case-study'
+import { Route as MarketingResourcesReadTailwindCssPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.tailwind-css-practice-questions'
+import { Route as MarketingResourcesReadTailwindCssPdfNotesRouteImport } from './routes/_marketing.resources.read.tailwind-css-pdf-notes'
+import { Route as MarketingResourcesReadTailwindCssLearningRoadmapRouteImport } from './routes/_marketing.resources.read.tailwind-css-learning-roadmap'
+import { Route as MarketingResourcesReadTailwindCssInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.tailwind-css-interview-questions'
+import { Route as MarketingResourcesReadTailwindCssGlossaryRouteImport } from './routes/_marketing.resources.read.tailwind-css-glossary'
+import { Route as MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.tailwind-css-frequently-asked-questions'
+import { Route as MarketingResourcesReadTailwindCssCompleteTutorialRouteImport } from './routes/_marketing.resources.read.tailwind-css-complete-tutorial'
+import { Route as MarketingResourcesReadTailwindCssCommonMistakesRouteImport } from './routes/_marketing.resources.read.tailwind-css-common-mistakes'
+import { Route as MarketingResourcesReadTailwindCssCheatSheetRouteImport } from './routes/_marketing.resources.read.tailwind-css-cheat-sheet'
+import { Route as MarketingResourcesReadTailwindCssBestPracticesRouteImport } from './routes/_marketing.resources.read.tailwind-css-best-practices'
+import { Route as MarketingResourcesReadTailwindCssBeginnerGuideRouteImport } from './routes/_marketing.resources.read.tailwind-css-beginner-guide'
+import { Route as MarketingResourcesReadTailwindCssAnswerKeyRouteImport } from './routes/_marketing.resources.read.tailwind-css-answer-key'
+import { Route as MarketingResourcesReadTailwindCssAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.tailwind-css-advanced-concepts'
 import { Route as MarketingResourcesReadTableauTipsTricksRouteImport } from './routes/_marketing.resources.read.tableau-tips-tricks'
 import { Route as MarketingResourcesReadTableauStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.tableau-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadTableauSampleExercisesRouteImport } from './routes/_marketing.resources.read.tableau-sample-exercises'
@@ -1337,6 +1358,132 @@ const MarketingResourcesReadTypescriptAdvancedConceptsRoute =
   MarketingResourcesReadTypescriptAdvancedConceptsRouteImport.update({
     id: '/read/typescript-advanced-concepts',
     path: '/read/typescript-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssTipsTricksRoute =
+  MarketingResourcesReadTailwindCssTipsTricksRouteImport.update({
+    id: '/read/tailwind-css-tips-tricks',
+    path: '/read/tailwind-css-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssStepByStepLearningGuideRoute =
+  MarketingResourcesReadTailwindCssStepByStepLearningGuideRouteImport.update({
+    id: '/read/tailwind-css-step-by-step-learning-guide',
+    path: '/read/tailwind-css-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssSampleExercisesRoute =
+  MarketingResourcesReadTailwindCssSampleExercisesRouteImport.update({
+    id: '/read/tailwind-css-sample-exercises',
+    path: '/read/tailwind-css-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssReferenceGuideRoute =
+  MarketingResourcesReadTailwindCssReferenceGuideRouteImport.update({
+    id: '/read/tailwind-css-reference-guide',
+    path: '/read/tailwind-css-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssRealWorldCaseStudyRoute =
+  MarketingResourcesReadTailwindCssRealWorldCaseStudyRouteImport.update({
+    id: '/read/tailwind-css-real-world-case-study',
+    path: '/read/tailwind-css-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssQuickRevisionNotesRoute =
+  MarketingResourcesReadTailwindCssQuickRevisionNotesRouteImport.update({
+    id: '/read/tailwind-css-quick-revision-notes',
+    path: '/read/tailwind-css-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssProjectGuideRoute =
+  MarketingResourcesReadTailwindCssProjectGuideRouteImport.update({
+    id: '/read/tailwind-css-project-guide',
+    path: '/read/tailwind-css-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssProjectCaseStudyRoute =
+  MarketingResourcesReadTailwindCssProjectCaseStudyRouteImport.update({
+    id: '/read/tailwind-css-project-case-study',
+    path: '/read/tailwind-css-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssPracticeQuestionsRoute =
+  MarketingResourcesReadTailwindCssPracticeQuestionsRouteImport.update({
+    id: '/read/tailwind-css-practice-questions',
+    path: '/read/tailwind-css-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssPdfNotesRoute =
+  MarketingResourcesReadTailwindCssPdfNotesRouteImport.update({
+    id: '/read/tailwind-css-pdf-notes',
+    path: '/read/tailwind-css-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssLearningRoadmapRoute =
+  MarketingResourcesReadTailwindCssLearningRoadmapRouteImport.update({
+    id: '/read/tailwind-css-learning-roadmap',
+    path: '/read/tailwind-css-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssInterviewQuestionsRoute =
+  MarketingResourcesReadTailwindCssInterviewQuestionsRouteImport.update({
+    id: '/read/tailwind-css-interview-questions',
+    path: '/read/tailwind-css-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssGlossaryRoute =
+  MarketingResourcesReadTailwindCssGlossaryRouteImport.update({
+    id: '/read/tailwind-css-glossary',
+    path: '/read/tailwind-css-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/tailwind-css-frequently-asked-questions',
+    path: '/read/tailwind-css-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssCompleteTutorialRoute =
+  MarketingResourcesReadTailwindCssCompleteTutorialRouteImport.update({
+    id: '/read/tailwind-css-complete-tutorial',
+    path: '/read/tailwind-css-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssCommonMistakesRoute =
+  MarketingResourcesReadTailwindCssCommonMistakesRouteImport.update({
+    id: '/read/tailwind-css-common-mistakes',
+    path: '/read/tailwind-css-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssCheatSheetRoute =
+  MarketingResourcesReadTailwindCssCheatSheetRouteImport.update({
+    id: '/read/tailwind-css-cheat-sheet',
+    path: '/read/tailwind-css-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssBestPracticesRoute =
+  MarketingResourcesReadTailwindCssBestPracticesRouteImport.update({
+    id: '/read/tailwind-css-best-practices',
+    path: '/read/tailwind-css-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssBeginnerGuideRoute =
+  MarketingResourcesReadTailwindCssBeginnerGuideRouteImport.update({
+    id: '/read/tailwind-css-beginner-guide',
+    path: '/read/tailwind-css-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssAnswerKeyRoute =
+  MarketingResourcesReadTailwindCssAnswerKeyRouteImport.update({
+    id: '/read/tailwind-css-answer-key',
+    path: '/read/tailwind-css-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTailwindCssAdvancedConceptsRoute =
+  MarketingResourcesReadTailwindCssAdvancedConceptsRouteImport.update({
+    id: '/read/tailwind-css-advanced-concepts',
+    path: '/read/tailwind-css-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadTableauTipsTricksRoute =
@@ -6864,6 +7011,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
   '/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
   '/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
+  '/resources/read/tailwind-css-advanced-concepts': typeof MarketingResourcesReadTailwindCssAdvancedConceptsRoute
+  '/resources/read/tailwind-css-answer-key': typeof MarketingResourcesReadTailwindCssAnswerKeyRoute
+  '/resources/read/tailwind-css-beginner-guide': typeof MarketingResourcesReadTailwindCssBeginnerGuideRoute
+  '/resources/read/tailwind-css-best-practices': typeof MarketingResourcesReadTailwindCssBestPracticesRoute
+  '/resources/read/tailwind-css-cheat-sheet': typeof MarketingResourcesReadTailwindCssCheatSheetRoute
+  '/resources/read/tailwind-css-common-mistakes': typeof MarketingResourcesReadTailwindCssCommonMistakesRoute
+  '/resources/read/tailwind-css-complete-tutorial': typeof MarketingResourcesReadTailwindCssCompleteTutorialRoute
+  '/resources/read/tailwind-css-frequently-asked-questions': typeof MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRoute
+  '/resources/read/tailwind-css-glossary': typeof MarketingResourcesReadTailwindCssGlossaryRoute
+  '/resources/read/tailwind-css-interview-questions': typeof MarketingResourcesReadTailwindCssInterviewQuestionsRoute
+  '/resources/read/tailwind-css-learning-roadmap': typeof MarketingResourcesReadTailwindCssLearningRoadmapRoute
+  '/resources/read/tailwind-css-pdf-notes': typeof MarketingResourcesReadTailwindCssPdfNotesRoute
+  '/resources/read/tailwind-css-practice-questions': typeof MarketingResourcesReadTailwindCssPracticeQuestionsRoute
+  '/resources/read/tailwind-css-project-case-study': typeof MarketingResourcesReadTailwindCssProjectCaseStudyRoute
+  '/resources/read/tailwind-css-project-guide': typeof MarketingResourcesReadTailwindCssProjectGuideRoute
+  '/resources/read/tailwind-css-quick-revision-notes': typeof MarketingResourcesReadTailwindCssQuickRevisionNotesRoute
+  '/resources/read/tailwind-css-real-world-case-study': typeof MarketingResourcesReadTailwindCssRealWorldCaseStudyRoute
+  '/resources/read/tailwind-css-reference-guide': typeof MarketingResourcesReadTailwindCssReferenceGuideRoute
+  '/resources/read/tailwind-css-sample-exercises': typeof MarketingResourcesReadTailwindCssSampleExercisesRoute
+  '/resources/read/tailwind-css-step-by-step-learning-guide': typeof MarketingResourcesReadTailwindCssStepByStepLearningGuideRoute
+  '/resources/read/tailwind-css-tips-tricks': typeof MarketingResourcesReadTailwindCssTipsTricksRoute
   '/resources/read/typescript-advanced-concepts': typeof MarketingResourcesReadTypescriptAdvancedConceptsRoute
   '/resources/read/typescript-answer-key': typeof MarketingResourcesReadTypescriptAnswerKeyRoute
   '/resources/read/typescript-beginner-guide': typeof MarketingResourcesReadTypescriptBeginnerGuideRoute
@@ -7726,6 +7894,27 @@ export interface FileRoutesByTo {
   '/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
   '/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
   '/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
+  '/resources/read/tailwind-css-advanced-concepts': typeof MarketingResourcesReadTailwindCssAdvancedConceptsRoute
+  '/resources/read/tailwind-css-answer-key': typeof MarketingResourcesReadTailwindCssAnswerKeyRoute
+  '/resources/read/tailwind-css-beginner-guide': typeof MarketingResourcesReadTailwindCssBeginnerGuideRoute
+  '/resources/read/tailwind-css-best-practices': typeof MarketingResourcesReadTailwindCssBestPracticesRoute
+  '/resources/read/tailwind-css-cheat-sheet': typeof MarketingResourcesReadTailwindCssCheatSheetRoute
+  '/resources/read/tailwind-css-common-mistakes': typeof MarketingResourcesReadTailwindCssCommonMistakesRoute
+  '/resources/read/tailwind-css-complete-tutorial': typeof MarketingResourcesReadTailwindCssCompleteTutorialRoute
+  '/resources/read/tailwind-css-frequently-asked-questions': typeof MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRoute
+  '/resources/read/tailwind-css-glossary': typeof MarketingResourcesReadTailwindCssGlossaryRoute
+  '/resources/read/tailwind-css-interview-questions': typeof MarketingResourcesReadTailwindCssInterviewQuestionsRoute
+  '/resources/read/tailwind-css-learning-roadmap': typeof MarketingResourcesReadTailwindCssLearningRoadmapRoute
+  '/resources/read/tailwind-css-pdf-notes': typeof MarketingResourcesReadTailwindCssPdfNotesRoute
+  '/resources/read/tailwind-css-practice-questions': typeof MarketingResourcesReadTailwindCssPracticeQuestionsRoute
+  '/resources/read/tailwind-css-project-case-study': typeof MarketingResourcesReadTailwindCssProjectCaseStudyRoute
+  '/resources/read/tailwind-css-project-guide': typeof MarketingResourcesReadTailwindCssProjectGuideRoute
+  '/resources/read/tailwind-css-quick-revision-notes': typeof MarketingResourcesReadTailwindCssQuickRevisionNotesRoute
+  '/resources/read/tailwind-css-real-world-case-study': typeof MarketingResourcesReadTailwindCssRealWorldCaseStudyRoute
+  '/resources/read/tailwind-css-reference-guide': typeof MarketingResourcesReadTailwindCssReferenceGuideRoute
+  '/resources/read/tailwind-css-sample-exercises': typeof MarketingResourcesReadTailwindCssSampleExercisesRoute
+  '/resources/read/tailwind-css-step-by-step-learning-guide': typeof MarketingResourcesReadTailwindCssStepByStepLearningGuideRoute
+  '/resources/read/tailwind-css-tips-tricks': typeof MarketingResourcesReadTailwindCssTipsTricksRoute
   '/resources/read/typescript-advanced-concepts': typeof MarketingResourcesReadTypescriptAdvancedConceptsRoute
   '/resources/read/typescript-answer-key': typeof MarketingResourcesReadTypescriptAnswerKeyRoute
   '/resources/read/typescript-beginner-guide': typeof MarketingResourcesReadTypescriptBeginnerGuideRoute
@@ -8593,6 +8782,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
   '/_marketing/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
   '/_marketing/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
+  '/_marketing/resources/read/tailwind-css-advanced-concepts': typeof MarketingResourcesReadTailwindCssAdvancedConceptsRoute
+  '/_marketing/resources/read/tailwind-css-answer-key': typeof MarketingResourcesReadTailwindCssAnswerKeyRoute
+  '/_marketing/resources/read/tailwind-css-beginner-guide': typeof MarketingResourcesReadTailwindCssBeginnerGuideRoute
+  '/_marketing/resources/read/tailwind-css-best-practices': typeof MarketingResourcesReadTailwindCssBestPracticesRoute
+  '/_marketing/resources/read/tailwind-css-cheat-sheet': typeof MarketingResourcesReadTailwindCssCheatSheetRoute
+  '/_marketing/resources/read/tailwind-css-common-mistakes': typeof MarketingResourcesReadTailwindCssCommonMistakesRoute
+  '/_marketing/resources/read/tailwind-css-complete-tutorial': typeof MarketingResourcesReadTailwindCssCompleteTutorialRoute
+  '/_marketing/resources/read/tailwind-css-frequently-asked-questions': typeof MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/tailwind-css-glossary': typeof MarketingResourcesReadTailwindCssGlossaryRoute
+  '/_marketing/resources/read/tailwind-css-interview-questions': typeof MarketingResourcesReadTailwindCssInterviewQuestionsRoute
+  '/_marketing/resources/read/tailwind-css-learning-roadmap': typeof MarketingResourcesReadTailwindCssLearningRoadmapRoute
+  '/_marketing/resources/read/tailwind-css-pdf-notes': typeof MarketingResourcesReadTailwindCssPdfNotesRoute
+  '/_marketing/resources/read/tailwind-css-practice-questions': typeof MarketingResourcesReadTailwindCssPracticeQuestionsRoute
+  '/_marketing/resources/read/tailwind-css-project-case-study': typeof MarketingResourcesReadTailwindCssProjectCaseStudyRoute
+  '/_marketing/resources/read/tailwind-css-project-guide': typeof MarketingResourcesReadTailwindCssProjectGuideRoute
+  '/_marketing/resources/read/tailwind-css-quick-revision-notes': typeof MarketingResourcesReadTailwindCssQuickRevisionNotesRoute
+  '/_marketing/resources/read/tailwind-css-real-world-case-study': typeof MarketingResourcesReadTailwindCssRealWorldCaseStudyRoute
+  '/_marketing/resources/read/tailwind-css-reference-guide': typeof MarketingResourcesReadTailwindCssReferenceGuideRoute
+  '/_marketing/resources/read/tailwind-css-sample-exercises': typeof MarketingResourcesReadTailwindCssSampleExercisesRoute
+  '/_marketing/resources/read/tailwind-css-step-by-step-learning-guide': typeof MarketingResourcesReadTailwindCssStepByStepLearningGuideRoute
+  '/_marketing/resources/read/tailwind-css-tips-tricks': typeof MarketingResourcesReadTailwindCssTipsTricksRoute
   '/_marketing/resources/read/typescript-advanced-concepts': typeof MarketingResourcesReadTypescriptAdvancedConceptsRoute
   '/_marketing/resources/read/typescript-answer-key': typeof MarketingResourcesReadTypescriptAnswerKeyRoute
   '/_marketing/resources/read/typescript-beginner-guide': typeof MarketingResourcesReadTypescriptBeginnerGuideRoute
@@ -9458,6 +9668,27 @@ export interface FileRouteTypes {
     | '/resources/read/tableau-sample-exercises'
     | '/resources/read/tableau-step-by-step-learning-guide'
     | '/resources/read/tableau-tips-tricks'
+    | '/resources/read/tailwind-css-advanced-concepts'
+    | '/resources/read/tailwind-css-answer-key'
+    | '/resources/read/tailwind-css-beginner-guide'
+    | '/resources/read/tailwind-css-best-practices'
+    | '/resources/read/tailwind-css-cheat-sheet'
+    | '/resources/read/tailwind-css-common-mistakes'
+    | '/resources/read/tailwind-css-complete-tutorial'
+    | '/resources/read/tailwind-css-frequently-asked-questions'
+    | '/resources/read/tailwind-css-glossary'
+    | '/resources/read/tailwind-css-interview-questions'
+    | '/resources/read/tailwind-css-learning-roadmap'
+    | '/resources/read/tailwind-css-pdf-notes'
+    | '/resources/read/tailwind-css-practice-questions'
+    | '/resources/read/tailwind-css-project-case-study'
+    | '/resources/read/tailwind-css-project-guide'
+    | '/resources/read/tailwind-css-quick-revision-notes'
+    | '/resources/read/tailwind-css-real-world-case-study'
+    | '/resources/read/tailwind-css-reference-guide'
+    | '/resources/read/tailwind-css-sample-exercises'
+    | '/resources/read/tailwind-css-step-by-step-learning-guide'
+    | '/resources/read/tailwind-css-tips-tricks'
     | '/resources/read/typescript-advanced-concepts'
     | '/resources/read/typescript-answer-key'
     | '/resources/read/typescript-beginner-guide'
@@ -10320,6 +10551,27 @@ export interface FileRouteTypes {
     | '/resources/read/tableau-sample-exercises'
     | '/resources/read/tableau-step-by-step-learning-guide'
     | '/resources/read/tableau-tips-tricks'
+    | '/resources/read/tailwind-css-advanced-concepts'
+    | '/resources/read/tailwind-css-answer-key'
+    | '/resources/read/tailwind-css-beginner-guide'
+    | '/resources/read/tailwind-css-best-practices'
+    | '/resources/read/tailwind-css-cheat-sheet'
+    | '/resources/read/tailwind-css-common-mistakes'
+    | '/resources/read/tailwind-css-complete-tutorial'
+    | '/resources/read/tailwind-css-frequently-asked-questions'
+    | '/resources/read/tailwind-css-glossary'
+    | '/resources/read/tailwind-css-interview-questions'
+    | '/resources/read/tailwind-css-learning-roadmap'
+    | '/resources/read/tailwind-css-pdf-notes'
+    | '/resources/read/tailwind-css-practice-questions'
+    | '/resources/read/tailwind-css-project-case-study'
+    | '/resources/read/tailwind-css-project-guide'
+    | '/resources/read/tailwind-css-quick-revision-notes'
+    | '/resources/read/tailwind-css-real-world-case-study'
+    | '/resources/read/tailwind-css-reference-guide'
+    | '/resources/read/tailwind-css-sample-exercises'
+    | '/resources/read/tailwind-css-step-by-step-learning-guide'
+    | '/resources/read/tailwind-css-tips-tricks'
     | '/resources/read/typescript-advanced-concepts'
     | '/resources/read/typescript-answer-key'
     | '/resources/read/typescript-beginner-guide'
@@ -11186,6 +11438,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/tableau-sample-exercises'
     | '/_marketing/resources/read/tableau-step-by-step-learning-guide'
     | '/_marketing/resources/read/tableau-tips-tricks'
+    | '/_marketing/resources/read/tailwind-css-advanced-concepts'
+    | '/_marketing/resources/read/tailwind-css-answer-key'
+    | '/_marketing/resources/read/tailwind-css-beginner-guide'
+    | '/_marketing/resources/read/tailwind-css-best-practices'
+    | '/_marketing/resources/read/tailwind-css-cheat-sheet'
+    | '/_marketing/resources/read/tailwind-css-common-mistakes'
+    | '/_marketing/resources/read/tailwind-css-complete-tutorial'
+    | '/_marketing/resources/read/tailwind-css-frequently-asked-questions'
+    | '/_marketing/resources/read/tailwind-css-glossary'
+    | '/_marketing/resources/read/tailwind-css-interview-questions'
+    | '/_marketing/resources/read/tailwind-css-learning-roadmap'
+    | '/_marketing/resources/read/tailwind-css-pdf-notes'
+    | '/_marketing/resources/read/tailwind-css-practice-questions'
+    | '/_marketing/resources/read/tailwind-css-project-case-study'
+    | '/_marketing/resources/read/tailwind-css-project-guide'
+    | '/_marketing/resources/read/tailwind-css-quick-revision-notes'
+    | '/_marketing/resources/read/tailwind-css-real-world-case-study'
+    | '/_marketing/resources/read/tailwind-css-reference-guide'
+    | '/_marketing/resources/read/tailwind-css-sample-exercises'
+    | '/_marketing/resources/read/tailwind-css-step-by-step-learning-guide'
+    | '/_marketing/resources/read/tailwind-css-tips-tricks'
     | '/_marketing/resources/read/typescript-advanced-concepts'
     | '/_marketing/resources/read/typescript-answer-key'
     | '/_marketing/resources/read/typescript-beginner-guide'
@@ -11831,6 +12104,153 @@ declare module '@tanstack/react-router' {
       path: '/read/typescript-advanced-concepts'
       fullPath: '/resources/read/typescript-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadTypescriptAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-tips-tricks': {
+      id: '/_marketing/resources/read/tailwind-css-tips-tricks'
+      path: '/read/tailwind-css-tips-tricks'
+      fullPath: '/resources/read/tailwind-css-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/tailwind-css-step-by-step-learning-guide'
+      path: '/read/tailwind-css-step-by-step-learning-guide'
+      fullPath: '/resources/read/tailwind-css-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-sample-exercises': {
+      id: '/_marketing/resources/read/tailwind-css-sample-exercises'
+      path: '/read/tailwind-css-sample-exercises'
+      fullPath: '/resources/read/tailwind-css-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-reference-guide': {
+      id: '/_marketing/resources/read/tailwind-css-reference-guide'
+      path: '/read/tailwind-css-reference-guide'
+      fullPath: '/resources/read/tailwind-css-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-real-world-case-study': {
+      id: '/_marketing/resources/read/tailwind-css-real-world-case-study'
+      path: '/read/tailwind-css-real-world-case-study'
+      fullPath: '/resources/read/tailwind-css-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-quick-revision-notes': {
+      id: '/_marketing/resources/read/tailwind-css-quick-revision-notes'
+      path: '/read/tailwind-css-quick-revision-notes'
+      fullPath: '/resources/read/tailwind-css-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-project-guide': {
+      id: '/_marketing/resources/read/tailwind-css-project-guide'
+      path: '/read/tailwind-css-project-guide'
+      fullPath: '/resources/read/tailwind-css-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-project-case-study': {
+      id: '/_marketing/resources/read/tailwind-css-project-case-study'
+      path: '/read/tailwind-css-project-case-study'
+      fullPath: '/resources/read/tailwind-css-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-practice-questions': {
+      id: '/_marketing/resources/read/tailwind-css-practice-questions'
+      path: '/read/tailwind-css-practice-questions'
+      fullPath: '/resources/read/tailwind-css-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-pdf-notes': {
+      id: '/_marketing/resources/read/tailwind-css-pdf-notes'
+      path: '/read/tailwind-css-pdf-notes'
+      fullPath: '/resources/read/tailwind-css-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-learning-roadmap': {
+      id: '/_marketing/resources/read/tailwind-css-learning-roadmap'
+      path: '/read/tailwind-css-learning-roadmap'
+      fullPath: '/resources/read/tailwind-css-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-interview-questions': {
+      id: '/_marketing/resources/read/tailwind-css-interview-questions'
+      path: '/read/tailwind-css-interview-questions'
+      fullPath: '/resources/read/tailwind-css-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-glossary': {
+      id: '/_marketing/resources/read/tailwind-css-glossary'
+      path: '/read/tailwind-css-glossary'
+      fullPath: '/resources/read/tailwind-css-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-frequently-asked-questions': {
+      id: '/_marketing/resources/read/tailwind-css-frequently-asked-questions'
+      path: '/read/tailwind-css-frequently-asked-questions'
+      fullPath: '/resources/read/tailwind-css-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-complete-tutorial': {
+      id: '/_marketing/resources/read/tailwind-css-complete-tutorial'
+      path: '/read/tailwind-css-complete-tutorial'
+      fullPath: '/resources/read/tailwind-css-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-common-mistakes': {
+      id: '/_marketing/resources/read/tailwind-css-common-mistakes'
+      path: '/read/tailwind-css-common-mistakes'
+      fullPath: '/resources/read/tailwind-css-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-cheat-sheet': {
+      id: '/_marketing/resources/read/tailwind-css-cheat-sheet'
+      path: '/read/tailwind-css-cheat-sheet'
+      fullPath: '/resources/read/tailwind-css-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-best-practices': {
+      id: '/_marketing/resources/read/tailwind-css-best-practices'
+      path: '/read/tailwind-css-best-practices'
+      fullPath: '/resources/read/tailwind-css-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-beginner-guide': {
+      id: '/_marketing/resources/read/tailwind-css-beginner-guide'
+      path: '/read/tailwind-css-beginner-guide'
+      fullPath: '/resources/read/tailwind-css-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-answer-key': {
+      id: '/_marketing/resources/read/tailwind-css-answer-key'
+      path: '/read/tailwind-css-answer-key'
+      fullPath: '/resources/read/tailwind-css-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tailwind-css-advanced-concepts': {
+      id: '/_marketing/resources/read/tailwind-css-advanced-concepts'
+      path: '/read/tailwind-css-advanced-concepts'
+      fullPath: '/resources/read/tailwind-css-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadTailwindCssAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/tableau-tips-tricks': {
@@ -18204,6 +18624,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadTableauSampleExercisesRoute: typeof MarketingResourcesReadTableauSampleExercisesRoute
   MarketingResourcesReadTableauStepByStepLearningGuideRoute: typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
   MarketingResourcesReadTableauTipsTricksRoute: typeof MarketingResourcesReadTableauTipsTricksRoute
+  MarketingResourcesReadTailwindCssAdvancedConceptsRoute: typeof MarketingResourcesReadTailwindCssAdvancedConceptsRoute
+  MarketingResourcesReadTailwindCssAnswerKeyRoute: typeof MarketingResourcesReadTailwindCssAnswerKeyRoute
+  MarketingResourcesReadTailwindCssBeginnerGuideRoute: typeof MarketingResourcesReadTailwindCssBeginnerGuideRoute
+  MarketingResourcesReadTailwindCssBestPracticesRoute: typeof MarketingResourcesReadTailwindCssBestPracticesRoute
+  MarketingResourcesReadTailwindCssCheatSheetRoute: typeof MarketingResourcesReadTailwindCssCheatSheetRoute
+  MarketingResourcesReadTailwindCssCommonMistakesRoute: typeof MarketingResourcesReadTailwindCssCommonMistakesRoute
+  MarketingResourcesReadTailwindCssCompleteTutorialRoute: typeof MarketingResourcesReadTailwindCssCompleteTutorialRoute
+  MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadTailwindCssGlossaryRoute: typeof MarketingResourcesReadTailwindCssGlossaryRoute
+  MarketingResourcesReadTailwindCssInterviewQuestionsRoute: typeof MarketingResourcesReadTailwindCssInterviewQuestionsRoute
+  MarketingResourcesReadTailwindCssLearningRoadmapRoute: typeof MarketingResourcesReadTailwindCssLearningRoadmapRoute
+  MarketingResourcesReadTailwindCssPdfNotesRoute: typeof MarketingResourcesReadTailwindCssPdfNotesRoute
+  MarketingResourcesReadTailwindCssPracticeQuestionsRoute: typeof MarketingResourcesReadTailwindCssPracticeQuestionsRoute
+  MarketingResourcesReadTailwindCssProjectCaseStudyRoute: typeof MarketingResourcesReadTailwindCssProjectCaseStudyRoute
+  MarketingResourcesReadTailwindCssProjectGuideRoute: typeof MarketingResourcesReadTailwindCssProjectGuideRoute
+  MarketingResourcesReadTailwindCssQuickRevisionNotesRoute: typeof MarketingResourcesReadTailwindCssQuickRevisionNotesRoute
+  MarketingResourcesReadTailwindCssRealWorldCaseStudyRoute: typeof MarketingResourcesReadTailwindCssRealWorldCaseStudyRoute
+  MarketingResourcesReadTailwindCssReferenceGuideRoute: typeof MarketingResourcesReadTailwindCssReferenceGuideRoute
+  MarketingResourcesReadTailwindCssSampleExercisesRoute: typeof MarketingResourcesReadTailwindCssSampleExercisesRoute
+  MarketingResourcesReadTailwindCssStepByStepLearningGuideRoute: typeof MarketingResourcesReadTailwindCssStepByStepLearningGuideRoute
+  MarketingResourcesReadTailwindCssTipsTricksRoute: typeof MarketingResourcesReadTailwindCssTipsTricksRoute
   MarketingResourcesReadTypescriptAdvancedConceptsRoute: typeof MarketingResourcesReadTypescriptAdvancedConceptsRoute
   MarketingResourcesReadTypescriptAnswerKeyRoute: typeof MarketingResourcesReadTypescriptAnswerKeyRoute
   MarketingResourcesReadTypescriptBeginnerGuideRoute: typeof MarketingResourcesReadTypescriptBeginnerGuideRoute
@@ -19772,6 +20213,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadTableauStepByStepLearningGuideRoute,
   MarketingResourcesReadTableauTipsTricksRoute:
     MarketingResourcesReadTableauTipsTricksRoute,
+  MarketingResourcesReadTailwindCssAdvancedConceptsRoute:
+    MarketingResourcesReadTailwindCssAdvancedConceptsRoute,
+  MarketingResourcesReadTailwindCssAnswerKeyRoute:
+    MarketingResourcesReadTailwindCssAnswerKeyRoute,
+  MarketingResourcesReadTailwindCssBeginnerGuideRoute:
+    MarketingResourcesReadTailwindCssBeginnerGuideRoute,
+  MarketingResourcesReadTailwindCssBestPracticesRoute:
+    MarketingResourcesReadTailwindCssBestPracticesRoute,
+  MarketingResourcesReadTailwindCssCheatSheetRoute:
+    MarketingResourcesReadTailwindCssCheatSheetRoute,
+  MarketingResourcesReadTailwindCssCommonMistakesRoute:
+    MarketingResourcesReadTailwindCssCommonMistakesRoute,
+  MarketingResourcesReadTailwindCssCompleteTutorialRoute:
+    MarketingResourcesReadTailwindCssCompleteTutorialRoute,
+  MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadTailwindCssFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadTailwindCssGlossaryRoute:
+    MarketingResourcesReadTailwindCssGlossaryRoute,
+  MarketingResourcesReadTailwindCssInterviewQuestionsRoute:
+    MarketingResourcesReadTailwindCssInterviewQuestionsRoute,
+  MarketingResourcesReadTailwindCssLearningRoadmapRoute:
+    MarketingResourcesReadTailwindCssLearningRoadmapRoute,
+  MarketingResourcesReadTailwindCssPdfNotesRoute:
+    MarketingResourcesReadTailwindCssPdfNotesRoute,
+  MarketingResourcesReadTailwindCssPracticeQuestionsRoute:
+    MarketingResourcesReadTailwindCssPracticeQuestionsRoute,
+  MarketingResourcesReadTailwindCssProjectCaseStudyRoute:
+    MarketingResourcesReadTailwindCssProjectCaseStudyRoute,
+  MarketingResourcesReadTailwindCssProjectGuideRoute:
+    MarketingResourcesReadTailwindCssProjectGuideRoute,
+  MarketingResourcesReadTailwindCssQuickRevisionNotesRoute:
+    MarketingResourcesReadTailwindCssQuickRevisionNotesRoute,
+  MarketingResourcesReadTailwindCssRealWorldCaseStudyRoute:
+    MarketingResourcesReadTailwindCssRealWorldCaseStudyRoute,
+  MarketingResourcesReadTailwindCssReferenceGuideRoute:
+    MarketingResourcesReadTailwindCssReferenceGuideRoute,
+  MarketingResourcesReadTailwindCssSampleExercisesRoute:
+    MarketingResourcesReadTailwindCssSampleExercisesRoute,
+  MarketingResourcesReadTailwindCssStepByStepLearningGuideRoute:
+    MarketingResourcesReadTailwindCssStepByStepLearningGuideRoute,
+  MarketingResourcesReadTailwindCssTipsTricksRoute:
+    MarketingResourcesReadTailwindCssTipsTricksRoute,
   MarketingResourcesReadTypescriptAdvancedConceptsRoute:
     MarketingResourcesReadTypescriptAdvancedConceptsRoute,
   MarketingResourcesReadTypescriptAnswerKeyRoute:
