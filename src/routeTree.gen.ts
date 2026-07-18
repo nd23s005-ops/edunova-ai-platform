@@ -628,6 +628,27 @@ import { Route as MarketingResourcesReadAiCheatSheetRouteImport } from './routes
 import { Route as MarketingResourcesReadAiBestPracticesRouteImport } from './routes/_marketing.resources.read.ai-best-practices'
 import { Route as MarketingResourcesReadAiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ai-beginner-guide'
 import { Route as MarketingResourcesReadAiAnswerKeyRouteImport } from './routes/_marketing.resources.read.ai-answer-key'
+import { Route as MarketingResourcesReadAiAgentsTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-agents-tips-tricks'
+import { Route as MarketingResourcesReadAiAgentsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-agents-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadAiAgentsSampleExercisesRouteImport } from './routes/_marketing.resources.read.ai-agents-sample-exercises'
+import { Route as MarketingResourcesReadAiAgentsReferenceGuideRouteImport } from './routes/_marketing.resources.read.ai-agents-reference-guide'
+import { Route as MarketingResourcesReadAiAgentsRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.ai-agents-real-world-case-study'
+import { Route as MarketingResourcesReadAiAgentsQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ai-agents-quick-revision-notes'
+import { Route as MarketingResourcesReadAiAgentsProjectGuideRouteImport } from './routes/_marketing.resources.read.ai-agents-project-guide'
+import { Route as MarketingResourcesReadAiAgentsProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.ai-agents-project-case-study'
+import { Route as MarketingResourcesReadAiAgentsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.ai-agents-practice-questions'
+import { Route as MarketingResourcesReadAiAgentsPdfNotesRouteImport } from './routes/_marketing.resources.read.ai-agents-pdf-notes'
+import { Route as MarketingResourcesReadAiAgentsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.ai-agents-learning-roadmap'
+import { Route as MarketingResourcesReadAiAgentsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ai-agents-interview-questions'
+import { Route as MarketingResourcesReadAiAgentsGlossaryRouteImport } from './routes/_marketing.resources.read.ai-agents-glossary'
+import { Route as MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.ai-agents-frequently-asked-questions'
+import { Route as MarketingResourcesReadAiAgentsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ai-agents-complete-tutorial'
+import { Route as MarketingResourcesReadAiAgentsCommonMistakesRouteImport } from './routes/_marketing.resources.read.ai-agents-common-mistakes'
+import { Route as MarketingResourcesReadAiAgentsCheatSheetRouteImport } from './routes/_marketing.resources.read.ai-agents-cheat-sheet'
+import { Route as MarketingResourcesReadAiAgentsBestPracticesRouteImport } from './routes/_marketing.resources.read.ai-agents-best-practices'
+import { Route as MarketingResourcesReadAiAgentsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ai-agents-beginner-guide'
+import { Route as MarketingResourcesReadAiAgentsAnswerKeyRouteImport } from './routes/_marketing.resources.read.ai-agents-answer-key'
+import { Route as MarketingResourcesReadAiAgentsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ai-agents-advanced-concepts'
 import { Route as MarketingResourcesReadAiAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ai-advanced-concepts'
 import { Route as DashboardDashboardUpskillingCourseIdRouteImport } from './routes/_dashboard.dashboard.upskilling.$courseId'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
@@ -4346,6 +4367,132 @@ const MarketingResourcesReadAiAnswerKeyRoute =
     path: '/read/ai-answer-key',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAiAgentsTipsTricksRoute =
+  MarketingResourcesReadAiAgentsTipsTricksRouteImport.update({
+    id: '/read/ai-agents-tips-tricks',
+    path: '/read/ai-agents-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsStepByStepLearningGuideRoute =
+  MarketingResourcesReadAiAgentsStepByStepLearningGuideRouteImport.update({
+    id: '/read/ai-agents-step-by-step-learning-guide',
+    path: '/read/ai-agents-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsSampleExercisesRoute =
+  MarketingResourcesReadAiAgentsSampleExercisesRouteImport.update({
+    id: '/read/ai-agents-sample-exercises',
+    path: '/read/ai-agents-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsReferenceGuideRoute =
+  MarketingResourcesReadAiAgentsReferenceGuideRouteImport.update({
+    id: '/read/ai-agents-reference-guide',
+    path: '/read/ai-agents-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsRealWorldCaseStudyRoute =
+  MarketingResourcesReadAiAgentsRealWorldCaseStudyRouteImport.update({
+    id: '/read/ai-agents-real-world-case-study',
+    path: '/read/ai-agents-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsQuickRevisionNotesRoute =
+  MarketingResourcesReadAiAgentsQuickRevisionNotesRouteImport.update({
+    id: '/read/ai-agents-quick-revision-notes',
+    path: '/read/ai-agents-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsProjectGuideRoute =
+  MarketingResourcesReadAiAgentsProjectGuideRouteImport.update({
+    id: '/read/ai-agents-project-guide',
+    path: '/read/ai-agents-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsProjectCaseStudyRoute =
+  MarketingResourcesReadAiAgentsProjectCaseStudyRouteImport.update({
+    id: '/read/ai-agents-project-case-study',
+    path: '/read/ai-agents-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsPracticeQuestionsRoute =
+  MarketingResourcesReadAiAgentsPracticeQuestionsRouteImport.update({
+    id: '/read/ai-agents-practice-questions',
+    path: '/read/ai-agents-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsPdfNotesRoute =
+  MarketingResourcesReadAiAgentsPdfNotesRouteImport.update({
+    id: '/read/ai-agents-pdf-notes',
+    path: '/read/ai-agents-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsLearningRoadmapRoute =
+  MarketingResourcesReadAiAgentsLearningRoadmapRouteImport.update({
+    id: '/read/ai-agents-learning-roadmap',
+    path: '/read/ai-agents-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsInterviewQuestionsRoute =
+  MarketingResourcesReadAiAgentsInterviewQuestionsRouteImport.update({
+    id: '/read/ai-agents-interview-questions',
+    path: '/read/ai-agents-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsGlossaryRoute =
+  MarketingResourcesReadAiAgentsGlossaryRouteImport.update({
+    id: '/read/ai-agents-glossary',
+    path: '/read/ai-agents-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/ai-agents-frequently-asked-questions',
+    path: '/read/ai-agents-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsCompleteTutorialRoute =
+  MarketingResourcesReadAiAgentsCompleteTutorialRouteImport.update({
+    id: '/read/ai-agents-complete-tutorial',
+    path: '/read/ai-agents-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsCommonMistakesRoute =
+  MarketingResourcesReadAiAgentsCommonMistakesRouteImport.update({
+    id: '/read/ai-agents-common-mistakes',
+    path: '/read/ai-agents-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsCheatSheetRoute =
+  MarketingResourcesReadAiAgentsCheatSheetRouteImport.update({
+    id: '/read/ai-agents-cheat-sheet',
+    path: '/read/ai-agents-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsBestPracticesRoute =
+  MarketingResourcesReadAiAgentsBestPracticesRouteImport.update({
+    id: '/read/ai-agents-best-practices',
+    path: '/read/ai-agents-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsBeginnerGuideRoute =
+  MarketingResourcesReadAiAgentsBeginnerGuideRouteImport.update({
+    id: '/read/ai-agents-beginner-guide',
+    path: '/read/ai-agents-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsAnswerKeyRoute =
+  MarketingResourcesReadAiAgentsAnswerKeyRouteImport.update({
+    id: '/read/ai-agents-answer-key',
+    path: '/read/ai-agents-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAiAgentsAdvancedConceptsRoute =
+  MarketingResourcesReadAiAgentsAdvancedConceptsRouteImport.update({
+    id: '/read/ai-agents-advanced-concepts',
+    path: '/read/ai-agents-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiAdvancedConceptsRoute =
   MarketingResourcesReadAiAdvancedConceptsRouteImport.update({
     id: '/read/ai-advanced-concepts',
@@ -4480,6 +4627,27 @@ export interface FileRoutesByFullPath {
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/resources/read/ai-advanced-concepts': typeof MarketingResourcesReadAiAdvancedConceptsRoute
+  '/resources/read/ai-agents-advanced-concepts': typeof MarketingResourcesReadAiAgentsAdvancedConceptsRoute
+  '/resources/read/ai-agents-answer-key': typeof MarketingResourcesReadAiAgentsAnswerKeyRoute
+  '/resources/read/ai-agents-beginner-guide': typeof MarketingResourcesReadAiAgentsBeginnerGuideRoute
+  '/resources/read/ai-agents-best-practices': typeof MarketingResourcesReadAiAgentsBestPracticesRoute
+  '/resources/read/ai-agents-cheat-sheet': typeof MarketingResourcesReadAiAgentsCheatSheetRoute
+  '/resources/read/ai-agents-common-mistakes': typeof MarketingResourcesReadAiAgentsCommonMistakesRoute
+  '/resources/read/ai-agents-complete-tutorial': typeof MarketingResourcesReadAiAgentsCompleteTutorialRoute
+  '/resources/read/ai-agents-frequently-asked-questions': typeof MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRoute
+  '/resources/read/ai-agents-glossary': typeof MarketingResourcesReadAiAgentsGlossaryRoute
+  '/resources/read/ai-agents-interview-questions': typeof MarketingResourcesReadAiAgentsInterviewQuestionsRoute
+  '/resources/read/ai-agents-learning-roadmap': typeof MarketingResourcesReadAiAgentsLearningRoadmapRoute
+  '/resources/read/ai-agents-pdf-notes': typeof MarketingResourcesReadAiAgentsPdfNotesRoute
+  '/resources/read/ai-agents-practice-questions': typeof MarketingResourcesReadAiAgentsPracticeQuestionsRoute
+  '/resources/read/ai-agents-project-case-study': typeof MarketingResourcesReadAiAgentsProjectCaseStudyRoute
+  '/resources/read/ai-agents-project-guide': typeof MarketingResourcesReadAiAgentsProjectGuideRoute
+  '/resources/read/ai-agents-quick-revision-notes': typeof MarketingResourcesReadAiAgentsQuickRevisionNotesRoute
+  '/resources/read/ai-agents-real-world-case-study': typeof MarketingResourcesReadAiAgentsRealWorldCaseStudyRoute
+  '/resources/read/ai-agents-reference-guide': typeof MarketingResourcesReadAiAgentsReferenceGuideRoute
+  '/resources/read/ai-agents-sample-exercises': typeof MarketingResourcesReadAiAgentsSampleExercisesRoute
+  '/resources/read/ai-agents-step-by-step-learning-guide': typeof MarketingResourcesReadAiAgentsStepByStepLearningGuideRoute
+  '/resources/read/ai-agents-tips-tricks': typeof MarketingResourcesReadAiAgentsTipsTricksRoute
   '/resources/read/ai-answer-key': typeof MarketingResourcesReadAiAnswerKeyRoute
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/resources/read/ai-best-practices': typeof MarketingResourcesReadAiBestPracticesRoute
@@ -5111,6 +5279,27 @@ export interface FileRoutesByTo {
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/resources/read/ai-advanced-concepts': typeof MarketingResourcesReadAiAdvancedConceptsRoute
+  '/resources/read/ai-agents-advanced-concepts': typeof MarketingResourcesReadAiAgentsAdvancedConceptsRoute
+  '/resources/read/ai-agents-answer-key': typeof MarketingResourcesReadAiAgentsAnswerKeyRoute
+  '/resources/read/ai-agents-beginner-guide': typeof MarketingResourcesReadAiAgentsBeginnerGuideRoute
+  '/resources/read/ai-agents-best-practices': typeof MarketingResourcesReadAiAgentsBestPracticesRoute
+  '/resources/read/ai-agents-cheat-sheet': typeof MarketingResourcesReadAiAgentsCheatSheetRoute
+  '/resources/read/ai-agents-common-mistakes': typeof MarketingResourcesReadAiAgentsCommonMistakesRoute
+  '/resources/read/ai-agents-complete-tutorial': typeof MarketingResourcesReadAiAgentsCompleteTutorialRoute
+  '/resources/read/ai-agents-frequently-asked-questions': typeof MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRoute
+  '/resources/read/ai-agents-glossary': typeof MarketingResourcesReadAiAgentsGlossaryRoute
+  '/resources/read/ai-agents-interview-questions': typeof MarketingResourcesReadAiAgentsInterviewQuestionsRoute
+  '/resources/read/ai-agents-learning-roadmap': typeof MarketingResourcesReadAiAgentsLearningRoadmapRoute
+  '/resources/read/ai-agents-pdf-notes': typeof MarketingResourcesReadAiAgentsPdfNotesRoute
+  '/resources/read/ai-agents-practice-questions': typeof MarketingResourcesReadAiAgentsPracticeQuestionsRoute
+  '/resources/read/ai-agents-project-case-study': typeof MarketingResourcesReadAiAgentsProjectCaseStudyRoute
+  '/resources/read/ai-agents-project-guide': typeof MarketingResourcesReadAiAgentsProjectGuideRoute
+  '/resources/read/ai-agents-quick-revision-notes': typeof MarketingResourcesReadAiAgentsQuickRevisionNotesRoute
+  '/resources/read/ai-agents-real-world-case-study': typeof MarketingResourcesReadAiAgentsRealWorldCaseStudyRoute
+  '/resources/read/ai-agents-reference-guide': typeof MarketingResourcesReadAiAgentsReferenceGuideRoute
+  '/resources/read/ai-agents-sample-exercises': typeof MarketingResourcesReadAiAgentsSampleExercisesRoute
+  '/resources/read/ai-agents-step-by-step-learning-guide': typeof MarketingResourcesReadAiAgentsStepByStepLearningGuideRoute
+  '/resources/read/ai-agents-tips-tricks': typeof MarketingResourcesReadAiAgentsTipsTricksRoute
   '/resources/read/ai-answer-key': typeof MarketingResourcesReadAiAnswerKeyRoute
   '/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/resources/read/ai-best-practices': typeof MarketingResourcesReadAiBestPracticesRoute
@@ -5747,6 +5936,27 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/_dashboard/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/_marketing/resources/read/ai-advanced-concepts': typeof MarketingResourcesReadAiAdvancedConceptsRoute
+  '/_marketing/resources/read/ai-agents-advanced-concepts': typeof MarketingResourcesReadAiAgentsAdvancedConceptsRoute
+  '/_marketing/resources/read/ai-agents-answer-key': typeof MarketingResourcesReadAiAgentsAnswerKeyRoute
+  '/_marketing/resources/read/ai-agents-beginner-guide': typeof MarketingResourcesReadAiAgentsBeginnerGuideRoute
+  '/_marketing/resources/read/ai-agents-best-practices': typeof MarketingResourcesReadAiAgentsBestPracticesRoute
+  '/_marketing/resources/read/ai-agents-cheat-sheet': typeof MarketingResourcesReadAiAgentsCheatSheetRoute
+  '/_marketing/resources/read/ai-agents-common-mistakes': typeof MarketingResourcesReadAiAgentsCommonMistakesRoute
+  '/_marketing/resources/read/ai-agents-complete-tutorial': typeof MarketingResourcesReadAiAgentsCompleteTutorialRoute
+  '/_marketing/resources/read/ai-agents-frequently-asked-questions': typeof MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/ai-agents-glossary': typeof MarketingResourcesReadAiAgentsGlossaryRoute
+  '/_marketing/resources/read/ai-agents-interview-questions': typeof MarketingResourcesReadAiAgentsInterviewQuestionsRoute
+  '/_marketing/resources/read/ai-agents-learning-roadmap': typeof MarketingResourcesReadAiAgentsLearningRoadmapRoute
+  '/_marketing/resources/read/ai-agents-pdf-notes': typeof MarketingResourcesReadAiAgentsPdfNotesRoute
+  '/_marketing/resources/read/ai-agents-practice-questions': typeof MarketingResourcesReadAiAgentsPracticeQuestionsRoute
+  '/_marketing/resources/read/ai-agents-project-case-study': typeof MarketingResourcesReadAiAgentsProjectCaseStudyRoute
+  '/_marketing/resources/read/ai-agents-project-guide': typeof MarketingResourcesReadAiAgentsProjectGuideRoute
+  '/_marketing/resources/read/ai-agents-quick-revision-notes': typeof MarketingResourcesReadAiAgentsQuickRevisionNotesRoute
+  '/_marketing/resources/read/ai-agents-real-world-case-study': typeof MarketingResourcesReadAiAgentsRealWorldCaseStudyRoute
+  '/_marketing/resources/read/ai-agents-reference-guide': typeof MarketingResourcesReadAiAgentsReferenceGuideRoute
+  '/_marketing/resources/read/ai-agents-sample-exercises': typeof MarketingResourcesReadAiAgentsSampleExercisesRoute
+  '/_marketing/resources/read/ai-agents-step-by-step-learning-guide': typeof MarketingResourcesReadAiAgentsStepByStepLearningGuideRoute
+  '/_marketing/resources/read/ai-agents-tips-tricks': typeof MarketingResourcesReadAiAgentsTipsTricksRoute
   '/_marketing/resources/read/ai-answer-key': typeof MarketingResourcesReadAiAnswerKeyRoute
   '/_marketing/resources/read/ai-beginner-guide': typeof MarketingResourcesReadAiBeginnerGuideRoute
   '/_marketing/resources/read/ai-best-practices': typeof MarketingResourcesReadAiBestPracticesRoute
@@ -6381,6 +6591,27 @@ export interface FileRouteTypes {
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
     | '/resources/read/ai-advanced-concepts'
+    | '/resources/read/ai-agents-advanced-concepts'
+    | '/resources/read/ai-agents-answer-key'
+    | '/resources/read/ai-agents-beginner-guide'
+    | '/resources/read/ai-agents-best-practices'
+    | '/resources/read/ai-agents-cheat-sheet'
+    | '/resources/read/ai-agents-common-mistakes'
+    | '/resources/read/ai-agents-complete-tutorial'
+    | '/resources/read/ai-agents-frequently-asked-questions'
+    | '/resources/read/ai-agents-glossary'
+    | '/resources/read/ai-agents-interview-questions'
+    | '/resources/read/ai-agents-learning-roadmap'
+    | '/resources/read/ai-agents-pdf-notes'
+    | '/resources/read/ai-agents-practice-questions'
+    | '/resources/read/ai-agents-project-case-study'
+    | '/resources/read/ai-agents-project-guide'
+    | '/resources/read/ai-agents-quick-revision-notes'
+    | '/resources/read/ai-agents-real-world-case-study'
+    | '/resources/read/ai-agents-reference-guide'
+    | '/resources/read/ai-agents-sample-exercises'
+    | '/resources/read/ai-agents-step-by-step-learning-guide'
+    | '/resources/read/ai-agents-tips-tricks'
     | '/resources/read/ai-answer-key'
     | '/resources/read/ai-beginner-guide'
     | '/resources/read/ai-best-practices'
@@ -7012,6 +7243,27 @@ export interface FileRouteTypes {
     | '/dashboard/student/my-courses'
     | '/dashboard/upskilling/$courseId'
     | '/resources/read/ai-advanced-concepts'
+    | '/resources/read/ai-agents-advanced-concepts'
+    | '/resources/read/ai-agents-answer-key'
+    | '/resources/read/ai-agents-beginner-guide'
+    | '/resources/read/ai-agents-best-practices'
+    | '/resources/read/ai-agents-cheat-sheet'
+    | '/resources/read/ai-agents-common-mistakes'
+    | '/resources/read/ai-agents-complete-tutorial'
+    | '/resources/read/ai-agents-frequently-asked-questions'
+    | '/resources/read/ai-agents-glossary'
+    | '/resources/read/ai-agents-interview-questions'
+    | '/resources/read/ai-agents-learning-roadmap'
+    | '/resources/read/ai-agents-pdf-notes'
+    | '/resources/read/ai-agents-practice-questions'
+    | '/resources/read/ai-agents-project-case-study'
+    | '/resources/read/ai-agents-project-guide'
+    | '/resources/read/ai-agents-quick-revision-notes'
+    | '/resources/read/ai-agents-real-world-case-study'
+    | '/resources/read/ai-agents-reference-guide'
+    | '/resources/read/ai-agents-sample-exercises'
+    | '/resources/read/ai-agents-step-by-step-learning-guide'
+    | '/resources/read/ai-agents-tips-tricks'
     | '/resources/read/ai-answer-key'
     | '/resources/read/ai-beginner-guide'
     | '/resources/read/ai-best-practices'
@@ -7647,6 +7899,27 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student/my-courses'
     | '/_dashboard/dashboard/upskilling/$courseId'
     | '/_marketing/resources/read/ai-advanced-concepts'
+    | '/_marketing/resources/read/ai-agents-advanced-concepts'
+    | '/_marketing/resources/read/ai-agents-answer-key'
+    | '/_marketing/resources/read/ai-agents-beginner-guide'
+    | '/_marketing/resources/read/ai-agents-best-practices'
+    | '/_marketing/resources/read/ai-agents-cheat-sheet'
+    | '/_marketing/resources/read/ai-agents-common-mistakes'
+    | '/_marketing/resources/read/ai-agents-complete-tutorial'
+    | '/_marketing/resources/read/ai-agents-frequently-asked-questions'
+    | '/_marketing/resources/read/ai-agents-glossary'
+    | '/_marketing/resources/read/ai-agents-interview-questions'
+    | '/_marketing/resources/read/ai-agents-learning-roadmap'
+    | '/_marketing/resources/read/ai-agents-pdf-notes'
+    | '/_marketing/resources/read/ai-agents-practice-questions'
+    | '/_marketing/resources/read/ai-agents-project-case-study'
+    | '/_marketing/resources/read/ai-agents-project-guide'
+    | '/_marketing/resources/read/ai-agents-quick-revision-notes'
+    | '/_marketing/resources/read/ai-agents-real-world-case-study'
+    | '/_marketing/resources/read/ai-agents-reference-guide'
+    | '/_marketing/resources/read/ai-agents-sample-exercises'
+    | '/_marketing/resources/read/ai-agents-step-by-step-learning-guide'
+    | '/_marketing/resources/read/ai-agents-tips-tricks'
     | '/_marketing/resources/read/ai-answer-key'
     | '/_marketing/resources/read/ai-beginner-guide'
     | '/_marketing/resources/read/ai-best-practices'
@@ -12582,6 +12855,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAiAnswerKeyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ai-agents-tips-tricks': {
+      id: '/_marketing/resources/read/ai-agents-tips-tricks'
+      path: '/read/ai-agents-tips-tricks'
+      fullPath: '/resources/read/ai-agents-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/ai-agents-step-by-step-learning-guide'
+      path: '/read/ai-agents-step-by-step-learning-guide'
+      fullPath: '/resources/read/ai-agents-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-sample-exercises': {
+      id: '/_marketing/resources/read/ai-agents-sample-exercises'
+      path: '/read/ai-agents-sample-exercises'
+      fullPath: '/resources/read/ai-agents-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-reference-guide': {
+      id: '/_marketing/resources/read/ai-agents-reference-guide'
+      path: '/read/ai-agents-reference-guide'
+      fullPath: '/resources/read/ai-agents-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-real-world-case-study': {
+      id: '/_marketing/resources/read/ai-agents-real-world-case-study'
+      path: '/read/ai-agents-real-world-case-study'
+      fullPath: '/resources/read/ai-agents-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-quick-revision-notes': {
+      id: '/_marketing/resources/read/ai-agents-quick-revision-notes'
+      path: '/read/ai-agents-quick-revision-notes'
+      fullPath: '/resources/read/ai-agents-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-project-guide': {
+      id: '/_marketing/resources/read/ai-agents-project-guide'
+      path: '/read/ai-agents-project-guide'
+      fullPath: '/resources/read/ai-agents-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-project-case-study': {
+      id: '/_marketing/resources/read/ai-agents-project-case-study'
+      path: '/read/ai-agents-project-case-study'
+      fullPath: '/resources/read/ai-agents-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-practice-questions': {
+      id: '/_marketing/resources/read/ai-agents-practice-questions'
+      path: '/read/ai-agents-practice-questions'
+      fullPath: '/resources/read/ai-agents-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-pdf-notes': {
+      id: '/_marketing/resources/read/ai-agents-pdf-notes'
+      path: '/read/ai-agents-pdf-notes'
+      fullPath: '/resources/read/ai-agents-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-learning-roadmap': {
+      id: '/_marketing/resources/read/ai-agents-learning-roadmap'
+      path: '/read/ai-agents-learning-roadmap'
+      fullPath: '/resources/read/ai-agents-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-interview-questions': {
+      id: '/_marketing/resources/read/ai-agents-interview-questions'
+      path: '/read/ai-agents-interview-questions'
+      fullPath: '/resources/read/ai-agents-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-glossary': {
+      id: '/_marketing/resources/read/ai-agents-glossary'
+      path: '/read/ai-agents-glossary'
+      fullPath: '/resources/read/ai-agents-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-frequently-asked-questions': {
+      id: '/_marketing/resources/read/ai-agents-frequently-asked-questions'
+      path: '/read/ai-agents-frequently-asked-questions'
+      fullPath: '/resources/read/ai-agents-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-complete-tutorial': {
+      id: '/_marketing/resources/read/ai-agents-complete-tutorial'
+      path: '/read/ai-agents-complete-tutorial'
+      fullPath: '/resources/read/ai-agents-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-common-mistakes': {
+      id: '/_marketing/resources/read/ai-agents-common-mistakes'
+      path: '/read/ai-agents-common-mistakes'
+      fullPath: '/resources/read/ai-agents-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-cheat-sheet': {
+      id: '/_marketing/resources/read/ai-agents-cheat-sheet'
+      path: '/read/ai-agents-cheat-sheet'
+      fullPath: '/resources/read/ai-agents-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-best-practices': {
+      id: '/_marketing/resources/read/ai-agents-best-practices'
+      path: '/read/ai-agents-best-practices'
+      fullPath: '/resources/read/ai-agents-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-beginner-guide': {
+      id: '/_marketing/resources/read/ai-agents-beginner-guide'
+      path: '/read/ai-agents-beginner-guide'
+      fullPath: '/resources/read/ai-agents-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-answer-key': {
+      id: '/_marketing/resources/read/ai-agents-answer-key'
+      path: '/read/ai-agents-answer-key'
+      fullPath: '/resources/read/ai-agents-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ai-agents-advanced-concepts': {
+      id: '/_marketing/resources/read/ai-agents-advanced-concepts'
+      path: '/read/ai-agents-advanced-concepts'
+      fullPath: '/resources/read/ai-agents-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadAiAgentsAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-advanced-concepts': {
       id: '/_marketing/resources/read/ai-advanced-concepts'
       path: '/read/ai-advanced-concepts'
@@ -12817,6 +13237,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesCourseSlugRoute: typeof MarketingResourcesCourseSlugRoute
   MarketingResourcesIndexRoute: typeof MarketingResourcesIndexRoute
   MarketingResourcesReadAiAdvancedConceptsRoute: typeof MarketingResourcesReadAiAdvancedConceptsRoute
+  MarketingResourcesReadAiAgentsAdvancedConceptsRoute: typeof MarketingResourcesReadAiAgentsAdvancedConceptsRoute
+  MarketingResourcesReadAiAgentsAnswerKeyRoute: typeof MarketingResourcesReadAiAgentsAnswerKeyRoute
+  MarketingResourcesReadAiAgentsBeginnerGuideRoute: typeof MarketingResourcesReadAiAgentsBeginnerGuideRoute
+  MarketingResourcesReadAiAgentsBestPracticesRoute: typeof MarketingResourcesReadAiAgentsBestPracticesRoute
+  MarketingResourcesReadAiAgentsCheatSheetRoute: typeof MarketingResourcesReadAiAgentsCheatSheetRoute
+  MarketingResourcesReadAiAgentsCommonMistakesRoute: typeof MarketingResourcesReadAiAgentsCommonMistakesRoute
+  MarketingResourcesReadAiAgentsCompleteTutorialRoute: typeof MarketingResourcesReadAiAgentsCompleteTutorialRoute
+  MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadAiAgentsGlossaryRoute: typeof MarketingResourcesReadAiAgentsGlossaryRoute
+  MarketingResourcesReadAiAgentsInterviewQuestionsRoute: typeof MarketingResourcesReadAiAgentsInterviewQuestionsRoute
+  MarketingResourcesReadAiAgentsLearningRoadmapRoute: typeof MarketingResourcesReadAiAgentsLearningRoadmapRoute
+  MarketingResourcesReadAiAgentsPdfNotesRoute: typeof MarketingResourcesReadAiAgentsPdfNotesRoute
+  MarketingResourcesReadAiAgentsPracticeQuestionsRoute: typeof MarketingResourcesReadAiAgentsPracticeQuestionsRoute
+  MarketingResourcesReadAiAgentsProjectCaseStudyRoute: typeof MarketingResourcesReadAiAgentsProjectCaseStudyRoute
+  MarketingResourcesReadAiAgentsProjectGuideRoute: typeof MarketingResourcesReadAiAgentsProjectGuideRoute
+  MarketingResourcesReadAiAgentsQuickRevisionNotesRoute: typeof MarketingResourcesReadAiAgentsQuickRevisionNotesRoute
+  MarketingResourcesReadAiAgentsRealWorldCaseStudyRoute: typeof MarketingResourcesReadAiAgentsRealWorldCaseStudyRoute
+  MarketingResourcesReadAiAgentsReferenceGuideRoute: typeof MarketingResourcesReadAiAgentsReferenceGuideRoute
+  MarketingResourcesReadAiAgentsSampleExercisesRoute: typeof MarketingResourcesReadAiAgentsSampleExercisesRoute
+  MarketingResourcesReadAiAgentsStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiAgentsStepByStepLearningGuideRoute
+  MarketingResourcesReadAiAgentsTipsTricksRoute: typeof MarketingResourcesReadAiAgentsTipsTricksRoute
   MarketingResourcesReadAiAnswerKeyRoute: typeof MarketingResourcesReadAiAnswerKeyRoute
   MarketingResourcesReadAiBeginnerGuideRoute: typeof MarketingResourcesReadAiBeginnerGuideRoute
   MarketingResourcesReadAiBestPracticesRoute: typeof MarketingResourcesReadAiBestPracticesRoute
@@ -13399,6 +13840,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesIndexRoute: MarketingResourcesIndexRoute,
   MarketingResourcesReadAiAdvancedConceptsRoute:
     MarketingResourcesReadAiAdvancedConceptsRoute,
+  MarketingResourcesReadAiAgentsAdvancedConceptsRoute:
+    MarketingResourcesReadAiAgentsAdvancedConceptsRoute,
+  MarketingResourcesReadAiAgentsAnswerKeyRoute:
+    MarketingResourcesReadAiAgentsAnswerKeyRoute,
+  MarketingResourcesReadAiAgentsBeginnerGuideRoute:
+    MarketingResourcesReadAiAgentsBeginnerGuideRoute,
+  MarketingResourcesReadAiAgentsBestPracticesRoute:
+    MarketingResourcesReadAiAgentsBestPracticesRoute,
+  MarketingResourcesReadAiAgentsCheatSheetRoute:
+    MarketingResourcesReadAiAgentsCheatSheetRoute,
+  MarketingResourcesReadAiAgentsCommonMistakesRoute:
+    MarketingResourcesReadAiAgentsCommonMistakesRoute,
+  MarketingResourcesReadAiAgentsCompleteTutorialRoute:
+    MarketingResourcesReadAiAgentsCompleteTutorialRoute,
+  MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadAiAgentsFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadAiAgentsGlossaryRoute:
+    MarketingResourcesReadAiAgentsGlossaryRoute,
+  MarketingResourcesReadAiAgentsInterviewQuestionsRoute:
+    MarketingResourcesReadAiAgentsInterviewQuestionsRoute,
+  MarketingResourcesReadAiAgentsLearningRoadmapRoute:
+    MarketingResourcesReadAiAgentsLearningRoadmapRoute,
+  MarketingResourcesReadAiAgentsPdfNotesRoute:
+    MarketingResourcesReadAiAgentsPdfNotesRoute,
+  MarketingResourcesReadAiAgentsPracticeQuestionsRoute:
+    MarketingResourcesReadAiAgentsPracticeQuestionsRoute,
+  MarketingResourcesReadAiAgentsProjectCaseStudyRoute:
+    MarketingResourcesReadAiAgentsProjectCaseStudyRoute,
+  MarketingResourcesReadAiAgentsProjectGuideRoute:
+    MarketingResourcesReadAiAgentsProjectGuideRoute,
+  MarketingResourcesReadAiAgentsQuickRevisionNotesRoute:
+    MarketingResourcesReadAiAgentsQuickRevisionNotesRoute,
+  MarketingResourcesReadAiAgentsRealWorldCaseStudyRoute:
+    MarketingResourcesReadAiAgentsRealWorldCaseStudyRoute,
+  MarketingResourcesReadAiAgentsReferenceGuideRoute:
+    MarketingResourcesReadAiAgentsReferenceGuideRoute,
+  MarketingResourcesReadAiAgentsSampleExercisesRoute:
+    MarketingResourcesReadAiAgentsSampleExercisesRoute,
+  MarketingResourcesReadAiAgentsStepByStepLearningGuideRoute:
+    MarketingResourcesReadAiAgentsStepByStepLearningGuideRoute,
+  MarketingResourcesReadAiAgentsTipsTricksRoute:
+    MarketingResourcesReadAiAgentsTipsTricksRoute,
   MarketingResourcesReadAiAnswerKeyRoute:
     MarketingResourcesReadAiAnswerKeyRoute,
   MarketingResourcesReadAiBeginnerGuideRoute:
