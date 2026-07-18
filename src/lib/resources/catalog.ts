@@ -397,6 +397,10 @@ const READER_ROUTES: Record<string, string> = {
  "prompt-engineering--real-world-case-study": "/resources/read/pe-real-world-case-study",
  "prompt-engineering--best-practices": "/resources/read/pe-best-practices",
  "prompt-engineering--common-mistakes": "/resources/read/pe-common-mistakes",
+  "dbms--frequently-asked-questions": "/resources/read/dbms-frequently-asked-questions",
+  "dbms--learning-roadmap": "/resources/read/dbms-learning-roadmap",
+  "dbms--tips-tricks": "/resources/read/dbms-tips-tricks",
+
 
 
 
