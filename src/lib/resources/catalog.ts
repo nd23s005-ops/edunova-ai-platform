@@ -424,6 +424,9 @@ const READER_ROUTES: Record<string, string> = {
    "system-design--pdf-notes": "/resources/read/sd-pdf-notes",
    "system-design--quick-revision-notes": "/resources/read/sd-quick-revision-notes",
    "system-design--cheat-sheet": "/resources/read/sd-cheat-sheet",
+   "system-design--frequently-asked-questions": "/resources/read/sd-frequently-asked-questions",
+   "system-design--learning-roadmap": "/resources/read/sd-learning-roadmap",
+   "system-design--tips-tricks": "/resources/read/sd-tips-tricks",
 
 
 
