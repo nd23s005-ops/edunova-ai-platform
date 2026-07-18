@@ -224,6 +224,27 @@ import { Route as MarketingResourcesReadMlBestPracticesRouteImport } from './rou
 import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ml-beginner-guide'
 import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/_marketing.resources.read.ml-answer-key'
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
+import { Route as MarketingResourcesReadKubernetesTipsTricksRouteImport } from './routes/_marketing.resources.read.kubernetes-tips-tricks'
+import { Route as MarketingResourcesReadKubernetesStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.kubernetes-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadKubernetesSampleExercisesRouteImport } from './routes/_marketing.resources.read.kubernetes-sample-exercises'
+import { Route as MarketingResourcesReadKubernetesReferenceGuideRouteImport } from './routes/_marketing.resources.read.kubernetes-reference-guide'
+import { Route as MarketingResourcesReadKubernetesRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.kubernetes-real-world-case-study'
+import { Route as MarketingResourcesReadKubernetesQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.kubernetes-quick-revision-notes'
+import { Route as MarketingResourcesReadKubernetesProjectGuideRouteImport } from './routes/_marketing.resources.read.kubernetes-project-guide'
+import { Route as MarketingResourcesReadKubernetesProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.kubernetes-project-case-study'
+import { Route as MarketingResourcesReadKubernetesPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.kubernetes-practice-questions'
+import { Route as MarketingResourcesReadKubernetesPdfNotesRouteImport } from './routes/_marketing.resources.read.kubernetes-pdf-notes'
+import { Route as MarketingResourcesReadKubernetesLearningRoadmapRouteImport } from './routes/_marketing.resources.read.kubernetes-learning-roadmap'
+import { Route as MarketingResourcesReadKubernetesInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.kubernetes-interview-questions'
+import { Route as MarketingResourcesReadKubernetesGlossaryRouteImport } from './routes/_marketing.resources.read.kubernetes-glossary'
+import { Route as MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.kubernetes-frequently-asked-questions'
+import { Route as MarketingResourcesReadKubernetesCompleteTutorialRouteImport } from './routes/_marketing.resources.read.kubernetes-complete-tutorial'
+import { Route as MarketingResourcesReadKubernetesCommonMistakesRouteImport } from './routes/_marketing.resources.read.kubernetes-common-mistakes'
+import { Route as MarketingResourcesReadKubernetesCheatSheetRouteImport } from './routes/_marketing.resources.read.kubernetes-cheat-sheet'
+import { Route as MarketingResourcesReadKubernetesBestPracticesRouteImport } from './routes/_marketing.resources.read.kubernetes-best-practices'
+import { Route as MarketingResourcesReadKubernetesBeginnerGuideRouteImport } from './routes/_marketing.resources.read.kubernetes-beginner-guide'
+import { Route as MarketingResourcesReadKubernetesAnswerKeyRouteImport } from './routes/_marketing.resources.read.kubernetes-answer-key'
+import { Route as MarketingResourcesReadKubernetesAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.kubernetes-advanced-concepts'
 import { Route as MarketingResourcesReadJavascriptTipsAndTricksRouteImport } from './routes/_marketing.resources.read.javascript-tips-and-tricks'
 import { Route as MarketingResourcesReadJavascriptStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.javascript-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadJavascriptSampleExercisesRouteImport } from './routes/_marketing.resources.read.javascript-sample-exercises'
@@ -1805,6 +1826,132 @@ const MarketingResourcesReadMlAdvancedConceptsRoute =
   MarketingResourcesReadMlAdvancedConceptsRouteImport.update({
     id: '/read/ml-advanced-concepts',
     path: '/read/ml-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesTipsTricksRoute =
+  MarketingResourcesReadKubernetesTipsTricksRouteImport.update({
+    id: '/read/kubernetes-tips-tricks',
+    path: '/read/kubernetes-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesStepByStepLearningGuideRoute =
+  MarketingResourcesReadKubernetesStepByStepLearningGuideRouteImport.update({
+    id: '/read/kubernetes-step-by-step-learning-guide',
+    path: '/read/kubernetes-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesSampleExercisesRoute =
+  MarketingResourcesReadKubernetesSampleExercisesRouteImport.update({
+    id: '/read/kubernetes-sample-exercises',
+    path: '/read/kubernetes-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesReferenceGuideRoute =
+  MarketingResourcesReadKubernetesReferenceGuideRouteImport.update({
+    id: '/read/kubernetes-reference-guide',
+    path: '/read/kubernetes-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesRealWorldCaseStudyRoute =
+  MarketingResourcesReadKubernetesRealWorldCaseStudyRouteImport.update({
+    id: '/read/kubernetes-real-world-case-study',
+    path: '/read/kubernetes-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesQuickRevisionNotesRoute =
+  MarketingResourcesReadKubernetesQuickRevisionNotesRouteImport.update({
+    id: '/read/kubernetes-quick-revision-notes',
+    path: '/read/kubernetes-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesProjectGuideRoute =
+  MarketingResourcesReadKubernetesProjectGuideRouteImport.update({
+    id: '/read/kubernetes-project-guide',
+    path: '/read/kubernetes-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesProjectCaseStudyRoute =
+  MarketingResourcesReadKubernetesProjectCaseStudyRouteImport.update({
+    id: '/read/kubernetes-project-case-study',
+    path: '/read/kubernetes-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesPracticeQuestionsRoute =
+  MarketingResourcesReadKubernetesPracticeQuestionsRouteImport.update({
+    id: '/read/kubernetes-practice-questions',
+    path: '/read/kubernetes-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesPdfNotesRoute =
+  MarketingResourcesReadKubernetesPdfNotesRouteImport.update({
+    id: '/read/kubernetes-pdf-notes',
+    path: '/read/kubernetes-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesLearningRoadmapRoute =
+  MarketingResourcesReadKubernetesLearningRoadmapRouteImport.update({
+    id: '/read/kubernetes-learning-roadmap',
+    path: '/read/kubernetes-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesInterviewQuestionsRoute =
+  MarketingResourcesReadKubernetesInterviewQuestionsRouteImport.update({
+    id: '/read/kubernetes-interview-questions',
+    path: '/read/kubernetes-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesGlossaryRoute =
+  MarketingResourcesReadKubernetesGlossaryRouteImport.update({
+    id: '/read/kubernetes-glossary',
+    path: '/read/kubernetes-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/kubernetes-frequently-asked-questions',
+    path: '/read/kubernetes-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesCompleteTutorialRoute =
+  MarketingResourcesReadKubernetesCompleteTutorialRouteImport.update({
+    id: '/read/kubernetes-complete-tutorial',
+    path: '/read/kubernetes-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesCommonMistakesRoute =
+  MarketingResourcesReadKubernetesCommonMistakesRouteImport.update({
+    id: '/read/kubernetes-common-mistakes',
+    path: '/read/kubernetes-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesCheatSheetRoute =
+  MarketingResourcesReadKubernetesCheatSheetRouteImport.update({
+    id: '/read/kubernetes-cheat-sheet',
+    path: '/read/kubernetes-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesBestPracticesRoute =
+  MarketingResourcesReadKubernetesBestPracticesRouteImport.update({
+    id: '/read/kubernetes-best-practices',
+    path: '/read/kubernetes-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesBeginnerGuideRoute =
+  MarketingResourcesReadKubernetesBeginnerGuideRouteImport.update({
+    id: '/read/kubernetes-beginner-guide',
+    path: '/read/kubernetes-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesAnswerKeyRoute =
+  MarketingResourcesReadKubernetesAnswerKeyRouteImport.update({
+    id: '/read/kubernetes-answer-key',
+    path: '/read/kubernetes-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadKubernetesAdvancedConceptsRoute =
+  MarketingResourcesReadKubernetesAdvancedConceptsRouteImport.update({
+    id: '/read/kubernetes-advanced-concepts',
+    path: '/read/kubernetes-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadJavascriptTipsAndTricksRoute =
@@ -4044,6 +4191,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/javascript-sample-exercises': typeof MarketingResourcesReadJavascriptSampleExercisesRoute
   '/resources/read/javascript-step-by-step-learning-guide': typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRoute
   '/resources/read/javascript-tips-and-tricks': typeof MarketingResourcesReadJavascriptTipsAndTricksRoute
+  '/resources/read/kubernetes-advanced-concepts': typeof MarketingResourcesReadKubernetesAdvancedConceptsRoute
+  '/resources/read/kubernetes-answer-key': typeof MarketingResourcesReadKubernetesAnswerKeyRoute
+  '/resources/read/kubernetes-beginner-guide': typeof MarketingResourcesReadKubernetesBeginnerGuideRoute
+  '/resources/read/kubernetes-best-practices': typeof MarketingResourcesReadKubernetesBestPracticesRoute
+  '/resources/read/kubernetes-cheat-sheet': typeof MarketingResourcesReadKubernetesCheatSheetRoute
+  '/resources/read/kubernetes-common-mistakes': typeof MarketingResourcesReadKubernetesCommonMistakesRoute
+  '/resources/read/kubernetes-complete-tutorial': typeof MarketingResourcesReadKubernetesCompleteTutorialRoute
+  '/resources/read/kubernetes-frequently-asked-questions': typeof MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRoute
+  '/resources/read/kubernetes-glossary': typeof MarketingResourcesReadKubernetesGlossaryRoute
+  '/resources/read/kubernetes-interview-questions': typeof MarketingResourcesReadKubernetesInterviewQuestionsRoute
+  '/resources/read/kubernetes-learning-roadmap': typeof MarketingResourcesReadKubernetesLearningRoadmapRoute
+  '/resources/read/kubernetes-pdf-notes': typeof MarketingResourcesReadKubernetesPdfNotesRoute
+  '/resources/read/kubernetes-practice-questions': typeof MarketingResourcesReadKubernetesPracticeQuestionsRoute
+  '/resources/read/kubernetes-project-case-study': typeof MarketingResourcesReadKubernetesProjectCaseStudyRoute
+  '/resources/read/kubernetes-project-guide': typeof MarketingResourcesReadKubernetesProjectGuideRoute
+  '/resources/read/kubernetes-quick-revision-notes': typeof MarketingResourcesReadKubernetesQuickRevisionNotesRoute
+  '/resources/read/kubernetes-real-world-case-study': typeof MarketingResourcesReadKubernetesRealWorldCaseStudyRoute
+  '/resources/read/kubernetes-reference-guide': typeof MarketingResourcesReadKubernetesReferenceGuideRoute
+  '/resources/read/kubernetes-sample-exercises': typeof MarketingResourcesReadKubernetesSampleExercisesRoute
+  '/resources/read/kubernetes-step-by-step-learning-guide': typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRoute
+  '/resources/read/kubernetes-tips-tricks': typeof MarketingResourcesReadKubernetesTipsTricksRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -4570,6 +4738,27 @@ export interface FileRoutesByTo {
   '/resources/read/javascript-sample-exercises': typeof MarketingResourcesReadJavascriptSampleExercisesRoute
   '/resources/read/javascript-step-by-step-learning-guide': typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRoute
   '/resources/read/javascript-tips-and-tricks': typeof MarketingResourcesReadJavascriptTipsAndTricksRoute
+  '/resources/read/kubernetes-advanced-concepts': typeof MarketingResourcesReadKubernetesAdvancedConceptsRoute
+  '/resources/read/kubernetes-answer-key': typeof MarketingResourcesReadKubernetesAnswerKeyRoute
+  '/resources/read/kubernetes-beginner-guide': typeof MarketingResourcesReadKubernetesBeginnerGuideRoute
+  '/resources/read/kubernetes-best-practices': typeof MarketingResourcesReadKubernetesBestPracticesRoute
+  '/resources/read/kubernetes-cheat-sheet': typeof MarketingResourcesReadKubernetesCheatSheetRoute
+  '/resources/read/kubernetes-common-mistakes': typeof MarketingResourcesReadKubernetesCommonMistakesRoute
+  '/resources/read/kubernetes-complete-tutorial': typeof MarketingResourcesReadKubernetesCompleteTutorialRoute
+  '/resources/read/kubernetes-frequently-asked-questions': typeof MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRoute
+  '/resources/read/kubernetes-glossary': typeof MarketingResourcesReadKubernetesGlossaryRoute
+  '/resources/read/kubernetes-interview-questions': typeof MarketingResourcesReadKubernetesInterviewQuestionsRoute
+  '/resources/read/kubernetes-learning-roadmap': typeof MarketingResourcesReadKubernetesLearningRoadmapRoute
+  '/resources/read/kubernetes-pdf-notes': typeof MarketingResourcesReadKubernetesPdfNotesRoute
+  '/resources/read/kubernetes-practice-questions': typeof MarketingResourcesReadKubernetesPracticeQuestionsRoute
+  '/resources/read/kubernetes-project-case-study': typeof MarketingResourcesReadKubernetesProjectCaseStudyRoute
+  '/resources/read/kubernetes-project-guide': typeof MarketingResourcesReadKubernetesProjectGuideRoute
+  '/resources/read/kubernetes-quick-revision-notes': typeof MarketingResourcesReadKubernetesQuickRevisionNotesRoute
+  '/resources/read/kubernetes-real-world-case-study': typeof MarketingResourcesReadKubernetesRealWorldCaseStudyRoute
+  '/resources/read/kubernetes-reference-guide': typeof MarketingResourcesReadKubernetesReferenceGuideRoute
+  '/resources/read/kubernetes-sample-exercises': typeof MarketingResourcesReadKubernetesSampleExercisesRoute
+  '/resources/read/kubernetes-step-by-step-learning-guide': typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRoute
+  '/resources/read/kubernetes-tips-tricks': typeof MarketingResourcesReadKubernetesTipsTricksRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -5101,6 +5290,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/javascript-sample-exercises': typeof MarketingResourcesReadJavascriptSampleExercisesRoute
   '/_marketing/resources/read/javascript-step-by-step-learning-guide': typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRoute
   '/_marketing/resources/read/javascript-tips-and-tricks': typeof MarketingResourcesReadJavascriptTipsAndTricksRoute
+  '/_marketing/resources/read/kubernetes-advanced-concepts': typeof MarketingResourcesReadKubernetesAdvancedConceptsRoute
+  '/_marketing/resources/read/kubernetes-answer-key': typeof MarketingResourcesReadKubernetesAnswerKeyRoute
+  '/_marketing/resources/read/kubernetes-beginner-guide': typeof MarketingResourcesReadKubernetesBeginnerGuideRoute
+  '/_marketing/resources/read/kubernetes-best-practices': typeof MarketingResourcesReadKubernetesBestPracticesRoute
+  '/_marketing/resources/read/kubernetes-cheat-sheet': typeof MarketingResourcesReadKubernetesCheatSheetRoute
+  '/_marketing/resources/read/kubernetes-common-mistakes': typeof MarketingResourcesReadKubernetesCommonMistakesRoute
+  '/_marketing/resources/read/kubernetes-complete-tutorial': typeof MarketingResourcesReadKubernetesCompleteTutorialRoute
+  '/_marketing/resources/read/kubernetes-frequently-asked-questions': typeof MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/kubernetes-glossary': typeof MarketingResourcesReadKubernetesGlossaryRoute
+  '/_marketing/resources/read/kubernetes-interview-questions': typeof MarketingResourcesReadKubernetesInterviewQuestionsRoute
+  '/_marketing/resources/read/kubernetes-learning-roadmap': typeof MarketingResourcesReadKubernetesLearningRoadmapRoute
+  '/_marketing/resources/read/kubernetes-pdf-notes': typeof MarketingResourcesReadKubernetesPdfNotesRoute
+  '/_marketing/resources/read/kubernetes-practice-questions': typeof MarketingResourcesReadKubernetesPracticeQuestionsRoute
+  '/_marketing/resources/read/kubernetes-project-case-study': typeof MarketingResourcesReadKubernetesProjectCaseStudyRoute
+  '/_marketing/resources/read/kubernetes-project-guide': typeof MarketingResourcesReadKubernetesProjectGuideRoute
+  '/_marketing/resources/read/kubernetes-quick-revision-notes': typeof MarketingResourcesReadKubernetesQuickRevisionNotesRoute
+  '/_marketing/resources/read/kubernetes-real-world-case-study': typeof MarketingResourcesReadKubernetesRealWorldCaseStudyRoute
+  '/_marketing/resources/read/kubernetes-reference-guide': typeof MarketingResourcesReadKubernetesReferenceGuideRoute
+  '/_marketing/resources/read/kubernetes-sample-exercises': typeof MarketingResourcesReadKubernetesSampleExercisesRoute
+  '/_marketing/resources/read/kubernetes-step-by-step-learning-guide': typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRoute
+  '/_marketing/resources/read/kubernetes-tips-tricks': typeof MarketingResourcesReadKubernetesTipsTricksRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/_marketing/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/_marketing/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -5630,6 +5840,27 @@ export interface FileRouteTypes {
     | '/resources/read/javascript-sample-exercises'
     | '/resources/read/javascript-step-by-step-learning-guide'
     | '/resources/read/javascript-tips-and-tricks'
+    | '/resources/read/kubernetes-advanced-concepts'
+    | '/resources/read/kubernetes-answer-key'
+    | '/resources/read/kubernetes-beginner-guide'
+    | '/resources/read/kubernetes-best-practices'
+    | '/resources/read/kubernetes-cheat-sheet'
+    | '/resources/read/kubernetes-common-mistakes'
+    | '/resources/read/kubernetes-complete-tutorial'
+    | '/resources/read/kubernetes-frequently-asked-questions'
+    | '/resources/read/kubernetes-glossary'
+    | '/resources/read/kubernetes-interview-questions'
+    | '/resources/read/kubernetes-learning-roadmap'
+    | '/resources/read/kubernetes-pdf-notes'
+    | '/resources/read/kubernetes-practice-questions'
+    | '/resources/read/kubernetes-project-case-study'
+    | '/resources/read/kubernetes-project-guide'
+    | '/resources/read/kubernetes-quick-revision-notes'
+    | '/resources/read/kubernetes-real-world-case-study'
+    | '/resources/read/kubernetes-reference-guide'
+    | '/resources/read/kubernetes-sample-exercises'
+    | '/resources/read/kubernetes-step-by-step-learning-guide'
+    | '/resources/read/kubernetes-tips-tricks'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
     | '/resources/read/ml-beginner-guide'
@@ -6156,6 +6387,27 @@ export interface FileRouteTypes {
     | '/resources/read/javascript-sample-exercises'
     | '/resources/read/javascript-step-by-step-learning-guide'
     | '/resources/read/javascript-tips-and-tricks'
+    | '/resources/read/kubernetes-advanced-concepts'
+    | '/resources/read/kubernetes-answer-key'
+    | '/resources/read/kubernetes-beginner-guide'
+    | '/resources/read/kubernetes-best-practices'
+    | '/resources/read/kubernetes-cheat-sheet'
+    | '/resources/read/kubernetes-common-mistakes'
+    | '/resources/read/kubernetes-complete-tutorial'
+    | '/resources/read/kubernetes-frequently-asked-questions'
+    | '/resources/read/kubernetes-glossary'
+    | '/resources/read/kubernetes-interview-questions'
+    | '/resources/read/kubernetes-learning-roadmap'
+    | '/resources/read/kubernetes-pdf-notes'
+    | '/resources/read/kubernetes-practice-questions'
+    | '/resources/read/kubernetes-project-case-study'
+    | '/resources/read/kubernetes-project-guide'
+    | '/resources/read/kubernetes-quick-revision-notes'
+    | '/resources/read/kubernetes-real-world-case-study'
+    | '/resources/read/kubernetes-reference-guide'
+    | '/resources/read/kubernetes-sample-exercises'
+    | '/resources/read/kubernetes-step-by-step-learning-guide'
+    | '/resources/read/kubernetes-tips-tricks'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
     | '/resources/read/ml-beginner-guide'
@@ -6686,6 +6938,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/javascript-sample-exercises'
     | '/_marketing/resources/read/javascript-step-by-step-learning-guide'
     | '/_marketing/resources/read/javascript-tips-and-tricks'
+    | '/_marketing/resources/read/kubernetes-advanced-concepts'
+    | '/_marketing/resources/read/kubernetes-answer-key'
+    | '/_marketing/resources/read/kubernetes-beginner-guide'
+    | '/_marketing/resources/read/kubernetes-best-practices'
+    | '/_marketing/resources/read/kubernetes-cheat-sheet'
+    | '/_marketing/resources/read/kubernetes-common-mistakes'
+    | '/_marketing/resources/read/kubernetes-complete-tutorial'
+    | '/_marketing/resources/read/kubernetes-frequently-asked-questions'
+    | '/_marketing/resources/read/kubernetes-glossary'
+    | '/_marketing/resources/read/kubernetes-interview-questions'
+    | '/_marketing/resources/read/kubernetes-learning-roadmap'
+    | '/_marketing/resources/read/kubernetes-pdf-notes'
+    | '/_marketing/resources/read/kubernetes-practice-questions'
+    | '/_marketing/resources/read/kubernetes-project-case-study'
+    | '/_marketing/resources/read/kubernetes-project-guide'
+    | '/_marketing/resources/read/kubernetes-quick-revision-notes'
+    | '/_marketing/resources/read/kubernetes-real-world-case-study'
+    | '/_marketing/resources/read/kubernetes-reference-guide'
+    | '/_marketing/resources/read/kubernetes-sample-exercises'
+    | '/_marketing/resources/read/kubernetes-step-by-step-learning-guide'
+    | '/_marketing/resources/read/kubernetes-tips-tricks'
     | '/_marketing/resources/read/ml-advanced-concepts'
     | '/_marketing/resources/read/ml-answer-key'
     | '/_marketing/resources/read/ml-beginner-guide'
@@ -8387,6 +8660,153 @@ declare module '@tanstack/react-router' {
       path: '/read/ml-advanced-concepts'
       fullPath: '/resources/read/ml-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadMlAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-tips-tricks': {
+      id: '/_marketing/resources/read/kubernetes-tips-tricks'
+      path: '/read/kubernetes-tips-tricks'
+      fullPath: '/resources/read/kubernetes-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/kubernetes-step-by-step-learning-guide'
+      path: '/read/kubernetes-step-by-step-learning-guide'
+      fullPath: '/resources/read/kubernetes-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-sample-exercises': {
+      id: '/_marketing/resources/read/kubernetes-sample-exercises'
+      path: '/read/kubernetes-sample-exercises'
+      fullPath: '/resources/read/kubernetes-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-reference-guide': {
+      id: '/_marketing/resources/read/kubernetes-reference-guide'
+      path: '/read/kubernetes-reference-guide'
+      fullPath: '/resources/read/kubernetes-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-real-world-case-study': {
+      id: '/_marketing/resources/read/kubernetes-real-world-case-study'
+      path: '/read/kubernetes-real-world-case-study'
+      fullPath: '/resources/read/kubernetes-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-quick-revision-notes': {
+      id: '/_marketing/resources/read/kubernetes-quick-revision-notes'
+      path: '/read/kubernetes-quick-revision-notes'
+      fullPath: '/resources/read/kubernetes-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-project-guide': {
+      id: '/_marketing/resources/read/kubernetes-project-guide'
+      path: '/read/kubernetes-project-guide'
+      fullPath: '/resources/read/kubernetes-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-project-case-study': {
+      id: '/_marketing/resources/read/kubernetes-project-case-study'
+      path: '/read/kubernetes-project-case-study'
+      fullPath: '/resources/read/kubernetes-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-practice-questions': {
+      id: '/_marketing/resources/read/kubernetes-practice-questions'
+      path: '/read/kubernetes-practice-questions'
+      fullPath: '/resources/read/kubernetes-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-pdf-notes': {
+      id: '/_marketing/resources/read/kubernetes-pdf-notes'
+      path: '/read/kubernetes-pdf-notes'
+      fullPath: '/resources/read/kubernetes-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-learning-roadmap': {
+      id: '/_marketing/resources/read/kubernetes-learning-roadmap'
+      path: '/read/kubernetes-learning-roadmap'
+      fullPath: '/resources/read/kubernetes-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-interview-questions': {
+      id: '/_marketing/resources/read/kubernetes-interview-questions'
+      path: '/read/kubernetes-interview-questions'
+      fullPath: '/resources/read/kubernetes-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-glossary': {
+      id: '/_marketing/resources/read/kubernetes-glossary'
+      path: '/read/kubernetes-glossary'
+      fullPath: '/resources/read/kubernetes-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-frequently-asked-questions': {
+      id: '/_marketing/resources/read/kubernetes-frequently-asked-questions'
+      path: '/read/kubernetes-frequently-asked-questions'
+      fullPath: '/resources/read/kubernetes-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-complete-tutorial': {
+      id: '/_marketing/resources/read/kubernetes-complete-tutorial'
+      path: '/read/kubernetes-complete-tutorial'
+      fullPath: '/resources/read/kubernetes-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-common-mistakes': {
+      id: '/_marketing/resources/read/kubernetes-common-mistakes'
+      path: '/read/kubernetes-common-mistakes'
+      fullPath: '/resources/read/kubernetes-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-cheat-sheet': {
+      id: '/_marketing/resources/read/kubernetes-cheat-sheet'
+      path: '/read/kubernetes-cheat-sheet'
+      fullPath: '/resources/read/kubernetes-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-best-practices': {
+      id: '/_marketing/resources/read/kubernetes-best-practices'
+      path: '/read/kubernetes-best-practices'
+      fullPath: '/resources/read/kubernetes-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-beginner-guide': {
+      id: '/_marketing/resources/read/kubernetes-beginner-guide'
+      path: '/read/kubernetes-beginner-guide'
+      fullPath: '/resources/read/kubernetes-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-answer-key': {
+      id: '/_marketing/resources/read/kubernetes-answer-key'
+      path: '/read/kubernetes-answer-key'
+      fullPath: '/resources/read/kubernetes-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/kubernetes-advanced-concepts': {
+      id: '/_marketing/resources/read/kubernetes-advanced-concepts'
+      path: '/read/kubernetes-advanced-concepts'
+      fullPath: '/resources/read/kubernetes-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadKubernetesAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/javascript-tips-and-tricks': {
@@ -11016,6 +11436,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadJavascriptSampleExercisesRoute: typeof MarketingResourcesReadJavascriptSampleExercisesRoute
   MarketingResourcesReadJavascriptStepByStepLearningGuideRoute: typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRoute
   MarketingResourcesReadJavascriptTipsAndTricksRoute: typeof MarketingResourcesReadJavascriptTipsAndTricksRoute
+  MarketingResourcesReadKubernetesAdvancedConceptsRoute: typeof MarketingResourcesReadKubernetesAdvancedConceptsRoute
+  MarketingResourcesReadKubernetesAnswerKeyRoute: typeof MarketingResourcesReadKubernetesAnswerKeyRoute
+  MarketingResourcesReadKubernetesBeginnerGuideRoute: typeof MarketingResourcesReadKubernetesBeginnerGuideRoute
+  MarketingResourcesReadKubernetesBestPracticesRoute: typeof MarketingResourcesReadKubernetesBestPracticesRoute
+  MarketingResourcesReadKubernetesCheatSheetRoute: typeof MarketingResourcesReadKubernetesCheatSheetRoute
+  MarketingResourcesReadKubernetesCommonMistakesRoute: typeof MarketingResourcesReadKubernetesCommonMistakesRoute
+  MarketingResourcesReadKubernetesCompleteTutorialRoute: typeof MarketingResourcesReadKubernetesCompleteTutorialRoute
+  MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadKubernetesGlossaryRoute: typeof MarketingResourcesReadKubernetesGlossaryRoute
+  MarketingResourcesReadKubernetesInterviewQuestionsRoute: typeof MarketingResourcesReadKubernetesInterviewQuestionsRoute
+  MarketingResourcesReadKubernetesLearningRoadmapRoute: typeof MarketingResourcesReadKubernetesLearningRoadmapRoute
+  MarketingResourcesReadKubernetesPdfNotesRoute: typeof MarketingResourcesReadKubernetesPdfNotesRoute
+  MarketingResourcesReadKubernetesPracticeQuestionsRoute: typeof MarketingResourcesReadKubernetesPracticeQuestionsRoute
+  MarketingResourcesReadKubernetesProjectCaseStudyRoute: typeof MarketingResourcesReadKubernetesProjectCaseStudyRoute
+  MarketingResourcesReadKubernetesProjectGuideRoute: typeof MarketingResourcesReadKubernetesProjectGuideRoute
+  MarketingResourcesReadKubernetesQuickRevisionNotesRoute: typeof MarketingResourcesReadKubernetesQuickRevisionNotesRoute
+  MarketingResourcesReadKubernetesRealWorldCaseStudyRoute: typeof MarketingResourcesReadKubernetesRealWorldCaseStudyRoute
+  MarketingResourcesReadKubernetesReferenceGuideRoute: typeof MarketingResourcesReadKubernetesReferenceGuideRoute
+  MarketingResourcesReadKubernetesSampleExercisesRoute: typeof MarketingResourcesReadKubernetesSampleExercisesRoute
+  MarketingResourcesReadKubernetesStepByStepLearningGuideRoute: typeof MarketingResourcesReadKubernetesStepByStepLearningGuideRoute
+  MarketingResourcesReadKubernetesTipsTricksRoute: typeof MarketingResourcesReadKubernetesTipsTricksRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
   MarketingResourcesReadMlAnswerKeyRoute: typeof MarketingResourcesReadMlAnswerKeyRoute
   MarketingResourcesReadMlBeginnerGuideRoute: typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -11786,6 +12227,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadJavascriptStepByStepLearningGuideRoute,
   MarketingResourcesReadJavascriptTipsAndTricksRoute:
     MarketingResourcesReadJavascriptTipsAndTricksRoute,
+  MarketingResourcesReadKubernetesAdvancedConceptsRoute:
+    MarketingResourcesReadKubernetesAdvancedConceptsRoute,
+  MarketingResourcesReadKubernetesAnswerKeyRoute:
+    MarketingResourcesReadKubernetesAnswerKeyRoute,
+  MarketingResourcesReadKubernetesBeginnerGuideRoute:
+    MarketingResourcesReadKubernetesBeginnerGuideRoute,
+  MarketingResourcesReadKubernetesBestPracticesRoute:
+    MarketingResourcesReadKubernetesBestPracticesRoute,
+  MarketingResourcesReadKubernetesCheatSheetRoute:
+    MarketingResourcesReadKubernetesCheatSheetRoute,
+  MarketingResourcesReadKubernetesCommonMistakesRoute:
+    MarketingResourcesReadKubernetesCommonMistakesRoute,
+  MarketingResourcesReadKubernetesCompleteTutorialRoute:
+    MarketingResourcesReadKubernetesCompleteTutorialRoute,
+  MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadKubernetesFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadKubernetesGlossaryRoute:
+    MarketingResourcesReadKubernetesGlossaryRoute,
+  MarketingResourcesReadKubernetesInterviewQuestionsRoute:
+    MarketingResourcesReadKubernetesInterviewQuestionsRoute,
+  MarketingResourcesReadKubernetesLearningRoadmapRoute:
+    MarketingResourcesReadKubernetesLearningRoadmapRoute,
+  MarketingResourcesReadKubernetesPdfNotesRoute:
+    MarketingResourcesReadKubernetesPdfNotesRoute,
+  MarketingResourcesReadKubernetesPracticeQuestionsRoute:
+    MarketingResourcesReadKubernetesPracticeQuestionsRoute,
+  MarketingResourcesReadKubernetesProjectCaseStudyRoute:
+    MarketingResourcesReadKubernetesProjectCaseStudyRoute,
+  MarketingResourcesReadKubernetesProjectGuideRoute:
+    MarketingResourcesReadKubernetesProjectGuideRoute,
+  MarketingResourcesReadKubernetesQuickRevisionNotesRoute:
+    MarketingResourcesReadKubernetesQuickRevisionNotesRoute,
+  MarketingResourcesReadKubernetesRealWorldCaseStudyRoute:
+    MarketingResourcesReadKubernetesRealWorldCaseStudyRoute,
+  MarketingResourcesReadKubernetesReferenceGuideRoute:
+    MarketingResourcesReadKubernetesReferenceGuideRoute,
+  MarketingResourcesReadKubernetesSampleExercisesRoute:
+    MarketingResourcesReadKubernetesSampleExercisesRoute,
+  MarketingResourcesReadKubernetesStepByStepLearningGuideRoute:
+    MarketingResourcesReadKubernetesStepByStepLearningGuideRoute,
+  MarketingResourcesReadKubernetesTipsTricksRoute:
+    MarketingResourcesReadKubernetesTipsTricksRoute,
   MarketingResourcesReadMlAdvancedConceptsRoute:
     MarketingResourcesReadMlAdvancedConceptsRoute,
   MarketingResourcesReadMlAnswerKeyRoute:
