@@ -608,6 +608,27 @@ import { Route as MarketingResourcesReadComputerNetworksBestPracticesRouteImport
 import { Route as MarketingResourcesReadComputerNetworksBeginnerGuideRouteImport } from './routes/_marketing.resources.read.computer-networks-beginner-guide'
 import { Route as MarketingResourcesReadComputerNetworksAnswerKeyRouteImport } from './routes/_marketing.resources.read.computer-networks-answer-key'
 import { Route as MarketingResourcesReadComputerNetworksAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.computer-networks-advanced-concepts'
+import { Route as MarketingResourcesReadCProgrammingTipsTricksRouteImport } from './routes/_marketing.resources.read.c-programming-tips-tricks'
+import { Route as MarketingResourcesReadCProgrammingStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.c-programming-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadCProgrammingSampleExercisesRouteImport } from './routes/_marketing.resources.read.c-programming-sample-exercises'
+import { Route as MarketingResourcesReadCProgrammingReferenceGuideRouteImport } from './routes/_marketing.resources.read.c-programming-reference-guide'
+import { Route as MarketingResourcesReadCProgrammingRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.c-programming-real-world-case-study'
+import { Route as MarketingResourcesReadCProgrammingQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.c-programming-quick-revision-notes'
+import { Route as MarketingResourcesReadCProgrammingProjectGuideRouteImport } from './routes/_marketing.resources.read.c-programming-project-guide'
+import { Route as MarketingResourcesReadCProgrammingProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.c-programming-project-case-study'
+import { Route as MarketingResourcesReadCProgrammingPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.c-programming-practice-questions'
+import { Route as MarketingResourcesReadCProgrammingPdfNotesRouteImport } from './routes/_marketing.resources.read.c-programming-pdf-notes'
+import { Route as MarketingResourcesReadCProgrammingLearningRoadmapRouteImport } from './routes/_marketing.resources.read.c-programming-learning-roadmap'
+import { Route as MarketingResourcesReadCProgrammingInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.c-programming-interview-questions'
+import { Route as MarketingResourcesReadCProgrammingGlossaryRouteImport } from './routes/_marketing.resources.read.c-programming-glossary'
+import { Route as MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.c-programming-frequently-asked-questions'
+import { Route as MarketingResourcesReadCProgrammingCompleteTutorialRouteImport } from './routes/_marketing.resources.read.c-programming-complete-tutorial'
+import { Route as MarketingResourcesReadCProgrammingCommonMistakesRouteImport } from './routes/_marketing.resources.read.c-programming-common-mistakes'
+import { Route as MarketingResourcesReadCProgrammingCheatSheetRouteImport } from './routes/_marketing.resources.read.c-programming-cheat-sheet'
+import { Route as MarketingResourcesReadCProgrammingBestPracticesRouteImport } from './routes/_marketing.resources.read.c-programming-best-practices'
+import { Route as MarketingResourcesReadCProgrammingBeginnerGuideRouteImport } from './routes/_marketing.resources.read.c-programming-beginner-guide'
+import { Route as MarketingResourcesReadCProgrammingAnswerKeyRouteImport } from './routes/_marketing.resources.read.c-programming-answer-key'
+import { Route as MarketingResourcesReadCProgrammingAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.c-programming-advanced-concepts'
 import { Route as MarketingResourcesReadAzureTipsTricksRouteImport } from './routes/_marketing.resources.read.azure-tips-tricks'
 import { Route as MarketingResourcesReadAzureStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.azure-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadAzureSampleExercisesRouteImport } from './routes/_marketing.resources.read.azure-sample-exercises'
@@ -4289,6 +4310,132 @@ const MarketingResourcesReadComputerNetworksAdvancedConceptsRoute =
     path: '/read/computer-networks-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadCProgrammingTipsTricksRoute =
+  MarketingResourcesReadCProgrammingTipsTricksRouteImport.update({
+    id: '/read/c-programming-tips-tricks',
+    path: '/read/c-programming-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingStepByStepLearningGuideRoute =
+  MarketingResourcesReadCProgrammingStepByStepLearningGuideRouteImport.update({
+    id: '/read/c-programming-step-by-step-learning-guide',
+    path: '/read/c-programming-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingSampleExercisesRoute =
+  MarketingResourcesReadCProgrammingSampleExercisesRouteImport.update({
+    id: '/read/c-programming-sample-exercises',
+    path: '/read/c-programming-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingReferenceGuideRoute =
+  MarketingResourcesReadCProgrammingReferenceGuideRouteImport.update({
+    id: '/read/c-programming-reference-guide',
+    path: '/read/c-programming-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingRealWorldCaseStudyRoute =
+  MarketingResourcesReadCProgrammingRealWorldCaseStudyRouteImport.update({
+    id: '/read/c-programming-real-world-case-study',
+    path: '/read/c-programming-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingQuickRevisionNotesRoute =
+  MarketingResourcesReadCProgrammingQuickRevisionNotesRouteImport.update({
+    id: '/read/c-programming-quick-revision-notes',
+    path: '/read/c-programming-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingProjectGuideRoute =
+  MarketingResourcesReadCProgrammingProjectGuideRouteImport.update({
+    id: '/read/c-programming-project-guide',
+    path: '/read/c-programming-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingProjectCaseStudyRoute =
+  MarketingResourcesReadCProgrammingProjectCaseStudyRouteImport.update({
+    id: '/read/c-programming-project-case-study',
+    path: '/read/c-programming-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingPracticeQuestionsRoute =
+  MarketingResourcesReadCProgrammingPracticeQuestionsRouteImport.update({
+    id: '/read/c-programming-practice-questions',
+    path: '/read/c-programming-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingPdfNotesRoute =
+  MarketingResourcesReadCProgrammingPdfNotesRouteImport.update({
+    id: '/read/c-programming-pdf-notes',
+    path: '/read/c-programming-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingLearningRoadmapRoute =
+  MarketingResourcesReadCProgrammingLearningRoadmapRouteImport.update({
+    id: '/read/c-programming-learning-roadmap',
+    path: '/read/c-programming-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingInterviewQuestionsRoute =
+  MarketingResourcesReadCProgrammingInterviewQuestionsRouteImport.update({
+    id: '/read/c-programming-interview-questions',
+    path: '/read/c-programming-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingGlossaryRoute =
+  MarketingResourcesReadCProgrammingGlossaryRouteImport.update({
+    id: '/read/c-programming-glossary',
+    path: '/read/c-programming-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/c-programming-frequently-asked-questions',
+    path: '/read/c-programming-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingCompleteTutorialRoute =
+  MarketingResourcesReadCProgrammingCompleteTutorialRouteImport.update({
+    id: '/read/c-programming-complete-tutorial',
+    path: '/read/c-programming-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingCommonMistakesRoute =
+  MarketingResourcesReadCProgrammingCommonMistakesRouteImport.update({
+    id: '/read/c-programming-common-mistakes',
+    path: '/read/c-programming-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingCheatSheetRoute =
+  MarketingResourcesReadCProgrammingCheatSheetRouteImport.update({
+    id: '/read/c-programming-cheat-sheet',
+    path: '/read/c-programming-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingBestPracticesRoute =
+  MarketingResourcesReadCProgrammingBestPracticesRouteImport.update({
+    id: '/read/c-programming-best-practices',
+    path: '/read/c-programming-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingBeginnerGuideRoute =
+  MarketingResourcesReadCProgrammingBeginnerGuideRouteImport.update({
+    id: '/read/c-programming-beginner-guide',
+    path: '/read/c-programming-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingAnswerKeyRoute =
+  MarketingResourcesReadCProgrammingAnswerKeyRouteImport.update({
+    id: '/read/c-programming-answer-key',
+    path: '/read/c-programming-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCProgrammingAdvancedConceptsRoute =
+  MarketingResourcesReadCProgrammingAdvancedConceptsRouteImport.update({
+    id: '/read/c-programming-advanced-concepts',
+    path: '/read/c-programming-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAzureTipsTricksRoute =
   MarketingResourcesReadAzureTipsTricksRouteImport.update({
     id: '/read/azure-tips-tricks',
@@ -5004,6 +5151,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/azure-sample-exercises': typeof MarketingResourcesReadAzureSampleExercisesRoute
   '/resources/read/azure-step-by-step-learning-guide': typeof MarketingResourcesReadAzureStepByStepLearningGuideRoute
   '/resources/read/azure-tips-tricks': typeof MarketingResourcesReadAzureTipsTricksRoute
+  '/resources/read/c-programming-advanced-concepts': typeof MarketingResourcesReadCProgrammingAdvancedConceptsRoute
+  '/resources/read/c-programming-answer-key': typeof MarketingResourcesReadCProgrammingAnswerKeyRoute
+  '/resources/read/c-programming-beginner-guide': typeof MarketingResourcesReadCProgrammingBeginnerGuideRoute
+  '/resources/read/c-programming-best-practices': typeof MarketingResourcesReadCProgrammingBestPracticesRoute
+  '/resources/read/c-programming-cheat-sheet': typeof MarketingResourcesReadCProgrammingCheatSheetRoute
+  '/resources/read/c-programming-common-mistakes': typeof MarketingResourcesReadCProgrammingCommonMistakesRoute
+  '/resources/read/c-programming-complete-tutorial': typeof MarketingResourcesReadCProgrammingCompleteTutorialRoute
+  '/resources/read/c-programming-frequently-asked-questions': typeof MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRoute
+  '/resources/read/c-programming-glossary': typeof MarketingResourcesReadCProgrammingGlossaryRoute
+  '/resources/read/c-programming-interview-questions': typeof MarketingResourcesReadCProgrammingInterviewQuestionsRoute
+  '/resources/read/c-programming-learning-roadmap': typeof MarketingResourcesReadCProgrammingLearningRoadmapRoute
+  '/resources/read/c-programming-pdf-notes': typeof MarketingResourcesReadCProgrammingPdfNotesRoute
+  '/resources/read/c-programming-practice-questions': typeof MarketingResourcesReadCProgrammingPracticeQuestionsRoute
+  '/resources/read/c-programming-project-case-study': typeof MarketingResourcesReadCProgrammingProjectCaseStudyRoute
+  '/resources/read/c-programming-project-guide': typeof MarketingResourcesReadCProgrammingProjectGuideRoute
+  '/resources/read/c-programming-quick-revision-notes': typeof MarketingResourcesReadCProgrammingQuickRevisionNotesRoute
+  '/resources/read/c-programming-real-world-case-study': typeof MarketingResourcesReadCProgrammingRealWorldCaseStudyRoute
+  '/resources/read/c-programming-reference-guide': typeof MarketingResourcesReadCProgrammingReferenceGuideRoute
+  '/resources/read/c-programming-sample-exercises': typeof MarketingResourcesReadCProgrammingSampleExercisesRoute
+  '/resources/read/c-programming-step-by-step-learning-guide': typeof MarketingResourcesReadCProgrammingStepByStepLearningGuideRoute
+  '/resources/read/c-programming-tips-tricks': typeof MarketingResourcesReadCProgrammingTipsTricksRoute
   '/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
   '/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
   '/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
@@ -5698,6 +5866,27 @@ export interface FileRoutesByTo {
   '/resources/read/azure-sample-exercises': typeof MarketingResourcesReadAzureSampleExercisesRoute
   '/resources/read/azure-step-by-step-learning-guide': typeof MarketingResourcesReadAzureStepByStepLearningGuideRoute
   '/resources/read/azure-tips-tricks': typeof MarketingResourcesReadAzureTipsTricksRoute
+  '/resources/read/c-programming-advanced-concepts': typeof MarketingResourcesReadCProgrammingAdvancedConceptsRoute
+  '/resources/read/c-programming-answer-key': typeof MarketingResourcesReadCProgrammingAnswerKeyRoute
+  '/resources/read/c-programming-beginner-guide': typeof MarketingResourcesReadCProgrammingBeginnerGuideRoute
+  '/resources/read/c-programming-best-practices': typeof MarketingResourcesReadCProgrammingBestPracticesRoute
+  '/resources/read/c-programming-cheat-sheet': typeof MarketingResourcesReadCProgrammingCheatSheetRoute
+  '/resources/read/c-programming-common-mistakes': typeof MarketingResourcesReadCProgrammingCommonMistakesRoute
+  '/resources/read/c-programming-complete-tutorial': typeof MarketingResourcesReadCProgrammingCompleteTutorialRoute
+  '/resources/read/c-programming-frequently-asked-questions': typeof MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRoute
+  '/resources/read/c-programming-glossary': typeof MarketingResourcesReadCProgrammingGlossaryRoute
+  '/resources/read/c-programming-interview-questions': typeof MarketingResourcesReadCProgrammingInterviewQuestionsRoute
+  '/resources/read/c-programming-learning-roadmap': typeof MarketingResourcesReadCProgrammingLearningRoadmapRoute
+  '/resources/read/c-programming-pdf-notes': typeof MarketingResourcesReadCProgrammingPdfNotesRoute
+  '/resources/read/c-programming-practice-questions': typeof MarketingResourcesReadCProgrammingPracticeQuestionsRoute
+  '/resources/read/c-programming-project-case-study': typeof MarketingResourcesReadCProgrammingProjectCaseStudyRoute
+  '/resources/read/c-programming-project-guide': typeof MarketingResourcesReadCProgrammingProjectGuideRoute
+  '/resources/read/c-programming-quick-revision-notes': typeof MarketingResourcesReadCProgrammingQuickRevisionNotesRoute
+  '/resources/read/c-programming-real-world-case-study': typeof MarketingResourcesReadCProgrammingRealWorldCaseStudyRoute
+  '/resources/read/c-programming-reference-guide': typeof MarketingResourcesReadCProgrammingReferenceGuideRoute
+  '/resources/read/c-programming-sample-exercises': typeof MarketingResourcesReadCProgrammingSampleExercisesRoute
+  '/resources/read/c-programming-step-by-step-learning-guide': typeof MarketingResourcesReadCProgrammingStepByStepLearningGuideRoute
+  '/resources/read/c-programming-tips-tricks': typeof MarketingResourcesReadCProgrammingTipsTricksRoute
   '/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
   '/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
   '/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
@@ -6397,6 +6586,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/azure-sample-exercises': typeof MarketingResourcesReadAzureSampleExercisesRoute
   '/_marketing/resources/read/azure-step-by-step-learning-guide': typeof MarketingResourcesReadAzureStepByStepLearningGuideRoute
   '/_marketing/resources/read/azure-tips-tricks': typeof MarketingResourcesReadAzureTipsTricksRoute
+  '/_marketing/resources/read/c-programming-advanced-concepts': typeof MarketingResourcesReadCProgrammingAdvancedConceptsRoute
+  '/_marketing/resources/read/c-programming-answer-key': typeof MarketingResourcesReadCProgrammingAnswerKeyRoute
+  '/_marketing/resources/read/c-programming-beginner-guide': typeof MarketingResourcesReadCProgrammingBeginnerGuideRoute
+  '/_marketing/resources/read/c-programming-best-practices': typeof MarketingResourcesReadCProgrammingBestPracticesRoute
+  '/_marketing/resources/read/c-programming-cheat-sheet': typeof MarketingResourcesReadCProgrammingCheatSheetRoute
+  '/_marketing/resources/read/c-programming-common-mistakes': typeof MarketingResourcesReadCProgrammingCommonMistakesRoute
+  '/_marketing/resources/read/c-programming-complete-tutorial': typeof MarketingResourcesReadCProgrammingCompleteTutorialRoute
+  '/_marketing/resources/read/c-programming-frequently-asked-questions': typeof MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/c-programming-glossary': typeof MarketingResourcesReadCProgrammingGlossaryRoute
+  '/_marketing/resources/read/c-programming-interview-questions': typeof MarketingResourcesReadCProgrammingInterviewQuestionsRoute
+  '/_marketing/resources/read/c-programming-learning-roadmap': typeof MarketingResourcesReadCProgrammingLearningRoadmapRoute
+  '/_marketing/resources/read/c-programming-pdf-notes': typeof MarketingResourcesReadCProgrammingPdfNotesRoute
+  '/_marketing/resources/read/c-programming-practice-questions': typeof MarketingResourcesReadCProgrammingPracticeQuestionsRoute
+  '/_marketing/resources/read/c-programming-project-case-study': typeof MarketingResourcesReadCProgrammingProjectCaseStudyRoute
+  '/_marketing/resources/read/c-programming-project-guide': typeof MarketingResourcesReadCProgrammingProjectGuideRoute
+  '/_marketing/resources/read/c-programming-quick-revision-notes': typeof MarketingResourcesReadCProgrammingQuickRevisionNotesRoute
+  '/_marketing/resources/read/c-programming-real-world-case-study': typeof MarketingResourcesReadCProgrammingRealWorldCaseStudyRoute
+  '/_marketing/resources/read/c-programming-reference-guide': typeof MarketingResourcesReadCProgrammingReferenceGuideRoute
+  '/_marketing/resources/read/c-programming-sample-exercises': typeof MarketingResourcesReadCProgrammingSampleExercisesRoute
+  '/_marketing/resources/read/c-programming-step-by-step-learning-guide': typeof MarketingResourcesReadCProgrammingStepByStepLearningGuideRoute
+  '/_marketing/resources/read/c-programming-tips-tricks': typeof MarketingResourcesReadCProgrammingTipsTricksRoute
   '/_marketing/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
   '/_marketing/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
   '/_marketing/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
@@ -7094,6 +7304,27 @@ export interface FileRouteTypes {
     | '/resources/read/azure-sample-exercises'
     | '/resources/read/azure-step-by-step-learning-guide'
     | '/resources/read/azure-tips-tricks'
+    | '/resources/read/c-programming-advanced-concepts'
+    | '/resources/read/c-programming-answer-key'
+    | '/resources/read/c-programming-beginner-guide'
+    | '/resources/read/c-programming-best-practices'
+    | '/resources/read/c-programming-cheat-sheet'
+    | '/resources/read/c-programming-common-mistakes'
+    | '/resources/read/c-programming-complete-tutorial'
+    | '/resources/read/c-programming-frequently-asked-questions'
+    | '/resources/read/c-programming-glossary'
+    | '/resources/read/c-programming-interview-questions'
+    | '/resources/read/c-programming-learning-roadmap'
+    | '/resources/read/c-programming-pdf-notes'
+    | '/resources/read/c-programming-practice-questions'
+    | '/resources/read/c-programming-project-case-study'
+    | '/resources/read/c-programming-project-guide'
+    | '/resources/read/c-programming-quick-revision-notes'
+    | '/resources/read/c-programming-real-world-case-study'
+    | '/resources/read/c-programming-reference-guide'
+    | '/resources/read/c-programming-sample-exercises'
+    | '/resources/read/c-programming-step-by-step-learning-guide'
+    | '/resources/read/c-programming-tips-tricks'
     | '/resources/read/computer-networks-advanced-concepts'
     | '/resources/read/computer-networks-answer-key'
     | '/resources/read/computer-networks-beginner-guide'
@@ -7788,6 +8019,27 @@ export interface FileRouteTypes {
     | '/resources/read/azure-sample-exercises'
     | '/resources/read/azure-step-by-step-learning-guide'
     | '/resources/read/azure-tips-tricks'
+    | '/resources/read/c-programming-advanced-concepts'
+    | '/resources/read/c-programming-answer-key'
+    | '/resources/read/c-programming-beginner-guide'
+    | '/resources/read/c-programming-best-practices'
+    | '/resources/read/c-programming-cheat-sheet'
+    | '/resources/read/c-programming-common-mistakes'
+    | '/resources/read/c-programming-complete-tutorial'
+    | '/resources/read/c-programming-frequently-asked-questions'
+    | '/resources/read/c-programming-glossary'
+    | '/resources/read/c-programming-interview-questions'
+    | '/resources/read/c-programming-learning-roadmap'
+    | '/resources/read/c-programming-pdf-notes'
+    | '/resources/read/c-programming-practice-questions'
+    | '/resources/read/c-programming-project-case-study'
+    | '/resources/read/c-programming-project-guide'
+    | '/resources/read/c-programming-quick-revision-notes'
+    | '/resources/read/c-programming-real-world-case-study'
+    | '/resources/read/c-programming-reference-guide'
+    | '/resources/read/c-programming-sample-exercises'
+    | '/resources/read/c-programming-step-by-step-learning-guide'
+    | '/resources/read/c-programming-tips-tricks'
     | '/resources/read/computer-networks-advanced-concepts'
     | '/resources/read/computer-networks-answer-key'
     | '/resources/read/computer-networks-beginner-guide'
@@ -8486,6 +8738,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/azure-sample-exercises'
     | '/_marketing/resources/read/azure-step-by-step-learning-guide'
     | '/_marketing/resources/read/azure-tips-tricks'
+    | '/_marketing/resources/read/c-programming-advanced-concepts'
+    | '/_marketing/resources/read/c-programming-answer-key'
+    | '/_marketing/resources/read/c-programming-beginner-guide'
+    | '/_marketing/resources/read/c-programming-best-practices'
+    | '/_marketing/resources/read/c-programming-cheat-sheet'
+    | '/_marketing/resources/read/c-programming-common-mistakes'
+    | '/_marketing/resources/read/c-programming-complete-tutorial'
+    | '/_marketing/resources/read/c-programming-frequently-asked-questions'
+    | '/_marketing/resources/read/c-programming-glossary'
+    | '/_marketing/resources/read/c-programming-interview-questions'
+    | '/_marketing/resources/read/c-programming-learning-roadmap'
+    | '/_marketing/resources/read/c-programming-pdf-notes'
+    | '/_marketing/resources/read/c-programming-practice-questions'
+    | '/_marketing/resources/read/c-programming-project-case-study'
+    | '/_marketing/resources/read/c-programming-project-guide'
+    | '/_marketing/resources/read/c-programming-quick-revision-notes'
+    | '/_marketing/resources/read/c-programming-real-world-case-study'
+    | '/_marketing/resources/read/c-programming-reference-guide'
+    | '/_marketing/resources/read/c-programming-sample-exercises'
+    | '/_marketing/resources/read/c-programming-step-by-step-learning-guide'
+    | '/_marketing/resources/read/c-programming-tips-tricks'
     | '/_marketing/resources/read/computer-networks-advanced-concepts'
     | '/_marketing/resources/read/computer-networks-answer-key'
     | '/_marketing/resources/read/computer-networks-beginner-guide'
@@ -13261,6 +13534,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/c-programming-tips-tricks': {
+      id: '/_marketing/resources/read/c-programming-tips-tricks'
+      path: '/read/c-programming-tips-tricks'
+      fullPath: '/resources/read/c-programming-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/c-programming-step-by-step-learning-guide'
+      path: '/read/c-programming-step-by-step-learning-guide'
+      fullPath: '/resources/read/c-programming-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-sample-exercises': {
+      id: '/_marketing/resources/read/c-programming-sample-exercises'
+      path: '/read/c-programming-sample-exercises'
+      fullPath: '/resources/read/c-programming-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-reference-guide': {
+      id: '/_marketing/resources/read/c-programming-reference-guide'
+      path: '/read/c-programming-reference-guide'
+      fullPath: '/resources/read/c-programming-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-real-world-case-study': {
+      id: '/_marketing/resources/read/c-programming-real-world-case-study'
+      path: '/read/c-programming-real-world-case-study'
+      fullPath: '/resources/read/c-programming-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-quick-revision-notes': {
+      id: '/_marketing/resources/read/c-programming-quick-revision-notes'
+      path: '/read/c-programming-quick-revision-notes'
+      fullPath: '/resources/read/c-programming-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-project-guide': {
+      id: '/_marketing/resources/read/c-programming-project-guide'
+      path: '/read/c-programming-project-guide'
+      fullPath: '/resources/read/c-programming-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-project-case-study': {
+      id: '/_marketing/resources/read/c-programming-project-case-study'
+      path: '/read/c-programming-project-case-study'
+      fullPath: '/resources/read/c-programming-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-practice-questions': {
+      id: '/_marketing/resources/read/c-programming-practice-questions'
+      path: '/read/c-programming-practice-questions'
+      fullPath: '/resources/read/c-programming-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-pdf-notes': {
+      id: '/_marketing/resources/read/c-programming-pdf-notes'
+      path: '/read/c-programming-pdf-notes'
+      fullPath: '/resources/read/c-programming-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-learning-roadmap': {
+      id: '/_marketing/resources/read/c-programming-learning-roadmap'
+      path: '/read/c-programming-learning-roadmap'
+      fullPath: '/resources/read/c-programming-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-interview-questions': {
+      id: '/_marketing/resources/read/c-programming-interview-questions'
+      path: '/read/c-programming-interview-questions'
+      fullPath: '/resources/read/c-programming-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-glossary': {
+      id: '/_marketing/resources/read/c-programming-glossary'
+      path: '/read/c-programming-glossary'
+      fullPath: '/resources/read/c-programming-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-frequently-asked-questions': {
+      id: '/_marketing/resources/read/c-programming-frequently-asked-questions'
+      path: '/read/c-programming-frequently-asked-questions'
+      fullPath: '/resources/read/c-programming-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-complete-tutorial': {
+      id: '/_marketing/resources/read/c-programming-complete-tutorial'
+      path: '/read/c-programming-complete-tutorial'
+      fullPath: '/resources/read/c-programming-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-common-mistakes': {
+      id: '/_marketing/resources/read/c-programming-common-mistakes'
+      path: '/read/c-programming-common-mistakes'
+      fullPath: '/resources/read/c-programming-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-cheat-sheet': {
+      id: '/_marketing/resources/read/c-programming-cheat-sheet'
+      path: '/read/c-programming-cheat-sheet'
+      fullPath: '/resources/read/c-programming-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-best-practices': {
+      id: '/_marketing/resources/read/c-programming-best-practices'
+      path: '/read/c-programming-best-practices'
+      fullPath: '/resources/read/c-programming-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-beginner-guide': {
+      id: '/_marketing/resources/read/c-programming-beginner-guide'
+      path: '/read/c-programming-beginner-guide'
+      fullPath: '/resources/read/c-programming-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-answer-key': {
+      id: '/_marketing/resources/read/c-programming-answer-key'
+      path: '/read/c-programming-answer-key'
+      fullPath: '/resources/read/c-programming-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/c-programming-advanced-concepts': {
+      id: '/_marketing/resources/read/c-programming-advanced-concepts'
+      path: '/read/c-programming-advanced-concepts'
+      fullPath: '/resources/read/c-programming-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadCProgrammingAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/azure-tips-tricks': {
       id: '/_marketing/resources/read/azure-tips-tricks'
       path: '/read/azure-tips-tricks'
@@ -14160,6 +14580,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAzureSampleExercisesRoute: typeof MarketingResourcesReadAzureSampleExercisesRoute
   MarketingResourcesReadAzureStepByStepLearningGuideRoute: typeof MarketingResourcesReadAzureStepByStepLearningGuideRoute
   MarketingResourcesReadAzureTipsTricksRoute: typeof MarketingResourcesReadAzureTipsTricksRoute
+  MarketingResourcesReadCProgrammingAdvancedConceptsRoute: typeof MarketingResourcesReadCProgrammingAdvancedConceptsRoute
+  MarketingResourcesReadCProgrammingAnswerKeyRoute: typeof MarketingResourcesReadCProgrammingAnswerKeyRoute
+  MarketingResourcesReadCProgrammingBeginnerGuideRoute: typeof MarketingResourcesReadCProgrammingBeginnerGuideRoute
+  MarketingResourcesReadCProgrammingBestPracticesRoute: typeof MarketingResourcesReadCProgrammingBestPracticesRoute
+  MarketingResourcesReadCProgrammingCheatSheetRoute: typeof MarketingResourcesReadCProgrammingCheatSheetRoute
+  MarketingResourcesReadCProgrammingCommonMistakesRoute: typeof MarketingResourcesReadCProgrammingCommonMistakesRoute
+  MarketingResourcesReadCProgrammingCompleteTutorialRoute: typeof MarketingResourcesReadCProgrammingCompleteTutorialRoute
+  MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadCProgrammingGlossaryRoute: typeof MarketingResourcesReadCProgrammingGlossaryRoute
+  MarketingResourcesReadCProgrammingInterviewQuestionsRoute: typeof MarketingResourcesReadCProgrammingInterviewQuestionsRoute
+  MarketingResourcesReadCProgrammingLearningRoadmapRoute: typeof MarketingResourcesReadCProgrammingLearningRoadmapRoute
+  MarketingResourcesReadCProgrammingPdfNotesRoute: typeof MarketingResourcesReadCProgrammingPdfNotesRoute
+  MarketingResourcesReadCProgrammingPracticeQuestionsRoute: typeof MarketingResourcesReadCProgrammingPracticeQuestionsRoute
+  MarketingResourcesReadCProgrammingProjectCaseStudyRoute: typeof MarketingResourcesReadCProgrammingProjectCaseStudyRoute
+  MarketingResourcesReadCProgrammingProjectGuideRoute: typeof MarketingResourcesReadCProgrammingProjectGuideRoute
+  MarketingResourcesReadCProgrammingQuickRevisionNotesRoute: typeof MarketingResourcesReadCProgrammingQuickRevisionNotesRoute
+  MarketingResourcesReadCProgrammingRealWorldCaseStudyRoute: typeof MarketingResourcesReadCProgrammingRealWorldCaseStudyRoute
+  MarketingResourcesReadCProgrammingReferenceGuideRoute: typeof MarketingResourcesReadCProgrammingReferenceGuideRoute
+  MarketingResourcesReadCProgrammingSampleExercisesRoute: typeof MarketingResourcesReadCProgrammingSampleExercisesRoute
+  MarketingResourcesReadCProgrammingStepByStepLearningGuideRoute: typeof MarketingResourcesReadCProgrammingStepByStepLearningGuideRoute
+  MarketingResourcesReadCProgrammingTipsTricksRoute: typeof MarketingResourcesReadCProgrammingTipsTricksRoute
   MarketingResourcesReadComputerNetworksAdvancedConceptsRoute: typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
   MarketingResourcesReadComputerNetworksAnswerKeyRoute: typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
   MarketingResourcesReadComputerNetworksBeginnerGuideRoute: typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
@@ -14886,6 +15327,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAzureStepByStepLearningGuideRoute,
   MarketingResourcesReadAzureTipsTricksRoute:
     MarketingResourcesReadAzureTipsTricksRoute,
+  MarketingResourcesReadCProgrammingAdvancedConceptsRoute:
+    MarketingResourcesReadCProgrammingAdvancedConceptsRoute,
+  MarketingResourcesReadCProgrammingAnswerKeyRoute:
+    MarketingResourcesReadCProgrammingAnswerKeyRoute,
+  MarketingResourcesReadCProgrammingBeginnerGuideRoute:
+    MarketingResourcesReadCProgrammingBeginnerGuideRoute,
+  MarketingResourcesReadCProgrammingBestPracticesRoute:
+    MarketingResourcesReadCProgrammingBestPracticesRoute,
+  MarketingResourcesReadCProgrammingCheatSheetRoute:
+    MarketingResourcesReadCProgrammingCheatSheetRoute,
+  MarketingResourcesReadCProgrammingCommonMistakesRoute:
+    MarketingResourcesReadCProgrammingCommonMistakesRoute,
+  MarketingResourcesReadCProgrammingCompleteTutorialRoute:
+    MarketingResourcesReadCProgrammingCompleteTutorialRoute,
+  MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadCProgrammingFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadCProgrammingGlossaryRoute:
+    MarketingResourcesReadCProgrammingGlossaryRoute,
+  MarketingResourcesReadCProgrammingInterviewQuestionsRoute:
+    MarketingResourcesReadCProgrammingInterviewQuestionsRoute,
+  MarketingResourcesReadCProgrammingLearningRoadmapRoute:
+    MarketingResourcesReadCProgrammingLearningRoadmapRoute,
+  MarketingResourcesReadCProgrammingPdfNotesRoute:
+    MarketingResourcesReadCProgrammingPdfNotesRoute,
+  MarketingResourcesReadCProgrammingPracticeQuestionsRoute:
+    MarketingResourcesReadCProgrammingPracticeQuestionsRoute,
+  MarketingResourcesReadCProgrammingProjectCaseStudyRoute:
+    MarketingResourcesReadCProgrammingProjectCaseStudyRoute,
+  MarketingResourcesReadCProgrammingProjectGuideRoute:
+    MarketingResourcesReadCProgrammingProjectGuideRoute,
+  MarketingResourcesReadCProgrammingQuickRevisionNotesRoute:
+    MarketingResourcesReadCProgrammingQuickRevisionNotesRoute,
+  MarketingResourcesReadCProgrammingRealWorldCaseStudyRoute:
+    MarketingResourcesReadCProgrammingRealWorldCaseStudyRoute,
+  MarketingResourcesReadCProgrammingReferenceGuideRoute:
+    MarketingResourcesReadCProgrammingReferenceGuideRoute,
+  MarketingResourcesReadCProgrammingSampleExercisesRoute:
+    MarketingResourcesReadCProgrammingSampleExercisesRoute,
+  MarketingResourcesReadCProgrammingStepByStepLearningGuideRoute:
+    MarketingResourcesReadCProgrammingStepByStepLearningGuideRoute,
+  MarketingResourcesReadCProgrammingTipsTricksRoute:
+    MarketingResourcesReadCProgrammingTipsTricksRoute,
   MarketingResourcesReadComputerNetworksAdvancedConceptsRoute:
     MarketingResourcesReadComputerNetworksAdvancedConceptsRoute,
   MarketingResourcesReadComputerNetworksAnswerKeyRoute:
