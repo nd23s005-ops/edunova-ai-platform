@@ -75,6 +75,7 @@ import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './rou
 import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/_marketing.resources.read.ml-answer-key'
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
 import { Route as MarketingResourcesReadDlTipsTricksRouteImport } from './routes/_marketing.resources.read.dl-tips-tricks'
+import { Route as MarketingResourcesReadDlSampleExercisesRouteImport } from './routes/_marketing.resources.read.dl-sample-exercises'
 import { Route as MarketingResourcesReadDlReferenceGuideRouteImport } from './routes/_marketing.resources.read.dl-reference-guide'
 import { Route as MarketingResourcesReadDlRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.dl-real-world-case-study'
 import { Route as MarketingResourcesReadDlPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.dl-practice-questions'
@@ -484,6 +485,12 @@ const MarketingResourcesReadDlTipsTricksRoute =
     path: '/read/dl-tips-tricks',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDlSampleExercisesRoute =
+  MarketingResourcesReadDlSampleExercisesRouteImport.update({
+    id: '/read/dl-sample-exercises',
+    path: '/read/dl-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDlReferenceGuideRoute =
   MarketingResourcesReadDlReferenceGuideRouteImport.update({
     id: '/read/dl-reference-guide',
@@ -835,6 +842,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
+  '/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -944,6 +952,7 @@ export interface FileRoutesByTo {
   '/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
+  '/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1058,6 +1067,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/_marketing/resources/read/dl-real-world-case-study': typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   '/_marketing/resources/read/dl-reference-guide': typeof MarketingResourcesReadDlReferenceGuideRoute
+  '/_marketing/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/_marketing/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/_marketing/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1170,6 +1180,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-practice-questions'
     | '/resources/read/dl-real-world-case-study'
     | '/resources/read/dl-reference-guide'
+    | '/resources/read/dl-sample-exercises'
     | '/resources/read/dl-tips-tricks'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
@@ -1279,6 +1290,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-practice-questions'
     | '/resources/read/dl-real-world-case-study'
     | '/resources/read/dl-reference-guide'
+    | '/resources/read/dl-sample-exercises'
     | '/resources/read/dl-tips-tricks'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
@@ -1392,6 +1404,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dl-practice-questions'
     | '/_marketing/resources/read/dl-real-world-case-study'
     | '/_marketing/resources/read/dl-reference-guide'
+    | '/_marketing/resources/read/dl-sample-exercises'
     | '/_marketing/resources/read/dl-tips-tricks'
     | '/_marketing/resources/read/ml-advanced-concepts'
     | '/_marketing/resources/read/ml-answer-key'
@@ -1903,6 +1916,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDlTipsTricksRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/dl-sample-exercises': {
+      id: '/_marketing/resources/read/dl-sample-exercises'
+      path: '/read/dl-sample-exercises'
+      fullPath: '/resources/read/dl-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadDlSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dl-reference-guide': {
       id: '/_marketing/resources/read/dl-reference-guide'
       path: '/read/dl-reference-guide'
@@ -2386,6 +2406,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDlPracticeQuestionsRoute: typeof MarketingResourcesReadDlPracticeQuestionsRoute
   MarketingResourcesReadDlRealWorldCaseStudyRoute: typeof MarketingResourcesReadDlRealWorldCaseStudyRoute
   MarketingResourcesReadDlReferenceGuideRoute: typeof MarketingResourcesReadDlReferenceGuideRoute
+  MarketingResourcesReadDlSampleExercisesRoute: typeof MarketingResourcesReadDlSampleExercisesRoute
   MarketingResourcesReadDlTipsTricksRoute: typeof MarketingResourcesReadDlTipsTricksRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
   MarketingResourcesReadMlAnswerKeyRoute: typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -2474,6 +2495,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDlRealWorldCaseStudyRoute,
   MarketingResourcesReadDlReferenceGuideRoute:
     MarketingResourcesReadDlReferenceGuideRoute,
+  MarketingResourcesReadDlSampleExercisesRoute:
+    MarketingResourcesReadDlSampleExercisesRoute,
   MarketingResourcesReadDlTipsTricksRoute:
     MarketingResourcesReadDlTipsTricksRoute,
   MarketingResourcesReadMlAdvancedConceptsRoute:
