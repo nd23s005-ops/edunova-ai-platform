@@ -239,6 +239,27 @@ import { Route as MarketingResourcesReadGenaiInterviewQuestionsRouteImport } fro
 import { Route as MarketingResourcesReadGenaiFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.genai-frequently-asked-questions'
 import { Route as MarketingResourcesReadGenaiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.genai-complete-tutorial'
 import { Route as MarketingResourcesReadGenaiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.genai-beginner-guide'
+import { Route as MarketingResourcesReadDsaTipsAndTricksRouteImport } from './routes/_marketing.resources.read.dsa-tips-and-tricks'
+import { Route as MarketingResourcesReadDsaStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.dsa-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadDsaSampleExercisesRouteImport } from './routes/_marketing.resources.read.dsa-sample-exercises'
+import { Route as MarketingResourcesReadDsaReferenceGuideRouteImport } from './routes/_marketing.resources.read.dsa-reference-guide'
+import { Route as MarketingResourcesReadDsaRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.dsa-real-world-case-study'
+import { Route as MarketingResourcesReadDsaQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.dsa-quick-revision-notes'
+import { Route as MarketingResourcesReadDsaProjectGuideRouteImport } from './routes/_marketing.resources.read.dsa-project-guide'
+import { Route as MarketingResourcesReadDsaProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.dsa-project-case-study'
+import { Route as MarketingResourcesReadDsaPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.dsa-practice-questions'
+import { Route as MarketingResourcesReadDsaPdfNotesRouteImport } from './routes/_marketing.resources.read.dsa-pdf-notes'
+import { Route as MarketingResourcesReadDsaLearningRoadmapRouteImport } from './routes/_marketing.resources.read.dsa-learning-roadmap'
+import { Route as MarketingResourcesReadDsaInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.dsa-interview-questions'
+import { Route as MarketingResourcesReadDsaGlossaryRouteImport } from './routes/_marketing.resources.read.dsa-glossary'
+import { Route as MarketingResourcesReadDsaFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.dsa-frequently-asked-questions'
+import { Route as MarketingResourcesReadDsaCompleteTutorialRouteImport } from './routes/_marketing.resources.read.dsa-complete-tutorial'
+import { Route as MarketingResourcesReadDsaCommonMistakesRouteImport } from './routes/_marketing.resources.read.dsa-common-mistakes'
+import { Route as MarketingResourcesReadDsaCheatSheetRouteImport } from './routes/_marketing.resources.read.dsa-cheat-sheet'
+import { Route as MarketingResourcesReadDsaBestPracticesRouteImport } from './routes/_marketing.resources.read.dsa-best-practices'
+import { Route as MarketingResourcesReadDsaBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dsa-beginner-guide'
+import { Route as MarketingResourcesReadDsaAnswerKeyRouteImport } from './routes/_marketing.resources.read.dsa-answer-key'
+import { Route as MarketingResourcesReadDsaAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.dsa-advanced-concepts'
 import { Route as MarketingResourcesReadDlTipsTricksRouteImport } from './routes/_marketing.resources.read.dl-tips-tricks'
 import { Route as MarketingResourcesReadDlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.dl-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadDlSampleExercisesRouteImport } from './routes/_marketing.resources.read.dl-sample-exercises'
@@ -1688,6 +1709,132 @@ const MarketingResourcesReadGenaiBeginnerGuideRoute =
     path: '/read/genai-beginner-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDsaTipsAndTricksRoute =
+  MarketingResourcesReadDsaTipsAndTricksRouteImport.update({
+    id: '/read/dsa-tips-and-tricks',
+    path: '/read/dsa-tips-and-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaStepByStepLearningGuideRoute =
+  MarketingResourcesReadDsaStepByStepLearningGuideRouteImport.update({
+    id: '/read/dsa-step-by-step-learning-guide',
+    path: '/read/dsa-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaSampleExercisesRoute =
+  MarketingResourcesReadDsaSampleExercisesRouteImport.update({
+    id: '/read/dsa-sample-exercises',
+    path: '/read/dsa-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaReferenceGuideRoute =
+  MarketingResourcesReadDsaReferenceGuideRouteImport.update({
+    id: '/read/dsa-reference-guide',
+    path: '/read/dsa-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaRealWorldCaseStudyRoute =
+  MarketingResourcesReadDsaRealWorldCaseStudyRouteImport.update({
+    id: '/read/dsa-real-world-case-study',
+    path: '/read/dsa-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaQuickRevisionNotesRoute =
+  MarketingResourcesReadDsaQuickRevisionNotesRouteImport.update({
+    id: '/read/dsa-quick-revision-notes',
+    path: '/read/dsa-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaProjectGuideRoute =
+  MarketingResourcesReadDsaProjectGuideRouteImport.update({
+    id: '/read/dsa-project-guide',
+    path: '/read/dsa-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaProjectCaseStudyRoute =
+  MarketingResourcesReadDsaProjectCaseStudyRouteImport.update({
+    id: '/read/dsa-project-case-study',
+    path: '/read/dsa-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaPracticeQuestionsRoute =
+  MarketingResourcesReadDsaPracticeQuestionsRouteImport.update({
+    id: '/read/dsa-practice-questions',
+    path: '/read/dsa-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaPdfNotesRoute =
+  MarketingResourcesReadDsaPdfNotesRouteImport.update({
+    id: '/read/dsa-pdf-notes',
+    path: '/read/dsa-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaLearningRoadmapRoute =
+  MarketingResourcesReadDsaLearningRoadmapRouteImport.update({
+    id: '/read/dsa-learning-roadmap',
+    path: '/read/dsa-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaInterviewQuestionsRoute =
+  MarketingResourcesReadDsaInterviewQuestionsRouteImport.update({
+    id: '/read/dsa-interview-questions',
+    path: '/read/dsa-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaGlossaryRoute =
+  MarketingResourcesReadDsaGlossaryRouteImport.update({
+    id: '/read/dsa-glossary',
+    path: '/read/dsa-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadDsaFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/dsa-frequently-asked-questions',
+    path: '/read/dsa-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaCompleteTutorialRoute =
+  MarketingResourcesReadDsaCompleteTutorialRouteImport.update({
+    id: '/read/dsa-complete-tutorial',
+    path: '/read/dsa-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaCommonMistakesRoute =
+  MarketingResourcesReadDsaCommonMistakesRouteImport.update({
+    id: '/read/dsa-common-mistakes',
+    path: '/read/dsa-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaCheatSheetRoute =
+  MarketingResourcesReadDsaCheatSheetRouteImport.update({
+    id: '/read/dsa-cheat-sheet',
+    path: '/read/dsa-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaBestPracticesRoute =
+  MarketingResourcesReadDsaBestPracticesRouteImport.update({
+    id: '/read/dsa-best-practices',
+    path: '/read/dsa-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaBeginnerGuideRoute =
+  MarketingResourcesReadDsaBeginnerGuideRouteImport.update({
+    id: '/read/dsa-beginner-guide',
+    path: '/read/dsa-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaAnswerKeyRoute =
+  MarketingResourcesReadDsaAnswerKeyRouteImport.update({
+    id: '/read/dsa-answer-key',
+    path: '/read/dsa-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDsaAdvancedConceptsRoute =
+  MarketingResourcesReadDsaAdvancedConceptsRouteImport.update({
+    id: '/read/dsa-advanced-concepts',
+    path: '/read/dsa-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDlTipsTricksRoute =
   MarketingResourcesReadDlTipsTricksRouteImport.update({
     id: '/read/dl-tips-tricks',
@@ -2407,6 +2554,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/resources/read/dl-step-by-step-learning-guide': typeof MarketingResourcesReadDlStepByStepLearningGuideRoute
   '/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
+  '/resources/read/dsa-advanced-concepts': typeof MarketingResourcesReadDsaAdvancedConceptsRoute
+  '/resources/read/dsa-answer-key': typeof MarketingResourcesReadDsaAnswerKeyRoute
+  '/resources/read/dsa-beginner-guide': typeof MarketingResourcesReadDsaBeginnerGuideRoute
+  '/resources/read/dsa-best-practices': typeof MarketingResourcesReadDsaBestPracticesRoute
+  '/resources/read/dsa-cheat-sheet': typeof MarketingResourcesReadDsaCheatSheetRoute
+  '/resources/read/dsa-common-mistakes': typeof MarketingResourcesReadDsaCommonMistakesRoute
+  '/resources/read/dsa-complete-tutorial': typeof MarketingResourcesReadDsaCompleteTutorialRoute
+  '/resources/read/dsa-frequently-asked-questions': typeof MarketingResourcesReadDsaFrequentlyAskedQuestionsRoute
+  '/resources/read/dsa-glossary': typeof MarketingResourcesReadDsaGlossaryRoute
+  '/resources/read/dsa-interview-questions': typeof MarketingResourcesReadDsaInterviewQuestionsRoute
+  '/resources/read/dsa-learning-roadmap': typeof MarketingResourcesReadDsaLearningRoadmapRoute
+  '/resources/read/dsa-pdf-notes': typeof MarketingResourcesReadDsaPdfNotesRoute
+  '/resources/read/dsa-practice-questions': typeof MarketingResourcesReadDsaPracticeQuestionsRoute
+  '/resources/read/dsa-project-case-study': typeof MarketingResourcesReadDsaProjectCaseStudyRoute
+  '/resources/read/dsa-project-guide': typeof MarketingResourcesReadDsaProjectGuideRoute
+  '/resources/read/dsa-quick-revision-notes': typeof MarketingResourcesReadDsaQuickRevisionNotesRoute
+  '/resources/read/dsa-real-world-case-study': typeof MarketingResourcesReadDsaRealWorldCaseStudyRoute
+  '/resources/read/dsa-reference-guide': typeof MarketingResourcesReadDsaReferenceGuideRoute
+  '/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
+  '/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
+  '/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -2732,6 +2900,27 @@ export interface FileRoutesByTo {
   '/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/resources/read/dl-step-by-step-learning-guide': typeof MarketingResourcesReadDlStepByStepLearningGuideRoute
   '/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
+  '/resources/read/dsa-advanced-concepts': typeof MarketingResourcesReadDsaAdvancedConceptsRoute
+  '/resources/read/dsa-answer-key': typeof MarketingResourcesReadDsaAnswerKeyRoute
+  '/resources/read/dsa-beginner-guide': typeof MarketingResourcesReadDsaBeginnerGuideRoute
+  '/resources/read/dsa-best-practices': typeof MarketingResourcesReadDsaBestPracticesRoute
+  '/resources/read/dsa-cheat-sheet': typeof MarketingResourcesReadDsaCheatSheetRoute
+  '/resources/read/dsa-common-mistakes': typeof MarketingResourcesReadDsaCommonMistakesRoute
+  '/resources/read/dsa-complete-tutorial': typeof MarketingResourcesReadDsaCompleteTutorialRoute
+  '/resources/read/dsa-frequently-asked-questions': typeof MarketingResourcesReadDsaFrequentlyAskedQuestionsRoute
+  '/resources/read/dsa-glossary': typeof MarketingResourcesReadDsaGlossaryRoute
+  '/resources/read/dsa-interview-questions': typeof MarketingResourcesReadDsaInterviewQuestionsRoute
+  '/resources/read/dsa-learning-roadmap': typeof MarketingResourcesReadDsaLearningRoadmapRoute
+  '/resources/read/dsa-pdf-notes': typeof MarketingResourcesReadDsaPdfNotesRoute
+  '/resources/read/dsa-practice-questions': typeof MarketingResourcesReadDsaPracticeQuestionsRoute
+  '/resources/read/dsa-project-case-study': typeof MarketingResourcesReadDsaProjectCaseStudyRoute
+  '/resources/read/dsa-project-guide': typeof MarketingResourcesReadDsaProjectGuideRoute
+  '/resources/read/dsa-quick-revision-notes': typeof MarketingResourcesReadDsaQuickRevisionNotesRoute
+  '/resources/read/dsa-real-world-case-study': typeof MarketingResourcesReadDsaRealWorldCaseStudyRoute
+  '/resources/read/dsa-reference-guide': typeof MarketingResourcesReadDsaReferenceGuideRoute
+  '/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
+  '/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
+  '/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -3062,6 +3251,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/_marketing/resources/read/dl-step-by-step-learning-guide': typeof MarketingResourcesReadDlStepByStepLearningGuideRoute
   '/_marketing/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
+  '/_marketing/resources/read/dsa-advanced-concepts': typeof MarketingResourcesReadDsaAdvancedConceptsRoute
+  '/_marketing/resources/read/dsa-answer-key': typeof MarketingResourcesReadDsaAnswerKeyRoute
+  '/_marketing/resources/read/dsa-beginner-guide': typeof MarketingResourcesReadDsaBeginnerGuideRoute
+  '/_marketing/resources/read/dsa-best-practices': typeof MarketingResourcesReadDsaBestPracticesRoute
+  '/_marketing/resources/read/dsa-cheat-sheet': typeof MarketingResourcesReadDsaCheatSheetRoute
+  '/_marketing/resources/read/dsa-common-mistakes': typeof MarketingResourcesReadDsaCommonMistakesRoute
+  '/_marketing/resources/read/dsa-complete-tutorial': typeof MarketingResourcesReadDsaCompleteTutorialRoute
+  '/_marketing/resources/read/dsa-frequently-asked-questions': typeof MarketingResourcesReadDsaFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/dsa-glossary': typeof MarketingResourcesReadDsaGlossaryRoute
+  '/_marketing/resources/read/dsa-interview-questions': typeof MarketingResourcesReadDsaInterviewQuestionsRoute
+  '/_marketing/resources/read/dsa-learning-roadmap': typeof MarketingResourcesReadDsaLearningRoadmapRoute
+  '/_marketing/resources/read/dsa-pdf-notes': typeof MarketingResourcesReadDsaPdfNotesRoute
+  '/_marketing/resources/read/dsa-practice-questions': typeof MarketingResourcesReadDsaPracticeQuestionsRoute
+  '/_marketing/resources/read/dsa-project-case-study': typeof MarketingResourcesReadDsaProjectCaseStudyRoute
+  '/_marketing/resources/read/dsa-project-guide': typeof MarketingResourcesReadDsaProjectGuideRoute
+  '/_marketing/resources/read/dsa-quick-revision-notes': typeof MarketingResourcesReadDsaQuickRevisionNotesRoute
+  '/_marketing/resources/read/dsa-real-world-case-study': typeof MarketingResourcesReadDsaRealWorldCaseStudyRoute
+  '/_marketing/resources/read/dsa-reference-guide': typeof MarketingResourcesReadDsaReferenceGuideRoute
+  '/_marketing/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
+  '/_marketing/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
+  '/_marketing/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
   '/_marketing/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/_marketing/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/_marketing/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -3390,6 +3600,27 @@ export interface FileRouteTypes {
     | '/resources/read/dl-sample-exercises'
     | '/resources/read/dl-step-by-step-learning-guide'
     | '/resources/read/dl-tips-tricks'
+    | '/resources/read/dsa-advanced-concepts'
+    | '/resources/read/dsa-answer-key'
+    | '/resources/read/dsa-beginner-guide'
+    | '/resources/read/dsa-best-practices'
+    | '/resources/read/dsa-cheat-sheet'
+    | '/resources/read/dsa-common-mistakes'
+    | '/resources/read/dsa-complete-tutorial'
+    | '/resources/read/dsa-frequently-asked-questions'
+    | '/resources/read/dsa-glossary'
+    | '/resources/read/dsa-interview-questions'
+    | '/resources/read/dsa-learning-roadmap'
+    | '/resources/read/dsa-pdf-notes'
+    | '/resources/read/dsa-practice-questions'
+    | '/resources/read/dsa-project-case-study'
+    | '/resources/read/dsa-project-guide'
+    | '/resources/read/dsa-quick-revision-notes'
+    | '/resources/read/dsa-real-world-case-study'
+    | '/resources/read/dsa-reference-guide'
+    | '/resources/read/dsa-sample-exercises'
+    | '/resources/read/dsa-step-by-step-learning-guide'
+    | '/resources/read/dsa-tips-and-tricks'
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
     | '/resources/read/genai-frequently-asked-questions'
@@ -3715,6 +3946,27 @@ export interface FileRouteTypes {
     | '/resources/read/dl-sample-exercises'
     | '/resources/read/dl-step-by-step-learning-guide'
     | '/resources/read/dl-tips-tricks'
+    | '/resources/read/dsa-advanced-concepts'
+    | '/resources/read/dsa-answer-key'
+    | '/resources/read/dsa-beginner-guide'
+    | '/resources/read/dsa-best-practices'
+    | '/resources/read/dsa-cheat-sheet'
+    | '/resources/read/dsa-common-mistakes'
+    | '/resources/read/dsa-complete-tutorial'
+    | '/resources/read/dsa-frequently-asked-questions'
+    | '/resources/read/dsa-glossary'
+    | '/resources/read/dsa-interview-questions'
+    | '/resources/read/dsa-learning-roadmap'
+    | '/resources/read/dsa-pdf-notes'
+    | '/resources/read/dsa-practice-questions'
+    | '/resources/read/dsa-project-case-study'
+    | '/resources/read/dsa-project-guide'
+    | '/resources/read/dsa-quick-revision-notes'
+    | '/resources/read/dsa-real-world-case-study'
+    | '/resources/read/dsa-reference-guide'
+    | '/resources/read/dsa-sample-exercises'
+    | '/resources/read/dsa-step-by-step-learning-guide'
+    | '/resources/read/dsa-tips-and-tricks'
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
     | '/resources/read/genai-frequently-asked-questions'
@@ -4044,6 +4296,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dl-sample-exercises'
     | '/_marketing/resources/read/dl-step-by-step-learning-guide'
     | '/_marketing/resources/read/dl-tips-tricks'
+    | '/_marketing/resources/read/dsa-advanced-concepts'
+    | '/_marketing/resources/read/dsa-answer-key'
+    | '/_marketing/resources/read/dsa-beginner-guide'
+    | '/_marketing/resources/read/dsa-best-practices'
+    | '/_marketing/resources/read/dsa-cheat-sheet'
+    | '/_marketing/resources/read/dsa-common-mistakes'
+    | '/_marketing/resources/read/dsa-complete-tutorial'
+    | '/_marketing/resources/read/dsa-frequently-asked-questions'
+    | '/_marketing/resources/read/dsa-glossary'
+    | '/_marketing/resources/read/dsa-interview-questions'
+    | '/_marketing/resources/read/dsa-learning-roadmap'
+    | '/_marketing/resources/read/dsa-pdf-notes'
+    | '/_marketing/resources/read/dsa-practice-questions'
+    | '/_marketing/resources/read/dsa-project-case-study'
+    | '/_marketing/resources/read/dsa-project-guide'
+    | '/_marketing/resources/read/dsa-quick-revision-notes'
+    | '/_marketing/resources/read/dsa-real-world-case-study'
+    | '/_marketing/resources/read/dsa-reference-guide'
+    | '/_marketing/resources/read/dsa-sample-exercises'
+    | '/_marketing/resources/read/dsa-step-by-step-learning-guide'
+    | '/_marketing/resources/read/dsa-tips-and-tricks'
     | '/_marketing/resources/read/genai-beginner-guide'
     | '/_marketing/resources/read/genai-complete-tutorial'
     | '/_marketing/resources/read/genai-frequently-asked-questions'
@@ -5867,6 +6140,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadGenaiBeginnerGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/dsa-tips-and-tricks': {
+      id: '/_marketing/resources/read/dsa-tips-and-tricks'
+      path: '/read/dsa-tips-and-tricks'
+      fullPath: '/resources/read/dsa-tips-and-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadDsaTipsAndTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/dsa-step-by-step-learning-guide'
+      path: '/read/dsa-step-by-step-learning-guide'
+      fullPath: '/resources/read/dsa-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDsaStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-sample-exercises': {
+      id: '/_marketing/resources/read/dsa-sample-exercises'
+      path: '/read/dsa-sample-exercises'
+      fullPath: '/resources/read/dsa-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadDsaSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-reference-guide': {
+      id: '/_marketing/resources/read/dsa-reference-guide'
+      path: '/read/dsa-reference-guide'
+      fullPath: '/resources/read/dsa-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDsaReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-real-world-case-study': {
+      id: '/_marketing/resources/read/dsa-real-world-case-study'
+      path: '/read/dsa-real-world-case-study'
+      fullPath: '/resources/read/dsa-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDsaRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-quick-revision-notes': {
+      id: '/_marketing/resources/read/dsa-quick-revision-notes'
+      path: '/read/dsa-quick-revision-notes'
+      fullPath: '/resources/read/dsa-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDsaQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-project-guide': {
+      id: '/_marketing/resources/read/dsa-project-guide'
+      path: '/read/dsa-project-guide'
+      fullPath: '/resources/read/dsa-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDsaProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-project-case-study': {
+      id: '/_marketing/resources/read/dsa-project-case-study'
+      path: '/read/dsa-project-case-study'
+      fullPath: '/resources/read/dsa-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDsaProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-practice-questions': {
+      id: '/_marketing/resources/read/dsa-practice-questions'
+      path: '/read/dsa-practice-questions'
+      fullPath: '/resources/read/dsa-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDsaPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-pdf-notes': {
+      id: '/_marketing/resources/read/dsa-pdf-notes'
+      path: '/read/dsa-pdf-notes'
+      fullPath: '/resources/read/dsa-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDsaPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-learning-roadmap': {
+      id: '/_marketing/resources/read/dsa-learning-roadmap'
+      path: '/read/dsa-learning-roadmap'
+      fullPath: '/resources/read/dsa-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadDsaLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-interview-questions': {
+      id: '/_marketing/resources/read/dsa-interview-questions'
+      path: '/read/dsa-interview-questions'
+      fullPath: '/resources/read/dsa-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDsaInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-glossary': {
+      id: '/_marketing/resources/read/dsa-glossary'
+      path: '/read/dsa-glossary'
+      fullPath: '/resources/read/dsa-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadDsaGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-frequently-asked-questions': {
+      id: '/_marketing/resources/read/dsa-frequently-asked-questions'
+      path: '/read/dsa-frequently-asked-questions'
+      fullPath: '/resources/read/dsa-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDsaFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-complete-tutorial': {
+      id: '/_marketing/resources/read/dsa-complete-tutorial'
+      path: '/read/dsa-complete-tutorial'
+      fullPath: '/resources/read/dsa-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadDsaCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-common-mistakes': {
+      id: '/_marketing/resources/read/dsa-common-mistakes'
+      path: '/read/dsa-common-mistakes'
+      fullPath: '/resources/read/dsa-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadDsaCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-cheat-sheet': {
+      id: '/_marketing/resources/read/dsa-cheat-sheet'
+      path: '/read/dsa-cheat-sheet'
+      fullPath: '/resources/read/dsa-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadDsaCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-best-practices': {
+      id: '/_marketing/resources/read/dsa-best-practices'
+      path: '/read/dsa-best-practices'
+      fullPath: '/resources/read/dsa-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadDsaBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-beginner-guide': {
+      id: '/_marketing/resources/read/dsa-beginner-guide'
+      path: '/read/dsa-beginner-guide'
+      fullPath: '/resources/read/dsa-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDsaBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-answer-key': {
+      id: '/_marketing/resources/read/dsa-answer-key'
+      path: '/read/dsa-answer-key'
+      fullPath: '/resources/read/dsa-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadDsaAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dsa-advanced-concepts': {
+      id: '/_marketing/resources/read/dsa-advanced-concepts'
+      path: '/read/dsa-advanced-concepts'
+      fullPath: '/resources/read/dsa-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadDsaAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dl-tips-tricks': {
       id: '/_marketing/resources/read/dl-tips-tricks'
       path: '/read/dl-tips-tricks'
@@ -6766,6 +7186,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDlSampleExercisesRoute: typeof MarketingResourcesReadDlSampleExercisesRoute
   MarketingResourcesReadDlStepByStepLearningGuideRoute: typeof MarketingResourcesReadDlStepByStepLearningGuideRoute
   MarketingResourcesReadDlTipsTricksRoute: typeof MarketingResourcesReadDlTipsTricksRoute
+  MarketingResourcesReadDsaAdvancedConceptsRoute: typeof MarketingResourcesReadDsaAdvancedConceptsRoute
+  MarketingResourcesReadDsaAnswerKeyRoute: typeof MarketingResourcesReadDsaAnswerKeyRoute
+  MarketingResourcesReadDsaBeginnerGuideRoute: typeof MarketingResourcesReadDsaBeginnerGuideRoute
+  MarketingResourcesReadDsaBestPracticesRoute: typeof MarketingResourcesReadDsaBestPracticesRoute
+  MarketingResourcesReadDsaCheatSheetRoute: typeof MarketingResourcesReadDsaCheatSheetRoute
+  MarketingResourcesReadDsaCommonMistakesRoute: typeof MarketingResourcesReadDsaCommonMistakesRoute
+  MarketingResourcesReadDsaCompleteTutorialRoute: typeof MarketingResourcesReadDsaCompleteTutorialRoute
+  MarketingResourcesReadDsaFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDsaFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadDsaGlossaryRoute: typeof MarketingResourcesReadDsaGlossaryRoute
+  MarketingResourcesReadDsaInterviewQuestionsRoute: typeof MarketingResourcesReadDsaInterviewQuestionsRoute
+  MarketingResourcesReadDsaLearningRoadmapRoute: typeof MarketingResourcesReadDsaLearningRoadmapRoute
+  MarketingResourcesReadDsaPdfNotesRoute: typeof MarketingResourcesReadDsaPdfNotesRoute
+  MarketingResourcesReadDsaPracticeQuestionsRoute: typeof MarketingResourcesReadDsaPracticeQuestionsRoute
+  MarketingResourcesReadDsaProjectCaseStudyRoute: typeof MarketingResourcesReadDsaProjectCaseStudyRoute
+  MarketingResourcesReadDsaProjectGuideRoute: typeof MarketingResourcesReadDsaProjectGuideRoute
+  MarketingResourcesReadDsaQuickRevisionNotesRoute: typeof MarketingResourcesReadDsaQuickRevisionNotesRoute
+  MarketingResourcesReadDsaRealWorldCaseStudyRoute: typeof MarketingResourcesReadDsaRealWorldCaseStudyRoute
+  MarketingResourcesReadDsaReferenceGuideRoute: typeof MarketingResourcesReadDsaReferenceGuideRoute
+  MarketingResourcesReadDsaSampleExercisesRoute: typeof MarketingResourcesReadDsaSampleExercisesRoute
+  MarketingResourcesReadDsaStepByStepLearningGuideRoute: typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
+  MarketingResourcesReadDsaTipsAndTricksRoute: typeof MarketingResourcesReadDsaTipsAndTricksRoute
   MarketingResourcesReadGenaiBeginnerGuideRoute: typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   MarketingResourcesReadGenaiCompleteTutorialRoute: typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -7121,6 +7562,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDlStepByStepLearningGuideRoute,
   MarketingResourcesReadDlTipsTricksRoute:
     MarketingResourcesReadDlTipsTricksRoute,
+  MarketingResourcesReadDsaAdvancedConceptsRoute:
+    MarketingResourcesReadDsaAdvancedConceptsRoute,
+  MarketingResourcesReadDsaAnswerKeyRoute:
+    MarketingResourcesReadDsaAnswerKeyRoute,
+  MarketingResourcesReadDsaBeginnerGuideRoute:
+    MarketingResourcesReadDsaBeginnerGuideRoute,
+  MarketingResourcesReadDsaBestPracticesRoute:
+    MarketingResourcesReadDsaBestPracticesRoute,
+  MarketingResourcesReadDsaCheatSheetRoute:
+    MarketingResourcesReadDsaCheatSheetRoute,
+  MarketingResourcesReadDsaCommonMistakesRoute:
+    MarketingResourcesReadDsaCommonMistakesRoute,
+  MarketingResourcesReadDsaCompleteTutorialRoute:
+    MarketingResourcesReadDsaCompleteTutorialRoute,
+  MarketingResourcesReadDsaFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadDsaFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadDsaGlossaryRoute:
+    MarketingResourcesReadDsaGlossaryRoute,
+  MarketingResourcesReadDsaInterviewQuestionsRoute:
+    MarketingResourcesReadDsaInterviewQuestionsRoute,
+  MarketingResourcesReadDsaLearningRoadmapRoute:
+    MarketingResourcesReadDsaLearningRoadmapRoute,
+  MarketingResourcesReadDsaPdfNotesRoute:
+    MarketingResourcesReadDsaPdfNotesRoute,
+  MarketingResourcesReadDsaPracticeQuestionsRoute:
+    MarketingResourcesReadDsaPracticeQuestionsRoute,
+  MarketingResourcesReadDsaProjectCaseStudyRoute:
+    MarketingResourcesReadDsaProjectCaseStudyRoute,
+  MarketingResourcesReadDsaProjectGuideRoute:
+    MarketingResourcesReadDsaProjectGuideRoute,
+  MarketingResourcesReadDsaQuickRevisionNotesRoute:
+    MarketingResourcesReadDsaQuickRevisionNotesRoute,
+  MarketingResourcesReadDsaRealWorldCaseStudyRoute:
+    MarketingResourcesReadDsaRealWorldCaseStudyRoute,
+  MarketingResourcesReadDsaReferenceGuideRoute:
+    MarketingResourcesReadDsaReferenceGuideRoute,
+  MarketingResourcesReadDsaSampleExercisesRoute:
+    MarketingResourcesReadDsaSampleExercisesRoute,
+  MarketingResourcesReadDsaStepByStepLearningGuideRoute:
+    MarketingResourcesReadDsaStepByStepLearningGuideRoute,
+  MarketingResourcesReadDsaTipsAndTricksRoute:
+    MarketingResourcesReadDsaTipsAndTricksRoute,
   MarketingResourcesReadGenaiBeginnerGuideRoute:
     MarketingResourcesReadGenaiBeginnerGuideRoute,
   MarketingResourcesReadGenaiCompleteTutorialRoute:
