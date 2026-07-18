@@ -574,7 +574,34 @@ function ExplorePage() {
    Course Card
    ──────────────────────────────────────────────────────────── */
 
+const COURSE_IMAGE_MAP: Record<string, string> = {
+  "Generative AI": "photo-1677442136019-21780ecad995",
+  "AI Agents": "photo-1620712943543-bcc4688e7485",
+  "Prompt Engineering": "photo-1655720828018-edd2daec9349",
+  "Python": "photo-1526379095098-d400fd0bf935",
+  "Java": "photo-1517694712202-14dd9538aa97",
+  "React.js": "photo-1633356122544-f134324a6cee",
+  "MERN Stack": "photo-1461749280684-dccba630e2f6",
+  "Data Structures & Algorithms": "photo-1509228468518-180dd4864904",
+  "AWS": "photo-1451187580459-43490279c0fa",
+  "Kubernetes": "photo-1605379399642-870262d3d051",
+  "Cyber Security": "photo-1550751827-4bd374c3f58b",
+  "Ethical Hacking": "photo-1526374965328-7f61d4dc18c5",
+  "Machine Learning": "photo-1620712943543-bcc4688e7485",
+  "SQL": "photo-1551288049-bebda4e38f71",
+  "MongoDB": "photo-1544383835-bda2bc66a55d",
+  "Flutter": "photo-1512941937669-90a1b58e7e9c",
+  "Figma": "photo-1561070791-2526d30994b8",
+  "System Design": "photo-1518770660439-4636190af475",
+};
+
+function courseImage(category: string): string {
+  const id = COURSE_IMAGE_MAP[category] ?? "photo-1517180102446-f3ece451e9d8";
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=70`;
+}
+
 function CourseCard({ c, delay = 0 }: { c: Course; delay?: number }) {
+
   const Icon = c.icon;
   const diffTone =
     c.difficulty === "Beginner"
