@@ -355,6 +355,11 @@ const READER_ROUTES: Record<string, string> = {
   "deep-learning--frequently-asked-questions": "/resources/read/dl-frequently-asked-questions",
   "deep-learning--learning-roadmap": "/resources/read/dl-learning-roadmap",
   "deep-learning--tips-tricks": "/resources/read/dl-tips-tricks",
+  "deep-learning--real-world-case-study": "/resources/read/dl-real-world-case-study",
+  "deep-learning--best-practices": "/resources/read/dl-best-practices",
+  "deep-learning--common-mistakes": "/resources/read/dl-common-mistakes",
+
+
 
 };
 
