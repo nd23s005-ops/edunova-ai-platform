@@ -329,6 +329,27 @@ import { Route as MarketingResourcesReadJavascriptBestPracticesRouteImport } fro
 import { Route as MarketingResourcesReadJavascriptBeginnerGuideRouteImport } from './routes/_marketing.resources.read.javascript-beginner-guide'
 import { Route as MarketingResourcesReadJavascriptAnswerKeyRouteImport } from './routes/_marketing.resources.read.javascript-answer-key'
 import { Route as MarketingResourcesReadJavascriptAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.javascript-advanced-concepts'
+import { Route as MarketingResourcesReadJavaTipsTricksRouteImport } from './routes/_marketing.resources.read.java-tips-tricks'
+import { Route as MarketingResourcesReadJavaStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.java-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadJavaSampleExercisesRouteImport } from './routes/_marketing.resources.read.java-sample-exercises'
+import { Route as MarketingResourcesReadJavaReferenceGuideRouteImport } from './routes/_marketing.resources.read.java-reference-guide'
+import { Route as MarketingResourcesReadJavaRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.java-real-world-case-study'
+import { Route as MarketingResourcesReadJavaQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.java-quick-revision-notes'
+import { Route as MarketingResourcesReadJavaProjectGuideRouteImport } from './routes/_marketing.resources.read.java-project-guide'
+import { Route as MarketingResourcesReadJavaProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.java-project-case-study'
+import { Route as MarketingResourcesReadJavaPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.java-practice-questions'
+import { Route as MarketingResourcesReadJavaPdfNotesRouteImport } from './routes/_marketing.resources.read.java-pdf-notes'
+import { Route as MarketingResourcesReadJavaLearningRoadmapRouteImport } from './routes/_marketing.resources.read.java-learning-roadmap'
+import { Route as MarketingResourcesReadJavaInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.java-interview-questions'
+import { Route as MarketingResourcesReadJavaGlossaryRouteImport } from './routes/_marketing.resources.read.java-glossary'
+import { Route as MarketingResourcesReadJavaFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.java-frequently-asked-questions'
+import { Route as MarketingResourcesReadJavaCompleteTutorialRouteImport } from './routes/_marketing.resources.read.java-complete-tutorial'
+import { Route as MarketingResourcesReadJavaCommonMistakesRouteImport } from './routes/_marketing.resources.read.java-common-mistakes'
+import { Route as MarketingResourcesReadJavaCheatSheetRouteImport } from './routes/_marketing.resources.read.java-cheat-sheet'
+import { Route as MarketingResourcesReadJavaBestPracticesRouteImport } from './routes/_marketing.resources.read.java-best-practices'
+import { Route as MarketingResourcesReadJavaBeginnerGuideRouteImport } from './routes/_marketing.resources.read.java-beginner-guide'
+import { Route as MarketingResourcesReadJavaAnswerKeyRouteImport } from './routes/_marketing.resources.read.java-answer-key'
+import { Route as MarketingResourcesReadJavaAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.java-advanced-concepts'
 import { Route as MarketingResourcesReadHtml5TipsAndTricksRouteImport } from './routes/_marketing.resources.read.html5-tips-and-tricks'
 import { Route as MarketingResourcesReadHtml5StepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.html5-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadHtml5SampleExercisesRouteImport } from './routes/_marketing.resources.read.html5-sample-exercises'
@@ -2582,6 +2603,132 @@ const MarketingResourcesReadJavascriptAdvancedConceptsRoute =
   MarketingResourcesReadJavascriptAdvancedConceptsRouteImport.update({
     id: '/read/javascript-advanced-concepts',
     path: '/read/javascript-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaTipsTricksRoute =
+  MarketingResourcesReadJavaTipsTricksRouteImport.update({
+    id: '/read/java-tips-tricks',
+    path: '/read/java-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaStepByStepLearningGuideRoute =
+  MarketingResourcesReadJavaStepByStepLearningGuideRouteImport.update({
+    id: '/read/java-step-by-step-learning-guide',
+    path: '/read/java-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaSampleExercisesRoute =
+  MarketingResourcesReadJavaSampleExercisesRouteImport.update({
+    id: '/read/java-sample-exercises',
+    path: '/read/java-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaReferenceGuideRoute =
+  MarketingResourcesReadJavaReferenceGuideRouteImport.update({
+    id: '/read/java-reference-guide',
+    path: '/read/java-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaRealWorldCaseStudyRoute =
+  MarketingResourcesReadJavaRealWorldCaseStudyRouteImport.update({
+    id: '/read/java-real-world-case-study',
+    path: '/read/java-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaQuickRevisionNotesRoute =
+  MarketingResourcesReadJavaQuickRevisionNotesRouteImport.update({
+    id: '/read/java-quick-revision-notes',
+    path: '/read/java-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaProjectGuideRoute =
+  MarketingResourcesReadJavaProjectGuideRouteImport.update({
+    id: '/read/java-project-guide',
+    path: '/read/java-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaProjectCaseStudyRoute =
+  MarketingResourcesReadJavaProjectCaseStudyRouteImport.update({
+    id: '/read/java-project-case-study',
+    path: '/read/java-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaPracticeQuestionsRoute =
+  MarketingResourcesReadJavaPracticeQuestionsRouteImport.update({
+    id: '/read/java-practice-questions',
+    path: '/read/java-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaPdfNotesRoute =
+  MarketingResourcesReadJavaPdfNotesRouteImport.update({
+    id: '/read/java-pdf-notes',
+    path: '/read/java-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaLearningRoadmapRoute =
+  MarketingResourcesReadJavaLearningRoadmapRouteImport.update({
+    id: '/read/java-learning-roadmap',
+    path: '/read/java-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaInterviewQuestionsRoute =
+  MarketingResourcesReadJavaInterviewQuestionsRouteImport.update({
+    id: '/read/java-interview-questions',
+    path: '/read/java-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaGlossaryRoute =
+  MarketingResourcesReadJavaGlossaryRouteImport.update({
+    id: '/read/java-glossary',
+    path: '/read/java-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadJavaFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/java-frequently-asked-questions',
+    path: '/read/java-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaCompleteTutorialRoute =
+  MarketingResourcesReadJavaCompleteTutorialRouteImport.update({
+    id: '/read/java-complete-tutorial',
+    path: '/read/java-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaCommonMistakesRoute =
+  MarketingResourcesReadJavaCommonMistakesRouteImport.update({
+    id: '/read/java-common-mistakes',
+    path: '/read/java-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaCheatSheetRoute =
+  MarketingResourcesReadJavaCheatSheetRouteImport.update({
+    id: '/read/java-cheat-sheet',
+    path: '/read/java-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaBestPracticesRoute =
+  MarketingResourcesReadJavaBestPracticesRouteImport.update({
+    id: '/read/java-best-practices',
+    path: '/read/java-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaBeginnerGuideRoute =
+  MarketingResourcesReadJavaBeginnerGuideRouteImport.update({
+    id: '/read/java-beginner-guide',
+    path: '/read/java-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaAnswerKeyRoute =
+  MarketingResourcesReadJavaAnswerKeyRouteImport.update({
+    id: '/read/java-answer-key',
+    path: '/read/java-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavaAdvancedConceptsRoute =
+  MarketingResourcesReadJavaAdvancedConceptsRouteImport.update({
+    id: '/read/java-advanced-concepts',
+    path: '/read/java-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadHtml5TipsAndTricksRoute =
@@ -5115,6 +5262,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/html5-sample-exercises': typeof MarketingResourcesReadHtml5SampleExercisesRoute
   '/resources/read/html5-step-by-step-learning-guide': typeof MarketingResourcesReadHtml5StepByStepLearningGuideRoute
   '/resources/read/html5-tips-and-tricks': typeof MarketingResourcesReadHtml5TipsAndTricksRoute
+  '/resources/read/java-advanced-concepts': typeof MarketingResourcesReadJavaAdvancedConceptsRoute
+  '/resources/read/java-answer-key': typeof MarketingResourcesReadJavaAnswerKeyRoute
+  '/resources/read/java-beginner-guide': typeof MarketingResourcesReadJavaBeginnerGuideRoute
+  '/resources/read/java-best-practices': typeof MarketingResourcesReadJavaBestPracticesRoute
+  '/resources/read/java-cheat-sheet': typeof MarketingResourcesReadJavaCheatSheetRoute
+  '/resources/read/java-common-mistakes': typeof MarketingResourcesReadJavaCommonMistakesRoute
+  '/resources/read/java-complete-tutorial': typeof MarketingResourcesReadJavaCompleteTutorialRoute
+  '/resources/read/java-frequently-asked-questions': typeof MarketingResourcesReadJavaFrequentlyAskedQuestionsRoute
+  '/resources/read/java-glossary': typeof MarketingResourcesReadJavaGlossaryRoute
+  '/resources/read/java-interview-questions': typeof MarketingResourcesReadJavaInterviewQuestionsRoute
+  '/resources/read/java-learning-roadmap': typeof MarketingResourcesReadJavaLearningRoadmapRoute
+  '/resources/read/java-pdf-notes': typeof MarketingResourcesReadJavaPdfNotesRoute
+  '/resources/read/java-practice-questions': typeof MarketingResourcesReadJavaPracticeQuestionsRoute
+  '/resources/read/java-project-case-study': typeof MarketingResourcesReadJavaProjectCaseStudyRoute
+  '/resources/read/java-project-guide': typeof MarketingResourcesReadJavaProjectGuideRoute
+  '/resources/read/java-quick-revision-notes': typeof MarketingResourcesReadJavaQuickRevisionNotesRoute
+  '/resources/read/java-real-world-case-study': typeof MarketingResourcesReadJavaRealWorldCaseStudyRoute
+  '/resources/read/java-reference-guide': typeof MarketingResourcesReadJavaReferenceGuideRoute
+  '/resources/read/java-sample-exercises': typeof MarketingResourcesReadJavaSampleExercisesRoute
+  '/resources/read/java-step-by-step-learning-guide': typeof MarketingResourcesReadJavaStepByStepLearningGuideRoute
+  '/resources/read/java-tips-tricks': typeof MarketingResourcesReadJavaTipsTricksRoute
   '/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
   '/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
   '/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
@@ -5788,6 +5956,27 @@ export interface FileRoutesByTo {
   '/resources/read/html5-sample-exercises': typeof MarketingResourcesReadHtml5SampleExercisesRoute
   '/resources/read/html5-step-by-step-learning-guide': typeof MarketingResourcesReadHtml5StepByStepLearningGuideRoute
   '/resources/read/html5-tips-and-tricks': typeof MarketingResourcesReadHtml5TipsAndTricksRoute
+  '/resources/read/java-advanced-concepts': typeof MarketingResourcesReadJavaAdvancedConceptsRoute
+  '/resources/read/java-answer-key': typeof MarketingResourcesReadJavaAnswerKeyRoute
+  '/resources/read/java-beginner-guide': typeof MarketingResourcesReadJavaBeginnerGuideRoute
+  '/resources/read/java-best-practices': typeof MarketingResourcesReadJavaBestPracticesRoute
+  '/resources/read/java-cheat-sheet': typeof MarketingResourcesReadJavaCheatSheetRoute
+  '/resources/read/java-common-mistakes': typeof MarketingResourcesReadJavaCommonMistakesRoute
+  '/resources/read/java-complete-tutorial': typeof MarketingResourcesReadJavaCompleteTutorialRoute
+  '/resources/read/java-frequently-asked-questions': typeof MarketingResourcesReadJavaFrequentlyAskedQuestionsRoute
+  '/resources/read/java-glossary': typeof MarketingResourcesReadJavaGlossaryRoute
+  '/resources/read/java-interview-questions': typeof MarketingResourcesReadJavaInterviewQuestionsRoute
+  '/resources/read/java-learning-roadmap': typeof MarketingResourcesReadJavaLearningRoadmapRoute
+  '/resources/read/java-pdf-notes': typeof MarketingResourcesReadJavaPdfNotesRoute
+  '/resources/read/java-practice-questions': typeof MarketingResourcesReadJavaPracticeQuestionsRoute
+  '/resources/read/java-project-case-study': typeof MarketingResourcesReadJavaProjectCaseStudyRoute
+  '/resources/read/java-project-guide': typeof MarketingResourcesReadJavaProjectGuideRoute
+  '/resources/read/java-quick-revision-notes': typeof MarketingResourcesReadJavaQuickRevisionNotesRoute
+  '/resources/read/java-real-world-case-study': typeof MarketingResourcesReadJavaRealWorldCaseStudyRoute
+  '/resources/read/java-reference-guide': typeof MarketingResourcesReadJavaReferenceGuideRoute
+  '/resources/read/java-sample-exercises': typeof MarketingResourcesReadJavaSampleExercisesRoute
+  '/resources/read/java-step-by-step-learning-guide': typeof MarketingResourcesReadJavaStepByStepLearningGuideRoute
+  '/resources/read/java-tips-tricks': typeof MarketingResourcesReadJavaTipsTricksRoute
   '/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
   '/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
   '/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
@@ -6466,6 +6655,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/html5-sample-exercises': typeof MarketingResourcesReadHtml5SampleExercisesRoute
   '/_marketing/resources/read/html5-step-by-step-learning-guide': typeof MarketingResourcesReadHtml5StepByStepLearningGuideRoute
   '/_marketing/resources/read/html5-tips-and-tricks': typeof MarketingResourcesReadHtml5TipsAndTricksRoute
+  '/_marketing/resources/read/java-advanced-concepts': typeof MarketingResourcesReadJavaAdvancedConceptsRoute
+  '/_marketing/resources/read/java-answer-key': typeof MarketingResourcesReadJavaAnswerKeyRoute
+  '/_marketing/resources/read/java-beginner-guide': typeof MarketingResourcesReadJavaBeginnerGuideRoute
+  '/_marketing/resources/read/java-best-practices': typeof MarketingResourcesReadJavaBestPracticesRoute
+  '/_marketing/resources/read/java-cheat-sheet': typeof MarketingResourcesReadJavaCheatSheetRoute
+  '/_marketing/resources/read/java-common-mistakes': typeof MarketingResourcesReadJavaCommonMistakesRoute
+  '/_marketing/resources/read/java-complete-tutorial': typeof MarketingResourcesReadJavaCompleteTutorialRoute
+  '/_marketing/resources/read/java-frequently-asked-questions': typeof MarketingResourcesReadJavaFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/java-glossary': typeof MarketingResourcesReadJavaGlossaryRoute
+  '/_marketing/resources/read/java-interview-questions': typeof MarketingResourcesReadJavaInterviewQuestionsRoute
+  '/_marketing/resources/read/java-learning-roadmap': typeof MarketingResourcesReadJavaLearningRoadmapRoute
+  '/_marketing/resources/read/java-pdf-notes': typeof MarketingResourcesReadJavaPdfNotesRoute
+  '/_marketing/resources/read/java-practice-questions': typeof MarketingResourcesReadJavaPracticeQuestionsRoute
+  '/_marketing/resources/read/java-project-case-study': typeof MarketingResourcesReadJavaProjectCaseStudyRoute
+  '/_marketing/resources/read/java-project-guide': typeof MarketingResourcesReadJavaProjectGuideRoute
+  '/_marketing/resources/read/java-quick-revision-notes': typeof MarketingResourcesReadJavaQuickRevisionNotesRoute
+  '/_marketing/resources/read/java-real-world-case-study': typeof MarketingResourcesReadJavaRealWorldCaseStudyRoute
+  '/_marketing/resources/read/java-reference-guide': typeof MarketingResourcesReadJavaReferenceGuideRoute
+  '/_marketing/resources/read/java-sample-exercises': typeof MarketingResourcesReadJavaSampleExercisesRoute
+  '/_marketing/resources/read/java-step-by-step-learning-guide': typeof MarketingResourcesReadJavaStepByStepLearningGuideRoute
+  '/_marketing/resources/read/java-tips-tricks': typeof MarketingResourcesReadJavaTipsTricksRoute
   '/_marketing/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
   '/_marketing/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
   '/_marketing/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
@@ -7142,6 +7352,27 @@ export interface FileRouteTypes {
     | '/resources/read/html5-sample-exercises'
     | '/resources/read/html5-step-by-step-learning-guide'
     | '/resources/read/html5-tips-and-tricks'
+    | '/resources/read/java-advanced-concepts'
+    | '/resources/read/java-answer-key'
+    | '/resources/read/java-beginner-guide'
+    | '/resources/read/java-best-practices'
+    | '/resources/read/java-cheat-sheet'
+    | '/resources/read/java-common-mistakes'
+    | '/resources/read/java-complete-tutorial'
+    | '/resources/read/java-frequently-asked-questions'
+    | '/resources/read/java-glossary'
+    | '/resources/read/java-interview-questions'
+    | '/resources/read/java-learning-roadmap'
+    | '/resources/read/java-pdf-notes'
+    | '/resources/read/java-practice-questions'
+    | '/resources/read/java-project-case-study'
+    | '/resources/read/java-project-guide'
+    | '/resources/read/java-quick-revision-notes'
+    | '/resources/read/java-real-world-case-study'
+    | '/resources/read/java-reference-guide'
+    | '/resources/read/java-sample-exercises'
+    | '/resources/read/java-step-by-step-learning-guide'
+    | '/resources/read/java-tips-tricks'
     | '/resources/read/javascript-advanced-concepts'
     | '/resources/read/javascript-answer-key'
     | '/resources/read/javascript-beginner-guide'
@@ -7815,6 +8046,27 @@ export interface FileRouteTypes {
     | '/resources/read/html5-sample-exercises'
     | '/resources/read/html5-step-by-step-learning-guide'
     | '/resources/read/html5-tips-and-tricks'
+    | '/resources/read/java-advanced-concepts'
+    | '/resources/read/java-answer-key'
+    | '/resources/read/java-beginner-guide'
+    | '/resources/read/java-best-practices'
+    | '/resources/read/java-cheat-sheet'
+    | '/resources/read/java-common-mistakes'
+    | '/resources/read/java-complete-tutorial'
+    | '/resources/read/java-frequently-asked-questions'
+    | '/resources/read/java-glossary'
+    | '/resources/read/java-interview-questions'
+    | '/resources/read/java-learning-roadmap'
+    | '/resources/read/java-pdf-notes'
+    | '/resources/read/java-practice-questions'
+    | '/resources/read/java-project-case-study'
+    | '/resources/read/java-project-guide'
+    | '/resources/read/java-quick-revision-notes'
+    | '/resources/read/java-real-world-case-study'
+    | '/resources/read/java-reference-guide'
+    | '/resources/read/java-sample-exercises'
+    | '/resources/read/java-step-by-step-learning-guide'
+    | '/resources/read/java-tips-tricks'
     | '/resources/read/javascript-advanced-concepts'
     | '/resources/read/javascript-answer-key'
     | '/resources/read/javascript-beginner-guide'
@@ -8492,6 +8744,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/html5-sample-exercises'
     | '/_marketing/resources/read/html5-step-by-step-learning-guide'
     | '/_marketing/resources/read/html5-tips-and-tricks'
+    | '/_marketing/resources/read/java-advanced-concepts'
+    | '/_marketing/resources/read/java-answer-key'
+    | '/_marketing/resources/read/java-beginner-guide'
+    | '/_marketing/resources/read/java-best-practices'
+    | '/_marketing/resources/read/java-cheat-sheet'
+    | '/_marketing/resources/read/java-common-mistakes'
+    | '/_marketing/resources/read/java-complete-tutorial'
+    | '/_marketing/resources/read/java-frequently-asked-questions'
+    | '/_marketing/resources/read/java-glossary'
+    | '/_marketing/resources/read/java-interview-questions'
+    | '/_marketing/resources/read/java-learning-roadmap'
+    | '/_marketing/resources/read/java-pdf-notes'
+    | '/_marketing/resources/read/java-practice-questions'
+    | '/_marketing/resources/read/java-project-case-study'
+    | '/_marketing/resources/read/java-project-guide'
+    | '/_marketing/resources/read/java-quick-revision-notes'
+    | '/_marketing/resources/read/java-real-world-case-study'
+    | '/_marketing/resources/read/java-reference-guide'
+    | '/_marketing/resources/read/java-sample-exercises'
+    | '/_marketing/resources/read/java-step-by-step-learning-guide'
+    | '/_marketing/resources/read/java-tips-tricks'
     | '/_marketing/resources/read/javascript-advanced-concepts'
     | '/_marketing/resources/read/javascript-answer-key'
     | '/_marketing/resources/read/javascript-beginner-guide'
@@ -11033,6 +11306,153 @@ declare module '@tanstack/react-router' {
       path: '/read/javascript-advanced-concepts'
       fullPath: '/resources/read/javascript-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadJavascriptAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-tips-tricks': {
+      id: '/_marketing/resources/read/java-tips-tricks'
+      path: '/read/java-tips-tricks'
+      fullPath: '/resources/read/java-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadJavaTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/java-step-by-step-learning-guide'
+      path: '/read/java-step-by-step-learning-guide'
+      fullPath: '/resources/read/java-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadJavaStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-sample-exercises': {
+      id: '/_marketing/resources/read/java-sample-exercises'
+      path: '/read/java-sample-exercises'
+      fullPath: '/resources/read/java-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadJavaSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-reference-guide': {
+      id: '/_marketing/resources/read/java-reference-guide'
+      path: '/read/java-reference-guide'
+      fullPath: '/resources/read/java-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadJavaReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-real-world-case-study': {
+      id: '/_marketing/resources/read/java-real-world-case-study'
+      path: '/read/java-real-world-case-study'
+      fullPath: '/resources/read/java-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadJavaRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-quick-revision-notes': {
+      id: '/_marketing/resources/read/java-quick-revision-notes'
+      path: '/read/java-quick-revision-notes'
+      fullPath: '/resources/read/java-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadJavaQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-project-guide': {
+      id: '/_marketing/resources/read/java-project-guide'
+      path: '/read/java-project-guide'
+      fullPath: '/resources/read/java-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadJavaProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-project-case-study': {
+      id: '/_marketing/resources/read/java-project-case-study'
+      path: '/read/java-project-case-study'
+      fullPath: '/resources/read/java-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadJavaProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-practice-questions': {
+      id: '/_marketing/resources/read/java-practice-questions'
+      path: '/read/java-practice-questions'
+      fullPath: '/resources/read/java-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadJavaPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-pdf-notes': {
+      id: '/_marketing/resources/read/java-pdf-notes'
+      path: '/read/java-pdf-notes'
+      fullPath: '/resources/read/java-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadJavaPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-learning-roadmap': {
+      id: '/_marketing/resources/read/java-learning-roadmap'
+      path: '/read/java-learning-roadmap'
+      fullPath: '/resources/read/java-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadJavaLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-interview-questions': {
+      id: '/_marketing/resources/read/java-interview-questions'
+      path: '/read/java-interview-questions'
+      fullPath: '/resources/read/java-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadJavaInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-glossary': {
+      id: '/_marketing/resources/read/java-glossary'
+      path: '/read/java-glossary'
+      fullPath: '/resources/read/java-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadJavaGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-frequently-asked-questions': {
+      id: '/_marketing/resources/read/java-frequently-asked-questions'
+      path: '/read/java-frequently-asked-questions'
+      fullPath: '/resources/read/java-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadJavaFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-complete-tutorial': {
+      id: '/_marketing/resources/read/java-complete-tutorial'
+      path: '/read/java-complete-tutorial'
+      fullPath: '/resources/read/java-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadJavaCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-common-mistakes': {
+      id: '/_marketing/resources/read/java-common-mistakes'
+      path: '/read/java-common-mistakes'
+      fullPath: '/resources/read/java-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadJavaCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-cheat-sheet': {
+      id: '/_marketing/resources/read/java-cheat-sheet'
+      path: '/read/java-cheat-sheet'
+      fullPath: '/resources/read/java-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadJavaCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-best-practices': {
+      id: '/_marketing/resources/read/java-best-practices'
+      path: '/read/java-best-practices'
+      fullPath: '/resources/read/java-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadJavaBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-beginner-guide': {
+      id: '/_marketing/resources/read/java-beginner-guide'
+      path: '/read/java-beginner-guide'
+      fullPath: '/resources/read/java-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadJavaBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-answer-key': {
+      id: '/_marketing/resources/read/java-answer-key'
+      path: '/read/java-answer-key'
+      fullPath: '/resources/read/java-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadJavaAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/java-advanced-concepts': {
+      id: '/_marketing/resources/read/java-advanced-concepts'
+      path: '/read/java-advanced-concepts'
+      fullPath: '/resources/read/java-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadJavaAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/html5-tips-and-tricks': {
@@ -13998,6 +14418,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadHtml5SampleExercisesRoute: typeof MarketingResourcesReadHtml5SampleExercisesRoute
   MarketingResourcesReadHtml5StepByStepLearningGuideRoute: typeof MarketingResourcesReadHtml5StepByStepLearningGuideRoute
   MarketingResourcesReadHtml5TipsAndTricksRoute: typeof MarketingResourcesReadHtml5TipsAndTricksRoute
+  MarketingResourcesReadJavaAdvancedConceptsRoute: typeof MarketingResourcesReadJavaAdvancedConceptsRoute
+  MarketingResourcesReadJavaAnswerKeyRoute: typeof MarketingResourcesReadJavaAnswerKeyRoute
+  MarketingResourcesReadJavaBeginnerGuideRoute: typeof MarketingResourcesReadJavaBeginnerGuideRoute
+  MarketingResourcesReadJavaBestPracticesRoute: typeof MarketingResourcesReadJavaBestPracticesRoute
+  MarketingResourcesReadJavaCheatSheetRoute: typeof MarketingResourcesReadJavaCheatSheetRoute
+  MarketingResourcesReadJavaCommonMistakesRoute: typeof MarketingResourcesReadJavaCommonMistakesRoute
+  MarketingResourcesReadJavaCompleteTutorialRoute: typeof MarketingResourcesReadJavaCompleteTutorialRoute
+  MarketingResourcesReadJavaFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadJavaFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadJavaGlossaryRoute: typeof MarketingResourcesReadJavaGlossaryRoute
+  MarketingResourcesReadJavaInterviewQuestionsRoute: typeof MarketingResourcesReadJavaInterviewQuestionsRoute
+  MarketingResourcesReadJavaLearningRoadmapRoute: typeof MarketingResourcesReadJavaLearningRoadmapRoute
+  MarketingResourcesReadJavaPdfNotesRoute: typeof MarketingResourcesReadJavaPdfNotesRoute
+  MarketingResourcesReadJavaPracticeQuestionsRoute: typeof MarketingResourcesReadJavaPracticeQuestionsRoute
+  MarketingResourcesReadJavaProjectCaseStudyRoute: typeof MarketingResourcesReadJavaProjectCaseStudyRoute
+  MarketingResourcesReadJavaProjectGuideRoute: typeof MarketingResourcesReadJavaProjectGuideRoute
+  MarketingResourcesReadJavaQuickRevisionNotesRoute: typeof MarketingResourcesReadJavaQuickRevisionNotesRoute
+  MarketingResourcesReadJavaRealWorldCaseStudyRoute: typeof MarketingResourcesReadJavaRealWorldCaseStudyRoute
+  MarketingResourcesReadJavaReferenceGuideRoute: typeof MarketingResourcesReadJavaReferenceGuideRoute
+  MarketingResourcesReadJavaSampleExercisesRoute: typeof MarketingResourcesReadJavaSampleExercisesRoute
+  MarketingResourcesReadJavaStepByStepLearningGuideRoute: typeof MarketingResourcesReadJavaStepByStepLearningGuideRoute
+  MarketingResourcesReadJavaTipsTricksRoute: typeof MarketingResourcesReadJavaTipsTricksRoute
   MarketingResourcesReadJavascriptAdvancedConceptsRoute: typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
   MarketingResourcesReadJavascriptAnswerKeyRoute: typeof MarketingResourcesReadJavascriptAnswerKeyRoute
   MarketingResourcesReadJavascriptBeginnerGuideRoute: typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
@@ -14957,6 +15398,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadHtml5StepByStepLearningGuideRoute,
   MarketingResourcesReadHtml5TipsAndTricksRoute:
     MarketingResourcesReadHtml5TipsAndTricksRoute,
+  MarketingResourcesReadJavaAdvancedConceptsRoute:
+    MarketingResourcesReadJavaAdvancedConceptsRoute,
+  MarketingResourcesReadJavaAnswerKeyRoute:
+    MarketingResourcesReadJavaAnswerKeyRoute,
+  MarketingResourcesReadJavaBeginnerGuideRoute:
+    MarketingResourcesReadJavaBeginnerGuideRoute,
+  MarketingResourcesReadJavaBestPracticesRoute:
+    MarketingResourcesReadJavaBestPracticesRoute,
+  MarketingResourcesReadJavaCheatSheetRoute:
+    MarketingResourcesReadJavaCheatSheetRoute,
+  MarketingResourcesReadJavaCommonMistakesRoute:
+    MarketingResourcesReadJavaCommonMistakesRoute,
+  MarketingResourcesReadJavaCompleteTutorialRoute:
+    MarketingResourcesReadJavaCompleteTutorialRoute,
+  MarketingResourcesReadJavaFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadJavaFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadJavaGlossaryRoute:
+    MarketingResourcesReadJavaGlossaryRoute,
+  MarketingResourcesReadJavaInterviewQuestionsRoute:
+    MarketingResourcesReadJavaInterviewQuestionsRoute,
+  MarketingResourcesReadJavaLearningRoadmapRoute:
+    MarketingResourcesReadJavaLearningRoadmapRoute,
+  MarketingResourcesReadJavaPdfNotesRoute:
+    MarketingResourcesReadJavaPdfNotesRoute,
+  MarketingResourcesReadJavaPracticeQuestionsRoute:
+    MarketingResourcesReadJavaPracticeQuestionsRoute,
+  MarketingResourcesReadJavaProjectCaseStudyRoute:
+    MarketingResourcesReadJavaProjectCaseStudyRoute,
+  MarketingResourcesReadJavaProjectGuideRoute:
+    MarketingResourcesReadJavaProjectGuideRoute,
+  MarketingResourcesReadJavaQuickRevisionNotesRoute:
+    MarketingResourcesReadJavaQuickRevisionNotesRoute,
+  MarketingResourcesReadJavaRealWorldCaseStudyRoute:
+    MarketingResourcesReadJavaRealWorldCaseStudyRoute,
+  MarketingResourcesReadJavaReferenceGuideRoute:
+    MarketingResourcesReadJavaReferenceGuideRoute,
+  MarketingResourcesReadJavaSampleExercisesRoute:
+    MarketingResourcesReadJavaSampleExercisesRoute,
+  MarketingResourcesReadJavaStepByStepLearningGuideRoute:
+    MarketingResourcesReadJavaStepByStepLearningGuideRoute,
+  MarketingResourcesReadJavaTipsTricksRoute:
+    MarketingResourcesReadJavaTipsTricksRoute,
   MarketingResourcesReadJavascriptAdvancedConceptsRoute:
     MarketingResourcesReadJavascriptAdvancedConceptsRoute,
   MarketingResourcesReadJavascriptAnswerKeyRoute:
