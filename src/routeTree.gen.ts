@@ -293,6 +293,27 @@ import { Route as MarketingResourcesReadGenaiInterviewQuestionsRouteImport } fro
 import { Route as MarketingResourcesReadGenaiFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.genai-frequently-asked-questions'
 import { Route as MarketingResourcesReadGenaiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.genai-complete-tutorial'
 import { Route as MarketingResourcesReadGenaiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.genai-beginner-guide'
+import { Route as MarketingResourcesReadGcpTipsTricksRouteImport } from './routes/_marketing.resources.read.gcp-tips-tricks'
+import { Route as MarketingResourcesReadGcpStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.gcp-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadGcpSampleExercisesRouteImport } from './routes/_marketing.resources.read.gcp-sample-exercises'
+import { Route as MarketingResourcesReadGcpReferenceGuideRouteImport } from './routes/_marketing.resources.read.gcp-reference-guide'
+import { Route as MarketingResourcesReadGcpRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.gcp-real-world-case-study'
+import { Route as MarketingResourcesReadGcpQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.gcp-quick-revision-notes'
+import { Route as MarketingResourcesReadGcpProjectGuideRouteImport } from './routes/_marketing.resources.read.gcp-project-guide'
+import { Route as MarketingResourcesReadGcpProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.gcp-project-case-study'
+import { Route as MarketingResourcesReadGcpPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.gcp-practice-questions'
+import { Route as MarketingResourcesReadGcpPdfNotesRouteImport } from './routes/_marketing.resources.read.gcp-pdf-notes'
+import { Route as MarketingResourcesReadGcpLearningRoadmapRouteImport } from './routes/_marketing.resources.read.gcp-learning-roadmap'
+import { Route as MarketingResourcesReadGcpInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.gcp-interview-questions'
+import { Route as MarketingResourcesReadGcpGlossaryRouteImport } from './routes/_marketing.resources.read.gcp-glossary'
+import { Route as MarketingResourcesReadGcpFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.gcp-frequently-asked-questions'
+import { Route as MarketingResourcesReadGcpCompleteTutorialRouteImport } from './routes/_marketing.resources.read.gcp-complete-tutorial'
+import { Route as MarketingResourcesReadGcpCommonMistakesRouteImport } from './routes/_marketing.resources.read.gcp-common-mistakes'
+import { Route as MarketingResourcesReadGcpCheatSheetRouteImport } from './routes/_marketing.resources.read.gcp-cheat-sheet'
+import { Route as MarketingResourcesReadGcpBestPracticesRouteImport } from './routes/_marketing.resources.read.gcp-best-practices'
+import { Route as MarketingResourcesReadGcpBeginnerGuideRouteImport } from './routes/_marketing.resources.read.gcp-beginner-guide'
+import { Route as MarketingResourcesReadGcpAnswerKeyRouteImport } from './routes/_marketing.resources.read.gcp-answer-key'
+import { Route as MarketingResourcesReadGcpAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.gcp-advanced-concepts'
 import { Route as MarketingResourcesReadFigmaTipsAndTricksRouteImport } from './routes/_marketing.resources.read.figma-tips-and-tricks'
 import { Route as MarketingResourcesReadFigmaStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.figma-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadFigmaSampleExercisesRouteImport } from './routes/_marketing.resources.read.figma-sample-exercises'
@@ -2200,6 +2221,132 @@ const MarketingResourcesReadGenaiBeginnerGuideRoute =
     path: '/read/genai-beginner-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadGcpTipsTricksRoute =
+  MarketingResourcesReadGcpTipsTricksRouteImport.update({
+    id: '/read/gcp-tips-tricks',
+    path: '/read/gcp-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpStepByStepLearningGuideRoute =
+  MarketingResourcesReadGcpStepByStepLearningGuideRouteImport.update({
+    id: '/read/gcp-step-by-step-learning-guide',
+    path: '/read/gcp-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpSampleExercisesRoute =
+  MarketingResourcesReadGcpSampleExercisesRouteImport.update({
+    id: '/read/gcp-sample-exercises',
+    path: '/read/gcp-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpReferenceGuideRoute =
+  MarketingResourcesReadGcpReferenceGuideRouteImport.update({
+    id: '/read/gcp-reference-guide',
+    path: '/read/gcp-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpRealWorldCaseStudyRoute =
+  MarketingResourcesReadGcpRealWorldCaseStudyRouteImport.update({
+    id: '/read/gcp-real-world-case-study',
+    path: '/read/gcp-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpQuickRevisionNotesRoute =
+  MarketingResourcesReadGcpQuickRevisionNotesRouteImport.update({
+    id: '/read/gcp-quick-revision-notes',
+    path: '/read/gcp-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpProjectGuideRoute =
+  MarketingResourcesReadGcpProjectGuideRouteImport.update({
+    id: '/read/gcp-project-guide',
+    path: '/read/gcp-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpProjectCaseStudyRoute =
+  MarketingResourcesReadGcpProjectCaseStudyRouteImport.update({
+    id: '/read/gcp-project-case-study',
+    path: '/read/gcp-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpPracticeQuestionsRoute =
+  MarketingResourcesReadGcpPracticeQuestionsRouteImport.update({
+    id: '/read/gcp-practice-questions',
+    path: '/read/gcp-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpPdfNotesRoute =
+  MarketingResourcesReadGcpPdfNotesRouteImport.update({
+    id: '/read/gcp-pdf-notes',
+    path: '/read/gcp-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpLearningRoadmapRoute =
+  MarketingResourcesReadGcpLearningRoadmapRouteImport.update({
+    id: '/read/gcp-learning-roadmap',
+    path: '/read/gcp-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpInterviewQuestionsRoute =
+  MarketingResourcesReadGcpInterviewQuestionsRouteImport.update({
+    id: '/read/gcp-interview-questions',
+    path: '/read/gcp-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpGlossaryRoute =
+  MarketingResourcesReadGcpGlossaryRouteImport.update({
+    id: '/read/gcp-glossary',
+    path: '/read/gcp-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadGcpFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/gcp-frequently-asked-questions',
+    path: '/read/gcp-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpCompleteTutorialRoute =
+  MarketingResourcesReadGcpCompleteTutorialRouteImport.update({
+    id: '/read/gcp-complete-tutorial',
+    path: '/read/gcp-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpCommonMistakesRoute =
+  MarketingResourcesReadGcpCommonMistakesRouteImport.update({
+    id: '/read/gcp-common-mistakes',
+    path: '/read/gcp-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpCheatSheetRoute =
+  MarketingResourcesReadGcpCheatSheetRouteImport.update({
+    id: '/read/gcp-cheat-sheet',
+    path: '/read/gcp-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpBestPracticesRoute =
+  MarketingResourcesReadGcpBestPracticesRouteImport.update({
+    id: '/read/gcp-best-practices',
+    path: '/read/gcp-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpBeginnerGuideRoute =
+  MarketingResourcesReadGcpBeginnerGuideRouteImport.update({
+    id: '/read/gcp-beginner-guide',
+    path: '/read/gcp-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpAnswerKeyRoute =
+  MarketingResourcesReadGcpAnswerKeyRouteImport.update({
+    id: '/read/gcp-answer-key',
+    path: '/read/gcp-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGcpAdvancedConceptsRoute =
+  MarketingResourcesReadGcpAdvancedConceptsRouteImport.update({
+    id: '/read/gcp-advanced-concepts',
+    path: '/read/gcp-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadFigmaTipsAndTricksRoute =
   MarketingResourcesReadFigmaTipsAndTricksRouteImport.update({
     id: '/read/figma-tips-and-tricks',
@@ -3807,6 +3954,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
   '/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
   '/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
+  '/resources/read/gcp-advanced-concepts': typeof MarketingResourcesReadGcpAdvancedConceptsRoute
+  '/resources/read/gcp-answer-key': typeof MarketingResourcesReadGcpAnswerKeyRoute
+  '/resources/read/gcp-beginner-guide': typeof MarketingResourcesReadGcpBeginnerGuideRoute
+  '/resources/read/gcp-best-practices': typeof MarketingResourcesReadGcpBestPracticesRoute
+  '/resources/read/gcp-cheat-sheet': typeof MarketingResourcesReadGcpCheatSheetRoute
+  '/resources/read/gcp-common-mistakes': typeof MarketingResourcesReadGcpCommonMistakesRoute
+  '/resources/read/gcp-complete-tutorial': typeof MarketingResourcesReadGcpCompleteTutorialRoute
+  '/resources/read/gcp-frequently-asked-questions': typeof MarketingResourcesReadGcpFrequentlyAskedQuestionsRoute
+  '/resources/read/gcp-glossary': typeof MarketingResourcesReadGcpGlossaryRoute
+  '/resources/read/gcp-interview-questions': typeof MarketingResourcesReadGcpInterviewQuestionsRoute
+  '/resources/read/gcp-learning-roadmap': typeof MarketingResourcesReadGcpLearningRoadmapRoute
+  '/resources/read/gcp-pdf-notes': typeof MarketingResourcesReadGcpPdfNotesRoute
+  '/resources/read/gcp-practice-questions': typeof MarketingResourcesReadGcpPracticeQuestionsRoute
+  '/resources/read/gcp-project-case-study': typeof MarketingResourcesReadGcpProjectCaseStudyRoute
+  '/resources/read/gcp-project-guide': typeof MarketingResourcesReadGcpProjectGuideRoute
+  '/resources/read/gcp-quick-revision-notes': typeof MarketingResourcesReadGcpQuickRevisionNotesRoute
+  '/resources/read/gcp-real-world-case-study': typeof MarketingResourcesReadGcpRealWorldCaseStudyRoute
+  '/resources/read/gcp-reference-guide': typeof MarketingResourcesReadGcpReferenceGuideRoute
+  '/resources/read/gcp-sample-exercises': typeof MarketingResourcesReadGcpSampleExercisesRoute
+  '/resources/read/gcp-step-by-step-learning-guide': typeof MarketingResourcesReadGcpStepByStepLearningGuideRoute
+  '/resources/read/gcp-tips-tricks': typeof MarketingResourcesReadGcpTipsTricksRoute
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -4312,6 +4480,27 @@ export interface FileRoutesByTo {
   '/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
   '/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
   '/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
+  '/resources/read/gcp-advanced-concepts': typeof MarketingResourcesReadGcpAdvancedConceptsRoute
+  '/resources/read/gcp-answer-key': typeof MarketingResourcesReadGcpAnswerKeyRoute
+  '/resources/read/gcp-beginner-guide': typeof MarketingResourcesReadGcpBeginnerGuideRoute
+  '/resources/read/gcp-best-practices': typeof MarketingResourcesReadGcpBestPracticesRoute
+  '/resources/read/gcp-cheat-sheet': typeof MarketingResourcesReadGcpCheatSheetRoute
+  '/resources/read/gcp-common-mistakes': typeof MarketingResourcesReadGcpCommonMistakesRoute
+  '/resources/read/gcp-complete-tutorial': typeof MarketingResourcesReadGcpCompleteTutorialRoute
+  '/resources/read/gcp-frequently-asked-questions': typeof MarketingResourcesReadGcpFrequentlyAskedQuestionsRoute
+  '/resources/read/gcp-glossary': typeof MarketingResourcesReadGcpGlossaryRoute
+  '/resources/read/gcp-interview-questions': typeof MarketingResourcesReadGcpInterviewQuestionsRoute
+  '/resources/read/gcp-learning-roadmap': typeof MarketingResourcesReadGcpLearningRoadmapRoute
+  '/resources/read/gcp-pdf-notes': typeof MarketingResourcesReadGcpPdfNotesRoute
+  '/resources/read/gcp-practice-questions': typeof MarketingResourcesReadGcpPracticeQuestionsRoute
+  '/resources/read/gcp-project-case-study': typeof MarketingResourcesReadGcpProjectCaseStudyRoute
+  '/resources/read/gcp-project-guide': typeof MarketingResourcesReadGcpProjectGuideRoute
+  '/resources/read/gcp-quick-revision-notes': typeof MarketingResourcesReadGcpQuickRevisionNotesRoute
+  '/resources/read/gcp-real-world-case-study': typeof MarketingResourcesReadGcpRealWorldCaseStudyRoute
+  '/resources/read/gcp-reference-guide': typeof MarketingResourcesReadGcpReferenceGuideRoute
+  '/resources/read/gcp-sample-exercises': typeof MarketingResourcesReadGcpSampleExercisesRoute
+  '/resources/read/gcp-step-by-step-learning-guide': typeof MarketingResourcesReadGcpStepByStepLearningGuideRoute
+  '/resources/read/gcp-tips-tricks': typeof MarketingResourcesReadGcpTipsTricksRoute
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -4822,6 +5011,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
   '/_marketing/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
   '/_marketing/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
+  '/_marketing/resources/read/gcp-advanced-concepts': typeof MarketingResourcesReadGcpAdvancedConceptsRoute
+  '/_marketing/resources/read/gcp-answer-key': typeof MarketingResourcesReadGcpAnswerKeyRoute
+  '/_marketing/resources/read/gcp-beginner-guide': typeof MarketingResourcesReadGcpBeginnerGuideRoute
+  '/_marketing/resources/read/gcp-best-practices': typeof MarketingResourcesReadGcpBestPracticesRoute
+  '/_marketing/resources/read/gcp-cheat-sheet': typeof MarketingResourcesReadGcpCheatSheetRoute
+  '/_marketing/resources/read/gcp-common-mistakes': typeof MarketingResourcesReadGcpCommonMistakesRoute
+  '/_marketing/resources/read/gcp-complete-tutorial': typeof MarketingResourcesReadGcpCompleteTutorialRoute
+  '/_marketing/resources/read/gcp-frequently-asked-questions': typeof MarketingResourcesReadGcpFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/gcp-glossary': typeof MarketingResourcesReadGcpGlossaryRoute
+  '/_marketing/resources/read/gcp-interview-questions': typeof MarketingResourcesReadGcpInterviewQuestionsRoute
+  '/_marketing/resources/read/gcp-learning-roadmap': typeof MarketingResourcesReadGcpLearningRoadmapRoute
+  '/_marketing/resources/read/gcp-pdf-notes': typeof MarketingResourcesReadGcpPdfNotesRoute
+  '/_marketing/resources/read/gcp-practice-questions': typeof MarketingResourcesReadGcpPracticeQuestionsRoute
+  '/_marketing/resources/read/gcp-project-case-study': typeof MarketingResourcesReadGcpProjectCaseStudyRoute
+  '/_marketing/resources/read/gcp-project-guide': typeof MarketingResourcesReadGcpProjectGuideRoute
+  '/_marketing/resources/read/gcp-quick-revision-notes': typeof MarketingResourcesReadGcpQuickRevisionNotesRoute
+  '/_marketing/resources/read/gcp-real-world-case-study': typeof MarketingResourcesReadGcpRealWorldCaseStudyRoute
+  '/_marketing/resources/read/gcp-reference-guide': typeof MarketingResourcesReadGcpReferenceGuideRoute
+  '/_marketing/resources/read/gcp-sample-exercises': typeof MarketingResourcesReadGcpSampleExercisesRoute
+  '/_marketing/resources/read/gcp-step-by-step-learning-guide': typeof MarketingResourcesReadGcpStepByStepLearningGuideRoute
+  '/_marketing/resources/read/gcp-tips-tricks': typeof MarketingResourcesReadGcpTipsTricksRoute
   '/_marketing/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/_marketing/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/_marketing/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -5330,6 +5540,27 @@ export interface FileRouteTypes {
     | '/resources/read/figma-sample-exercises'
     | '/resources/read/figma-step-by-step-learning-guide'
     | '/resources/read/figma-tips-and-tricks'
+    | '/resources/read/gcp-advanced-concepts'
+    | '/resources/read/gcp-answer-key'
+    | '/resources/read/gcp-beginner-guide'
+    | '/resources/read/gcp-best-practices'
+    | '/resources/read/gcp-cheat-sheet'
+    | '/resources/read/gcp-common-mistakes'
+    | '/resources/read/gcp-complete-tutorial'
+    | '/resources/read/gcp-frequently-asked-questions'
+    | '/resources/read/gcp-glossary'
+    | '/resources/read/gcp-interview-questions'
+    | '/resources/read/gcp-learning-roadmap'
+    | '/resources/read/gcp-pdf-notes'
+    | '/resources/read/gcp-practice-questions'
+    | '/resources/read/gcp-project-case-study'
+    | '/resources/read/gcp-project-guide'
+    | '/resources/read/gcp-quick-revision-notes'
+    | '/resources/read/gcp-real-world-case-study'
+    | '/resources/read/gcp-reference-guide'
+    | '/resources/read/gcp-sample-exercises'
+    | '/resources/read/gcp-step-by-step-learning-guide'
+    | '/resources/read/gcp-tips-tricks'
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
     | '/resources/read/genai-frequently-asked-questions'
@@ -5835,6 +6066,27 @@ export interface FileRouteTypes {
     | '/resources/read/figma-sample-exercises'
     | '/resources/read/figma-step-by-step-learning-guide'
     | '/resources/read/figma-tips-and-tricks'
+    | '/resources/read/gcp-advanced-concepts'
+    | '/resources/read/gcp-answer-key'
+    | '/resources/read/gcp-beginner-guide'
+    | '/resources/read/gcp-best-practices'
+    | '/resources/read/gcp-cheat-sheet'
+    | '/resources/read/gcp-common-mistakes'
+    | '/resources/read/gcp-complete-tutorial'
+    | '/resources/read/gcp-frequently-asked-questions'
+    | '/resources/read/gcp-glossary'
+    | '/resources/read/gcp-interview-questions'
+    | '/resources/read/gcp-learning-roadmap'
+    | '/resources/read/gcp-pdf-notes'
+    | '/resources/read/gcp-practice-questions'
+    | '/resources/read/gcp-project-case-study'
+    | '/resources/read/gcp-project-guide'
+    | '/resources/read/gcp-quick-revision-notes'
+    | '/resources/read/gcp-real-world-case-study'
+    | '/resources/read/gcp-reference-guide'
+    | '/resources/read/gcp-sample-exercises'
+    | '/resources/read/gcp-step-by-step-learning-guide'
+    | '/resources/read/gcp-tips-tricks'
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
     | '/resources/read/genai-frequently-asked-questions'
@@ -6344,6 +6596,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/figma-sample-exercises'
     | '/_marketing/resources/read/figma-step-by-step-learning-guide'
     | '/_marketing/resources/read/figma-tips-and-tricks'
+    | '/_marketing/resources/read/gcp-advanced-concepts'
+    | '/_marketing/resources/read/gcp-answer-key'
+    | '/_marketing/resources/read/gcp-beginner-guide'
+    | '/_marketing/resources/read/gcp-best-practices'
+    | '/_marketing/resources/read/gcp-cheat-sheet'
+    | '/_marketing/resources/read/gcp-common-mistakes'
+    | '/_marketing/resources/read/gcp-complete-tutorial'
+    | '/_marketing/resources/read/gcp-frequently-asked-questions'
+    | '/_marketing/resources/read/gcp-glossary'
+    | '/_marketing/resources/read/gcp-interview-questions'
+    | '/_marketing/resources/read/gcp-learning-roadmap'
+    | '/_marketing/resources/read/gcp-pdf-notes'
+    | '/_marketing/resources/read/gcp-practice-questions'
+    | '/_marketing/resources/read/gcp-project-case-study'
+    | '/_marketing/resources/read/gcp-project-guide'
+    | '/_marketing/resources/read/gcp-quick-revision-notes'
+    | '/_marketing/resources/read/gcp-real-world-case-study'
+    | '/_marketing/resources/read/gcp-reference-guide'
+    | '/_marketing/resources/read/gcp-sample-exercises'
+    | '/_marketing/resources/read/gcp-step-by-step-learning-guide'
+    | '/_marketing/resources/read/gcp-tips-tricks'
     | '/_marketing/resources/read/genai-beginner-guide'
     | '/_marketing/resources/read/genai-complete-tutorial'
     | '/_marketing/resources/read/genai-frequently-asked-questions'
@@ -8599,6 +8872,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadGenaiBeginnerGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/gcp-tips-tricks': {
+      id: '/_marketing/resources/read/gcp-tips-tricks'
+      path: '/read/gcp-tips-tricks'
+      fullPath: '/resources/read/gcp-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadGcpTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/gcp-step-by-step-learning-guide'
+      path: '/read/gcp-step-by-step-learning-guide'
+      fullPath: '/resources/read/gcp-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadGcpStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-sample-exercises': {
+      id: '/_marketing/resources/read/gcp-sample-exercises'
+      path: '/read/gcp-sample-exercises'
+      fullPath: '/resources/read/gcp-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadGcpSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-reference-guide': {
+      id: '/_marketing/resources/read/gcp-reference-guide'
+      path: '/read/gcp-reference-guide'
+      fullPath: '/resources/read/gcp-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadGcpReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-real-world-case-study': {
+      id: '/_marketing/resources/read/gcp-real-world-case-study'
+      path: '/read/gcp-real-world-case-study'
+      fullPath: '/resources/read/gcp-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadGcpRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-quick-revision-notes': {
+      id: '/_marketing/resources/read/gcp-quick-revision-notes'
+      path: '/read/gcp-quick-revision-notes'
+      fullPath: '/resources/read/gcp-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadGcpQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-project-guide': {
+      id: '/_marketing/resources/read/gcp-project-guide'
+      path: '/read/gcp-project-guide'
+      fullPath: '/resources/read/gcp-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadGcpProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-project-case-study': {
+      id: '/_marketing/resources/read/gcp-project-case-study'
+      path: '/read/gcp-project-case-study'
+      fullPath: '/resources/read/gcp-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadGcpProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-practice-questions': {
+      id: '/_marketing/resources/read/gcp-practice-questions'
+      path: '/read/gcp-practice-questions'
+      fullPath: '/resources/read/gcp-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadGcpPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-pdf-notes': {
+      id: '/_marketing/resources/read/gcp-pdf-notes'
+      path: '/read/gcp-pdf-notes'
+      fullPath: '/resources/read/gcp-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadGcpPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-learning-roadmap': {
+      id: '/_marketing/resources/read/gcp-learning-roadmap'
+      path: '/read/gcp-learning-roadmap'
+      fullPath: '/resources/read/gcp-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadGcpLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-interview-questions': {
+      id: '/_marketing/resources/read/gcp-interview-questions'
+      path: '/read/gcp-interview-questions'
+      fullPath: '/resources/read/gcp-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadGcpInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-glossary': {
+      id: '/_marketing/resources/read/gcp-glossary'
+      path: '/read/gcp-glossary'
+      fullPath: '/resources/read/gcp-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadGcpGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-frequently-asked-questions': {
+      id: '/_marketing/resources/read/gcp-frequently-asked-questions'
+      path: '/read/gcp-frequently-asked-questions'
+      fullPath: '/resources/read/gcp-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadGcpFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-complete-tutorial': {
+      id: '/_marketing/resources/read/gcp-complete-tutorial'
+      path: '/read/gcp-complete-tutorial'
+      fullPath: '/resources/read/gcp-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadGcpCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-common-mistakes': {
+      id: '/_marketing/resources/read/gcp-common-mistakes'
+      path: '/read/gcp-common-mistakes'
+      fullPath: '/resources/read/gcp-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadGcpCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-cheat-sheet': {
+      id: '/_marketing/resources/read/gcp-cheat-sheet'
+      path: '/read/gcp-cheat-sheet'
+      fullPath: '/resources/read/gcp-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadGcpCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-best-practices': {
+      id: '/_marketing/resources/read/gcp-best-practices'
+      path: '/read/gcp-best-practices'
+      fullPath: '/resources/read/gcp-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadGcpBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-beginner-guide': {
+      id: '/_marketing/resources/read/gcp-beginner-guide'
+      path: '/read/gcp-beginner-guide'
+      fullPath: '/resources/read/gcp-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadGcpBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-answer-key': {
+      id: '/_marketing/resources/read/gcp-answer-key'
+      path: '/read/gcp-answer-key'
+      fullPath: '/resources/read/gcp-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadGcpAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/gcp-advanced-concepts': {
+      id: '/_marketing/resources/read/gcp-advanced-concepts'
+      path: '/read/gcp-advanced-concepts'
+      fullPath: '/resources/read/gcp-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadGcpAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/figma-tips-and-tricks': {
       id: '/_marketing/resources/read/figma-tips-and-tricks'
       path: '/read/figma-tips-and-tricks'
@@ -10506,6 +10926,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadFigmaSampleExercisesRoute: typeof MarketingResourcesReadFigmaSampleExercisesRoute
   MarketingResourcesReadFigmaStepByStepLearningGuideRoute: typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
   MarketingResourcesReadFigmaTipsAndTricksRoute: typeof MarketingResourcesReadFigmaTipsAndTricksRoute
+  MarketingResourcesReadGcpAdvancedConceptsRoute: typeof MarketingResourcesReadGcpAdvancedConceptsRoute
+  MarketingResourcesReadGcpAnswerKeyRoute: typeof MarketingResourcesReadGcpAnswerKeyRoute
+  MarketingResourcesReadGcpBeginnerGuideRoute: typeof MarketingResourcesReadGcpBeginnerGuideRoute
+  MarketingResourcesReadGcpBestPracticesRoute: typeof MarketingResourcesReadGcpBestPracticesRoute
+  MarketingResourcesReadGcpCheatSheetRoute: typeof MarketingResourcesReadGcpCheatSheetRoute
+  MarketingResourcesReadGcpCommonMistakesRoute: typeof MarketingResourcesReadGcpCommonMistakesRoute
+  MarketingResourcesReadGcpCompleteTutorialRoute: typeof MarketingResourcesReadGcpCompleteTutorialRoute
+  MarketingResourcesReadGcpFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadGcpFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadGcpGlossaryRoute: typeof MarketingResourcesReadGcpGlossaryRoute
+  MarketingResourcesReadGcpInterviewQuestionsRoute: typeof MarketingResourcesReadGcpInterviewQuestionsRoute
+  MarketingResourcesReadGcpLearningRoadmapRoute: typeof MarketingResourcesReadGcpLearningRoadmapRoute
+  MarketingResourcesReadGcpPdfNotesRoute: typeof MarketingResourcesReadGcpPdfNotesRoute
+  MarketingResourcesReadGcpPracticeQuestionsRoute: typeof MarketingResourcesReadGcpPracticeQuestionsRoute
+  MarketingResourcesReadGcpProjectCaseStudyRoute: typeof MarketingResourcesReadGcpProjectCaseStudyRoute
+  MarketingResourcesReadGcpProjectGuideRoute: typeof MarketingResourcesReadGcpProjectGuideRoute
+  MarketingResourcesReadGcpQuickRevisionNotesRoute: typeof MarketingResourcesReadGcpQuickRevisionNotesRoute
+  MarketingResourcesReadGcpRealWorldCaseStudyRoute: typeof MarketingResourcesReadGcpRealWorldCaseStudyRoute
+  MarketingResourcesReadGcpReferenceGuideRoute: typeof MarketingResourcesReadGcpReferenceGuideRoute
+  MarketingResourcesReadGcpSampleExercisesRoute: typeof MarketingResourcesReadGcpSampleExercisesRoute
+  MarketingResourcesReadGcpStepByStepLearningGuideRoute: typeof MarketingResourcesReadGcpStepByStepLearningGuideRoute
+  MarketingResourcesReadGcpTipsTricksRoute: typeof MarketingResourcesReadGcpTipsTricksRoute
   MarketingResourcesReadGenaiBeginnerGuideRoute: typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   MarketingResourcesReadGenaiCompleteTutorialRoute: typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -11167,6 +11608,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadFigmaStepByStepLearningGuideRoute,
   MarketingResourcesReadFigmaTipsAndTricksRoute:
     MarketingResourcesReadFigmaTipsAndTricksRoute,
+  MarketingResourcesReadGcpAdvancedConceptsRoute:
+    MarketingResourcesReadGcpAdvancedConceptsRoute,
+  MarketingResourcesReadGcpAnswerKeyRoute:
+    MarketingResourcesReadGcpAnswerKeyRoute,
+  MarketingResourcesReadGcpBeginnerGuideRoute:
+    MarketingResourcesReadGcpBeginnerGuideRoute,
+  MarketingResourcesReadGcpBestPracticesRoute:
+    MarketingResourcesReadGcpBestPracticesRoute,
+  MarketingResourcesReadGcpCheatSheetRoute:
+    MarketingResourcesReadGcpCheatSheetRoute,
+  MarketingResourcesReadGcpCommonMistakesRoute:
+    MarketingResourcesReadGcpCommonMistakesRoute,
+  MarketingResourcesReadGcpCompleteTutorialRoute:
+    MarketingResourcesReadGcpCompleteTutorialRoute,
+  MarketingResourcesReadGcpFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadGcpFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadGcpGlossaryRoute:
+    MarketingResourcesReadGcpGlossaryRoute,
+  MarketingResourcesReadGcpInterviewQuestionsRoute:
+    MarketingResourcesReadGcpInterviewQuestionsRoute,
+  MarketingResourcesReadGcpLearningRoadmapRoute:
+    MarketingResourcesReadGcpLearningRoadmapRoute,
+  MarketingResourcesReadGcpPdfNotesRoute:
+    MarketingResourcesReadGcpPdfNotesRoute,
+  MarketingResourcesReadGcpPracticeQuestionsRoute:
+    MarketingResourcesReadGcpPracticeQuestionsRoute,
+  MarketingResourcesReadGcpProjectCaseStudyRoute:
+    MarketingResourcesReadGcpProjectCaseStudyRoute,
+  MarketingResourcesReadGcpProjectGuideRoute:
+    MarketingResourcesReadGcpProjectGuideRoute,
+  MarketingResourcesReadGcpQuickRevisionNotesRoute:
+    MarketingResourcesReadGcpQuickRevisionNotesRoute,
+  MarketingResourcesReadGcpRealWorldCaseStudyRoute:
+    MarketingResourcesReadGcpRealWorldCaseStudyRoute,
+  MarketingResourcesReadGcpReferenceGuideRoute:
+    MarketingResourcesReadGcpReferenceGuideRoute,
+  MarketingResourcesReadGcpSampleExercisesRoute:
+    MarketingResourcesReadGcpSampleExercisesRoute,
+  MarketingResourcesReadGcpStepByStepLearningGuideRoute:
+    MarketingResourcesReadGcpStepByStepLearningGuideRoute,
+  MarketingResourcesReadGcpTipsTricksRoute:
+    MarketingResourcesReadGcpTipsTricksRoute,
   MarketingResourcesReadGenaiBeginnerGuideRoute:
     MarketingResourcesReadGenaiBeginnerGuideRoute,
   MarketingResourcesReadGenaiCompleteTutorialRoute:
