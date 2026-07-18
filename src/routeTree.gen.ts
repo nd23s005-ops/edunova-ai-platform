@@ -85,6 +85,7 @@ import { Route as MarketingResourcesReadDlLearningRoadmapRouteImport } from './r
 import { Route as MarketingResourcesReadDlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.dl-interview-questions'
 import { Route as MarketingResourcesReadDlGlossaryRouteImport } from './routes/_marketing.resources.read.dl-glossary'
 import { Route as MarketingResourcesReadDlFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.dl-frequently-asked-questions'
+import { Route as MarketingResourcesReadDlCompleteTutorialRouteImport } from './routes/_marketing.resources.read.dl-complete-tutorial'
 import { Route as MarketingResourcesReadDlCommonMistakesRouteImport } from './routes/_marketing.resources.read.dl-common-mistakes'
 import { Route as MarketingResourcesReadDlBestPracticesRouteImport } from './routes/_marketing.resources.read.dl-best-practices'
 import { Route as MarketingResourcesReadDlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dl-beginner-guide'
@@ -548,6 +549,12 @@ const MarketingResourcesReadDlFrequentlyAskedQuestionsRoute =
     path: '/read/dl-frequently-asked-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDlCompleteTutorialRoute =
+  MarketingResourcesReadDlCompleteTutorialRouteImport.update({
+    id: '/read/dl-complete-tutorial',
+    path: '/read/dl-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDlCommonMistakesRoute =
   MarketingResourcesReadDlCommonMistakesRouteImport.update({
     id: '/read/dl-common-mistakes',
@@ -857,6 +864,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
   '/resources/read/dl-best-practices': typeof MarketingResourcesReadDlBestPracticesRoute
   '/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
+  '/resources/read/dl-complete-tutorial': typeof MarketingResourcesReadDlCompleteTutorialRoute
   '/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
@@ -970,6 +978,7 @@ export interface FileRoutesByTo {
   '/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
   '/resources/read/dl-best-practices': typeof MarketingResourcesReadDlBestPracticesRoute
   '/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
+  '/resources/read/dl-complete-tutorial': typeof MarketingResourcesReadDlCompleteTutorialRoute
   '/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
@@ -1088,6 +1097,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
   '/_marketing/resources/read/dl-best-practices': typeof MarketingResourcesReadDlBestPracticesRoute
   '/_marketing/resources/read/dl-common-mistakes': typeof MarketingResourcesReadDlCommonMistakesRoute
+  '/_marketing/resources/read/dl-complete-tutorial': typeof MarketingResourcesReadDlCompleteTutorialRoute
   '/_marketing/resources/read/dl-frequently-asked-questions': typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/_marketing/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
@@ -1204,6 +1214,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-beginner-guide'
     | '/resources/read/dl-best-practices'
     | '/resources/read/dl-common-mistakes'
+    | '/resources/read/dl-complete-tutorial'
     | '/resources/read/dl-frequently-asked-questions'
     | '/resources/read/dl-glossary'
     | '/resources/read/dl-interview-questions'
@@ -1317,6 +1328,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-beginner-guide'
     | '/resources/read/dl-best-practices'
     | '/resources/read/dl-common-mistakes'
+    | '/resources/read/dl-complete-tutorial'
     | '/resources/read/dl-frequently-asked-questions'
     | '/resources/read/dl-glossary'
     | '/resources/read/dl-interview-questions'
@@ -1434,6 +1446,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dl-beginner-guide'
     | '/_marketing/resources/read/dl-best-practices'
     | '/_marketing/resources/read/dl-common-mistakes'
+    | '/_marketing/resources/read/dl-complete-tutorial'
     | '/_marketing/resources/read/dl-frequently-asked-questions'
     | '/_marketing/resources/read/dl-glossary'
     | '/_marketing/resources/read/dl-interview-questions'
@@ -2025,6 +2038,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/dl-complete-tutorial': {
+      id: '/_marketing/resources/read/dl-complete-tutorial'
+      path: '/read/dl-complete-tutorial'
+      fullPath: '/resources/read/dl-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadDlCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dl-common-mistakes': {
       id: '/_marketing/resources/read/dl-common-mistakes'
       path: '/read/dl-common-mistakes'
@@ -2460,6 +2480,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDlBeginnerGuideRoute: typeof MarketingResourcesReadDlBeginnerGuideRoute
   MarketingResourcesReadDlBestPracticesRoute: typeof MarketingResourcesReadDlBestPracticesRoute
   MarketingResourcesReadDlCommonMistakesRoute: typeof MarketingResourcesReadDlCommonMistakesRoute
+  MarketingResourcesReadDlCompleteTutorialRoute: typeof MarketingResourcesReadDlCompleteTutorialRoute
   MarketingResourcesReadDlFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDlFrequentlyAskedQuestionsRoute
   MarketingResourcesReadDlGlossaryRoute: typeof MarketingResourcesReadDlGlossaryRoute
   MarketingResourcesReadDlInterviewQuestionsRoute: typeof MarketingResourcesReadDlInterviewQuestionsRoute
@@ -2547,6 +2568,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDlBestPracticesRoute,
   MarketingResourcesReadDlCommonMistakesRoute:
     MarketingResourcesReadDlCommonMistakesRoute,
+  MarketingResourcesReadDlCompleteTutorialRoute:
+    MarketingResourcesReadDlCompleteTutorialRoute,
   MarketingResourcesReadDlFrequentlyAskedQuestionsRoute:
     MarketingResourcesReadDlFrequentlyAskedQuestionsRoute,
   MarketingResourcesReadDlGlossaryRoute: MarketingResourcesReadDlGlossaryRoute,
