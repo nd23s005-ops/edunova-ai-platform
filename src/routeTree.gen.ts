@@ -149,6 +149,27 @@ import { Route as MarketingResourcesReadMlBestPracticesRouteImport } from './rou
 import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ml-beginner-guide'
 import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/_marketing.resources.read.ml-answer-key'
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
+import { Route as MarketingResourcesReadJavascriptTipsAndTricksRouteImport } from './routes/_marketing.resources.read.javascript-tips-and-tricks'
+import { Route as MarketingResourcesReadJavascriptStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.javascript-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadJavascriptSampleExercisesRouteImport } from './routes/_marketing.resources.read.javascript-sample-exercises'
+import { Route as MarketingResourcesReadJavascriptReferenceGuideRouteImport } from './routes/_marketing.resources.read.javascript-reference-guide'
+import { Route as MarketingResourcesReadJavascriptRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.javascript-real-world-case-study'
+import { Route as MarketingResourcesReadJavascriptQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.javascript-quick-revision-notes'
+import { Route as MarketingResourcesReadJavascriptProjectGuideRouteImport } from './routes/_marketing.resources.read.javascript-project-guide'
+import { Route as MarketingResourcesReadJavascriptProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.javascript-project-case-study'
+import { Route as MarketingResourcesReadJavascriptPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.javascript-practice-questions'
+import { Route as MarketingResourcesReadJavascriptPdfNotesRouteImport } from './routes/_marketing.resources.read.javascript-pdf-notes'
+import { Route as MarketingResourcesReadJavascriptLearningRoadmapRouteImport } from './routes/_marketing.resources.read.javascript-learning-roadmap'
+import { Route as MarketingResourcesReadJavascriptInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.javascript-interview-questions'
+import { Route as MarketingResourcesReadJavascriptGlossaryRouteImport } from './routes/_marketing.resources.read.javascript-glossary'
+import { Route as MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.javascript-frequently-asked-questions'
+import { Route as MarketingResourcesReadJavascriptCompleteTutorialRouteImport } from './routes/_marketing.resources.read.javascript-complete-tutorial'
+import { Route as MarketingResourcesReadJavascriptCommonMistakesRouteImport } from './routes/_marketing.resources.read.javascript-common-mistakes'
+import { Route as MarketingResourcesReadJavascriptCheatSheetRouteImport } from './routes/_marketing.resources.read.javascript-cheat-sheet'
+import { Route as MarketingResourcesReadJavascriptBestPracticesRouteImport } from './routes/_marketing.resources.read.javascript-best-practices'
+import { Route as MarketingResourcesReadJavascriptBeginnerGuideRouteImport } from './routes/_marketing.resources.read.javascript-beginner-guide'
+import { Route as MarketingResourcesReadJavascriptAnswerKeyRouteImport } from './routes/_marketing.resources.read.javascript-answer-key'
+import { Route as MarketingResourcesReadJavascriptAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.javascript-advanced-concepts'
 import { Route as MarketingResourcesReadGoTipsAndTricksRouteImport } from './routes/_marketing.resources.read.go-tips-and-tricks'
 import { Route as MarketingResourcesReadGoStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.go-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadGoSampleExercisesRouteImport } from './routes/_marketing.resources.read.go-sample-exercises'
@@ -1081,6 +1102,132 @@ const MarketingResourcesReadMlAdvancedConceptsRoute =
     path: '/read/ml-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadJavascriptTipsAndTricksRoute =
+  MarketingResourcesReadJavascriptTipsAndTricksRouteImport.update({
+    id: '/read/javascript-tips-and-tricks',
+    path: '/read/javascript-tips-and-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptStepByStepLearningGuideRoute =
+  MarketingResourcesReadJavascriptStepByStepLearningGuideRouteImport.update({
+    id: '/read/javascript-step-by-step-learning-guide',
+    path: '/read/javascript-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptSampleExercisesRoute =
+  MarketingResourcesReadJavascriptSampleExercisesRouteImport.update({
+    id: '/read/javascript-sample-exercises',
+    path: '/read/javascript-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptReferenceGuideRoute =
+  MarketingResourcesReadJavascriptReferenceGuideRouteImport.update({
+    id: '/read/javascript-reference-guide',
+    path: '/read/javascript-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptRealWorldCaseStudyRoute =
+  MarketingResourcesReadJavascriptRealWorldCaseStudyRouteImport.update({
+    id: '/read/javascript-real-world-case-study',
+    path: '/read/javascript-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptQuickRevisionNotesRoute =
+  MarketingResourcesReadJavascriptQuickRevisionNotesRouteImport.update({
+    id: '/read/javascript-quick-revision-notes',
+    path: '/read/javascript-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptProjectGuideRoute =
+  MarketingResourcesReadJavascriptProjectGuideRouteImport.update({
+    id: '/read/javascript-project-guide',
+    path: '/read/javascript-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptProjectCaseStudyRoute =
+  MarketingResourcesReadJavascriptProjectCaseStudyRouteImport.update({
+    id: '/read/javascript-project-case-study',
+    path: '/read/javascript-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptPracticeQuestionsRoute =
+  MarketingResourcesReadJavascriptPracticeQuestionsRouteImport.update({
+    id: '/read/javascript-practice-questions',
+    path: '/read/javascript-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptPdfNotesRoute =
+  MarketingResourcesReadJavascriptPdfNotesRouteImport.update({
+    id: '/read/javascript-pdf-notes',
+    path: '/read/javascript-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptLearningRoadmapRoute =
+  MarketingResourcesReadJavascriptLearningRoadmapRouteImport.update({
+    id: '/read/javascript-learning-roadmap',
+    path: '/read/javascript-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptInterviewQuestionsRoute =
+  MarketingResourcesReadJavascriptInterviewQuestionsRouteImport.update({
+    id: '/read/javascript-interview-questions',
+    path: '/read/javascript-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptGlossaryRoute =
+  MarketingResourcesReadJavascriptGlossaryRouteImport.update({
+    id: '/read/javascript-glossary',
+    path: '/read/javascript-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/javascript-frequently-asked-questions',
+    path: '/read/javascript-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptCompleteTutorialRoute =
+  MarketingResourcesReadJavascriptCompleteTutorialRouteImport.update({
+    id: '/read/javascript-complete-tutorial',
+    path: '/read/javascript-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptCommonMistakesRoute =
+  MarketingResourcesReadJavascriptCommonMistakesRouteImport.update({
+    id: '/read/javascript-common-mistakes',
+    path: '/read/javascript-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptCheatSheetRoute =
+  MarketingResourcesReadJavascriptCheatSheetRouteImport.update({
+    id: '/read/javascript-cheat-sheet',
+    path: '/read/javascript-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptBestPracticesRoute =
+  MarketingResourcesReadJavascriptBestPracticesRouteImport.update({
+    id: '/read/javascript-best-practices',
+    path: '/read/javascript-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptBeginnerGuideRoute =
+  MarketingResourcesReadJavascriptBeginnerGuideRouteImport.update({
+    id: '/read/javascript-beginner-guide',
+    path: '/read/javascript-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptAnswerKeyRoute =
+  MarketingResourcesReadJavascriptAnswerKeyRouteImport.update({
+    id: '/read/javascript-answer-key',
+    path: '/read/javascript-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadJavascriptAdvancedConceptsRoute =
+  MarketingResourcesReadJavascriptAdvancedConceptsRouteImport.update({
+    id: '/read/javascript-advanced-concepts',
+    path: '/read/javascript-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadGoTipsAndTricksRoute =
   MarketingResourcesReadGoTipsAndTricksRouteImport.update({
     id: '/read/go-tips-and-tricks',
@@ -1989,6 +2136,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/go-tips-and-tricks': typeof MarketingResourcesReadGoTipsAndTricksRoute
+  '/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
+  '/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
+  '/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
+  '/resources/read/javascript-best-practices': typeof MarketingResourcesReadJavascriptBestPracticesRoute
+  '/resources/read/javascript-cheat-sheet': typeof MarketingResourcesReadJavascriptCheatSheetRoute
+  '/resources/read/javascript-common-mistakes': typeof MarketingResourcesReadJavascriptCommonMistakesRoute
+  '/resources/read/javascript-complete-tutorial': typeof MarketingResourcesReadJavascriptCompleteTutorialRoute
+  '/resources/read/javascript-frequently-asked-questions': typeof MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRoute
+  '/resources/read/javascript-glossary': typeof MarketingResourcesReadJavascriptGlossaryRoute
+  '/resources/read/javascript-interview-questions': typeof MarketingResourcesReadJavascriptInterviewQuestionsRoute
+  '/resources/read/javascript-learning-roadmap': typeof MarketingResourcesReadJavascriptLearningRoadmapRoute
+  '/resources/read/javascript-pdf-notes': typeof MarketingResourcesReadJavascriptPdfNotesRoute
+  '/resources/read/javascript-practice-questions': typeof MarketingResourcesReadJavascriptPracticeQuestionsRoute
+  '/resources/read/javascript-project-case-study': typeof MarketingResourcesReadJavascriptProjectCaseStudyRoute
+  '/resources/read/javascript-project-guide': typeof MarketingResourcesReadJavascriptProjectGuideRoute
+  '/resources/read/javascript-quick-revision-notes': typeof MarketingResourcesReadJavascriptQuickRevisionNotesRoute
+  '/resources/read/javascript-real-world-case-study': typeof MarketingResourcesReadJavascriptRealWorldCaseStudyRoute
+  '/resources/read/javascript-reference-guide': typeof MarketingResourcesReadJavascriptReferenceGuideRoute
+  '/resources/read/javascript-sample-exercises': typeof MarketingResourcesReadJavascriptSampleExercisesRoute
+  '/resources/read/javascript-step-by-step-learning-guide': typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRoute
+  '/resources/read/javascript-tips-and-tricks': typeof MarketingResourcesReadJavascriptTipsAndTricksRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -2251,6 +2419,27 @@ export interface FileRoutesByTo {
   '/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/go-tips-and-tricks': typeof MarketingResourcesReadGoTipsAndTricksRoute
+  '/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
+  '/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
+  '/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
+  '/resources/read/javascript-best-practices': typeof MarketingResourcesReadJavascriptBestPracticesRoute
+  '/resources/read/javascript-cheat-sheet': typeof MarketingResourcesReadJavascriptCheatSheetRoute
+  '/resources/read/javascript-common-mistakes': typeof MarketingResourcesReadJavascriptCommonMistakesRoute
+  '/resources/read/javascript-complete-tutorial': typeof MarketingResourcesReadJavascriptCompleteTutorialRoute
+  '/resources/read/javascript-frequently-asked-questions': typeof MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRoute
+  '/resources/read/javascript-glossary': typeof MarketingResourcesReadJavascriptGlossaryRoute
+  '/resources/read/javascript-interview-questions': typeof MarketingResourcesReadJavascriptInterviewQuestionsRoute
+  '/resources/read/javascript-learning-roadmap': typeof MarketingResourcesReadJavascriptLearningRoadmapRoute
+  '/resources/read/javascript-pdf-notes': typeof MarketingResourcesReadJavascriptPdfNotesRoute
+  '/resources/read/javascript-practice-questions': typeof MarketingResourcesReadJavascriptPracticeQuestionsRoute
+  '/resources/read/javascript-project-case-study': typeof MarketingResourcesReadJavascriptProjectCaseStudyRoute
+  '/resources/read/javascript-project-guide': typeof MarketingResourcesReadJavascriptProjectGuideRoute
+  '/resources/read/javascript-quick-revision-notes': typeof MarketingResourcesReadJavascriptQuickRevisionNotesRoute
+  '/resources/read/javascript-real-world-case-study': typeof MarketingResourcesReadJavascriptRealWorldCaseStudyRoute
+  '/resources/read/javascript-reference-guide': typeof MarketingResourcesReadJavascriptReferenceGuideRoute
+  '/resources/read/javascript-sample-exercises': typeof MarketingResourcesReadJavascriptSampleExercisesRoute
+  '/resources/read/javascript-step-by-step-learning-guide': typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRoute
+  '/resources/read/javascript-tips-and-tricks': typeof MarketingResourcesReadJavascriptTipsAndTricksRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -2518,6 +2707,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/_marketing/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/_marketing/resources/read/go-tips-and-tricks': typeof MarketingResourcesReadGoTipsAndTricksRoute
+  '/_marketing/resources/read/javascript-advanced-concepts': typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
+  '/_marketing/resources/read/javascript-answer-key': typeof MarketingResourcesReadJavascriptAnswerKeyRoute
+  '/_marketing/resources/read/javascript-beginner-guide': typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
+  '/_marketing/resources/read/javascript-best-practices': typeof MarketingResourcesReadJavascriptBestPracticesRoute
+  '/_marketing/resources/read/javascript-cheat-sheet': typeof MarketingResourcesReadJavascriptCheatSheetRoute
+  '/_marketing/resources/read/javascript-common-mistakes': typeof MarketingResourcesReadJavascriptCommonMistakesRoute
+  '/_marketing/resources/read/javascript-complete-tutorial': typeof MarketingResourcesReadJavascriptCompleteTutorialRoute
+  '/_marketing/resources/read/javascript-frequently-asked-questions': typeof MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/javascript-glossary': typeof MarketingResourcesReadJavascriptGlossaryRoute
+  '/_marketing/resources/read/javascript-interview-questions': typeof MarketingResourcesReadJavascriptInterviewQuestionsRoute
+  '/_marketing/resources/read/javascript-learning-roadmap': typeof MarketingResourcesReadJavascriptLearningRoadmapRoute
+  '/_marketing/resources/read/javascript-pdf-notes': typeof MarketingResourcesReadJavascriptPdfNotesRoute
+  '/_marketing/resources/read/javascript-practice-questions': typeof MarketingResourcesReadJavascriptPracticeQuestionsRoute
+  '/_marketing/resources/read/javascript-project-case-study': typeof MarketingResourcesReadJavascriptProjectCaseStudyRoute
+  '/_marketing/resources/read/javascript-project-guide': typeof MarketingResourcesReadJavascriptProjectGuideRoute
+  '/_marketing/resources/read/javascript-quick-revision-notes': typeof MarketingResourcesReadJavascriptQuickRevisionNotesRoute
+  '/_marketing/resources/read/javascript-real-world-case-study': typeof MarketingResourcesReadJavascriptRealWorldCaseStudyRoute
+  '/_marketing/resources/read/javascript-reference-guide': typeof MarketingResourcesReadJavascriptReferenceGuideRoute
+  '/_marketing/resources/read/javascript-sample-exercises': typeof MarketingResourcesReadJavascriptSampleExercisesRoute
+  '/_marketing/resources/read/javascript-step-by-step-learning-guide': typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRoute
+  '/_marketing/resources/read/javascript-tips-and-tricks': typeof MarketingResourcesReadJavascriptTipsAndTricksRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/_marketing/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
   '/_marketing/resources/read/ml-beginner-guide': typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -2783,6 +2993,27 @@ export interface FileRouteTypes {
     | '/resources/read/go-sample-exercises'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/go-tips-and-tricks'
+    | '/resources/read/javascript-advanced-concepts'
+    | '/resources/read/javascript-answer-key'
+    | '/resources/read/javascript-beginner-guide'
+    | '/resources/read/javascript-best-practices'
+    | '/resources/read/javascript-cheat-sheet'
+    | '/resources/read/javascript-common-mistakes'
+    | '/resources/read/javascript-complete-tutorial'
+    | '/resources/read/javascript-frequently-asked-questions'
+    | '/resources/read/javascript-glossary'
+    | '/resources/read/javascript-interview-questions'
+    | '/resources/read/javascript-learning-roadmap'
+    | '/resources/read/javascript-pdf-notes'
+    | '/resources/read/javascript-practice-questions'
+    | '/resources/read/javascript-project-case-study'
+    | '/resources/read/javascript-project-guide'
+    | '/resources/read/javascript-quick-revision-notes'
+    | '/resources/read/javascript-real-world-case-study'
+    | '/resources/read/javascript-reference-guide'
+    | '/resources/read/javascript-sample-exercises'
+    | '/resources/read/javascript-step-by-step-learning-guide'
+    | '/resources/read/javascript-tips-and-tricks'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
     | '/resources/read/ml-beginner-guide'
@@ -3045,6 +3276,27 @@ export interface FileRouteTypes {
     | '/resources/read/go-sample-exercises'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/go-tips-and-tricks'
+    | '/resources/read/javascript-advanced-concepts'
+    | '/resources/read/javascript-answer-key'
+    | '/resources/read/javascript-beginner-guide'
+    | '/resources/read/javascript-best-practices'
+    | '/resources/read/javascript-cheat-sheet'
+    | '/resources/read/javascript-common-mistakes'
+    | '/resources/read/javascript-complete-tutorial'
+    | '/resources/read/javascript-frequently-asked-questions'
+    | '/resources/read/javascript-glossary'
+    | '/resources/read/javascript-interview-questions'
+    | '/resources/read/javascript-learning-roadmap'
+    | '/resources/read/javascript-pdf-notes'
+    | '/resources/read/javascript-practice-questions'
+    | '/resources/read/javascript-project-case-study'
+    | '/resources/read/javascript-project-guide'
+    | '/resources/read/javascript-quick-revision-notes'
+    | '/resources/read/javascript-real-world-case-study'
+    | '/resources/read/javascript-reference-guide'
+    | '/resources/read/javascript-sample-exercises'
+    | '/resources/read/javascript-step-by-step-learning-guide'
+    | '/resources/read/javascript-tips-and-tricks'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
     | '/resources/read/ml-beginner-guide'
@@ -3311,6 +3563,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/go-sample-exercises'
     | '/_marketing/resources/read/go-step-by-step-learning-guide'
     | '/_marketing/resources/read/go-tips-and-tricks'
+    | '/_marketing/resources/read/javascript-advanced-concepts'
+    | '/_marketing/resources/read/javascript-answer-key'
+    | '/_marketing/resources/read/javascript-beginner-guide'
+    | '/_marketing/resources/read/javascript-best-practices'
+    | '/_marketing/resources/read/javascript-cheat-sheet'
+    | '/_marketing/resources/read/javascript-common-mistakes'
+    | '/_marketing/resources/read/javascript-complete-tutorial'
+    | '/_marketing/resources/read/javascript-frequently-asked-questions'
+    | '/_marketing/resources/read/javascript-glossary'
+    | '/_marketing/resources/read/javascript-interview-questions'
+    | '/_marketing/resources/read/javascript-learning-roadmap'
+    | '/_marketing/resources/read/javascript-pdf-notes'
+    | '/_marketing/resources/read/javascript-practice-questions'
+    | '/_marketing/resources/read/javascript-project-case-study'
+    | '/_marketing/resources/read/javascript-project-guide'
+    | '/_marketing/resources/read/javascript-quick-revision-notes'
+    | '/_marketing/resources/read/javascript-real-world-case-study'
+    | '/_marketing/resources/read/javascript-reference-guide'
+    | '/_marketing/resources/read/javascript-sample-exercises'
+    | '/_marketing/resources/read/javascript-step-by-step-learning-guide'
+    | '/_marketing/resources/read/javascript-tips-and-tricks'
     | '/_marketing/resources/read/ml-advanced-concepts'
     | '/_marketing/resources/read/ml-answer-key'
     | '/_marketing/resources/read/ml-beginner-guide'
@@ -4412,6 +4685,153 @@ declare module '@tanstack/react-router' {
       path: '/read/ml-advanced-concepts'
       fullPath: '/resources/read/ml-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadMlAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-tips-and-tricks': {
+      id: '/_marketing/resources/read/javascript-tips-and-tricks'
+      path: '/read/javascript-tips-and-tricks'
+      fullPath: '/resources/read/javascript-tips-and-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptTipsAndTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/javascript-step-by-step-learning-guide'
+      path: '/read/javascript-step-by-step-learning-guide'
+      fullPath: '/resources/read/javascript-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-sample-exercises': {
+      id: '/_marketing/resources/read/javascript-sample-exercises'
+      path: '/read/javascript-sample-exercises'
+      fullPath: '/resources/read/javascript-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-reference-guide': {
+      id: '/_marketing/resources/read/javascript-reference-guide'
+      path: '/read/javascript-reference-guide'
+      fullPath: '/resources/read/javascript-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-real-world-case-study': {
+      id: '/_marketing/resources/read/javascript-real-world-case-study'
+      path: '/read/javascript-real-world-case-study'
+      fullPath: '/resources/read/javascript-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-quick-revision-notes': {
+      id: '/_marketing/resources/read/javascript-quick-revision-notes'
+      path: '/read/javascript-quick-revision-notes'
+      fullPath: '/resources/read/javascript-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-project-guide': {
+      id: '/_marketing/resources/read/javascript-project-guide'
+      path: '/read/javascript-project-guide'
+      fullPath: '/resources/read/javascript-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-project-case-study': {
+      id: '/_marketing/resources/read/javascript-project-case-study'
+      path: '/read/javascript-project-case-study'
+      fullPath: '/resources/read/javascript-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-practice-questions': {
+      id: '/_marketing/resources/read/javascript-practice-questions'
+      path: '/read/javascript-practice-questions'
+      fullPath: '/resources/read/javascript-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-pdf-notes': {
+      id: '/_marketing/resources/read/javascript-pdf-notes'
+      path: '/read/javascript-pdf-notes'
+      fullPath: '/resources/read/javascript-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-learning-roadmap': {
+      id: '/_marketing/resources/read/javascript-learning-roadmap'
+      path: '/read/javascript-learning-roadmap'
+      fullPath: '/resources/read/javascript-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-interview-questions': {
+      id: '/_marketing/resources/read/javascript-interview-questions'
+      path: '/read/javascript-interview-questions'
+      fullPath: '/resources/read/javascript-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-glossary': {
+      id: '/_marketing/resources/read/javascript-glossary'
+      path: '/read/javascript-glossary'
+      fullPath: '/resources/read/javascript-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-frequently-asked-questions': {
+      id: '/_marketing/resources/read/javascript-frequently-asked-questions'
+      path: '/read/javascript-frequently-asked-questions'
+      fullPath: '/resources/read/javascript-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-complete-tutorial': {
+      id: '/_marketing/resources/read/javascript-complete-tutorial'
+      path: '/read/javascript-complete-tutorial'
+      fullPath: '/resources/read/javascript-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-common-mistakes': {
+      id: '/_marketing/resources/read/javascript-common-mistakes'
+      path: '/read/javascript-common-mistakes'
+      fullPath: '/resources/read/javascript-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-cheat-sheet': {
+      id: '/_marketing/resources/read/javascript-cheat-sheet'
+      path: '/read/javascript-cheat-sheet'
+      fullPath: '/resources/read/javascript-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-best-practices': {
+      id: '/_marketing/resources/read/javascript-best-practices'
+      path: '/read/javascript-best-practices'
+      fullPath: '/resources/read/javascript-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-beginner-guide': {
+      id: '/_marketing/resources/read/javascript-beginner-guide'
+      path: '/read/javascript-beginner-guide'
+      fullPath: '/resources/read/javascript-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-answer-key': {
+      id: '/_marketing/resources/read/javascript-answer-key'
+      path: '/read/javascript-answer-key'
+      fullPath: '/resources/read/javascript-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/javascript-advanced-concepts': {
+      id: '/_marketing/resources/read/javascript-advanced-concepts'
+      path: '/read/javascript-advanced-concepts'
+      fullPath: '/resources/read/javascript-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadJavascriptAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/go-tips-and-tricks': {
@@ -5529,6 +5949,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadGoSampleExercisesRoute: typeof MarketingResourcesReadGoSampleExercisesRoute
   MarketingResourcesReadGoStepByStepLearningGuideRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   MarketingResourcesReadGoTipsAndTricksRoute: typeof MarketingResourcesReadGoTipsAndTricksRoute
+  MarketingResourcesReadJavascriptAdvancedConceptsRoute: typeof MarketingResourcesReadJavascriptAdvancedConceptsRoute
+  MarketingResourcesReadJavascriptAnswerKeyRoute: typeof MarketingResourcesReadJavascriptAnswerKeyRoute
+  MarketingResourcesReadJavascriptBeginnerGuideRoute: typeof MarketingResourcesReadJavascriptBeginnerGuideRoute
+  MarketingResourcesReadJavascriptBestPracticesRoute: typeof MarketingResourcesReadJavascriptBestPracticesRoute
+  MarketingResourcesReadJavascriptCheatSheetRoute: typeof MarketingResourcesReadJavascriptCheatSheetRoute
+  MarketingResourcesReadJavascriptCommonMistakesRoute: typeof MarketingResourcesReadJavascriptCommonMistakesRoute
+  MarketingResourcesReadJavascriptCompleteTutorialRoute: typeof MarketingResourcesReadJavascriptCompleteTutorialRoute
+  MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadJavascriptGlossaryRoute: typeof MarketingResourcesReadJavascriptGlossaryRoute
+  MarketingResourcesReadJavascriptInterviewQuestionsRoute: typeof MarketingResourcesReadJavascriptInterviewQuestionsRoute
+  MarketingResourcesReadJavascriptLearningRoadmapRoute: typeof MarketingResourcesReadJavascriptLearningRoadmapRoute
+  MarketingResourcesReadJavascriptPdfNotesRoute: typeof MarketingResourcesReadJavascriptPdfNotesRoute
+  MarketingResourcesReadJavascriptPracticeQuestionsRoute: typeof MarketingResourcesReadJavascriptPracticeQuestionsRoute
+  MarketingResourcesReadJavascriptProjectCaseStudyRoute: typeof MarketingResourcesReadJavascriptProjectCaseStudyRoute
+  MarketingResourcesReadJavascriptProjectGuideRoute: typeof MarketingResourcesReadJavascriptProjectGuideRoute
+  MarketingResourcesReadJavascriptQuickRevisionNotesRoute: typeof MarketingResourcesReadJavascriptQuickRevisionNotesRoute
+  MarketingResourcesReadJavascriptRealWorldCaseStudyRoute: typeof MarketingResourcesReadJavascriptRealWorldCaseStudyRoute
+  MarketingResourcesReadJavascriptReferenceGuideRoute: typeof MarketingResourcesReadJavascriptReferenceGuideRoute
+  MarketingResourcesReadJavascriptSampleExercisesRoute: typeof MarketingResourcesReadJavascriptSampleExercisesRoute
+  MarketingResourcesReadJavascriptStepByStepLearningGuideRoute: typeof MarketingResourcesReadJavascriptStepByStepLearningGuideRoute
+  MarketingResourcesReadJavascriptTipsAndTricksRoute: typeof MarketingResourcesReadJavascriptTipsAndTricksRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
   MarketingResourcesReadMlAnswerKeyRoute: typeof MarketingResourcesReadMlAnswerKeyRoute
   MarketingResourcesReadMlBeginnerGuideRoute: typeof MarketingResourcesReadMlBeginnerGuideRoute
@@ -5846,6 +6287,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadGoStepByStepLearningGuideRoute,
   MarketingResourcesReadGoTipsAndTricksRoute:
     MarketingResourcesReadGoTipsAndTricksRoute,
+  MarketingResourcesReadJavascriptAdvancedConceptsRoute:
+    MarketingResourcesReadJavascriptAdvancedConceptsRoute,
+  MarketingResourcesReadJavascriptAnswerKeyRoute:
+    MarketingResourcesReadJavascriptAnswerKeyRoute,
+  MarketingResourcesReadJavascriptBeginnerGuideRoute:
+    MarketingResourcesReadJavascriptBeginnerGuideRoute,
+  MarketingResourcesReadJavascriptBestPracticesRoute:
+    MarketingResourcesReadJavascriptBestPracticesRoute,
+  MarketingResourcesReadJavascriptCheatSheetRoute:
+    MarketingResourcesReadJavascriptCheatSheetRoute,
+  MarketingResourcesReadJavascriptCommonMistakesRoute:
+    MarketingResourcesReadJavascriptCommonMistakesRoute,
+  MarketingResourcesReadJavascriptCompleteTutorialRoute:
+    MarketingResourcesReadJavascriptCompleteTutorialRoute,
+  MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadJavascriptFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadJavascriptGlossaryRoute:
+    MarketingResourcesReadJavascriptGlossaryRoute,
+  MarketingResourcesReadJavascriptInterviewQuestionsRoute:
+    MarketingResourcesReadJavascriptInterviewQuestionsRoute,
+  MarketingResourcesReadJavascriptLearningRoadmapRoute:
+    MarketingResourcesReadJavascriptLearningRoadmapRoute,
+  MarketingResourcesReadJavascriptPdfNotesRoute:
+    MarketingResourcesReadJavascriptPdfNotesRoute,
+  MarketingResourcesReadJavascriptPracticeQuestionsRoute:
+    MarketingResourcesReadJavascriptPracticeQuestionsRoute,
+  MarketingResourcesReadJavascriptProjectCaseStudyRoute:
+    MarketingResourcesReadJavascriptProjectCaseStudyRoute,
+  MarketingResourcesReadJavascriptProjectGuideRoute:
+    MarketingResourcesReadJavascriptProjectGuideRoute,
+  MarketingResourcesReadJavascriptQuickRevisionNotesRoute:
+    MarketingResourcesReadJavascriptQuickRevisionNotesRoute,
+  MarketingResourcesReadJavascriptRealWorldCaseStudyRoute:
+    MarketingResourcesReadJavascriptRealWorldCaseStudyRoute,
+  MarketingResourcesReadJavascriptReferenceGuideRoute:
+    MarketingResourcesReadJavascriptReferenceGuideRoute,
+  MarketingResourcesReadJavascriptSampleExercisesRoute:
+    MarketingResourcesReadJavascriptSampleExercisesRoute,
+  MarketingResourcesReadJavascriptStepByStepLearningGuideRoute:
+    MarketingResourcesReadJavascriptStepByStepLearningGuideRoute,
+  MarketingResourcesReadJavascriptTipsAndTricksRoute:
+    MarketingResourcesReadJavascriptTipsAndTricksRoute,
   MarketingResourcesReadMlAdvancedConceptsRoute:
     MarketingResourcesReadMlAdvancedConceptsRoute,
   MarketingResourcesReadMlAnswerKeyRoute:
