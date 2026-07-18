@@ -283,6 +283,12 @@ function ExplorePage() {
   const [sort, setSort] = useState<(typeof SORTS)[number]>("Popular");
   const [activeCat, setActiveCat] = useState<string>("All");
 
+  const courseCategories = useMemo(
+    () => Array.from(new Set(COURSES.map((c) => c.category))).sort((a, b) => a.localeCompare(b)),
+    [],
+  );
+
+
   const filtered = useMemo(() => {
     let list = COURSES.slice();
     const s = q.trim().toLowerCase();
