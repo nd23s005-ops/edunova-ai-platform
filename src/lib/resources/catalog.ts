@@ -418,6 +418,9 @@ const READER_ROUTES: Record<string, string> = {
    "dbms--real-world-case-study": "/resources/read/dbms-real-world-case-study",
    "dbms--best-practices": "/resources/read/dbms-best-practices",
    "dbms--common-mistakes": "/resources/read/dbms-common-mistakes",
+   "system-design--beginner-guide": "/resources/read/sd-beginner-guide",
+   "system-design--complete-tutorial": "/resources/read/sd-complete-tutorial",
+   "system-design--step-by-step-learning-guide": "/resources/read/sd-step-by-step-learning-guide",
 
 
 
