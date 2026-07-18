@@ -184,6 +184,7 @@ const SLUG_IMAGE: Record<string, string> = {
   "angular": "photo-1633356122544-f134324a6cee",
   "vue": "photo-1607799279861-4dd421887fb3",
   "nodejs": "photo-1627398242454-45a1465c2479",
+  "expressjs": "photo-1517180102446-f3ece451e9d8",
   "html5": "photo-1621839673705-6617adf9e890",
   "css3": "photo-1507721999472-8ed4421c4af2",
   "tailwind-css": "photo-1555066931-4365d14bab8c",
