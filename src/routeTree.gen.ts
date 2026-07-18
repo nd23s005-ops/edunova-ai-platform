@@ -57,6 +57,7 @@ import { Route as MarketingResourcesReadPeTipsTricksRouteImport } from './routes
 import { Route as MarketingResourcesReadPeStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pe-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPeSampleExercisesRouteImport } from './routes/_marketing.resources.read.pe-sample-exercises'
 import { Route as MarketingResourcesReadPeReferenceGuideRouteImport } from './routes/_marketing.resources.read.pe-reference-guide'
+import { Route as MarketingResourcesReadPeRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.pe-real-world-case-study'
 import { Route as MarketingResourcesReadPeQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.pe-quick-revision-notes'
 import { Route as MarketingResourcesReadPeProjectGuideRouteImport } from './routes/_marketing.resources.read.pe-project-guide'
 import { Route as MarketingResourcesReadPeProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.pe-project-case-study'
@@ -67,7 +68,9 @@ import { Route as MarketingResourcesReadPeInterviewQuestionsRouteImport } from '
 import { Route as MarketingResourcesReadPeGlossaryRouteImport } from './routes/_marketing.resources.read.pe-glossary'
 import { Route as MarketingResourcesReadPeFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.pe-frequently-asked-questions'
 import { Route as MarketingResourcesReadPeCompleteTutorialRouteImport } from './routes/_marketing.resources.read.pe-complete-tutorial'
+import { Route as MarketingResourcesReadPeCommonMistakesRouteImport } from './routes/_marketing.resources.read.pe-common-mistakes'
 import { Route as MarketingResourcesReadPeCheatSheetRouteImport } from './routes/_marketing.resources.read.pe-cheat-sheet'
+import { Route as MarketingResourcesReadPeBestPracticesRouteImport } from './routes/_marketing.resources.read.pe-best-practices'
 import { Route as MarketingResourcesReadPeBeginnerGuideRouteImport } from './routes/_marketing.resources.read.pe-beginner-guide'
 import { Route as MarketingResourcesReadPeAnswerKeyRouteImport } from './routes/_marketing.resources.read.pe-answer-key'
 import { Route as MarketingResourcesReadPeAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.pe-advanced-concepts'
@@ -409,6 +412,12 @@ const MarketingResourcesReadPeReferenceGuideRoute =
     path: '/read/pe-reference-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadPeRealWorldCaseStudyRoute =
+  MarketingResourcesReadPeRealWorldCaseStudyRouteImport.update({
+    id: '/read/pe-real-world-case-study',
+    path: '/read/pe-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadPeQuickRevisionNotesRoute =
   MarketingResourcesReadPeQuickRevisionNotesRouteImport.update({
     id: '/read/pe-quick-revision-notes',
@@ -469,10 +478,22 @@ const MarketingResourcesReadPeCompleteTutorialRoute =
     path: '/read/pe-complete-tutorial',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadPeCommonMistakesRoute =
+  MarketingResourcesReadPeCommonMistakesRouteImport.update({
+    id: '/read/pe-common-mistakes',
+    path: '/read/pe-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadPeCheatSheetRoute =
   MarketingResourcesReadPeCheatSheetRouteImport.update({
     id: '/read/pe-cheat-sheet',
     path: '/read/pe-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPeBestPracticesRoute =
+  MarketingResourcesReadPeBestPracticesRouteImport.update({
+    id: '/read/pe-best-practices',
+    path: '/read/pe-best-practices',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeBeginnerGuideRoute =
@@ -1106,7 +1127,9 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
+  '/resources/read/pe-best-practices': typeof MarketingResourcesReadPeBestPracticesRoute
   '/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
+  '/resources/read/pe-common-mistakes': typeof MarketingResourcesReadPeCommonMistakesRoute
   '/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
   '/resources/read/pe-frequently-asked-questions': typeof MarketingResourcesReadPeFrequentlyAskedQuestionsRoute
   '/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
@@ -1117,6 +1140,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
+  '/resources/read/pe-real-world-case-study': typeof MarketingResourcesReadPeRealWorldCaseStudyRoute
   '/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
@@ -1248,7 +1272,9 @@ export interface FileRoutesByTo {
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
+  '/resources/read/pe-best-practices': typeof MarketingResourcesReadPeBestPracticesRoute
   '/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
+  '/resources/read/pe-common-mistakes': typeof MarketingResourcesReadPeCommonMistakesRoute
   '/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
   '/resources/read/pe-frequently-asked-questions': typeof MarketingResourcesReadPeFrequentlyAskedQuestionsRoute
   '/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
@@ -1259,6 +1285,7 @@ export interface FileRoutesByTo {
   '/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
+  '/resources/read/pe-real-world-case-study': typeof MarketingResourcesReadPeRealWorldCaseStudyRoute
   '/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
@@ -1395,7 +1422,9 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/_marketing/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/_marketing/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
+  '/_marketing/resources/read/pe-best-practices': typeof MarketingResourcesReadPeBestPracticesRoute
   '/_marketing/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
+  '/_marketing/resources/read/pe-common-mistakes': typeof MarketingResourcesReadPeCommonMistakesRoute
   '/_marketing/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
   '/_marketing/resources/read/pe-frequently-asked-questions': typeof MarketingResourcesReadPeFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
@@ -1406,6 +1435,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/_marketing/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/_marketing/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
+  '/_marketing/resources/read/pe-real-world-case-study': typeof MarketingResourcesReadPeRealWorldCaseStudyRoute
   '/_marketing/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/_marketing/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/_marketing/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
@@ -1540,7 +1570,9 @@ export interface FileRouteTypes {
     | '/resources/read/pe-advanced-concepts'
     | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
+    | '/resources/read/pe-best-practices'
     | '/resources/read/pe-cheat-sheet'
+    | '/resources/read/pe-common-mistakes'
     | '/resources/read/pe-complete-tutorial'
     | '/resources/read/pe-frequently-asked-questions'
     | '/resources/read/pe-glossary'
@@ -1551,6 +1583,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-project-case-study'
     | '/resources/read/pe-project-guide'
     | '/resources/read/pe-quick-revision-notes'
+    | '/resources/read/pe-real-world-case-study'
     | '/resources/read/pe-reference-guide'
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
@@ -1682,7 +1715,9 @@ export interface FileRouteTypes {
     | '/resources/read/pe-advanced-concepts'
     | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
+    | '/resources/read/pe-best-practices'
     | '/resources/read/pe-cheat-sheet'
+    | '/resources/read/pe-common-mistakes'
     | '/resources/read/pe-complete-tutorial'
     | '/resources/read/pe-frequently-asked-questions'
     | '/resources/read/pe-glossary'
@@ -1693,6 +1728,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-project-case-study'
     | '/resources/read/pe-project-guide'
     | '/resources/read/pe-quick-revision-notes'
+    | '/resources/read/pe-real-world-case-study'
     | '/resources/read/pe-reference-guide'
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
@@ -1828,7 +1864,9 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-advanced-concepts'
     | '/_marketing/resources/read/pe-answer-key'
     | '/_marketing/resources/read/pe-beginner-guide'
+    | '/_marketing/resources/read/pe-best-practices'
     | '/_marketing/resources/read/pe-cheat-sheet'
+    | '/_marketing/resources/read/pe-common-mistakes'
     | '/_marketing/resources/read/pe-complete-tutorial'
     | '/_marketing/resources/read/pe-frequently-asked-questions'
     | '/_marketing/resources/read/pe-glossary'
@@ -1839,6 +1877,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-project-case-study'
     | '/_marketing/resources/read/pe-project-guide'
     | '/_marketing/resources/read/pe-quick-revision-notes'
+    | '/_marketing/resources/read/pe-real-world-case-study'
     | '/_marketing/resources/read/pe-reference-guide'
     | '/_marketing/resources/read/pe-sample-exercises'
     | '/_marketing/resources/read/pe-step-by-step-learning-guide'
@@ -2206,6 +2245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadPeReferenceGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/pe-real-world-case-study': {
+      id: '/_marketing/resources/read/pe-real-world-case-study'
+      path: '/read/pe-real-world-case-study'
+      fullPath: '/resources/read/pe-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPeRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/pe-quick-revision-notes': {
       id: '/_marketing/resources/read/pe-quick-revision-notes'
       path: '/read/pe-quick-revision-notes'
@@ -2276,11 +2322,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadPeCompleteTutorialRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/pe-common-mistakes': {
+      id: '/_marketing/resources/read/pe-common-mistakes'
+      path: '/read/pe-common-mistakes'
+      fullPath: '/resources/read/pe-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadPeCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/pe-cheat-sheet': {
       id: '/_marketing/resources/read/pe-cheat-sheet'
       path: '/read/pe-cheat-sheet'
       fullPath: '/resources/read/pe-cheat-sheet'
       preLoaderRoute: typeof MarketingResourcesReadPeCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pe-best-practices': {
+      id: '/_marketing/resources/read/pe-best-practices'
+      path: '/read/pe-best-practices'
+      fullPath: '/resources/read/pe-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadPeBestPracticesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-beginner-guide': {
@@ -3086,7 +3146,9 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeAdvancedConceptsRoute: typeof MarketingResourcesReadPeAdvancedConceptsRoute
   MarketingResourcesReadPeAnswerKeyRoute: typeof MarketingResourcesReadPeAnswerKeyRoute
   MarketingResourcesReadPeBeginnerGuideRoute: typeof MarketingResourcesReadPeBeginnerGuideRoute
+  MarketingResourcesReadPeBestPracticesRoute: typeof MarketingResourcesReadPeBestPracticesRoute
   MarketingResourcesReadPeCheatSheetRoute: typeof MarketingResourcesReadPeCheatSheetRoute
+  MarketingResourcesReadPeCommonMistakesRoute: typeof MarketingResourcesReadPeCommonMistakesRoute
   MarketingResourcesReadPeCompleteTutorialRoute: typeof MarketingResourcesReadPeCompleteTutorialRoute
   MarketingResourcesReadPeFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadPeFrequentlyAskedQuestionsRoute
   MarketingResourcesReadPeGlossaryRoute: typeof MarketingResourcesReadPeGlossaryRoute
@@ -3097,6 +3159,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeProjectCaseStudyRoute: typeof MarketingResourcesReadPeProjectCaseStudyRoute
   MarketingResourcesReadPeProjectGuideRoute: typeof MarketingResourcesReadPeProjectGuideRoute
   MarketingResourcesReadPeQuickRevisionNotesRoute: typeof MarketingResourcesReadPeQuickRevisionNotesRoute
+  MarketingResourcesReadPeRealWorldCaseStudyRoute: typeof MarketingResourcesReadPeRealWorldCaseStudyRoute
   MarketingResourcesReadPeReferenceGuideRoute: typeof MarketingResourcesReadPeReferenceGuideRoute
   MarketingResourcesReadPeSampleExercisesRoute: typeof MarketingResourcesReadPeSampleExercisesRoute
   MarketingResourcesReadPeStepByStepLearningGuideRoute: typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
@@ -3244,8 +3307,12 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeAnswerKeyRoute,
   MarketingResourcesReadPeBeginnerGuideRoute:
     MarketingResourcesReadPeBeginnerGuideRoute,
+  MarketingResourcesReadPeBestPracticesRoute:
+    MarketingResourcesReadPeBestPracticesRoute,
   MarketingResourcesReadPeCheatSheetRoute:
     MarketingResourcesReadPeCheatSheetRoute,
+  MarketingResourcesReadPeCommonMistakesRoute:
+    MarketingResourcesReadPeCommonMistakesRoute,
   MarketingResourcesReadPeCompleteTutorialRoute:
     MarketingResourcesReadPeCompleteTutorialRoute,
   MarketingResourcesReadPeFrequentlyAskedQuestionsRoute:
@@ -3264,6 +3331,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeProjectGuideRoute,
   MarketingResourcesReadPeQuickRevisionNotesRoute:
     MarketingResourcesReadPeQuickRevisionNotesRoute,
+  MarketingResourcesReadPeRealWorldCaseStudyRoute:
+    MarketingResourcesReadPeRealWorldCaseStudyRoute,
   MarketingResourcesReadPeReferenceGuideRoute:
     MarketingResourcesReadPeReferenceGuideRoute,
   MarketingResourcesReadPeSampleExercisesRoute:
