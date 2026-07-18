@@ -343,6 +343,9 @@ const READER_ROUTES: Record<string, string> = {
   "machine-learning--real-world-case-study": "/resources/read/ml-real-world-case-study",
   "machine-learning--best-practices": "/resources/read/ml-best-practices",
   "machine-learning--common-mistakes": "/resources/read/ml-common-mistakes",
+  "machine-learning--frequently-asked-questions": "/resources/read/ml-frequently-asked-questions",
+  "machine-learning--learning-roadmap": "/resources/read/ml-learning-roadmap",
+  "machine-learning--tips-tricks": "/resources/read/ml-tips-tricks",
 };
 
 export function getResourceReaderPath(id: string): string | null {
