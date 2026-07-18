@@ -361,6 +361,9 @@ const READER_ROUTES: Record<string, string> = {
   "deep-learning--interview-questions": "/resources/read/dl-interview-questions",
   "deep-learning--practice-questions": "/resources/read/dl-practice-questions",
   "deep-learning--answer-key": "/resources/read/dl-answer-key",
+  "deep-learning--sample-exercises": "/resources/read/dl-sample-exercises",
+  "deep-learning--project-guide": "/resources/read/dl-project-guide",
+  "deep-learning--project-case-study": "/resources/read/dl-project-case-study",
 
 
 
