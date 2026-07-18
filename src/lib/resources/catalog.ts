@@ -176,6 +176,7 @@ const SLUG_IMAGE: Record<string, string> = {
   "python": "photo-1526379095098-d400fd0bf935",
   "java": "photo-1517694712202-14dd9538aa97",
   "c-programming": "photo-1580927752452-89d86da3fa0a",
+  "cpp": "photo-1629654297299-c8506221ca97",
   "javascript": "photo-1579468118864-1b9ea3c0db4a",
   "typescript": "photo-1587620962725-abab7fe55159",
   "react": "photo-1633356122544-f134324a6cee",
