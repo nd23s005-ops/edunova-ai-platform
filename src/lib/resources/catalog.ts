@@ -442,6 +442,15 @@ const READER_ROUTES: Record<string, string> = {
    "go--sample-exercises": "/resources/read/go-sample-exercises",
    "go--project-guide": "/resources/read/go-project-guide",
    "go--project-case-study": "/resources/read/go-project-case-study",
+   "go--real-world-case-study": "/resources/read/go-real-world-case-study",
+   "go--best-practices": "/resources/read/go-best-practices",
+   "go--common-mistakes": "/resources/read/go-common-mistakes",
+   "go--frequently-asked-questions": "/resources/read/go-frequently-asked-questions",
+   "go--learning-roadmap": "/resources/read/go-learning-roadmap",
+   "go--tips-and-tricks": "/resources/read/go-tips-and-tricks",
+   "go--advanced-concepts": "/resources/read/go-advanced-concepts",
+   "go--glossary": "/resources/read/go-glossary",
+   "go--reference-guide": "/resources/read/go-reference-guide",
 
 
 
