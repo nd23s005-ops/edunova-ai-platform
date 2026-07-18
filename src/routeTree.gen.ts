@@ -109,6 +109,7 @@ import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
 import { Route as MarketingResourcesReadGoStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.go-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadGoSampleExercisesRouteImport } from './routes/_marketing.resources.read.go-sample-exercises'
+import { Route as MarketingResourcesReadGoRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.go-real-world-case-study'
 import { Route as MarketingResourcesReadGoQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.go-quick-revision-notes'
 import { Route as MarketingResourcesReadGoProjectGuideRouteImport } from './routes/_marketing.resources.read.go-project-guide'
 import { Route as MarketingResourcesReadGoProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.go-project-case-study'
@@ -767,6 +768,12 @@ const MarketingResourcesReadGoSampleExercisesRoute =
   MarketingResourcesReadGoSampleExercisesRouteImport.update({
     id: '/read/go-sample-exercises',
     path: '/read/go-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGoRealWorldCaseStudyRoute =
+  MarketingResourcesReadGoRealWorldCaseStudyRouteImport.update({
+    id: '/read/go-real-world-case-study',
+    path: '/read/go-real-world-case-study',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadGoQuickRevisionNotesRoute =
@@ -1449,6 +1456,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/go-project-case-study': typeof MarketingResourcesReadGoProjectCaseStudyRoute
   '/resources/read/go-project-guide': typeof MarketingResourcesReadGoProjectGuideRoute
   '/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
+  '/resources/read/go-real-world-case-study': typeof MarketingResourcesReadGoRealWorldCaseStudyRoute
   '/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
@@ -1639,6 +1647,7 @@ export interface FileRoutesByTo {
   '/resources/read/go-project-case-study': typeof MarketingResourcesReadGoProjectCaseStudyRoute
   '/resources/read/go-project-guide': typeof MarketingResourcesReadGoProjectGuideRoute
   '/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
+  '/resources/read/go-real-world-case-study': typeof MarketingResourcesReadGoRealWorldCaseStudyRoute
   '/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
@@ -1834,6 +1843,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/go-project-case-study': typeof MarketingResourcesReadGoProjectCaseStudyRoute
   '/_marketing/resources/read/go-project-guide': typeof MarketingResourcesReadGoProjectGuideRoute
   '/_marketing/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
+  '/_marketing/resources/read/go-real-world-case-study': typeof MarketingResourcesReadGoRealWorldCaseStudyRoute
   '/_marketing/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/_marketing/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
@@ -2027,6 +2037,7 @@ export interface FileRouteTypes {
     | '/resources/read/go-project-case-study'
     | '/resources/read/go-project-guide'
     | '/resources/read/go-quick-revision-notes'
+    | '/resources/read/go-real-world-case-study'
     | '/resources/read/go-sample-exercises'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/ml-advanced-concepts'
@@ -2217,6 +2228,7 @@ export interface FileRouteTypes {
     | '/resources/read/go-project-case-study'
     | '/resources/read/go-project-guide'
     | '/resources/read/go-quick-revision-notes'
+    | '/resources/read/go-real-world-case-study'
     | '/resources/read/go-sample-exercises'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/ml-advanced-concepts'
@@ -2411,6 +2423,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/go-project-case-study'
     | '/_marketing/resources/read/go-project-guide'
     | '/_marketing/resources/read/go-quick-revision-notes'
+    | '/_marketing/resources/read/go-real-world-case-study'
     | '/_marketing/resources/read/go-sample-exercises'
     | '/_marketing/resources/read/go-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-advanced-concepts'
@@ -3192,6 +3205,13 @@ declare module '@tanstack/react-router' {
       path: '/read/go-sample-exercises'
       fullPath: '/resources/read/go-sample-exercises'
       preLoaderRoute: typeof MarketingResourcesReadGoSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/go-real-world-case-study': {
+      id: '/_marketing/resources/read/go-real-world-case-study'
+      path: '/read/go-real-world-case-study'
+      fullPath: '/resources/read/go-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadGoRealWorldCaseStudyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/go-quick-revision-notes': {
@@ -4053,6 +4073,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadGoProjectCaseStudyRoute: typeof MarketingResourcesReadGoProjectCaseStudyRoute
   MarketingResourcesReadGoProjectGuideRoute: typeof MarketingResourcesReadGoProjectGuideRoute
   MarketingResourcesReadGoQuickRevisionNotesRoute: typeof MarketingResourcesReadGoQuickRevisionNotesRoute
+  MarketingResourcesReadGoRealWorldCaseStudyRoute: typeof MarketingResourcesReadGoRealWorldCaseStudyRoute
   MarketingResourcesReadGoSampleExercisesRoute: typeof MarketingResourcesReadGoSampleExercisesRoute
   MarketingResourcesReadGoStepByStepLearningGuideRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
@@ -4267,6 +4288,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadGoProjectGuideRoute,
   MarketingResourcesReadGoQuickRevisionNotesRoute:
     MarketingResourcesReadGoQuickRevisionNotesRoute,
+  MarketingResourcesReadGoRealWorldCaseStudyRoute:
+    MarketingResourcesReadGoRealWorldCaseStudyRoute,
   MarketingResourcesReadGoSampleExercisesRoute:
     MarketingResourcesReadGoSampleExercisesRoute,
   MarketingResourcesReadGoStepByStepLearningGuideRoute:
