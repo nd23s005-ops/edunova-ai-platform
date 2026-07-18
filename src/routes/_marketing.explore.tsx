@@ -283,6 +283,12 @@ function ExplorePage() {
   const [sort, setSort] = useState<(typeof SORTS)[number]>("Popular");
   const [activeCat, setActiveCat] = useState<string>("All");
 
+  const courseCategories = useMemo(
+    () => Array.from(new Set(COURSES.map((c) => c.category))).sort((a, b) => a.localeCompare(b)),
+    [],
+  );
+
+
   const filtered = useMemo(() => {
     let list = COURSES.slice();
     const s = q.trim().toLowerCase();
@@ -326,26 +332,44 @@ function ExplorePage() {
         }
         description="Discover thousands of courses and learning paths across every subject, skill level, and career."
       >
-        <div className="mx-auto w-full max-w-2xl">
-          <div className="relative">
-            <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="Search courses, skills, technologies, exams, or careers..."
-              className="h-14 rounded-full border-primary/20 bg-background/80 pl-12 pr-32 text-base shadow-lg backdrop-blur focus-visible:ring-primary/40"
-              aria-label="Search courses"
-            />
-            <Button
-              size="sm"
-              className="absolute right-2 top-1/2 h-10 -translate-y-1/2 rounded-full px-5"
-              onClick={() => {
-                const el = document.getElementById("all-courses");
-                el?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
-            >
-              <Sparkles className="mr-1.5 h-4 w-4" /> AI Search
-            </Button>
+        <div className="mx-auto w-full max-w-3xl">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+            <div className="relative flex-1">
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Search courses, skills, technologies, exams, or careers..."
+                className="h-14 rounded-full border-primary/20 bg-background/80 pl-12 pr-32 text-base shadow-lg backdrop-blur focus-visible:ring-primary/40"
+                aria-label="Search courses"
+              />
+              <Button
+                size="sm"
+                className="absolute right-2 top-1/2 h-10 -translate-y-1/2 rounded-full px-5"
+                onClick={() => {
+                  const el = document.getElementById("all-courses");
+                  el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+              >
+                <Sparkles className="mr-1.5 h-4 w-4" /> AI Search
+              </Button>
+            </div>
+            <Select value={activeCat} onValueChange={setActiveCat}>
+              <SelectTrigger
+                aria-label="Filter by category"
+                className="h-14 rounded-full border-primary/20 bg-background/80 px-5 text-base shadow-lg backdrop-blur focus:ring-primary/40 sm:w-56"
+              >
+                <SelectValue placeholder="Category" />
+              </SelectTrigger>
+              <SelectContent className="max-h-80">
+                <SelectItem value="All">All Categories</SelectItem>
+                {courseCategories.map((cat) => (
+                  <SelectItem key={cat} value={cat}>
+                    {cat}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-muted-foreground">
             <span className="font-medium">Try:</span>
@@ -360,6 +384,7 @@ function ExplorePage() {
             ))}
           </div>
         </div>
+
       </PageHeader>
 
       {/* Categories */}
