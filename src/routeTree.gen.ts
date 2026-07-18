@@ -440,6 +440,27 @@ import { Route as MarketingResourcesReadDsaBestPracticesRouteImport } from './ro
 import { Route as MarketingResourcesReadDsaBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dsa-beginner-guide'
 import { Route as MarketingResourcesReadDsaAnswerKeyRouteImport } from './routes/_marketing.resources.read.dsa-answer-key'
 import { Route as MarketingResourcesReadDsaAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.dsa-advanced-concepts'
+import { Route as MarketingResourcesReadDockerTipsTricksRouteImport } from './routes/_marketing.resources.read.docker-tips-tricks'
+import { Route as MarketingResourcesReadDockerStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.docker-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadDockerSampleExercisesRouteImport } from './routes/_marketing.resources.read.docker-sample-exercises'
+import { Route as MarketingResourcesReadDockerReferenceGuideRouteImport } from './routes/_marketing.resources.read.docker-reference-guide'
+import { Route as MarketingResourcesReadDockerRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.docker-real-world-case-study'
+import { Route as MarketingResourcesReadDockerQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.docker-quick-revision-notes'
+import { Route as MarketingResourcesReadDockerProjectGuideRouteImport } from './routes/_marketing.resources.read.docker-project-guide'
+import { Route as MarketingResourcesReadDockerProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.docker-project-case-study'
+import { Route as MarketingResourcesReadDockerPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.docker-practice-questions'
+import { Route as MarketingResourcesReadDockerPdfNotesRouteImport } from './routes/_marketing.resources.read.docker-pdf-notes'
+import { Route as MarketingResourcesReadDockerLearningRoadmapRouteImport } from './routes/_marketing.resources.read.docker-learning-roadmap'
+import { Route as MarketingResourcesReadDockerInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.docker-interview-questions'
+import { Route as MarketingResourcesReadDockerGlossaryRouteImport } from './routes/_marketing.resources.read.docker-glossary'
+import { Route as MarketingResourcesReadDockerFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.docker-frequently-asked-questions'
+import { Route as MarketingResourcesReadDockerCompleteTutorialRouteImport } from './routes/_marketing.resources.read.docker-complete-tutorial'
+import { Route as MarketingResourcesReadDockerCommonMistakesRouteImport } from './routes/_marketing.resources.read.docker-common-mistakes'
+import { Route as MarketingResourcesReadDockerCheatSheetRouteImport } from './routes/_marketing.resources.read.docker-cheat-sheet'
+import { Route as MarketingResourcesReadDockerBestPracticesRouteImport } from './routes/_marketing.resources.read.docker-best-practices'
+import { Route as MarketingResourcesReadDockerBeginnerGuideRouteImport } from './routes/_marketing.resources.read.docker-beginner-guide'
+import { Route as MarketingResourcesReadDockerAnswerKeyRouteImport } from './routes/_marketing.resources.read.docker-answer-key'
+import { Route as MarketingResourcesReadDockerAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.docker-advanced-concepts'
 import { Route as MarketingResourcesReadDlTipsTricksRouteImport } from './routes/_marketing.resources.read.dl-tips-tricks'
 import { Route as MarketingResourcesReadDlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.dl-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadDlSampleExercisesRouteImport } from './routes/_marketing.resources.read.dl-sample-exercises'
@@ -3170,6 +3191,132 @@ const MarketingResourcesReadDsaAdvancedConceptsRoute =
     path: '/read/dsa-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDockerTipsTricksRoute =
+  MarketingResourcesReadDockerTipsTricksRouteImport.update({
+    id: '/read/docker-tips-tricks',
+    path: '/read/docker-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerStepByStepLearningGuideRoute =
+  MarketingResourcesReadDockerStepByStepLearningGuideRouteImport.update({
+    id: '/read/docker-step-by-step-learning-guide',
+    path: '/read/docker-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerSampleExercisesRoute =
+  MarketingResourcesReadDockerSampleExercisesRouteImport.update({
+    id: '/read/docker-sample-exercises',
+    path: '/read/docker-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerReferenceGuideRoute =
+  MarketingResourcesReadDockerReferenceGuideRouteImport.update({
+    id: '/read/docker-reference-guide',
+    path: '/read/docker-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerRealWorldCaseStudyRoute =
+  MarketingResourcesReadDockerRealWorldCaseStudyRouteImport.update({
+    id: '/read/docker-real-world-case-study',
+    path: '/read/docker-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerQuickRevisionNotesRoute =
+  MarketingResourcesReadDockerQuickRevisionNotesRouteImport.update({
+    id: '/read/docker-quick-revision-notes',
+    path: '/read/docker-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerProjectGuideRoute =
+  MarketingResourcesReadDockerProjectGuideRouteImport.update({
+    id: '/read/docker-project-guide',
+    path: '/read/docker-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerProjectCaseStudyRoute =
+  MarketingResourcesReadDockerProjectCaseStudyRouteImport.update({
+    id: '/read/docker-project-case-study',
+    path: '/read/docker-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerPracticeQuestionsRoute =
+  MarketingResourcesReadDockerPracticeQuestionsRouteImport.update({
+    id: '/read/docker-practice-questions',
+    path: '/read/docker-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerPdfNotesRoute =
+  MarketingResourcesReadDockerPdfNotesRouteImport.update({
+    id: '/read/docker-pdf-notes',
+    path: '/read/docker-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerLearningRoadmapRoute =
+  MarketingResourcesReadDockerLearningRoadmapRouteImport.update({
+    id: '/read/docker-learning-roadmap',
+    path: '/read/docker-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerInterviewQuestionsRoute =
+  MarketingResourcesReadDockerInterviewQuestionsRouteImport.update({
+    id: '/read/docker-interview-questions',
+    path: '/read/docker-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerGlossaryRoute =
+  MarketingResourcesReadDockerGlossaryRouteImport.update({
+    id: '/read/docker-glossary',
+    path: '/read/docker-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadDockerFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/docker-frequently-asked-questions',
+    path: '/read/docker-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerCompleteTutorialRoute =
+  MarketingResourcesReadDockerCompleteTutorialRouteImport.update({
+    id: '/read/docker-complete-tutorial',
+    path: '/read/docker-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerCommonMistakesRoute =
+  MarketingResourcesReadDockerCommonMistakesRouteImport.update({
+    id: '/read/docker-common-mistakes',
+    path: '/read/docker-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerCheatSheetRoute =
+  MarketingResourcesReadDockerCheatSheetRouteImport.update({
+    id: '/read/docker-cheat-sheet',
+    path: '/read/docker-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerBestPracticesRoute =
+  MarketingResourcesReadDockerBestPracticesRouteImport.update({
+    id: '/read/docker-best-practices',
+    path: '/read/docker-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerBeginnerGuideRoute =
+  MarketingResourcesReadDockerBeginnerGuideRouteImport.update({
+    id: '/read/docker-beginner-guide',
+    path: '/read/docker-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerAnswerKeyRoute =
+  MarketingResourcesReadDockerAnswerKeyRouteImport.update({
+    id: '/read/docker-answer-key',
+    path: '/read/docker-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDockerAdvancedConceptsRoute =
+  MarketingResourcesReadDockerAdvancedConceptsRouteImport.update({
+    id: '/read/docker-advanced-concepts',
+    path: '/read/docker-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDlTipsTricksRoute =
   MarketingResourcesReadDlTipsTricksRouteImport.update({
     id: '/read/dl-tips-tricks',
@@ -4332,6 +4479,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/resources/read/dl-step-by-step-learning-guide': typeof MarketingResourcesReadDlStepByStepLearningGuideRoute
   '/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
+  '/resources/read/docker-advanced-concepts': typeof MarketingResourcesReadDockerAdvancedConceptsRoute
+  '/resources/read/docker-answer-key': typeof MarketingResourcesReadDockerAnswerKeyRoute
+  '/resources/read/docker-beginner-guide': typeof MarketingResourcesReadDockerBeginnerGuideRoute
+  '/resources/read/docker-best-practices': typeof MarketingResourcesReadDockerBestPracticesRoute
+  '/resources/read/docker-cheat-sheet': typeof MarketingResourcesReadDockerCheatSheetRoute
+  '/resources/read/docker-common-mistakes': typeof MarketingResourcesReadDockerCommonMistakesRoute
+  '/resources/read/docker-complete-tutorial': typeof MarketingResourcesReadDockerCompleteTutorialRoute
+  '/resources/read/docker-frequently-asked-questions': typeof MarketingResourcesReadDockerFrequentlyAskedQuestionsRoute
+  '/resources/read/docker-glossary': typeof MarketingResourcesReadDockerGlossaryRoute
+  '/resources/read/docker-interview-questions': typeof MarketingResourcesReadDockerInterviewQuestionsRoute
+  '/resources/read/docker-learning-roadmap': typeof MarketingResourcesReadDockerLearningRoadmapRoute
+  '/resources/read/docker-pdf-notes': typeof MarketingResourcesReadDockerPdfNotesRoute
+  '/resources/read/docker-practice-questions': typeof MarketingResourcesReadDockerPracticeQuestionsRoute
+  '/resources/read/docker-project-case-study': typeof MarketingResourcesReadDockerProjectCaseStudyRoute
+  '/resources/read/docker-project-guide': typeof MarketingResourcesReadDockerProjectGuideRoute
+  '/resources/read/docker-quick-revision-notes': typeof MarketingResourcesReadDockerQuickRevisionNotesRoute
+  '/resources/read/docker-real-world-case-study': typeof MarketingResourcesReadDockerRealWorldCaseStudyRoute
+  '/resources/read/docker-reference-guide': typeof MarketingResourcesReadDockerReferenceGuideRoute
+  '/resources/read/docker-sample-exercises': typeof MarketingResourcesReadDockerSampleExercisesRoute
+  '/resources/read/docker-step-by-step-learning-guide': typeof MarketingResourcesReadDockerStepByStepLearningGuideRoute
+  '/resources/read/docker-tips-tricks': typeof MarketingResourcesReadDockerTipsTricksRoute
   '/resources/read/dsa-advanced-concepts': typeof MarketingResourcesReadDsaAdvancedConceptsRoute
   '/resources/read/dsa-answer-key': typeof MarketingResourcesReadDsaAnswerKeyRoute
   '/resources/read/dsa-beginner-guide': typeof MarketingResourcesReadDsaBeginnerGuideRoute
@@ -4921,6 +5089,27 @@ export interface FileRoutesByTo {
   '/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/resources/read/dl-step-by-step-learning-guide': typeof MarketingResourcesReadDlStepByStepLearningGuideRoute
   '/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
+  '/resources/read/docker-advanced-concepts': typeof MarketingResourcesReadDockerAdvancedConceptsRoute
+  '/resources/read/docker-answer-key': typeof MarketingResourcesReadDockerAnswerKeyRoute
+  '/resources/read/docker-beginner-guide': typeof MarketingResourcesReadDockerBeginnerGuideRoute
+  '/resources/read/docker-best-practices': typeof MarketingResourcesReadDockerBestPracticesRoute
+  '/resources/read/docker-cheat-sheet': typeof MarketingResourcesReadDockerCheatSheetRoute
+  '/resources/read/docker-common-mistakes': typeof MarketingResourcesReadDockerCommonMistakesRoute
+  '/resources/read/docker-complete-tutorial': typeof MarketingResourcesReadDockerCompleteTutorialRoute
+  '/resources/read/docker-frequently-asked-questions': typeof MarketingResourcesReadDockerFrequentlyAskedQuestionsRoute
+  '/resources/read/docker-glossary': typeof MarketingResourcesReadDockerGlossaryRoute
+  '/resources/read/docker-interview-questions': typeof MarketingResourcesReadDockerInterviewQuestionsRoute
+  '/resources/read/docker-learning-roadmap': typeof MarketingResourcesReadDockerLearningRoadmapRoute
+  '/resources/read/docker-pdf-notes': typeof MarketingResourcesReadDockerPdfNotesRoute
+  '/resources/read/docker-practice-questions': typeof MarketingResourcesReadDockerPracticeQuestionsRoute
+  '/resources/read/docker-project-case-study': typeof MarketingResourcesReadDockerProjectCaseStudyRoute
+  '/resources/read/docker-project-guide': typeof MarketingResourcesReadDockerProjectGuideRoute
+  '/resources/read/docker-quick-revision-notes': typeof MarketingResourcesReadDockerQuickRevisionNotesRoute
+  '/resources/read/docker-real-world-case-study': typeof MarketingResourcesReadDockerRealWorldCaseStudyRoute
+  '/resources/read/docker-reference-guide': typeof MarketingResourcesReadDockerReferenceGuideRoute
+  '/resources/read/docker-sample-exercises': typeof MarketingResourcesReadDockerSampleExercisesRoute
+  '/resources/read/docker-step-by-step-learning-guide': typeof MarketingResourcesReadDockerStepByStepLearningGuideRoute
+  '/resources/read/docker-tips-tricks': typeof MarketingResourcesReadDockerTipsTricksRoute
   '/resources/read/dsa-advanced-concepts': typeof MarketingResourcesReadDsaAdvancedConceptsRoute
   '/resources/read/dsa-answer-key': typeof MarketingResourcesReadDsaAnswerKeyRoute
   '/resources/read/dsa-beginner-guide': typeof MarketingResourcesReadDsaBeginnerGuideRoute
@@ -5515,6 +5704,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dl-sample-exercises': typeof MarketingResourcesReadDlSampleExercisesRoute
   '/_marketing/resources/read/dl-step-by-step-learning-guide': typeof MarketingResourcesReadDlStepByStepLearningGuideRoute
   '/_marketing/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
+  '/_marketing/resources/read/docker-advanced-concepts': typeof MarketingResourcesReadDockerAdvancedConceptsRoute
+  '/_marketing/resources/read/docker-answer-key': typeof MarketingResourcesReadDockerAnswerKeyRoute
+  '/_marketing/resources/read/docker-beginner-guide': typeof MarketingResourcesReadDockerBeginnerGuideRoute
+  '/_marketing/resources/read/docker-best-practices': typeof MarketingResourcesReadDockerBestPracticesRoute
+  '/_marketing/resources/read/docker-cheat-sheet': typeof MarketingResourcesReadDockerCheatSheetRoute
+  '/_marketing/resources/read/docker-common-mistakes': typeof MarketingResourcesReadDockerCommonMistakesRoute
+  '/_marketing/resources/read/docker-complete-tutorial': typeof MarketingResourcesReadDockerCompleteTutorialRoute
+  '/_marketing/resources/read/docker-frequently-asked-questions': typeof MarketingResourcesReadDockerFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/docker-glossary': typeof MarketingResourcesReadDockerGlossaryRoute
+  '/_marketing/resources/read/docker-interview-questions': typeof MarketingResourcesReadDockerInterviewQuestionsRoute
+  '/_marketing/resources/read/docker-learning-roadmap': typeof MarketingResourcesReadDockerLearningRoadmapRoute
+  '/_marketing/resources/read/docker-pdf-notes': typeof MarketingResourcesReadDockerPdfNotesRoute
+  '/_marketing/resources/read/docker-practice-questions': typeof MarketingResourcesReadDockerPracticeQuestionsRoute
+  '/_marketing/resources/read/docker-project-case-study': typeof MarketingResourcesReadDockerProjectCaseStudyRoute
+  '/_marketing/resources/read/docker-project-guide': typeof MarketingResourcesReadDockerProjectGuideRoute
+  '/_marketing/resources/read/docker-quick-revision-notes': typeof MarketingResourcesReadDockerQuickRevisionNotesRoute
+  '/_marketing/resources/read/docker-real-world-case-study': typeof MarketingResourcesReadDockerRealWorldCaseStudyRoute
+  '/_marketing/resources/read/docker-reference-guide': typeof MarketingResourcesReadDockerReferenceGuideRoute
+  '/_marketing/resources/read/docker-sample-exercises': typeof MarketingResourcesReadDockerSampleExercisesRoute
+  '/_marketing/resources/read/docker-step-by-step-learning-guide': typeof MarketingResourcesReadDockerStepByStepLearningGuideRoute
+  '/_marketing/resources/read/docker-tips-tricks': typeof MarketingResourcesReadDockerTipsTricksRoute
   '/_marketing/resources/read/dsa-advanced-concepts': typeof MarketingResourcesReadDsaAdvancedConceptsRoute
   '/_marketing/resources/read/dsa-answer-key': typeof MarketingResourcesReadDsaAnswerKeyRoute
   '/_marketing/resources/read/dsa-beginner-guide': typeof MarketingResourcesReadDsaBeginnerGuideRoute
@@ -6107,6 +6317,27 @@ export interface FileRouteTypes {
     | '/resources/read/dl-sample-exercises'
     | '/resources/read/dl-step-by-step-learning-guide'
     | '/resources/read/dl-tips-tricks'
+    | '/resources/read/docker-advanced-concepts'
+    | '/resources/read/docker-answer-key'
+    | '/resources/read/docker-beginner-guide'
+    | '/resources/read/docker-best-practices'
+    | '/resources/read/docker-cheat-sheet'
+    | '/resources/read/docker-common-mistakes'
+    | '/resources/read/docker-complete-tutorial'
+    | '/resources/read/docker-frequently-asked-questions'
+    | '/resources/read/docker-glossary'
+    | '/resources/read/docker-interview-questions'
+    | '/resources/read/docker-learning-roadmap'
+    | '/resources/read/docker-pdf-notes'
+    | '/resources/read/docker-practice-questions'
+    | '/resources/read/docker-project-case-study'
+    | '/resources/read/docker-project-guide'
+    | '/resources/read/docker-quick-revision-notes'
+    | '/resources/read/docker-real-world-case-study'
+    | '/resources/read/docker-reference-guide'
+    | '/resources/read/docker-sample-exercises'
+    | '/resources/read/docker-step-by-step-learning-guide'
+    | '/resources/read/docker-tips-tricks'
     | '/resources/read/dsa-advanced-concepts'
     | '/resources/read/dsa-answer-key'
     | '/resources/read/dsa-beginner-guide'
@@ -6696,6 +6927,27 @@ export interface FileRouteTypes {
     | '/resources/read/dl-sample-exercises'
     | '/resources/read/dl-step-by-step-learning-guide'
     | '/resources/read/dl-tips-tricks'
+    | '/resources/read/docker-advanced-concepts'
+    | '/resources/read/docker-answer-key'
+    | '/resources/read/docker-beginner-guide'
+    | '/resources/read/docker-best-practices'
+    | '/resources/read/docker-cheat-sheet'
+    | '/resources/read/docker-common-mistakes'
+    | '/resources/read/docker-complete-tutorial'
+    | '/resources/read/docker-frequently-asked-questions'
+    | '/resources/read/docker-glossary'
+    | '/resources/read/docker-interview-questions'
+    | '/resources/read/docker-learning-roadmap'
+    | '/resources/read/docker-pdf-notes'
+    | '/resources/read/docker-practice-questions'
+    | '/resources/read/docker-project-case-study'
+    | '/resources/read/docker-project-guide'
+    | '/resources/read/docker-quick-revision-notes'
+    | '/resources/read/docker-real-world-case-study'
+    | '/resources/read/docker-reference-guide'
+    | '/resources/read/docker-sample-exercises'
+    | '/resources/read/docker-step-by-step-learning-guide'
+    | '/resources/read/docker-tips-tricks'
     | '/resources/read/dsa-advanced-concepts'
     | '/resources/read/dsa-answer-key'
     | '/resources/read/dsa-beginner-guide'
@@ -7289,6 +7541,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dl-sample-exercises'
     | '/_marketing/resources/read/dl-step-by-step-learning-guide'
     | '/_marketing/resources/read/dl-tips-tricks'
+    | '/_marketing/resources/read/docker-advanced-concepts'
+    | '/_marketing/resources/read/docker-answer-key'
+    | '/_marketing/resources/read/docker-beginner-guide'
+    | '/_marketing/resources/read/docker-best-practices'
+    | '/_marketing/resources/read/docker-cheat-sheet'
+    | '/_marketing/resources/read/docker-common-mistakes'
+    | '/_marketing/resources/read/docker-complete-tutorial'
+    | '/_marketing/resources/read/docker-frequently-asked-questions'
+    | '/_marketing/resources/read/docker-glossary'
+    | '/_marketing/resources/read/docker-interview-questions'
+    | '/_marketing/resources/read/docker-learning-roadmap'
+    | '/_marketing/resources/read/docker-pdf-notes'
+    | '/_marketing/resources/read/docker-practice-questions'
+    | '/_marketing/resources/read/docker-project-case-study'
+    | '/_marketing/resources/read/docker-project-guide'
+    | '/_marketing/resources/read/docker-quick-revision-notes'
+    | '/_marketing/resources/read/docker-real-world-case-study'
+    | '/_marketing/resources/read/docker-reference-guide'
+    | '/_marketing/resources/read/docker-sample-exercises'
+    | '/_marketing/resources/read/docker-step-by-step-learning-guide'
+    | '/_marketing/resources/read/docker-tips-tricks'
     | '/_marketing/resources/read/dsa-advanced-concepts'
     | '/_marketing/resources/read/dsa-answer-key'
     | '/_marketing/resources/read/dsa-beginner-guide'
@@ -10720,6 +10993,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDsaAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/docker-tips-tricks': {
+      id: '/_marketing/resources/read/docker-tips-tricks'
+      path: '/read/docker-tips-tricks'
+      fullPath: '/resources/read/docker-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadDockerTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/docker-step-by-step-learning-guide'
+      path: '/read/docker-step-by-step-learning-guide'
+      fullPath: '/resources/read/docker-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDockerStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-sample-exercises': {
+      id: '/_marketing/resources/read/docker-sample-exercises'
+      path: '/read/docker-sample-exercises'
+      fullPath: '/resources/read/docker-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadDockerSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-reference-guide': {
+      id: '/_marketing/resources/read/docker-reference-guide'
+      path: '/read/docker-reference-guide'
+      fullPath: '/resources/read/docker-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDockerReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-real-world-case-study': {
+      id: '/_marketing/resources/read/docker-real-world-case-study'
+      path: '/read/docker-real-world-case-study'
+      fullPath: '/resources/read/docker-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDockerRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-quick-revision-notes': {
+      id: '/_marketing/resources/read/docker-quick-revision-notes'
+      path: '/read/docker-quick-revision-notes'
+      fullPath: '/resources/read/docker-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDockerQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-project-guide': {
+      id: '/_marketing/resources/read/docker-project-guide'
+      path: '/read/docker-project-guide'
+      fullPath: '/resources/read/docker-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDockerProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-project-case-study': {
+      id: '/_marketing/resources/read/docker-project-case-study'
+      path: '/read/docker-project-case-study'
+      fullPath: '/resources/read/docker-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDockerProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-practice-questions': {
+      id: '/_marketing/resources/read/docker-practice-questions'
+      path: '/read/docker-practice-questions'
+      fullPath: '/resources/read/docker-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDockerPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-pdf-notes': {
+      id: '/_marketing/resources/read/docker-pdf-notes'
+      path: '/read/docker-pdf-notes'
+      fullPath: '/resources/read/docker-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDockerPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-learning-roadmap': {
+      id: '/_marketing/resources/read/docker-learning-roadmap'
+      path: '/read/docker-learning-roadmap'
+      fullPath: '/resources/read/docker-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadDockerLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-interview-questions': {
+      id: '/_marketing/resources/read/docker-interview-questions'
+      path: '/read/docker-interview-questions'
+      fullPath: '/resources/read/docker-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDockerInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-glossary': {
+      id: '/_marketing/resources/read/docker-glossary'
+      path: '/read/docker-glossary'
+      fullPath: '/resources/read/docker-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadDockerGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-frequently-asked-questions': {
+      id: '/_marketing/resources/read/docker-frequently-asked-questions'
+      path: '/read/docker-frequently-asked-questions'
+      fullPath: '/resources/read/docker-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDockerFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-complete-tutorial': {
+      id: '/_marketing/resources/read/docker-complete-tutorial'
+      path: '/read/docker-complete-tutorial'
+      fullPath: '/resources/read/docker-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadDockerCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-common-mistakes': {
+      id: '/_marketing/resources/read/docker-common-mistakes'
+      path: '/read/docker-common-mistakes'
+      fullPath: '/resources/read/docker-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadDockerCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-cheat-sheet': {
+      id: '/_marketing/resources/read/docker-cheat-sheet'
+      path: '/read/docker-cheat-sheet'
+      fullPath: '/resources/read/docker-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadDockerCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-best-practices': {
+      id: '/_marketing/resources/read/docker-best-practices'
+      path: '/read/docker-best-practices'
+      fullPath: '/resources/read/docker-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadDockerBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-beginner-guide': {
+      id: '/_marketing/resources/read/docker-beginner-guide'
+      path: '/read/docker-beginner-guide'
+      fullPath: '/resources/read/docker-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDockerBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-answer-key': {
+      id: '/_marketing/resources/read/docker-answer-key'
+      path: '/read/docker-answer-key'
+      fullPath: '/resources/read/docker-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadDockerAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/docker-advanced-concepts': {
+      id: '/_marketing/resources/read/docker-advanced-concepts'
+      path: '/read/docker-advanced-concepts'
+      fullPath: '/resources/read/docker-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadDockerAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dl-tips-tricks': {
       id: '/_marketing/resources/read/dl-tips-tricks'
       path: '/read/dl-tips-tricks'
@@ -12123,6 +12543,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDlSampleExercisesRoute: typeof MarketingResourcesReadDlSampleExercisesRoute
   MarketingResourcesReadDlStepByStepLearningGuideRoute: typeof MarketingResourcesReadDlStepByStepLearningGuideRoute
   MarketingResourcesReadDlTipsTricksRoute: typeof MarketingResourcesReadDlTipsTricksRoute
+  MarketingResourcesReadDockerAdvancedConceptsRoute: typeof MarketingResourcesReadDockerAdvancedConceptsRoute
+  MarketingResourcesReadDockerAnswerKeyRoute: typeof MarketingResourcesReadDockerAnswerKeyRoute
+  MarketingResourcesReadDockerBeginnerGuideRoute: typeof MarketingResourcesReadDockerBeginnerGuideRoute
+  MarketingResourcesReadDockerBestPracticesRoute: typeof MarketingResourcesReadDockerBestPracticesRoute
+  MarketingResourcesReadDockerCheatSheetRoute: typeof MarketingResourcesReadDockerCheatSheetRoute
+  MarketingResourcesReadDockerCommonMistakesRoute: typeof MarketingResourcesReadDockerCommonMistakesRoute
+  MarketingResourcesReadDockerCompleteTutorialRoute: typeof MarketingResourcesReadDockerCompleteTutorialRoute
+  MarketingResourcesReadDockerFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDockerFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadDockerGlossaryRoute: typeof MarketingResourcesReadDockerGlossaryRoute
+  MarketingResourcesReadDockerInterviewQuestionsRoute: typeof MarketingResourcesReadDockerInterviewQuestionsRoute
+  MarketingResourcesReadDockerLearningRoadmapRoute: typeof MarketingResourcesReadDockerLearningRoadmapRoute
+  MarketingResourcesReadDockerPdfNotesRoute: typeof MarketingResourcesReadDockerPdfNotesRoute
+  MarketingResourcesReadDockerPracticeQuestionsRoute: typeof MarketingResourcesReadDockerPracticeQuestionsRoute
+  MarketingResourcesReadDockerProjectCaseStudyRoute: typeof MarketingResourcesReadDockerProjectCaseStudyRoute
+  MarketingResourcesReadDockerProjectGuideRoute: typeof MarketingResourcesReadDockerProjectGuideRoute
+  MarketingResourcesReadDockerQuickRevisionNotesRoute: typeof MarketingResourcesReadDockerQuickRevisionNotesRoute
+  MarketingResourcesReadDockerRealWorldCaseStudyRoute: typeof MarketingResourcesReadDockerRealWorldCaseStudyRoute
+  MarketingResourcesReadDockerReferenceGuideRoute: typeof MarketingResourcesReadDockerReferenceGuideRoute
+  MarketingResourcesReadDockerSampleExercisesRoute: typeof MarketingResourcesReadDockerSampleExercisesRoute
+  MarketingResourcesReadDockerStepByStepLearningGuideRoute: typeof MarketingResourcesReadDockerStepByStepLearningGuideRoute
+  MarketingResourcesReadDockerTipsTricksRoute: typeof MarketingResourcesReadDockerTipsTricksRoute
   MarketingResourcesReadDsaAdvancedConceptsRoute: typeof MarketingResourcesReadDsaAdvancedConceptsRoute
   MarketingResourcesReadDsaAnswerKeyRoute: typeof MarketingResourcesReadDsaAnswerKeyRoute
   MarketingResourcesReadDsaBeginnerGuideRoute: typeof MarketingResourcesReadDsaBeginnerGuideRoute
@@ -12805,6 +13246,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDlStepByStepLearningGuideRoute,
   MarketingResourcesReadDlTipsTricksRoute:
     MarketingResourcesReadDlTipsTricksRoute,
+  MarketingResourcesReadDockerAdvancedConceptsRoute:
+    MarketingResourcesReadDockerAdvancedConceptsRoute,
+  MarketingResourcesReadDockerAnswerKeyRoute:
+    MarketingResourcesReadDockerAnswerKeyRoute,
+  MarketingResourcesReadDockerBeginnerGuideRoute:
+    MarketingResourcesReadDockerBeginnerGuideRoute,
+  MarketingResourcesReadDockerBestPracticesRoute:
+    MarketingResourcesReadDockerBestPracticesRoute,
+  MarketingResourcesReadDockerCheatSheetRoute:
+    MarketingResourcesReadDockerCheatSheetRoute,
+  MarketingResourcesReadDockerCommonMistakesRoute:
+    MarketingResourcesReadDockerCommonMistakesRoute,
+  MarketingResourcesReadDockerCompleteTutorialRoute:
+    MarketingResourcesReadDockerCompleteTutorialRoute,
+  MarketingResourcesReadDockerFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadDockerFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadDockerGlossaryRoute:
+    MarketingResourcesReadDockerGlossaryRoute,
+  MarketingResourcesReadDockerInterviewQuestionsRoute:
+    MarketingResourcesReadDockerInterviewQuestionsRoute,
+  MarketingResourcesReadDockerLearningRoadmapRoute:
+    MarketingResourcesReadDockerLearningRoadmapRoute,
+  MarketingResourcesReadDockerPdfNotesRoute:
+    MarketingResourcesReadDockerPdfNotesRoute,
+  MarketingResourcesReadDockerPracticeQuestionsRoute:
+    MarketingResourcesReadDockerPracticeQuestionsRoute,
+  MarketingResourcesReadDockerProjectCaseStudyRoute:
+    MarketingResourcesReadDockerProjectCaseStudyRoute,
+  MarketingResourcesReadDockerProjectGuideRoute:
+    MarketingResourcesReadDockerProjectGuideRoute,
+  MarketingResourcesReadDockerQuickRevisionNotesRoute:
+    MarketingResourcesReadDockerQuickRevisionNotesRoute,
+  MarketingResourcesReadDockerRealWorldCaseStudyRoute:
+    MarketingResourcesReadDockerRealWorldCaseStudyRoute,
+  MarketingResourcesReadDockerReferenceGuideRoute:
+    MarketingResourcesReadDockerReferenceGuideRoute,
+  MarketingResourcesReadDockerSampleExercisesRoute:
+    MarketingResourcesReadDockerSampleExercisesRoute,
+  MarketingResourcesReadDockerStepByStepLearningGuideRoute:
+    MarketingResourcesReadDockerStepByStepLearningGuideRoute,
+  MarketingResourcesReadDockerTipsTricksRoute:
+    MarketingResourcesReadDockerTipsTricksRoute,
   MarketingResourcesReadDsaAdvancedConceptsRoute:
     MarketingResourcesReadDsaAdvancedConceptsRoute,
   MarketingResourcesReadDsaAnswerKeyRoute:
@@ -13639,13 +14122,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
