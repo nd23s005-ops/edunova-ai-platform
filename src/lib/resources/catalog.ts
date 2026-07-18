@@ -184,6 +184,7 @@ const SLUG_IMAGE: Record<string, string> = {
   "nodejs": "photo-1627398242454-45a1465c2479",
   "html5": "photo-1621839673705-6617adf9e890",
   "css3": "photo-1507721999472-8ed4421c4af2",
+  "tailwind-css": "photo-1555066931-4365d14bab8c",
   "flutter": "photo-1607252650355-f7fd0460ccdb",
   "android": "photo-1607252650355-f7fd0460ccdb",
   "swift-ios": "photo-1512941937669-90a1b58e7e9c",
