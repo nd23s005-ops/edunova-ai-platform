@@ -860,6 +860,27 @@ import { Route as MarketingResourcesReadDbmsBestPracticesRouteImport } from './r
 import { Route as MarketingResourcesReadDbmsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dbms-beginner-guide'
 import { Route as MarketingResourcesReadDbmsAnswerKeyRouteImport } from './routes/_marketing.resources.read.dbms-answer-key'
 import { Route as MarketingResourcesReadDbmsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.dbms-advanced-concepts'
+import { Route as MarketingResourcesReadDataScienceTipsTricksRouteImport } from './routes/_marketing.resources.read.data-science-tips-tricks'
+import { Route as MarketingResourcesReadDataScienceStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.data-science-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadDataScienceSampleExercisesRouteImport } from './routes/_marketing.resources.read.data-science-sample-exercises'
+import { Route as MarketingResourcesReadDataScienceReferenceGuideRouteImport } from './routes/_marketing.resources.read.data-science-reference-guide'
+import { Route as MarketingResourcesReadDataScienceRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.data-science-real-world-case-study'
+import { Route as MarketingResourcesReadDataScienceQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.data-science-quick-revision-notes'
+import { Route as MarketingResourcesReadDataScienceProjectGuideRouteImport } from './routes/_marketing.resources.read.data-science-project-guide'
+import { Route as MarketingResourcesReadDataScienceProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.data-science-project-case-study'
+import { Route as MarketingResourcesReadDataSciencePracticeQuestionsRouteImport } from './routes/_marketing.resources.read.data-science-practice-questions'
+import { Route as MarketingResourcesReadDataSciencePdfNotesRouteImport } from './routes/_marketing.resources.read.data-science-pdf-notes'
+import { Route as MarketingResourcesReadDataScienceLearningRoadmapRouteImport } from './routes/_marketing.resources.read.data-science-learning-roadmap'
+import { Route as MarketingResourcesReadDataScienceInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.data-science-interview-questions'
+import { Route as MarketingResourcesReadDataScienceGlossaryRouteImport } from './routes/_marketing.resources.read.data-science-glossary'
+import { Route as MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.data-science-frequently-asked-questions'
+import { Route as MarketingResourcesReadDataScienceCompleteTutorialRouteImport } from './routes/_marketing.resources.read.data-science-complete-tutorial'
+import { Route as MarketingResourcesReadDataScienceCommonMistakesRouteImport } from './routes/_marketing.resources.read.data-science-common-mistakes'
+import { Route as MarketingResourcesReadDataScienceCheatSheetRouteImport } from './routes/_marketing.resources.read.data-science-cheat-sheet'
+import { Route as MarketingResourcesReadDataScienceBestPracticesRouteImport } from './routes/_marketing.resources.read.data-science-best-practices'
+import { Route as MarketingResourcesReadDataScienceBeginnerGuideRouteImport } from './routes/_marketing.resources.read.data-science-beginner-guide'
+import { Route as MarketingResourcesReadDataScienceAnswerKeyRouteImport } from './routes/_marketing.resources.read.data-science-answer-key'
+import { Route as MarketingResourcesReadDataScienceAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.data-science-advanced-concepts'
 import { Route as MarketingResourcesReadCyberSecurityTipsTricksRouteImport } from './routes/_marketing.resources.read.cyber-security-tips-tricks'
 import { Route as MarketingResourcesReadCyberSecurityStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.cyber-security-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadCyberSecuritySampleExercisesRouteImport } from './routes/_marketing.resources.read.cyber-security-sample-exercises'
@@ -6173,6 +6194,132 @@ const MarketingResourcesReadDbmsAdvancedConceptsRoute =
     path: '/read/dbms-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDataScienceTipsTricksRoute =
+  MarketingResourcesReadDataScienceTipsTricksRouteImport.update({
+    id: '/read/data-science-tips-tricks',
+    path: '/read/data-science-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceStepByStepLearningGuideRoute =
+  MarketingResourcesReadDataScienceStepByStepLearningGuideRouteImport.update({
+    id: '/read/data-science-step-by-step-learning-guide',
+    path: '/read/data-science-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceSampleExercisesRoute =
+  MarketingResourcesReadDataScienceSampleExercisesRouteImport.update({
+    id: '/read/data-science-sample-exercises',
+    path: '/read/data-science-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceReferenceGuideRoute =
+  MarketingResourcesReadDataScienceReferenceGuideRouteImport.update({
+    id: '/read/data-science-reference-guide',
+    path: '/read/data-science-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceRealWorldCaseStudyRoute =
+  MarketingResourcesReadDataScienceRealWorldCaseStudyRouteImport.update({
+    id: '/read/data-science-real-world-case-study',
+    path: '/read/data-science-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceQuickRevisionNotesRoute =
+  MarketingResourcesReadDataScienceQuickRevisionNotesRouteImport.update({
+    id: '/read/data-science-quick-revision-notes',
+    path: '/read/data-science-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceProjectGuideRoute =
+  MarketingResourcesReadDataScienceProjectGuideRouteImport.update({
+    id: '/read/data-science-project-guide',
+    path: '/read/data-science-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceProjectCaseStudyRoute =
+  MarketingResourcesReadDataScienceProjectCaseStudyRouteImport.update({
+    id: '/read/data-science-project-case-study',
+    path: '/read/data-science-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataSciencePracticeQuestionsRoute =
+  MarketingResourcesReadDataSciencePracticeQuestionsRouteImport.update({
+    id: '/read/data-science-practice-questions',
+    path: '/read/data-science-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataSciencePdfNotesRoute =
+  MarketingResourcesReadDataSciencePdfNotesRouteImport.update({
+    id: '/read/data-science-pdf-notes',
+    path: '/read/data-science-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceLearningRoadmapRoute =
+  MarketingResourcesReadDataScienceLearningRoadmapRouteImport.update({
+    id: '/read/data-science-learning-roadmap',
+    path: '/read/data-science-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceInterviewQuestionsRoute =
+  MarketingResourcesReadDataScienceInterviewQuestionsRouteImport.update({
+    id: '/read/data-science-interview-questions',
+    path: '/read/data-science-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceGlossaryRoute =
+  MarketingResourcesReadDataScienceGlossaryRouteImport.update({
+    id: '/read/data-science-glossary',
+    path: '/read/data-science-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/data-science-frequently-asked-questions',
+    path: '/read/data-science-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceCompleteTutorialRoute =
+  MarketingResourcesReadDataScienceCompleteTutorialRouteImport.update({
+    id: '/read/data-science-complete-tutorial',
+    path: '/read/data-science-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceCommonMistakesRoute =
+  MarketingResourcesReadDataScienceCommonMistakesRouteImport.update({
+    id: '/read/data-science-common-mistakes',
+    path: '/read/data-science-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceCheatSheetRoute =
+  MarketingResourcesReadDataScienceCheatSheetRouteImport.update({
+    id: '/read/data-science-cheat-sheet',
+    path: '/read/data-science-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceBestPracticesRoute =
+  MarketingResourcesReadDataScienceBestPracticesRouteImport.update({
+    id: '/read/data-science-best-practices',
+    path: '/read/data-science-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceBeginnerGuideRoute =
+  MarketingResourcesReadDataScienceBeginnerGuideRouteImport.update({
+    id: '/read/data-science-beginner-guide',
+    path: '/read/data-science-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceAnswerKeyRoute =
+  MarketingResourcesReadDataScienceAnswerKeyRouteImport.update({
+    id: '/read/data-science-answer-key',
+    path: '/read/data-science-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataScienceAdvancedConceptsRoute =
+  MarketingResourcesReadDataScienceAdvancedConceptsRouteImport.update({
+    id: '/read/data-science-advanced-concepts',
+    path: '/read/data-science-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadCyberSecurityTipsTricksRoute =
   MarketingResourcesReadCyberSecurityTipsTricksRouteImport.update({
     id: '/read/cyber-security-tips-tricks',
@@ -7776,6 +7923,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
   '/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
   '/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
+  '/resources/read/data-science-advanced-concepts': typeof MarketingResourcesReadDataScienceAdvancedConceptsRoute
+  '/resources/read/data-science-answer-key': typeof MarketingResourcesReadDataScienceAnswerKeyRoute
+  '/resources/read/data-science-beginner-guide': typeof MarketingResourcesReadDataScienceBeginnerGuideRoute
+  '/resources/read/data-science-best-practices': typeof MarketingResourcesReadDataScienceBestPracticesRoute
+  '/resources/read/data-science-cheat-sheet': typeof MarketingResourcesReadDataScienceCheatSheetRoute
+  '/resources/read/data-science-common-mistakes': typeof MarketingResourcesReadDataScienceCommonMistakesRoute
+  '/resources/read/data-science-complete-tutorial': typeof MarketingResourcesReadDataScienceCompleteTutorialRoute
+  '/resources/read/data-science-frequently-asked-questions': typeof MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRoute
+  '/resources/read/data-science-glossary': typeof MarketingResourcesReadDataScienceGlossaryRoute
+  '/resources/read/data-science-interview-questions': typeof MarketingResourcesReadDataScienceInterviewQuestionsRoute
+  '/resources/read/data-science-learning-roadmap': typeof MarketingResourcesReadDataScienceLearningRoadmapRoute
+  '/resources/read/data-science-pdf-notes': typeof MarketingResourcesReadDataSciencePdfNotesRoute
+  '/resources/read/data-science-practice-questions': typeof MarketingResourcesReadDataSciencePracticeQuestionsRoute
+  '/resources/read/data-science-project-case-study': typeof MarketingResourcesReadDataScienceProjectCaseStudyRoute
+  '/resources/read/data-science-project-guide': typeof MarketingResourcesReadDataScienceProjectGuideRoute
+  '/resources/read/data-science-quick-revision-notes': typeof MarketingResourcesReadDataScienceQuickRevisionNotesRoute
+  '/resources/read/data-science-real-world-case-study': typeof MarketingResourcesReadDataScienceRealWorldCaseStudyRoute
+  '/resources/read/data-science-reference-guide': typeof MarketingResourcesReadDataScienceReferenceGuideRoute
+  '/resources/read/data-science-sample-exercises': typeof MarketingResourcesReadDataScienceSampleExercisesRoute
+  '/resources/read/data-science-step-by-step-learning-guide': typeof MarketingResourcesReadDataScienceStepByStepLearningGuideRoute
+  '/resources/read/data-science-tips-tricks': typeof MarketingResourcesReadDataScienceTipsTricksRoute
   '/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -8848,6 +9016,27 @@ export interface FileRoutesByTo {
   '/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
   '/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
   '/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
+  '/resources/read/data-science-advanced-concepts': typeof MarketingResourcesReadDataScienceAdvancedConceptsRoute
+  '/resources/read/data-science-answer-key': typeof MarketingResourcesReadDataScienceAnswerKeyRoute
+  '/resources/read/data-science-beginner-guide': typeof MarketingResourcesReadDataScienceBeginnerGuideRoute
+  '/resources/read/data-science-best-practices': typeof MarketingResourcesReadDataScienceBestPracticesRoute
+  '/resources/read/data-science-cheat-sheet': typeof MarketingResourcesReadDataScienceCheatSheetRoute
+  '/resources/read/data-science-common-mistakes': typeof MarketingResourcesReadDataScienceCommonMistakesRoute
+  '/resources/read/data-science-complete-tutorial': typeof MarketingResourcesReadDataScienceCompleteTutorialRoute
+  '/resources/read/data-science-frequently-asked-questions': typeof MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRoute
+  '/resources/read/data-science-glossary': typeof MarketingResourcesReadDataScienceGlossaryRoute
+  '/resources/read/data-science-interview-questions': typeof MarketingResourcesReadDataScienceInterviewQuestionsRoute
+  '/resources/read/data-science-learning-roadmap': typeof MarketingResourcesReadDataScienceLearningRoadmapRoute
+  '/resources/read/data-science-pdf-notes': typeof MarketingResourcesReadDataSciencePdfNotesRoute
+  '/resources/read/data-science-practice-questions': typeof MarketingResourcesReadDataSciencePracticeQuestionsRoute
+  '/resources/read/data-science-project-case-study': typeof MarketingResourcesReadDataScienceProjectCaseStudyRoute
+  '/resources/read/data-science-project-guide': typeof MarketingResourcesReadDataScienceProjectGuideRoute
+  '/resources/read/data-science-quick-revision-notes': typeof MarketingResourcesReadDataScienceQuickRevisionNotesRoute
+  '/resources/read/data-science-real-world-case-study': typeof MarketingResourcesReadDataScienceRealWorldCaseStudyRoute
+  '/resources/read/data-science-reference-guide': typeof MarketingResourcesReadDataScienceReferenceGuideRoute
+  '/resources/read/data-science-sample-exercises': typeof MarketingResourcesReadDataScienceSampleExercisesRoute
+  '/resources/read/data-science-step-by-step-learning-guide': typeof MarketingResourcesReadDataScienceStepByStepLearningGuideRoute
+  '/resources/read/data-science-tips-tricks': typeof MarketingResourcesReadDataScienceTipsTricksRoute
   '/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -9925,6 +10114,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
   '/_marketing/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
   '/_marketing/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
+  '/_marketing/resources/read/data-science-advanced-concepts': typeof MarketingResourcesReadDataScienceAdvancedConceptsRoute
+  '/_marketing/resources/read/data-science-answer-key': typeof MarketingResourcesReadDataScienceAnswerKeyRoute
+  '/_marketing/resources/read/data-science-beginner-guide': typeof MarketingResourcesReadDataScienceBeginnerGuideRoute
+  '/_marketing/resources/read/data-science-best-practices': typeof MarketingResourcesReadDataScienceBestPracticesRoute
+  '/_marketing/resources/read/data-science-cheat-sheet': typeof MarketingResourcesReadDataScienceCheatSheetRoute
+  '/_marketing/resources/read/data-science-common-mistakes': typeof MarketingResourcesReadDataScienceCommonMistakesRoute
+  '/_marketing/resources/read/data-science-complete-tutorial': typeof MarketingResourcesReadDataScienceCompleteTutorialRoute
+  '/_marketing/resources/read/data-science-frequently-asked-questions': typeof MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/data-science-glossary': typeof MarketingResourcesReadDataScienceGlossaryRoute
+  '/_marketing/resources/read/data-science-interview-questions': typeof MarketingResourcesReadDataScienceInterviewQuestionsRoute
+  '/_marketing/resources/read/data-science-learning-roadmap': typeof MarketingResourcesReadDataScienceLearningRoadmapRoute
+  '/_marketing/resources/read/data-science-pdf-notes': typeof MarketingResourcesReadDataSciencePdfNotesRoute
+  '/_marketing/resources/read/data-science-practice-questions': typeof MarketingResourcesReadDataSciencePracticeQuestionsRoute
+  '/_marketing/resources/read/data-science-project-case-study': typeof MarketingResourcesReadDataScienceProjectCaseStudyRoute
+  '/_marketing/resources/read/data-science-project-guide': typeof MarketingResourcesReadDataScienceProjectGuideRoute
+  '/_marketing/resources/read/data-science-quick-revision-notes': typeof MarketingResourcesReadDataScienceQuickRevisionNotesRoute
+  '/_marketing/resources/read/data-science-real-world-case-study': typeof MarketingResourcesReadDataScienceRealWorldCaseStudyRoute
+  '/_marketing/resources/read/data-science-reference-guide': typeof MarketingResourcesReadDataScienceReferenceGuideRoute
+  '/_marketing/resources/read/data-science-sample-exercises': typeof MarketingResourcesReadDataScienceSampleExercisesRoute
+  '/_marketing/resources/read/data-science-step-by-step-learning-guide': typeof MarketingResourcesReadDataScienceStepByStepLearningGuideRoute
+  '/_marketing/resources/read/data-science-tips-tricks': typeof MarketingResourcesReadDataScienceTipsTricksRoute
   '/_marketing/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/_marketing/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/_marketing/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -11000,6 +11210,27 @@ export interface FileRouteTypes {
     | '/resources/read/cyber-security-sample-exercises'
     | '/resources/read/cyber-security-step-by-step-learning-guide'
     | '/resources/read/cyber-security-tips-tricks'
+    | '/resources/read/data-science-advanced-concepts'
+    | '/resources/read/data-science-answer-key'
+    | '/resources/read/data-science-beginner-guide'
+    | '/resources/read/data-science-best-practices'
+    | '/resources/read/data-science-cheat-sheet'
+    | '/resources/read/data-science-common-mistakes'
+    | '/resources/read/data-science-complete-tutorial'
+    | '/resources/read/data-science-frequently-asked-questions'
+    | '/resources/read/data-science-glossary'
+    | '/resources/read/data-science-interview-questions'
+    | '/resources/read/data-science-learning-roadmap'
+    | '/resources/read/data-science-pdf-notes'
+    | '/resources/read/data-science-practice-questions'
+    | '/resources/read/data-science-project-case-study'
+    | '/resources/read/data-science-project-guide'
+    | '/resources/read/data-science-quick-revision-notes'
+    | '/resources/read/data-science-real-world-case-study'
+    | '/resources/read/data-science-reference-guide'
+    | '/resources/read/data-science-sample-exercises'
+    | '/resources/read/data-science-step-by-step-learning-guide'
+    | '/resources/read/data-science-tips-tricks'
     | '/resources/read/dbms-advanced-concepts'
     | '/resources/read/dbms-answer-key'
     | '/resources/read/dbms-beginner-guide'
@@ -12072,6 +12303,27 @@ export interface FileRouteTypes {
     | '/resources/read/cyber-security-sample-exercises'
     | '/resources/read/cyber-security-step-by-step-learning-guide'
     | '/resources/read/cyber-security-tips-tricks'
+    | '/resources/read/data-science-advanced-concepts'
+    | '/resources/read/data-science-answer-key'
+    | '/resources/read/data-science-beginner-guide'
+    | '/resources/read/data-science-best-practices'
+    | '/resources/read/data-science-cheat-sheet'
+    | '/resources/read/data-science-common-mistakes'
+    | '/resources/read/data-science-complete-tutorial'
+    | '/resources/read/data-science-frequently-asked-questions'
+    | '/resources/read/data-science-glossary'
+    | '/resources/read/data-science-interview-questions'
+    | '/resources/read/data-science-learning-roadmap'
+    | '/resources/read/data-science-pdf-notes'
+    | '/resources/read/data-science-practice-questions'
+    | '/resources/read/data-science-project-case-study'
+    | '/resources/read/data-science-project-guide'
+    | '/resources/read/data-science-quick-revision-notes'
+    | '/resources/read/data-science-real-world-case-study'
+    | '/resources/read/data-science-reference-guide'
+    | '/resources/read/data-science-sample-exercises'
+    | '/resources/read/data-science-step-by-step-learning-guide'
+    | '/resources/read/data-science-tips-tricks'
     | '/resources/read/dbms-advanced-concepts'
     | '/resources/read/dbms-answer-key'
     | '/resources/read/dbms-beginner-guide'
@@ -13148,6 +13400,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/cyber-security-sample-exercises'
     | '/_marketing/resources/read/cyber-security-step-by-step-learning-guide'
     | '/_marketing/resources/read/cyber-security-tips-tricks'
+    | '/_marketing/resources/read/data-science-advanced-concepts'
+    | '/_marketing/resources/read/data-science-answer-key'
+    | '/_marketing/resources/read/data-science-beginner-guide'
+    | '/_marketing/resources/read/data-science-best-practices'
+    | '/_marketing/resources/read/data-science-cheat-sheet'
+    | '/_marketing/resources/read/data-science-common-mistakes'
+    | '/_marketing/resources/read/data-science-complete-tutorial'
+    | '/_marketing/resources/read/data-science-frequently-asked-questions'
+    | '/_marketing/resources/read/data-science-glossary'
+    | '/_marketing/resources/read/data-science-interview-questions'
+    | '/_marketing/resources/read/data-science-learning-roadmap'
+    | '/_marketing/resources/read/data-science-pdf-notes'
+    | '/_marketing/resources/read/data-science-practice-questions'
+    | '/_marketing/resources/read/data-science-project-case-study'
+    | '/_marketing/resources/read/data-science-project-guide'
+    | '/_marketing/resources/read/data-science-quick-revision-notes'
+    | '/_marketing/resources/read/data-science-real-world-case-study'
+    | '/_marketing/resources/read/data-science-reference-guide'
+    | '/_marketing/resources/read/data-science-sample-exercises'
+    | '/_marketing/resources/read/data-science-step-by-step-learning-guide'
+    | '/_marketing/resources/read/data-science-tips-tricks'
     | '/_marketing/resources/read/dbms-advanced-concepts'
     | '/_marketing/resources/read/dbms-answer-key'
     | '/_marketing/resources/read/dbms-beginner-guide'
@@ -19939,6 +20212,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDbmsAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/data-science-tips-tricks': {
+      id: '/_marketing/resources/read/data-science-tips-tricks'
+      path: '/read/data-science-tips-tricks'
+      fullPath: '/resources/read/data-science-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/data-science-step-by-step-learning-guide'
+      path: '/read/data-science-step-by-step-learning-guide'
+      fullPath: '/resources/read/data-science-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-sample-exercises': {
+      id: '/_marketing/resources/read/data-science-sample-exercises'
+      path: '/read/data-science-sample-exercises'
+      fullPath: '/resources/read/data-science-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-reference-guide': {
+      id: '/_marketing/resources/read/data-science-reference-guide'
+      path: '/read/data-science-reference-guide'
+      fullPath: '/resources/read/data-science-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-real-world-case-study': {
+      id: '/_marketing/resources/read/data-science-real-world-case-study'
+      path: '/read/data-science-real-world-case-study'
+      fullPath: '/resources/read/data-science-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-quick-revision-notes': {
+      id: '/_marketing/resources/read/data-science-quick-revision-notes'
+      path: '/read/data-science-quick-revision-notes'
+      fullPath: '/resources/read/data-science-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-project-guide': {
+      id: '/_marketing/resources/read/data-science-project-guide'
+      path: '/read/data-science-project-guide'
+      fullPath: '/resources/read/data-science-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-project-case-study': {
+      id: '/_marketing/resources/read/data-science-project-case-study'
+      path: '/read/data-science-project-case-study'
+      fullPath: '/resources/read/data-science-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-practice-questions': {
+      id: '/_marketing/resources/read/data-science-practice-questions'
+      path: '/read/data-science-practice-questions'
+      fullPath: '/resources/read/data-science-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDataSciencePracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-pdf-notes': {
+      id: '/_marketing/resources/read/data-science-pdf-notes'
+      path: '/read/data-science-pdf-notes'
+      fullPath: '/resources/read/data-science-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDataSciencePdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-learning-roadmap': {
+      id: '/_marketing/resources/read/data-science-learning-roadmap'
+      path: '/read/data-science-learning-roadmap'
+      fullPath: '/resources/read/data-science-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-interview-questions': {
+      id: '/_marketing/resources/read/data-science-interview-questions'
+      path: '/read/data-science-interview-questions'
+      fullPath: '/resources/read/data-science-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-glossary': {
+      id: '/_marketing/resources/read/data-science-glossary'
+      path: '/read/data-science-glossary'
+      fullPath: '/resources/read/data-science-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-frequently-asked-questions': {
+      id: '/_marketing/resources/read/data-science-frequently-asked-questions'
+      path: '/read/data-science-frequently-asked-questions'
+      fullPath: '/resources/read/data-science-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-complete-tutorial': {
+      id: '/_marketing/resources/read/data-science-complete-tutorial'
+      path: '/read/data-science-complete-tutorial'
+      fullPath: '/resources/read/data-science-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-common-mistakes': {
+      id: '/_marketing/resources/read/data-science-common-mistakes'
+      path: '/read/data-science-common-mistakes'
+      fullPath: '/resources/read/data-science-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-cheat-sheet': {
+      id: '/_marketing/resources/read/data-science-cheat-sheet'
+      path: '/read/data-science-cheat-sheet'
+      fullPath: '/resources/read/data-science-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-best-practices': {
+      id: '/_marketing/resources/read/data-science-best-practices'
+      path: '/read/data-science-best-practices'
+      fullPath: '/resources/read/data-science-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-beginner-guide': {
+      id: '/_marketing/resources/read/data-science-beginner-guide'
+      path: '/read/data-science-beginner-guide'
+      fullPath: '/resources/read/data-science-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-answer-key': {
+      id: '/_marketing/resources/read/data-science-answer-key'
+      path: '/read/data-science-answer-key'
+      fullPath: '/resources/read/data-science-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-science-advanced-concepts': {
+      id: '/_marketing/resources/read/data-science-advanced-concepts'
+      path: '/read/data-science-advanced-concepts'
+      fullPath: '/resources/read/data-science-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadDataScienceAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/cyber-security-tips-tricks': {
       id: '/_marketing/resources/read/cyber-security-tips-tricks'
       path: '/read/cyber-security-tips-tricks'
@@ -21846,6 +22266,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadCyberSecuritySampleExercisesRoute: typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
   MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute: typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
   MarketingResourcesReadCyberSecurityTipsTricksRoute: typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
+  MarketingResourcesReadDataScienceAdvancedConceptsRoute: typeof MarketingResourcesReadDataScienceAdvancedConceptsRoute
+  MarketingResourcesReadDataScienceAnswerKeyRoute: typeof MarketingResourcesReadDataScienceAnswerKeyRoute
+  MarketingResourcesReadDataScienceBeginnerGuideRoute: typeof MarketingResourcesReadDataScienceBeginnerGuideRoute
+  MarketingResourcesReadDataScienceBestPracticesRoute: typeof MarketingResourcesReadDataScienceBestPracticesRoute
+  MarketingResourcesReadDataScienceCheatSheetRoute: typeof MarketingResourcesReadDataScienceCheatSheetRoute
+  MarketingResourcesReadDataScienceCommonMistakesRoute: typeof MarketingResourcesReadDataScienceCommonMistakesRoute
+  MarketingResourcesReadDataScienceCompleteTutorialRoute: typeof MarketingResourcesReadDataScienceCompleteTutorialRoute
+  MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadDataScienceGlossaryRoute: typeof MarketingResourcesReadDataScienceGlossaryRoute
+  MarketingResourcesReadDataScienceInterviewQuestionsRoute: typeof MarketingResourcesReadDataScienceInterviewQuestionsRoute
+  MarketingResourcesReadDataScienceLearningRoadmapRoute: typeof MarketingResourcesReadDataScienceLearningRoadmapRoute
+  MarketingResourcesReadDataSciencePdfNotesRoute: typeof MarketingResourcesReadDataSciencePdfNotesRoute
+  MarketingResourcesReadDataSciencePracticeQuestionsRoute: typeof MarketingResourcesReadDataSciencePracticeQuestionsRoute
+  MarketingResourcesReadDataScienceProjectCaseStudyRoute: typeof MarketingResourcesReadDataScienceProjectCaseStudyRoute
+  MarketingResourcesReadDataScienceProjectGuideRoute: typeof MarketingResourcesReadDataScienceProjectGuideRoute
+  MarketingResourcesReadDataScienceQuickRevisionNotesRoute: typeof MarketingResourcesReadDataScienceQuickRevisionNotesRoute
+  MarketingResourcesReadDataScienceRealWorldCaseStudyRoute: typeof MarketingResourcesReadDataScienceRealWorldCaseStudyRoute
+  MarketingResourcesReadDataScienceReferenceGuideRoute: typeof MarketingResourcesReadDataScienceReferenceGuideRoute
+  MarketingResourcesReadDataScienceSampleExercisesRoute: typeof MarketingResourcesReadDataScienceSampleExercisesRoute
+  MarketingResourcesReadDataScienceStepByStepLearningGuideRoute: typeof MarketingResourcesReadDataScienceStepByStepLearningGuideRoute
+  MarketingResourcesReadDataScienceTipsTricksRoute: typeof MarketingResourcesReadDataScienceTipsTricksRoute
   MarketingResourcesReadDbmsAdvancedConceptsRoute: typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   MarketingResourcesReadDbmsAnswerKeyRoute: typeof MarketingResourcesReadDbmsAnswerKeyRoute
   MarketingResourcesReadDbmsBeginnerGuideRoute: typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -23076,6 +23517,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute,
   MarketingResourcesReadCyberSecurityTipsTricksRoute:
     MarketingResourcesReadCyberSecurityTipsTricksRoute,
+  MarketingResourcesReadDataScienceAdvancedConceptsRoute:
+    MarketingResourcesReadDataScienceAdvancedConceptsRoute,
+  MarketingResourcesReadDataScienceAnswerKeyRoute:
+    MarketingResourcesReadDataScienceAnswerKeyRoute,
+  MarketingResourcesReadDataScienceBeginnerGuideRoute:
+    MarketingResourcesReadDataScienceBeginnerGuideRoute,
+  MarketingResourcesReadDataScienceBestPracticesRoute:
+    MarketingResourcesReadDataScienceBestPracticesRoute,
+  MarketingResourcesReadDataScienceCheatSheetRoute:
+    MarketingResourcesReadDataScienceCheatSheetRoute,
+  MarketingResourcesReadDataScienceCommonMistakesRoute:
+    MarketingResourcesReadDataScienceCommonMistakesRoute,
+  MarketingResourcesReadDataScienceCompleteTutorialRoute:
+    MarketingResourcesReadDataScienceCompleteTutorialRoute,
+  MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadDataScienceFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadDataScienceGlossaryRoute:
+    MarketingResourcesReadDataScienceGlossaryRoute,
+  MarketingResourcesReadDataScienceInterviewQuestionsRoute:
+    MarketingResourcesReadDataScienceInterviewQuestionsRoute,
+  MarketingResourcesReadDataScienceLearningRoadmapRoute:
+    MarketingResourcesReadDataScienceLearningRoadmapRoute,
+  MarketingResourcesReadDataSciencePdfNotesRoute:
+    MarketingResourcesReadDataSciencePdfNotesRoute,
+  MarketingResourcesReadDataSciencePracticeQuestionsRoute:
+    MarketingResourcesReadDataSciencePracticeQuestionsRoute,
+  MarketingResourcesReadDataScienceProjectCaseStudyRoute:
+    MarketingResourcesReadDataScienceProjectCaseStudyRoute,
+  MarketingResourcesReadDataScienceProjectGuideRoute:
+    MarketingResourcesReadDataScienceProjectGuideRoute,
+  MarketingResourcesReadDataScienceQuickRevisionNotesRoute:
+    MarketingResourcesReadDataScienceQuickRevisionNotesRoute,
+  MarketingResourcesReadDataScienceRealWorldCaseStudyRoute:
+    MarketingResourcesReadDataScienceRealWorldCaseStudyRoute,
+  MarketingResourcesReadDataScienceReferenceGuideRoute:
+    MarketingResourcesReadDataScienceReferenceGuideRoute,
+  MarketingResourcesReadDataScienceSampleExercisesRoute:
+    MarketingResourcesReadDataScienceSampleExercisesRoute,
+  MarketingResourcesReadDataScienceStepByStepLearningGuideRoute:
+    MarketingResourcesReadDataScienceStepByStepLearningGuideRoute,
+  MarketingResourcesReadDataScienceTipsTricksRoute:
+    MarketingResourcesReadDataScienceTipsTricksRoute,
   MarketingResourcesReadDbmsAdvancedConceptsRoute:
     MarketingResourcesReadDbmsAdvancedConceptsRoute,
   MarketingResourcesReadDbmsAnswerKeyRoute:
