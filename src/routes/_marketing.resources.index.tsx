@@ -47,17 +47,39 @@ export const Route = createFileRoute("/_marketing/resources/")({
 
 const CATEGORY_GROUPS = Array.from(new Set(COURSE_CATALOG.map((c) => c.category)));
 const LEVELS = ["All", "Beginner", "Intermediate", "Advanced"] as const;
+const ALL_TOPICS = Array.from(new Set(COURSE_CATALOG.flatMap((c) => c.tags))).sort((a, b) => a.localeCompare(b));
+
+const READING_TIMES = [
+  { value: "All", label: "Any length" },
+  { value: "short", label: "Quick reads (< 20 min)" },
+  { value: "standard", label: "Standard (20–40 min)" },
+  { value: "deep", label: "Deep dives (40+ min)" },
+] as const;
+type ReadingTime = (typeof READING_TIMES)[number]["value"];
+
+const DIFFICULTY_TO_TIME: Record<string, ReadingTime> = {
+  Beginner: "short",
+  Intermediate: "standard",
+  Advanced: "deep",
+};
 
 function ResourcesIndex() {
   const [q, setQ] = useState("");
   const [group, setGroup] = useState<string>("All");
   const [level, setLevel] = useState<(typeof LEVELS)[number]>("All");
+  const [readingTime, setReadingTime] = useState<ReadingTime>("All");
+  const [topics, setTopics] = useState<string[]>([]);
+
+  const toggleTopic = (t: string) =>
+    setTopics((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
 
   const filtered = useMemo(() => {
     const s = q.trim().toLowerCase();
     return COURSE_CATALOG.filter((c) => {
       if (group !== "All" && c.category !== group) return false;
       if (level !== "All" && c.difficulty !== level) return false;
+      if (readingTime !== "All" && DIFFICULTY_TO_TIME[c.difficulty] !== readingTime) return false;
+      if (topics.length > 0 && !topics.every((t) => c.tags.includes(t))) return false;
       if (!s) return true;
       return (
         c.title.toLowerCase().includes(s) ||
@@ -66,7 +88,10 @@ function ResourcesIndex() {
         c.tags.some((t) => t.toLowerCase().includes(s))
       );
     });
-  }, [q, group, level]);
+  }, [q, group, level, readingTime, topics]);
+
+  const hasActiveFilters = group !== "All" || level !== "All" || readingTime !== "All" || topics.length > 0 || q.length > 0;
+  const clearAll = () => { setGroup("All"); setLevel("All"); setReadingTime("All"); setTopics([]); setQ(""); };
 
   const totalResources = COURSE_CATALOG.length * RESOURCE_KINDS.length;
 
