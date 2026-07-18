@@ -497,6 +497,27 @@ import { Route as MarketingResourcesReadMysqlBestPracticesRouteImport } from './
 import { Route as MarketingResourcesReadMysqlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.mysql-beginner-guide'
 import { Route as MarketingResourcesReadMysqlAnswerKeyRouteImport } from './routes/_marketing.resources.read.mysql-answer-key'
 import { Route as MarketingResourcesReadMysqlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.mysql-advanced-concepts'
+import { Route as MarketingResourcesReadMongodbTipsTricksRouteImport } from './routes/_marketing.resources.read.mongodb-tips-tricks'
+import { Route as MarketingResourcesReadMongodbStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.mongodb-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadMongodbSampleExercisesRouteImport } from './routes/_marketing.resources.read.mongodb-sample-exercises'
+import { Route as MarketingResourcesReadMongodbReferenceGuideRouteImport } from './routes/_marketing.resources.read.mongodb-reference-guide'
+import { Route as MarketingResourcesReadMongodbRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.mongodb-real-world-case-study'
+import { Route as MarketingResourcesReadMongodbQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.mongodb-quick-revision-notes'
+import { Route as MarketingResourcesReadMongodbProjectGuideRouteImport } from './routes/_marketing.resources.read.mongodb-project-guide'
+import { Route as MarketingResourcesReadMongodbProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.mongodb-project-case-study'
+import { Route as MarketingResourcesReadMongodbPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.mongodb-practice-questions'
+import { Route as MarketingResourcesReadMongodbPdfNotesRouteImport } from './routes/_marketing.resources.read.mongodb-pdf-notes'
+import { Route as MarketingResourcesReadMongodbLearningRoadmapRouteImport } from './routes/_marketing.resources.read.mongodb-learning-roadmap'
+import { Route as MarketingResourcesReadMongodbInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.mongodb-interview-questions'
+import { Route as MarketingResourcesReadMongodbGlossaryRouteImport } from './routes/_marketing.resources.read.mongodb-glossary'
+import { Route as MarketingResourcesReadMongodbFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.mongodb-frequently-asked-questions'
+import { Route as MarketingResourcesReadMongodbCompleteTutorialRouteImport } from './routes/_marketing.resources.read.mongodb-complete-tutorial'
+import { Route as MarketingResourcesReadMongodbCommonMistakesRouteImport } from './routes/_marketing.resources.read.mongodb-common-mistakes'
+import { Route as MarketingResourcesReadMongodbCheatSheetRouteImport } from './routes/_marketing.resources.read.mongodb-cheat-sheet'
+import { Route as MarketingResourcesReadMongodbBestPracticesRouteImport } from './routes/_marketing.resources.read.mongodb-best-practices'
+import { Route as MarketingResourcesReadMongodbBeginnerGuideRouteImport } from './routes/_marketing.resources.read.mongodb-beginner-guide'
+import { Route as MarketingResourcesReadMongodbAnswerKeyRouteImport } from './routes/_marketing.resources.read.mongodb-answer-key'
+import { Route as MarketingResourcesReadMongodbAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.mongodb-advanced-concepts'
 import { Route as MarketingResourcesReadMlTipsTricksRouteImport } from './routes/_marketing.resources.read.ml-tips-tricks'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlSampleExercisesRouteImport } from './routes/_marketing.resources.read.ml-sample-exercises'
@@ -3968,6 +3989,132 @@ const MarketingResourcesReadMysqlAdvancedConceptsRoute =
   MarketingResourcesReadMysqlAdvancedConceptsRouteImport.update({
     id: '/read/mysql-advanced-concepts',
     path: '/read/mysql-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbTipsTricksRoute =
+  MarketingResourcesReadMongodbTipsTricksRouteImport.update({
+    id: '/read/mongodb-tips-tricks',
+    path: '/read/mongodb-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbStepByStepLearningGuideRoute =
+  MarketingResourcesReadMongodbStepByStepLearningGuideRouteImport.update({
+    id: '/read/mongodb-step-by-step-learning-guide',
+    path: '/read/mongodb-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbSampleExercisesRoute =
+  MarketingResourcesReadMongodbSampleExercisesRouteImport.update({
+    id: '/read/mongodb-sample-exercises',
+    path: '/read/mongodb-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbReferenceGuideRoute =
+  MarketingResourcesReadMongodbReferenceGuideRouteImport.update({
+    id: '/read/mongodb-reference-guide',
+    path: '/read/mongodb-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbRealWorldCaseStudyRoute =
+  MarketingResourcesReadMongodbRealWorldCaseStudyRouteImport.update({
+    id: '/read/mongodb-real-world-case-study',
+    path: '/read/mongodb-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbQuickRevisionNotesRoute =
+  MarketingResourcesReadMongodbQuickRevisionNotesRouteImport.update({
+    id: '/read/mongodb-quick-revision-notes',
+    path: '/read/mongodb-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbProjectGuideRoute =
+  MarketingResourcesReadMongodbProjectGuideRouteImport.update({
+    id: '/read/mongodb-project-guide',
+    path: '/read/mongodb-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbProjectCaseStudyRoute =
+  MarketingResourcesReadMongodbProjectCaseStudyRouteImport.update({
+    id: '/read/mongodb-project-case-study',
+    path: '/read/mongodb-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbPracticeQuestionsRoute =
+  MarketingResourcesReadMongodbPracticeQuestionsRouteImport.update({
+    id: '/read/mongodb-practice-questions',
+    path: '/read/mongodb-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbPdfNotesRoute =
+  MarketingResourcesReadMongodbPdfNotesRouteImport.update({
+    id: '/read/mongodb-pdf-notes',
+    path: '/read/mongodb-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbLearningRoadmapRoute =
+  MarketingResourcesReadMongodbLearningRoadmapRouteImport.update({
+    id: '/read/mongodb-learning-roadmap',
+    path: '/read/mongodb-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbInterviewQuestionsRoute =
+  MarketingResourcesReadMongodbInterviewQuestionsRouteImport.update({
+    id: '/read/mongodb-interview-questions',
+    path: '/read/mongodb-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbGlossaryRoute =
+  MarketingResourcesReadMongodbGlossaryRouteImport.update({
+    id: '/read/mongodb-glossary',
+    path: '/read/mongodb-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadMongodbFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/mongodb-frequently-asked-questions',
+    path: '/read/mongodb-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbCompleteTutorialRoute =
+  MarketingResourcesReadMongodbCompleteTutorialRouteImport.update({
+    id: '/read/mongodb-complete-tutorial',
+    path: '/read/mongodb-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbCommonMistakesRoute =
+  MarketingResourcesReadMongodbCommonMistakesRouteImport.update({
+    id: '/read/mongodb-common-mistakes',
+    path: '/read/mongodb-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbCheatSheetRoute =
+  MarketingResourcesReadMongodbCheatSheetRouteImport.update({
+    id: '/read/mongodb-cheat-sheet',
+    path: '/read/mongodb-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbBestPracticesRoute =
+  MarketingResourcesReadMongodbBestPracticesRouteImport.update({
+    id: '/read/mongodb-best-practices',
+    path: '/read/mongodb-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbBeginnerGuideRoute =
+  MarketingResourcesReadMongodbBeginnerGuideRouteImport.update({
+    id: '/read/mongodb-beginner-guide',
+    path: '/read/mongodb-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbAnswerKeyRoute =
+  MarketingResourcesReadMongodbAnswerKeyRouteImport.update({
+    id: '/read/mongodb-answer-key',
+    path: '/read/mongodb-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMongodbAdvancedConceptsRoute =
+  MarketingResourcesReadMongodbAdvancedConceptsRouteImport.update({
+    id: '/read/mongodb-advanced-concepts',
+    path: '/read/mongodb-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlTipsTricksRoute =
@@ -7971,6 +8118,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/mongodb-advanced-concepts': typeof MarketingResourcesReadMongodbAdvancedConceptsRoute
+  '/resources/read/mongodb-answer-key': typeof MarketingResourcesReadMongodbAnswerKeyRoute
+  '/resources/read/mongodb-beginner-guide': typeof MarketingResourcesReadMongodbBeginnerGuideRoute
+  '/resources/read/mongodb-best-practices': typeof MarketingResourcesReadMongodbBestPracticesRoute
+  '/resources/read/mongodb-cheat-sheet': typeof MarketingResourcesReadMongodbCheatSheetRoute
+  '/resources/read/mongodb-common-mistakes': typeof MarketingResourcesReadMongodbCommonMistakesRoute
+  '/resources/read/mongodb-complete-tutorial': typeof MarketingResourcesReadMongodbCompleteTutorialRoute
+  '/resources/read/mongodb-frequently-asked-questions': typeof MarketingResourcesReadMongodbFrequentlyAskedQuestionsRoute
+  '/resources/read/mongodb-glossary': typeof MarketingResourcesReadMongodbGlossaryRoute
+  '/resources/read/mongodb-interview-questions': typeof MarketingResourcesReadMongodbInterviewQuestionsRoute
+  '/resources/read/mongodb-learning-roadmap': typeof MarketingResourcesReadMongodbLearningRoadmapRoute
+  '/resources/read/mongodb-pdf-notes': typeof MarketingResourcesReadMongodbPdfNotesRoute
+  '/resources/read/mongodb-practice-questions': typeof MarketingResourcesReadMongodbPracticeQuestionsRoute
+  '/resources/read/mongodb-project-case-study': typeof MarketingResourcesReadMongodbProjectCaseStudyRoute
+  '/resources/read/mongodb-project-guide': typeof MarketingResourcesReadMongodbProjectGuideRoute
+  '/resources/read/mongodb-quick-revision-notes': typeof MarketingResourcesReadMongodbQuickRevisionNotesRoute
+  '/resources/read/mongodb-real-world-case-study': typeof MarketingResourcesReadMongodbRealWorldCaseStudyRoute
+  '/resources/read/mongodb-reference-guide': typeof MarketingResourcesReadMongodbReferenceGuideRoute
+  '/resources/read/mongodb-sample-exercises': typeof MarketingResourcesReadMongodbSampleExercisesRoute
+  '/resources/read/mongodb-step-by-step-learning-guide': typeof MarketingResourcesReadMongodbStepByStepLearningGuideRoute
+  '/resources/read/mongodb-tips-tricks': typeof MarketingResourcesReadMongodbTipsTricksRoute
   '/resources/read/mysql-advanced-concepts': typeof MarketingResourcesReadMysqlAdvancedConceptsRoute
   '/resources/read/mysql-answer-key': typeof MarketingResourcesReadMysqlAnswerKeyRoute
   '/resources/read/mysql-beginner-guide': typeof MarketingResourcesReadMysqlBeginnerGuideRoute
@@ -9022,6 +9190,27 @@ export interface FileRoutesByTo {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/mongodb-advanced-concepts': typeof MarketingResourcesReadMongodbAdvancedConceptsRoute
+  '/resources/read/mongodb-answer-key': typeof MarketingResourcesReadMongodbAnswerKeyRoute
+  '/resources/read/mongodb-beginner-guide': typeof MarketingResourcesReadMongodbBeginnerGuideRoute
+  '/resources/read/mongodb-best-practices': typeof MarketingResourcesReadMongodbBestPracticesRoute
+  '/resources/read/mongodb-cheat-sheet': typeof MarketingResourcesReadMongodbCheatSheetRoute
+  '/resources/read/mongodb-common-mistakes': typeof MarketingResourcesReadMongodbCommonMistakesRoute
+  '/resources/read/mongodb-complete-tutorial': typeof MarketingResourcesReadMongodbCompleteTutorialRoute
+  '/resources/read/mongodb-frequently-asked-questions': typeof MarketingResourcesReadMongodbFrequentlyAskedQuestionsRoute
+  '/resources/read/mongodb-glossary': typeof MarketingResourcesReadMongodbGlossaryRoute
+  '/resources/read/mongodb-interview-questions': typeof MarketingResourcesReadMongodbInterviewQuestionsRoute
+  '/resources/read/mongodb-learning-roadmap': typeof MarketingResourcesReadMongodbLearningRoadmapRoute
+  '/resources/read/mongodb-pdf-notes': typeof MarketingResourcesReadMongodbPdfNotesRoute
+  '/resources/read/mongodb-practice-questions': typeof MarketingResourcesReadMongodbPracticeQuestionsRoute
+  '/resources/read/mongodb-project-case-study': typeof MarketingResourcesReadMongodbProjectCaseStudyRoute
+  '/resources/read/mongodb-project-guide': typeof MarketingResourcesReadMongodbProjectGuideRoute
+  '/resources/read/mongodb-quick-revision-notes': typeof MarketingResourcesReadMongodbQuickRevisionNotesRoute
+  '/resources/read/mongodb-real-world-case-study': typeof MarketingResourcesReadMongodbRealWorldCaseStudyRoute
+  '/resources/read/mongodb-reference-guide': typeof MarketingResourcesReadMongodbReferenceGuideRoute
+  '/resources/read/mongodb-sample-exercises': typeof MarketingResourcesReadMongodbSampleExercisesRoute
+  '/resources/read/mongodb-step-by-step-learning-guide': typeof MarketingResourcesReadMongodbStepByStepLearningGuideRoute
+  '/resources/read/mongodb-tips-tricks': typeof MarketingResourcesReadMongodbTipsTricksRoute
   '/resources/read/mysql-advanced-concepts': typeof MarketingResourcesReadMysqlAdvancedConceptsRoute
   '/resources/read/mysql-answer-key': typeof MarketingResourcesReadMysqlAnswerKeyRoute
   '/resources/read/mysql-beginner-guide': typeof MarketingResourcesReadMysqlBeginnerGuideRoute
@@ -10078,6 +10267,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/_marketing/resources/read/mongodb-advanced-concepts': typeof MarketingResourcesReadMongodbAdvancedConceptsRoute
+  '/_marketing/resources/read/mongodb-answer-key': typeof MarketingResourcesReadMongodbAnswerKeyRoute
+  '/_marketing/resources/read/mongodb-beginner-guide': typeof MarketingResourcesReadMongodbBeginnerGuideRoute
+  '/_marketing/resources/read/mongodb-best-practices': typeof MarketingResourcesReadMongodbBestPracticesRoute
+  '/_marketing/resources/read/mongodb-cheat-sheet': typeof MarketingResourcesReadMongodbCheatSheetRoute
+  '/_marketing/resources/read/mongodb-common-mistakes': typeof MarketingResourcesReadMongodbCommonMistakesRoute
+  '/_marketing/resources/read/mongodb-complete-tutorial': typeof MarketingResourcesReadMongodbCompleteTutorialRoute
+  '/_marketing/resources/read/mongodb-frequently-asked-questions': typeof MarketingResourcesReadMongodbFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/mongodb-glossary': typeof MarketingResourcesReadMongodbGlossaryRoute
+  '/_marketing/resources/read/mongodb-interview-questions': typeof MarketingResourcesReadMongodbInterviewQuestionsRoute
+  '/_marketing/resources/read/mongodb-learning-roadmap': typeof MarketingResourcesReadMongodbLearningRoadmapRoute
+  '/_marketing/resources/read/mongodb-pdf-notes': typeof MarketingResourcesReadMongodbPdfNotesRoute
+  '/_marketing/resources/read/mongodb-practice-questions': typeof MarketingResourcesReadMongodbPracticeQuestionsRoute
+  '/_marketing/resources/read/mongodb-project-case-study': typeof MarketingResourcesReadMongodbProjectCaseStudyRoute
+  '/_marketing/resources/read/mongodb-project-guide': typeof MarketingResourcesReadMongodbProjectGuideRoute
+  '/_marketing/resources/read/mongodb-quick-revision-notes': typeof MarketingResourcesReadMongodbQuickRevisionNotesRoute
+  '/_marketing/resources/read/mongodb-real-world-case-study': typeof MarketingResourcesReadMongodbRealWorldCaseStudyRoute
+  '/_marketing/resources/read/mongodb-reference-guide': typeof MarketingResourcesReadMongodbReferenceGuideRoute
+  '/_marketing/resources/read/mongodb-sample-exercises': typeof MarketingResourcesReadMongodbSampleExercisesRoute
+  '/_marketing/resources/read/mongodb-step-by-step-learning-guide': typeof MarketingResourcesReadMongodbStepByStepLearningGuideRoute
+  '/_marketing/resources/read/mongodb-tips-tricks': typeof MarketingResourcesReadMongodbTipsTricksRoute
   '/_marketing/resources/read/mysql-advanced-concepts': typeof MarketingResourcesReadMysqlAdvancedConceptsRoute
   '/_marketing/resources/read/mysql-answer-key': typeof MarketingResourcesReadMysqlAnswerKeyRoute
   '/_marketing/resources/read/mysql-beginner-guide': typeof MarketingResourcesReadMysqlBeginnerGuideRoute
@@ -11132,6 +11342,27 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/mongodb-advanced-concepts'
+    | '/resources/read/mongodb-answer-key'
+    | '/resources/read/mongodb-beginner-guide'
+    | '/resources/read/mongodb-best-practices'
+    | '/resources/read/mongodb-cheat-sheet'
+    | '/resources/read/mongodb-common-mistakes'
+    | '/resources/read/mongodb-complete-tutorial'
+    | '/resources/read/mongodb-frequently-asked-questions'
+    | '/resources/read/mongodb-glossary'
+    | '/resources/read/mongodb-interview-questions'
+    | '/resources/read/mongodb-learning-roadmap'
+    | '/resources/read/mongodb-pdf-notes'
+    | '/resources/read/mongodb-practice-questions'
+    | '/resources/read/mongodb-project-case-study'
+    | '/resources/read/mongodb-project-guide'
+    | '/resources/read/mongodb-quick-revision-notes'
+    | '/resources/read/mongodb-real-world-case-study'
+    | '/resources/read/mongodb-reference-guide'
+    | '/resources/read/mongodb-sample-exercises'
+    | '/resources/read/mongodb-step-by-step-learning-guide'
+    | '/resources/read/mongodb-tips-tricks'
     | '/resources/read/mysql-advanced-concepts'
     | '/resources/read/mysql-answer-key'
     | '/resources/read/mysql-beginner-guide'
@@ -12183,6 +12414,27 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/mongodb-advanced-concepts'
+    | '/resources/read/mongodb-answer-key'
+    | '/resources/read/mongodb-beginner-guide'
+    | '/resources/read/mongodb-best-practices'
+    | '/resources/read/mongodb-cheat-sheet'
+    | '/resources/read/mongodb-common-mistakes'
+    | '/resources/read/mongodb-complete-tutorial'
+    | '/resources/read/mongodb-frequently-asked-questions'
+    | '/resources/read/mongodb-glossary'
+    | '/resources/read/mongodb-interview-questions'
+    | '/resources/read/mongodb-learning-roadmap'
+    | '/resources/read/mongodb-pdf-notes'
+    | '/resources/read/mongodb-practice-questions'
+    | '/resources/read/mongodb-project-case-study'
+    | '/resources/read/mongodb-project-guide'
+    | '/resources/read/mongodb-quick-revision-notes'
+    | '/resources/read/mongodb-real-world-case-study'
+    | '/resources/read/mongodb-reference-guide'
+    | '/resources/read/mongodb-sample-exercises'
+    | '/resources/read/mongodb-step-by-step-learning-guide'
+    | '/resources/read/mongodb-tips-tricks'
     | '/resources/read/mysql-advanced-concepts'
     | '/resources/read/mysql-answer-key'
     | '/resources/read/mysql-beginner-guide'
@@ -13238,6 +13490,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-sample-exercises'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-tips-tricks'
+    | '/_marketing/resources/read/mongodb-advanced-concepts'
+    | '/_marketing/resources/read/mongodb-answer-key'
+    | '/_marketing/resources/read/mongodb-beginner-guide'
+    | '/_marketing/resources/read/mongodb-best-practices'
+    | '/_marketing/resources/read/mongodb-cheat-sheet'
+    | '/_marketing/resources/read/mongodb-common-mistakes'
+    | '/_marketing/resources/read/mongodb-complete-tutorial'
+    | '/_marketing/resources/read/mongodb-frequently-asked-questions'
+    | '/_marketing/resources/read/mongodb-glossary'
+    | '/_marketing/resources/read/mongodb-interview-questions'
+    | '/_marketing/resources/read/mongodb-learning-roadmap'
+    | '/_marketing/resources/read/mongodb-pdf-notes'
+    | '/_marketing/resources/read/mongodb-practice-questions'
+    | '/_marketing/resources/read/mongodb-project-case-study'
+    | '/_marketing/resources/read/mongodb-project-guide'
+    | '/_marketing/resources/read/mongodb-quick-revision-notes'
+    | '/_marketing/resources/read/mongodb-real-world-case-study'
+    | '/_marketing/resources/read/mongodb-reference-guide'
+    | '/_marketing/resources/read/mongodb-sample-exercises'
+    | '/_marketing/resources/read/mongodb-step-by-step-learning-guide'
+    | '/_marketing/resources/read/mongodb-tips-tricks'
     | '/_marketing/resources/read/mysql-advanced-concepts'
     | '/_marketing/resources/read/mysql-answer-key'
     | '/_marketing/resources/read/mysql-beginner-guide'
@@ -17123,6 +17396,153 @@ declare module '@tanstack/react-router' {
       path: '/read/mysql-advanced-concepts'
       fullPath: '/resources/read/mysql-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadMysqlAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-tips-tricks': {
+      id: '/_marketing/resources/read/mongodb-tips-tricks'
+      path: '/read/mongodb-tips-tricks'
+      fullPath: '/resources/read/mongodb-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/mongodb-step-by-step-learning-guide'
+      path: '/read/mongodb-step-by-step-learning-guide'
+      fullPath: '/resources/read/mongodb-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-sample-exercises': {
+      id: '/_marketing/resources/read/mongodb-sample-exercises'
+      path: '/read/mongodb-sample-exercises'
+      fullPath: '/resources/read/mongodb-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-reference-guide': {
+      id: '/_marketing/resources/read/mongodb-reference-guide'
+      path: '/read/mongodb-reference-guide'
+      fullPath: '/resources/read/mongodb-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-real-world-case-study': {
+      id: '/_marketing/resources/read/mongodb-real-world-case-study'
+      path: '/read/mongodb-real-world-case-study'
+      fullPath: '/resources/read/mongodb-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-quick-revision-notes': {
+      id: '/_marketing/resources/read/mongodb-quick-revision-notes'
+      path: '/read/mongodb-quick-revision-notes'
+      fullPath: '/resources/read/mongodb-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-project-guide': {
+      id: '/_marketing/resources/read/mongodb-project-guide'
+      path: '/read/mongodb-project-guide'
+      fullPath: '/resources/read/mongodb-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-project-case-study': {
+      id: '/_marketing/resources/read/mongodb-project-case-study'
+      path: '/read/mongodb-project-case-study'
+      fullPath: '/resources/read/mongodb-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-practice-questions': {
+      id: '/_marketing/resources/read/mongodb-practice-questions'
+      path: '/read/mongodb-practice-questions'
+      fullPath: '/resources/read/mongodb-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-pdf-notes': {
+      id: '/_marketing/resources/read/mongodb-pdf-notes'
+      path: '/read/mongodb-pdf-notes'
+      fullPath: '/resources/read/mongodb-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-learning-roadmap': {
+      id: '/_marketing/resources/read/mongodb-learning-roadmap'
+      path: '/read/mongodb-learning-roadmap'
+      fullPath: '/resources/read/mongodb-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-interview-questions': {
+      id: '/_marketing/resources/read/mongodb-interview-questions'
+      path: '/read/mongodb-interview-questions'
+      fullPath: '/resources/read/mongodb-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-glossary': {
+      id: '/_marketing/resources/read/mongodb-glossary'
+      path: '/read/mongodb-glossary'
+      fullPath: '/resources/read/mongodb-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-frequently-asked-questions': {
+      id: '/_marketing/resources/read/mongodb-frequently-asked-questions'
+      path: '/read/mongodb-frequently-asked-questions'
+      fullPath: '/resources/read/mongodb-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-complete-tutorial': {
+      id: '/_marketing/resources/read/mongodb-complete-tutorial'
+      path: '/read/mongodb-complete-tutorial'
+      fullPath: '/resources/read/mongodb-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-common-mistakes': {
+      id: '/_marketing/resources/read/mongodb-common-mistakes'
+      path: '/read/mongodb-common-mistakes'
+      fullPath: '/resources/read/mongodb-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-cheat-sheet': {
+      id: '/_marketing/resources/read/mongodb-cheat-sheet'
+      path: '/read/mongodb-cheat-sheet'
+      fullPath: '/resources/read/mongodb-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-best-practices': {
+      id: '/_marketing/resources/read/mongodb-best-practices'
+      path: '/read/mongodb-best-practices'
+      fullPath: '/resources/read/mongodb-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-beginner-guide': {
+      id: '/_marketing/resources/read/mongodb-beginner-guide'
+      path: '/read/mongodb-beginner-guide'
+      fullPath: '/resources/read/mongodb-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-answer-key': {
+      id: '/_marketing/resources/read/mongodb-answer-key'
+      path: '/read/mongodb-answer-key'
+      fullPath: '/resources/read/mongodb-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mongodb-advanced-concepts': {
+      id: '/_marketing/resources/read/mongodb-advanced-concepts'
+      path: '/read/mongodb-advanced-concepts'
+      fullPath: '/resources/read/mongodb-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadMongodbAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-tips-tricks': {
@@ -21768,6 +22188,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlSampleExercisesRoute: typeof MarketingResourcesReadMlSampleExercisesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   MarketingResourcesReadMlTipsTricksRoute: typeof MarketingResourcesReadMlTipsTricksRoute
+  MarketingResourcesReadMongodbAdvancedConceptsRoute: typeof MarketingResourcesReadMongodbAdvancedConceptsRoute
+  MarketingResourcesReadMongodbAnswerKeyRoute: typeof MarketingResourcesReadMongodbAnswerKeyRoute
+  MarketingResourcesReadMongodbBeginnerGuideRoute: typeof MarketingResourcesReadMongodbBeginnerGuideRoute
+  MarketingResourcesReadMongodbBestPracticesRoute: typeof MarketingResourcesReadMongodbBestPracticesRoute
+  MarketingResourcesReadMongodbCheatSheetRoute: typeof MarketingResourcesReadMongodbCheatSheetRoute
+  MarketingResourcesReadMongodbCommonMistakesRoute: typeof MarketingResourcesReadMongodbCommonMistakesRoute
+  MarketingResourcesReadMongodbCompleteTutorialRoute: typeof MarketingResourcesReadMongodbCompleteTutorialRoute
+  MarketingResourcesReadMongodbFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadMongodbFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadMongodbGlossaryRoute: typeof MarketingResourcesReadMongodbGlossaryRoute
+  MarketingResourcesReadMongodbInterviewQuestionsRoute: typeof MarketingResourcesReadMongodbInterviewQuestionsRoute
+  MarketingResourcesReadMongodbLearningRoadmapRoute: typeof MarketingResourcesReadMongodbLearningRoadmapRoute
+  MarketingResourcesReadMongodbPdfNotesRoute: typeof MarketingResourcesReadMongodbPdfNotesRoute
+  MarketingResourcesReadMongodbPracticeQuestionsRoute: typeof MarketingResourcesReadMongodbPracticeQuestionsRoute
+  MarketingResourcesReadMongodbProjectCaseStudyRoute: typeof MarketingResourcesReadMongodbProjectCaseStudyRoute
+  MarketingResourcesReadMongodbProjectGuideRoute: typeof MarketingResourcesReadMongodbProjectGuideRoute
+  MarketingResourcesReadMongodbQuickRevisionNotesRoute: typeof MarketingResourcesReadMongodbQuickRevisionNotesRoute
+  MarketingResourcesReadMongodbRealWorldCaseStudyRoute: typeof MarketingResourcesReadMongodbRealWorldCaseStudyRoute
+  MarketingResourcesReadMongodbReferenceGuideRoute: typeof MarketingResourcesReadMongodbReferenceGuideRoute
+  MarketingResourcesReadMongodbSampleExercisesRoute: typeof MarketingResourcesReadMongodbSampleExercisesRoute
+  MarketingResourcesReadMongodbStepByStepLearningGuideRoute: typeof MarketingResourcesReadMongodbStepByStepLearningGuideRoute
+  MarketingResourcesReadMongodbTipsTricksRoute: typeof MarketingResourcesReadMongodbTipsTricksRoute
   MarketingResourcesReadMysqlAdvancedConceptsRoute: typeof MarketingResourcesReadMysqlAdvancedConceptsRoute
   MarketingResourcesReadMysqlAnswerKeyRoute: typeof MarketingResourcesReadMysqlAnswerKeyRoute
   MarketingResourcesReadMysqlBeginnerGuideRoute: typeof MarketingResourcesReadMysqlBeginnerGuideRoute
@@ -23313,6 +23754,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlStepByStepLearningGuideRoute,
   MarketingResourcesReadMlTipsTricksRoute:
     MarketingResourcesReadMlTipsTricksRoute,
+  MarketingResourcesReadMongodbAdvancedConceptsRoute:
+    MarketingResourcesReadMongodbAdvancedConceptsRoute,
+  MarketingResourcesReadMongodbAnswerKeyRoute:
+    MarketingResourcesReadMongodbAnswerKeyRoute,
+  MarketingResourcesReadMongodbBeginnerGuideRoute:
+    MarketingResourcesReadMongodbBeginnerGuideRoute,
+  MarketingResourcesReadMongodbBestPracticesRoute:
+    MarketingResourcesReadMongodbBestPracticesRoute,
+  MarketingResourcesReadMongodbCheatSheetRoute:
+    MarketingResourcesReadMongodbCheatSheetRoute,
+  MarketingResourcesReadMongodbCommonMistakesRoute:
+    MarketingResourcesReadMongodbCommonMistakesRoute,
+  MarketingResourcesReadMongodbCompleteTutorialRoute:
+    MarketingResourcesReadMongodbCompleteTutorialRoute,
+  MarketingResourcesReadMongodbFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadMongodbFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadMongodbGlossaryRoute:
+    MarketingResourcesReadMongodbGlossaryRoute,
+  MarketingResourcesReadMongodbInterviewQuestionsRoute:
+    MarketingResourcesReadMongodbInterviewQuestionsRoute,
+  MarketingResourcesReadMongodbLearningRoadmapRoute:
+    MarketingResourcesReadMongodbLearningRoadmapRoute,
+  MarketingResourcesReadMongodbPdfNotesRoute:
+    MarketingResourcesReadMongodbPdfNotesRoute,
+  MarketingResourcesReadMongodbPracticeQuestionsRoute:
+    MarketingResourcesReadMongodbPracticeQuestionsRoute,
+  MarketingResourcesReadMongodbProjectCaseStudyRoute:
+    MarketingResourcesReadMongodbProjectCaseStudyRoute,
+  MarketingResourcesReadMongodbProjectGuideRoute:
+    MarketingResourcesReadMongodbProjectGuideRoute,
+  MarketingResourcesReadMongodbQuickRevisionNotesRoute:
+    MarketingResourcesReadMongodbQuickRevisionNotesRoute,
+  MarketingResourcesReadMongodbRealWorldCaseStudyRoute:
+    MarketingResourcesReadMongodbRealWorldCaseStudyRoute,
+  MarketingResourcesReadMongodbReferenceGuideRoute:
+    MarketingResourcesReadMongodbReferenceGuideRoute,
+  MarketingResourcesReadMongodbSampleExercisesRoute:
+    MarketingResourcesReadMongodbSampleExercisesRoute,
+  MarketingResourcesReadMongodbStepByStepLearningGuideRoute:
+    MarketingResourcesReadMongodbStepByStepLearningGuideRoute,
+  MarketingResourcesReadMongodbTipsTricksRoute:
+    MarketingResourcesReadMongodbTipsTricksRoute,
   MarketingResourcesReadMysqlAdvancedConceptsRoute:
     MarketingResourcesReadMysqlAdvancedConceptsRoute,
   MarketingResourcesReadMysqlAnswerKeyRoute:
