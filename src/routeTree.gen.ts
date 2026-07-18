@@ -650,6 +650,27 @@ import { Route as MarketingResourcesReadFigmaBestPracticesRouteImport } from './
 import { Route as MarketingResourcesReadFigmaBeginnerGuideRouteImport } from './routes/_marketing.resources.read.figma-beginner-guide'
 import { Route as MarketingResourcesReadFigmaAnswerKeyRouteImport } from './routes/_marketing.resources.read.figma-answer-key'
 import { Route as MarketingResourcesReadFigmaAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.figma-advanced-concepts'
+import { Route as MarketingResourcesReadExpressjsTipsTricksRouteImport } from './routes/_marketing.resources.read.expressjs-tips-tricks'
+import { Route as MarketingResourcesReadExpressjsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.expressjs-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadExpressjsSampleExercisesRouteImport } from './routes/_marketing.resources.read.expressjs-sample-exercises'
+import { Route as MarketingResourcesReadExpressjsReferenceGuideRouteImport } from './routes/_marketing.resources.read.expressjs-reference-guide'
+import { Route as MarketingResourcesReadExpressjsRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.expressjs-real-world-case-study'
+import { Route as MarketingResourcesReadExpressjsQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.expressjs-quick-revision-notes'
+import { Route as MarketingResourcesReadExpressjsProjectGuideRouteImport } from './routes/_marketing.resources.read.expressjs-project-guide'
+import { Route as MarketingResourcesReadExpressjsProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.expressjs-project-case-study'
+import { Route as MarketingResourcesReadExpressjsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.expressjs-practice-questions'
+import { Route as MarketingResourcesReadExpressjsPdfNotesRouteImport } from './routes/_marketing.resources.read.expressjs-pdf-notes'
+import { Route as MarketingResourcesReadExpressjsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.expressjs-learning-roadmap'
+import { Route as MarketingResourcesReadExpressjsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.expressjs-interview-questions'
+import { Route as MarketingResourcesReadExpressjsGlossaryRouteImport } from './routes/_marketing.resources.read.expressjs-glossary'
+import { Route as MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.expressjs-frequently-asked-questions'
+import { Route as MarketingResourcesReadExpressjsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.expressjs-complete-tutorial'
+import { Route as MarketingResourcesReadExpressjsCommonMistakesRouteImport } from './routes/_marketing.resources.read.expressjs-common-mistakes'
+import { Route as MarketingResourcesReadExpressjsCheatSheetRouteImport } from './routes/_marketing.resources.read.expressjs-cheat-sheet'
+import { Route as MarketingResourcesReadExpressjsBestPracticesRouteImport } from './routes/_marketing.resources.read.expressjs-best-practices'
+import { Route as MarketingResourcesReadExpressjsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.expressjs-beginner-guide'
+import { Route as MarketingResourcesReadExpressjsAnswerKeyRouteImport } from './routes/_marketing.resources.read.expressjs-answer-key'
+import { Route as MarketingResourcesReadExpressjsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.expressjs-advanced-concepts'
 import { Route as MarketingResourcesReadEthicalHackingTipsTricksRouteImport } from './routes/_marketing.resources.read.ethical-hacking-tips-tricks'
 import { Route as MarketingResourcesReadEthicalHackingStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ethical-hacking-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadEthicalHackingSampleExercisesRouteImport } from './routes/_marketing.resources.read.ethical-hacking-sample-exercises'
@@ -4825,6 +4846,132 @@ const MarketingResourcesReadFigmaAdvancedConceptsRoute =
     path: '/read/figma-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadExpressjsTipsTricksRoute =
+  MarketingResourcesReadExpressjsTipsTricksRouteImport.update({
+    id: '/read/expressjs-tips-tricks',
+    path: '/read/expressjs-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsStepByStepLearningGuideRoute =
+  MarketingResourcesReadExpressjsStepByStepLearningGuideRouteImport.update({
+    id: '/read/expressjs-step-by-step-learning-guide',
+    path: '/read/expressjs-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsSampleExercisesRoute =
+  MarketingResourcesReadExpressjsSampleExercisesRouteImport.update({
+    id: '/read/expressjs-sample-exercises',
+    path: '/read/expressjs-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsReferenceGuideRoute =
+  MarketingResourcesReadExpressjsReferenceGuideRouteImport.update({
+    id: '/read/expressjs-reference-guide',
+    path: '/read/expressjs-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsRealWorldCaseStudyRoute =
+  MarketingResourcesReadExpressjsRealWorldCaseStudyRouteImport.update({
+    id: '/read/expressjs-real-world-case-study',
+    path: '/read/expressjs-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsQuickRevisionNotesRoute =
+  MarketingResourcesReadExpressjsQuickRevisionNotesRouteImport.update({
+    id: '/read/expressjs-quick-revision-notes',
+    path: '/read/expressjs-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsProjectGuideRoute =
+  MarketingResourcesReadExpressjsProjectGuideRouteImport.update({
+    id: '/read/expressjs-project-guide',
+    path: '/read/expressjs-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsProjectCaseStudyRoute =
+  MarketingResourcesReadExpressjsProjectCaseStudyRouteImport.update({
+    id: '/read/expressjs-project-case-study',
+    path: '/read/expressjs-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsPracticeQuestionsRoute =
+  MarketingResourcesReadExpressjsPracticeQuestionsRouteImport.update({
+    id: '/read/expressjs-practice-questions',
+    path: '/read/expressjs-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsPdfNotesRoute =
+  MarketingResourcesReadExpressjsPdfNotesRouteImport.update({
+    id: '/read/expressjs-pdf-notes',
+    path: '/read/expressjs-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsLearningRoadmapRoute =
+  MarketingResourcesReadExpressjsLearningRoadmapRouteImport.update({
+    id: '/read/expressjs-learning-roadmap',
+    path: '/read/expressjs-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsInterviewQuestionsRoute =
+  MarketingResourcesReadExpressjsInterviewQuestionsRouteImport.update({
+    id: '/read/expressjs-interview-questions',
+    path: '/read/expressjs-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsGlossaryRoute =
+  MarketingResourcesReadExpressjsGlossaryRouteImport.update({
+    id: '/read/expressjs-glossary',
+    path: '/read/expressjs-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/expressjs-frequently-asked-questions',
+    path: '/read/expressjs-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsCompleteTutorialRoute =
+  MarketingResourcesReadExpressjsCompleteTutorialRouteImport.update({
+    id: '/read/expressjs-complete-tutorial',
+    path: '/read/expressjs-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsCommonMistakesRoute =
+  MarketingResourcesReadExpressjsCommonMistakesRouteImport.update({
+    id: '/read/expressjs-common-mistakes',
+    path: '/read/expressjs-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsCheatSheetRoute =
+  MarketingResourcesReadExpressjsCheatSheetRouteImport.update({
+    id: '/read/expressjs-cheat-sheet',
+    path: '/read/expressjs-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsBestPracticesRoute =
+  MarketingResourcesReadExpressjsBestPracticesRouteImport.update({
+    id: '/read/expressjs-best-practices',
+    path: '/read/expressjs-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsBeginnerGuideRoute =
+  MarketingResourcesReadExpressjsBeginnerGuideRouteImport.update({
+    id: '/read/expressjs-beginner-guide',
+    path: '/read/expressjs-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsAnswerKeyRoute =
+  MarketingResourcesReadExpressjsAnswerKeyRouteImport.update({
+    id: '/read/expressjs-answer-key',
+    path: '/read/expressjs-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadExpressjsAdvancedConceptsRoute =
+  MarketingResourcesReadExpressjsAdvancedConceptsRouteImport.update({
+    id: '/read/expressjs-advanced-concepts',
+    path: '/read/expressjs-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadEthicalHackingTipsTricksRoute =
   MarketingResourcesReadEthicalHackingTipsTricksRouteImport.update({
     id: '/read/ethical-hacking-tips-tricks',
@@ -7314,6 +7461,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ethical-hacking-sample-exercises': typeof MarketingResourcesReadEthicalHackingSampleExercisesRoute
   '/resources/read/ethical-hacking-step-by-step-learning-guide': typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute
   '/resources/read/ethical-hacking-tips-tricks': typeof MarketingResourcesReadEthicalHackingTipsTricksRoute
+  '/resources/read/expressjs-advanced-concepts': typeof MarketingResourcesReadExpressjsAdvancedConceptsRoute
+  '/resources/read/expressjs-answer-key': typeof MarketingResourcesReadExpressjsAnswerKeyRoute
+  '/resources/read/expressjs-beginner-guide': typeof MarketingResourcesReadExpressjsBeginnerGuideRoute
+  '/resources/read/expressjs-best-practices': typeof MarketingResourcesReadExpressjsBestPracticesRoute
+  '/resources/read/expressjs-cheat-sheet': typeof MarketingResourcesReadExpressjsCheatSheetRoute
+  '/resources/read/expressjs-common-mistakes': typeof MarketingResourcesReadExpressjsCommonMistakesRoute
+  '/resources/read/expressjs-complete-tutorial': typeof MarketingResourcesReadExpressjsCompleteTutorialRoute
+  '/resources/read/expressjs-frequently-asked-questions': typeof MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRoute
+  '/resources/read/expressjs-glossary': typeof MarketingResourcesReadExpressjsGlossaryRoute
+  '/resources/read/expressjs-interview-questions': typeof MarketingResourcesReadExpressjsInterviewQuestionsRoute
+  '/resources/read/expressjs-learning-roadmap': typeof MarketingResourcesReadExpressjsLearningRoadmapRoute
+  '/resources/read/expressjs-pdf-notes': typeof MarketingResourcesReadExpressjsPdfNotesRoute
+  '/resources/read/expressjs-practice-questions': typeof MarketingResourcesReadExpressjsPracticeQuestionsRoute
+  '/resources/read/expressjs-project-case-study': typeof MarketingResourcesReadExpressjsProjectCaseStudyRoute
+  '/resources/read/expressjs-project-guide': typeof MarketingResourcesReadExpressjsProjectGuideRoute
+  '/resources/read/expressjs-quick-revision-notes': typeof MarketingResourcesReadExpressjsQuickRevisionNotesRoute
+  '/resources/read/expressjs-real-world-case-study': typeof MarketingResourcesReadExpressjsRealWorldCaseStudyRoute
+  '/resources/read/expressjs-reference-guide': typeof MarketingResourcesReadExpressjsReferenceGuideRoute
+  '/resources/read/expressjs-sample-exercises': typeof MarketingResourcesReadExpressjsSampleExercisesRoute
+  '/resources/read/expressjs-step-by-step-learning-guide': typeof MarketingResourcesReadExpressjsStepByStepLearningGuideRoute
+  '/resources/read/expressjs-tips-tricks': typeof MarketingResourcesReadExpressjsTipsTricksRoute
   '/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
   '/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
   '/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
@@ -8302,6 +8470,27 @@ export interface FileRoutesByTo {
   '/resources/read/ethical-hacking-sample-exercises': typeof MarketingResourcesReadEthicalHackingSampleExercisesRoute
   '/resources/read/ethical-hacking-step-by-step-learning-guide': typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute
   '/resources/read/ethical-hacking-tips-tricks': typeof MarketingResourcesReadEthicalHackingTipsTricksRoute
+  '/resources/read/expressjs-advanced-concepts': typeof MarketingResourcesReadExpressjsAdvancedConceptsRoute
+  '/resources/read/expressjs-answer-key': typeof MarketingResourcesReadExpressjsAnswerKeyRoute
+  '/resources/read/expressjs-beginner-guide': typeof MarketingResourcesReadExpressjsBeginnerGuideRoute
+  '/resources/read/expressjs-best-practices': typeof MarketingResourcesReadExpressjsBestPracticesRoute
+  '/resources/read/expressjs-cheat-sheet': typeof MarketingResourcesReadExpressjsCheatSheetRoute
+  '/resources/read/expressjs-common-mistakes': typeof MarketingResourcesReadExpressjsCommonMistakesRoute
+  '/resources/read/expressjs-complete-tutorial': typeof MarketingResourcesReadExpressjsCompleteTutorialRoute
+  '/resources/read/expressjs-frequently-asked-questions': typeof MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRoute
+  '/resources/read/expressjs-glossary': typeof MarketingResourcesReadExpressjsGlossaryRoute
+  '/resources/read/expressjs-interview-questions': typeof MarketingResourcesReadExpressjsInterviewQuestionsRoute
+  '/resources/read/expressjs-learning-roadmap': typeof MarketingResourcesReadExpressjsLearningRoadmapRoute
+  '/resources/read/expressjs-pdf-notes': typeof MarketingResourcesReadExpressjsPdfNotesRoute
+  '/resources/read/expressjs-practice-questions': typeof MarketingResourcesReadExpressjsPracticeQuestionsRoute
+  '/resources/read/expressjs-project-case-study': typeof MarketingResourcesReadExpressjsProjectCaseStudyRoute
+  '/resources/read/expressjs-project-guide': typeof MarketingResourcesReadExpressjsProjectGuideRoute
+  '/resources/read/expressjs-quick-revision-notes': typeof MarketingResourcesReadExpressjsQuickRevisionNotesRoute
+  '/resources/read/expressjs-real-world-case-study': typeof MarketingResourcesReadExpressjsRealWorldCaseStudyRoute
+  '/resources/read/expressjs-reference-guide': typeof MarketingResourcesReadExpressjsReferenceGuideRoute
+  '/resources/read/expressjs-sample-exercises': typeof MarketingResourcesReadExpressjsSampleExercisesRoute
+  '/resources/read/expressjs-step-by-step-learning-guide': typeof MarketingResourcesReadExpressjsStepByStepLearningGuideRoute
+  '/resources/read/expressjs-tips-tricks': typeof MarketingResourcesReadExpressjsTipsTricksRoute
   '/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
   '/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
   '/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
@@ -9295,6 +9484,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ethical-hacking-sample-exercises': typeof MarketingResourcesReadEthicalHackingSampleExercisesRoute
   '/_marketing/resources/read/ethical-hacking-step-by-step-learning-guide': typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute
   '/_marketing/resources/read/ethical-hacking-tips-tricks': typeof MarketingResourcesReadEthicalHackingTipsTricksRoute
+  '/_marketing/resources/read/expressjs-advanced-concepts': typeof MarketingResourcesReadExpressjsAdvancedConceptsRoute
+  '/_marketing/resources/read/expressjs-answer-key': typeof MarketingResourcesReadExpressjsAnswerKeyRoute
+  '/_marketing/resources/read/expressjs-beginner-guide': typeof MarketingResourcesReadExpressjsBeginnerGuideRoute
+  '/_marketing/resources/read/expressjs-best-practices': typeof MarketingResourcesReadExpressjsBestPracticesRoute
+  '/_marketing/resources/read/expressjs-cheat-sheet': typeof MarketingResourcesReadExpressjsCheatSheetRoute
+  '/_marketing/resources/read/expressjs-common-mistakes': typeof MarketingResourcesReadExpressjsCommonMistakesRoute
+  '/_marketing/resources/read/expressjs-complete-tutorial': typeof MarketingResourcesReadExpressjsCompleteTutorialRoute
+  '/_marketing/resources/read/expressjs-frequently-asked-questions': typeof MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/expressjs-glossary': typeof MarketingResourcesReadExpressjsGlossaryRoute
+  '/_marketing/resources/read/expressjs-interview-questions': typeof MarketingResourcesReadExpressjsInterviewQuestionsRoute
+  '/_marketing/resources/read/expressjs-learning-roadmap': typeof MarketingResourcesReadExpressjsLearningRoadmapRoute
+  '/_marketing/resources/read/expressjs-pdf-notes': typeof MarketingResourcesReadExpressjsPdfNotesRoute
+  '/_marketing/resources/read/expressjs-practice-questions': typeof MarketingResourcesReadExpressjsPracticeQuestionsRoute
+  '/_marketing/resources/read/expressjs-project-case-study': typeof MarketingResourcesReadExpressjsProjectCaseStudyRoute
+  '/_marketing/resources/read/expressjs-project-guide': typeof MarketingResourcesReadExpressjsProjectGuideRoute
+  '/_marketing/resources/read/expressjs-quick-revision-notes': typeof MarketingResourcesReadExpressjsQuickRevisionNotesRoute
+  '/_marketing/resources/read/expressjs-real-world-case-study': typeof MarketingResourcesReadExpressjsRealWorldCaseStudyRoute
+  '/_marketing/resources/read/expressjs-reference-guide': typeof MarketingResourcesReadExpressjsReferenceGuideRoute
+  '/_marketing/resources/read/expressjs-sample-exercises': typeof MarketingResourcesReadExpressjsSampleExercisesRoute
+  '/_marketing/resources/read/expressjs-step-by-step-learning-guide': typeof MarketingResourcesReadExpressjsStepByStepLearningGuideRoute
+  '/_marketing/resources/read/expressjs-tips-tricks': typeof MarketingResourcesReadExpressjsTipsTricksRoute
   '/_marketing/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
   '/_marketing/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
   '/_marketing/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
@@ -10286,6 +10496,27 @@ export interface FileRouteTypes {
     | '/resources/read/ethical-hacking-sample-exercises'
     | '/resources/read/ethical-hacking-step-by-step-learning-guide'
     | '/resources/read/ethical-hacking-tips-tricks'
+    | '/resources/read/expressjs-advanced-concepts'
+    | '/resources/read/expressjs-answer-key'
+    | '/resources/read/expressjs-beginner-guide'
+    | '/resources/read/expressjs-best-practices'
+    | '/resources/read/expressjs-cheat-sheet'
+    | '/resources/read/expressjs-common-mistakes'
+    | '/resources/read/expressjs-complete-tutorial'
+    | '/resources/read/expressjs-frequently-asked-questions'
+    | '/resources/read/expressjs-glossary'
+    | '/resources/read/expressjs-interview-questions'
+    | '/resources/read/expressjs-learning-roadmap'
+    | '/resources/read/expressjs-pdf-notes'
+    | '/resources/read/expressjs-practice-questions'
+    | '/resources/read/expressjs-project-case-study'
+    | '/resources/read/expressjs-project-guide'
+    | '/resources/read/expressjs-quick-revision-notes'
+    | '/resources/read/expressjs-real-world-case-study'
+    | '/resources/read/expressjs-reference-guide'
+    | '/resources/read/expressjs-sample-exercises'
+    | '/resources/read/expressjs-step-by-step-learning-guide'
+    | '/resources/read/expressjs-tips-tricks'
     | '/resources/read/figma-advanced-concepts'
     | '/resources/read/figma-answer-key'
     | '/resources/read/figma-beginner-guide'
@@ -11274,6 +11505,27 @@ export interface FileRouteTypes {
     | '/resources/read/ethical-hacking-sample-exercises'
     | '/resources/read/ethical-hacking-step-by-step-learning-guide'
     | '/resources/read/ethical-hacking-tips-tricks'
+    | '/resources/read/expressjs-advanced-concepts'
+    | '/resources/read/expressjs-answer-key'
+    | '/resources/read/expressjs-beginner-guide'
+    | '/resources/read/expressjs-best-practices'
+    | '/resources/read/expressjs-cheat-sheet'
+    | '/resources/read/expressjs-common-mistakes'
+    | '/resources/read/expressjs-complete-tutorial'
+    | '/resources/read/expressjs-frequently-asked-questions'
+    | '/resources/read/expressjs-glossary'
+    | '/resources/read/expressjs-interview-questions'
+    | '/resources/read/expressjs-learning-roadmap'
+    | '/resources/read/expressjs-pdf-notes'
+    | '/resources/read/expressjs-practice-questions'
+    | '/resources/read/expressjs-project-case-study'
+    | '/resources/read/expressjs-project-guide'
+    | '/resources/read/expressjs-quick-revision-notes'
+    | '/resources/read/expressjs-real-world-case-study'
+    | '/resources/read/expressjs-reference-guide'
+    | '/resources/read/expressjs-sample-exercises'
+    | '/resources/read/expressjs-step-by-step-learning-guide'
+    | '/resources/read/expressjs-tips-tricks'
     | '/resources/read/figma-advanced-concepts'
     | '/resources/read/figma-answer-key'
     | '/resources/read/figma-beginner-guide'
@@ -12266,6 +12518,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ethical-hacking-sample-exercises'
     | '/_marketing/resources/read/ethical-hacking-step-by-step-learning-guide'
     | '/_marketing/resources/read/ethical-hacking-tips-tricks'
+    | '/_marketing/resources/read/expressjs-advanced-concepts'
+    | '/_marketing/resources/read/expressjs-answer-key'
+    | '/_marketing/resources/read/expressjs-beginner-guide'
+    | '/_marketing/resources/read/expressjs-best-practices'
+    | '/_marketing/resources/read/expressjs-cheat-sheet'
+    | '/_marketing/resources/read/expressjs-common-mistakes'
+    | '/_marketing/resources/read/expressjs-complete-tutorial'
+    | '/_marketing/resources/read/expressjs-frequently-asked-questions'
+    | '/_marketing/resources/read/expressjs-glossary'
+    | '/_marketing/resources/read/expressjs-interview-questions'
+    | '/_marketing/resources/read/expressjs-learning-roadmap'
+    | '/_marketing/resources/read/expressjs-pdf-notes'
+    | '/_marketing/resources/read/expressjs-practice-questions'
+    | '/_marketing/resources/read/expressjs-project-case-study'
+    | '/_marketing/resources/read/expressjs-project-guide'
+    | '/_marketing/resources/read/expressjs-quick-revision-notes'
+    | '/_marketing/resources/read/expressjs-real-world-case-study'
+    | '/_marketing/resources/read/expressjs-reference-guide'
+    | '/_marketing/resources/read/expressjs-sample-exercises'
+    | '/_marketing/resources/read/expressjs-step-by-step-learning-guide'
+    | '/_marketing/resources/read/expressjs-tips-tricks'
     | '/_marketing/resources/read/figma-advanced-concepts'
     | '/_marketing/resources/read/figma-answer-key'
     | '/_marketing/resources/read/figma-beginner-guide'
@@ -17377,6 +17650,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadFigmaAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/expressjs-tips-tricks': {
+      id: '/_marketing/resources/read/expressjs-tips-tricks'
+      path: '/read/expressjs-tips-tricks'
+      fullPath: '/resources/read/expressjs-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/expressjs-step-by-step-learning-guide'
+      path: '/read/expressjs-step-by-step-learning-guide'
+      fullPath: '/resources/read/expressjs-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-sample-exercises': {
+      id: '/_marketing/resources/read/expressjs-sample-exercises'
+      path: '/read/expressjs-sample-exercises'
+      fullPath: '/resources/read/expressjs-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-reference-guide': {
+      id: '/_marketing/resources/read/expressjs-reference-guide'
+      path: '/read/expressjs-reference-guide'
+      fullPath: '/resources/read/expressjs-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-real-world-case-study': {
+      id: '/_marketing/resources/read/expressjs-real-world-case-study'
+      path: '/read/expressjs-real-world-case-study'
+      fullPath: '/resources/read/expressjs-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-quick-revision-notes': {
+      id: '/_marketing/resources/read/expressjs-quick-revision-notes'
+      path: '/read/expressjs-quick-revision-notes'
+      fullPath: '/resources/read/expressjs-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-project-guide': {
+      id: '/_marketing/resources/read/expressjs-project-guide'
+      path: '/read/expressjs-project-guide'
+      fullPath: '/resources/read/expressjs-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-project-case-study': {
+      id: '/_marketing/resources/read/expressjs-project-case-study'
+      path: '/read/expressjs-project-case-study'
+      fullPath: '/resources/read/expressjs-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-practice-questions': {
+      id: '/_marketing/resources/read/expressjs-practice-questions'
+      path: '/read/expressjs-practice-questions'
+      fullPath: '/resources/read/expressjs-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-pdf-notes': {
+      id: '/_marketing/resources/read/expressjs-pdf-notes'
+      path: '/read/expressjs-pdf-notes'
+      fullPath: '/resources/read/expressjs-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-learning-roadmap': {
+      id: '/_marketing/resources/read/expressjs-learning-roadmap'
+      path: '/read/expressjs-learning-roadmap'
+      fullPath: '/resources/read/expressjs-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-interview-questions': {
+      id: '/_marketing/resources/read/expressjs-interview-questions'
+      path: '/read/expressjs-interview-questions'
+      fullPath: '/resources/read/expressjs-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-glossary': {
+      id: '/_marketing/resources/read/expressjs-glossary'
+      path: '/read/expressjs-glossary'
+      fullPath: '/resources/read/expressjs-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-frequently-asked-questions': {
+      id: '/_marketing/resources/read/expressjs-frequently-asked-questions'
+      path: '/read/expressjs-frequently-asked-questions'
+      fullPath: '/resources/read/expressjs-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-complete-tutorial': {
+      id: '/_marketing/resources/read/expressjs-complete-tutorial'
+      path: '/read/expressjs-complete-tutorial'
+      fullPath: '/resources/read/expressjs-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-common-mistakes': {
+      id: '/_marketing/resources/read/expressjs-common-mistakes'
+      path: '/read/expressjs-common-mistakes'
+      fullPath: '/resources/read/expressjs-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-cheat-sheet': {
+      id: '/_marketing/resources/read/expressjs-cheat-sheet'
+      path: '/read/expressjs-cheat-sheet'
+      fullPath: '/resources/read/expressjs-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-best-practices': {
+      id: '/_marketing/resources/read/expressjs-best-practices'
+      path: '/read/expressjs-best-practices'
+      fullPath: '/resources/read/expressjs-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-beginner-guide': {
+      id: '/_marketing/resources/read/expressjs-beginner-guide'
+      path: '/read/expressjs-beginner-guide'
+      fullPath: '/resources/read/expressjs-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-answer-key': {
+      id: '/_marketing/resources/read/expressjs-answer-key'
+      path: '/read/expressjs-answer-key'
+      fullPath: '/resources/read/expressjs-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/expressjs-advanced-concepts': {
+      id: '/_marketing/resources/read/expressjs-advanced-concepts'
+      path: '/read/expressjs-advanced-concepts'
+      fullPath: '/resources/read/expressjs-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadExpressjsAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ethical-hacking-tips-tricks': {
       id: '/_marketing/resources/read/ethical-hacking-tips-tricks'
       path: '/read/ethical-hacking-tips-tricks'
@@ -20292,6 +20712,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadEthicalHackingSampleExercisesRoute: typeof MarketingResourcesReadEthicalHackingSampleExercisesRoute
   MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute: typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute
   MarketingResourcesReadEthicalHackingTipsTricksRoute: typeof MarketingResourcesReadEthicalHackingTipsTricksRoute
+  MarketingResourcesReadExpressjsAdvancedConceptsRoute: typeof MarketingResourcesReadExpressjsAdvancedConceptsRoute
+  MarketingResourcesReadExpressjsAnswerKeyRoute: typeof MarketingResourcesReadExpressjsAnswerKeyRoute
+  MarketingResourcesReadExpressjsBeginnerGuideRoute: typeof MarketingResourcesReadExpressjsBeginnerGuideRoute
+  MarketingResourcesReadExpressjsBestPracticesRoute: typeof MarketingResourcesReadExpressjsBestPracticesRoute
+  MarketingResourcesReadExpressjsCheatSheetRoute: typeof MarketingResourcesReadExpressjsCheatSheetRoute
+  MarketingResourcesReadExpressjsCommonMistakesRoute: typeof MarketingResourcesReadExpressjsCommonMistakesRoute
+  MarketingResourcesReadExpressjsCompleteTutorialRoute: typeof MarketingResourcesReadExpressjsCompleteTutorialRoute
+  MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadExpressjsGlossaryRoute: typeof MarketingResourcesReadExpressjsGlossaryRoute
+  MarketingResourcesReadExpressjsInterviewQuestionsRoute: typeof MarketingResourcesReadExpressjsInterviewQuestionsRoute
+  MarketingResourcesReadExpressjsLearningRoadmapRoute: typeof MarketingResourcesReadExpressjsLearningRoadmapRoute
+  MarketingResourcesReadExpressjsPdfNotesRoute: typeof MarketingResourcesReadExpressjsPdfNotesRoute
+  MarketingResourcesReadExpressjsPracticeQuestionsRoute: typeof MarketingResourcesReadExpressjsPracticeQuestionsRoute
+  MarketingResourcesReadExpressjsProjectCaseStudyRoute: typeof MarketingResourcesReadExpressjsProjectCaseStudyRoute
+  MarketingResourcesReadExpressjsProjectGuideRoute: typeof MarketingResourcesReadExpressjsProjectGuideRoute
+  MarketingResourcesReadExpressjsQuickRevisionNotesRoute: typeof MarketingResourcesReadExpressjsQuickRevisionNotesRoute
+  MarketingResourcesReadExpressjsRealWorldCaseStudyRoute: typeof MarketingResourcesReadExpressjsRealWorldCaseStudyRoute
+  MarketingResourcesReadExpressjsReferenceGuideRoute: typeof MarketingResourcesReadExpressjsReferenceGuideRoute
+  MarketingResourcesReadExpressjsSampleExercisesRoute: typeof MarketingResourcesReadExpressjsSampleExercisesRoute
+  MarketingResourcesReadExpressjsStepByStepLearningGuideRoute: typeof MarketingResourcesReadExpressjsStepByStepLearningGuideRoute
+  MarketingResourcesReadExpressjsTipsTricksRoute: typeof MarketingResourcesReadExpressjsTipsTricksRoute
   MarketingResourcesReadFigmaAdvancedConceptsRoute: typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
   MarketingResourcesReadFigmaAnswerKeyRoute: typeof MarketingResourcesReadFigmaAnswerKeyRoute
   MarketingResourcesReadFigmaBeginnerGuideRoute: typeof MarketingResourcesReadFigmaBeginnerGuideRoute
@@ -21562,6 +22003,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute,
   MarketingResourcesReadEthicalHackingTipsTricksRoute:
     MarketingResourcesReadEthicalHackingTipsTricksRoute,
+  MarketingResourcesReadExpressjsAdvancedConceptsRoute:
+    MarketingResourcesReadExpressjsAdvancedConceptsRoute,
+  MarketingResourcesReadExpressjsAnswerKeyRoute:
+    MarketingResourcesReadExpressjsAnswerKeyRoute,
+  MarketingResourcesReadExpressjsBeginnerGuideRoute:
+    MarketingResourcesReadExpressjsBeginnerGuideRoute,
+  MarketingResourcesReadExpressjsBestPracticesRoute:
+    MarketingResourcesReadExpressjsBestPracticesRoute,
+  MarketingResourcesReadExpressjsCheatSheetRoute:
+    MarketingResourcesReadExpressjsCheatSheetRoute,
+  MarketingResourcesReadExpressjsCommonMistakesRoute:
+    MarketingResourcesReadExpressjsCommonMistakesRoute,
+  MarketingResourcesReadExpressjsCompleteTutorialRoute:
+    MarketingResourcesReadExpressjsCompleteTutorialRoute,
+  MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadExpressjsFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadExpressjsGlossaryRoute:
+    MarketingResourcesReadExpressjsGlossaryRoute,
+  MarketingResourcesReadExpressjsInterviewQuestionsRoute:
+    MarketingResourcesReadExpressjsInterviewQuestionsRoute,
+  MarketingResourcesReadExpressjsLearningRoadmapRoute:
+    MarketingResourcesReadExpressjsLearningRoadmapRoute,
+  MarketingResourcesReadExpressjsPdfNotesRoute:
+    MarketingResourcesReadExpressjsPdfNotesRoute,
+  MarketingResourcesReadExpressjsPracticeQuestionsRoute:
+    MarketingResourcesReadExpressjsPracticeQuestionsRoute,
+  MarketingResourcesReadExpressjsProjectCaseStudyRoute:
+    MarketingResourcesReadExpressjsProjectCaseStudyRoute,
+  MarketingResourcesReadExpressjsProjectGuideRoute:
+    MarketingResourcesReadExpressjsProjectGuideRoute,
+  MarketingResourcesReadExpressjsQuickRevisionNotesRoute:
+    MarketingResourcesReadExpressjsQuickRevisionNotesRoute,
+  MarketingResourcesReadExpressjsRealWorldCaseStudyRoute:
+    MarketingResourcesReadExpressjsRealWorldCaseStudyRoute,
+  MarketingResourcesReadExpressjsReferenceGuideRoute:
+    MarketingResourcesReadExpressjsReferenceGuideRoute,
+  MarketingResourcesReadExpressjsSampleExercisesRoute:
+    MarketingResourcesReadExpressjsSampleExercisesRoute,
+  MarketingResourcesReadExpressjsStepByStepLearningGuideRoute:
+    MarketingResourcesReadExpressjsStepByStepLearningGuideRoute,
+  MarketingResourcesReadExpressjsTipsTricksRoute:
+    MarketingResourcesReadExpressjsTipsTricksRoute,
   MarketingResourcesReadFigmaAdvancedConceptsRoute:
     MarketingResourcesReadFigmaAdvancedConceptsRoute,
   MarketingResourcesReadFigmaAnswerKeyRoute:
@@ -22816,13 +23299,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
