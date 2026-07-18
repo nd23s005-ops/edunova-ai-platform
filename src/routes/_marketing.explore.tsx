@@ -587,13 +587,14 @@ const COURSE_IMAGE_MAP: Record<string, string> = {
   "Kubernetes": "photo-1605379399642-870262d3d051",
   "Cyber Security": "photo-1550751827-4bd374c3f58b",
   "Ethical Hacking": "photo-1526374965328-7f61d4dc18c5",
-  "Machine Learning": "photo-1620712943543-bcc4688e7485",
+  "Machine Learning": "photo-1509228627152-72ae9ae6848d",
   "SQL": "photo-1551288049-bebda4e38f71",
   "MongoDB": "photo-1544383835-bda2bc66a55d",
   "Flutter": "photo-1512941937669-90a1b58e7e9c",
   "Figma": "photo-1561070791-2526d30994b8",
   "System Design": "photo-1518770660439-4636190af475",
 };
+
 
 function courseImage(category: string): string {
   const id = COURSE_IMAGE_MAP[category] ?? "photo-1517180102446-f3ece451e9d8";
