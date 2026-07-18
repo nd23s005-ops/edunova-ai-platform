@@ -692,6 +692,27 @@ import { Route as MarketingResourcesReadGcpBestPracticesRouteImport } from './ro
 import { Route as MarketingResourcesReadGcpBeginnerGuideRouteImport } from './routes/_marketing.resources.read.gcp-beginner-guide'
 import { Route as MarketingResourcesReadGcpAnswerKeyRouteImport } from './routes/_marketing.resources.read.gcp-answer-key'
 import { Route as MarketingResourcesReadGcpAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.gcp-advanced-concepts'
+import { Route as MarketingResourcesReadFlutterTipsTricksRouteImport } from './routes/_marketing.resources.read.flutter-tips-tricks'
+import { Route as MarketingResourcesReadFlutterStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.flutter-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadFlutterSampleExercisesRouteImport } from './routes/_marketing.resources.read.flutter-sample-exercises'
+import { Route as MarketingResourcesReadFlutterReferenceGuideRouteImport } from './routes/_marketing.resources.read.flutter-reference-guide'
+import { Route as MarketingResourcesReadFlutterRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.flutter-real-world-case-study'
+import { Route as MarketingResourcesReadFlutterQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.flutter-quick-revision-notes'
+import { Route as MarketingResourcesReadFlutterProjectGuideRouteImport } from './routes/_marketing.resources.read.flutter-project-guide'
+import { Route as MarketingResourcesReadFlutterProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.flutter-project-case-study'
+import { Route as MarketingResourcesReadFlutterPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.flutter-practice-questions'
+import { Route as MarketingResourcesReadFlutterPdfNotesRouteImport } from './routes/_marketing.resources.read.flutter-pdf-notes'
+import { Route as MarketingResourcesReadFlutterLearningRoadmapRouteImport } from './routes/_marketing.resources.read.flutter-learning-roadmap'
+import { Route as MarketingResourcesReadFlutterInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.flutter-interview-questions'
+import { Route as MarketingResourcesReadFlutterGlossaryRouteImport } from './routes/_marketing.resources.read.flutter-glossary'
+import { Route as MarketingResourcesReadFlutterFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.flutter-frequently-asked-questions'
+import { Route as MarketingResourcesReadFlutterCompleteTutorialRouteImport } from './routes/_marketing.resources.read.flutter-complete-tutorial'
+import { Route as MarketingResourcesReadFlutterCommonMistakesRouteImport } from './routes/_marketing.resources.read.flutter-common-mistakes'
+import { Route as MarketingResourcesReadFlutterCheatSheetRouteImport } from './routes/_marketing.resources.read.flutter-cheat-sheet'
+import { Route as MarketingResourcesReadFlutterBestPracticesRouteImport } from './routes/_marketing.resources.read.flutter-best-practices'
+import { Route as MarketingResourcesReadFlutterBeginnerGuideRouteImport } from './routes/_marketing.resources.read.flutter-beginner-guide'
+import { Route as MarketingResourcesReadFlutterAnswerKeyRouteImport } from './routes/_marketing.resources.read.flutter-answer-key'
+import { Route as MarketingResourcesReadFlutterAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.flutter-advanced-concepts'
 import { Route as MarketingResourcesReadFigmaTipsAndTricksRouteImport } from './routes/_marketing.resources.read.figma-tips-and-tricks'
 import { Route as MarketingResourcesReadFigmaStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.figma-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadFigmaSampleExercisesRouteImport } from './routes/_marketing.resources.read.figma-sample-exercises'
@@ -5224,6 +5245,132 @@ const MarketingResourcesReadGcpAdvancedConceptsRoute =
     path: '/read/gcp-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadFlutterTipsTricksRoute =
+  MarketingResourcesReadFlutterTipsTricksRouteImport.update({
+    id: '/read/flutter-tips-tricks',
+    path: '/read/flutter-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterStepByStepLearningGuideRoute =
+  MarketingResourcesReadFlutterStepByStepLearningGuideRouteImport.update({
+    id: '/read/flutter-step-by-step-learning-guide',
+    path: '/read/flutter-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterSampleExercisesRoute =
+  MarketingResourcesReadFlutterSampleExercisesRouteImport.update({
+    id: '/read/flutter-sample-exercises',
+    path: '/read/flutter-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterReferenceGuideRoute =
+  MarketingResourcesReadFlutterReferenceGuideRouteImport.update({
+    id: '/read/flutter-reference-guide',
+    path: '/read/flutter-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterRealWorldCaseStudyRoute =
+  MarketingResourcesReadFlutterRealWorldCaseStudyRouteImport.update({
+    id: '/read/flutter-real-world-case-study',
+    path: '/read/flutter-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterQuickRevisionNotesRoute =
+  MarketingResourcesReadFlutterQuickRevisionNotesRouteImport.update({
+    id: '/read/flutter-quick-revision-notes',
+    path: '/read/flutter-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterProjectGuideRoute =
+  MarketingResourcesReadFlutterProjectGuideRouteImport.update({
+    id: '/read/flutter-project-guide',
+    path: '/read/flutter-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterProjectCaseStudyRoute =
+  MarketingResourcesReadFlutterProjectCaseStudyRouteImport.update({
+    id: '/read/flutter-project-case-study',
+    path: '/read/flutter-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterPracticeQuestionsRoute =
+  MarketingResourcesReadFlutterPracticeQuestionsRouteImport.update({
+    id: '/read/flutter-practice-questions',
+    path: '/read/flutter-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterPdfNotesRoute =
+  MarketingResourcesReadFlutterPdfNotesRouteImport.update({
+    id: '/read/flutter-pdf-notes',
+    path: '/read/flutter-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterLearningRoadmapRoute =
+  MarketingResourcesReadFlutterLearningRoadmapRouteImport.update({
+    id: '/read/flutter-learning-roadmap',
+    path: '/read/flutter-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterInterviewQuestionsRoute =
+  MarketingResourcesReadFlutterInterviewQuestionsRouteImport.update({
+    id: '/read/flutter-interview-questions',
+    path: '/read/flutter-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterGlossaryRoute =
+  MarketingResourcesReadFlutterGlossaryRouteImport.update({
+    id: '/read/flutter-glossary',
+    path: '/read/flutter-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadFlutterFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/flutter-frequently-asked-questions',
+    path: '/read/flutter-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterCompleteTutorialRoute =
+  MarketingResourcesReadFlutterCompleteTutorialRouteImport.update({
+    id: '/read/flutter-complete-tutorial',
+    path: '/read/flutter-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterCommonMistakesRoute =
+  MarketingResourcesReadFlutterCommonMistakesRouteImport.update({
+    id: '/read/flutter-common-mistakes',
+    path: '/read/flutter-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterCheatSheetRoute =
+  MarketingResourcesReadFlutterCheatSheetRouteImport.update({
+    id: '/read/flutter-cheat-sheet',
+    path: '/read/flutter-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterBestPracticesRoute =
+  MarketingResourcesReadFlutterBestPracticesRouteImport.update({
+    id: '/read/flutter-best-practices',
+    path: '/read/flutter-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterBeginnerGuideRoute =
+  MarketingResourcesReadFlutterBeginnerGuideRouteImport.update({
+    id: '/read/flutter-beginner-guide',
+    path: '/read/flutter-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterAnswerKeyRoute =
+  MarketingResourcesReadFlutterAnswerKeyRouteImport.update({
+    id: '/read/flutter-answer-key',
+    path: '/read/flutter-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFlutterAdvancedConceptsRoute =
+  MarketingResourcesReadFlutterAdvancedConceptsRouteImport.update({
+    id: '/read/flutter-advanced-concepts',
+    path: '/read/flutter-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadFigmaTipsAndTricksRoute =
   MarketingResourcesReadFigmaTipsAndTricksRouteImport.update({
     id: '/read/figma-tips-and-tricks',
@@ -8450,6 +8597,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
   '/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
   '/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
+  '/resources/read/flutter-advanced-concepts': typeof MarketingResourcesReadFlutterAdvancedConceptsRoute
+  '/resources/read/flutter-answer-key': typeof MarketingResourcesReadFlutterAnswerKeyRoute
+  '/resources/read/flutter-beginner-guide': typeof MarketingResourcesReadFlutterBeginnerGuideRoute
+  '/resources/read/flutter-best-practices': typeof MarketingResourcesReadFlutterBestPracticesRoute
+  '/resources/read/flutter-cheat-sheet': typeof MarketingResourcesReadFlutterCheatSheetRoute
+  '/resources/read/flutter-common-mistakes': typeof MarketingResourcesReadFlutterCommonMistakesRoute
+  '/resources/read/flutter-complete-tutorial': typeof MarketingResourcesReadFlutterCompleteTutorialRoute
+  '/resources/read/flutter-frequently-asked-questions': typeof MarketingResourcesReadFlutterFrequentlyAskedQuestionsRoute
+  '/resources/read/flutter-glossary': typeof MarketingResourcesReadFlutterGlossaryRoute
+  '/resources/read/flutter-interview-questions': typeof MarketingResourcesReadFlutterInterviewQuestionsRoute
+  '/resources/read/flutter-learning-roadmap': typeof MarketingResourcesReadFlutterLearningRoadmapRoute
+  '/resources/read/flutter-pdf-notes': typeof MarketingResourcesReadFlutterPdfNotesRoute
+  '/resources/read/flutter-practice-questions': typeof MarketingResourcesReadFlutterPracticeQuestionsRoute
+  '/resources/read/flutter-project-case-study': typeof MarketingResourcesReadFlutterProjectCaseStudyRoute
+  '/resources/read/flutter-project-guide': typeof MarketingResourcesReadFlutterProjectGuideRoute
+  '/resources/read/flutter-quick-revision-notes': typeof MarketingResourcesReadFlutterQuickRevisionNotesRoute
+  '/resources/read/flutter-real-world-case-study': typeof MarketingResourcesReadFlutterRealWorldCaseStudyRoute
+  '/resources/read/flutter-reference-guide': typeof MarketingResourcesReadFlutterReferenceGuideRoute
+  '/resources/read/flutter-sample-exercises': typeof MarketingResourcesReadFlutterSampleExercisesRoute
+  '/resources/read/flutter-step-by-step-learning-guide': typeof MarketingResourcesReadFlutterStepByStepLearningGuideRoute
+  '/resources/read/flutter-tips-tricks': typeof MarketingResourcesReadFlutterTipsTricksRoute
   '/resources/read/gcp-advanced-concepts': typeof MarketingResourcesReadGcpAdvancedConceptsRoute
   '/resources/read/gcp-answer-key': typeof MarketingResourcesReadGcpAnswerKeyRoute
   '/resources/read/gcp-beginner-guide': typeof MarketingResourcesReadGcpBeginnerGuideRoute
@@ -9585,6 +9753,27 @@ export interface FileRoutesByTo {
   '/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
   '/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
   '/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
+  '/resources/read/flutter-advanced-concepts': typeof MarketingResourcesReadFlutterAdvancedConceptsRoute
+  '/resources/read/flutter-answer-key': typeof MarketingResourcesReadFlutterAnswerKeyRoute
+  '/resources/read/flutter-beginner-guide': typeof MarketingResourcesReadFlutterBeginnerGuideRoute
+  '/resources/read/flutter-best-practices': typeof MarketingResourcesReadFlutterBestPracticesRoute
+  '/resources/read/flutter-cheat-sheet': typeof MarketingResourcesReadFlutterCheatSheetRoute
+  '/resources/read/flutter-common-mistakes': typeof MarketingResourcesReadFlutterCommonMistakesRoute
+  '/resources/read/flutter-complete-tutorial': typeof MarketingResourcesReadFlutterCompleteTutorialRoute
+  '/resources/read/flutter-frequently-asked-questions': typeof MarketingResourcesReadFlutterFrequentlyAskedQuestionsRoute
+  '/resources/read/flutter-glossary': typeof MarketingResourcesReadFlutterGlossaryRoute
+  '/resources/read/flutter-interview-questions': typeof MarketingResourcesReadFlutterInterviewQuestionsRoute
+  '/resources/read/flutter-learning-roadmap': typeof MarketingResourcesReadFlutterLearningRoadmapRoute
+  '/resources/read/flutter-pdf-notes': typeof MarketingResourcesReadFlutterPdfNotesRoute
+  '/resources/read/flutter-practice-questions': typeof MarketingResourcesReadFlutterPracticeQuestionsRoute
+  '/resources/read/flutter-project-case-study': typeof MarketingResourcesReadFlutterProjectCaseStudyRoute
+  '/resources/read/flutter-project-guide': typeof MarketingResourcesReadFlutterProjectGuideRoute
+  '/resources/read/flutter-quick-revision-notes': typeof MarketingResourcesReadFlutterQuickRevisionNotesRoute
+  '/resources/read/flutter-real-world-case-study': typeof MarketingResourcesReadFlutterRealWorldCaseStudyRoute
+  '/resources/read/flutter-reference-guide': typeof MarketingResourcesReadFlutterReferenceGuideRoute
+  '/resources/read/flutter-sample-exercises': typeof MarketingResourcesReadFlutterSampleExercisesRoute
+  '/resources/read/flutter-step-by-step-learning-guide': typeof MarketingResourcesReadFlutterStepByStepLearningGuideRoute
+  '/resources/read/flutter-tips-tricks': typeof MarketingResourcesReadFlutterTipsTricksRoute
   '/resources/read/gcp-advanced-concepts': typeof MarketingResourcesReadGcpAdvancedConceptsRoute
   '/resources/read/gcp-answer-key': typeof MarketingResourcesReadGcpAnswerKeyRoute
   '/resources/read/gcp-beginner-guide': typeof MarketingResourcesReadGcpBeginnerGuideRoute
@@ -10725,6 +10914,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
   '/_marketing/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
   '/_marketing/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
+  '/_marketing/resources/read/flutter-advanced-concepts': typeof MarketingResourcesReadFlutterAdvancedConceptsRoute
+  '/_marketing/resources/read/flutter-answer-key': typeof MarketingResourcesReadFlutterAnswerKeyRoute
+  '/_marketing/resources/read/flutter-beginner-guide': typeof MarketingResourcesReadFlutterBeginnerGuideRoute
+  '/_marketing/resources/read/flutter-best-practices': typeof MarketingResourcesReadFlutterBestPracticesRoute
+  '/_marketing/resources/read/flutter-cheat-sheet': typeof MarketingResourcesReadFlutterCheatSheetRoute
+  '/_marketing/resources/read/flutter-common-mistakes': typeof MarketingResourcesReadFlutterCommonMistakesRoute
+  '/_marketing/resources/read/flutter-complete-tutorial': typeof MarketingResourcesReadFlutterCompleteTutorialRoute
+  '/_marketing/resources/read/flutter-frequently-asked-questions': typeof MarketingResourcesReadFlutterFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/flutter-glossary': typeof MarketingResourcesReadFlutterGlossaryRoute
+  '/_marketing/resources/read/flutter-interview-questions': typeof MarketingResourcesReadFlutterInterviewQuestionsRoute
+  '/_marketing/resources/read/flutter-learning-roadmap': typeof MarketingResourcesReadFlutterLearningRoadmapRoute
+  '/_marketing/resources/read/flutter-pdf-notes': typeof MarketingResourcesReadFlutterPdfNotesRoute
+  '/_marketing/resources/read/flutter-practice-questions': typeof MarketingResourcesReadFlutterPracticeQuestionsRoute
+  '/_marketing/resources/read/flutter-project-case-study': typeof MarketingResourcesReadFlutterProjectCaseStudyRoute
+  '/_marketing/resources/read/flutter-project-guide': typeof MarketingResourcesReadFlutterProjectGuideRoute
+  '/_marketing/resources/read/flutter-quick-revision-notes': typeof MarketingResourcesReadFlutterQuickRevisionNotesRoute
+  '/_marketing/resources/read/flutter-real-world-case-study': typeof MarketingResourcesReadFlutterRealWorldCaseStudyRoute
+  '/_marketing/resources/read/flutter-reference-guide': typeof MarketingResourcesReadFlutterReferenceGuideRoute
+  '/_marketing/resources/read/flutter-sample-exercises': typeof MarketingResourcesReadFlutterSampleExercisesRoute
+  '/_marketing/resources/read/flutter-step-by-step-learning-guide': typeof MarketingResourcesReadFlutterStepByStepLearningGuideRoute
+  '/_marketing/resources/read/flutter-tips-tricks': typeof MarketingResourcesReadFlutterTipsTricksRoute
   '/_marketing/resources/read/gcp-advanced-concepts': typeof MarketingResourcesReadGcpAdvancedConceptsRoute
   '/_marketing/resources/read/gcp-answer-key': typeof MarketingResourcesReadGcpAnswerKeyRoute
   '/_marketing/resources/read/gcp-beginner-guide': typeof MarketingResourcesReadGcpBeginnerGuideRoute
@@ -11863,6 +12073,27 @@ export interface FileRouteTypes {
     | '/resources/read/figma-sample-exercises'
     | '/resources/read/figma-step-by-step-learning-guide'
     | '/resources/read/figma-tips-and-tricks'
+    | '/resources/read/flutter-advanced-concepts'
+    | '/resources/read/flutter-answer-key'
+    | '/resources/read/flutter-beginner-guide'
+    | '/resources/read/flutter-best-practices'
+    | '/resources/read/flutter-cheat-sheet'
+    | '/resources/read/flutter-common-mistakes'
+    | '/resources/read/flutter-complete-tutorial'
+    | '/resources/read/flutter-frequently-asked-questions'
+    | '/resources/read/flutter-glossary'
+    | '/resources/read/flutter-interview-questions'
+    | '/resources/read/flutter-learning-roadmap'
+    | '/resources/read/flutter-pdf-notes'
+    | '/resources/read/flutter-practice-questions'
+    | '/resources/read/flutter-project-case-study'
+    | '/resources/read/flutter-project-guide'
+    | '/resources/read/flutter-quick-revision-notes'
+    | '/resources/read/flutter-real-world-case-study'
+    | '/resources/read/flutter-reference-guide'
+    | '/resources/read/flutter-sample-exercises'
+    | '/resources/read/flutter-step-by-step-learning-guide'
+    | '/resources/read/flutter-tips-tricks'
     | '/resources/read/gcp-advanced-concepts'
     | '/resources/read/gcp-answer-key'
     | '/resources/read/gcp-beginner-guide'
@@ -12998,6 +13229,27 @@ export interface FileRouteTypes {
     | '/resources/read/figma-sample-exercises'
     | '/resources/read/figma-step-by-step-learning-guide'
     | '/resources/read/figma-tips-and-tricks'
+    | '/resources/read/flutter-advanced-concepts'
+    | '/resources/read/flutter-answer-key'
+    | '/resources/read/flutter-beginner-guide'
+    | '/resources/read/flutter-best-practices'
+    | '/resources/read/flutter-cheat-sheet'
+    | '/resources/read/flutter-common-mistakes'
+    | '/resources/read/flutter-complete-tutorial'
+    | '/resources/read/flutter-frequently-asked-questions'
+    | '/resources/read/flutter-glossary'
+    | '/resources/read/flutter-interview-questions'
+    | '/resources/read/flutter-learning-roadmap'
+    | '/resources/read/flutter-pdf-notes'
+    | '/resources/read/flutter-practice-questions'
+    | '/resources/read/flutter-project-case-study'
+    | '/resources/read/flutter-project-guide'
+    | '/resources/read/flutter-quick-revision-notes'
+    | '/resources/read/flutter-real-world-case-study'
+    | '/resources/read/flutter-reference-guide'
+    | '/resources/read/flutter-sample-exercises'
+    | '/resources/read/flutter-step-by-step-learning-guide'
+    | '/resources/read/flutter-tips-tricks'
     | '/resources/read/gcp-advanced-concepts'
     | '/resources/read/gcp-answer-key'
     | '/resources/read/gcp-beginner-guide'
@@ -14137,6 +14389,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/figma-sample-exercises'
     | '/_marketing/resources/read/figma-step-by-step-learning-guide'
     | '/_marketing/resources/read/figma-tips-and-tricks'
+    | '/_marketing/resources/read/flutter-advanced-concepts'
+    | '/_marketing/resources/read/flutter-answer-key'
+    | '/_marketing/resources/read/flutter-beginner-guide'
+    | '/_marketing/resources/read/flutter-best-practices'
+    | '/_marketing/resources/read/flutter-cheat-sheet'
+    | '/_marketing/resources/read/flutter-common-mistakes'
+    | '/_marketing/resources/read/flutter-complete-tutorial'
+    | '/_marketing/resources/read/flutter-frequently-asked-questions'
+    | '/_marketing/resources/read/flutter-glossary'
+    | '/_marketing/resources/read/flutter-interview-questions'
+    | '/_marketing/resources/read/flutter-learning-roadmap'
+    | '/_marketing/resources/read/flutter-pdf-notes'
+    | '/_marketing/resources/read/flutter-practice-questions'
+    | '/_marketing/resources/read/flutter-project-case-study'
+    | '/_marketing/resources/read/flutter-project-guide'
+    | '/_marketing/resources/read/flutter-quick-revision-notes'
+    | '/_marketing/resources/read/flutter-real-world-case-study'
+    | '/_marketing/resources/read/flutter-reference-guide'
+    | '/_marketing/resources/read/flutter-sample-exercises'
+    | '/_marketing/resources/read/flutter-step-by-step-learning-guide'
+    | '/_marketing/resources/read/flutter-tips-tricks'
     | '/_marketing/resources/read/gcp-advanced-concepts'
     | '/_marketing/resources/read/gcp-answer-key'
     | '/_marketing/resources/read/gcp-beginner-guide'
@@ -19584,6 +19857,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadGcpAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/flutter-tips-tricks': {
+      id: '/_marketing/resources/read/flutter-tips-tricks'
+      path: '/read/flutter-tips-tricks'
+      fullPath: '/resources/read/flutter-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/flutter-step-by-step-learning-guide'
+      path: '/read/flutter-step-by-step-learning-guide'
+      fullPath: '/resources/read/flutter-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-sample-exercises': {
+      id: '/_marketing/resources/read/flutter-sample-exercises'
+      path: '/read/flutter-sample-exercises'
+      fullPath: '/resources/read/flutter-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-reference-guide': {
+      id: '/_marketing/resources/read/flutter-reference-guide'
+      path: '/read/flutter-reference-guide'
+      fullPath: '/resources/read/flutter-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-real-world-case-study': {
+      id: '/_marketing/resources/read/flutter-real-world-case-study'
+      path: '/read/flutter-real-world-case-study'
+      fullPath: '/resources/read/flutter-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-quick-revision-notes': {
+      id: '/_marketing/resources/read/flutter-quick-revision-notes'
+      path: '/read/flutter-quick-revision-notes'
+      fullPath: '/resources/read/flutter-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-project-guide': {
+      id: '/_marketing/resources/read/flutter-project-guide'
+      path: '/read/flutter-project-guide'
+      fullPath: '/resources/read/flutter-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-project-case-study': {
+      id: '/_marketing/resources/read/flutter-project-case-study'
+      path: '/read/flutter-project-case-study'
+      fullPath: '/resources/read/flutter-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-practice-questions': {
+      id: '/_marketing/resources/read/flutter-practice-questions'
+      path: '/read/flutter-practice-questions'
+      fullPath: '/resources/read/flutter-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-pdf-notes': {
+      id: '/_marketing/resources/read/flutter-pdf-notes'
+      path: '/read/flutter-pdf-notes'
+      fullPath: '/resources/read/flutter-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-learning-roadmap': {
+      id: '/_marketing/resources/read/flutter-learning-roadmap'
+      path: '/read/flutter-learning-roadmap'
+      fullPath: '/resources/read/flutter-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-interview-questions': {
+      id: '/_marketing/resources/read/flutter-interview-questions'
+      path: '/read/flutter-interview-questions'
+      fullPath: '/resources/read/flutter-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-glossary': {
+      id: '/_marketing/resources/read/flutter-glossary'
+      path: '/read/flutter-glossary'
+      fullPath: '/resources/read/flutter-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-frequently-asked-questions': {
+      id: '/_marketing/resources/read/flutter-frequently-asked-questions'
+      path: '/read/flutter-frequently-asked-questions'
+      fullPath: '/resources/read/flutter-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-complete-tutorial': {
+      id: '/_marketing/resources/read/flutter-complete-tutorial'
+      path: '/read/flutter-complete-tutorial'
+      fullPath: '/resources/read/flutter-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-common-mistakes': {
+      id: '/_marketing/resources/read/flutter-common-mistakes'
+      path: '/read/flutter-common-mistakes'
+      fullPath: '/resources/read/flutter-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-cheat-sheet': {
+      id: '/_marketing/resources/read/flutter-cheat-sheet'
+      path: '/read/flutter-cheat-sheet'
+      fullPath: '/resources/read/flutter-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-best-practices': {
+      id: '/_marketing/resources/read/flutter-best-practices'
+      path: '/read/flutter-best-practices'
+      fullPath: '/resources/read/flutter-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-beginner-guide': {
+      id: '/_marketing/resources/read/flutter-beginner-guide'
+      path: '/read/flutter-beginner-guide'
+      fullPath: '/resources/read/flutter-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-answer-key': {
+      id: '/_marketing/resources/read/flutter-answer-key'
+      path: '/read/flutter-answer-key'
+      fullPath: '/resources/read/flutter-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/flutter-advanced-concepts': {
+      id: '/_marketing/resources/read/flutter-advanced-concepts'
+      path: '/read/flutter-advanced-concepts'
+      fullPath: '/resources/read/flutter-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadFlutterAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/figma-tips-and-tricks': {
       id: '/_marketing/resources/read/figma-tips-and-tricks'
       path: '/read/figma-tips-and-tricks'
@@ -23339,6 +23759,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadFigmaSampleExercisesRoute: typeof MarketingResourcesReadFigmaSampleExercisesRoute
   MarketingResourcesReadFigmaStepByStepLearningGuideRoute: typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
   MarketingResourcesReadFigmaTipsAndTricksRoute: typeof MarketingResourcesReadFigmaTipsAndTricksRoute
+  MarketingResourcesReadFlutterAdvancedConceptsRoute: typeof MarketingResourcesReadFlutterAdvancedConceptsRoute
+  MarketingResourcesReadFlutterAnswerKeyRoute: typeof MarketingResourcesReadFlutterAnswerKeyRoute
+  MarketingResourcesReadFlutterBeginnerGuideRoute: typeof MarketingResourcesReadFlutterBeginnerGuideRoute
+  MarketingResourcesReadFlutterBestPracticesRoute: typeof MarketingResourcesReadFlutterBestPracticesRoute
+  MarketingResourcesReadFlutterCheatSheetRoute: typeof MarketingResourcesReadFlutterCheatSheetRoute
+  MarketingResourcesReadFlutterCommonMistakesRoute: typeof MarketingResourcesReadFlutterCommonMistakesRoute
+  MarketingResourcesReadFlutterCompleteTutorialRoute: typeof MarketingResourcesReadFlutterCompleteTutorialRoute
+  MarketingResourcesReadFlutterFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadFlutterFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadFlutterGlossaryRoute: typeof MarketingResourcesReadFlutterGlossaryRoute
+  MarketingResourcesReadFlutterInterviewQuestionsRoute: typeof MarketingResourcesReadFlutterInterviewQuestionsRoute
+  MarketingResourcesReadFlutterLearningRoadmapRoute: typeof MarketingResourcesReadFlutterLearningRoadmapRoute
+  MarketingResourcesReadFlutterPdfNotesRoute: typeof MarketingResourcesReadFlutterPdfNotesRoute
+  MarketingResourcesReadFlutterPracticeQuestionsRoute: typeof MarketingResourcesReadFlutterPracticeQuestionsRoute
+  MarketingResourcesReadFlutterProjectCaseStudyRoute: typeof MarketingResourcesReadFlutterProjectCaseStudyRoute
+  MarketingResourcesReadFlutterProjectGuideRoute: typeof MarketingResourcesReadFlutterProjectGuideRoute
+  MarketingResourcesReadFlutterQuickRevisionNotesRoute: typeof MarketingResourcesReadFlutterQuickRevisionNotesRoute
+  MarketingResourcesReadFlutterRealWorldCaseStudyRoute: typeof MarketingResourcesReadFlutterRealWorldCaseStudyRoute
+  MarketingResourcesReadFlutterReferenceGuideRoute: typeof MarketingResourcesReadFlutterReferenceGuideRoute
+  MarketingResourcesReadFlutterSampleExercisesRoute: typeof MarketingResourcesReadFlutterSampleExercisesRoute
+  MarketingResourcesReadFlutterStepByStepLearningGuideRoute: typeof MarketingResourcesReadFlutterStepByStepLearningGuideRoute
+  MarketingResourcesReadFlutterTipsTricksRoute: typeof MarketingResourcesReadFlutterTipsTricksRoute
   MarketingResourcesReadGcpAdvancedConceptsRoute: typeof MarketingResourcesReadGcpAdvancedConceptsRoute
   MarketingResourcesReadGcpAnswerKeyRoute: typeof MarketingResourcesReadGcpAnswerKeyRoute
   MarketingResourcesReadGcpBeginnerGuideRoute: typeof MarketingResourcesReadGcpBeginnerGuideRoute
@@ -24861,6 +25302,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadFigmaStepByStepLearningGuideRoute,
   MarketingResourcesReadFigmaTipsAndTricksRoute:
     MarketingResourcesReadFigmaTipsAndTricksRoute,
+  MarketingResourcesReadFlutterAdvancedConceptsRoute:
+    MarketingResourcesReadFlutterAdvancedConceptsRoute,
+  MarketingResourcesReadFlutterAnswerKeyRoute:
+    MarketingResourcesReadFlutterAnswerKeyRoute,
+  MarketingResourcesReadFlutterBeginnerGuideRoute:
+    MarketingResourcesReadFlutterBeginnerGuideRoute,
+  MarketingResourcesReadFlutterBestPracticesRoute:
+    MarketingResourcesReadFlutterBestPracticesRoute,
+  MarketingResourcesReadFlutterCheatSheetRoute:
+    MarketingResourcesReadFlutterCheatSheetRoute,
+  MarketingResourcesReadFlutterCommonMistakesRoute:
+    MarketingResourcesReadFlutterCommonMistakesRoute,
+  MarketingResourcesReadFlutterCompleteTutorialRoute:
+    MarketingResourcesReadFlutterCompleteTutorialRoute,
+  MarketingResourcesReadFlutterFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadFlutterFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadFlutterGlossaryRoute:
+    MarketingResourcesReadFlutterGlossaryRoute,
+  MarketingResourcesReadFlutterInterviewQuestionsRoute:
+    MarketingResourcesReadFlutterInterviewQuestionsRoute,
+  MarketingResourcesReadFlutterLearningRoadmapRoute:
+    MarketingResourcesReadFlutterLearningRoadmapRoute,
+  MarketingResourcesReadFlutterPdfNotesRoute:
+    MarketingResourcesReadFlutterPdfNotesRoute,
+  MarketingResourcesReadFlutterPracticeQuestionsRoute:
+    MarketingResourcesReadFlutterPracticeQuestionsRoute,
+  MarketingResourcesReadFlutterProjectCaseStudyRoute:
+    MarketingResourcesReadFlutterProjectCaseStudyRoute,
+  MarketingResourcesReadFlutterProjectGuideRoute:
+    MarketingResourcesReadFlutterProjectGuideRoute,
+  MarketingResourcesReadFlutterQuickRevisionNotesRoute:
+    MarketingResourcesReadFlutterQuickRevisionNotesRoute,
+  MarketingResourcesReadFlutterRealWorldCaseStudyRoute:
+    MarketingResourcesReadFlutterRealWorldCaseStudyRoute,
+  MarketingResourcesReadFlutterReferenceGuideRoute:
+    MarketingResourcesReadFlutterReferenceGuideRoute,
+  MarketingResourcesReadFlutterSampleExercisesRoute:
+    MarketingResourcesReadFlutterSampleExercisesRoute,
+  MarketingResourcesReadFlutterStepByStepLearningGuideRoute:
+    MarketingResourcesReadFlutterStepByStepLearningGuideRoute,
+  MarketingResourcesReadFlutterTipsTricksRoute:
+    MarketingResourcesReadFlutterTipsTricksRoute,
   MarketingResourcesReadGcpAdvancedConceptsRoute:
     MarketingResourcesReadGcpAdvancedConceptsRoute,
   MarketingResourcesReadGcpAnswerKeyRoute:
