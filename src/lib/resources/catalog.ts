@@ -375,6 +375,7 @@ const READER_ROUTES: Record<string, string> = {
   "generative-ai--interview-questions": "/resources/read/genai-interview-questions",
  "generative-ai--practice-questions": "/resources/read/genai-practice-questions",
  "generative-ai--real-world-case-study": "/resources/read/genai-real-world-case-study",
+ "generative-ai--frequently-asked-questions": "/resources/read/genai-frequently-asked-questions",
 
 
 
