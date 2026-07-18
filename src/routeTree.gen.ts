@@ -881,6 +881,27 @@ import { Route as MarketingResourcesReadDataScienceBestPracticesRouteImport } fr
 import { Route as MarketingResourcesReadDataScienceBeginnerGuideRouteImport } from './routes/_marketing.resources.read.data-science-beginner-guide'
 import { Route as MarketingResourcesReadDataScienceAnswerKeyRouteImport } from './routes/_marketing.resources.read.data-science-answer-key'
 import { Route as MarketingResourcesReadDataScienceAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.data-science-advanced-concepts'
+import { Route as MarketingResourcesReadDataAnalyticsTipsTricksRouteImport } from './routes/_marketing.resources.read.data-analytics-tips-tricks'
+import { Route as MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.data-analytics-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadDataAnalyticsSampleExercisesRouteImport } from './routes/_marketing.resources.read.data-analytics-sample-exercises'
+import { Route as MarketingResourcesReadDataAnalyticsReferenceGuideRouteImport } from './routes/_marketing.resources.read.data-analytics-reference-guide'
+import { Route as MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.data-analytics-real-world-case-study'
+import { Route as MarketingResourcesReadDataAnalyticsQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.data-analytics-quick-revision-notes'
+import { Route as MarketingResourcesReadDataAnalyticsProjectGuideRouteImport } from './routes/_marketing.resources.read.data-analytics-project-guide'
+import { Route as MarketingResourcesReadDataAnalyticsProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.data-analytics-project-case-study'
+import { Route as MarketingResourcesReadDataAnalyticsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.data-analytics-practice-questions'
+import { Route as MarketingResourcesReadDataAnalyticsPdfNotesRouteImport } from './routes/_marketing.resources.read.data-analytics-pdf-notes'
+import { Route as MarketingResourcesReadDataAnalyticsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.data-analytics-learning-roadmap'
+import { Route as MarketingResourcesReadDataAnalyticsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.data-analytics-interview-questions'
+import { Route as MarketingResourcesReadDataAnalyticsGlossaryRouteImport } from './routes/_marketing.resources.read.data-analytics-glossary'
+import { Route as MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.data-analytics-frequently-asked-questions'
+import { Route as MarketingResourcesReadDataAnalyticsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.data-analytics-complete-tutorial'
+import { Route as MarketingResourcesReadDataAnalyticsCommonMistakesRouteImport } from './routes/_marketing.resources.read.data-analytics-common-mistakes'
+import { Route as MarketingResourcesReadDataAnalyticsCheatSheetRouteImport } from './routes/_marketing.resources.read.data-analytics-cheat-sheet'
+import { Route as MarketingResourcesReadDataAnalyticsBestPracticesRouteImport } from './routes/_marketing.resources.read.data-analytics-best-practices'
+import { Route as MarketingResourcesReadDataAnalyticsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.data-analytics-beginner-guide'
+import { Route as MarketingResourcesReadDataAnalyticsAnswerKeyRouteImport } from './routes/_marketing.resources.read.data-analytics-answer-key'
+import { Route as MarketingResourcesReadDataAnalyticsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.data-analytics-advanced-concepts'
 import { Route as MarketingResourcesReadCyberSecurityTipsTricksRouteImport } from './routes/_marketing.resources.read.cyber-security-tips-tricks'
 import { Route as MarketingResourcesReadCyberSecurityStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.cyber-security-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadCyberSecuritySampleExercisesRouteImport } from './routes/_marketing.resources.read.cyber-security-sample-exercises'
@@ -6320,6 +6341,134 @@ const MarketingResourcesReadDataScienceAdvancedConceptsRoute =
     path: '/read/data-science-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDataAnalyticsTipsTricksRoute =
+  MarketingResourcesReadDataAnalyticsTipsTricksRouteImport.update({
+    id: '/read/data-analytics-tips-tricks',
+    path: '/read/data-analytics-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRoute =
+  MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRouteImport.update({
+    id: '/read/data-analytics-step-by-step-learning-guide',
+    path: '/read/data-analytics-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsSampleExercisesRoute =
+  MarketingResourcesReadDataAnalyticsSampleExercisesRouteImport.update({
+    id: '/read/data-analytics-sample-exercises',
+    path: '/read/data-analytics-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsReferenceGuideRoute =
+  MarketingResourcesReadDataAnalyticsReferenceGuideRouteImport.update({
+    id: '/read/data-analytics-reference-guide',
+    path: '/read/data-analytics-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRoute =
+  MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRouteImport.update({
+    id: '/read/data-analytics-real-world-case-study',
+    path: '/read/data-analytics-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsQuickRevisionNotesRoute =
+  MarketingResourcesReadDataAnalyticsQuickRevisionNotesRouteImport.update({
+    id: '/read/data-analytics-quick-revision-notes',
+    path: '/read/data-analytics-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsProjectGuideRoute =
+  MarketingResourcesReadDataAnalyticsProjectGuideRouteImport.update({
+    id: '/read/data-analytics-project-guide',
+    path: '/read/data-analytics-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsProjectCaseStudyRoute =
+  MarketingResourcesReadDataAnalyticsProjectCaseStudyRouteImport.update({
+    id: '/read/data-analytics-project-case-study',
+    path: '/read/data-analytics-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsPracticeQuestionsRoute =
+  MarketingResourcesReadDataAnalyticsPracticeQuestionsRouteImport.update({
+    id: '/read/data-analytics-practice-questions',
+    path: '/read/data-analytics-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsPdfNotesRoute =
+  MarketingResourcesReadDataAnalyticsPdfNotesRouteImport.update({
+    id: '/read/data-analytics-pdf-notes',
+    path: '/read/data-analytics-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsLearningRoadmapRoute =
+  MarketingResourcesReadDataAnalyticsLearningRoadmapRouteImport.update({
+    id: '/read/data-analytics-learning-roadmap',
+    path: '/read/data-analytics-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsInterviewQuestionsRoute =
+  MarketingResourcesReadDataAnalyticsInterviewQuestionsRouteImport.update({
+    id: '/read/data-analytics-interview-questions',
+    path: '/read/data-analytics-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsGlossaryRoute =
+  MarketingResourcesReadDataAnalyticsGlossaryRouteImport.update({
+    id: '/read/data-analytics-glossary',
+    path: '/read/data-analytics-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRouteImport.update(
+    {
+      id: '/read/data-analytics-frequently-asked-questions',
+      path: '/read/data-analytics-frequently-asked-questions',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadDataAnalyticsCompleteTutorialRoute =
+  MarketingResourcesReadDataAnalyticsCompleteTutorialRouteImport.update({
+    id: '/read/data-analytics-complete-tutorial',
+    path: '/read/data-analytics-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsCommonMistakesRoute =
+  MarketingResourcesReadDataAnalyticsCommonMistakesRouteImport.update({
+    id: '/read/data-analytics-common-mistakes',
+    path: '/read/data-analytics-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsCheatSheetRoute =
+  MarketingResourcesReadDataAnalyticsCheatSheetRouteImport.update({
+    id: '/read/data-analytics-cheat-sheet',
+    path: '/read/data-analytics-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsBestPracticesRoute =
+  MarketingResourcesReadDataAnalyticsBestPracticesRouteImport.update({
+    id: '/read/data-analytics-best-practices',
+    path: '/read/data-analytics-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsBeginnerGuideRoute =
+  MarketingResourcesReadDataAnalyticsBeginnerGuideRouteImport.update({
+    id: '/read/data-analytics-beginner-guide',
+    path: '/read/data-analytics-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsAnswerKeyRoute =
+  MarketingResourcesReadDataAnalyticsAnswerKeyRouteImport.update({
+    id: '/read/data-analytics-answer-key',
+    path: '/read/data-analytics-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDataAnalyticsAdvancedConceptsRoute =
+  MarketingResourcesReadDataAnalyticsAdvancedConceptsRouteImport.update({
+    id: '/read/data-analytics-advanced-concepts',
+    path: '/read/data-analytics-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadCyberSecurityTipsTricksRoute =
   MarketingResourcesReadCyberSecurityTipsTricksRouteImport.update({
     id: '/read/cyber-security-tips-tricks',
@@ -7923,6 +8072,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
   '/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
   '/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
+  '/resources/read/data-analytics-advanced-concepts': typeof MarketingResourcesReadDataAnalyticsAdvancedConceptsRoute
+  '/resources/read/data-analytics-answer-key': typeof MarketingResourcesReadDataAnalyticsAnswerKeyRoute
+  '/resources/read/data-analytics-beginner-guide': typeof MarketingResourcesReadDataAnalyticsBeginnerGuideRoute
+  '/resources/read/data-analytics-best-practices': typeof MarketingResourcesReadDataAnalyticsBestPracticesRoute
+  '/resources/read/data-analytics-cheat-sheet': typeof MarketingResourcesReadDataAnalyticsCheatSheetRoute
+  '/resources/read/data-analytics-common-mistakes': typeof MarketingResourcesReadDataAnalyticsCommonMistakesRoute
+  '/resources/read/data-analytics-complete-tutorial': typeof MarketingResourcesReadDataAnalyticsCompleteTutorialRoute
+  '/resources/read/data-analytics-frequently-asked-questions': typeof MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRoute
+  '/resources/read/data-analytics-glossary': typeof MarketingResourcesReadDataAnalyticsGlossaryRoute
+  '/resources/read/data-analytics-interview-questions': typeof MarketingResourcesReadDataAnalyticsInterviewQuestionsRoute
+  '/resources/read/data-analytics-learning-roadmap': typeof MarketingResourcesReadDataAnalyticsLearningRoadmapRoute
+  '/resources/read/data-analytics-pdf-notes': typeof MarketingResourcesReadDataAnalyticsPdfNotesRoute
+  '/resources/read/data-analytics-practice-questions': typeof MarketingResourcesReadDataAnalyticsPracticeQuestionsRoute
+  '/resources/read/data-analytics-project-case-study': typeof MarketingResourcesReadDataAnalyticsProjectCaseStudyRoute
+  '/resources/read/data-analytics-project-guide': typeof MarketingResourcesReadDataAnalyticsProjectGuideRoute
+  '/resources/read/data-analytics-quick-revision-notes': typeof MarketingResourcesReadDataAnalyticsQuickRevisionNotesRoute
+  '/resources/read/data-analytics-real-world-case-study': typeof MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRoute
+  '/resources/read/data-analytics-reference-guide': typeof MarketingResourcesReadDataAnalyticsReferenceGuideRoute
+  '/resources/read/data-analytics-sample-exercises': typeof MarketingResourcesReadDataAnalyticsSampleExercisesRoute
+  '/resources/read/data-analytics-step-by-step-learning-guide': typeof MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRoute
+  '/resources/read/data-analytics-tips-tricks': typeof MarketingResourcesReadDataAnalyticsTipsTricksRoute
   '/resources/read/data-science-advanced-concepts': typeof MarketingResourcesReadDataScienceAdvancedConceptsRoute
   '/resources/read/data-science-answer-key': typeof MarketingResourcesReadDataScienceAnswerKeyRoute
   '/resources/read/data-science-beginner-guide': typeof MarketingResourcesReadDataScienceBeginnerGuideRoute
@@ -9016,6 +9186,27 @@ export interface FileRoutesByTo {
   '/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
   '/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
   '/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
+  '/resources/read/data-analytics-advanced-concepts': typeof MarketingResourcesReadDataAnalyticsAdvancedConceptsRoute
+  '/resources/read/data-analytics-answer-key': typeof MarketingResourcesReadDataAnalyticsAnswerKeyRoute
+  '/resources/read/data-analytics-beginner-guide': typeof MarketingResourcesReadDataAnalyticsBeginnerGuideRoute
+  '/resources/read/data-analytics-best-practices': typeof MarketingResourcesReadDataAnalyticsBestPracticesRoute
+  '/resources/read/data-analytics-cheat-sheet': typeof MarketingResourcesReadDataAnalyticsCheatSheetRoute
+  '/resources/read/data-analytics-common-mistakes': typeof MarketingResourcesReadDataAnalyticsCommonMistakesRoute
+  '/resources/read/data-analytics-complete-tutorial': typeof MarketingResourcesReadDataAnalyticsCompleteTutorialRoute
+  '/resources/read/data-analytics-frequently-asked-questions': typeof MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRoute
+  '/resources/read/data-analytics-glossary': typeof MarketingResourcesReadDataAnalyticsGlossaryRoute
+  '/resources/read/data-analytics-interview-questions': typeof MarketingResourcesReadDataAnalyticsInterviewQuestionsRoute
+  '/resources/read/data-analytics-learning-roadmap': typeof MarketingResourcesReadDataAnalyticsLearningRoadmapRoute
+  '/resources/read/data-analytics-pdf-notes': typeof MarketingResourcesReadDataAnalyticsPdfNotesRoute
+  '/resources/read/data-analytics-practice-questions': typeof MarketingResourcesReadDataAnalyticsPracticeQuestionsRoute
+  '/resources/read/data-analytics-project-case-study': typeof MarketingResourcesReadDataAnalyticsProjectCaseStudyRoute
+  '/resources/read/data-analytics-project-guide': typeof MarketingResourcesReadDataAnalyticsProjectGuideRoute
+  '/resources/read/data-analytics-quick-revision-notes': typeof MarketingResourcesReadDataAnalyticsQuickRevisionNotesRoute
+  '/resources/read/data-analytics-real-world-case-study': typeof MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRoute
+  '/resources/read/data-analytics-reference-guide': typeof MarketingResourcesReadDataAnalyticsReferenceGuideRoute
+  '/resources/read/data-analytics-sample-exercises': typeof MarketingResourcesReadDataAnalyticsSampleExercisesRoute
+  '/resources/read/data-analytics-step-by-step-learning-guide': typeof MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRoute
+  '/resources/read/data-analytics-tips-tricks': typeof MarketingResourcesReadDataAnalyticsTipsTricksRoute
   '/resources/read/data-science-advanced-concepts': typeof MarketingResourcesReadDataScienceAdvancedConceptsRoute
   '/resources/read/data-science-answer-key': typeof MarketingResourcesReadDataScienceAnswerKeyRoute
   '/resources/read/data-science-beginner-guide': typeof MarketingResourcesReadDataScienceBeginnerGuideRoute
@@ -10114,6 +10305,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
   '/_marketing/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
   '/_marketing/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
+  '/_marketing/resources/read/data-analytics-advanced-concepts': typeof MarketingResourcesReadDataAnalyticsAdvancedConceptsRoute
+  '/_marketing/resources/read/data-analytics-answer-key': typeof MarketingResourcesReadDataAnalyticsAnswerKeyRoute
+  '/_marketing/resources/read/data-analytics-beginner-guide': typeof MarketingResourcesReadDataAnalyticsBeginnerGuideRoute
+  '/_marketing/resources/read/data-analytics-best-practices': typeof MarketingResourcesReadDataAnalyticsBestPracticesRoute
+  '/_marketing/resources/read/data-analytics-cheat-sheet': typeof MarketingResourcesReadDataAnalyticsCheatSheetRoute
+  '/_marketing/resources/read/data-analytics-common-mistakes': typeof MarketingResourcesReadDataAnalyticsCommonMistakesRoute
+  '/_marketing/resources/read/data-analytics-complete-tutorial': typeof MarketingResourcesReadDataAnalyticsCompleteTutorialRoute
+  '/_marketing/resources/read/data-analytics-frequently-asked-questions': typeof MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/data-analytics-glossary': typeof MarketingResourcesReadDataAnalyticsGlossaryRoute
+  '/_marketing/resources/read/data-analytics-interview-questions': typeof MarketingResourcesReadDataAnalyticsInterviewQuestionsRoute
+  '/_marketing/resources/read/data-analytics-learning-roadmap': typeof MarketingResourcesReadDataAnalyticsLearningRoadmapRoute
+  '/_marketing/resources/read/data-analytics-pdf-notes': typeof MarketingResourcesReadDataAnalyticsPdfNotesRoute
+  '/_marketing/resources/read/data-analytics-practice-questions': typeof MarketingResourcesReadDataAnalyticsPracticeQuestionsRoute
+  '/_marketing/resources/read/data-analytics-project-case-study': typeof MarketingResourcesReadDataAnalyticsProjectCaseStudyRoute
+  '/_marketing/resources/read/data-analytics-project-guide': typeof MarketingResourcesReadDataAnalyticsProjectGuideRoute
+  '/_marketing/resources/read/data-analytics-quick-revision-notes': typeof MarketingResourcesReadDataAnalyticsQuickRevisionNotesRoute
+  '/_marketing/resources/read/data-analytics-real-world-case-study': typeof MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRoute
+  '/_marketing/resources/read/data-analytics-reference-guide': typeof MarketingResourcesReadDataAnalyticsReferenceGuideRoute
+  '/_marketing/resources/read/data-analytics-sample-exercises': typeof MarketingResourcesReadDataAnalyticsSampleExercisesRoute
+  '/_marketing/resources/read/data-analytics-step-by-step-learning-guide': typeof MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRoute
+  '/_marketing/resources/read/data-analytics-tips-tricks': typeof MarketingResourcesReadDataAnalyticsTipsTricksRoute
   '/_marketing/resources/read/data-science-advanced-concepts': typeof MarketingResourcesReadDataScienceAdvancedConceptsRoute
   '/_marketing/resources/read/data-science-answer-key': typeof MarketingResourcesReadDataScienceAnswerKeyRoute
   '/_marketing/resources/read/data-science-beginner-guide': typeof MarketingResourcesReadDataScienceBeginnerGuideRoute
@@ -11210,6 +11422,27 @@ export interface FileRouteTypes {
     | '/resources/read/cyber-security-sample-exercises'
     | '/resources/read/cyber-security-step-by-step-learning-guide'
     | '/resources/read/cyber-security-tips-tricks'
+    | '/resources/read/data-analytics-advanced-concepts'
+    | '/resources/read/data-analytics-answer-key'
+    | '/resources/read/data-analytics-beginner-guide'
+    | '/resources/read/data-analytics-best-practices'
+    | '/resources/read/data-analytics-cheat-sheet'
+    | '/resources/read/data-analytics-common-mistakes'
+    | '/resources/read/data-analytics-complete-tutorial'
+    | '/resources/read/data-analytics-frequently-asked-questions'
+    | '/resources/read/data-analytics-glossary'
+    | '/resources/read/data-analytics-interview-questions'
+    | '/resources/read/data-analytics-learning-roadmap'
+    | '/resources/read/data-analytics-pdf-notes'
+    | '/resources/read/data-analytics-practice-questions'
+    | '/resources/read/data-analytics-project-case-study'
+    | '/resources/read/data-analytics-project-guide'
+    | '/resources/read/data-analytics-quick-revision-notes'
+    | '/resources/read/data-analytics-real-world-case-study'
+    | '/resources/read/data-analytics-reference-guide'
+    | '/resources/read/data-analytics-sample-exercises'
+    | '/resources/read/data-analytics-step-by-step-learning-guide'
+    | '/resources/read/data-analytics-tips-tricks'
     | '/resources/read/data-science-advanced-concepts'
     | '/resources/read/data-science-answer-key'
     | '/resources/read/data-science-beginner-guide'
@@ -12303,6 +12536,27 @@ export interface FileRouteTypes {
     | '/resources/read/cyber-security-sample-exercises'
     | '/resources/read/cyber-security-step-by-step-learning-guide'
     | '/resources/read/cyber-security-tips-tricks'
+    | '/resources/read/data-analytics-advanced-concepts'
+    | '/resources/read/data-analytics-answer-key'
+    | '/resources/read/data-analytics-beginner-guide'
+    | '/resources/read/data-analytics-best-practices'
+    | '/resources/read/data-analytics-cheat-sheet'
+    | '/resources/read/data-analytics-common-mistakes'
+    | '/resources/read/data-analytics-complete-tutorial'
+    | '/resources/read/data-analytics-frequently-asked-questions'
+    | '/resources/read/data-analytics-glossary'
+    | '/resources/read/data-analytics-interview-questions'
+    | '/resources/read/data-analytics-learning-roadmap'
+    | '/resources/read/data-analytics-pdf-notes'
+    | '/resources/read/data-analytics-practice-questions'
+    | '/resources/read/data-analytics-project-case-study'
+    | '/resources/read/data-analytics-project-guide'
+    | '/resources/read/data-analytics-quick-revision-notes'
+    | '/resources/read/data-analytics-real-world-case-study'
+    | '/resources/read/data-analytics-reference-guide'
+    | '/resources/read/data-analytics-sample-exercises'
+    | '/resources/read/data-analytics-step-by-step-learning-guide'
+    | '/resources/read/data-analytics-tips-tricks'
     | '/resources/read/data-science-advanced-concepts'
     | '/resources/read/data-science-answer-key'
     | '/resources/read/data-science-beginner-guide'
@@ -13400,6 +13654,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/cyber-security-sample-exercises'
     | '/_marketing/resources/read/cyber-security-step-by-step-learning-guide'
     | '/_marketing/resources/read/cyber-security-tips-tricks'
+    | '/_marketing/resources/read/data-analytics-advanced-concepts'
+    | '/_marketing/resources/read/data-analytics-answer-key'
+    | '/_marketing/resources/read/data-analytics-beginner-guide'
+    | '/_marketing/resources/read/data-analytics-best-practices'
+    | '/_marketing/resources/read/data-analytics-cheat-sheet'
+    | '/_marketing/resources/read/data-analytics-common-mistakes'
+    | '/_marketing/resources/read/data-analytics-complete-tutorial'
+    | '/_marketing/resources/read/data-analytics-frequently-asked-questions'
+    | '/_marketing/resources/read/data-analytics-glossary'
+    | '/_marketing/resources/read/data-analytics-interview-questions'
+    | '/_marketing/resources/read/data-analytics-learning-roadmap'
+    | '/_marketing/resources/read/data-analytics-pdf-notes'
+    | '/_marketing/resources/read/data-analytics-practice-questions'
+    | '/_marketing/resources/read/data-analytics-project-case-study'
+    | '/_marketing/resources/read/data-analytics-project-guide'
+    | '/_marketing/resources/read/data-analytics-quick-revision-notes'
+    | '/_marketing/resources/read/data-analytics-real-world-case-study'
+    | '/_marketing/resources/read/data-analytics-reference-guide'
+    | '/_marketing/resources/read/data-analytics-sample-exercises'
+    | '/_marketing/resources/read/data-analytics-step-by-step-learning-guide'
+    | '/_marketing/resources/read/data-analytics-tips-tricks'
     | '/_marketing/resources/read/data-science-advanced-concepts'
     | '/_marketing/resources/read/data-science-answer-key'
     | '/_marketing/resources/read/data-science-beginner-guide'
@@ -20359,6 +20634,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDataScienceAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/data-analytics-tips-tricks': {
+      id: '/_marketing/resources/read/data-analytics-tips-tricks'
+      path: '/read/data-analytics-tips-tricks'
+      fullPath: '/resources/read/data-analytics-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/data-analytics-step-by-step-learning-guide'
+      path: '/read/data-analytics-step-by-step-learning-guide'
+      fullPath: '/resources/read/data-analytics-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-sample-exercises': {
+      id: '/_marketing/resources/read/data-analytics-sample-exercises'
+      path: '/read/data-analytics-sample-exercises'
+      fullPath: '/resources/read/data-analytics-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-reference-guide': {
+      id: '/_marketing/resources/read/data-analytics-reference-guide'
+      path: '/read/data-analytics-reference-guide'
+      fullPath: '/resources/read/data-analytics-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-real-world-case-study': {
+      id: '/_marketing/resources/read/data-analytics-real-world-case-study'
+      path: '/read/data-analytics-real-world-case-study'
+      fullPath: '/resources/read/data-analytics-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-quick-revision-notes': {
+      id: '/_marketing/resources/read/data-analytics-quick-revision-notes'
+      path: '/read/data-analytics-quick-revision-notes'
+      fullPath: '/resources/read/data-analytics-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-project-guide': {
+      id: '/_marketing/resources/read/data-analytics-project-guide'
+      path: '/read/data-analytics-project-guide'
+      fullPath: '/resources/read/data-analytics-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-project-case-study': {
+      id: '/_marketing/resources/read/data-analytics-project-case-study'
+      path: '/read/data-analytics-project-case-study'
+      fullPath: '/resources/read/data-analytics-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-practice-questions': {
+      id: '/_marketing/resources/read/data-analytics-practice-questions'
+      path: '/read/data-analytics-practice-questions'
+      fullPath: '/resources/read/data-analytics-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-pdf-notes': {
+      id: '/_marketing/resources/read/data-analytics-pdf-notes'
+      path: '/read/data-analytics-pdf-notes'
+      fullPath: '/resources/read/data-analytics-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-learning-roadmap': {
+      id: '/_marketing/resources/read/data-analytics-learning-roadmap'
+      path: '/read/data-analytics-learning-roadmap'
+      fullPath: '/resources/read/data-analytics-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-interview-questions': {
+      id: '/_marketing/resources/read/data-analytics-interview-questions'
+      path: '/read/data-analytics-interview-questions'
+      fullPath: '/resources/read/data-analytics-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-glossary': {
+      id: '/_marketing/resources/read/data-analytics-glossary'
+      path: '/read/data-analytics-glossary'
+      fullPath: '/resources/read/data-analytics-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-frequently-asked-questions': {
+      id: '/_marketing/resources/read/data-analytics-frequently-asked-questions'
+      path: '/read/data-analytics-frequently-asked-questions'
+      fullPath: '/resources/read/data-analytics-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-complete-tutorial': {
+      id: '/_marketing/resources/read/data-analytics-complete-tutorial'
+      path: '/read/data-analytics-complete-tutorial'
+      fullPath: '/resources/read/data-analytics-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-common-mistakes': {
+      id: '/_marketing/resources/read/data-analytics-common-mistakes'
+      path: '/read/data-analytics-common-mistakes'
+      fullPath: '/resources/read/data-analytics-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-cheat-sheet': {
+      id: '/_marketing/resources/read/data-analytics-cheat-sheet'
+      path: '/read/data-analytics-cheat-sheet'
+      fullPath: '/resources/read/data-analytics-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-best-practices': {
+      id: '/_marketing/resources/read/data-analytics-best-practices'
+      path: '/read/data-analytics-best-practices'
+      fullPath: '/resources/read/data-analytics-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-beginner-guide': {
+      id: '/_marketing/resources/read/data-analytics-beginner-guide'
+      path: '/read/data-analytics-beginner-guide'
+      fullPath: '/resources/read/data-analytics-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-answer-key': {
+      id: '/_marketing/resources/read/data-analytics-answer-key'
+      path: '/read/data-analytics-answer-key'
+      fullPath: '/resources/read/data-analytics-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/data-analytics-advanced-concepts': {
+      id: '/_marketing/resources/read/data-analytics-advanced-concepts'
+      path: '/read/data-analytics-advanced-concepts'
+      fullPath: '/resources/read/data-analytics-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadDataAnalyticsAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/cyber-security-tips-tricks': {
       id: '/_marketing/resources/read/cyber-security-tips-tricks'
       path: '/read/cyber-security-tips-tricks'
@@ -22266,6 +22688,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadCyberSecuritySampleExercisesRoute: typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
   MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute: typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
   MarketingResourcesReadCyberSecurityTipsTricksRoute: typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
+  MarketingResourcesReadDataAnalyticsAdvancedConceptsRoute: typeof MarketingResourcesReadDataAnalyticsAdvancedConceptsRoute
+  MarketingResourcesReadDataAnalyticsAnswerKeyRoute: typeof MarketingResourcesReadDataAnalyticsAnswerKeyRoute
+  MarketingResourcesReadDataAnalyticsBeginnerGuideRoute: typeof MarketingResourcesReadDataAnalyticsBeginnerGuideRoute
+  MarketingResourcesReadDataAnalyticsBestPracticesRoute: typeof MarketingResourcesReadDataAnalyticsBestPracticesRoute
+  MarketingResourcesReadDataAnalyticsCheatSheetRoute: typeof MarketingResourcesReadDataAnalyticsCheatSheetRoute
+  MarketingResourcesReadDataAnalyticsCommonMistakesRoute: typeof MarketingResourcesReadDataAnalyticsCommonMistakesRoute
+  MarketingResourcesReadDataAnalyticsCompleteTutorialRoute: typeof MarketingResourcesReadDataAnalyticsCompleteTutorialRoute
+  MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadDataAnalyticsGlossaryRoute: typeof MarketingResourcesReadDataAnalyticsGlossaryRoute
+  MarketingResourcesReadDataAnalyticsInterviewQuestionsRoute: typeof MarketingResourcesReadDataAnalyticsInterviewQuestionsRoute
+  MarketingResourcesReadDataAnalyticsLearningRoadmapRoute: typeof MarketingResourcesReadDataAnalyticsLearningRoadmapRoute
+  MarketingResourcesReadDataAnalyticsPdfNotesRoute: typeof MarketingResourcesReadDataAnalyticsPdfNotesRoute
+  MarketingResourcesReadDataAnalyticsPracticeQuestionsRoute: typeof MarketingResourcesReadDataAnalyticsPracticeQuestionsRoute
+  MarketingResourcesReadDataAnalyticsProjectCaseStudyRoute: typeof MarketingResourcesReadDataAnalyticsProjectCaseStudyRoute
+  MarketingResourcesReadDataAnalyticsProjectGuideRoute: typeof MarketingResourcesReadDataAnalyticsProjectGuideRoute
+  MarketingResourcesReadDataAnalyticsQuickRevisionNotesRoute: typeof MarketingResourcesReadDataAnalyticsQuickRevisionNotesRoute
+  MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRoute: typeof MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRoute
+  MarketingResourcesReadDataAnalyticsReferenceGuideRoute: typeof MarketingResourcesReadDataAnalyticsReferenceGuideRoute
+  MarketingResourcesReadDataAnalyticsSampleExercisesRoute: typeof MarketingResourcesReadDataAnalyticsSampleExercisesRoute
+  MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRoute: typeof MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRoute
+  MarketingResourcesReadDataAnalyticsTipsTricksRoute: typeof MarketingResourcesReadDataAnalyticsTipsTricksRoute
   MarketingResourcesReadDataScienceAdvancedConceptsRoute: typeof MarketingResourcesReadDataScienceAdvancedConceptsRoute
   MarketingResourcesReadDataScienceAnswerKeyRoute: typeof MarketingResourcesReadDataScienceAnswerKeyRoute
   MarketingResourcesReadDataScienceBeginnerGuideRoute: typeof MarketingResourcesReadDataScienceBeginnerGuideRoute
@@ -23517,6 +23960,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute,
   MarketingResourcesReadCyberSecurityTipsTricksRoute:
     MarketingResourcesReadCyberSecurityTipsTricksRoute,
+  MarketingResourcesReadDataAnalyticsAdvancedConceptsRoute:
+    MarketingResourcesReadDataAnalyticsAdvancedConceptsRoute,
+  MarketingResourcesReadDataAnalyticsAnswerKeyRoute:
+    MarketingResourcesReadDataAnalyticsAnswerKeyRoute,
+  MarketingResourcesReadDataAnalyticsBeginnerGuideRoute:
+    MarketingResourcesReadDataAnalyticsBeginnerGuideRoute,
+  MarketingResourcesReadDataAnalyticsBestPracticesRoute:
+    MarketingResourcesReadDataAnalyticsBestPracticesRoute,
+  MarketingResourcesReadDataAnalyticsCheatSheetRoute:
+    MarketingResourcesReadDataAnalyticsCheatSheetRoute,
+  MarketingResourcesReadDataAnalyticsCommonMistakesRoute:
+    MarketingResourcesReadDataAnalyticsCommonMistakesRoute,
+  MarketingResourcesReadDataAnalyticsCompleteTutorialRoute:
+    MarketingResourcesReadDataAnalyticsCompleteTutorialRoute,
+  MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadDataAnalyticsFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadDataAnalyticsGlossaryRoute:
+    MarketingResourcesReadDataAnalyticsGlossaryRoute,
+  MarketingResourcesReadDataAnalyticsInterviewQuestionsRoute:
+    MarketingResourcesReadDataAnalyticsInterviewQuestionsRoute,
+  MarketingResourcesReadDataAnalyticsLearningRoadmapRoute:
+    MarketingResourcesReadDataAnalyticsLearningRoadmapRoute,
+  MarketingResourcesReadDataAnalyticsPdfNotesRoute:
+    MarketingResourcesReadDataAnalyticsPdfNotesRoute,
+  MarketingResourcesReadDataAnalyticsPracticeQuestionsRoute:
+    MarketingResourcesReadDataAnalyticsPracticeQuestionsRoute,
+  MarketingResourcesReadDataAnalyticsProjectCaseStudyRoute:
+    MarketingResourcesReadDataAnalyticsProjectCaseStudyRoute,
+  MarketingResourcesReadDataAnalyticsProjectGuideRoute:
+    MarketingResourcesReadDataAnalyticsProjectGuideRoute,
+  MarketingResourcesReadDataAnalyticsQuickRevisionNotesRoute:
+    MarketingResourcesReadDataAnalyticsQuickRevisionNotesRoute,
+  MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRoute:
+    MarketingResourcesReadDataAnalyticsRealWorldCaseStudyRoute,
+  MarketingResourcesReadDataAnalyticsReferenceGuideRoute:
+    MarketingResourcesReadDataAnalyticsReferenceGuideRoute,
+  MarketingResourcesReadDataAnalyticsSampleExercisesRoute:
+    MarketingResourcesReadDataAnalyticsSampleExercisesRoute,
+  MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRoute:
+    MarketingResourcesReadDataAnalyticsStepByStepLearningGuideRoute,
+  MarketingResourcesReadDataAnalyticsTipsTricksRoute:
+    MarketingResourcesReadDataAnalyticsTipsTricksRoute,
   MarketingResourcesReadDataScienceAdvancedConceptsRoute:
     MarketingResourcesReadDataScienceAdvancedConceptsRoute,
   MarketingResourcesReadDataScienceAnswerKeyRoute:
