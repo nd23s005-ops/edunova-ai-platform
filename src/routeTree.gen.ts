@@ -57,6 +57,7 @@ import { Route as MarketingResourcesReadPeTipsTricksRouteImport } from './routes
 import { Route as MarketingResourcesReadPeStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pe-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPeSampleExercisesRouteImport } from './routes/_marketing.resources.read.pe-sample-exercises'
 import { Route as MarketingResourcesReadPeReferenceGuideRouteImport } from './routes/_marketing.resources.read.pe-reference-guide'
+import { Route as MarketingResourcesReadPeRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.pe-real-world-case-study'
 import { Route as MarketingResourcesReadPeQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.pe-quick-revision-notes'
 import { Route as MarketingResourcesReadPeProjectGuideRouteImport } from './routes/_marketing.resources.read.pe-project-guide'
 import { Route as MarketingResourcesReadPeProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.pe-project-case-study'
@@ -407,6 +408,12 @@ const MarketingResourcesReadPeReferenceGuideRoute =
   MarketingResourcesReadPeReferenceGuideRouteImport.update({
     id: '/read/pe-reference-guide',
     path: '/read/pe-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPeRealWorldCaseStudyRoute =
+  MarketingResourcesReadPeRealWorldCaseStudyRouteImport.update({
+    id: '/read/pe-real-world-case-study',
+    path: '/read/pe-real-world-case-study',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeQuickRevisionNotesRoute =
@@ -1117,6 +1124,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
+  '/resources/read/pe-real-world-case-study': typeof MarketingResourcesReadPeRealWorldCaseStudyRoute
   '/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
@@ -1259,6 +1267,7 @@ export interface FileRoutesByTo {
   '/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
+  '/resources/read/pe-real-world-case-study': typeof MarketingResourcesReadPeRealWorldCaseStudyRoute
   '/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
@@ -1406,6 +1415,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/_marketing/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/_marketing/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
+  '/_marketing/resources/read/pe-real-world-case-study': typeof MarketingResourcesReadPeRealWorldCaseStudyRoute
   '/_marketing/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/_marketing/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/_marketing/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
@@ -1551,6 +1561,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-project-case-study'
     | '/resources/read/pe-project-guide'
     | '/resources/read/pe-quick-revision-notes'
+    | '/resources/read/pe-real-world-case-study'
     | '/resources/read/pe-reference-guide'
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
@@ -1693,6 +1704,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-project-case-study'
     | '/resources/read/pe-project-guide'
     | '/resources/read/pe-quick-revision-notes'
+    | '/resources/read/pe-real-world-case-study'
     | '/resources/read/pe-reference-guide'
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
@@ -1839,6 +1851,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-project-case-study'
     | '/_marketing/resources/read/pe-project-guide'
     | '/_marketing/resources/read/pe-quick-revision-notes'
+    | '/_marketing/resources/read/pe-real-world-case-study'
     | '/_marketing/resources/read/pe-reference-guide'
     | '/_marketing/resources/read/pe-sample-exercises'
     | '/_marketing/resources/read/pe-step-by-step-learning-guide'
@@ -2204,6 +2217,13 @@ declare module '@tanstack/react-router' {
       path: '/read/pe-reference-guide'
       fullPath: '/resources/read/pe-reference-guide'
       preLoaderRoute: typeof MarketingResourcesReadPeReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pe-real-world-case-study': {
+      id: '/_marketing/resources/read/pe-real-world-case-study'
+      path: '/read/pe-real-world-case-study'
+      fullPath: '/resources/read/pe-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPeRealWorldCaseStudyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-quick-revision-notes': {
@@ -3097,6 +3117,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeProjectCaseStudyRoute: typeof MarketingResourcesReadPeProjectCaseStudyRoute
   MarketingResourcesReadPeProjectGuideRoute: typeof MarketingResourcesReadPeProjectGuideRoute
   MarketingResourcesReadPeQuickRevisionNotesRoute: typeof MarketingResourcesReadPeQuickRevisionNotesRoute
+  MarketingResourcesReadPeRealWorldCaseStudyRoute: typeof MarketingResourcesReadPeRealWorldCaseStudyRoute
   MarketingResourcesReadPeReferenceGuideRoute: typeof MarketingResourcesReadPeReferenceGuideRoute
   MarketingResourcesReadPeSampleExercisesRoute: typeof MarketingResourcesReadPeSampleExercisesRoute
   MarketingResourcesReadPeStepByStepLearningGuideRoute: typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
@@ -3264,6 +3285,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeProjectGuideRoute,
   MarketingResourcesReadPeQuickRevisionNotesRoute:
     MarketingResourcesReadPeQuickRevisionNotesRoute,
+  MarketingResourcesReadPeRealWorldCaseStudyRoute:
+    MarketingResourcesReadPeRealWorldCaseStudyRoute,
   MarketingResourcesReadPeReferenceGuideRoute:
     MarketingResourcesReadPeReferenceGuideRoute,
   MarketingResourcesReadPeSampleExercisesRoute:
