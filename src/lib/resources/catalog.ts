@@ -174,6 +174,7 @@ const SLUG_IMAGE: Record<string, string> = {
   "prompt-engineering": "photo-1526378787940-576a539ba69d",
   "ai-agents": "photo-1535378917042-10a22c95931a",
   "python": "photo-1526379095098-d400fd0bf935",
+  "java": "photo-1517694712202-14dd9538aa97",
   "javascript": "photo-1579468118864-1b9ea3c0db4a",
   "typescript": "photo-1587620962725-abab7fe55159",
   "react": "photo-1633356122544-f134324a6cee",
