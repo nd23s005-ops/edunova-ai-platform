@@ -69,7 +69,7 @@ function Page() {
       </Section>
 
       <Section id="design" title="Component Design Principles">
-        <p>Small. Single-purpose. Composable. Data-in, JSX-out. Prefer composition over configuration. Props < 5, else split.</p>
+        <p>Small. Single-purpose. Composable. Data-in, JSX-out. Prefer composition over configuration. Props &lt; 5, else split.</p>
         <Figure src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1400&q=80" caption="Figure 1 — Overview diagram for component design principles." />
       </Section>
 
@@ -94,7 +94,7 @@ function Page() {
       </Section>
 
       <Section id="testing" title="Testing">
-        <p>Testing Library queries by role. Integration > unit for UI. Playwright for critical E2E. 80% branch coverage.</p>
+        <p>Testing Library queries by role. Integration &gt; unit for UI. Playwright for critical E2E. 80% branch coverage.</p>
         <Figure src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400&q=80" caption="Figure 2 — Reference visual for testing." />
       </Section>
 

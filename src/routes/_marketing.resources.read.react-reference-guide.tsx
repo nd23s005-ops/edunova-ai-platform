@@ -86,7 +86,7 @@ function Page() {
       </Section>
 
       <Section id="router" title="Routing Reference">
-        <p><Routes>, <Route>, <Link>, useNavigate, useParams, useSearchParams, loaders, actions, nested routes, code-splitting.</p>
+        <p>&lt;Routes&gt;, &lt;Route&gt;, &lt;Link&gt;, useNavigate, useParams, useSearchParams, loaders, actions, nested routes, code-splitting.</p>
       </Section>
 
       <Section id="context" title="Context API">

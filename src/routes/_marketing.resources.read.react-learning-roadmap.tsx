@@ -150,7 +150,7 @@ export function useDebounced<T>(value: T, ms = 300) {
       </Section>
 
       <Section id="summary" title="Summary & Key Takeaways">
-        <p>Consistency > intensity. 90 minutes daily beats 10 hours on Sunday.</p>
+        <p>Consistency &gt; intensity. 90 minutes daily beats 10 hours on Sunday.</p>
       </Section>
 
       <Section id="faqs" title="FAQs">

@@ -93,7 +93,7 @@ function Page() {
       </Section>
 
       <Section id="debug" title="Debugging Workflows">
-        <p>debugger; > console.log. Conditional breakpoints. Blackbox node_modules. React DevTools + Chrome Perf tab together.</p>
+        <p>debugger; &gt; console.log. Conditional breakpoints. Blackbox node_modules. React DevTools + Chrome Perf tab together.</p>
         <Figure src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400&q=80" caption="Figure 2 — Reference visual for debugging workflows." />
       </Section>
 

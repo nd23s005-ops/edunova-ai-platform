@@ -76,7 +76,7 @@ function Page() {
       </Section>
 
       <Section id="folder" title="Folder Structure">
-        <p>src/components (dumb), src/features (smart), src/hooks, src/lib, src/routes, src/api, src/styles, src/types. Feature-first > type-first at scale.</p>
+        <p>src/components (dumb), src/features (smart), src/hooks, src/lib, src/routes, src/api, src/styles, src/types. Feature-first &gt; type-first at scale.</p>
       </Section>
 
       <Section id="arch" title="Component Architecture">
@@ -134,7 +134,7 @@ export function useDebounced<T>(value: T, ms = 300) {
       </Section>
 
       <Section id="checklist" title="Project Checklist">
-        <p>Lighthouse ≥90. WCAG AA. Bundle < 200KB. Tests green. CI green. Sentry live. README complete.</p>
+        <p>Lighthouse ≥90. WCAG AA. Bundle &lt; 200KB. Tests green. CI green. Sentry live. README complete.</p>
       </Section>
 
       <Section id="best" title="Best Practices">

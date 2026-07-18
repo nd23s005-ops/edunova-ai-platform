@@ -104,7 +104,7 @@ function Page() {
       </Section>
 
       <Section id="career" title="Career Guidance">
-        <p>Portfolio > certifications. Contribute to OSS. Read source code. Interview prep timeline.</p>
+        <p>Portfolio &gt; certifications. Contribute to OSS. Read source code. Interview prep timeline.</p>
       </Section>
 
       <Section id="code" title="Common Snippet">
