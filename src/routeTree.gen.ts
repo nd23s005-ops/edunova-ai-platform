@@ -185,6 +185,24 @@ import { Route as MarketingResourcesReadOperatingSystemsBestPracticesRouteImport
 import { Route as MarketingResourcesReadOperatingSystemsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.operating-systems-beginner-guide'
 import { Route as MarketingResourcesReadOperatingSystemsAnswerKeyRouteImport } from './routes/_marketing.resources.read.operating-systems-answer-key'
 import { Route as MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.operating-systems-advanced-concepts'
+import { Route as MarketingResourcesReadNetworkSecurityTipsTricksRouteImport } from './routes/_marketing.resources.read.network-security-tips-tricks'
+import { Route as MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.network-security-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadNetworkSecurityReferenceGuideRouteImport } from './routes/_marketing.resources.read.network-security-reference-guide'
+import { Route as MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.network-security-real-world-case-study'
+import { Route as MarketingResourcesReadNetworkSecurityQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.network-security-quick-revision-notes'
+import { Route as MarketingResourcesReadNetworkSecurityPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.network-security-practice-questions'
+import { Route as MarketingResourcesReadNetworkSecurityPdfNotesRouteImport } from './routes/_marketing.resources.read.network-security-pdf-notes'
+import { Route as MarketingResourcesReadNetworkSecurityLearningRoadmapRouteImport } from './routes/_marketing.resources.read.network-security-learning-roadmap'
+import { Route as MarketingResourcesReadNetworkSecurityInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.network-security-interview-questions'
+import { Route as MarketingResourcesReadNetworkSecurityGlossaryRouteImport } from './routes/_marketing.resources.read.network-security-glossary'
+import { Route as MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.network-security-frequently-asked-questions'
+import { Route as MarketingResourcesReadNetworkSecurityCompleteTutorialRouteImport } from './routes/_marketing.resources.read.network-security-complete-tutorial'
+import { Route as MarketingResourcesReadNetworkSecurityCommonMistakesRouteImport } from './routes/_marketing.resources.read.network-security-common-mistakes'
+import { Route as MarketingResourcesReadNetworkSecurityCheatSheetRouteImport } from './routes/_marketing.resources.read.network-security-cheat-sheet'
+import { Route as MarketingResourcesReadNetworkSecurityBestPracticesRouteImport } from './routes/_marketing.resources.read.network-security-best-practices'
+import { Route as MarketingResourcesReadNetworkSecurityBeginnerGuideRouteImport } from './routes/_marketing.resources.read.network-security-beginner-guide'
+import { Route as MarketingResourcesReadNetworkSecurityAnswerKeyRouteImport } from './routes/_marketing.resources.read.network-security-answer-key'
+import { Route as MarketingResourcesReadNetworkSecurityAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.network-security-advanced-concepts'
 import { Route as MarketingResourcesReadMlTipsTricksRouteImport } from './routes/_marketing.resources.read.ml-tips-tricks'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlSampleExercisesRouteImport } from './routes/_marketing.resources.read.ml-sample-exercises'
@@ -1444,6 +1462,118 @@ const MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute =
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport.update({
     id: '/read/operating-systems-advanced-concepts',
     path: '/read/operating-systems-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityTipsTricksRoute =
+  MarketingResourcesReadNetworkSecurityTipsTricksRouteImport.update({
+    id: '/read/network-security-tips-tricks',
+    path: '/read/network-security-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute =
+  MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRouteImport.update(
+    {
+      id: '/read/network-security-step-by-step-learning-guide',
+      path: '/read/network-security-step-by-step-learning-guide',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadNetworkSecurityReferenceGuideRoute =
+  MarketingResourcesReadNetworkSecurityReferenceGuideRouteImport.update({
+    id: '/read/network-security-reference-guide',
+    path: '/read/network-security-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRoute =
+  MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRouteImport.update({
+    id: '/read/network-security-real-world-case-study',
+    path: '/read/network-security-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityQuickRevisionNotesRoute =
+  MarketingResourcesReadNetworkSecurityQuickRevisionNotesRouteImport.update({
+    id: '/read/network-security-quick-revision-notes',
+    path: '/read/network-security-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityPracticeQuestionsRoute =
+  MarketingResourcesReadNetworkSecurityPracticeQuestionsRouteImport.update({
+    id: '/read/network-security-practice-questions',
+    path: '/read/network-security-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityPdfNotesRoute =
+  MarketingResourcesReadNetworkSecurityPdfNotesRouteImport.update({
+    id: '/read/network-security-pdf-notes',
+    path: '/read/network-security-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityLearningRoadmapRoute =
+  MarketingResourcesReadNetworkSecurityLearningRoadmapRouteImport.update({
+    id: '/read/network-security-learning-roadmap',
+    path: '/read/network-security-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityInterviewQuestionsRoute =
+  MarketingResourcesReadNetworkSecurityInterviewQuestionsRouteImport.update({
+    id: '/read/network-security-interview-questions',
+    path: '/read/network-security-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityGlossaryRoute =
+  MarketingResourcesReadNetworkSecurityGlossaryRouteImport.update({
+    id: '/read/network-security-glossary',
+    path: '/read/network-security-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRouteImport.update(
+    {
+      id: '/read/network-security-frequently-asked-questions',
+      path: '/read/network-security-frequently-asked-questions',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadNetworkSecurityCompleteTutorialRoute =
+  MarketingResourcesReadNetworkSecurityCompleteTutorialRouteImport.update({
+    id: '/read/network-security-complete-tutorial',
+    path: '/read/network-security-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityCommonMistakesRoute =
+  MarketingResourcesReadNetworkSecurityCommonMistakesRouteImport.update({
+    id: '/read/network-security-common-mistakes',
+    path: '/read/network-security-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityCheatSheetRoute =
+  MarketingResourcesReadNetworkSecurityCheatSheetRouteImport.update({
+    id: '/read/network-security-cheat-sheet',
+    path: '/read/network-security-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityBestPracticesRoute =
+  MarketingResourcesReadNetworkSecurityBestPracticesRouteImport.update({
+    id: '/read/network-security-best-practices',
+    path: '/read/network-security-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityBeginnerGuideRoute =
+  MarketingResourcesReadNetworkSecurityBeginnerGuideRouteImport.update({
+    id: '/read/network-security-beginner-guide',
+    path: '/read/network-security-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityAnswerKeyRoute =
+  MarketingResourcesReadNetworkSecurityAnswerKeyRouteImport.update({
+    id: '/read/network-security-answer-key',
+    path: '/read/network-security-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute =
+  MarketingResourcesReadNetworkSecurityAdvancedConceptsRouteImport.update({
+    id: '/read/network-security-advanced-concepts',
+    path: '/read/network-security-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlTipsTricksRoute =
@@ -3089,6 +3219,24 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/network-security-advanced-concepts': typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute
+  '/resources/read/network-security-answer-key': typeof MarketingResourcesReadNetworkSecurityAnswerKeyRoute
+  '/resources/read/network-security-beginner-guide': typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRoute
+  '/resources/read/network-security-best-practices': typeof MarketingResourcesReadNetworkSecurityBestPracticesRoute
+  '/resources/read/network-security-cheat-sheet': typeof MarketingResourcesReadNetworkSecurityCheatSheetRoute
+  '/resources/read/network-security-common-mistakes': typeof MarketingResourcesReadNetworkSecurityCommonMistakesRoute
+  '/resources/read/network-security-complete-tutorial': typeof MarketingResourcesReadNetworkSecurityCompleteTutorialRoute
+  '/resources/read/network-security-frequently-asked-questions': typeof MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRoute
+  '/resources/read/network-security-glossary': typeof MarketingResourcesReadNetworkSecurityGlossaryRoute
+  '/resources/read/network-security-interview-questions': typeof MarketingResourcesReadNetworkSecurityInterviewQuestionsRoute
+  '/resources/read/network-security-learning-roadmap': typeof MarketingResourcesReadNetworkSecurityLearningRoadmapRoute
+  '/resources/read/network-security-pdf-notes': typeof MarketingResourcesReadNetworkSecurityPdfNotesRoute
+  '/resources/read/network-security-practice-questions': typeof MarketingResourcesReadNetworkSecurityPracticeQuestionsRoute
+  '/resources/read/network-security-quick-revision-notes': typeof MarketingResourcesReadNetworkSecurityQuickRevisionNotesRoute
+  '/resources/read/network-security-real-world-case-study': typeof MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRoute
+  '/resources/read/network-security-reference-guide': typeof MarketingResourcesReadNetworkSecurityReferenceGuideRoute
+  '/resources/read/network-security-step-by-step-learning-guide': typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute
+  '/resources/read/network-security-tips-tricks': typeof MarketingResourcesReadNetworkSecurityTipsTricksRoute
   '/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -3492,6 +3640,24 @@ export interface FileRoutesByTo {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/network-security-advanced-concepts': typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute
+  '/resources/read/network-security-answer-key': typeof MarketingResourcesReadNetworkSecurityAnswerKeyRoute
+  '/resources/read/network-security-beginner-guide': typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRoute
+  '/resources/read/network-security-best-practices': typeof MarketingResourcesReadNetworkSecurityBestPracticesRoute
+  '/resources/read/network-security-cheat-sheet': typeof MarketingResourcesReadNetworkSecurityCheatSheetRoute
+  '/resources/read/network-security-common-mistakes': typeof MarketingResourcesReadNetworkSecurityCommonMistakesRoute
+  '/resources/read/network-security-complete-tutorial': typeof MarketingResourcesReadNetworkSecurityCompleteTutorialRoute
+  '/resources/read/network-security-frequently-asked-questions': typeof MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRoute
+  '/resources/read/network-security-glossary': typeof MarketingResourcesReadNetworkSecurityGlossaryRoute
+  '/resources/read/network-security-interview-questions': typeof MarketingResourcesReadNetworkSecurityInterviewQuestionsRoute
+  '/resources/read/network-security-learning-roadmap': typeof MarketingResourcesReadNetworkSecurityLearningRoadmapRoute
+  '/resources/read/network-security-pdf-notes': typeof MarketingResourcesReadNetworkSecurityPdfNotesRoute
+  '/resources/read/network-security-practice-questions': typeof MarketingResourcesReadNetworkSecurityPracticeQuestionsRoute
+  '/resources/read/network-security-quick-revision-notes': typeof MarketingResourcesReadNetworkSecurityQuickRevisionNotesRoute
+  '/resources/read/network-security-real-world-case-study': typeof MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRoute
+  '/resources/read/network-security-reference-guide': typeof MarketingResourcesReadNetworkSecurityReferenceGuideRoute
+  '/resources/read/network-security-step-by-step-learning-guide': typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute
+  '/resources/read/network-security-tips-tricks': typeof MarketingResourcesReadNetworkSecurityTipsTricksRoute
   '/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -3900,6 +4066,24 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/_marketing/resources/read/network-security-advanced-concepts': typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute
+  '/_marketing/resources/read/network-security-answer-key': typeof MarketingResourcesReadNetworkSecurityAnswerKeyRoute
+  '/_marketing/resources/read/network-security-beginner-guide': typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRoute
+  '/_marketing/resources/read/network-security-best-practices': typeof MarketingResourcesReadNetworkSecurityBestPracticesRoute
+  '/_marketing/resources/read/network-security-cheat-sheet': typeof MarketingResourcesReadNetworkSecurityCheatSheetRoute
+  '/_marketing/resources/read/network-security-common-mistakes': typeof MarketingResourcesReadNetworkSecurityCommonMistakesRoute
+  '/_marketing/resources/read/network-security-complete-tutorial': typeof MarketingResourcesReadNetworkSecurityCompleteTutorialRoute
+  '/_marketing/resources/read/network-security-frequently-asked-questions': typeof MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/network-security-glossary': typeof MarketingResourcesReadNetworkSecurityGlossaryRoute
+  '/_marketing/resources/read/network-security-interview-questions': typeof MarketingResourcesReadNetworkSecurityInterviewQuestionsRoute
+  '/_marketing/resources/read/network-security-learning-roadmap': typeof MarketingResourcesReadNetworkSecurityLearningRoadmapRoute
+  '/_marketing/resources/read/network-security-pdf-notes': typeof MarketingResourcesReadNetworkSecurityPdfNotesRoute
+  '/_marketing/resources/read/network-security-practice-questions': typeof MarketingResourcesReadNetworkSecurityPracticeQuestionsRoute
+  '/_marketing/resources/read/network-security-quick-revision-notes': typeof MarketingResourcesReadNetworkSecurityQuickRevisionNotesRoute
+  '/_marketing/resources/read/network-security-real-world-case-study': typeof MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRoute
+  '/_marketing/resources/read/network-security-reference-guide': typeof MarketingResourcesReadNetworkSecurityReferenceGuideRoute
+  '/_marketing/resources/read/network-security-step-by-step-learning-guide': typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute
+  '/_marketing/resources/read/network-security-tips-tricks': typeof MarketingResourcesReadNetworkSecurityTipsTricksRoute
   '/_marketing/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/_marketing/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/_marketing/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -4306,6 +4490,24 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/network-security-advanced-concepts'
+    | '/resources/read/network-security-answer-key'
+    | '/resources/read/network-security-beginner-guide'
+    | '/resources/read/network-security-best-practices'
+    | '/resources/read/network-security-cheat-sheet'
+    | '/resources/read/network-security-common-mistakes'
+    | '/resources/read/network-security-complete-tutorial'
+    | '/resources/read/network-security-frequently-asked-questions'
+    | '/resources/read/network-security-glossary'
+    | '/resources/read/network-security-interview-questions'
+    | '/resources/read/network-security-learning-roadmap'
+    | '/resources/read/network-security-pdf-notes'
+    | '/resources/read/network-security-practice-questions'
+    | '/resources/read/network-security-quick-revision-notes'
+    | '/resources/read/network-security-real-world-case-study'
+    | '/resources/read/network-security-reference-guide'
+    | '/resources/read/network-security-step-by-step-learning-guide'
+    | '/resources/read/network-security-tips-tricks'
     | '/resources/read/operating-systems-advanced-concepts'
     | '/resources/read/operating-systems-answer-key'
     | '/resources/read/operating-systems-beginner-guide'
@@ -4709,6 +4911,24 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/network-security-advanced-concepts'
+    | '/resources/read/network-security-answer-key'
+    | '/resources/read/network-security-beginner-guide'
+    | '/resources/read/network-security-best-practices'
+    | '/resources/read/network-security-cheat-sheet'
+    | '/resources/read/network-security-common-mistakes'
+    | '/resources/read/network-security-complete-tutorial'
+    | '/resources/read/network-security-frequently-asked-questions'
+    | '/resources/read/network-security-glossary'
+    | '/resources/read/network-security-interview-questions'
+    | '/resources/read/network-security-learning-roadmap'
+    | '/resources/read/network-security-pdf-notes'
+    | '/resources/read/network-security-practice-questions'
+    | '/resources/read/network-security-quick-revision-notes'
+    | '/resources/read/network-security-real-world-case-study'
+    | '/resources/read/network-security-reference-guide'
+    | '/resources/read/network-security-step-by-step-learning-guide'
+    | '/resources/read/network-security-tips-tricks'
     | '/resources/read/operating-systems-advanced-concepts'
     | '/resources/read/operating-systems-answer-key'
     | '/resources/read/operating-systems-beginner-guide'
@@ -5116,6 +5336,24 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-sample-exercises'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-tips-tricks'
+    | '/_marketing/resources/read/network-security-advanced-concepts'
+    | '/_marketing/resources/read/network-security-answer-key'
+    | '/_marketing/resources/read/network-security-beginner-guide'
+    | '/_marketing/resources/read/network-security-best-practices'
+    | '/_marketing/resources/read/network-security-cheat-sheet'
+    | '/_marketing/resources/read/network-security-common-mistakes'
+    | '/_marketing/resources/read/network-security-complete-tutorial'
+    | '/_marketing/resources/read/network-security-frequently-asked-questions'
+    | '/_marketing/resources/read/network-security-glossary'
+    | '/_marketing/resources/read/network-security-interview-questions'
+    | '/_marketing/resources/read/network-security-learning-roadmap'
+    | '/_marketing/resources/read/network-security-pdf-notes'
+    | '/_marketing/resources/read/network-security-practice-questions'
+    | '/_marketing/resources/read/network-security-quick-revision-notes'
+    | '/_marketing/resources/read/network-security-real-world-case-study'
+    | '/_marketing/resources/read/network-security-reference-guide'
+    | '/_marketing/resources/read/network-security-step-by-step-learning-guide'
+    | '/_marketing/resources/read/network-security-tips-tricks'
     | '/_marketing/resources/read/operating-systems-advanced-concepts'
     | '/_marketing/resources/read/operating-systems-answer-key'
     | '/_marketing/resources/read/operating-systems-beginner-guide'
@@ -6505,6 +6743,132 @@ declare module '@tanstack/react-router' {
       path: '/read/operating-systems-advanced-concepts'
       fullPath: '/resources/read/operating-systems-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-tips-tricks': {
+      id: '/_marketing/resources/read/network-security-tips-tricks'
+      path: '/read/network-security-tips-tricks'
+      fullPath: '/resources/read/network-security-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/network-security-step-by-step-learning-guide'
+      path: '/read/network-security-step-by-step-learning-guide'
+      fullPath: '/resources/read/network-security-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-reference-guide': {
+      id: '/_marketing/resources/read/network-security-reference-guide'
+      path: '/read/network-security-reference-guide'
+      fullPath: '/resources/read/network-security-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-real-world-case-study': {
+      id: '/_marketing/resources/read/network-security-real-world-case-study'
+      path: '/read/network-security-real-world-case-study'
+      fullPath: '/resources/read/network-security-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-quick-revision-notes': {
+      id: '/_marketing/resources/read/network-security-quick-revision-notes'
+      path: '/read/network-security-quick-revision-notes'
+      fullPath: '/resources/read/network-security-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-practice-questions': {
+      id: '/_marketing/resources/read/network-security-practice-questions'
+      path: '/read/network-security-practice-questions'
+      fullPath: '/resources/read/network-security-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-pdf-notes': {
+      id: '/_marketing/resources/read/network-security-pdf-notes'
+      path: '/read/network-security-pdf-notes'
+      fullPath: '/resources/read/network-security-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-learning-roadmap': {
+      id: '/_marketing/resources/read/network-security-learning-roadmap'
+      path: '/read/network-security-learning-roadmap'
+      fullPath: '/resources/read/network-security-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-interview-questions': {
+      id: '/_marketing/resources/read/network-security-interview-questions'
+      path: '/read/network-security-interview-questions'
+      fullPath: '/resources/read/network-security-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-glossary': {
+      id: '/_marketing/resources/read/network-security-glossary'
+      path: '/read/network-security-glossary'
+      fullPath: '/resources/read/network-security-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-frequently-asked-questions': {
+      id: '/_marketing/resources/read/network-security-frequently-asked-questions'
+      path: '/read/network-security-frequently-asked-questions'
+      fullPath: '/resources/read/network-security-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-complete-tutorial': {
+      id: '/_marketing/resources/read/network-security-complete-tutorial'
+      path: '/read/network-security-complete-tutorial'
+      fullPath: '/resources/read/network-security-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-common-mistakes': {
+      id: '/_marketing/resources/read/network-security-common-mistakes'
+      path: '/read/network-security-common-mistakes'
+      fullPath: '/resources/read/network-security-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-cheat-sheet': {
+      id: '/_marketing/resources/read/network-security-cheat-sheet'
+      path: '/read/network-security-cheat-sheet'
+      fullPath: '/resources/read/network-security-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-best-practices': {
+      id: '/_marketing/resources/read/network-security-best-practices'
+      path: '/read/network-security-best-practices'
+      fullPath: '/resources/read/network-security-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-beginner-guide': {
+      id: '/_marketing/resources/read/network-security-beginner-guide'
+      path: '/read/network-security-beginner-guide'
+      fullPath: '/resources/read/network-security-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-answer-key': {
+      id: '/_marketing/resources/read/network-security-answer-key'
+      path: '/read/network-security-answer-key'
+      fullPath: '/resources/read/network-security-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/network-security-advanced-concepts': {
+      id: '/_marketing/resources/read/network-security-advanced-concepts'
+      path: '/read/network-security-advanced-concepts'
+      fullPath: '/resources/read/network-security-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-tips-tricks': {
@@ -8462,6 +8826,24 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlSampleExercisesRoute: typeof MarketingResourcesReadMlSampleExercisesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   MarketingResourcesReadMlTipsTricksRoute: typeof MarketingResourcesReadMlTipsTricksRoute
+  MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute: typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute
+  MarketingResourcesReadNetworkSecurityAnswerKeyRoute: typeof MarketingResourcesReadNetworkSecurityAnswerKeyRoute
+  MarketingResourcesReadNetworkSecurityBeginnerGuideRoute: typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRoute
+  MarketingResourcesReadNetworkSecurityBestPracticesRoute: typeof MarketingResourcesReadNetworkSecurityBestPracticesRoute
+  MarketingResourcesReadNetworkSecurityCheatSheetRoute: typeof MarketingResourcesReadNetworkSecurityCheatSheetRoute
+  MarketingResourcesReadNetworkSecurityCommonMistakesRoute: typeof MarketingResourcesReadNetworkSecurityCommonMistakesRoute
+  MarketingResourcesReadNetworkSecurityCompleteTutorialRoute: typeof MarketingResourcesReadNetworkSecurityCompleteTutorialRoute
+  MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadNetworkSecurityGlossaryRoute: typeof MarketingResourcesReadNetworkSecurityGlossaryRoute
+  MarketingResourcesReadNetworkSecurityInterviewQuestionsRoute: typeof MarketingResourcesReadNetworkSecurityInterviewQuestionsRoute
+  MarketingResourcesReadNetworkSecurityLearningRoadmapRoute: typeof MarketingResourcesReadNetworkSecurityLearningRoadmapRoute
+  MarketingResourcesReadNetworkSecurityPdfNotesRoute: typeof MarketingResourcesReadNetworkSecurityPdfNotesRoute
+  MarketingResourcesReadNetworkSecurityPracticeQuestionsRoute: typeof MarketingResourcesReadNetworkSecurityPracticeQuestionsRoute
+  MarketingResourcesReadNetworkSecurityQuickRevisionNotesRoute: typeof MarketingResourcesReadNetworkSecurityQuickRevisionNotesRoute
+  MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRoute: typeof MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRoute
+  MarketingResourcesReadNetworkSecurityReferenceGuideRoute: typeof MarketingResourcesReadNetworkSecurityReferenceGuideRoute
+  MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute: typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute
+  MarketingResourcesReadNetworkSecurityTipsTricksRoute: typeof MarketingResourcesReadNetworkSecurityTipsTricksRoute
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute: typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   MarketingResourcesReadOperatingSystemsAnswerKeyRoute: typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   MarketingResourcesReadOperatingSystemsBeginnerGuideRoute: typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -9023,6 +9405,42 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlStepByStepLearningGuideRoute,
   MarketingResourcesReadMlTipsTricksRoute:
     MarketingResourcesReadMlTipsTricksRoute,
+  MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute:
+    MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute,
+  MarketingResourcesReadNetworkSecurityAnswerKeyRoute:
+    MarketingResourcesReadNetworkSecurityAnswerKeyRoute,
+  MarketingResourcesReadNetworkSecurityBeginnerGuideRoute:
+    MarketingResourcesReadNetworkSecurityBeginnerGuideRoute,
+  MarketingResourcesReadNetworkSecurityBestPracticesRoute:
+    MarketingResourcesReadNetworkSecurityBestPracticesRoute,
+  MarketingResourcesReadNetworkSecurityCheatSheetRoute:
+    MarketingResourcesReadNetworkSecurityCheatSheetRoute,
+  MarketingResourcesReadNetworkSecurityCommonMistakesRoute:
+    MarketingResourcesReadNetworkSecurityCommonMistakesRoute,
+  MarketingResourcesReadNetworkSecurityCompleteTutorialRoute:
+    MarketingResourcesReadNetworkSecurityCompleteTutorialRoute,
+  MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadNetworkSecurityFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadNetworkSecurityGlossaryRoute:
+    MarketingResourcesReadNetworkSecurityGlossaryRoute,
+  MarketingResourcesReadNetworkSecurityInterviewQuestionsRoute:
+    MarketingResourcesReadNetworkSecurityInterviewQuestionsRoute,
+  MarketingResourcesReadNetworkSecurityLearningRoadmapRoute:
+    MarketingResourcesReadNetworkSecurityLearningRoadmapRoute,
+  MarketingResourcesReadNetworkSecurityPdfNotesRoute:
+    MarketingResourcesReadNetworkSecurityPdfNotesRoute,
+  MarketingResourcesReadNetworkSecurityPracticeQuestionsRoute:
+    MarketingResourcesReadNetworkSecurityPracticeQuestionsRoute,
+  MarketingResourcesReadNetworkSecurityQuickRevisionNotesRoute:
+    MarketingResourcesReadNetworkSecurityQuickRevisionNotesRoute,
+  MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRoute:
+    MarketingResourcesReadNetworkSecurityRealWorldCaseStudyRoute,
+  MarketingResourcesReadNetworkSecurityReferenceGuideRoute:
+    MarketingResourcesReadNetworkSecurityReferenceGuideRoute,
+  MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute:
+    MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute,
+  MarketingResourcesReadNetworkSecurityTipsTricksRoute:
+    MarketingResourcesReadNetworkSecurityTipsTricksRoute,
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute:
     MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute,
   MarketingResourcesReadOperatingSystemsAnswerKeyRoute:
