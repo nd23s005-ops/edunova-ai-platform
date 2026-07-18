@@ -125,6 +125,24 @@ import { Route as MarketingResourcesReadReactBestPracticesRouteImport } from './
 import { Route as MarketingResourcesReadReactBeginnerGuideRouteImport } from './routes/_marketing.resources.read.react-beginner-guide'
 import { Route as MarketingResourcesReadReactAnswerKeyRouteImport } from './routes/_marketing.resources.read.react-answer-key'
 import { Route as MarketingResourcesReadReactAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.react-advanced-concepts'
+import { Route as MarketingResourcesReadPenetrationTestingTipsTricksRouteImport } from './routes/_marketing.resources.read.penetration-testing-tips-tricks'
+import { Route as MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.penetration-testing-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadPenetrationTestingSampleExercisesRouteImport } from './routes/_marketing.resources.read.penetration-testing-sample-exercises'
+import { Route as MarketingResourcesReadPenetrationTestingReferenceGuideRouteImport } from './routes/_marketing.resources.read.penetration-testing-reference-guide'
+import { Route as MarketingResourcesReadPenetrationTestingQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.penetration-testing-quick-revision-notes'
+import { Route as MarketingResourcesReadPenetrationTestingProjectGuideRouteImport } from './routes/_marketing.resources.read.penetration-testing-project-guide'
+import { Route as MarketingResourcesReadPenetrationTestingProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.penetration-testing-project-case-study'
+import { Route as MarketingResourcesReadPenetrationTestingPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.penetration-testing-practice-questions'
+import { Route as MarketingResourcesReadPenetrationTestingPdfNotesRouteImport } from './routes/_marketing.resources.read.penetration-testing-pdf-notes'
+import { Route as MarketingResourcesReadPenetrationTestingLearningRoadmapRouteImport } from './routes/_marketing.resources.read.penetration-testing-learning-roadmap'
+import { Route as MarketingResourcesReadPenetrationTestingInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.penetration-testing-interview-questions'
+import { Route as MarketingResourcesReadPenetrationTestingGlossaryRouteImport } from './routes/_marketing.resources.read.penetration-testing-glossary'
+import { Route as MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.penetration-testing-frequently-asked-questions'
+import { Route as MarketingResourcesReadPenetrationTestingCompleteTutorialRouteImport } from './routes/_marketing.resources.read.penetration-testing-complete-tutorial'
+import { Route as MarketingResourcesReadPenetrationTestingCheatSheetRouteImport } from './routes/_marketing.resources.read.penetration-testing-cheat-sheet'
+import { Route as MarketingResourcesReadPenetrationTestingBeginnerGuideRouteImport } from './routes/_marketing.resources.read.penetration-testing-beginner-guide'
+import { Route as MarketingResourcesReadPenetrationTestingAnswerKeyRouteImport } from './routes/_marketing.resources.read.penetration-testing-answer-key'
+import { Route as MarketingResourcesReadPenetrationTestingAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.penetration-testing-advanced-concepts'
 import { Route as MarketingResourcesReadPeTipsTricksRouteImport } from './routes/_marketing.resources.read.pe-tips-tricks'
 import { Route as MarketingResourcesReadPeStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pe-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPeSampleExercisesRouteImport } from './routes/_marketing.resources.read.pe-sample-exercises'
@@ -1058,6 +1076,118 @@ const MarketingResourcesReadReactAdvancedConceptsRoute =
   MarketingResourcesReadReactAdvancedConceptsRouteImport.update({
     id: '/read/react-advanced-concepts',
     path: '/read/react-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingTipsTricksRoute =
+  MarketingResourcesReadPenetrationTestingTipsTricksRouteImport.update({
+    id: '/read/penetration-testing-tips-tricks',
+    path: '/read/penetration-testing-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute =
+  MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRouteImport.update(
+    {
+      id: '/read/penetration-testing-step-by-step-learning-guide',
+      path: '/read/penetration-testing-step-by-step-learning-guide',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadPenetrationTestingSampleExercisesRoute =
+  MarketingResourcesReadPenetrationTestingSampleExercisesRouteImport.update({
+    id: '/read/penetration-testing-sample-exercises',
+    path: '/read/penetration-testing-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingReferenceGuideRoute =
+  MarketingResourcesReadPenetrationTestingReferenceGuideRouteImport.update({
+    id: '/read/penetration-testing-reference-guide',
+    path: '/read/penetration-testing-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingQuickRevisionNotesRoute =
+  MarketingResourcesReadPenetrationTestingQuickRevisionNotesRouteImport.update({
+    id: '/read/penetration-testing-quick-revision-notes',
+    path: '/read/penetration-testing-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingProjectGuideRoute =
+  MarketingResourcesReadPenetrationTestingProjectGuideRouteImport.update({
+    id: '/read/penetration-testing-project-guide',
+    path: '/read/penetration-testing-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingProjectCaseStudyRoute =
+  MarketingResourcesReadPenetrationTestingProjectCaseStudyRouteImport.update({
+    id: '/read/penetration-testing-project-case-study',
+    path: '/read/penetration-testing-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingPracticeQuestionsRoute =
+  MarketingResourcesReadPenetrationTestingPracticeQuestionsRouteImport.update({
+    id: '/read/penetration-testing-practice-questions',
+    path: '/read/penetration-testing-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingPdfNotesRoute =
+  MarketingResourcesReadPenetrationTestingPdfNotesRouteImport.update({
+    id: '/read/penetration-testing-pdf-notes',
+    path: '/read/penetration-testing-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingLearningRoadmapRoute =
+  MarketingResourcesReadPenetrationTestingLearningRoadmapRouteImport.update({
+    id: '/read/penetration-testing-learning-roadmap',
+    path: '/read/penetration-testing-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingInterviewQuestionsRoute =
+  MarketingResourcesReadPenetrationTestingInterviewQuestionsRouteImport.update({
+    id: '/read/penetration-testing-interview-questions',
+    path: '/read/penetration-testing-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingGlossaryRoute =
+  MarketingResourcesReadPenetrationTestingGlossaryRouteImport.update({
+    id: '/read/penetration-testing-glossary',
+    path: '/read/penetration-testing-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRouteImport.update(
+    {
+      id: '/read/penetration-testing-frequently-asked-questions',
+      path: '/read/penetration-testing-frequently-asked-questions',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadPenetrationTestingCompleteTutorialRoute =
+  MarketingResourcesReadPenetrationTestingCompleteTutorialRouteImport.update({
+    id: '/read/penetration-testing-complete-tutorial',
+    path: '/read/penetration-testing-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingCheatSheetRoute =
+  MarketingResourcesReadPenetrationTestingCheatSheetRouteImport.update({
+    id: '/read/penetration-testing-cheat-sheet',
+    path: '/read/penetration-testing-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingBeginnerGuideRoute =
+  MarketingResourcesReadPenetrationTestingBeginnerGuideRouteImport.update({
+    id: '/read/penetration-testing-beginner-guide',
+    path: '/read/penetration-testing-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingAnswerKeyRoute =
+  MarketingResourcesReadPenetrationTestingAnswerKeyRouteImport.update({
+    id: '/read/penetration-testing-answer-key',
+    path: '/read/penetration-testing-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPenetrationTestingAdvancedConceptsRoute =
+  MarketingResourcesReadPenetrationTestingAdvancedConceptsRouteImport.update({
+    id: '/read/penetration-testing-advanced-concepts',
+    path: '/read/penetration-testing-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeTipsTricksRoute =
@@ -3001,6 +3131,24 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/penetration-testing-advanced-concepts': typeof MarketingResourcesReadPenetrationTestingAdvancedConceptsRoute
+  '/resources/read/penetration-testing-answer-key': typeof MarketingResourcesReadPenetrationTestingAnswerKeyRoute
+  '/resources/read/penetration-testing-beginner-guide': typeof MarketingResourcesReadPenetrationTestingBeginnerGuideRoute
+  '/resources/read/penetration-testing-cheat-sheet': typeof MarketingResourcesReadPenetrationTestingCheatSheetRoute
+  '/resources/read/penetration-testing-complete-tutorial': typeof MarketingResourcesReadPenetrationTestingCompleteTutorialRoute
+  '/resources/read/penetration-testing-frequently-asked-questions': typeof MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRoute
+  '/resources/read/penetration-testing-glossary': typeof MarketingResourcesReadPenetrationTestingGlossaryRoute
+  '/resources/read/penetration-testing-interview-questions': typeof MarketingResourcesReadPenetrationTestingInterviewQuestionsRoute
+  '/resources/read/penetration-testing-learning-roadmap': typeof MarketingResourcesReadPenetrationTestingLearningRoadmapRoute
+  '/resources/read/penetration-testing-pdf-notes': typeof MarketingResourcesReadPenetrationTestingPdfNotesRoute
+  '/resources/read/penetration-testing-practice-questions': typeof MarketingResourcesReadPenetrationTestingPracticeQuestionsRoute
+  '/resources/read/penetration-testing-project-case-study': typeof MarketingResourcesReadPenetrationTestingProjectCaseStudyRoute
+  '/resources/read/penetration-testing-project-guide': typeof MarketingResourcesReadPenetrationTestingProjectGuideRoute
+  '/resources/read/penetration-testing-quick-revision-notes': typeof MarketingResourcesReadPenetrationTestingQuickRevisionNotesRoute
+  '/resources/read/penetration-testing-reference-guide': typeof MarketingResourcesReadPenetrationTestingReferenceGuideRoute
+  '/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
+  '/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
+  '/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
   '/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -3386,6 +3534,24 @@ export interface FileRoutesByTo {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/penetration-testing-advanced-concepts': typeof MarketingResourcesReadPenetrationTestingAdvancedConceptsRoute
+  '/resources/read/penetration-testing-answer-key': typeof MarketingResourcesReadPenetrationTestingAnswerKeyRoute
+  '/resources/read/penetration-testing-beginner-guide': typeof MarketingResourcesReadPenetrationTestingBeginnerGuideRoute
+  '/resources/read/penetration-testing-cheat-sheet': typeof MarketingResourcesReadPenetrationTestingCheatSheetRoute
+  '/resources/read/penetration-testing-complete-tutorial': typeof MarketingResourcesReadPenetrationTestingCompleteTutorialRoute
+  '/resources/read/penetration-testing-frequently-asked-questions': typeof MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRoute
+  '/resources/read/penetration-testing-glossary': typeof MarketingResourcesReadPenetrationTestingGlossaryRoute
+  '/resources/read/penetration-testing-interview-questions': typeof MarketingResourcesReadPenetrationTestingInterviewQuestionsRoute
+  '/resources/read/penetration-testing-learning-roadmap': typeof MarketingResourcesReadPenetrationTestingLearningRoadmapRoute
+  '/resources/read/penetration-testing-pdf-notes': typeof MarketingResourcesReadPenetrationTestingPdfNotesRoute
+  '/resources/read/penetration-testing-practice-questions': typeof MarketingResourcesReadPenetrationTestingPracticeQuestionsRoute
+  '/resources/read/penetration-testing-project-case-study': typeof MarketingResourcesReadPenetrationTestingProjectCaseStudyRoute
+  '/resources/read/penetration-testing-project-guide': typeof MarketingResourcesReadPenetrationTestingProjectGuideRoute
+  '/resources/read/penetration-testing-quick-revision-notes': typeof MarketingResourcesReadPenetrationTestingQuickRevisionNotesRoute
+  '/resources/read/penetration-testing-reference-guide': typeof MarketingResourcesReadPenetrationTestingReferenceGuideRoute
+  '/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
+  '/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
+  '/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
   '/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -3776,6 +3942,24 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/_marketing/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/_marketing/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/_marketing/resources/read/penetration-testing-advanced-concepts': typeof MarketingResourcesReadPenetrationTestingAdvancedConceptsRoute
+  '/_marketing/resources/read/penetration-testing-answer-key': typeof MarketingResourcesReadPenetrationTestingAnswerKeyRoute
+  '/_marketing/resources/read/penetration-testing-beginner-guide': typeof MarketingResourcesReadPenetrationTestingBeginnerGuideRoute
+  '/_marketing/resources/read/penetration-testing-cheat-sheet': typeof MarketingResourcesReadPenetrationTestingCheatSheetRoute
+  '/_marketing/resources/read/penetration-testing-complete-tutorial': typeof MarketingResourcesReadPenetrationTestingCompleteTutorialRoute
+  '/_marketing/resources/read/penetration-testing-frequently-asked-questions': typeof MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/penetration-testing-glossary': typeof MarketingResourcesReadPenetrationTestingGlossaryRoute
+  '/_marketing/resources/read/penetration-testing-interview-questions': typeof MarketingResourcesReadPenetrationTestingInterviewQuestionsRoute
+  '/_marketing/resources/read/penetration-testing-learning-roadmap': typeof MarketingResourcesReadPenetrationTestingLearningRoadmapRoute
+  '/_marketing/resources/read/penetration-testing-pdf-notes': typeof MarketingResourcesReadPenetrationTestingPdfNotesRoute
+  '/_marketing/resources/read/penetration-testing-practice-questions': typeof MarketingResourcesReadPenetrationTestingPracticeQuestionsRoute
+  '/_marketing/resources/read/penetration-testing-project-case-study': typeof MarketingResourcesReadPenetrationTestingProjectCaseStudyRoute
+  '/_marketing/resources/read/penetration-testing-project-guide': typeof MarketingResourcesReadPenetrationTestingProjectGuideRoute
+  '/_marketing/resources/read/penetration-testing-quick-revision-notes': typeof MarketingResourcesReadPenetrationTestingQuickRevisionNotesRoute
+  '/_marketing/resources/read/penetration-testing-reference-guide': typeof MarketingResourcesReadPenetrationTestingReferenceGuideRoute
+  '/_marketing/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
+  '/_marketing/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
+  '/_marketing/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
   '/_marketing/resources/read/react-advanced-concepts': typeof MarketingResourcesReadReactAdvancedConceptsRoute
   '/_marketing/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
   '/_marketing/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -4164,6 +4348,24 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/penetration-testing-advanced-concepts'
+    | '/resources/read/penetration-testing-answer-key'
+    | '/resources/read/penetration-testing-beginner-guide'
+    | '/resources/read/penetration-testing-cheat-sheet'
+    | '/resources/read/penetration-testing-complete-tutorial'
+    | '/resources/read/penetration-testing-frequently-asked-questions'
+    | '/resources/read/penetration-testing-glossary'
+    | '/resources/read/penetration-testing-interview-questions'
+    | '/resources/read/penetration-testing-learning-roadmap'
+    | '/resources/read/penetration-testing-pdf-notes'
+    | '/resources/read/penetration-testing-practice-questions'
+    | '/resources/read/penetration-testing-project-case-study'
+    | '/resources/read/penetration-testing-project-guide'
+    | '/resources/read/penetration-testing-quick-revision-notes'
+    | '/resources/read/penetration-testing-reference-guide'
+    | '/resources/read/penetration-testing-sample-exercises'
+    | '/resources/read/penetration-testing-step-by-step-learning-guide'
+    | '/resources/read/penetration-testing-tips-tricks'
     | '/resources/read/react-advanced-concepts'
     | '/resources/read/react-answer-key'
     | '/resources/read/react-beginner-guide'
@@ -4549,6 +4751,24 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/penetration-testing-advanced-concepts'
+    | '/resources/read/penetration-testing-answer-key'
+    | '/resources/read/penetration-testing-beginner-guide'
+    | '/resources/read/penetration-testing-cheat-sheet'
+    | '/resources/read/penetration-testing-complete-tutorial'
+    | '/resources/read/penetration-testing-frequently-asked-questions'
+    | '/resources/read/penetration-testing-glossary'
+    | '/resources/read/penetration-testing-interview-questions'
+    | '/resources/read/penetration-testing-learning-roadmap'
+    | '/resources/read/penetration-testing-pdf-notes'
+    | '/resources/read/penetration-testing-practice-questions'
+    | '/resources/read/penetration-testing-project-case-study'
+    | '/resources/read/penetration-testing-project-guide'
+    | '/resources/read/penetration-testing-quick-revision-notes'
+    | '/resources/read/penetration-testing-reference-guide'
+    | '/resources/read/penetration-testing-sample-exercises'
+    | '/resources/read/penetration-testing-step-by-step-learning-guide'
+    | '/resources/read/penetration-testing-tips-tricks'
     | '/resources/read/react-advanced-concepts'
     | '/resources/read/react-answer-key'
     | '/resources/read/react-beginner-guide'
@@ -4938,6 +5158,24 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-sample-exercises'
     | '/_marketing/resources/read/pe-step-by-step-learning-guide'
     | '/_marketing/resources/read/pe-tips-tricks'
+    | '/_marketing/resources/read/penetration-testing-advanced-concepts'
+    | '/_marketing/resources/read/penetration-testing-answer-key'
+    | '/_marketing/resources/read/penetration-testing-beginner-guide'
+    | '/_marketing/resources/read/penetration-testing-cheat-sheet'
+    | '/_marketing/resources/read/penetration-testing-complete-tutorial'
+    | '/_marketing/resources/read/penetration-testing-frequently-asked-questions'
+    | '/_marketing/resources/read/penetration-testing-glossary'
+    | '/_marketing/resources/read/penetration-testing-interview-questions'
+    | '/_marketing/resources/read/penetration-testing-learning-roadmap'
+    | '/_marketing/resources/read/penetration-testing-pdf-notes'
+    | '/_marketing/resources/read/penetration-testing-practice-questions'
+    | '/_marketing/resources/read/penetration-testing-project-case-study'
+    | '/_marketing/resources/read/penetration-testing-project-guide'
+    | '/_marketing/resources/read/penetration-testing-quick-revision-notes'
+    | '/_marketing/resources/read/penetration-testing-reference-guide'
+    | '/_marketing/resources/read/penetration-testing-sample-exercises'
+    | '/_marketing/resources/read/penetration-testing-step-by-step-learning-guide'
+    | '/_marketing/resources/read/penetration-testing-tips-tricks'
     | '/_marketing/resources/read/react-advanced-concepts'
     | '/_marketing/resources/read/react-answer-key'
     | '/_marketing/resources/read/react-beginner-guide'
@@ -5847,6 +6085,132 @@ declare module '@tanstack/react-router' {
       path: '/read/react-advanced-concepts'
       fullPath: '/resources/read/react-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadReactAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-tips-tricks': {
+      id: '/_marketing/resources/read/penetration-testing-tips-tricks'
+      path: '/read/penetration-testing-tips-tricks'
+      fullPath: '/resources/read/penetration-testing-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/penetration-testing-step-by-step-learning-guide'
+      path: '/read/penetration-testing-step-by-step-learning-guide'
+      fullPath: '/resources/read/penetration-testing-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-sample-exercises': {
+      id: '/_marketing/resources/read/penetration-testing-sample-exercises'
+      path: '/read/penetration-testing-sample-exercises'
+      fullPath: '/resources/read/penetration-testing-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-reference-guide': {
+      id: '/_marketing/resources/read/penetration-testing-reference-guide'
+      path: '/read/penetration-testing-reference-guide'
+      fullPath: '/resources/read/penetration-testing-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-quick-revision-notes': {
+      id: '/_marketing/resources/read/penetration-testing-quick-revision-notes'
+      path: '/read/penetration-testing-quick-revision-notes'
+      fullPath: '/resources/read/penetration-testing-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-project-guide': {
+      id: '/_marketing/resources/read/penetration-testing-project-guide'
+      path: '/read/penetration-testing-project-guide'
+      fullPath: '/resources/read/penetration-testing-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-project-case-study': {
+      id: '/_marketing/resources/read/penetration-testing-project-case-study'
+      path: '/read/penetration-testing-project-case-study'
+      fullPath: '/resources/read/penetration-testing-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-practice-questions': {
+      id: '/_marketing/resources/read/penetration-testing-practice-questions'
+      path: '/read/penetration-testing-practice-questions'
+      fullPath: '/resources/read/penetration-testing-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-pdf-notes': {
+      id: '/_marketing/resources/read/penetration-testing-pdf-notes'
+      path: '/read/penetration-testing-pdf-notes'
+      fullPath: '/resources/read/penetration-testing-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-learning-roadmap': {
+      id: '/_marketing/resources/read/penetration-testing-learning-roadmap'
+      path: '/read/penetration-testing-learning-roadmap'
+      fullPath: '/resources/read/penetration-testing-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-interview-questions': {
+      id: '/_marketing/resources/read/penetration-testing-interview-questions'
+      path: '/read/penetration-testing-interview-questions'
+      fullPath: '/resources/read/penetration-testing-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-glossary': {
+      id: '/_marketing/resources/read/penetration-testing-glossary'
+      path: '/read/penetration-testing-glossary'
+      fullPath: '/resources/read/penetration-testing-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-frequently-asked-questions': {
+      id: '/_marketing/resources/read/penetration-testing-frequently-asked-questions'
+      path: '/read/penetration-testing-frequently-asked-questions'
+      fullPath: '/resources/read/penetration-testing-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-complete-tutorial': {
+      id: '/_marketing/resources/read/penetration-testing-complete-tutorial'
+      path: '/read/penetration-testing-complete-tutorial'
+      fullPath: '/resources/read/penetration-testing-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-cheat-sheet': {
+      id: '/_marketing/resources/read/penetration-testing-cheat-sheet'
+      path: '/read/penetration-testing-cheat-sheet'
+      fullPath: '/resources/read/penetration-testing-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-beginner-guide': {
+      id: '/_marketing/resources/read/penetration-testing-beginner-guide'
+      path: '/read/penetration-testing-beginner-guide'
+      fullPath: '/resources/read/penetration-testing-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-answer-key': {
+      id: '/_marketing/resources/read/penetration-testing-answer-key'
+      path: '/read/penetration-testing-answer-key'
+      fullPath: '/resources/read/penetration-testing-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/penetration-testing-advanced-concepts': {
+      id: '/_marketing/resources/read/penetration-testing-advanced-concepts'
+      path: '/read/penetration-testing-advanced-concepts'
+      fullPath: '/resources/read/penetration-testing-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadPenetrationTestingAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-tips-tricks': {
@@ -8140,6 +8504,24 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeSampleExercisesRoute: typeof MarketingResourcesReadPeSampleExercisesRoute
   MarketingResourcesReadPeStepByStepLearningGuideRoute: typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   MarketingResourcesReadPeTipsTricksRoute: typeof MarketingResourcesReadPeTipsTricksRoute
+  MarketingResourcesReadPenetrationTestingAdvancedConceptsRoute: typeof MarketingResourcesReadPenetrationTestingAdvancedConceptsRoute
+  MarketingResourcesReadPenetrationTestingAnswerKeyRoute: typeof MarketingResourcesReadPenetrationTestingAnswerKeyRoute
+  MarketingResourcesReadPenetrationTestingBeginnerGuideRoute: typeof MarketingResourcesReadPenetrationTestingBeginnerGuideRoute
+  MarketingResourcesReadPenetrationTestingCheatSheetRoute: typeof MarketingResourcesReadPenetrationTestingCheatSheetRoute
+  MarketingResourcesReadPenetrationTestingCompleteTutorialRoute: typeof MarketingResourcesReadPenetrationTestingCompleteTutorialRoute
+  MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadPenetrationTestingGlossaryRoute: typeof MarketingResourcesReadPenetrationTestingGlossaryRoute
+  MarketingResourcesReadPenetrationTestingInterviewQuestionsRoute: typeof MarketingResourcesReadPenetrationTestingInterviewQuestionsRoute
+  MarketingResourcesReadPenetrationTestingLearningRoadmapRoute: typeof MarketingResourcesReadPenetrationTestingLearningRoadmapRoute
+  MarketingResourcesReadPenetrationTestingPdfNotesRoute: typeof MarketingResourcesReadPenetrationTestingPdfNotesRoute
+  MarketingResourcesReadPenetrationTestingPracticeQuestionsRoute: typeof MarketingResourcesReadPenetrationTestingPracticeQuestionsRoute
+  MarketingResourcesReadPenetrationTestingProjectCaseStudyRoute: typeof MarketingResourcesReadPenetrationTestingProjectCaseStudyRoute
+  MarketingResourcesReadPenetrationTestingProjectGuideRoute: typeof MarketingResourcesReadPenetrationTestingProjectGuideRoute
+  MarketingResourcesReadPenetrationTestingQuickRevisionNotesRoute: typeof MarketingResourcesReadPenetrationTestingQuickRevisionNotesRoute
+  MarketingResourcesReadPenetrationTestingReferenceGuideRoute: typeof MarketingResourcesReadPenetrationTestingReferenceGuideRoute
+  MarketingResourcesReadPenetrationTestingSampleExercisesRoute: typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
+  MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute: typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
+  MarketingResourcesReadPenetrationTestingTipsTricksRoute: typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
   MarketingResourcesReadReactAdvancedConceptsRoute: typeof MarketingResourcesReadReactAdvancedConceptsRoute
   MarketingResourcesReadReactAnswerKeyRoute: typeof MarketingResourcesReadReactAnswerKeyRoute
   MarketingResourcesReadReactBeginnerGuideRoute: typeof MarketingResourcesReadReactBeginnerGuideRoute
@@ -8723,6 +9105,42 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeStepByStepLearningGuideRoute,
   MarketingResourcesReadPeTipsTricksRoute:
     MarketingResourcesReadPeTipsTricksRoute,
+  MarketingResourcesReadPenetrationTestingAdvancedConceptsRoute:
+    MarketingResourcesReadPenetrationTestingAdvancedConceptsRoute,
+  MarketingResourcesReadPenetrationTestingAnswerKeyRoute:
+    MarketingResourcesReadPenetrationTestingAnswerKeyRoute,
+  MarketingResourcesReadPenetrationTestingBeginnerGuideRoute:
+    MarketingResourcesReadPenetrationTestingBeginnerGuideRoute,
+  MarketingResourcesReadPenetrationTestingCheatSheetRoute:
+    MarketingResourcesReadPenetrationTestingCheatSheetRoute,
+  MarketingResourcesReadPenetrationTestingCompleteTutorialRoute:
+    MarketingResourcesReadPenetrationTestingCompleteTutorialRoute,
+  MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadPenetrationTestingFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadPenetrationTestingGlossaryRoute:
+    MarketingResourcesReadPenetrationTestingGlossaryRoute,
+  MarketingResourcesReadPenetrationTestingInterviewQuestionsRoute:
+    MarketingResourcesReadPenetrationTestingInterviewQuestionsRoute,
+  MarketingResourcesReadPenetrationTestingLearningRoadmapRoute:
+    MarketingResourcesReadPenetrationTestingLearningRoadmapRoute,
+  MarketingResourcesReadPenetrationTestingPdfNotesRoute:
+    MarketingResourcesReadPenetrationTestingPdfNotesRoute,
+  MarketingResourcesReadPenetrationTestingPracticeQuestionsRoute:
+    MarketingResourcesReadPenetrationTestingPracticeQuestionsRoute,
+  MarketingResourcesReadPenetrationTestingProjectCaseStudyRoute:
+    MarketingResourcesReadPenetrationTestingProjectCaseStudyRoute,
+  MarketingResourcesReadPenetrationTestingProjectGuideRoute:
+    MarketingResourcesReadPenetrationTestingProjectGuideRoute,
+  MarketingResourcesReadPenetrationTestingQuickRevisionNotesRoute:
+    MarketingResourcesReadPenetrationTestingQuickRevisionNotesRoute,
+  MarketingResourcesReadPenetrationTestingReferenceGuideRoute:
+    MarketingResourcesReadPenetrationTestingReferenceGuideRoute,
+  MarketingResourcesReadPenetrationTestingSampleExercisesRoute:
+    MarketingResourcesReadPenetrationTestingSampleExercisesRoute,
+  MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute:
+    MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute,
+  MarketingResourcesReadPenetrationTestingTipsTricksRoute:
+    MarketingResourcesReadPenetrationTestingTipsTricksRoute,
   MarketingResourcesReadReactAdvancedConceptsRoute:
     MarketingResourcesReadReactAdvancedConceptsRoute,
   MarketingResourcesReadReactAnswerKeyRoute:
