@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+
 import { AIBackground } from "./AIBackground";
 
 const HEADLINE_LINE_1 = "Learn faster with an";
@@ -39,21 +39,24 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col items-center justify-center px-4 pt-20 pb-40 text-center sm:px-6 lg:px-8">
         {/* Badge */}
-        <motion.a
-          href="#features"
+        <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="group pointer-events-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-1.5 text-xs font-semibold text-white/85 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.5)] backdrop-blur-xl transition hover:border-cyan-300/40 hover:text-white"
         >
-          <span className="relative flex h-2 w-2">
-            <span className={`absolute inline-flex h-full w-full rounded-full bg-cyan-300 opacity-70 ${reduce ? "" : "animate-ping"}`} />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-300" />
-          </span>
-          <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
-          <span className="tracking-wide">New · Adaptive AI Tutor</span>
-          <ArrowRight className="h-3.5 w-3.5 -translate-x-0.5 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-        </motion.a>
+          <Link
+            to="/adaptive-ai-tutorials"
+            className="group pointer-events-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-1.5 text-xs font-semibold text-white/85 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.5)] backdrop-blur-xl transition hover:border-cyan-300/40 hover:text-white"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className={`absolute inline-flex h-full w-full rounded-full bg-cyan-300 opacity-70 ${reduce ? "" : "animate-ping"}`} />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-300" />
+            </span>
+            <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
+            <span className="tracking-wide">New · Adaptive AI Tutorials</span>
+            <ArrowRight className="h-3.5 w-3.5 -translate-x-0.5 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+          </Link>
+        </motion.div>
 
         {/* Headline */}
         <h1 className="mt-8 max-w-5xl font-display text-[42px] font-semibold leading-[1.04] tracking-[-0.02em] text-white sm:text-6xl lg:text-7xl xl:text-[88px]">
@@ -89,41 +92,6 @@ export function Hero() {
           own pace.
         </motion.p>
 
-        {/* Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.2, ease: "easeOut" }}
-          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
-        >
-          <Button
-            asChild
-            size="lg"
-            className="group relative h-12 overflow-hidden rounded-full border-0 bg-[linear-gradient(92deg,#F19A3E,#EF7B24_55%,#E85A9E)] px-7 text-base font-semibold text-white shadow-[0_10px_40px_-10px_rgba(239,123,36,0.7)] transition-all hover:shadow-[0_16px_60px_-10px_rgba(239,123,36,0.9)] hover:-translate-y-0.5"
-          >
-            <Link to="/" hash="features">
-              <span className="relative z-10 flex items-center gap-2">
-                Explore Features
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </span>
-              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent)] transition-transform duration-700 group-hover:translate-x-full" />
-            </Link>
-          </Button>
-
-          <Button
-            asChild
-            size="lg"
-            variant="ghost"
-            className="group h-12 rounded-full px-6 text-base font-medium text-white/85 hover:bg-white/[0.06] hover:text-white"
-          >
-            <a href="https://docs.lovable.dev/" target="_blank" rel="noreferrer">
-              <span className="relative">
-                Read Documentation
-                <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-white/70 transition-transform duration-300 group-hover:scale-x-100" />
-              </span>
-            </a>
-          </Button>
-        </motion.div>
 
         {/* Trust footnote */}
         <motion.div
