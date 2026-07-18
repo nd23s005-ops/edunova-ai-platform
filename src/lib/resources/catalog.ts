@@ -346,6 +346,9 @@ const READER_ROUTES: Record<string, string> = {
   "machine-learning--frequently-asked-questions": "/resources/read/ml-frequently-asked-questions",
   "machine-learning--learning-roadmap": "/resources/read/ml-learning-roadmap",
   "machine-learning--tips-tricks": "/resources/read/ml-tips-tricks",
+  "machine-learning--advanced-concepts": "/resources/read/ml-advanced-concepts",
+  "machine-learning--glossary": "/resources/read/ml-glossary",
+  "machine-learning--reference-guide": "/resources/read/ml-reference-guide",
 };
 
 export function getResourceReaderPath(id: string): string | null {
