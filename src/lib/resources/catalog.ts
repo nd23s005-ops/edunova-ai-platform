@@ -451,6 +451,15 @@ const READER_ROUTES: Record<string, string> = {
    "go--advanced-concepts": "/resources/read/go-advanced-concepts",
    "go--glossary": "/resources/read/go-glossary",
    "go--reference-guide": "/resources/read/go-reference-guide",
+   "rust--beginner-guide": "/resources/read/rust-beginner-guide",
+   "rust--complete-tutorial": "/resources/read/rust-complete-tutorial",
+   "rust--step-by-step-learning-guide": "/resources/read/rust-step-by-step-learning-guide",
+   "rust--pdf-notes": "/resources/read/rust-pdf-notes",
+   "rust--quick-revision-notes": "/resources/read/rust-quick-revision-notes",
+   "rust--cheat-sheet": "/resources/read/rust-cheat-sheet",
+   "rust--interview-questions": "/resources/read/rust-interview-questions",
+   "rust--practice-questions": "/resources/read/rust-practice-questions",
+   "rust--answer-key": "/resources/read/rust-answer-key",
 
 
 
