@@ -377,6 +377,27 @@ import { Route as MarketingResourcesReadDlBestPracticesRouteImport } from './rou
 import { Route as MarketingResourcesReadDlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dl-beginner-guide'
 import { Route as MarketingResourcesReadDlAnswerKeyRouteImport } from './routes/_marketing.resources.read.dl-answer-key'
 import { Route as MarketingResourcesReadDlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.dl-advanced-concepts'
+import { Route as MarketingResourcesReadDevopsTipsTricksRouteImport } from './routes/_marketing.resources.read.devops-tips-tricks'
+import { Route as MarketingResourcesReadDevopsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.devops-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadDevopsSampleExercisesRouteImport } from './routes/_marketing.resources.read.devops-sample-exercises'
+import { Route as MarketingResourcesReadDevopsReferenceGuideRouteImport } from './routes/_marketing.resources.read.devops-reference-guide'
+import { Route as MarketingResourcesReadDevopsRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.devops-real-world-case-study'
+import { Route as MarketingResourcesReadDevopsQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.devops-quick-revision-notes'
+import { Route as MarketingResourcesReadDevopsProjectGuideRouteImport } from './routes/_marketing.resources.read.devops-project-guide'
+import { Route as MarketingResourcesReadDevopsProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.devops-project-case-study'
+import { Route as MarketingResourcesReadDevopsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.devops-practice-questions'
+import { Route as MarketingResourcesReadDevopsPdfNotesRouteImport } from './routes/_marketing.resources.read.devops-pdf-notes'
+import { Route as MarketingResourcesReadDevopsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.devops-learning-roadmap'
+import { Route as MarketingResourcesReadDevopsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.devops-interview-questions'
+import { Route as MarketingResourcesReadDevopsGlossaryRouteImport } from './routes/_marketing.resources.read.devops-glossary'
+import { Route as MarketingResourcesReadDevopsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.devops-frequently-asked-questions'
+import { Route as MarketingResourcesReadDevopsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.devops-complete-tutorial'
+import { Route as MarketingResourcesReadDevopsCommonMistakesRouteImport } from './routes/_marketing.resources.read.devops-common-mistakes'
+import { Route as MarketingResourcesReadDevopsCheatSheetRouteImport } from './routes/_marketing.resources.read.devops-cheat-sheet'
+import { Route as MarketingResourcesReadDevopsBestPracticesRouteImport } from './routes/_marketing.resources.read.devops-best-practices'
+import { Route as MarketingResourcesReadDevopsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.devops-beginner-guide'
+import { Route as MarketingResourcesReadDevopsAnswerKeyRouteImport } from './routes/_marketing.resources.read.devops-answer-key'
+import { Route as MarketingResourcesReadDevopsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.devops-advanced-concepts'
 import { Route as MarketingResourcesReadDbmsTipsTricksRouteImport } from './routes/_marketing.resources.read.dbms-tips-tricks'
 import { Route as MarketingResourcesReadDbmsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.dbms-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadDbmsSampleExercisesRouteImport } from './routes/_marketing.resources.read.dbms-sample-exercises'
@@ -2666,6 +2687,132 @@ const MarketingResourcesReadDlAdvancedConceptsRoute =
     path: '/read/dl-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDevopsTipsTricksRoute =
+  MarketingResourcesReadDevopsTipsTricksRouteImport.update({
+    id: '/read/devops-tips-tricks',
+    path: '/read/devops-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsStepByStepLearningGuideRoute =
+  MarketingResourcesReadDevopsStepByStepLearningGuideRouteImport.update({
+    id: '/read/devops-step-by-step-learning-guide',
+    path: '/read/devops-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsSampleExercisesRoute =
+  MarketingResourcesReadDevopsSampleExercisesRouteImport.update({
+    id: '/read/devops-sample-exercises',
+    path: '/read/devops-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsReferenceGuideRoute =
+  MarketingResourcesReadDevopsReferenceGuideRouteImport.update({
+    id: '/read/devops-reference-guide',
+    path: '/read/devops-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsRealWorldCaseStudyRoute =
+  MarketingResourcesReadDevopsRealWorldCaseStudyRouteImport.update({
+    id: '/read/devops-real-world-case-study',
+    path: '/read/devops-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsQuickRevisionNotesRoute =
+  MarketingResourcesReadDevopsQuickRevisionNotesRouteImport.update({
+    id: '/read/devops-quick-revision-notes',
+    path: '/read/devops-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsProjectGuideRoute =
+  MarketingResourcesReadDevopsProjectGuideRouteImport.update({
+    id: '/read/devops-project-guide',
+    path: '/read/devops-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsProjectCaseStudyRoute =
+  MarketingResourcesReadDevopsProjectCaseStudyRouteImport.update({
+    id: '/read/devops-project-case-study',
+    path: '/read/devops-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsPracticeQuestionsRoute =
+  MarketingResourcesReadDevopsPracticeQuestionsRouteImport.update({
+    id: '/read/devops-practice-questions',
+    path: '/read/devops-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsPdfNotesRoute =
+  MarketingResourcesReadDevopsPdfNotesRouteImport.update({
+    id: '/read/devops-pdf-notes',
+    path: '/read/devops-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsLearningRoadmapRoute =
+  MarketingResourcesReadDevopsLearningRoadmapRouteImport.update({
+    id: '/read/devops-learning-roadmap',
+    path: '/read/devops-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsInterviewQuestionsRoute =
+  MarketingResourcesReadDevopsInterviewQuestionsRouteImport.update({
+    id: '/read/devops-interview-questions',
+    path: '/read/devops-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsGlossaryRoute =
+  MarketingResourcesReadDevopsGlossaryRouteImport.update({
+    id: '/read/devops-glossary',
+    path: '/read/devops-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadDevopsFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/devops-frequently-asked-questions',
+    path: '/read/devops-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsCompleteTutorialRoute =
+  MarketingResourcesReadDevopsCompleteTutorialRouteImport.update({
+    id: '/read/devops-complete-tutorial',
+    path: '/read/devops-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsCommonMistakesRoute =
+  MarketingResourcesReadDevopsCommonMistakesRouteImport.update({
+    id: '/read/devops-common-mistakes',
+    path: '/read/devops-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsCheatSheetRoute =
+  MarketingResourcesReadDevopsCheatSheetRouteImport.update({
+    id: '/read/devops-cheat-sheet',
+    path: '/read/devops-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsBestPracticesRoute =
+  MarketingResourcesReadDevopsBestPracticesRouteImport.update({
+    id: '/read/devops-best-practices',
+    path: '/read/devops-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsBeginnerGuideRoute =
+  MarketingResourcesReadDevopsBeginnerGuideRouteImport.update({
+    id: '/read/devops-beginner-guide',
+    path: '/read/devops-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsAnswerKeyRoute =
+  MarketingResourcesReadDevopsAnswerKeyRouteImport.update({
+    id: '/read/devops-answer-key',
+    path: '/read/devops-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDevopsAdvancedConceptsRoute =
+  MarketingResourcesReadDevopsAdvancedConceptsRouteImport.update({
+    id: '/read/devops-advanced-concepts',
+    path: '/read/devops-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDbmsTipsTricksRoute =
   MarketingResourcesReadDbmsTipsTricksRouteImport.update({
     id: '/read/dbms-tips-tricks',
@@ -3387,6 +3534,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/dbms-sample-exercises': typeof MarketingResourcesReadDbmsSampleExercisesRoute
   '/resources/read/dbms-step-by-step-learning-guide': typeof MarketingResourcesReadDbmsStepByStepLearningGuideRoute
   '/resources/read/dbms-tips-tricks': typeof MarketingResourcesReadDbmsTipsTricksRoute
+  '/resources/read/devops-advanced-concepts': typeof MarketingResourcesReadDevopsAdvancedConceptsRoute
+  '/resources/read/devops-answer-key': typeof MarketingResourcesReadDevopsAnswerKeyRoute
+  '/resources/read/devops-beginner-guide': typeof MarketingResourcesReadDevopsBeginnerGuideRoute
+  '/resources/read/devops-best-practices': typeof MarketingResourcesReadDevopsBestPracticesRoute
+  '/resources/read/devops-cheat-sheet': typeof MarketingResourcesReadDevopsCheatSheetRoute
+  '/resources/read/devops-common-mistakes': typeof MarketingResourcesReadDevopsCommonMistakesRoute
+  '/resources/read/devops-complete-tutorial': typeof MarketingResourcesReadDevopsCompleteTutorialRoute
+  '/resources/read/devops-frequently-asked-questions': typeof MarketingResourcesReadDevopsFrequentlyAskedQuestionsRoute
+  '/resources/read/devops-glossary': typeof MarketingResourcesReadDevopsGlossaryRoute
+  '/resources/read/devops-interview-questions': typeof MarketingResourcesReadDevopsInterviewQuestionsRoute
+  '/resources/read/devops-learning-roadmap': typeof MarketingResourcesReadDevopsLearningRoadmapRoute
+  '/resources/read/devops-pdf-notes': typeof MarketingResourcesReadDevopsPdfNotesRoute
+  '/resources/read/devops-practice-questions': typeof MarketingResourcesReadDevopsPracticeQuestionsRoute
+  '/resources/read/devops-project-case-study': typeof MarketingResourcesReadDevopsProjectCaseStudyRoute
+  '/resources/read/devops-project-guide': typeof MarketingResourcesReadDevopsProjectGuideRoute
+  '/resources/read/devops-quick-revision-notes': typeof MarketingResourcesReadDevopsQuickRevisionNotesRoute
+  '/resources/read/devops-real-world-case-study': typeof MarketingResourcesReadDevopsRealWorldCaseStudyRoute
+  '/resources/read/devops-reference-guide': typeof MarketingResourcesReadDevopsReferenceGuideRoute
+  '/resources/read/devops-sample-exercises': typeof MarketingResourcesReadDevopsSampleExercisesRoute
+  '/resources/read/devops-step-by-step-learning-guide': typeof MarketingResourcesReadDevopsStepByStepLearningGuideRoute
+  '/resources/read/devops-tips-tricks': typeof MarketingResourcesReadDevopsTipsTricksRoute
   '/resources/read/dl-advanced-concepts': typeof MarketingResourcesReadDlAdvancedConceptsRoute
   '/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
   '/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
@@ -3850,6 +4018,27 @@ export interface FileRoutesByTo {
   '/resources/read/dbms-sample-exercises': typeof MarketingResourcesReadDbmsSampleExercisesRoute
   '/resources/read/dbms-step-by-step-learning-guide': typeof MarketingResourcesReadDbmsStepByStepLearningGuideRoute
   '/resources/read/dbms-tips-tricks': typeof MarketingResourcesReadDbmsTipsTricksRoute
+  '/resources/read/devops-advanced-concepts': typeof MarketingResourcesReadDevopsAdvancedConceptsRoute
+  '/resources/read/devops-answer-key': typeof MarketingResourcesReadDevopsAnswerKeyRoute
+  '/resources/read/devops-beginner-guide': typeof MarketingResourcesReadDevopsBeginnerGuideRoute
+  '/resources/read/devops-best-practices': typeof MarketingResourcesReadDevopsBestPracticesRoute
+  '/resources/read/devops-cheat-sheet': typeof MarketingResourcesReadDevopsCheatSheetRoute
+  '/resources/read/devops-common-mistakes': typeof MarketingResourcesReadDevopsCommonMistakesRoute
+  '/resources/read/devops-complete-tutorial': typeof MarketingResourcesReadDevopsCompleteTutorialRoute
+  '/resources/read/devops-frequently-asked-questions': typeof MarketingResourcesReadDevopsFrequentlyAskedQuestionsRoute
+  '/resources/read/devops-glossary': typeof MarketingResourcesReadDevopsGlossaryRoute
+  '/resources/read/devops-interview-questions': typeof MarketingResourcesReadDevopsInterviewQuestionsRoute
+  '/resources/read/devops-learning-roadmap': typeof MarketingResourcesReadDevopsLearningRoadmapRoute
+  '/resources/read/devops-pdf-notes': typeof MarketingResourcesReadDevopsPdfNotesRoute
+  '/resources/read/devops-practice-questions': typeof MarketingResourcesReadDevopsPracticeQuestionsRoute
+  '/resources/read/devops-project-case-study': typeof MarketingResourcesReadDevopsProjectCaseStudyRoute
+  '/resources/read/devops-project-guide': typeof MarketingResourcesReadDevopsProjectGuideRoute
+  '/resources/read/devops-quick-revision-notes': typeof MarketingResourcesReadDevopsQuickRevisionNotesRoute
+  '/resources/read/devops-real-world-case-study': typeof MarketingResourcesReadDevopsRealWorldCaseStudyRoute
+  '/resources/read/devops-reference-guide': typeof MarketingResourcesReadDevopsReferenceGuideRoute
+  '/resources/read/devops-sample-exercises': typeof MarketingResourcesReadDevopsSampleExercisesRoute
+  '/resources/read/devops-step-by-step-learning-guide': typeof MarketingResourcesReadDevopsStepByStepLearningGuideRoute
+  '/resources/read/devops-tips-tricks': typeof MarketingResourcesReadDevopsTipsTricksRoute
   '/resources/read/dl-advanced-concepts': typeof MarketingResourcesReadDlAdvancedConceptsRoute
   '/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
   '/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
@@ -4318,6 +4507,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dbms-sample-exercises': typeof MarketingResourcesReadDbmsSampleExercisesRoute
   '/_marketing/resources/read/dbms-step-by-step-learning-guide': typeof MarketingResourcesReadDbmsStepByStepLearningGuideRoute
   '/_marketing/resources/read/dbms-tips-tricks': typeof MarketingResourcesReadDbmsTipsTricksRoute
+  '/_marketing/resources/read/devops-advanced-concepts': typeof MarketingResourcesReadDevopsAdvancedConceptsRoute
+  '/_marketing/resources/read/devops-answer-key': typeof MarketingResourcesReadDevopsAnswerKeyRoute
+  '/_marketing/resources/read/devops-beginner-guide': typeof MarketingResourcesReadDevopsBeginnerGuideRoute
+  '/_marketing/resources/read/devops-best-practices': typeof MarketingResourcesReadDevopsBestPracticesRoute
+  '/_marketing/resources/read/devops-cheat-sheet': typeof MarketingResourcesReadDevopsCheatSheetRoute
+  '/_marketing/resources/read/devops-common-mistakes': typeof MarketingResourcesReadDevopsCommonMistakesRoute
+  '/_marketing/resources/read/devops-complete-tutorial': typeof MarketingResourcesReadDevopsCompleteTutorialRoute
+  '/_marketing/resources/read/devops-frequently-asked-questions': typeof MarketingResourcesReadDevopsFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/devops-glossary': typeof MarketingResourcesReadDevopsGlossaryRoute
+  '/_marketing/resources/read/devops-interview-questions': typeof MarketingResourcesReadDevopsInterviewQuestionsRoute
+  '/_marketing/resources/read/devops-learning-roadmap': typeof MarketingResourcesReadDevopsLearningRoadmapRoute
+  '/_marketing/resources/read/devops-pdf-notes': typeof MarketingResourcesReadDevopsPdfNotesRoute
+  '/_marketing/resources/read/devops-practice-questions': typeof MarketingResourcesReadDevopsPracticeQuestionsRoute
+  '/_marketing/resources/read/devops-project-case-study': typeof MarketingResourcesReadDevopsProjectCaseStudyRoute
+  '/_marketing/resources/read/devops-project-guide': typeof MarketingResourcesReadDevopsProjectGuideRoute
+  '/_marketing/resources/read/devops-quick-revision-notes': typeof MarketingResourcesReadDevopsQuickRevisionNotesRoute
+  '/_marketing/resources/read/devops-real-world-case-study': typeof MarketingResourcesReadDevopsRealWorldCaseStudyRoute
+  '/_marketing/resources/read/devops-reference-guide': typeof MarketingResourcesReadDevopsReferenceGuideRoute
+  '/_marketing/resources/read/devops-sample-exercises': typeof MarketingResourcesReadDevopsSampleExercisesRoute
+  '/_marketing/resources/read/devops-step-by-step-learning-guide': typeof MarketingResourcesReadDevopsStepByStepLearningGuideRoute
+  '/_marketing/resources/read/devops-tips-tricks': typeof MarketingResourcesReadDevopsTipsTricksRoute
   '/_marketing/resources/read/dl-advanced-concepts': typeof MarketingResourcesReadDlAdvancedConceptsRoute
   '/_marketing/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
   '/_marketing/resources/read/dl-beginner-guide': typeof MarketingResourcesReadDlBeginnerGuideRoute
@@ -4784,6 +4994,27 @@ export interface FileRouteTypes {
     | '/resources/read/dbms-sample-exercises'
     | '/resources/read/dbms-step-by-step-learning-guide'
     | '/resources/read/dbms-tips-tricks'
+    | '/resources/read/devops-advanced-concepts'
+    | '/resources/read/devops-answer-key'
+    | '/resources/read/devops-beginner-guide'
+    | '/resources/read/devops-best-practices'
+    | '/resources/read/devops-cheat-sheet'
+    | '/resources/read/devops-common-mistakes'
+    | '/resources/read/devops-complete-tutorial'
+    | '/resources/read/devops-frequently-asked-questions'
+    | '/resources/read/devops-glossary'
+    | '/resources/read/devops-interview-questions'
+    | '/resources/read/devops-learning-roadmap'
+    | '/resources/read/devops-pdf-notes'
+    | '/resources/read/devops-practice-questions'
+    | '/resources/read/devops-project-case-study'
+    | '/resources/read/devops-project-guide'
+    | '/resources/read/devops-quick-revision-notes'
+    | '/resources/read/devops-real-world-case-study'
+    | '/resources/read/devops-reference-guide'
+    | '/resources/read/devops-sample-exercises'
+    | '/resources/read/devops-step-by-step-learning-guide'
+    | '/resources/read/devops-tips-tricks'
     | '/resources/read/dl-advanced-concepts'
     | '/resources/read/dl-answer-key'
     | '/resources/read/dl-beginner-guide'
@@ -5247,6 +5478,27 @@ export interface FileRouteTypes {
     | '/resources/read/dbms-sample-exercises'
     | '/resources/read/dbms-step-by-step-learning-guide'
     | '/resources/read/dbms-tips-tricks'
+    | '/resources/read/devops-advanced-concepts'
+    | '/resources/read/devops-answer-key'
+    | '/resources/read/devops-beginner-guide'
+    | '/resources/read/devops-best-practices'
+    | '/resources/read/devops-cheat-sheet'
+    | '/resources/read/devops-common-mistakes'
+    | '/resources/read/devops-complete-tutorial'
+    | '/resources/read/devops-frequently-asked-questions'
+    | '/resources/read/devops-glossary'
+    | '/resources/read/devops-interview-questions'
+    | '/resources/read/devops-learning-roadmap'
+    | '/resources/read/devops-pdf-notes'
+    | '/resources/read/devops-practice-questions'
+    | '/resources/read/devops-project-case-study'
+    | '/resources/read/devops-project-guide'
+    | '/resources/read/devops-quick-revision-notes'
+    | '/resources/read/devops-real-world-case-study'
+    | '/resources/read/devops-reference-guide'
+    | '/resources/read/devops-sample-exercises'
+    | '/resources/read/devops-step-by-step-learning-guide'
+    | '/resources/read/devops-tips-tricks'
     | '/resources/read/dl-advanced-concepts'
     | '/resources/read/dl-answer-key'
     | '/resources/read/dl-beginner-guide'
@@ -5714,6 +5966,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dbms-sample-exercises'
     | '/_marketing/resources/read/dbms-step-by-step-learning-guide'
     | '/_marketing/resources/read/dbms-tips-tricks'
+    | '/_marketing/resources/read/devops-advanced-concepts'
+    | '/_marketing/resources/read/devops-answer-key'
+    | '/_marketing/resources/read/devops-beginner-guide'
+    | '/_marketing/resources/read/devops-best-practices'
+    | '/_marketing/resources/read/devops-cheat-sheet'
+    | '/_marketing/resources/read/devops-common-mistakes'
+    | '/_marketing/resources/read/devops-complete-tutorial'
+    | '/_marketing/resources/read/devops-frequently-asked-questions'
+    | '/_marketing/resources/read/devops-glossary'
+    | '/_marketing/resources/read/devops-interview-questions'
+    | '/_marketing/resources/read/devops-learning-roadmap'
+    | '/_marketing/resources/read/devops-pdf-notes'
+    | '/_marketing/resources/read/devops-practice-questions'
+    | '/_marketing/resources/read/devops-project-case-study'
+    | '/_marketing/resources/read/devops-project-guide'
+    | '/_marketing/resources/read/devops-quick-revision-notes'
+    | '/_marketing/resources/read/devops-real-world-case-study'
+    | '/_marketing/resources/read/devops-reference-guide'
+    | '/_marketing/resources/read/devops-sample-exercises'
+    | '/_marketing/resources/read/devops-step-by-step-learning-guide'
+    | '/_marketing/resources/read/devops-tips-tricks'
     | '/_marketing/resources/read/dl-advanced-concepts'
     | '/_marketing/resources/read/dl-answer-key'
     | '/_marketing/resources/read/dl-beginner-guide'
@@ -8641,6 +8914,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDlAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/devops-tips-tricks': {
+      id: '/_marketing/resources/read/devops-tips-tricks'
+      path: '/read/devops-tips-tricks'
+      fullPath: '/resources/read/devops-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/devops-step-by-step-learning-guide'
+      path: '/read/devops-step-by-step-learning-guide'
+      fullPath: '/resources/read/devops-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-sample-exercises': {
+      id: '/_marketing/resources/read/devops-sample-exercises'
+      path: '/read/devops-sample-exercises'
+      fullPath: '/resources/read/devops-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-reference-guide': {
+      id: '/_marketing/resources/read/devops-reference-guide'
+      path: '/read/devops-reference-guide'
+      fullPath: '/resources/read/devops-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-real-world-case-study': {
+      id: '/_marketing/resources/read/devops-real-world-case-study'
+      path: '/read/devops-real-world-case-study'
+      fullPath: '/resources/read/devops-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-quick-revision-notes': {
+      id: '/_marketing/resources/read/devops-quick-revision-notes'
+      path: '/read/devops-quick-revision-notes'
+      fullPath: '/resources/read/devops-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-project-guide': {
+      id: '/_marketing/resources/read/devops-project-guide'
+      path: '/read/devops-project-guide'
+      fullPath: '/resources/read/devops-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-project-case-study': {
+      id: '/_marketing/resources/read/devops-project-case-study'
+      path: '/read/devops-project-case-study'
+      fullPath: '/resources/read/devops-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-practice-questions': {
+      id: '/_marketing/resources/read/devops-practice-questions'
+      path: '/read/devops-practice-questions'
+      fullPath: '/resources/read/devops-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-pdf-notes': {
+      id: '/_marketing/resources/read/devops-pdf-notes'
+      path: '/read/devops-pdf-notes'
+      fullPath: '/resources/read/devops-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-learning-roadmap': {
+      id: '/_marketing/resources/read/devops-learning-roadmap'
+      path: '/read/devops-learning-roadmap'
+      fullPath: '/resources/read/devops-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-interview-questions': {
+      id: '/_marketing/resources/read/devops-interview-questions'
+      path: '/read/devops-interview-questions'
+      fullPath: '/resources/read/devops-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-glossary': {
+      id: '/_marketing/resources/read/devops-glossary'
+      path: '/read/devops-glossary'
+      fullPath: '/resources/read/devops-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-frequently-asked-questions': {
+      id: '/_marketing/resources/read/devops-frequently-asked-questions'
+      path: '/read/devops-frequently-asked-questions'
+      fullPath: '/resources/read/devops-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-complete-tutorial': {
+      id: '/_marketing/resources/read/devops-complete-tutorial'
+      path: '/read/devops-complete-tutorial'
+      fullPath: '/resources/read/devops-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-common-mistakes': {
+      id: '/_marketing/resources/read/devops-common-mistakes'
+      path: '/read/devops-common-mistakes'
+      fullPath: '/resources/read/devops-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-cheat-sheet': {
+      id: '/_marketing/resources/read/devops-cheat-sheet'
+      path: '/read/devops-cheat-sheet'
+      fullPath: '/resources/read/devops-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-best-practices': {
+      id: '/_marketing/resources/read/devops-best-practices'
+      path: '/read/devops-best-practices'
+      fullPath: '/resources/read/devops-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-beginner-guide': {
+      id: '/_marketing/resources/read/devops-beginner-guide'
+      path: '/read/devops-beginner-guide'
+      fullPath: '/resources/read/devops-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-answer-key': {
+      id: '/_marketing/resources/read/devops-answer-key'
+      path: '/read/devops-answer-key'
+      fullPath: '/resources/read/devops-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/devops-advanced-concepts': {
+      id: '/_marketing/resources/read/devops-advanced-concepts'
+      path: '/read/devops-advanced-concepts'
+      fullPath: '/resources/read/devops-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadDevopsAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dbms-tips-tricks': {
       id: '/_marketing/resources/read/dbms-tips-tricks'
       path: '/read/dbms-tips-tricks'
@@ -9540,6 +9960,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDbmsSampleExercisesRoute: typeof MarketingResourcesReadDbmsSampleExercisesRoute
   MarketingResourcesReadDbmsStepByStepLearningGuideRoute: typeof MarketingResourcesReadDbmsStepByStepLearningGuideRoute
   MarketingResourcesReadDbmsTipsTricksRoute: typeof MarketingResourcesReadDbmsTipsTricksRoute
+  MarketingResourcesReadDevopsAdvancedConceptsRoute: typeof MarketingResourcesReadDevopsAdvancedConceptsRoute
+  MarketingResourcesReadDevopsAnswerKeyRoute: typeof MarketingResourcesReadDevopsAnswerKeyRoute
+  MarketingResourcesReadDevopsBeginnerGuideRoute: typeof MarketingResourcesReadDevopsBeginnerGuideRoute
+  MarketingResourcesReadDevopsBestPracticesRoute: typeof MarketingResourcesReadDevopsBestPracticesRoute
+  MarketingResourcesReadDevopsCheatSheetRoute: typeof MarketingResourcesReadDevopsCheatSheetRoute
+  MarketingResourcesReadDevopsCommonMistakesRoute: typeof MarketingResourcesReadDevopsCommonMistakesRoute
+  MarketingResourcesReadDevopsCompleteTutorialRoute: typeof MarketingResourcesReadDevopsCompleteTutorialRoute
+  MarketingResourcesReadDevopsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDevopsFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadDevopsGlossaryRoute: typeof MarketingResourcesReadDevopsGlossaryRoute
+  MarketingResourcesReadDevopsInterviewQuestionsRoute: typeof MarketingResourcesReadDevopsInterviewQuestionsRoute
+  MarketingResourcesReadDevopsLearningRoadmapRoute: typeof MarketingResourcesReadDevopsLearningRoadmapRoute
+  MarketingResourcesReadDevopsPdfNotesRoute: typeof MarketingResourcesReadDevopsPdfNotesRoute
+  MarketingResourcesReadDevopsPracticeQuestionsRoute: typeof MarketingResourcesReadDevopsPracticeQuestionsRoute
+  MarketingResourcesReadDevopsProjectCaseStudyRoute: typeof MarketingResourcesReadDevopsProjectCaseStudyRoute
+  MarketingResourcesReadDevopsProjectGuideRoute: typeof MarketingResourcesReadDevopsProjectGuideRoute
+  MarketingResourcesReadDevopsQuickRevisionNotesRoute: typeof MarketingResourcesReadDevopsQuickRevisionNotesRoute
+  MarketingResourcesReadDevopsRealWorldCaseStudyRoute: typeof MarketingResourcesReadDevopsRealWorldCaseStudyRoute
+  MarketingResourcesReadDevopsReferenceGuideRoute: typeof MarketingResourcesReadDevopsReferenceGuideRoute
+  MarketingResourcesReadDevopsSampleExercisesRoute: typeof MarketingResourcesReadDevopsSampleExercisesRoute
+  MarketingResourcesReadDevopsStepByStepLearningGuideRoute: typeof MarketingResourcesReadDevopsStepByStepLearningGuideRoute
+  MarketingResourcesReadDevopsTipsTricksRoute: typeof MarketingResourcesReadDevopsTipsTricksRoute
   MarketingResourcesReadDlAdvancedConceptsRoute: typeof MarketingResourcesReadDlAdvancedConceptsRoute
   MarketingResourcesReadDlAnswerKeyRoute: typeof MarketingResourcesReadDlAnswerKeyRoute
   MarketingResourcesReadDlBeginnerGuideRoute: typeof MarketingResourcesReadDlBeginnerGuideRoute
@@ -10035,6 +10476,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDbmsStepByStepLearningGuideRoute,
   MarketingResourcesReadDbmsTipsTricksRoute:
     MarketingResourcesReadDbmsTipsTricksRoute,
+  MarketingResourcesReadDevopsAdvancedConceptsRoute:
+    MarketingResourcesReadDevopsAdvancedConceptsRoute,
+  MarketingResourcesReadDevopsAnswerKeyRoute:
+    MarketingResourcesReadDevopsAnswerKeyRoute,
+  MarketingResourcesReadDevopsBeginnerGuideRoute:
+    MarketingResourcesReadDevopsBeginnerGuideRoute,
+  MarketingResourcesReadDevopsBestPracticesRoute:
+    MarketingResourcesReadDevopsBestPracticesRoute,
+  MarketingResourcesReadDevopsCheatSheetRoute:
+    MarketingResourcesReadDevopsCheatSheetRoute,
+  MarketingResourcesReadDevopsCommonMistakesRoute:
+    MarketingResourcesReadDevopsCommonMistakesRoute,
+  MarketingResourcesReadDevopsCompleteTutorialRoute:
+    MarketingResourcesReadDevopsCompleteTutorialRoute,
+  MarketingResourcesReadDevopsFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadDevopsFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadDevopsGlossaryRoute:
+    MarketingResourcesReadDevopsGlossaryRoute,
+  MarketingResourcesReadDevopsInterviewQuestionsRoute:
+    MarketingResourcesReadDevopsInterviewQuestionsRoute,
+  MarketingResourcesReadDevopsLearningRoadmapRoute:
+    MarketingResourcesReadDevopsLearningRoadmapRoute,
+  MarketingResourcesReadDevopsPdfNotesRoute:
+    MarketingResourcesReadDevopsPdfNotesRoute,
+  MarketingResourcesReadDevopsPracticeQuestionsRoute:
+    MarketingResourcesReadDevopsPracticeQuestionsRoute,
+  MarketingResourcesReadDevopsProjectCaseStudyRoute:
+    MarketingResourcesReadDevopsProjectCaseStudyRoute,
+  MarketingResourcesReadDevopsProjectGuideRoute:
+    MarketingResourcesReadDevopsProjectGuideRoute,
+  MarketingResourcesReadDevopsQuickRevisionNotesRoute:
+    MarketingResourcesReadDevopsQuickRevisionNotesRoute,
+  MarketingResourcesReadDevopsRealWorldCaseStudyRoute:
+    MarketingResourcesReadDevopsRealWorldCaseStudyRoute,
+  MarketingResourcesReadDevopsReferenceGuideRoute:
+    MarketingResourcesReadDevopsReferenceGuideRoute,
+  MarketingResourcesReadDevopsSampleExercisesRoute:
+    MarketingResourcesReadDevopsSampleExercisesRoute,
+  MarketingResourcesReadDevopsStepByStepLearningGuideRoute:
+    MarketingResourcesReadDevopsStepByStepLearningGuideRoute,
+  MarketingResourcesReadDevopsTipsTricksRoute:
+    MarketingResourcesReadDevopsTipsTricksRoute,
   MarketingResourcesReadDlAdvancedConceptsRoute:
     MarketingResourcesReadDlAdvancedConceptsRoute,
   MarketingResourcesReadDlAnswerKeyRoute:
