@@ -395,6 +395,27 @@ import { Route as MarketingResourcesReadOperatingSystemsBestPracticesRouteImport
 import { Route as MarketingResourcesReadOperatingSystemsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.operating-systems-beginner-guide'
 import { Route as MarketingResourcesReadOperatingSystemsAnswerKeyRouteImport } from './routes/_marketing.resources.read.operating-systems-answer-key'
 import { Route as MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.operating-systems-advanced-concepts'
+import { Route as MarketingResourcesReadNumpyTipsTricksRouteImport } from './routes/_marketing.resources.read.numpy-tips-tricks'
+import { Route as MarketingResourcesReadNumpyStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.numpy-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadNumpySampleExercisesRouteImport } from './routes/_marketing.resources.read.numpy-sample-exercises'
+import { Route as MarketingResourcesReadNumpyReferenceGuideRouteImport } from './routes/_marketing.resources.read.numpy-reference-guide'
+import { Route as MarketingResourcesReadNumpyRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.numpy-real-world-case-study'
+import { Route as MarketingResourcesReadNumpyQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.numpy-quick-revision-notes'
+import { Route as MarketingResourcesReadNumpyProjectGuideRouteImport } from './routes/_marketing.resources.read.numpy-project-guide'
+import { Route as MarketingResourcesReadNumpyProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.numpy-project-case-study'
+import { Route as MarketingResourcesReadNumpyPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.numpy-practice-questions'
+import { Route as MarketingResourcesReadNumpyPdfNotesRouteImport } from './routes/_marketing.resources.read.numpy-pdf-notes'
+import { Route as MarketingResourcesReadNumpyLearningRoadmapRouteImport } from './routes/_marketing.resources.read.numpy-learning-roadmap'
+import { Route as MarketingResourcesReadNumpyInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.numpy-interview-questions'
+import { Route as MarketingResourcesReadNumpyGlossaryRouteImport } from './routes/_marketing.resources.read.numpy-glossary'
+import { Route as MarketingResourcesReadNumpyFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.numpy-frequently-asked-questions'
+import { Route as MarketingResourcesReadNumpyCompleteTutorialRouteImport } from './routes/_marketing.resources.read.numpy-complete-tutorial'
+import { Route as MarketingResourcesReadNumpyCommonMistakesRouteImport } from './routes/_marketing.resources.read.numpy-common-mistakes'
+import { Route as MarketingResourcesReadNumpyCheatSheetRouteImport } from './routes/_marketing.resources.read.numpy-cheat-sheet'
+import { Route as MarketingResourcesReadNumpyBestPracticesRouteImport } from './routes/_marketing.resources.read.numpy-best-practices'
+import { Route as MarketingResourcesReadNumpyBeginnerGuideRouteImport } from './routes/_marketing.resources.read.numpy-beginner-guide'
+import { Route as MarketingResourcesReadNumpyAnswerKeyRouteImport } from './routes/_marketing.resources.read.numpy-answer-key'
+import { Route as MarketingResourcesReadNumpyAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.numpy-advanced-concepts'
 import { Route as MarketingResourcesReadNextjsTipsTricksRouteImport } from './routes/_marketing.resources.read.nextjs-tips-tricks'
 import { Route as MarketingResourcesReadNextjsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.nextjs-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadNextjsSampleExercisesRouteImport } from './routes/_marketing.resources.read.nextjs-sample-exercises'
@@ -3268,6 +3289,132 @@ const MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute =
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport.update({
     id: '/read/operating-systems-advanced-concepts',
     path: '/read/operating-systems-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyTipsTricksRoute =
+  MarketingResourcesReadNumpyTipsTricksRouteImport.update({
+    id: '/read/numpy-tips-tricks',
+    path: '/read/numpy-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyStepByStepLearningGuideRoute =
+  MarketingResourcesReadNumpyStepByStepLearningGuideRouteImport.update({
+    id: '/read/numpy-step-by-step-learning-guide',
+    path: '/read/numpy-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpySampleExercisesRoute =
+  MarketingResourcesReadNumpySampleExercisesRouteImport.update({
+    id: '/read/numpy-sample-exercises',
+    path: '/read/numpy-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyReferenceGuideRoute =
+  MarketingResourcesReadNumpyReferenceGuideRouteImport.update({
+    id: '/read/numpy-reference-guide',
+    path: '/read/numpy-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyRealWorldCaseStudyRoute =
+  MarketingResourcesReadNumpyRealWorldCaseStudyRouteImport.update({
+    id: '/read/numpy-real-world-case-study',
+    path: '/read/numpy-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyQuickRevisionNotesRoute =
+  MarketingResourcesReadNumpyQuickRevisionNotesRouteImport.update({
+    id: '/read/numpy-quick-revision-notes',
+    path: '/read/numpy-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyProjectGuideRoute =
+  MarketingResourcesReadNumpyProjectGuideRouteImport.update({
+    id: '/read/numpy-project-guide',
+    path: '/read/numpy-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyProjectCaseStudyRoute =
+  MarketingResourcesReadNumpyProjectCaseStudyRouteImport.update({
+    id: '/read/numpy-project-case-study',
+    path: '/read/numpy-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyPracticeQuestionsRoute =
+  MarketingResourcesReadNumpyPracticeQuestionsRouteImport.update({
+    id: '/read/numpy-practice-questions',
+    path: '/read/numpy-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyPdfNotesRoute =
+  MarketingResourcesReadNumpyPdfNotesRouteImport.update({
+    id: '/read/numpy-pdf-notes',
+    path: '/read/numpy-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyLearningRoadmapRoute =
+  MarketingResourcesReadNumpyLearningRoadmapRouteImport.update({
+    id: '/read/numpy-learning-roadmap',
+    path: '/read/numpy-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyInterviewQuestionsRoute =
+  MarketingResourcesReadNumpyInterviewQuestionsRouteImport.update({
+    id: '/read/numpy-interview-questions',
+    path: '/read/numpy-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyGlossaryRoute =
+  MarketingResourcesReadNumpyGlossaryRouteImport.update({
+    id: '/read/numpy-glossary',
+    path: '/read/numpy-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadNumpyFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/numpy-frequently-asked-questions',
+    path: '/read/numpy-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyCompleteTutorialRoute =
+  MarketingResourcesReadNumpyCompleteTutorialRouteImport.update({
+    id: '/read/numpy-complete-tutorial',
+    path: '/read/numpy-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyCommonMistakesRoute =
+  MarketingResourcesReadNumpyCommonMistakesRouteImport.update({
+    id: '/read/numpy-common-mistakes',
+    path: '/read/numpy-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyCheatSheetRoute =
+  MarketingResourcesReadNumpyCheatSheetRouteImport.update({
+    id: '/read/numpy-cheat-sheet',
+    path: '/read/numpy-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyBestPracticesRoute =
+  MarketingResourcesReadNumpyBestPracticesRouteImport.update({
+    id: '/read/numpy-best-practices',
+    path: '/read/numpy-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyBeginnerGuideRoute =
+  MarketingResourcesReadNumpyBeginnerGuideRouteImport.update({
+    id: '/read/numpy-beginner-guide',
+    path: '/read/numpy-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyAnswerKeyRoute =
+  MarketingResourcesReadNumpyAnswerKeyRouteImport.update({
+    id: '/read/numpy-answer-key',
+    path: '/read/numpy-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNumpyAdvancedConceptsRoute =
+  MarketingResourcesReadNumpyAdvancedConceptsRouteImport.update({
+    id: '/read/numpy-advanced-concepts',
+    path: '/read/numpy-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadNextjsTipsTricksRoute =
@@ -7401,6 +7548,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
   '/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
   '/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
+  '/resources/read/numpy-advanced-concepts': typeof MarketingResourcesReadNumpyAdvancedConceptsRoute
+  '/resources/read/numpy-answer-key': typeof MarketingResourcesReadNumpyAnswerKeyRoute
+  '/resources/read/numpy-beginner-guide': typeof MarketingResourcesReadNumpyBeginnerGuideRoute
+  '/resources/read/numpy-best-practices': typeof MarketingResourcesReadNumpyBestPracticesRoute
+  '/resources/read/numpy-cheat-sheet': typeof MarketingResourcesReadNumpyCheatSheetRoute
+  '/resources/read/numpy-common-mistakes': typeof MarketingResourcesReadNumpyCommonMistakesRoute
+  '/resources/read/numpy-complete-tutorial': typeof MarketingResourcesReadNumpyCompleteTutorialRoute
+  '/resources/read/numpy-frequently-asked-questions': typeof MarketingResourcesReadNumpyFrequentlyAskedQuestionsRoute
+  '/resources/read/numpy-glossary': typeof MarketingResourcesReadNumpyGlossaryRoute
+  '/resources/read/numpy-interview-questions': typeof MarketingResourcesReadNumpyInterviewQuestionsRoute
+  '/resources/read/numpy-learning-roadmap': typeof MarketingResourcesReadNumpyLearningRoadmapRoute
+  '/resources/read/numpy-pdf-notes': typeof MarketingResourcesReadNumpyPdfNotesRoute
+  '/resources/read/numpy-practice-questions': typeof MarketingResourcesReadNumpyPracticeQuestionsRoute
+  '/resources/read/numpy-project-case-study': typeof MarketingResourcesReadNumpyProjectCaseStudyRoute
+  '/resources/read/numpy-project-guide': typeof MarketingResourcesReadNumpyProjectGuideRoute
+  '/resources/read/numpy-quick-revision-notes': typeof MarketingResourcesReadNumpyQuickRevisionNotesRoute
+  '/resources/read/numpy-real-world-case-study': typeof MarketingResourcesReadNumpyRealWorldCaseStudyRoute
+  '/resources/read/numpy-reference-guide': typeof MarketingResourcesReadNumpyReferenceGuideRoute
+  '/resources/read/numpy-sample-exercises': typeof MarketingResourcesReadNumpySampleExercisesRoute
+  '/resources/read/numpy-step-by-step-learning-guide': typeof MarketingResourcesReadNumpyStepByStepLearningGuideRoute
+  '/resources/read/numpy-tips-tricks': typeof MarketingResourcesReadNumpyTipsTricksRoute
   '/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -8368,6 +8536,27 @@ export interface FileRoutesByTo {
   '/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
   '/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
   '/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
+  '/resources/read/numpy-advanced-concepts': typeof MarketingResourcesReadNumpyAdvancedConceptsRoute
+  '/resources/read/numpy-answer-key': typeof MarketingResourcesReadNumpyAnswerKeyRoute
+  '/resources/read/numpy-beginner-guide': typeof MarketingResourcesReadNumpyBeginnerGuideRoute
+  '/resources/read/numpy-best-practices': typeof MarketingResourcesReadNumpyBestPracticesRoute
+  '/resources/read/numpy-cheat-sheet': typeof MarketingResourcesReadNumpyCheatSheetRoute
+  '/resources/read/numpy-common-mistakes': typeof MarketingResourcesReadNumpyCommonMistakesRoute
+  '/resources/read/numpy-complete-tutorial': typeof MarketingResourcesReadNumpyCompleteTutorialRoute
+  '/resources/read/numpy-frequently-asked-questions': typeof MarketingResourcesReadNumpyFrequentlyAskedQuestionsRoute
+  '/resources/read/numpy-glossary': typeof MarketingResourcesReadNumpyGlossaryRoute
+  '/resources/read/numpy-interview-questions': typeof MarketingResourcesReadNumpyInterviewQuestionsRoute
+  '/resources/read/numpy-learning-roadmap': typeof MarketingResourcesReadNumpyLearningRoadmapRoute
+  '/resources/read/numpy-pdf-notes': typeof MarketingResourcesReadNumpyPdfNotesRoute
+  '/resources/read/numpy-practice-questions': typeof MarketingResourcesReadNumpyPracticeQuestionsRoute
+  '/resources/read/numpy-project-case-study': typeof MarketingResourcesReadNumpyProjectCaseStudyRoute
+  '/resources/read/numpy-project-guide': typeof MarketingResourcesReadNumpyProjectGuideRoute
+  '/resources/read/numpy-quick-revision-notes': typeof MarketingResourcesReadNumpyQuickRevisionNotesRoute
+  '/resources/read/numpy-real-world-case-study': typeof MarketingResourcesReadNumpyRealWorldCaseStudyRoute
+  '/resources/read/numpy-reference-guide': typeof MarketingResourcesReadNumpyReferenceGuideRoute
+  '/resources/read/numpy-sample-exercises': typeof MarketingResourcesReadNumpySampleExercisesRoute
+  '/resources/read/numpy-step-by-step-learning-guide': typeof MarketingResourcesReadNumpyStepByStepLearningGuideRoute
+  '/resources/read/numpy-tips-tricks': typeof MarketingResourcesReadNumpyTipsTricksRoute
   '/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -9340,6 +9529,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
   '/_marketing/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
   '/_marketing/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
+  '/_marketing/resources/read/numpy-advanced-concepts': typeof MarketingResourcesReadNumpyAdvancedConceptsRoute
+  '/_marketing/resources/read/numpy-answer-key': typeof MarketingResourcesReadNumpyAnswerKeyRoute
+  '/_marketing/resources/read/numpy-beginner-guide': typeof MarketingResourcesReadNumpyBeginnerGuideRoute
+  '/_marketing/resources/read/numpy-best-practices': typeof MarketingResourcesReadNumpyBestPracticesRoute
+  '/_marketing/resources/read/numpy-cheat-sheet': typeof MarketingResourcesReadNumpyCheatSheetRoute
+  '/_marketing/resources/read/numpy-common-mistakes': typeof MarketingResourcesReadNumpyCommonMistakesRoute
+  '/_marketing/resources/read/numpy-complete-tutorial': typeof MarketingResourcesReadNumpyCompleteTutorialRoute
+  '/_marketing/resources/read/numpy-frequently-asked-questions': typeof MarketingResourcesReadNumpyFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/numpy-glossary': typeof MarketingResourcesReadNumpyGlossaryRoute
+  '/_marketing/resources/read/numpy-interview-questions': typeof MarketingResourcesReadNumpyInterviewQuestionsRoute
+  '/_marketing/resources/read/numpy-learning-roadmap': typeof MarketingResourcesReadNumpyLearningRoadmapRoute
+  '/_marketing/resources/read/numpy-pdf-notes': typeof MarketingResourcesReadNumpyPdfNotesRoute
+  '/_marketing/resources/read/numpy-practice-questions': typeof MarketingResourcesReadNumpyPracticeQuestionsRoute
+  '/_marketing/resources/read/numpy-project-case-study': typeof MarketingResourcesReadNumpyProjectCaseStudyRoute
+  '/_marketing/resources/read/numpy-project-guide': typeof MarketingResourcesReadNumpyProjectGuideRoute
+  '/_marketing/resources/read/numpy-quick-revision-notes': typeof MarketingResourcesReadNumpyQuickRevisionNotesRoute
+  '/_marketing/resources/read/numpy-real-world-case-study': typeof MarketingResourcesReadNumpyRealWorldCaseStudyRoute
+  '/_marketing/resources/read/numpy-reference-guide': typeof MarketingResourcesReadNumpyReferenceGuideRoute
+  '/_marketing/resources/read/numpy-sample-exercises': typeof MarketingResourcesReadNumpySampleExercisesRoute
+  '/_marketing/resources/read/numpy-step-by-step-learning-guide': typeof MarketingResourcesReadNumpyStepByStepLearningGuideRoute
+  '/_marketing/resources/read/numpy-tips-tricks': typeof MarketingResourcesReadNumpyTipsTricksRoute
   '/_marketing/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/_marketing/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/_marketing/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -10310,6 +10520,27 @@ export interface FileRouteTypes {
     | '/resources/read/nextjs-sample-exercises'
     | '/resources/read/nextjs-step-by-step-learning-guide'
     | '/resources/read/nextjs-tips-tricks'
+    | '/resources/read/numpy-advanced-concepts'
+    | '/resources/read/numpy-answer-key'
+    | '/resources/read/numpy-beginner-guide'
+    | '/resources/read/numpy-best-practices'
+    | '/resources/read/numpy-cheat-sheet'
+    | '/resources/read/numpy-common-mistakes'
+    | '/resources/read/numpy-complete-tutorial'
+    | '/resources/read/numpy-frequently-asked-questions'
+    | '/resources/read/numpy-glossary'
+    | '/resources/read/numpy-interview-questions'
+    | '/resources/read/numpy-learning-roadmap'
+    | '/resources/read/numpy-pdf-notes'
+    | '/resources/read/numpy-practice-questions'
+    | '/resources/read/numpy-project-case-study'
+    | '/resources/read/numpy-project-guide'
+    | '/resources/read/numpy-quick-revision-notes'
+    | '/resources/read/numpy-real-world-case-study'
+    | '/resources/read/numpy-reference-guide'
+    | '/resources/read/numpy-sample-exercises'
+    | '/resources/read/numpy-step-by-step-learning-guide'
+    | '/resources/read/numpy-tips-tricks'
     | '/resources/read/operating-systems-advanced-concepts'
     | '/resources/read/operating-systems-answer-key'
     | '/resources/read/operating-systems-beginner-guide'
@@ -11277,6 +11508,27 @@ export interface FileRouteTypes {
     | '/resources/read/nextjs-sample-exercises'
     | '/resources/read/nextjs-step-by-step-learning-guide'
     | '/resources/read/nextjs-tips-tricks'
+    | '/resources/read/numpy-advanced-concepts'
+    | '/resources/read/numpy-answer-key'
+    | '/resources/read/numpy-beginner-guide'
+    | '/resources/read/numpy-best-practices'
+    | '/resources/read/numpy-cheat-sheet'
+    | '/resources/read/numpy-common-mistakes'
+    | '/resources/read/numpy-complete-tutorial'
+    | '/resources/read/numpy-frequently-asked-questions'
+    | '/resources/read/numpy-glossary'
+    | '/resources/read/numpy-interview-questions'
+    | '/resources/read/numpy-learning-roadmap'
+    | '/resources/read/numpy-pdf-notes'
+    | '/resources/read/numpy-practice-questions'
+    | '/resources/read/numpy-project-case-study'
+    | '/resources/read/numpy-project-guide'
+    | '/resources/read/numpy-quick-revision-notes'
+    | '/resources/read/numpy-real-world-case-study'
+    | '/resources/read/numpy-reference-guide'
+    | '/resources/read/numpy-sample-exercises'
+    | '/resources/read/numpy-step-by-step-learning-guide'
+    | '/resources/read/numpy-tips-tricks'
     | '/resources/read/operating-systems-advanced-concepts'
     | '/resources/read/operating-systems-answer-key'
     | '/resources/read/operating-systems-beginner-guide'
@@ -12248,6 +12500,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/nextjs-sample-exercises'
     | '/_marketing/resources/read/nextjs-step-by-step-learning-guide'
     | '/_marketing/resources/read/nextjs-tips-tricks'
+    | '/_marketing/resources/read/numpy-advanced-concepts'
+    | '/_marketing/resources/read/numpy-answer-key'
+    | '/_marketing/resources/read/numpy-beginner-guide'
+    | '/_marketing/resources/read/numpy-best-practices'
+    | '/_marketing/resources/read/numpy-cheat-sheet'
+    | '/_marketing/resources/read/numpy-common-mistakes'
+    | '/_marketing/resources/read/numpy-complete-tutorial'
+    | '/_marketing/resources/read/numpy-frequently-asked-questions'
+    | '/_marketing/resources/read/numpy-glossary'
+    | '/_marketing/resources/read/numpy-interview-questions'
+    | '/_marketing/resources/read/numpy-learning-roadmap'
+    | '/_marketing/resources/read/numpy-pdf-notes'
+    | '/_marketing/resources/read/numpy-practice-questions'
+    | '/_marketing/resources/read/numpy-project-case-study'
+    | '/_marketing/resources/read/numpy-project-guide'
+    | '/_marketing/resources/read/numpy-quick-revision-notes'
+    | '/_marketing/resources/read/numpy-real-world-case-study'
+    | '/_marketing/resources/read/numpy-reference-guide'
+    | '/_marketing/resources/read/numpy-sample-exercises'
+    | '/_marketing/resources/read/numpy-step-by-step-learning-guide'
+    | '/_marketing/resources/read/numpy-tips-tricks'
     | '/_marketing/resources/read/operating-systems-advanced-concepts'
     | '/_marketing/resources/read/operating-systems-answer-key'
     | '/_marketing/resources/read/operating-systems-beginner-guide'
@@ -15317,6 +15590,153 @@ declare module '@tanstack/react-router' {
       path: '/read/operating-systems-advanced-concepts'
       fullPath: '/resources/read/operating-systems-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-tips-tricks': {
+      id: '/_marketing/resources/read/numpy-tips-tricks'
+      path: '/read/numpy-tips-tricks'
+      fullPath: '/resources/read/numpy-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/numpy-step-by-step-learning-guide'
+      path: '/read/numpy-step-by-step-learning-guide'
+      fullPath: '/resources/read/numpy-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-sample-exercises': {
+      id: '/_marketing/resources/read/numpy-sample-exercises'
+      path: '/read/numpy-sample-exercises'
+      fullPath: '/resources/read/numpy-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadNumpySampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-reference-guide': {
+      id: '/_marketing/resources/read/numpy-reference-guide'
+      path: '/read/numpy-reference-guide'
+      fullPath: '/resources/read/numpy-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-real-world-case-study': {
+      id: '/_marketing/resources/read/numpy-real-world-case-study'
+      path: '/read/numpy-real-world-case-study'
+      fullPath: '/resources/read/numpy-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-quick-revision-notes': {
+      id: '/_marketing/resources/read/numpy-quick-revision-notes'
+      path: '/read/numpy-quick-revision-notes'
+      fullPath: '/resources/read/numpy-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-project-guide': {
+      id: '/_marketing/resources/read/numpy-project-guide'
+      path: '/read/numpy-project-guide'
+      fullPath: '/resources/read/numpy-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-project-case-study': {
+      id: '/_marketing/resources/read/numpy-project-case-study'
+      path: '/read/numpy-project-case-study'
+      fullPath: '/resources/read/numpy-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-practice-questions': {
+      id: '/_marketing/resources/read/numpy-practice-questions'
+      path: '/read/numpy-practice-questions'
+      fullPath: '/resources/read/numpy-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-pdf-notes': {
+      id: '/_marketing/resources/read/numpy-pdf-notes'
+      path: '/read/numpy-pdf-notes'
+      fullPath: '/resources/read/numpy-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-learning-roadmap': {
+      id: '/_marketing/resources/read/numpy-learning-roadmap'
+      path: '/read/numpy-learning-roadmap'
+      fullPath: '/resources/read/numpy-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-interview-questions': {
+      id: '/_marketing/resources/read/numpy-interview-questions'
+      path: '/read/numpy-interview-questions'
+      fullPath: '/resources/read/numpy-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-glossary': {
+      id: '/_marketing/resources/read/numpy-glossary'
+      path: '/read/numpy-glossary'
+      fullPath: '/resources/read/numpy-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-frequently-asked-questions': {
+      id: '/_marketing/resources/read/numpy-frequently-asked-questions'
+      path: '/read/numpy-frequently-asked-questions'
+      fullPath: '/resources/read/numpy-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-complete-tutorial': {
+      id: '/_marketing/resources/read/numpy-complete-tutorial'
+      path: '/read/numpy-complete-tutorial'
+      fullPath: '/resources/read/numpy-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-common-mistakes': {
+      id: '/_marketing/resources/read/numpy-common-mistakes'
+      path: '/read/numpy-common-mistakes'
+      fullPath: '/resources/read/numpy-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-cheat-sheet': {
+      id: '/_marketing/resources/read/numpy-cheat-sheet'
+      path: '/read/numpy-cheat-sheet'
+      fullPath: '/resources/read/numpy-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-best-practices': {
+      id: '/_marketing/resources/read/numpy-best-practices'
+      path: '/read/numpy-best-practices'
+      fullPath: '/resources/read/numpy-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-beginner-guide': {
+      id: '/_marketing/resources/read/numpy-beginner-guide'
+      path: '/read/numpy-beginner-guide'
+      fullPath: '/resources/read/numpy-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-answer-key': {
+      id: '/_marketing/resources/read/numpy-answer-key'
+      path: '/read/numpy-answer-key'
+      fullPath: '/resources/read/numpy-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/numpy-advanced-concepts': {
+      id: '/_marketing/resources/read/numpy-advanced-concepts'
+      path: '/read/numpy-advanced-concepts'
+      fullPath: '/resources/read/numpy-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadNumpyAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/nextjs-tips-tricks': {
@@ -20106,6 +20526,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadNextjsSampleExercisesRoute: typeof MarketingResourcesReadNextjsSampleExercisesRoute
   MarketingResourcesReadNextjsStepByStepLearningGuideRoute: typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
   MarketingResourcesReadNextjsTipsTricksRoute: typeof MarketingResourcesReadNextjsTipsTricksRoute
+  MarketingResourcesReadNumpyAdvancedConceptsRoute: typeof MarketingResourcesReadNumpyAdvancedConceptsRoute
+  MarketingResourcesReadNumpyAnswerKeyRoute: typeof MarketingResourcesReadNumpyAnswerKeyRoute
+  MarketingResourcesReadNumpyBeginnerGuideRoute: typeof MarketingResourcesReadNumpyBeginnerGuideRoute
+  MarketingResourcesReadNumpyBestPracticesRoute: typeof MarketingResourcesReadNumpyBestPracticesRoute
+  MarketingResourcesReadNumpyCheatSheetRoute: typeof MarketingResourcesReadNumpyCheatSheetRoute
+  MarketingResourcesReadNumpyCommonMistakesRoute: typeof MarketingResourcesReadNumpyCommonMistakesRoute
+  MarketingResourcesReadNumpyCompleteTutorialRoute: typeof MarketingResourcesReadNumpyCompleteTutorialRoute
+  MarketingResourcesReadNumpyFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadNumpyFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadNumpyGlossaryRoute: typeof MarketingResourcesReadNumpyGlossaryRoute
+  MarketingResourcesReadNumpyInterviewQuestionsRoute: typeof MarketingResourcesReadNumpyInterviewQuestionsRoute
+  MarketingResourcesReadNumpyLearningRoadmapRoute: typeof MarketingResourcesReadNumpyLearningRoadmapRoute
+  MarketingResourcesReadNumpyPdfNotesRoute: typeof MarketingResourcesReadNumpyPdfNotesRoute
+  MarketingResourcesReadNumpyPracticeQuestionsRoute: typeof MarketingResourcesReadNumpyPracticeQuestionsRoute
+  MarketingResourcesReadNumpyProjectCaseStudyRoute: typeof MarketingResourcesReadNumpyProjectCaseStudyRoute
+  MarketingResourcesReadNumpyProjectGuideRoute: typeof MarketingResourcesReadNumpyProjectGuideRoute
+  MarketingResourcesReadNumpyQuickRevisionNotesRoute: typeof MarketingResourcesReadNumpyQuickRevisionNotesRoute
+  MarketingResourcesReadNumpyRealWorldCaseStudyRoute: typeof MarketingResourcesReadNumpyRealWorldCaseStudyRoute
+  MarketingResourcesReadNumpyReferenceGuideRoute: typeof MarketingResourcesReadNumpyReferenceGuideRoute
+  MarketingResourcesReadNumpySampleExercisesRoute: typeof MarketingResourcesReadNumpySampleExercisesRoute
+  MarketingResourcesReadNumpyStepByStepLearningGuideRoute: typeof MarketingResourcesReadNumpyStepByStepLearningGuideRoute
+  MarketingResourcesReadNumpyTipsTricksRoute: typeof MarketingResourcesReadNumpyTipsTricksRoute
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute: typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   MarketingResourcesReadOperatingSystemsAnswerKeyRoute: typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   MarketingResourcesReadOperatingSystemsBeginnerGuideRoute: typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -21585,6 +22026,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadNextjsStepByStepLearningGuideRoute,
   MarketingResourcesReadNextjsTipsTricksRoute:
     MarketingResourcesReadNextjsTipsTricksRoute,
+  MarketingResourcesReadNumpyAdvancedConceptsRoute:
+    MarketingResourcesReadNumpyAdvancedConceptsRoute,
+  MarketingResourcesReadNumpyAnswerKeyRoute:
+    MarketingResourcesReadNumpyAnswerKeyRoute,
+  MarketingResourcesReadNumpyBeginnerGuideRoute:
+    MarketingResourcesReadNumpyBeginnerGuideRoute,
+  MarketingResourcesReadNumpyBestPracticesRoute:
+    MarketingResourcesReadNumpyBestPracticesRoute,
+  MarketingResourcesReadNumpyCheatSheetRoute:
+    MarketingResourcesReadNumpyCheatSheetRoute,
+  MarketingResourcesReadNumpyCommonMistakesRoute:
+    MarketingResourcesReadNumpyCommonMistakesRoute,
+  MarketingResourcesReadNumpyCompleteTutorialRoute:
+    MarketingResourcesReadNumpyCompleteTutorialRoute,
+  MarketingResourcesReadNumpyFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadNumpyFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadNumpyGlossaryRoute:
+    MarketingResourcesReadNumpyGlossaryRoute,
+  MarketingResourcesReadNumpyInterviewQuestionsRoute:
+    MarketingResourcesReadNumpyInterviewQuestionsRoute,
+  MarketingResourcesReadNumpyLearningRoadmapRoute:
+    MarketingResourcesReadNumpyLearningRoadmapRoute,
+  MarketingResourcesReadNumpyPdfNotesRoute:
+    MarketingResourcesReadNumpyPdfNotesRoute,
+  MarketingResourcesReadNumpyPracticeQuestionsRoute:
+    MarketingResourcesReadNumpyPracticeQuestionsRoute,
+  MarketingResourcesReadNumpyProjectCaseStudyRoute:
+    MarketingResourcesReadNumpyProjectCaseStudyRoute,
+  MarketingResourcesReadNumpyProjectGuideRoute:
+    MarketingResourcesReadNumpyProjectGuideRoute,
+  MarketingResourcesReadNumpyQuickRevisionNotesRoute:
+    MarketingResourcesReadNumpyQuickRevisionNotesRoute,
+  MarketingResourcesReadNumpyRealWorldCaseStudyRoute:
+    MarketingResourcesReadNumpyRealWorldCaseStudyRoute,
+  MarketingResourcesReadNumpyReferenceGuideRoute:
+    MarketingResourcesReadNumpyReferenceGuideRoute,
+  MarketingResourcesReadNumpySampleExercisesRoute:
+    MarketingResourcesReadNumpySampleExercisesRoute,
+  MarketingResourcesReadNumpyStepByStepLearningGuideRoute:
+    MarketingResourcesReadNumpyStepByStepLearningGuideRoute,
+  MarketingResourcesReadNumpyTipsTricksRoute:
+    MarketingResourcesReadNumpyTipsTricksRoute,
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute:
     MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute,
   MarketingResourcesReadOperatingSystemsAnswerKeyRoute:
@@ -22333,13 +22816,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
