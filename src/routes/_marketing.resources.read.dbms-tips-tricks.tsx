@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ReaderShell, Section, Figure, Callout, FAQItem, References, type ReaderResource, type TocItem } from "@/components/resources/ReaderShell";
+import { ReaderShell, Section, Figure, Callout, FAQItem, type ReaderResource, type TocItem } from "@/components/resources/ReaderShell";
 
 const RESOURCE: ReaderResource = {
   id: "dbms-tips-tricks",
@@ -212,19 +212,19 @@ function Page() {
         <FAQItem q="How do I practice safely?">Run production-scale queries against a restored snapshot in a staging DB.</FAQItem>
       </Section>
 
-      <References
-        items={[
-          "PostgreSQL Performance Tips — postgresql.org/docs/current/performance-tips.html",
-          "Use The Index, Luke — use-the-index-luke.com",
-          "MySQL Query Optimization — dev.mysql.com/doc/refman/8.0/en/optimization.html",
-          "Microsoft SQL Server Query Tuning — learn.microsoft.com",
-          "Oracle Database Performance Tuning Guide",
-          "MariaDB Knowledge Base",
-          "IBM Db2 Documentation",
-          "CMU Database Group — Andy Pavlo lectures",
-          "Silberschatz — Database System Concepts",
-        ]}
-      />
+      <Section id="references" title="References">
+          <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+            <li>PostgreSQL Performance Tips — postgresql.org/docs/current/performance-tips.html</li>
+            <li>Use The Index, Luke — use-the-index-luke.com</li>
+            <li>MySQL Query Optimization — dev.mysql.com/doc/refman/8.0/en/optimization.html</li>
+            <li>Microsoft SQL Server Query Tuning — learn.microsoft.com</li>
+            <li>Oracle Database Performance Tuning Guide</li>
+            <li>MariaDB Knowledge Base</li>
+            <li>IBM Db2 Documentation</li>
+            <li>CMU Database Group — Andy Pavlo lectures</li>
+            <li>Silberschatz — Database System Concepts</li>
+          </ul>
+        </Section>
 
       <Section id="disclaimer" title="Disclaimer">
         <p className="text-sm text-muted-foreground">

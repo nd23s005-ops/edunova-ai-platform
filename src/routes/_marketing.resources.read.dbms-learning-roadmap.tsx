@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ReaderShell, Section, Figure, Callout, FAQItem, References, type ReaderResource, type TocItem } from "@/components/resources/ReaderShell";
+import { ReaderShell, Section, Figure, Callout, FAQItem, type ReaderResource, type TocItem } from "@/components/resources/ReaderShell";
 
 const RESOURCE: ReaderResource = {
   id: "dbms-learning-roadmap",
@@ -162,19 +162,19 @@ function Page() {
         <FAQItem q="Should I learn NoSQL alongside?">After you finish this roadmap. Strong SQL fundamentals make NoSQL much easier.</FAQItem>
       </Section>
 
-      <References
-        items={[
-          "PostgreSQL Documentation — postgresql.org/docs",
-          "MySQL Reference Manual — dev.mysql.com/doc",
-          "Oracle Learning — education.oracle.com",
-          "Microsoft Learn — SQL Server & Azure SQL",
-          "MongoDB University (for NoSQL comparisons)",
-          "CMU 15-445 Database Systems (open lectures)",
-          "MIT OpenCourseWare 6.830",
-          "Silberschatz — Database System Concepts",
-          "Elmasri & Navathe — Fundamentals of Database Systems",
-        ]}
-      />
+      <Section id="references" title="References">
+          <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+            <li>PostgreSQL Documentation — postgresql.org/docs</li>
+            <li>MySQL Reference Manual — dev.mysql.com/doc</li>
+            <li>Oracle Learning — education.oracle.com</li>
+            <li>Microsoft Learn — SQL Server & Azure SQL</li>
+            <li>MongoDB University (for NoSQL comparisons)</li>
+            <li>CMU 15-445 Database Systems (open lectures)</li>
+            <li>MIT OpenCourseWare 6.830</li>
+            <li>Silberschatz — Database System Concepts</li>
+            <li>Elmasri & Navathe — Fundamentals of Database Systems</li>
+          </ul>
+        </Section>
 
       <Section id="disclaimer" title="Disclaimer">
         <p className="text-sm text-muted-foreground">

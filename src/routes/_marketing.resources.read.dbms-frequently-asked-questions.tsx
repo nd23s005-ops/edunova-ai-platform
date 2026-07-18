@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ReaderShell, Section, Figure, Callout, FAQItem, References, type ReaderResource, type TocItem } from "@/components/resources/ReaderShell";
+import { ReaderShell, Section, Figure, Callout, FAQItem, type ReaderResource, type TocItem } from "@/components/resources/ReaderShell";
 
 const RESOURCE: ReaderResource = {
   id: "dbms-frequently-asked-questions",
@@ -211,19 +211,19 @@ LEFT JOIN users u ON u.id = o.user_id;`}</pre>}
         <FAQItem q="How much SQL is enough?">Comfortable with JOINs, GROUP BY, subqueries, window functions, CTEs, and indexes.</FAQItem>
       </Section>
 
-      <References
-        items={[
-          "PostgreSQL Documentation — postgresql.org/docs",
-          "MySQL Documentation — dev.mysql.com/doc",
-          "Oracle Database Documentation — docs.oracle.com/en/database",
-          "Microsoft SQL Server Docs — learn.microsoft.com/sql",
-          "SQLite Documentation — sqlite.org/docs.html",
-          "Silberschatz, Korth & Sudarshan — Database System Concepts",
-          "Elmasri & Navathe — Fundamentals of Database Systems",
-          "MIT OCW 6.830 — Database Systems",
-          "Carnegie Mellon — 15-445 Database Systems",
-        ]}
-      />
+      <Section id="references" title="References">
+          <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+            <li>PostgreSQL Documentation — postgresql.org/docs</li>
+            <li>MySQL Documentation — dev.mysql.com/doc</li>
+            <li>Oracle Database Documentation — docs.oracle.com/en/database</li>
+            <li>Microsoft SQL Server Docs — learn.microsoft.com/sql</li>
+            <li>SQLite Documentation — sqlite.org/docs.html</li>
+            <li>Silberschatz, Korth & Sudarshan — Database System Concepts</li>
+            <li>Elmasri & Navathe — Fundamentals of Database Systems</li>
+            <li>MIT OCW 6.830 — Database Systems</li>
+            <li>Carnegie Mellon — 15-445 Database Systems</li>
+          </ul>
+        </Section>
 
       <Section id="disclaimer" title="Disclaimer">
         <p className="text-sm text-muted-foreground">
