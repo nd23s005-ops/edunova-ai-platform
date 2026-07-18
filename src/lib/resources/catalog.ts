@@ -480,22 +480,19 @@ const READER_ROUTES: Record<string, string> = {
    "react--cheat-sheet": "/resources/read/react-cheat-sheet",
    "react--interview-questions": "/resources/read/react-interview-questions",
    "react--practice-questions": "/resources/read/react-practice-questions",
-   "react--answer-key": "/resources/read/react-answer-key",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    "react--answer-key": "/resources/read/react-answer-key",
+    "react--sample-exercises": "/resources/read/react-sample-exercises",
+    "react--project-guide": "/resources/read/react-project-guide",
+    "react--project-case-study": "/resources/read/react-project-case-study",
+    "react--real-world-case-study": "/resources/read/react-real-world-case-study",
+    "react--best-practices": "/resources/read/react-best-practices",
+    "react--common-mistakes": "/resources/read/react-common-mistakes",
+    "react--frequently-asked-questions": "/resources/read/react-frequently-asked-questions",
+    "react--learning-roadmap": "/resources/read/react-learning-roadmap",
+    "react--tips-and-tricks": "/resources/read/react-tips-and-tricks",
+    "react--advanced-concepts": "/resources/read/react-advanced-concepts",
+    "react--glossary": "/resources/read/react-glossary",
+    "react--reference-guide": "/resources/read/react-reference-guide",
 };
 
 export function getResourceReaderPath(id: string): string | null {
