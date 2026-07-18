@@ -352,6 +352,9 @@ const READER_ROUTES: Record<string, string> = {
   "deep-learning--advanced-concepts": "/resources/read/dl-advanced-concepts",
   "deep-learning--glossary": "/resources/read/dl-glossary",
   "deep-learning--reference-guide": "/resources/read/dl-reference-guide",
+  "deep-learning--frequently-asked-questions": "/resources/read/dl-frequently-asked-questions",
+  "deep-learning--learning-roadmap": "/resources/read/dl-learning-roadmap",
+  "deep-learning--tips-tricks": "/resources/read/dl-tips-tricks",
 
 };
 
