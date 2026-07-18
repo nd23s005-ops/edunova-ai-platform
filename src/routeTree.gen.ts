@@ -230,6 +230,27 @@ import { Route as MarketingResourcesReadPowerBiBestPracticesRouteImport } from '
 import { Route as MarketingResourcesReadPowerBiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.power-bi-beginner-guide'
 import { Route as MarketingResourcesReadPowerBiAnswerKeyRouteImport } from './routes/_marketing.resources.read.power-bi-answer-key'
 import { Route as MarketingResourcesReadPowerBiAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.power-bi-advanced-concepts'
+import { Route as MarketingResourcesReadPostgresqlTipsTricksRouteImport } from './routes/_marketing.resources.read.postgresql-tips-tricks'
+import { Route as MarketingResourcesReadPostgresqlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.postgresql-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadPostgresqlSampleExercisesRouteImport } from './routes/_marketing.resources.read.postgresql-sample-exercises'
+import { Route as MarketingResourcesReadPostgresqlReferenceGuideRouteImport } from './routes/_marketing.resources.read.postgresql-reference-guide'
+import { Route as MarketingResourcesReadPostgresqlRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.postgresql-real-world-case-study'
+import { Route as MarketingResourcesReadPostgresqlQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.postgresql-quick-revision-notes'
+import { Route as MarketingResourcesReadPostgresqlProjectGuideRouteImport } from './routes/_marketing.resources.read.postgresql-project-guide'
+import { Route as MarketingResourcesReadPostgresqlProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.postgresql-project-case-study'
+import { Route as MarketingResourcesReadPostgresqlPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.postgresql-practice-questions'
+import { Route as MarketingResourcesReadPostgresqlPdfNotesRouteImport } from './routes/_marketing.resources.read.postgresql-pdf-notes'
+import { Route as MarketingResourcesReadPostgresqlLearningRoadmapRouteImport } from './routes/_marketing.resources.read.postgresql-learning-roadmap'
+import { Route as MarketingResourcesReadPostgresqlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.postgresql-interview-questions'
+import { Route as MarketingResourcesReadPostgresqlGlossaryRouteImport } from './routes/_marketing.resources.read.postgresql-glossary'
+import { Route as MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.postgresql-frequently-asked-questions'
+import { Route as MarketingResourcesReadPostgresqlCompleteTutorialRouteImport } from './routes/_marketing.resources.read.postgresql-complete-tutorial'
+import { Route as MarketingResourcesReadPostgresqlCommonMistakesRouteImport } from './routes/_marketing.resources.read.postgresql-common-mistakes'
+import { Route as MarketingResourcesReadPostgresqlCheatSheetRouteImport } from './routes/_marketing.resources.read.postgresql-cheat-sheet'
+import { Route as MarketingResourcesReadPostgresqlBestPracticesRouteImport } from './routes/_marketing.resources.read.postgresql-best-practices'
+import { Route as MarketingResourcesReadPostgresqlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.postgresql-beginner-guide'
+import { Route as MarketingResourcesReadPostgresqlAnswerKeyRouteImport } from './routes/_marketing.resources.read.postgresql-answer-key'
+import { Route as MarketingResourcesReadPostgresqlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.postgresql-advanced-concepts'
 import { Route as MarketingResourcesReadPenetrationTestingTipsTricksRouteImport } from './routes/_marketing.resources.read.penetration-testing-tips-tricks'
 import { Route as MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.penetration-testing-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPenetrationTestingSampleExercisesRouteImport } from './routes/_marketing.resources.read.penetration-testing-sample-exercises'
@@ -2102,6 +2123,132 @@ const MarketingResourcesReadPowerBiAdvancedConceptsRoute =
   MarketingResourcesReadPowerBiAdvancedConceptsRouteImport.update({
     id: '/read/power-bi-advanced-concepts',
     path: '/read/power-bi-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlTipsTricksRoute =
+  MarketingResourcesReadPostgresqlTipsTricksRouteImport.update({
+    id: '/read/postgresql-tips-tricks',
+    path: '/read/postgresql-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlStepByStepLearningGuideRoute =
+  MarketingResourcesReadPostgresqlStepByStepLearningGuideRouteImport.update({
+    id: '/read/postgresql-step-by-step-learning-guide',
+    path: '/read/postgresql-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlSampleExercisesRoute =
+  MarketingResourcesReadPostgresqlSampleExercisesRouteImport.update({
+    id: '/read/postgresql-sample-exercises',
+    path: '/read/postgresql-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlReferenceGuideRoute =
+  MarketingResourcesReadPostgresqlReferenceGuideRouteImport.update({
+    id: '/read/postgresql-reference-guide',
+    path: '/read/postgresql-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlRealWorldCaseStudyRoute =
+  MarketingResourcesReadPostgresqlRealWorldCaseStudyRouteImport.update({
+    id: '/read/postgresql-real-world-case-study',
+    path: '/read/postgresql-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlQuickRevisionNotesRoute =
+  MarketingResourcesReadPostgresqlQuickRevisionNotesRouteImport.update({
+    id: '/read/postgresql-quick-revision-notes',
+    path: '/read/postgresql-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlProjectGuideRoute =
+  MarketingResourcesReadPostgresqlProjectGuideRouteImport.update({
+    id: '/read/postgresql-project-guide',
+    path: '/read/postgresql-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlProjectCaseStudyRoute =
+  MarketingResourcesReadPostgresqlProjectCaseStudyRouteImport.update({
+    id: '/read/postgresql-project-case-study',
+    path: '/read/postgresql-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlPracticeQuestionsRoute =
+  MarketingResourcesReadPostgresqlPracticeQuestionsRouteImport.update({
+    id: '/read/postgresql-practice-questions',
+    path: '/read/postgresql-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlPdfNotesRoute =
+  MarketingResourcesReadPostgresqlPdfNotesRouteImport.update({
+    id: '/read/postgresql-pdf-notes',
+    path: '/read/postgresql-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlLearningRoadmapRoute =
+  MarketingResourcesReadPostgresqlLearningRoadmapRouteImport.update({
+    id: '/read/postgresql-learning-roadmap',
+    path: '/read/postgresql-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlInterviewQuestionsRoute =
+  MarketingResourcesReadPostgresqlInterviewQuestionsRouteImport.update({
+    id: '/read/postgresql-interview-questions',
+    path: '/read/postgresql-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlGlossaryRoute =
+  MarketingResourcesReadPostgresqlGlossaryRouteImport.update({
+    id: '/read/postgresql-glossary',
+    path: '/read/postgresql-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/postgresql-frequently-asked-questions',
+    path: '/read/postgresql-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlCompleteTutorialRoute =
+  MarketingResourcesReadPostgresqlCompleteTutorialRouteImport.update({
+    id: '/read/postgresql-complete-tutorial',
+    path: '/read/postgresql-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlCommonMistakesRoute =
+  MarketingResourcesReadPostgresqlCommonMistakesRouteImport.update({
+    id: '/read/postgresql-common-mistakes',
+    path: '/read/postgresql-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlCheatSheetRoute =
+  MarketingResourcesReadPostgresqlCheatSheetRouteImport.update({
+    id: '/read/postgresql-cheat-sheet',
+    path: '/read/postgresql-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlBestPracticesRoute =
+  MarketingResourcesReadPostgresqlBestPracticesRouteImport.update({
+    id: '/read/postgresql-best-practices',
+    path: '/read/postgresql-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlBeginnerGuideRoute =
+  MarketingResourcesReadPostgresqlBeginnerGuideRouteImport.update({
+    id: '/read/postgresql-beginner-guide',
+    path: '/read/postgresql-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlAnswerKeyRoute =
+  MarketingResourcesReadPostgresqlAnswerKeyRouteImport.update({
+    id: '/read/postgresql-answer-key',
+    path: '/read/postgresql-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPostgresqlAdvancedConceptsRoute =
+  MarketingResourcesReadPostgresqlAdvancedConceptsRouteImport.update({
+    id: '/read/postgresql-advanced-concepts',
+    path: '/read/postgresql-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPenetrationTestingTipsTricksRoute =
@@ -6222,6 +6369,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
   '/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
   '/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
+  '/resources/read/postgresql-advanced-concepts': typeof MarketingResourcesReadPostgresqlAdvancedConceptsRoute
+  '/resources/read/postgresql-answer-key': typeof MarketingResourcesReadPostgresqlAnswerKeyRoute
+  '/resources/read/postgresql-beginner-guide': typeof MarketingResourcesReadPostgresqlBeginnerGuideRoute
+  '/resources/read/postgresql-best-practices': typeof MarketingResourcesReadPostgresqlBestPracticesRoute
+  '/resources/read/postgresql-cheat-sheet': typeof MarketingResourcesReadPostgresqlCheatSheetRoute
+  '/resources/read/postgresql-common-mistakes': typeof MarketingResourcesReadPostgresqlCommonMistakesRoute
+  '/resources/read/postgresql-complete-tutorial': typeof MarketingResourcesReadPostgresqlCompleteTutorialRoute
+  '/resources/read/postgresql-frequently-asked-questions': typeof MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRoute
+  '/resources/read/postgresql-glossary': typeof MarketingResourcesReadPostgresqlGlossaryRoute
+  '/resources/read/postgresql-interview-questions': typeof MarketingResourcesReadPostgresqlInterviewQuestionsRoute
+  '/resources/read/postgresql-learning-roadmap': typeof MarketingResourcesReadPostgresqlLearningRoadmapRoute
+  '/resources/read/postgresql-pdf-notes': typeof MarketingResourcesReadPostgresqlPdfNotesRoute
+  '/resources/read/postgresql-practice-questions': typeof MarketingResourcesReadPostgresqlPracticeQuestionsRoute
+  '/resources/read/postgresql-project-case-study': typeof MarketingResourcesReadPostgresqlProjectCaseStudyRoute
+  '/resources/read/postgresql-project-guide': typeof MarketingResourcesReadPostgresqlProjectGuideRoute
+  '/resources/read/postgresql-quick-revision-notes': typeof MarketingResourcesReadPostgresqlQuickRevisionNotesRoute
+  '/resources/read/postgresql-real-world-case-study': typeof MarketingResourcesReadPostgresqlRealWorldCaseStudyRoute
+  '/resources/read/postgresql-reference-guide': typeof MarketingResourcesReadPostgresqlReferenceGuideRoute
+  '/resources/read/postgresql-sample-exercises': typeof MarketingResourcesReadPostgresqlSampleExercisesRoute
+  '/resources/read/postgresql-step-by-step-learning-guide': typeof MarketingResourcesReadPostgresqlStepByStepLearningGuideRoute
+  '/resources/read/postgresql-tips-tricks': typeof MarketingResourcesReadPostgresqlTipsTricksRoute
   '/resources/read/power-bi-advanced-concepts': typeof MarketingResourcesReadPowerBiAdvancedConceptsRoute
   '/resources/read/power-bi-answer-key': typeof MarketingResourcesReadPowerBiAnswerKeyRoute
   '/resources/read/power-bi-beginner-guide': typeof MarketingResourcesReadPowerBiBeginnerGuideRoute
@@ -7021,6 +7189,27 @@ export interface FileRoutesByTo {
   '/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
   '/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
   '/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
+  '/resources/read/postgresql-advanced-concepts': typeof MarketingResourcesReadPostgresqlAdvancedConceptsRoute
+  '/resources/read/postgresql-answer-key': typeof MarketingResourcesReadPostgresqlAnswerKeyRoute
+  '/resources/read/postgresql-beginner-guide': typeof MarketingResourcesReadPostgresqlBeginnerGuideRoute
+  '/resources/read/postgresql-best-practices': typeof MarketingResourcesReadPostgresqlBestPracticesRoute
+  '/resources/read/postgresql-cheat-sheet': typeof MarketingResourcesReadPostgresqlCheatSheetRoute
+  '/resources/read/postgresql-common-mistakes': typeof MarketingResourcesReadPostgresqlCommonMistakesRoute
+  '/resources/read/postgresql-complete-tutorial': typeof MarketingResourcesReadPostgresqlCompleteTutorialRoute
+  '/resources/read/postgresql-frequently-asked-questions': typeof MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRoute
+  '/resources/read/postgresql-glossary': typeof MarketingResourcesReadPostgresqlGlossaryRoute
+  '/resources/read/postgresql-interview-questions': typeof MarketingResourcesReadPostgresqlInterviewQuestionsRoute
+  '/resources/read/postgresql-learning-roadmap': typeof MarketingResourcesReadPostgresqlLearningRoadmapRoute
+  '/resources/read/postgresql-pdf-notes': typeof MarketingResourcesReadPostgresqlPdfNotesRoute
+  '/resources/read/postgresql-practice-questions': typeof MarketingResourcesReadPostgresqlPracticeQuestionsRoute
+  '/resources/read/postgresql-project-case-study': typeof MarketingResourcesReadPostgresqlProjectCaseStudyRoute
+  '/resources/read/postgresql-project-guide': typeof MarketingResourcesReadPostgresqlProjectGuideRoute
+  '/resources/read/postgresql-quick-revision-notes': typeof MarketingResourcesReadPostgresqlQuickRevisionNotesRoute
+  '/resources/read/postgresql-real-world-case-study': typeof MarketingResourcesReadPostgresqlRealWorldCaseStudyRoute
+  '/resources/read/postgresql-reference-guide': typeof MarketingResourcesReadPostgresqlReferenceGuideRoute
+  '/resources/read/postgresql-sample-exercises': typeof MarketingResourcesReadPostgresqlSampleExercisesRoute
+  '/resources/read/postgresql-step-by-step-learning-guide': typeof MarketingResourcesReadPostgresqlStepByStepLearningGuideRoute
+  '/resources/read/postgresql-tips-tricks': typeof MarketingResourcesReadPostgresqlTipsTricksRoute
   '/resources/read/power-bi-advanced-concepts': typeof MarketingResourcesReadPowerBiAdvancedConceptsRoute
   '/resources/read/power-bi-answer-key': typeof MarketingResourcesReadPowerBiAnswerKeyRoute
   '/resources/read/power-bi-beginner-guide': typeof MarketingResourcesReadPowerBiBeginnerGuideRoute
@@ -7825,6 +8014,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/penetration-testing-sample-exercises': typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
   '/_marketing/resources/read/penetration-testing-step-by-step-learning-guide': typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
   '/_marketing/resources/read/penetration-testing-tips-tricks': typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
+  '/_marketing/resources/read/postgresql-advanced-concepts': typeof MarketingResourcesReadPostgresqlAdvancedConceptsRoute
+  '/_marketing/resources/read/postgresql-answer-key': typeof MarketingResourcesReadPostgresqlAnswerKeyRoute
+  '/_marketing/resources/read/postgresql-beginner-guide': typeof MarketingResourcesReadPostgresqlBeginnerGuideRoute
+  '/_marketing/resources/read/postgresql-best-practices': typeof MarketingResourcesReadPostgresqlBestPracticesRoute
+  '/_marketing/resources/read/postgresql-cheat-sheet': typeof MarketingResourcesReadPostgresqlCheatSheetRoute
+  '/_marketing/resources/read/postgresql-common-mistakes': typeof MarketingResourcesReadPostgresqlCommonMistakesRoute
+  '/_marketing/resources/read/postgresql-complete-tutorial': typeof MarketingResourcesReadPostgresqlCompleteTutorialRoute
+  '/_marketing/resources/read/postgresql-frequently-asked-questions': typeof MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/postgresql-glossary': typeof MarketingResourcesReadPostgresqlGlossaryRoute
+  '/_marketing/resources/read/postgresql-interview-questions': typeof MarketingResourcesReadPostgresqlInterviewQuestionsRoute
+  '/_marketing/resources/read/postgresql-learning-roadmap': typeof MarketingResourcesReadPostgresqlLearningRoadmapRoute
+  '/_marketing/resources/read/postgresql-pdf-notes': typeof MarketingResourcesReadPostgresqlPdfNotesRoute
+  '/_marketing/resources/read/postgresql-practice-questions': typeof MarketingResourcesReadPostgresqlPracticeQuestionsRoute
+  '/_marketing/resources/read/postgresql-project-case-study': typeof MarketingResourcesReadPostgresqlProjectCaseStudyRoute
+  '/_marketing/resources/read/postgresql-project-guide': typeof MarketingResourcesReadPostgresqlProjectGuideRoute
+  '/_marketing/resources/read/postgresql-quick-revision-notes': typeof MarketingResourcesReadPostgresqlQuickRevisionNotesRoute
+  '/_marketing/resources/read/postgresql-real-world-case-study': typeof MarketingResourcesReadPostgresqlRealWorldCaseStudyRoute
+  '/_marketing/resources/read/postgresql-reference-guide': typeof MarketingResourcesReadPostgresqlReferenceGuideRoute
+  '/_marketing/resources/read/postgresql-sample-exercises': typeof MarketingResourcesReadPostgresqlSampleExercisesRoute
+  '/_marketing/resources/read/postgresql-step-by-step-learning-guide': typeof MarketingResourcesReadPostgresqlStepByStepLearningGuideRoute
+  '/_marketing/resources/read/postgresql-tips-tricks': typeof MarketingResourcesReadPostgresqlTipsTricksRoute
   '/_marketing/resources/read/power-bi-advanced-concepts': typeof MarketingResourcesReadPowerBiAdvancedConceptsRoute
   '/_marketing/resources/read/power-bi-answer-key': typeof MarketingResourcesReadPowerBiAnswerKeyRoute
   '/_marketing/resources/read/power-bi-beginner-guide': typeof MarketingResourcesReadPowerBiBeginnerGuideRoute
@@ -8627,6 +8837,27 @@ export interface FileRouteTypes {
     | '/resources/read/penetration-testing-sample-exercises'
     | '/resources/read/penetration-testing-step-by-step-learning-guide'
     | '/resources/read/penetration-testing-tips-tricks'
+    | '/resources/read/postgresql-advanced-concepts'
+    | '/resources/read/postgresql-answer-key'
+    | '/resources/read/postgresql-beginner-guide'
+    | '/resources/read/postgresql-best-practices'
+    | '/resources/read/postgresql-cheat-sheet'
+    | '/resources/read/postgresql-common-mistakes'
+    | '/resources/read/postgresql-complete-tutorial'
+    | '/resources/read/postgresql-frequently-asked-questions'
+    | '/resources/read/postgresql-glossary'
+    | '/resources/read/postgresql-interview-questions'
+    | '/resources/read/postgresql-learning-roadmap'
+    | '/resources/read/postgresql-pdf-notes'
+    | '/resources/read/postgresql-practice-questions'
+    | '/resources/read/postgresql-project-case-study'
+    | '/resources/read/postgresql-project-guide'
+    | '/resources/read/postgresql-quick-revision-notes'
+    | '/resources/read/postgresql-real-world-case-study'
+    | '/resources/read/postgresql-reference-guide'
+    | '/resources/read/postgresql-sample-exercises'
+    | '/resources/read/postgresql-step-by-step-learning-guide'
+    | '/resources/read/postgresql-tips-tricks'
     | '/resources/read/power-bi-advanced-concepts'
     | '/resources/read/power-bi-answer-key'
     | '/resources/read/power-bi-beginner-guide'
@@ -9426,6 +9657,27 @@ export interface FileRouteTypes {
     | '/resources/read/penetration-testing-sample-exercises'
     | '/resources/read/penetration-testing-step-by-step-learning-guide'
     | '/resources/read/penetration-testing-tips-tricks'
+    | '/resources/read/postgresql-advanced-concepts'
+    | '/resources/read/postgresql-answer-key'
+    | '/resources/read/postgresql-beginner-guide'
+    | '/resources/read/postgresql-best-practices'
+    | '/resources/read/postgresql-cheat-sheet'
+    | '/resources/read/postgresql-common-mistakes'
+    | '/resources/read/postgresql-complete-tutorial'
+    | '/resources/read/postgresql-frequently-asked-questions'
+    | '/resources/read/postgresql-glossary'
+    | '/resources/read/postgresql-interview-questions'
+    | '/resources/read/postgresql-learning-roadmap'
+    | '/resources/read/postgresql-pdf-notes'
+    | '/resources/read/postgresql-practice-questions'
+    | '/resources/read/postgresql-project-case-study'
+    | '/resources/read/postgresql-project-guide'
+    | '/resources/read/postgresql-quick-revision-notes'
+    | '/resources/read/postgresql-real-world-case-study'
+    | '/resources/read/postgresql-reference-guide'
+    | '/resources/read/postgresql-sample-exercises'
+    | '/resources/read/postgresql-step-by-step-learning-guide'
+    | '/resources/read/postgresql-tips-tricks'
     | '/resources/read/power-bi-advanced-concepts'
     | '/resources/read/power-bi-answer-key'
     | '/resources/read/power-bi-beginner-guide'
@@ -10229,6 +10481,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/penetration-testing-sample-exercises'
     | '/_marketing/resources/read/penetration-testing-step-by-step-learning-guide'
     | '/_marketing/resources/read/penetration-testing-tips-tricks'
+    | '/_marketing/resources/read/postgresql-advanced-concepts'
+    | '/_marketing/resources/read/postgresql-answer-key'
+    | '/_marketing/resources/read/postgresql-beginner-guide'
+    | '/_marketing/resources/read/postgresql-best-practices'
+    | '/_marketing/resources/read/postgresql-cheat-sheet'
+    | '/_marketing/resources/read/postgresql-common-mistakes'
+    | '/_marketing/resources/read/postgresql-complete-tutorial'
+    | '/_marketing/resources/read/postgresql-frequently-asked-questions'
+    | '/_marketing/resources/read/postgresql-glossary'
+    | '/_marketing/resources/read/postgresql-interview-questions'
+    | '/_marketing/resources/read/postgresql-learning-roadmap'
+    | '/_marketing/resources/read/postgresql-pdf-notes'
+    | '/_marketing/resources/read/postgresql-practice-questions'
+    | '/_marketing/resources/read/postgresql-project-case-study'
+    | '/_marketing/resources/read/postgresql-project-guide'
+    | '/_marketing/resources/read/postgresql-quick-revision-notes'
+    | '/_marketing/resources/read/postgresql-real-world-case-study'
+    | '/_marketing/resources/read/postgresql-reference-guide'
+    | '/_marketing/resources/read/postgresql-sample-exercises'
+    | '/_marketing/resources/read/postgresql-step-by-step-learning-guide'
+    | '/_marketing/resources/read/postgresql-tips-tricks'
     | '/_marketing/resources/read/power-bi-advanced-concepts'
     | '/_marketing/resources/read/power-bi-answer-key'
     | '/_marketing/resources/read/power-bi-beginner-guide'
@@ -11978,6 +12251,153 @@ declare module '@tanstack/react-router' {
       path: '/read/power-bi-advanced-concepts'
       fullPath: '/resources/read/power-bi-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadPowerBiAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-tips-tricks': {
+      id: '/_marketing/resources/read/postgresql-tips-tricks'
+      path: '/read/postgresql-tips-tricks'
+      fullPath: '/resources/read/postgresql-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/postgresql-step-by-step-learning-guide'
+      path: '/read/postgresql-step-by-step-learning-guide'
+      fullPath: '/resources/read/postgresql-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-sample-exercises': {
+      id: '/_marketing/resources/read/postgresql-sample-exercises'
+      path: '/read/postgresql-sample-exercises'
+      fullPath: '/resources/read/postgresql-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-reference-guide': {
+      id: '/_marketing/resources/read/postgresql-reference-guide'
+      path: '/read/postgresql-reference-guide'
+      fullPath: '/resources/read/postgresql-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-real-world-case-study': {
+      id: '/_marketing/resources/read/postgresql-real-world-case-study'
+      path: '/read/postgresql-real-world-case-study'
+      fullPath: '/resources/read/postgresql-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-quick-revision-notes': {
+      id: '/_marketing/resources/read/postgresql-quick-revision-notes'
+      path: '/read/postgresql-quick-revision-notes'
+      fullPath: '/resources/read/postgresql-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-project-guide': {
+      id: '/_marketing/resources/read/postgresql-project-guide'
+      path: '/read/postgresql-project-guide'
+      fullPath: '/resources/read/postgresql-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-project-case-study': {
+      id: '/_marketing/resources/read/postgresql-project-case-study'
+      path: '/read/postgresql-project-case-study'
+      fullPath: '/resources/read/postgresql-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-practice-questions': {
+      id: '/_marketing/resources/read/postgresql-practice-questions'
+      path: '/read/postgresql-practice-questions'
+      fullPath: '/resources/read/postgresql-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-pdf-notes': {
+      id: '/_marketing/resources/read/postgresql-pdf-notes'
+      path: '/read/postgresql-pdf-notes'
+      fullPath: '/resources/read/postgresql-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-learning-roadmap': {
+      id: '/_marketing/resources/read/postgresql-learning-roadmap'
+      path: '/read/postgresql-learning-roadmap'
+      fullPath: '/resources/read/postgresql-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-interview-questions': {
+      id: '/_marketing/resources/read/postgresql-interview-questions'
+      path: '/read/postgresql-interview-questions'
+      fullPath: '/resources/read/postgresql-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-glossary': {
+      id: '/_marketing/resources/read/postgresql-glossary'
+      path: '/read/postgresql-glossary'
+      fullPath: '/resources/read/postgresql-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-frequently-asked-questions': {
+      id: '/_marketing/resources/read/postgresql-frequently-asked-questions'
+      path: '/read/postgresql-frequently-asked-questions'
+      fullPath: '/resources/read/postgresql-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-complete-tutorial': {
+      id: '/_marketing/resources/read/postgresql-complete-tutorial'
+      path: '/read/postgresql-complete-tutorial'
+      fullPath: '/resources/read/postgresql-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-common-mistakes': {
+      id: '/_marketing/resources/read/postgresql-common-mistakes'
+      path: '/read/postgresql-common-mistakes'
+      fullPath: '/resources/read/postgresql-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-cheat-sheet': {
+      id: '/_marketing/resources/read/postgresql-cheat-sheet'
+      path: '/read/postgresql-cheat-sheet'
+      fullPath: '/resources/read/postgresql-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-best-practices': {
+      id: '/_marketing/resources/read/postgresql-best-practices'
+      path: '/read/postgresql-best-practices'
+      fullPath: '/resources/read/postgresql-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-beginner-guide': {
+      id: '/_marketing/resources/read/postgresql-beginner-guide'
+      path: '/read/postgresql-beginner-guide'
+      fullPath: '/resources/read/postgresql-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-answer-key': {
+      id: '/_marketing/resources/read/postgresql-answer-key'
+      path: '/read/postgresql-answer-key'
+      fullPath: '/resources/read/postgresql-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/postgresql-advanced-concepts': {
+      id: '/_marketing/resources/read/postgresql-advanced-concepts'
+      path: '/read/postgresql-advanced-concepts'
+      fullPath: '/resources/read/postgresql-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadPostgresqlAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/penetration-testing-tips-tricks': {
@@ -16743,6 +17163,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPenetrationTestingSampleExercisesRoute: typeof MarketingResourcesReadPenetrationTestingSampleExercisesRoute
   MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute: typeof MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute
   MarketingResourcesReadPenetrationTestingTipsTricksRoute: typeof MarketingResourcesReadPenetrationTestingTipsTricksRoute
+  MarketingResourcesReadPostgresqlAdvancedConceptsRoute: typeof MarketingResourcesReadPostgresqlAdvancedConceptsRoute
+  MarketingResourcesReadPostgresqlAnswerKeyRoute: typeof MarketingResourcesReadPostgresqlAnswerKeyRoute
+  MarketingResourcesReadPostgresqlBeginnerGuideRoute: typeof MarketingResourcesReadPostgresqlBeginnerGuideRoute
+  MarketingResourcesReadPostgresqlBestPracticesRoute: typeof MarketingResourcesReadPostgresqlBestPracticesRoute
+  MarketingResourcesReadPostgresqlCheatSheetRoute: typeof MarketingResourcesReadPostgresqlCheatSheetRoute
+  MarketingResourcesReadPostgresqlCommonMistakesRoute: typeof MarketingResourcesReadPostgresqlCommonMistakesRoute
+  MarketingResourcesReadPostgresqlCompleteTutorialRoute: typeof MarketingResourcesReadPostgresqlCompleteTutorialRoute
+  MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadPostgresqlGlossaryRoute: typeof MarketingResourcesReadPostgresqlGlossaryRoute
+  MarketingResourcesReadPostgresqlInterviewQuestionsRoute: typeof MarketingResourcesReadPostgresqlInterviewQuestionsRoute
+  MarketingResourcesReadPostgresqlLearningRoadmapRoute: typeof MarketingResourcesReadPostgresqlLearningRoadmapRoute
+  MarketingResourcesReadPostgresqlPdfNotesRoute: typeof MarketingResourcesReadPostgresqlPdfNotesRoute
+  MarketingResourcesReadPostgresqlPracticeQuestionsRoute: typeof MarketingResourcesReadPostgresqlPracticeQuestionsRoute
+  MarketingResourcesReadPostgresqlProjectCaseStudyRoute: typeof MarketingResourcesReadPostgresqlProjectCaseStudyRoute
+  MarketingResourcesReadPostgresqlProjectGuideRoute: typeof MarketingResourcesReadPostgresqlProjectGuideRoute
+  MarketingResourcesReadPostgresqlQuickRevisionNotesRoute: typeof MarketingResourcesReadPostgresqlQuickRevisionNotesRoute
+  MarketingResourcesReadPostgresqlRealWorldCaseStudyRoute: typeof MarketingResourcesReadPostgresqlRealWorldCaseStudyRoute
+  MarketingResourcesReadPostgresqlReferenceGuideRoute: typeof MarketingResourcesReadPostgresqlReferenceGuideRoute
+  MarketingResourcesReadPostgresqlSampleExercisesRoute: typeof MarketingResourcesReadPostgresqlSampleExercisesRoute
+  MarketingResourcesReadPostgresqlStepByStepLearningGuideRoute: typeof MarketingResourcesReadPostgresqlStepByStepLearningGuideRoute
+  MarketingResourcesReadPostgresqlTipsTricksRoute: typeof MarketingResourcesReadPostgresqlTipsTricksRoute
   MarketingResourcesReadPowerBiAdvancedConceptsRoute: typeof MarketingResourcesReadPowerBiAdvancedConceptsRoute
   MarketingResourcesReadPowerBiAnswerKeyRoute: typeof MarketingResourcesReadPowerBiAnswerKeyRoute
   MarketingResourcesReadPowerBiBeginnerGuideRoute: typeof MarketingResourcesReadPowerBiBeginnerGuideRoute
@@ -18049,6 +18490,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPenetrationTestingStepByStepLearningGuideRoute,
   MarketingResourcesReadPenetrationTestingTipsTricksRoute:
     MarketingResourcesReadPenetrationTestingTipsTricksRoute,
+  MarketingResourcesReadPostgresqlAdvancedConceptsRoute:
+    MarketingResourcesReadPostgresqlAdvancedConceptsRoute,
+  MarketingResourcesReadPostgresqlAnswerKeyRoute:
+    MarketingResourcesReadPostgresqlAnswerKeyRoute,
+  MarketingResourcesReadPostgresqlBeginnerGuideRoute:
+    MarketingResourcesReadPostgresqlBeginnerGuideRoute,
+  MarketingResourcesReadPostgresqlBestPracticesRoute:
+    MarketingResourcesReadPostgresqlBestPracticesRoute,
+  MarketingResourcesReadPostgresqlCheatSheetRoute:
+    MarketingResourcesReadPostgresqlCheatSheetRoute,
+  MarketingResourcesReadPostgresqlCommonMistakesRoute:
+    MarketingResourcesReadPostgresqlCommonMistakesRoute,
+  MarketingResourcesReadPostgresqlCompleteTutorialRoute:
+    MarketingResourcesReadPostgresqlCompleteTutorialRoute,
+  MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadPostgresqlFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadPostgresqlGlossaryRoute:
+    MarketingResourcesReadPostgresqlGlossaryRoute,
+  MarketingResourcesReadPostgresqlInterviewQuestionsRoute:
+    MarketingResourcesReadPostgresqlInterviewQuestionsRoute,
+  MarketingResourcesReadPostgresqlLearningRoadmapRoute:
+    MarketingResourcesReadPostgresqlLearningRoadmapRoute,
+  MarketingResourcesReadPostgresqlPdfNotesRoute:
+    MarketingResourcesReadPostgresqlPdfNotesRoute,
+  MarketingResourcesReadPostgresqlPracticeQuestionsRoute:
+    MarketingResourcesReadPostgresqlPracticeQuestionsRoute,
+  MarketingResourcesReadPostgresqlProjectCaseStudyRoute:
+    MarketingResourcesReadPostgresqlProjectCaseStudyRoute,
+  MarketingResourcesReadPostgresqlProjectGuideRoute:
+    MarketingResourcesReadPostgresqlProjectGuideRoute,
+  MarketingResourcesReadPostgresqlQuickRevisionNotesRoute:
+    MarketingResourcesReadPostgresqlQuickRevisionNotesRoute,
+  MarketingResourcesReadPostgresqlRealWorldCaseStudyRoute:
+    MarketingResourcesReadPostgresqlRealWorldCaseStudyRoute,
+  MarketingResourcesReadPostgresqlReferenceGuideRoute:
+    MarketingResourcesReadPostgresqlReferenceGuideRoute,
+  MarketingResourcesReadPostgresqlSampleExercisesRoute:
+    MarketingResourcesReadPostgresqlSampleExercisesRoute,
+  MarketingResourcesReadPostgresqlStepByStepLearningGuideRoute:
+    MarketingResourcesReadPostgresqlStepByStepLearningGuideRoute,
+  MarketingResourcesReadPostgresqlTipsTricksRoute:
+    MarketingResourcesReadPostgresqlTipsTricksRoute,
   MarketingResourcesReadPowerBiAdvancedConceptsRoute:
     MarketingResourcesReadPowerBiAdvancedConceptsRoute,
   MarketingResourcesReadPowerBiAnswerKeyRoute:
