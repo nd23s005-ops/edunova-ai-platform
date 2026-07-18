@@ -587,6 +587,27 @@ import { Route as MarketingResourcesReadAzureBestPracticesRouteImport } from './
 import { Route as MarketingResourcesReadAzureBeginnerGuideRouteImport } from './routes/_marketing.resources.read.azure-beginner-guide'
 import { Route as MarketingResourcesReadAzureAnswerKeyRouteImport } from './routes/_marketing.resources.read.azure-answer-key'
 import { Route as MarketingResourcesReadAzureAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.azure-advanced-concepts'
+import { Route as MarketingResourcesReadAwsTipsTricksRouteImport } from './routes/_marketing.resources.read.aws-tips-tricks'
+import { Route as MarketingResourcesReadAwsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.aws-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadAwsSampleExercisesRouteImport } from './routes/_marketing.resources.read.aws-sample-exercises'
+import { Route as MarketingResourcesReadAwsReferenceGuideRouteImport } from './routes/_marketing.resources.read.aws-reference-guide'
+import { Route as MarketingResourcesReadAwsRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.aws-real-world-case-study'
+import { Route as MarketingResourcesReadAwsQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.aws-quick-revision-notes'
+import { Route as MarketingResourcesReadAwsProjectGuideRouteImport } from './routes/_marketing.resources.read.aws-project-guide'
+import { Route as MarketingResourcesReadAwsProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.aws-project-case-study'
+import { Route as MarketingResourcesReadAwsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.aws-practice-questions'
+import { Route as MarketingResourcesReadAwsPdfNotesRouteImport } from './routes/_marketing.resources.read.aws-pdf-notes'
+import { Route as MarketingResourcesReadAwsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.aws-learning-roadmap'
+import { Route as MarketingResourcesReadAwsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.aws-interview-questions'
+import { Route as MarketingResourcesReadAwsGlossaryRouteImport } from './routes/_marketing.resources.read.aws-glossary'
+import { Route as MarketingResourcesReadAwsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.aws-frequently-asked-questions'
+import { Route as MarketingResourcesReadAwsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.aws-complete-tutorial'
+import { Route as MarketingResourcesReadAwsCommonMistakesRouteImport } from './routes/_marketing.resources.read.aws-common-mistakes'
+import { Route as MarketingResourcesReadAwsCheatSheetRouteImport } from './routes/_marketing.resources.read.aws-cheat-sheet'
+import { Route as MarketingResourcesReadAwsBestPracticesRouteImport } from './routes/_marketing.resources.read.aws-best-practices'
+import { Route as MarketingResourcesReadAwsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.aws-beginner-guide'
+import { Route as MarketingResourcesReadAwsAnswerKeyRouteImport } from './routes/_marketing.resources.read.aws-answer-key'
+import { Route as MarketingResourcesReadAwsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.aws-advanced-concepts'
 import { Route as MarketingResourcesReadAiTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-tips-tricks'
 import { Route as MarketingResourcesReadAiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadAiSampleExercisesRouteImport } from './routes/_marketing.resources.read.ai-sample-exercises'
@@ -4079,6 +4100,132 @@ const MarketingResourcesReadAzureAdvancedConceptsRoute =
     path: '/read/azure-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAwsTipsTricksRoute =
+  MarketingResourcesReadAwsTipsTricksRouteImport.update({
+    id: '/read/aws-tips-tricks',
+    path: '/read/aws-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsStepByStepLearningGuideRoute =
+  MarketingResourcesReadAwsStepByStepLearningGuideRouteImport.update({
+    id: '/read/aws-step-by-step-learning-guide',
+    path: '/read/aws-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsSampleExercisesRoute =
+  MarketingResourcesReadAwsSampleExercisesRouteImport.update({
+    id: '/read/aws-sample-exercises',
+    path: '/read/aws-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsReferenceGuideRoute =
+  MarketingResourcesReadAwsReferenceGuideRouteImport.update({
+    id: '/read/aws-reference-guide',
+    path: '/read/aws-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsRealWorldCaseStudyRoute =
+  MarketingResourcesReadAwsRealWorldCaseStudyRouteImport.update({
+    id: '/read/aws-real-world-case-study',
+    path: '/read/aws-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsQuickRevisionNotesRoute =
+  MarketingResourcesReadAwsQuickRevisionNotesRouteImport.update({
+    id: '/read/aws-quick-revision-notes',
+    path: '/read/aws-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsProjectGuideRoute =
+  MarketingResourcesReadAwsProjectGuideRouteImport.update({
+    id: '/read/aws-project-guide',
+    path: '/read/aws-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsProjectCaseStudyRoute =
+  MarketingResourcesReadAwsProjectCaseStudyRouteImport.update({
+    id: '/read/aws-project-case-study',
+    path: '/read/aws-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsPracticeQuestionsRoute =
+  MarketingResourcesReadAwsPracticeQuestionsRouteImport.update({
+    id: '/read/aws-practice-questions',
+    path: '/read/aws-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsPdfNotesRoute =
+  MarketingResourcesReadAwsPdfNotesRouteImport.update({
+    id: '/read/aws-pdf-notes',
+    path: '/read/aws-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsLearningRoadmapRoute =
+  MarketingResourcesReadAwsLearningRoadmapRouteImport.update({
+    id: '/read/aws-learning-roadmap',
+    path: '/read/aws-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsInterviewQuestionsRoute =
+  MarketingResourcesReadAwsInterviewQuestionsRouteImport.update({
+    id: '/read/aws-interview-questions',
+    path: '/read/aws-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsGlossaryRoute =
+  MarketingResourcesReadAwsGlossaryRouteImport.update({
+    id: '/read/aws-glossary',
+    path: '/read/aws-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadAwsFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/aws-frequently-asked-questions',
+    path: '/read/aws-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsCompleteTutorialRoute =
+  MarketingResourcesReadAwsCompleteTutorialRouteImport.update({
+    id: '/read/aws-complete-tutorial',
+    path: '/read/aws-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsCommonMistakesRoute =
+  MarketingResourcesReadAwsCommonMistakesRouteImport.update({
+    id: '/read/aws-common-mistakes',
+    path: '/read/aws-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsCheatSheetRoute =
+  MarketingResourcesReadAwsCheatSheetRouteImport.update({
+    id: '/read/aws-cheat-sheet',
+    path: '/read/aws-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsBestPracticesRoute =
+  MarketingResourcesReadAwsBestPracticesRouteImport.update({
+    id: '/read/aws-best-practices',
+    path: '/read/aws-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsBeginnerGuideRoute =
+  MarketingResourcesReadAwsBeginnerGuideRouteImport.update({
+    id: '/read/aws-beginner-guide',
+    path: '/read/aws-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsAnswerKeyRoute =
+  MarketingResourcesReadAwsAnswerKeyRouteImport.update({
+    id: '/read/aws-answer-key',
+    path: '/read/aws-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAwsAdvancedConceptsRoute =
+  MarketingResourcesReadAwsAdvancedConceptsRouteImport.update({
+    id: '/read/aws-advanced-concepts',
+    path: '/read/aws-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiTipsTricksRoute =
   MarketingResourcesReadAiTipsTricksRouteImport.update({
     id: '/read/ai-tips-tricks',
@@ -4353,6 +4500,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/aws-advanced-concepts': typeof MarketingResourcesReadAwsAdvancedConceptsRoute
+  '/resources/read/aws-answer-key': typeof MarketingResourcesReadAwsAnswerKeyRoute
+  '/resources/read/aws-beginner-guide': typeof MarketingResourcesReadAwsBeginnerGuideRoute
+  '/resources/read/aws-best-practices': typeof MarketingResourcesReadAwsBestPracticesRoute
+  '/resources/read/aws-cheat-sheet': typeof MarketingResourcesReadAwsCheatSheetRoute
+  '/resources/read/aws-common-mistakes': typeof MarketingResourcesReadAwsCommonMistakesRoute
+  '/resources/read/aws-complete-tutorial': typeof MarketingResourcesReadAwsCompleteTutorialRoute
+  '/resources/read/aws-frequently-asked-questions': typeof MarketingResourcesReadAwsFrequentlyAskedQuestionsRoute
+  '/resources/read/aws-glossary': typeof MarketingResourcesReadAwsGlossaryRoute
+  '/resources/read/aws-interview-questions': typeof MarketingResourcesReadAwsInterviewQuestionsRoute
+  '/resources/read/aws-learning-roadmap': typeof MarketingResourcesReadAwsLearningRoadmapRoute
+  '/resources/read/aws-pdf-notes': typeof MarketingResourcesReadAwsPdfNotesRoute
+  '/resources/read/aws-practice-questions': typeof MarketingResourcesReadAwsPracticeQuestionsRoute
+  '/resources/read/aws-project-case-study': typeof MarketingResourcesReadAwsProjectCaseStudyRoute
+  '/resources/read/aws-project-guide': typeof MarketingResourcesReadAwsProjectGuideRoute
+  '/resources/read/aws-quick-revision-notes': typeof MarketingResourcesReadAwsQuickRevisionNotesRoute
+  '/resources/read/aws-real-world-case-study': typeof MarketingResourcesReadAwsRealWorldCaseStudyRoute
+  '/resources/read/aws-reference-guide': typeof MarketingResourcesReadAwsReferenceGuideRoute
+  '/resources/read/aws-sample-exercises': typeof MarketingResourcesReadAwsSampleExercisesRoute
+  '/resources/read/aws-step-by-step-learning-guide': typeof MarketingResourcesReadAwsStepByStepLearningGuideRoute
+  '/resources/read/aws-tips-tricks': typeof MarketingResourcesReadAwsTipsTricksRoute
   '/resources/read/azure-advanced-concepts': typeof MarketingResourcesReadAzureAdvancedConceptsRoute
   '/resources/read/azure-answer-key': typeof MarketingResourcesReadAzureAnswerKeyRoute
   '/resources/read/azure-beginner-guide': typeof MarketingResourcesReadAzureBeginnerGuideRoute
@@ -4963,6 +5131,27 @@ export interface FileRoutesByTo {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/aws-advanced-concepts': typeof MarketingResourcesReadAwsAdvancedConceptsRoute
+  '/resources/read/aws-answer-key': typeof MarketingResourcesReadAwsAnswerKeyRoute
+  '/resources/read/aws-beginner-guide': typeof MarketingResourcesReadAwsBeginnerGuideRoute
+  '/resources/read/aws-best-practices': typeof MarketingResourcesReadAwsBestPracticesRoute
+  '/resources/read/aws-cheat-sheet': typeof MarketingResourcesReadAwsCheatSheetRoute
+  '/resources/read/aws-common-mistakes': typeof MarketingResourcesReadAwsCommonMistakesRoute
+  '/resources/read/aws-complete-tutorial': typeof MarketingResourcesReadAwsCompleteTutorialRoute
+  '/resources/read/aws-frequently-asked-questions': typeof MarketingResourcesReadAwsFrequentlyAskedQuestionsRoute
+  '/resources/read/aws-glossary': typeof MarketingResourcesReadAwsGlossaryRoute
+  '/resources/read/aws-interview-questions': typeof MarketingResourcesReadAwsInterviewQuestionsRoute
+  '/resources/read/aws-learning-roadmap': typeof MarketingResourcesReadAwsLearningRoadmapRoute
+  '/resources/read/aws-pdf-notes': typeof MarketingResourcesReadAwsPdfNotesRoute
+  '/resources/read/aws-practice-questions': typeof MarketingResourcesReadAwsPracticeQuestionsRoute
+  '/resources/read/aws-project-case-study': typeof MarketingResourcesReadAwsProjectCaseStudyRoute
+  '/resources/read/aws-project-guide': typeof MarketingResourcesReadAwsProjectGuideRoute
+  '/resources/read/aws-quick-revision-notes': typeof MarketingResourcesReadAwsQuickRevisionNotesRoute
+  '/resources/read/aws-real-world-case-study': typeof MarketingResourcesReadAwsRealWorldCaseStudyRoute
+  '/resources/read/aws-reference-guide': typeof MarketingResourcesReadAwsReferenceGuideRoute
+  '/resources/read/aws-sample-exercises': typeof MarketingResourcesReadAwsSampleExercisesRoute
+  '/resources/read/aws-step-by-step-learning-guide': typeof MarketingResourcesReadAwsStepByStepLearningGuideRoute
+  '/resources/read/aws-tips-tricks': typeof MarketingResourcesReadAwsTipsTricksRoute
   '/resources/read/azure-advanced-concepts': typeof MarketingResourcesReadAzureAdvancedConceptsRoute
   '/resources/read/azure-answer-key': typeof MarketingResourcesReadAzureAnswerKeyRoute
   '/resources/read/azure-beginner-guide': typeof MarketingResourcesReadAzureBeginnerGuideRoute
@@ -5578,6 +5767,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/_marketing/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/_marketing/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/_marketing/resources/read/aws-advanced-concepts': typeof MarketingResourcesReadAwsAdvancedConceptsRoute
+  '/_marketing/resources/read/aws-answer-key': typeof MarketingResourcesReadAwsAnswerKeyRoute
+  '/_marketing/resources/read/aws-beginner-guide': typeof MarketingResourcesReadAwsBeginnerGuideRoute
+  '/_marketing/resources/read/aws-best-practices': typeof MarketingResourcesReadAwsBestPracticesRoute
+  '/_marketing/resources/read/aws-cheat-sheet': typeof MarketingResourcesReadAwsCheatSheetRoute
+  '/_marketing/resources/read/aws-common-mistakes': typeof MarketingResourcesReadAwsCommonMistakesRoute
+  '/_marketing/resources/read/aws-complete-tutorial': typeof MarketingResourcesReadAwsCompleteTutorialRoute
+  '/_marketing/resources/read/aws-frequently-asked-questions': typeof MarketingResourcesReadAwsFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/aws-glossary': typeof MarketingResourcesReadAwsGlossaryRoute
+  '/_marketing/resources/read/aws-interview-questions': typeof MarketingResourcesReadAwsInterviewQuestionsRoute
+  '/_marketing/resources/read/aws-learning-roadmap': typeof MarketingResourcesReadAwsLearningRoadmapRoute
+  '/_marketing/resources/read/aws-pdf-notes': typeof MarketingResourcesReadAwsPdfNotesRoute
+  '/_marketing/resources/read/aws-practice-questions': typeof MarketingResourcesReadAwsPracticeQuestionsRoute
+  '/_marketing/resources/read/aws-project-case-study': typeof MarketingResourcesReadAwsProjectCaseStudyRoute
+  '/_marketing/resources/read/aws-project-guide': typeof MarketingResourcesReadAwsProjectGuideRoute
+  '/_marketing/resources/read/aws-quick-revision-notes': typeof MarketingResourcesReadAwsQuickRevisionNotesRoute
+  '/_marketing/resources/read/aws-real-world-case-study': typeof MarketingResourcesReadAwsRealWorldCaseStudyRoute
+  '/_marketing/resources/read/aws-reference-guide': typeof MarketingResourcesReadAwsReferenceGuideRoute
+  '/_marketing/resources/read/aws-sample-exercises': typeof MarketingResourcesReadAwsSampleExercisesRoute
+  '/_marketing/resources/read/aws-step-by-step-learning-guide': typeof MarketingResourcesReadAwsStepByStepLearningGuideRoute
+  '/_marketing/resources/read/aws-tips-tricks': typeof MarketingResourcesReadAwsTipsTricksRoute
   '/_marketing/resources/read/azure-advanced-concepts': typeof MarketingResourcesReadAzureAdvancedConceptsRoute
   '/_marketing/resources/read/azure-answer-key': typeof MarketingResourcesReadAzureAnswerKeyRoute
   '/_marketing/resources/read/azure-beginner-guide': typeof MarketingResourcesReadAzureBeginnerGuideRoute
@@ -6191,6 +6401,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/aws-advanced-concepts'
+    | '/resources/read/aws-answer-key'
+    | '/resources/read/aws-beginner-guide'
+    | '/resources/read/aws-best-practices'
+    | '/resources/read/aws-cheat-sheet'
+    | '/resources/read/aws-common-mistakes'
+    | '/resources/read/aws-complete-tutorial'
+    | '/resources/read/aws-frequently-asked-questions'
+    | '/resources/read/aws-glossary'
+    | '/resources/read/aws-interview-questions'
+    | '/resources/read/aws-learning-roadmap'
+    | '/resources/read/aws-pdf-notes'
+    | '/resources/read/aws-practice-questions'
+    | '/resources/read/aws-project-case-study'
+    | '/resources/read/aws-project-guide'
+    | '/resources/read/aws-quick-revision-notes'
+    | '/resources/read/aws-real-world-case-study'
+    | '/resources/read/aws-reference-guide'
+    | '/resources/read/aws-sample-exercises'
+    | '/resources/read/aws-step-by-step-learning-guide'
+    | '/resources/read/aws-tips-tricks'
     | '/resources/read/azure-advanced-concepts'
     | '/resources/read/azure-answer-key'
     | '/resources/read/azure-beginner-guide'
@@ -6801,6 +7032,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/aws-advanced-concepts'
+    | '/resources/read/aws-answer-key'
+    | '/resources/read/aws-beginner-guide'
+    | '/resources/read/aws-best-practices'
+    | '/resources/read/aws-cheat-sheet'
+    | '/resources/read/aws-common-mistakes'
+    | '/resources/read/aws-complete-tutorial'
+    | '/resources/read/aws-frequently-asked-questions'
+    | '/resources/read/aws-glossary'
+    | '/resources/read/aws-interview-questions'
+    | '/resources/read/aws-learning-roadmap'
+    | '/resources/read/aws-pdf-notes'
+    | '/resources/read/aws-practice-questions'
+    | '/resources/read/aws-project-case-study'
+    | '/resources/read/aws-project-guide'
+    | '/resources/read/aws-quick-revision-notes'
+    | '/resources/read/aws-real-world-case-study'
+    | '/resources/read/aws-reference-guide'
+    | '/resources/read/aws-sample-exercises'
+    | '/resources/read/aws-step-by-step-learning-guide'
+    | '/resources/read/aws-tips-tricks'
     | '/resources/read/azure-advanced-concepts'
     | '/resources/read/azure-answer-key'
     | '/resources/read/azure-beginner-guide'
@@ -7415,6 +7667,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-sample-exercises'
     | '/_marketing/resources/read/ai-step-by-step-learning-guide'
     | '/_marketing/resources/read/ai-tips-tricks'
+    | '/_marketing/resources/read/aws-advanced-concepts'
+    | '/_marketing/resources/read/aws-answer-key'
+    | '/_marketing/resources/read/aws-beginner-guide'
+    | '/_marketing/resources/read/aws-best-practices'
+    | '/_marketing/resources/read/aws-cheat-sheet'
+    | '/_marketing/resources/read/aws-common-mistakes'
+    | '/_marketing/resources/read/aws-complete-tutorial'
+    | '/_marketing/resources/read/aws-frequently-asked-questions'
+    | '/_marketing/resources/read/aws-glossary'
+    | '/_marketing/resources/read/aws-interview-questions'
+    | '/_marketing/resources/read/aws-learning-roadmap'
+    | '/_marketing/resources/read/aws-pdf-notes'
+    | '/_marketing/resources/read/aws-practice-questions'
+    | '/_marketing/resources/read/aws-project-case-study'
+    | '/_marketing/resources/read/aws-project-guide'
+    | '/_marketing/resources/read/aws-quick-revision-notes'
+    | '/_marketing/resources/read/aws-real-world-case-study'
+    | '/_marketing/resources/read/aws-reference-guide'
+    | '/_marketing/resources/read/aws-sample-exercises'
+    | '/_marketing/resources/read/aws-step-by-step-learning-guide'
+    | '/_marketing/resources/read/aws-tips-tricks'
     | '/_marketing/resources/read/azure-advanced-concepts'
     | '/_marketing/resources/read/azure-answer-key'
     | '/_marketing/resources/read/azure-beginner-guide'
@@ -12022,6 +12295,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAzureAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/aws-tips-tricks': {
+      id: '/_marketing/resources/read/aws-tips-tricks'
+      path: '/read/aws-tips-tricks'
+      fullPath: '/resources/read/aws-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadAwsTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/aws-step-by-step-learning-guide'
+      path: '/read/aws-step-by-step-learning-guide'
+      fullPath: '/resources/read/aws-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAwsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-sample-exercises': {
+      id: '/_marketing/resources/read/aws-sample-exercises'
+      path: '/read/aws-sample-exercises'
+      fullPath: '/resources/read/aws-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadAwsSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-reference-guide': {
+      id: '/_marketing/resources/read/aws-reference-guide'
+      path: '/read/aws-reference-guide'
+      fullPath: '/resources/read/aws-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAwsReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-real-world-case-study': {
+      id: '/_marketing/resources/read/aws-real-world-case-study'
+      path: '/read/aws-real-world-case-study'
+      fullPath: '/resources/read/aws-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAwsRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-quick-revision-notes': {
+      id: '/_marketing/resources/read/aws-quick-revision-notes'
+      path: '/read/aws-quick-revision-notes'
+      fullPath: '/resources/read/aws-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAwsQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-project-guide': {
+      id: '/_marketing/resources/read/aws-project-guide'
+      path: '/read/aws-project-guide'
+      fullPath: '/resources/read/aws-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAwsProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-project-case-study': {
+      id: '/_marketing/resources/read/aws-project-case-study'
+      path: '/read/aws-project-case-study'
+      fullPath: '/resources/read/aws-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAwsProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-practice-questions': {
+      id: '/_marketing/resources/read/aws-practice-questions'
+      path: '/read/aws-practice-questions'
+      fullPath: '/resources/read/aws-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAwsPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-pdf-notes': {
+      id: '/_marketing/resources/read/aws-pdf-notes'
+      path: '/read/aws-pdf-notes'
+      fullPath: '/resources/read/aws-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAwsPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-learning-roadmap': {
+      id: '/_marketing/resources/read/aws-learning-roadmap'
+      path: '/read/aws-learning-roadmap'
+      fullPath: '/resources/read/aws-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadAwsLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-interview-questions': {
+      id: '/_marketing/resources/read/aws-interview-questions'
+      path: '/read/aws-interview-questions'
+      fullPath: '/resources/read/aws-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAwsInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-glossary': {
+      id: '/_marketing/resources/read/aws-glossary'
+      path: '/read/aws-glossary'
+      fullPath: '/resources/read/aws-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadAwsGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-frequently-asked-questions': {
+      id: '/_marketing/resources/read/aws-frequently-asked-questions'
+      path: '/read/aws-frequently-asked-questions'
+      fullPath: '/resources/read/aws-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAwsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-complete-tutorial': {
+      id: '/_marketing/resources/read/aws-complete-tutorial'
+      path: '/read/aws-complete-tutorial'
+      fullPath: '/resources/read/aws-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadAwsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-common-mistakes': {
+      id: '/_marketing/resources/read/aws-common-mistakes'
+      path: '/read/aws-common-mistakes'
+      fullPath: '/resources/read/aws-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadAwsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-cheat-sheet': {
+      id: '/_marketing/resources/read/aws-cheat-sheet'
+      path: '/read/aws-cheat-sheet'
+      fullPath: '/resources/read/aws-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadAwsCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-best-practices': {
+      id: '/_marketing/resources/read/aws-best-practices'
+      path: '/read/aws-best-practices'
+      fullPath: '/resources/read/aws-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadAwsBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-beginner-guide': {
+      id: '/_marketing/resources/read/aws-beginner-guide'
+      path: '/read/aws-beginner-guide'
+      fullPath: '/resources/read/aws-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAwsBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-answer-key': {
+      id: '/_marketing/resources/read/aws-answer-key'
+      path: '/read/aws-answer-key'
+      fullPath: '/resources/read/aws-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadAwsAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/aws-advanced-concepts': {
+      id: '/_marketing/resources/read/aws-advanced-concepts'
+      path: '/read/aws-advanced-concepts'
+      fullPath: '/resources/read/aws-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadAwsAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-tips-tricks': {
       id: '/_marketing/resources/read/ai-tips-tricks'
       path: '/read/ai-tips-tricks'
@@ -12417,6 +12837,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiSampleExercisesRoute: typeof MarketingResourcesReadAiSampleExercisesRoute
   MarketingResourcesReadAiStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   MarketingResourcesReadAiTipsTricksRoute: typeof MarketingResourcesReadAiTipsTricksRoute
+  MarketingResourcesReadAwsAdvancedConceptsRoute: typeof MarketingResourcesReadAwsAdvancedConceptsRoute
+  MarketingResourcesReadAwsAnswerKeyRoute: typeof MarketingResourcesReadAwsAnswerKeyRoute
+  MarketingResourcesReadAwsBeginnerGuideRoute: typeof MarketingResourcesReadAwsBeginnerGuideRoute
+  MarketingResourcesReadAwsBestPracticesRoute: typeof MarketingResourcesReadAwsBestPracticesRoute
+  MarketingResourcesReadAwsCheatSheetRoute: typeof MarketingResourcesReadAwsCheatSheetRoute
+  MarketingResourcesReadAwsCommonMistakesRoute: typeof MarketingResourcesReadAwsCommonMistakesRoute
+  MarketingResourcesReadAwsCompleteTutorialRoute: typeof MarketingResourcesReadAwsCompleteTutorialRoute
+  MarketingResourcesReadAwsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadAwsFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadAwsGlossaryRoute: typeof MarketingResourcesReadAwsGlossaryRoute
+  MarketingResourcesReadAwsInterviewQuestionsRoute: typeof MarketingResourcesReadAwsInterviewQuestionsRoute
+  MarketingResourcesReadAwsLearningRoadmapRoute: typeof MarketingResourcesReadAwsLearningRoadmapRoute
+  MarketingResourcesReadAwsPdfNotesRoute: typeof MarketingResourcesReadAwsPdfNotesRoute
+  MarketingResourcesReadAwsPracticeQuestionsRoute: typeof MarketingResourcesReadAwsPracticeQuestionsRoute
+  MarketingResourcesReadAwsProjectCaseStudyRoute: typeof MarketingResourcesReadAwsProjectCaseStudyRoute
+  MarketingResourcesReadAwsProjectGuideRoute: typeof MarketingResourcesReadAwsProjectGuideRoute
+  MarketingResourcesReadAwsQuickRevisionNotesRoute: typeof MarketingResourcesReadAwsQuickRevisionNotesRoute
+  MarketingResourcesReadAwsRealWorldCaseStudyRoute: typeof MarketingResourcesReadAwsRealWorldCaseStudyRoute
+  MarketingResourcesReadAwsReferenceGuideRoute: typeof MarketingResourcesReadAwsReferenceGuideRoute
+  MarketingResourcesReadAwsSampleExercisesRoute: typeof MarketingResourcesReadAwsSampleExercisesRoute
+  MarketingResourcesReadAwsStepByStepLearningGuideRoute: typeof MarketingResourcesReadAwsStepByStepLearningGuideRoute
+  MarketingResourcesReadAwsTipsTricksRoute: typeof MarketingResourcesReadAwsTipsTricksRoute
   MarketingResourcesReadAzureAdvancedConceptsRoute: typeof MarketingResourcesReadAzureAdvancedConceptsRoute
   MarketingResourcesReadAzureAnswerKeyRoute: typeof MarketingResourcesReadAzureAnswerKeyRoute
   MarketingResourcesReadAzureBeginnerGuideRoute: typeof MarketingResourcesReadAzureBeginnerGuideRoute
@@ -12996,6 +13437,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAiStepByStepLearningGuideRoute,
   MarketingResourcesReadAiTipsTricksRoute:
     MarketingResourcesReadAiTipsTricksRoute,
+  MarketingResourcesReadAwsAdvancedConceptsRoute:
+    MarketingResourcesReadAwsAdvancedConceptsRoute,
+  MarketingResourcesReadAwsAnswerKeyRoute:
+    MarketingResourcesReadAwsAnswerKeyRoute,
+  MarketingResourcesReadAwsBeginnerGuideRoute:
+    MarketingResourcesReadAwsBeginnerGuideRoute,
+  MarketingResourcesReadAwsBestPracticesRoute:
+    MarketingResourcesReadAwsBestPracticesRoute,
+  MarketingResourcesReadAwsCheatSheetRoute:
+    MarketingResourcesReadAwsCheatSheetRoute,
+  MarketingResourcesReadAwsCommonMistakesRoute:
+    MarketingResourcesReadAwsCommonMistakesRoute,
+  MarketingResourcesReadAwsCompleteTutorialRoute:
+    MarketingResourcesReadAwsCompleteTutorialRoute,
+  MarketingResourcesReadAwsFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadAwsFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadAwsGlossaryRoute:
+    MarketingResourcesReadAwsGlossaryRoute,
+  MarketingResourcesReadAwsInterviewQuestionsRoute:
+    MarketingResourcesReadAwsInterviewQuestionsRoute,
+  MarketingResourcesReadAwsLearningRoadmapRoute:
+    MarketingResourcesReadAwsLearningRoadmapRoute,
+  MarketingResourcesReadAwsPdfNotesRoute:
+    MarketingResourcesReadAwsPdfNotesRoute,
+  MarketingResourcesReadAwsPracticeQuestionsRoute:
+    MarketingResourcesReadAwsPracticeQuestionsRoute,
+  MarketingResourcesReadAwsProjectCaseStudyRoute:
+    MarketingResourcesReadAwsProjectCaseStudyRoute,
+  MarketingResourcesReadAwsProjectGuideRoute:
+    MarketingResourcesReadAwsProjectGuideRoute,
+  MarketingResourcesReadAwsQuickRevisionNotesRoute:
+    MarketingResourcesReadAwsQuickRevisionNotesRoute,
+  MarketingResourcesReadAwsRealWorldCaseStudyRoute:
+    MarketingResourcesReadAwsRealWorldCaseStudyRoute,
+  MarketingResourcesReadAwsReferenceGuideRoute:
+    MarketingResourcesReadAwsReferenceGuideRoute,
+  MarketingResourcesReadAwsSampleExercisesRoute:
+    MarketingResourcesReadAwsSampleExercisesRoute,
+  MarketingResourcesReadAwsStepByStepLearningGuideRoute:
+    MarketingResourcesReadAwsStepByStepLearningGuideRoute,
+  MarketingResourcesReadAwsTipsTricksRoute:
+    MarketingResourcesReadAwsTipsTricksRoute,
   MarketingResourcesReadAzureAdvancedConceptsRoute:
     MarketingResourcesReadAzureAdvancedConceptsRoute,
   MarketingResourcesReadAzureAnswerKeyRoute:
