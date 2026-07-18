@@ -364,6 +364,9 @@ const READER_ROUTES: Record<string, string> = {
   "deep-learning--sample-exercises": "/resources/read/dl-sample-exercises",
   "deep-learning--project-guide": "/resources/read/dl-project-guide",
   "deep-learning--project-case-study": "/resources/read/dl-project-case-study",
+  "deep-learning--beginner-guide": "/resources/read/dl-beginner-guide",
+  "deep-learning--complete-tutorial": "/resources/read/dl-complete-tutorial",
+  "deep-learning--step-by-step-learning-guide": "/resources/read/dl-step-by-step-learning-guide",
 
 
 
