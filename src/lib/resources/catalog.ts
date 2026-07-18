@@ -382,6 +382,9 @@ const READER_ROUTES: Record<string, string> = {
  "prompt-engineering--frequently-asked-questions": "/resources/read/pe-frequently-asked-questions",
  "prompt-engineering--learning-roadmap": "/resources/read/pe-learning-roadmap",
  "prompt-engineering--tips-tricks": "/resources/read/pe-tips-tricks",
+ "prompt-engineering--beginner-guide": "/resources/read/pe-beginner-guide",
+ "prompt-engineering--complete-tutorial": "/resources/read/pe-complete-tutorial",
+ "prompt-engineering--step-by-step-learning-guide": "/resources/read/pe-step-by-step-learning-guide",
 
 
 
