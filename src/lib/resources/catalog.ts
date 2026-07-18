@@ -421,6 +421,9 @@ const READER_ROUTES: Record<string, string> = {
    "system-design--beginner-guide": "/resources/read/sd-beginner-guide",
    "system-design--complete-tutorial": "/resources/read/sd-complete-tutorial",
    "system-design--step-by-step-learning-guide": "/resources/read/sd-step-by-step-learning-guide",
+   "system-design--pdf-notes": "/resources/read/sd-pdf-notes",
+   "system-design--quick-revision-notes": "/resources/read/sd-quick-revision-notes",
+   "system-design--cheat-sheet": "/resources/read/sd-cheat-sheet",
 
 
 
