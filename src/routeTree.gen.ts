@@ -92,6 +92,27 @@ import { Route as MarketingResourcesReadTableauBestPracticesRouteImport } from '
 import { Route as MarketingResourcesReadTableauBeginnerGuideRouteImport } from './routes/_marketing.resources.read.tableau-beginner-guide'
 import { Route as MarketingResourcesReadTableauAnswerKeyRouteImport } from './routes/_marketing.resources.read.tableau-answer-key'
 import { Route as MarketingResourcesReadTableauAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.tableau-advanced-concepts'
+import { Route as MarketingResourcesReadSwiftIosTipsTricksRouteImport } from './routes/_marketing.resources.read.swift-ios-tips-tricks'
+import { Route as MarketingResourcesReadSwiftIosStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.swift-ios-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadSwiftIosSampleExercisesRouteImport } from './routes/_marketing.resources.read.swift-ios-sample-exercises'
+import { Route as MarketingResourcesReadSwiftIosReferenceGuideRouteImport } from './routes/_marketing.resources.read.swift-ios-reference-guide'
+import { Route as MarketingResourcesReadSwiftIosRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.swift-ios-real-world-case-study'
+import { Route as MarketingResourcesReadSwiftIosQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.swift-ios-quick-revision-notes'
+import { Route as MarketingResourcesReadSwiftIosProjectGuideRouteImport } from './routes/_marketing.resources.read.swift-ios-project-guide'
+import { Route as MarketingResourcesReadSwiftIosProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.swift-ios-project-case-study'
+import { Route as MarketingResourcesReadSwiftIosPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.swift-ios-practice-questions'
+import { Route as MarketingResourcesReadSwiftIosPdfNotesRouteImport } from './routes/_marketing.resources.read.swift-ios-pdf-notes'
+import { Route as MarketingResourcesReadSwiftIosLearningRoadmapRouteImport } from './routes/_marketing.resources.read.swift-ios-learning-roadmap'
+import { Route as MarketingResourcesReadSwiftIosInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.swift-ios-interview-questions'
+import { Route as MarketingResourcesReadSwiftIosGlossaryRouteImport } from './routes/_marketing.resources.read.swift-ios-glossary'
+import { Route as MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.swift-ios-frequently-asked-questions'
+import { Route as MarketingResourcesReadSwiftIosCompleteTutorialRouteImport } from './routes/_marketing.resources.read.swift-ios-complete-tutorial'
+import { Route as MarketingResourcesReadSwiftIosCommonMistakesRouteImport } from './routes/_marketing.resources.read.swift-ios-common-mistakes'
+import { Route as MarketingResourcesReadSwiftIosCheatSheetRouteImport } from './routes/_marketing.resources.read.swift-ios-cheat-sheet'
+import { Route as MarketingResourcesReadSwiftIosBestPracticesRouteImport } from './routes/_marketing.resources.read.swift-ios-best-practices'
+import { Route as MarketingResourcesReadSwiftIosBeginnerGuideRouteImport } from './routes/_marketing.resources.read.swift-ios-beginner-guide'
+import { Route as MarketingResourcesReadSwiftIosAnswerKeyRouteImport } from './routes/_marketing.resources.read.swift-ios-answer-key'
+import { Route as MarketingResourcesReadSwiftIosAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.swift-ios-advanced-concepts'
 import { Route as MarketingResourcesReadSqlTipsTricksRouteImport } from './routes/_marketing.resources.read.sql-tips-tricks'
 import { Route as MarketingResourcesReadSqlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.sql-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadSqlSampleExercisesRouteImport } from './routes/_marketing.resources.read.sql-sample-exercises'
@@ -1253,6 +1274,132 @@ const MarketingResourcesReadTableauAdvancedConceptsRoute =
   MarketingResourcesReadTableauAdvancedConceptsRouteImport.update({
     id: '/read/tableau-advanced-concepts',
     path: '/read/tableau-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosTipsTricksRoute =
+  MarketingResourcesReadSwiftIosTipsTricksRouteImport.update({
+    id: '/read/swift-ios-tips-tricks',
+    path: '/read/swift-ios-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosStepByStepLearningGuideRoute =
+  MarketingResourcesReadSwiftIosStepByStepLearningGuideRouteImport.update({
+    id: '/read/swift-ios-step-by-step-learning-guide',
+    path: '/read/swift-ios-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosSampleExercisesRoute =
+  MarketingResourcesReadSwiftIosSampleExercisesRouteImport.update({
+    id: '/read/swift-ios-sample-exercises',
+    path: '/read/swift-ios-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosReferenceGuideRoute =
+  MarketingResourcesReadSwiftIosReferenceGuideRouteImport.update({
+    id: '/read/swift-ios-reference-guide',
+    path: '/read/swift-ios-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosRealWorldCaseStudyRoute =
+  MarketingResourcesReadSwiftIosRealWorldCaseStudyRouteImport.update({
+    id: '/read/swift-ios-real-world-case-study',
+    path: '/read/swift-ios-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosQuickRevisionNotesRoute =
+  MarketingResourcesReadSwiftIosQuickRevisionNotesRouteImport.update({
+    id: '/read/swift-ios-quick-revision-notes',
+    path: '/read/swift-ios-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosProjectGuideRoute =
+  MarketingResourcesReadSwiftIosProjectGuideRouteImport.update({
+    id: '/read/swift-ios-project-guide',
+    path: '/read/swift-ios-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosProjectCaseStudyRoute =
+  MarketingResourcesReadSwiftIosProjectCaseStudyRouteImport.update({
+    id: '/read/swift-ios-project-case-study',
+    path: '/read/swift-ios-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosPracticeQuestionsRoute =
+  MarketingResourcesReadSwiftIosPracticeQuestionsRouteImport.update({
+    id: '/read/swift-ios-practice-questions',
+    path: '/read/swift-ios-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosPdfNotesRoute =
+  MarketingResourcesReadSwiftIosPdfNotesRouteImport.update({
+    id: '/read/swift-ios-pdf-notes',
+    path: '/read/swift-ios-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosLearningRoadmapRoute =
+  MarketingResourcesReadSwiftIosLearningRoadmapRouteImport.update({
+    id: '/read/swift-ios-learning-roadmap',
+    path: '/read/swift-ios-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosInterviewQuestionsRoute =
+  MarketingResourcesReadSwiftIosInterviewQuestionsRouteImport.update({
+    id: '/read/swift-ios-interview-questions',
+    path: '/read/swift-ios-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosGlossaryRoute =
+  MarketingResourcesReadSwiftIosGlossaryRouteImport.update({
+    id: '/read/swift-ios-glossary',
+    path: '/read/swift-ios-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/swift-ios-frequently-asked-questions',
+    path: '/read/swift-ios-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosCompleteTutorialRoute =
+  MarketingResourcesReadSwiftIosCompleteTutorialRouteImport.update({
+    id: '/read/swift-ios-complete-tutorial',
+    path: '/read/swift-ios-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosCommonMistakesRoute =
+  MarketingResourcesReadSwiftIosCommonMistakesRouteImport.update({
+    id: '/read/swift-ios-common-mistakes',
+    path: '/read/swift-ios-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosCheatSheetRoute =
+  MarketingResourcesReadSwiftIosCheatSheetRouteImport.update({
+    id: '/read/swift-ios-cheat-sheet',
+    path: '/read/swift-ios-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosBestPracticesRoute =
+  MarketingResourcesReadSwiftIosBestPracticesRouteImport.update({
+    id: '/read/swift-ios-best-practices',
+    path: '/read/swift-ios-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosBeginnerGuideRoute =
+  MarketingResourcesReadSwiftIosBeginnerGuideRouteImport.update({
+    id: '/read/swift-ios-beginner-guide',
+    path: '/read/swift-ios-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosAnswerKeyRoute =
+  MarketingResourcesReadSwiftIosAnswerKeyRouteImport.update({
+    id: '/read/swift-ios-answer-key',
+    path: '/read/swift-ios-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSwiftIosAdvancedConceptsRoute =
+  MarketingResourcesReadSwiftIosAdvancedConceptsRouteImport.update({
+    id: '/read/swift-ios-advanced-concepts',
+    path: '/read/swift-ios-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadSqlTipsTricksRoute =
@@ -6192,6 +6339,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/sql-sample-exercises': typeof MarketingResourcesReadSqlSampleExercisesRoute
   '/resources/read/sql-step-by-step-learning-guide': typeof MarketingResourcesReadSqlStepByStepLearningGuideRoute
   '/resources/read/sql-tips-tricks': typeof MarketingResourcesReadSqlTipsTricksRoute
+  '/resources/read/swift-ios-advanced-concepts': typeof MarketingResourcesReadSwiftIosAdvancedConceptsRoute
+  '/resources/read/swift-ios-answer-key': typeof MarketingResourcesReadSwiftIosAnswerKeyRoute
+  '/resources/read/swift-ios-beginner-guide': typeof MarketingResourcesReadSwiftIosBeginnerGuideRoute
+  '/resources/read/swift-ios-best-practices': typeof MarketingResourcesReadSwiftIosBestPracticesRoute
+  '/resources/read/swift-ios-cheat-sheet': typeof MarketingResourcesReadSwiftIosCheatSheetRoute
+  '/resources/read/swift-ios-common-mistakes': typeof MarketingResourcesReadSwiftIosCommonMistakesRoute
+  '/resources/read/swift-ios-complete-tutorial': typeof MarketingResourcesReadSwiftIosCompleteTutorialRoute
+  '/resources/read/swift-ios-frequently-asked-questions': typeof MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRoute
+  '/resources/read/swift-ios-glossary': typeof MarketingResourcesReadSwiftIosGlossaryRoute
+  '/resources/read/swift-ios-interview-questions': typeof MarketingResourcesReadSwiftIosInterviewQuestionsRoute
+  '/resources/read/swift-ios-learning-roadmap': typeof MarketingResourcesReadSwiftIosLearningRoadmapRoute
+  '/resources/read/swift-ios-pdf-notes': typeof MarketingResourcesReadSwiftIosPdfNotesRoute
+  '/resources/read/swift-ios-practice-questions': typeof MarketingResourcesReadSwiftIosPracticeQuestionsRoute
+  '/resources/read/swift-ios-project-case-study': typeof MarketingResourcesReadSwiftIosProjectCaseStudyRoute
+  '/resources/read/swift-ios-project-guide': typeof MarketingResourcesReadSwiftIosProjectGuideRoute
+  '/resources/read/swift-ios-quick-revision-notes': typeof MarketingResourcesReadSwiftIosQuickRevisionNotesRoute
+  '/resources/read/swift-ios-real-world-case-study': typeof MarketingResourcesReadSwiftIosRealWorldCaseStudyRoute
+  '/resources/read/swift-ios-reference-guide': typeof MarketingResourcesReadSwiftIosReferenceGuideRoute
+  '/resources/read/swift-ios-sample-exercises': typeof MarketingResourcesReadSwiftIosSampleExercisesRoute
+  '/resources/read/swift-ios-step-by-step-learning-guide': typeof MarketingResourcesReadSwiftIosStepByStepLearningGuideRoute
+  '/resources/read/swift-ios-tips-tricks': typeof MarketingResourcesReadSwiftIosTipsTricksRoute
   '/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
   '/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
   '/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
@@ -6970,6 +7138,27 @@ export interface FileRoutesByTo {
   '/resources/read/sql-sample-exercises': typeof MarketingResourcesReadSqlSampleExercisesRoute
   '/resources/read/sql-step-by-step-learning-guide': typeof MarketingResourcesReadSqlStepByStepLearningGuideRoute
   '/resources/read/sql-tips-tricks': typeof MarketingResourcesReadSqlTipsTricksRoute
+  '/resources/read/swift-ios-advanced-concepts': typeof MarketingResourcesReadSwiftIosAdvancedConceptsRoute
+  '/resources/read/swift-ios-answer-key': typeof MarketingResourcesReadSwiftIosAnswerKeyRoute
+  '/resources/read/swift-ios-beginner-guide': typeof MarketingResourcesReadSwiftIosBeginnerGuideRoute
+  '/resources/read/swift-ios-best-practices': typeof MarketingResourcesReadSwiftIosBestPracticesRoute
+  '/resources/read/swift-ios-cheat-sheet': typeof MarketingResourcesReadSwiftIosCheatSheetRoute
+  '/resources/read/swift-ios-common-mistakes': typeof MarketingResourcesReadSwiftIosCommonMistakesRoute
+  '/resources/read/swift-ios-complete-tutorial': typeof MarketingResourcesReadSwiftIosCompleteTutorialRoute
+  '/resources/read/swift-ios-frequently-asked-questions': typeof MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRoute
+  '/resources/read/swift-ios-glossary': typeof MarketingResourcesReadSwiftIosGlossaryRoute
+  '/resources/read/swift-ios-interview-questions': typeof MarketingResourcesReadSwiftIosInterviewQuestionsRoute
+  '/resources/read/swift-ios-learning-roadmap': typeof MarketingResourcesReadSwiftIosLearningRoadmapRoute
+  '/resources/read/swift-ios-pdf-notes': typeof MarketingResourcesReadSwiftIosPdfNotesRoute
+  '/resources/read/swift-ios-practice-questions': typeof MarketingResourcesReadSwiftIosPracticeQuestionsRoute
+  '/resources/read/swift-ios-project-case-study': typeof MarketingResourcesReadSwiftIosProjectCaseStudyRoute
+  '/resources/read/swift-ios-project-guide': typeof MarketingResourcesReadSwiftIosProjectGuideRoute
+  '/resources/read/swift-ios-quick-revision-notes': typeof MarketingResourcesReadSwiftIosQuickRevisionNotesRoute
+  '/resources/read/swift-ios-real-world-case-study': typeof MarketingResourcesReadSwiftIosRealWorldCaseStudyRoute
+  '/resources/read/swift-ios-reference-guide': typeof MarketingResourcesReadSwiftIosReferenceGuideRoute
+  '/resources/read/swift-ios-sample-exercises': typeof MarketingResourcesReadSwiftIosSampleExercisesRoute
+  '/resources/read/swift-ios-step-by-step-learning-guide': typeof MarketingResourcesReadSwiftIosStepByStepLearningGuideRoute
+  '/resources/read/swift-ios-tips-tricks': typeof MarketingResourcesReadSwiftIosTipsTricksRoute
   '/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
   '/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
   '/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
@@ -7753,6 +7942,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/sql-sample-exercises': typeof MarketingResourcesReadSqlSampleExercisesRoute
   '/_marketing/resources/read/sql-step-by-step-learning-guide': typeof MarketingResourcesReadSqlStepByStepLearningGuideRoute
   '/_marketing/resources/read/sql-tips-tricks': typeof MarketingResourcesReadSqlTipsTricksRoute
+  '/_marketing/resources/read/swift-ios-advanced-concepts': typeof MarketingResourcesReadSwiftIosAdvancedConceptsRoute
+  '/_marketing/resources/read/swift-ios-answer-key': typeof MarketingResourcesReadSwiftIosAnswerKeyRoute
+  '/_marketing/resources/read/swift-ios-beginner-guide': typeof MarketingResourcesReadSwiftIosBeginnerGuideRoute
+  '/_marketing/resources/read/swift-ios-best-practices': typeof MarketingResourcesReadSwiftIosBestPracticesRoute
+  '/_marketing/resources/read/swift-ios-cheat-sheet': typeof MarketingResourcesReadSwiftIosCheatSheetRoute
+  '/_marketing/resources/read/swift-ios-common-mistakes': typeof MarketingResourcesReadSwiftIosCommonMistakesRoute
+  '/_marketing/resources/read/swift-ios-complete-tutorial': typeof MarketingResourcesReadSwiftIosCompleteTutorialRoute
+  '/_marketing/resources/read/swift-ios-frequently-asked-questions': typeof MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/swift-ios-glossary': typeof MarketingResourcesReadSwiftIosGlossaryRoute
+  '/_marketing/resources/read/swift-ios-interview-questions': typeof MarketingResourcesReadSwiftIosInterviewQuestionsRoute
+  '/_marketing/resources/read/swift-ios-learning-roadmap': typeof MarketingResourcesReadSwiftIosLearningRoadmapRoute
+  '/_marketing/resources/read/swift-ios-pdf-notes': typeof MarketingResourcesReadSwiftIosPdfNotesRoute
+  '/_marketing/resources/read/swift-ios-practice-questions': typeof MarketingResourcesReadSwiftIosPracticeQuestionsRoute
+  '/_marketing/resources/read/swift-ios-project-case-study': typeof MarketingResourcesReadSwiftIosProjectCaseStudyRoute
+  '/_marketing/resources/read/swift-ios-project-guide': typeof MarketingResourcesReadSwiftIosProjectGuideRoute
+  '/_marketing/resources/read/swift-ios-quick-revision-notes': typeof MarketingResourcesReadSwiftIosQuickRevisionNotesRoute
+  '/_marketing/resources/read/swift-ios-real-world-case-study': typeof MarketingResourcesReadSwiftIosRealWorldCaseStudyRoute
+  '/_marketing/resources/read/swift-ios-reference-guide': typeof MarketingResourcesReadSwiftIosReferenceGuideRoute
+  '/_marketing/resources/read/swift-ios-sample-exercises': typeof MarketingResourcesReadSwiftIosSampleExercisesRoute
+  '/_marketing/resources/read/swift-ios-step-by-step-learning-guide': typeof MarketingResourcesReadSwiftIosStepByStepLearningGuideRoute
+  '/_marketing/resources/read/swift-ios-tips-tricks': typeof MarketingResourcesReadSwiftIosTipsTricksRoute
   '/_marketing/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
   '/_marketing/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
   '/_marketing/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
@@ -8534,6 +8744,27 @@ export interface FileRouteTypes {
     | '/resources/read/sql-sample-exercises'
     | '/resources/read/sql-step-by-step-learning-guide'
     | '/resources/read/sql-tips-tricks'
+    | '/resources/read/swift-ios-advanced-concepts'
+    | '/resources/read/swift-ios-answer-key'
+    | '/resources/read/swift-ios-beginner-guide'
+    | '/resources/read/swift-ios-best-practices'
+    | '/resources/read/swift-ios-cheat-sheet'
+    | '/resources/read/swift-ios-common-mistakes'
+    | '/resources/read/swift-ios-complete-tutorial'
+    | '/resources/read/swift-ios-frequently-asked-questions'
+    | '/resources/read/swift-ios-glossary'
+    | '/resources/read/swift-ios-interview-questions'
+    | '/resources/read/swift-ios-learning-roadmap'
+    | '/resources/read/swift-ios-pdf-notes'
+    | '/resources/read/swift-ios-practice-questions'
+    | '/resources/read/swift-ios-project-case-study'
+    | '/resources/read/swift-ios-project-guide'
+    | '/resources/read/swift-ios-quick-revision-notes'
+    | '/resources/read/swift-ios-real-world-case-study'
+    | '/resources/read/swift-ios-reference-guide'
+    | '/resources/read/swift-ios-sample-exercises'
+    | '/resources/read/swift-ios-step-by-step-learning-guide'
+    | '/resources/read/swift-ios-tips-tricks'
     | '/resources/read/tableau-advanced-concepts'
     | '/resources/read/tableau-answer-key'
     | '/resources/read/tableau-beginner-guide'
@@ -9312,6 +9543,27 @@ export interface FileRouteTypes {
     | '/resources/read/sql-sample-exercises'
     | '/resources/read/sql-step-by-step-learning-guide'
     | '/resources/read/sql-tips-tricks'
+    | '/resources/read/swift-ios-advanced-concepts'
+    | '/resources/read/swift-ios-answer-key'
+    | '/resources/read/swift-ios-beginner-guide'
+    | '/resources/read/swift-ios-best-practices'
+    | '/resources/read/swift-ios-cheat-sheet'
+    | '/resources/read/swift-ios-common-mistakes'
+    | '/resources/read/swift-ios-complete-tutorial'
+    | '/resources/read/swift-ios-frequently-asked-questions'
+    | '/resources/read/swift-ios-glossary'
+    | '/resources/read/swift-ios-interview-questions'
+    | '/resources/read/swift-ios-learning-roadmap'
+    | '/resources/read/swift-ios-pdf-notes'
+    | '/resources/read/swift-ios-practice-questions'
+    | '/resources/read/swift-ios-project-case-study'
+    | '/resources/read/swift-ios-project-guide'
+    | '/resources/read/swift-ios-quick-revision-notes'
+    | '/resources/read/swift-ios-real-world-case-study'
+    | '/resources/read/swift-ios-reference-guide'
+    | '/resources/read/swift-ios-sample-exercises'
+    | '/resources/read/swift-ios-step-by-step-learning-guide'
+    | '/resources/read/swift-ios-tips-tricks'
     | '/resources/read/tableau-advanced-concepts'
     | '/resources/read/tableau-answer-key'
     | '/resources/read/tableau-beginner-guide'
@@ -10094,6 +10346,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/sql-sample-exercises'
     | '/_marketing/resources/read/sql-step-by-step-learning-guide'
     | '/_marketing/resources/read/sql-tips-tricks'
+    | '/_marketing/resources/read/swift-ios-advanced-concepts'
+    | '/_marketing/resources/read/swift-ios-answer-key'
+    | '/_marketing/resources/read/swift-ios-beginner-guide'
+    | '/_marketing/resources/read/swift-ios-best-practices'
+    | '/_marketing/resources/read/swift-ios-cheat-sheet'
+    | '/_marketing/resources/read/swift-ios-common-mistakes'
+    | '/_marketing/resources/read/swift-ios-complete-tutorial'
+    | '/_marketing/resources/read/swift-ios-frequently-asked-questions'
+    | '/_marketing/resources/read/swift-ios-glossary'
+    | '/_marketing/resources/read/swift-ios-interview-questions'
+    | '/_marketing/resources/read/swift-ios-learning-roadmap'
+    | '/_marketing/resources/read/swift-ios-pdf-notes'
+    | '/_marketing/resources/read/swift-ios-practice-questions'
+    | '/_marketing/resources/read/swift-ios-project-case-study'
+    | '/_marketing/resources/read/swift-ios-project-guide'
+    | '/_marketing/resources/read/swift-ios-quick-revision-notes'
+    | '/_marketing/resources/read/swift-ios-real-world-case-study'
+    | '/_marketing/resources/read/swift-ios-reference-guide'
+    | '/_marketing/resources/read/swift-ios-sample-exercises'
+    | '/_marketing/resources/read/swift-ios-step-by-step-learning-guide'
+    | '/_marketing/resources/read/swift-ios-tips-tricks'
     | '/_marketing/resources/read/tableau-advanced-concepts'
     | '/_marketing/resources/read/tableau-answer-key'
     | '/_marketing/resources/read/tableau-beginner-guide'
@@ -10739,6 +11012,153 @@ declare module '@tanstack/react-router' {
       path: '/read/tableau-advanced-concepts'
       fullPath: '/resources/read/tableau-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadTableauAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-tips-tricks': {
+      id: '/_marketing/resources/read/swift-ios-tips-tricks'
+      path: '/read/swift-ios-tips-tricks'
+      fullPath: '/resources/read/swift-ios-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/swift-ios-step-by-step-learning-guide'
+      path: '/read/swift-ios-step-by-step-learning-guide'
+      fullPath: '/resources/read/swift-ios-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-sample-exercises': {
+      id: '/_marketing/resources/read/swift-ios-sample-exercises'
+      path: '/read/swift-ios-sample-exercises'
+      fullPath: '/resources/read/swift-ios-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-reference-guide': {
+      id: '/_marketing/resources/read/swift-ios-reference-guide'
+      path: '/read/swift-ios-reference-guide'
+      fullPath: '/resources/read/swift-ios-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-real-world-case-study': {
+      id: '/_marketing/resources/read/swift-ios-real-world-case-study'
+      path: '/read/swift-ios-real-world-case-study'
+      fullPath: '/resources/read/swift-ios-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-quick-revision-notes': {
+      id: '/_marketing/resources/read/swift-ios-quick-revision-notes'
+      path: '/read/swift-ios-quick-revision-notes'
+      fullPath: '/resources/read/swift-ios-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-project-guide': {
+      id: '/_marketing/resources/read/swift-ios-project-guide'
+      path: '/read/swift-ios-project-guide'
+      fullPath: '/resources/read/swift-ios-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-project-case-study': {
+      id: '/_marketing/resources/read/swift-ios-project-case-study'
+      path: '/read/swift-ios-project-case-study'
+      fullPath: '/resources/read/swift-ios-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-practice-questions': {
+      id: '/_marketing/resources/read/swift-ios-practice-questions'
+      path: '/read/swift-ios-practice-questions'
+      fullPath: '/resources/read/swift-ios-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-pdf-notes': {
+      id: '/_marketing/resources/read/swift-ios-pdf-notes'
+      path: '/read/swift-ios-pdf-notes'
+      fullPath: '/resources/read/swift-ios-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-learning-roadmap': {
+      id: '/_marketing/resources/read/swift-ios-learning-roadmap'
+      path: '/read/swift-ios-learning-roadmap'
+      fullPath: '/resources/read/swift-ios-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-interview-questions': {
+      id: '/_marketing/resources/read/swift-ios-interview-questions'
+      path: '/read/swift-ios-interview-questions'
+      fullPath: '/resources/read/swift-ios-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-glossary': {
+      id: '/_marketing/resources/read/swift-ios-glossary'
+      path: '/read/swift-ios-glossary'
+      fullPath: '/resources/read/swift-ios-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-frequently-asked-questions': {
+      id: '/_marketing/resources/read/swift-ios-frequently-asked-questions'
+      path: '/read/swift-ios-frequently-asked-questions'
+      fullPath: '/resources/read/swift-ios-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-complete-tutorial': {
+      id: '/_marketing/resources/read/swift-ios-complete-tutorial'
+      path: '/read/swift-ios-complete-tutorial'
+      fullPath: '/resources/read/swift-ios-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-common-mistakes': {
+      id: '/_marketing/resources/read/swift-ios-common-mistakes'
+      path: '/read/swift-ios-common-mistakes'
+      fullPath: '/resources/read/swift-ios-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-cheat-sheet': {
+      id: '/_marketing/resources/read/swift-ios-cheat-sheet'
+      path: '/read/swift-ios-cheat-sheet'
+      fullPath: '/resources/read/swift-ios-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-best-practices': {
+      id: '/_marketing/resources/read/swift-ios-best-practices'
+      path: '/read/swift-ios-best-practices'
+      fullPath: '/resources/read/swift-ios-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-beginner-guide': {
+      id: '/_marketing/resources/read/swift-ios-beginner-guide'
+      path: '/read/swift-ios-beginner-guide'
+      fullPath: '/resources/read/swift-ios-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-answer-key': {
+      id: '/_marketing/resources/read/swift-ios-answer-key'
+      path: '/read/swift-ios-answer-key'
+      fullPath: '/resources/read/swift-ios-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/swift-ios-advanced-concepts': {
+      id: '/_marketing/resources/read/swift-ios-advanced-concepts'
+      path: '/read/swift-ios-advanced-concepts'
+      fullPath: '/resources/read/swift-ios-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadSwiftIosAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/sql-tips-tricks': {
@@ -16440,6 +16860,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadSqlSampleExercisesRoute: typeof MarketingResourcesReadSqlSampleExercisesRoute
   MarketingResourcesReadSqlStepByStepLearningGuideRoute: typeof MarketingResourcesReadSqlStepByStepLearningGuideRoute
   MarketingResourcesReadSqlTipsTricksRoute: typeof MarketingResourcesReadSqlTipsTricksRoute
+  MarketingResourcesReadSwiftIosAdvancedConceptsRoute: typeof MarketingResourcesReadSwiftIosAdvancedConceptsRoute
+  MarketingResourcesReadSwiftIosAnswerKeyRoute: typeof MarketingResourcesReadSwiftIosAnswerKeyRoute
+  MarketingResourcesReadSwiftIosBeginnerGuideRoute: typeof MarketingResourcesReadSwiftIosBeginnerGuideRoute
+  MarketingResourcesReadSwiftIosBestPracticesRoute: typeof MarketingResourcesReadSwiftIosBestPracticesRoute
+  MarketingResourcesReadSwiftIosCheatSheetRoute: typeof MarketingResourcesReadSwiftIosCheatSheetRoute
+  MarketingResourcesReadSwiftIosCommonMistakesRoute: typeof MarketingResourcesReadSwiftIosCommonMistakesRoute
+  MarketingResourcesReadSwiftIosCompleteTutorialRoute: typeof MarketingResourcesReadSwiftIosCompleteTutorialRoute
+  MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadSwiftIosGlossaryRoute: typeof MarketingResourcesReadSwiftIosGlossaryRoute
+  MarketingResourcesReadSwiftIosInterviewQuestionsRoute: typeof MarketingResourcesReadSwiftIosInterviewQuestionsRoute
+  MarketingResourcesReadSwiftIosLearningRoadmapRoute: typeof MarketingResourcesReadSwiftIosLearningRoadmapRoute
+  MarketingResourcesReadSwiftIosPdfNotesRoute: typeof MarketingResourcesReadSwiftIosPdfNotesRoute
+  MarketingResourcesReadSwiftIosPracticeQuestionsRoute: typeof MarketingResourcesReadSwiftIosPracticeQuestionsRoute
+  MarketingResourcesReadSwiftIosProjectCaseStudyRoute: typeof MarketingResourcesReadSwiftIosProjectCaseStudyRoute
+  MarketingResourcesReadSwiftIosProjectGuideRoute: typeof MarketingResourcesReadSwiftIosProjectGuideRoute
+  MarketingResourcesReadSwiftIosQuickRevisionNotesRoute: typeof MarketingResourcesReadSwiftIosQuickRevisionNotesRoute
+  MarketingResourcesReadSwiftIosRealWorldCaseStudyRoute: typeof MarketingResourcesReadSwiftIosRealWorldCaseStudyRoute
+  MarketingResourcesReadSwiftIosReferenceGuideRoute: typeof MarketingResourcesReadSwiftIosReferenceGuideRoute
+  MarketingResourcesReadSwiftIosSampleExercisesRoute: typeof MarketingResourcesReadSwiftIosSampleExercisesRoute
+  MarketingResourcesReadSwiftIosStepByStepLearningGuideRoute: typeof MarketingResourcesReadSwiftIosStepByStepLearningGuideRoute
+  MarketingResourcesReadSwiftIosTipsTricksRoute: typeof MarketingResourcesReadSwiftIosTipsTricksRoute
   MarketingResourcesReadTableauAdvancedConceptsRoute: typeof MarketingResourcesReadTableauAdvancedConceptsRoute
   MarketingResourcesReadTableauAnswerKeyRoute: typeof MarketingResourcesReadTableauAnswerKeyRoute
   MarketingResourcesReadTableauBeginnerGuideRoute: typeof MarketingResourcesReadTableauBeginnerGuideRoute
@@ -17840,6 +18281,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadSqlStepByStepLearningGuideRoute,
   MarketingResourcesReadSqlTipsTricksRoute:
     MarketingResourcesReadSqlTipsTricksRoute,
+  MarketingResourcesReadSwiftIosAdvancedConceptsRoute:
+    MarketingResourcesReadSwiftIosAdvancedConceptsRoute,
+  MarketingResourcesReadSwiftIosAnswerKeyRoute:
+    MarketingResourcesReadSwiftIosAnswerKeyRoute,
+  MarketingResourcesReadSwiftIosBeginnerGuideRoute:
+    MarketingResourcesReadSwiftIosBeginnerGuideRoute,
+  MarketingResourcesReadSwiftIosBestPracticesRoute:
+    MarketingResourcesReadSwiftIosBestPracticesRoute,
+  MarketingResourcesReadSwiftIosCheatSheetRoute:
+    MarketingResourcesReadSwiftIosCheatSheetRoute,
+  MarketingResourcesReadSwiftIosCommonMistakesRoute:
+    MarketingResourcesReadSwiftIosCommonMistakesRoute,
+  MarketingResourcesReadSwiftIosCompleteTutorialRoute:
+    MarketingResourcesReadSwiftIosCompleteTutorialRoute,
+  MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadSwiftIosFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadSwiftIosGlossaryRoute:
+    MarketingResourcesReadSwiftIosGlossaryRoute,
+  MarketingResourcesReadSwiftIosInterviewQuestionsRoute:
+    MarketingResourcesReadSwiftIosInterviewQuestionsRoute,
+  MarketingResourcesReadSwiftIosLearningRoadmapRoute:
+    MarketingResourcesReadSwiftIosLearningRoadmapRoute,
+  MarketingResourcesReadSwiftIosPdfNotesRoute:
+    MarketingResourcesReadSwiftIosPdfNotesRoute,
+  MarketingResourcesReadSwiftIosPracticeQuestionsRoute:
+    MarketingResourcesReadSwiftIosPracticeQuestionsRoute,
+  MarketingResourcesReadSwiftIosProjectCaseStudyRoute:
+    MarketingResourcesReadSwiftIosProjectCaseStudyRoute,
+  MarketingResourcesReadSwiftIosProjectGuideRoute:
+    MarketingResourcesReadSwiftIosProjectGuideRoute,
+  MarketingResourcesReadSwiftIosQuickRevisionNotesRoute:
+    MarketingResourcesReadSwiftIosQuickRevisionNotesRoute,
+  MarketingResourcesReadSwiftIosRealWorldCaseStudyRoute:
+    MarketingResourcesReadSwiftIosRealWorldCaseStudyRoute,
+  MarketingResourcesReadSwiftIosReferenceGuideRoute:
+    MarketingResourcesReadSwiftIosReferenceGuideRoute,
+  MarketingResourcesReadSwiftIosSampleExercisesRoute:
+    MarketingResourcesReadSwiftIosSampleExercisesRoute,
+  MarketingResourcesReadSwiftIosStepByStepLearningGuideRoute:
+    MarketingResourcesReadSwiftIosStepByStepLearningGuideRoute,
+  MarketingResourcesReadSwiftIosTipsTricksRoute:
+    MarketingResourcesReadSwiftIosTipsTricksRoute,
   MarketingResourcesReadTableauAdvancedConceptsRoute:
     MarketingResourcesReadTableauAdvancedConceptsRoute,
   MarketingResourcesReadTableauAnswerKeyRoute:
