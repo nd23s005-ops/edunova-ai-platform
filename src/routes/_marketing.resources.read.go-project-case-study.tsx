@@ -140,7 +140,7 @@ if err := g.Wait(); err != nil { return err }`}</Code>
         <h3 className="mt-3 font-semibold">Engineering Insights</h3>
         <ul className="list-disc space-y-1 pl-5">
           <li>Deadlines everywhere; timeouts are a design tool.</li>
-          <li>Errgroup > raw goroutines for coordinated fan-out.</li>
+          <li>Errgroup &gt; raw goroutines for coordinated fan-out.</li>
           <li>Kafka decouples the sync path from side-effects.</li>
         </ul>
         <h3 className="mt-3 font-semibold">Discussion Questions</h3>
