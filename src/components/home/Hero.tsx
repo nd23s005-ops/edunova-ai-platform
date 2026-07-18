@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+
 import { AIBackground } from "./AIBackground";
 
 const HEADLINE_LINE_1 = "Learn faster with an";
