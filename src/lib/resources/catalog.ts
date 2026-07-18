@@ -430,6 +430,13 @@ const READER_ROUTES: Record<string, string> = {
    "system-design--advanced-concepts": "/resources/read/sd-advanced-concepts",
    "system-design--glossary": "/resources/read/sd-glossary",
    "system-design--reference-guide": "/resources/read/sd-reference-guide",
+   "go--beginner-guide": "/resources/read/go-beginner-guide",
+   "go--complete-tutorial": "/resources/read/go-complete-tutorial",
+   "go--step-by-step-learning-guide": "/resources/read/go-step-by-step-learning-guide",
+   "go--pdf-notes": "/resources/read/go-pdf-notes",
+   "go--quick-revision-notes": "/resources/read/go-quick-revision-notes",
+   "go--cheat-sheet": "/resources/read/go-cheat-sheet",
+
 
 
 
