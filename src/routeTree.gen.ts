@@ -71,6 +71,27 @@ import { Route as MarketingResourcesReadUxDesignBestPracticesRouteImport } from 
 import { Route as MarketingResourcesReadUxDesignBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ux-design-beginner-guide'
 import { Route as MarketingResourcesReadUxDesignAnswerKeyRouteImport } from './routes/_marketing.resources.read.ux-design-answer-key'
 import { Route as MarketingResourcesReadUxDesignAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ux-design-advanced-concepts'
+import { Route as MarketingResourcesReadTypescriptTipsTricksRouteImport } from './routes/_marketing.resources.read.typescript-tips-tricks'
+import { Route as MarketingResourcesReadTypescriptStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.typescript-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadTypescriptSampleExercisesRouteImport } from './routes/_marketing.resources.read.typescript-sample-exercises'
+import { Route as MarketingResourcesReadTypescriptReferenceGuideRouteImport } from './routes/_marketing.resources.read.typescript-reference-guide'
+import { Route as MarketingResourcesReadTypescriptRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.typescript-real-world-case-study'
+import { Route as MarketingResourcesReadTypescriptQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.typescript-quick-revision-notes'
+import { Route as MarketingResourcesReadTypescriptProjectGuideRouteImport } from './routes/_marketing.resources.read.typescript-project-guide'
+import { Route as MarketingResourcesReadTypescriptProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.typescript-project-case-study'
+import { Route as MarketingResourcesReadTypescriptPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.typescript-practice-questions'
+import { Route as MarketingResourcesReadTypescriptPdfNotesRouteImport } from './routes/_marketing.resources.read.typescript-pdf-notes'
+import { Route as MarketingResourcesReadTypescriptLearningRoadmapRouteImport } from './routes/_marketing.resources.read.typescript-learning-roadmap'
+import { Route as MarketingResourcesReadTypescriptInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.typescript-interview-questions'
+import { Route as MarketingResourcesReadTypescriptGlossaryRouteImport } from './routes/_marketing.resources.read.typescript-glossary'
+import { Route as MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.typescript-frequently-asked-questions'
+import { Route as MarketingResourcesReadTypescriptCompleteTutorialRouteImport } from './routes/_marketing.resources.read.typescript-complete-tutorial'
+import { Route as MarketingResourcesReadTypescriptCommonMistakesRouteImport } from './routes/_marketing.resources.read.typescript-common-mistakes'
+import { Route as MarketingResourcesReadTypescriptCheatSheetRouteImport } from './routes/_marketing.resources.read.typescript-cheat-sheet'
+import { Route as MarketingResourcesReadTypescriptBestPracticesRouteImport } from './routes/_marketing.resources.read.typescript-best-practices'
+import { Route as MarketingResourcesReadTypescriptBeginnerGuideRouteImport } from './routes/_marketing.resources.read.typescript-beginner-guide'
+import { Route as MarketingResourcesReadTypescriptAnswerKeyRouteImport } from './routes/_marketing.resources.read.typescript-answer-key'
+import { Route as MarketingResourcesReadTypescriptAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.typescript-advanced-concepts'
 import { Route as MarketingResourcesReadTableauTipsTricksRouteImport } from './routes/_marketing.resources.read.tableau-tips-tricks'
 import { Route as MarketingResourcesReadTableauStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.tableau-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadTableauSampleExercisesRouteImport } from './routes/_marketing.resources.read.tableau-sample-exercises'
@@ -1169,6 +1190,132 @@ const MarketingResourcesReadUxDesignAdvancedConceptsRoute =
   MarketingResourcesReadUxDesignAdvancedConceptsRouteImport.update({
     id: '/read/ux-design-advanced-concepts',
     path: '/read/ux-design-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptTipsTricksRoute =
+  MarketingResourcesReadTypescriptTipsTricksRouteImport.update({
+    id: '/read/typescript-tips-tricks',
+    path: '/read/typescript-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptStepByStepLearningGuideRoute =
+  MarketingResourcesReadTypescriptStepByStepLearningGuideRouteImport.update({
+    id: '/read/typescript-step-by-step-learning-guide',
+    path: '/read/typescript-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptSampleExercisesRoute =
+  MarketingResourcesReadTypescriptSampleExercisesRouteImport.update({
+    id: '/read/typescript-sample-exercises',
+    path: '/read/typescript-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptReferenceGuideRoute =
+  MarketingResourcesReadTypescriptReferenceGuideRouteImport.update({
+    id: '/read/typescript-reference-guide',
+    path: '/read/typescript-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptRealWorldCaseStudyRoute =
+  MarketingResourcesReadTypescriptRealWorldCaseStudyRouteImport.update({
+    id: '/read/typescript-real-world-case-study',
+    path: '/read/typescript-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptQuickRevisionNotesRoute =
+  MarketingResourcesReadTypescriptQuickRevisionNotesRouteImport.update({
+    id: '/read/typescript-quick-revision-notes',
+    path: '/read/typescript-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptProjectGuideRoute =
+  MarketingResourcesReadTypescriptProjectGuideRouteImport.update({
+    id: '/read/typescript-project-guide',
+    path: '/read/typescript-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptProjectCaseStudyRoute =
+  MarketingResourcesReadTypescriptProjectCaseStudyRouteImport.update({
+    id: '/read/typescript-project-case-study',
+    path: '/read/typescript-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptPracticeQuestionsRoute =
+  MarketingResourcesReadTypescriptPracticeQuestionsRouteImport.update({
+    id: '/read/typescript-practice-questions',
+    path: '/read/typescript-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptPdfNotesRoute =
+  MarketingResourcesReadTypescriptPdfNotesRouteImport.update({
+    id: '/read/typescript-pdf-notes',
+    path: '/read/typescript-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptLearningRoadmapRoute =
+  MarketingResourcesReadTypescriptLearningRoadmapRouteImport.update({
+    id: '/read/typescript-learning-roadmap',
+    path: '/read/typescript-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptInterviewQuestionsRoute =
+  MarketingResourcesReadTypescriptInterviewQuestionsRouteImport.update({
+    id: '/read/typescript-interview-questions',
+    path: '/read/typescript-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptGlossaryRoute =
+  MarketingResourcesReadTypescriptGlossaryRouteImport.update({
+    id: '/read/typescript-glossary',
+    path: '/read/typescript-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/typescript-frequently-asked-questions',
+    path: '/read/typescript-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptCompleteTutorialRoute =
+  MarketingResourcesReadTypescriptCompleteTutorialRouteImport.update({
+    id: '/read/typescript-complete-tutorial',
+    path: '/read/typescript-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptCommonMistakesRoute =
+  MarketingResourcesReadTypescriptCommonMistakesRouteImport.update({
+    id: '/read/typescript-common-mistakes',
+    path: '/read/typescript-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptCheatSheetRoute =
+  MarketingResourcesReadTypescriptCheatSheetRouteImport.update({
+    id: '/read/typescript-cheat-sheet',
+    path: '/read/typescript-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptBestPracticesRoute =
+  MarketingResourcesReadTypescriptBestPracticesRouteImport.update({
+    id: '/read/typescript-best-practices',
+    path: '/read/typescript-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptBeginnerGuideRoute =
+  MarketingResourcesReadTypescriptBeginnerGuideRouteImport.update({
+    id: '/read/typescript-beginner-guide',
+    path: '/read/typescript-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptAnswerKeyRoute =
+  MarketingResourcesReadTypescriptAnswerKeyRouteImport.update({
+    id: '/read/typescript-answer-key',
+    path: '/read/typescript-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTypescriptAdvancedConceptsRoute =
+  MarketingResourcesReadTypescriptAdvancedConceptsRouteImport.update({
+    id: '/read/typescript-advanced-concepts',
+    path: '/read/typescript-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadTableauTipsTricksRoute =
@@ -6549,6 +6696,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
   '/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
   '/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
+  '/resources/read/typescript-advanced-concepts': typeof MarketingResourcesReadTypescriptAdvancedConceptsRoute
+  '/resources/read/typescript-answer-key': typeof MarketingResourcesReadTypescriptAnswerKeyRoute
+  '/resources/read/typescript-beginner-guide': typeof MarketingResourcesReadTypescriptBeginnerGuideRoute
+  '/resources/read/typescript-best-practices': typeof MarketingResourcesReadTypescriptBestPracticesRoute
+  '/resources/read/typescript-cheat-sheet': typeof MarketingResourcesReadTypescriptCheatSheetRoute
+  '/resources/read/typescript-common-mistakes': typeof MarketingResourcesReadTypescriptCommonMistakesRoute
+  '/resources/read/typescript-complete-tutorial': typeof MarketingResourcesReadTypescriptCompleteTutorialRoute
+  '/resources/read/typescript-frequently-asked-questions': typeof MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRoute
+  '/resources/read/typescript-glossary': typeof MarketingResourcesReadTypescriptGlossaryRoute
+  '/resources/read/typescript-interview-questions': typeof MarketingResourcesReadTypescriptInterviewQuestionsRoute
+  '/resources/read/typescript-learning-roadmap': typeof MarketingResourcesReadTypescriptLearningRoadmapRoute
+  '/resources/read/typescript-pdf-notes': typeof MarketingResourcesReadTypescriptPdfNotesRoute
+  '/resources/read/typescript-practice-questions': typeof MarketingResourcesReadTypescriptPracticeQuestionsRoute
+  '/resources/read/typescript-project-case-study': typeof MarketingResourcesReadTypescriptProjectCaseStudyRoute
+  '/resources/read/typescript-project-guide': typeof MarketingResourcesReadTypescriptProjectGuideRoute
+  '/resources/read/typescript-quick-revision-notes': typeof MarketingResourcesReadTypescriptQuickRevisionNotesRoute
+  '/resources/read/typescript-real-world-case-study': typeof MarketingResourcesReadTypescriptRealWorldCaseStudyRoute
+  '/resources/read/typescript-reference-guide': typeof MarketingResourcesReadTypescriptReferenceGuideRoute
+  '/resources/read/typescript-sample-exercises': typeof MarketingResourcesReadTypescriptSampleExercisesRoute
+  '/resources/read/typescript-step-by-step-learning-guide': typeof MarketingResourcesReadTypescriptStepByStepLearningGuideRoute
+  '/resources/read/typescript-tips-tricks': typeof MarketingResourcesReadTypescriptTipsTricksRoute
   '/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
   '/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
   '/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
@@ -7369,6 +7537,27 @@ export interface FileRoutesByTo {
   '/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
   '/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
   '/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
+  '/resources/read/typescript-advanced-concepts': typeof MarketingResourcesReadTypescriptAdvancedConceptsRoute
+  '/resources/read/typescript-answer-key': typeof MarketingResourcesReadTypescriptAnswerKeyRoute
+  '/resources/read/typescript-beginner-guide': typeof MarketingResourcesReadTypescriptBeginnerGuideRoute
+  '/resources/read/typescript-best-practices': typeof MarketingResourcesReadTypescriptBestPracticesRoute
+  '/resources/read/typescript-cheat-sheet': typeof MarketingResourcesReadTypescriptCheatSheetRoute
+  '/resources/read/typescript-common-mistakes': typeof MarketingResourcesReadTypescriptCommonMistakesRoute
+  '/resources/read/typescript-complete-tutorial': typeof MarketingResourcesReadTypescriptCompleteTutorialRoute
+  '/resources/read/typescript-frequently-asked-questions': typeof MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRoute
+  '/resources/read/typescript-glossary': typeof MarketingResourcesReadTypescriptGlossaryRoute
+  '/resources/read/typescript-interview-questions': typeof MarketingResourcesReadTypescriptInterviewQuestionsRoute
+  '/resources/read/typescript-learning-roadmap': typeof MarketingResourcesReadTypescriptLearningRoadmapRoute
+  '/resources/read/typescript-pdf-notes': typeof MarketingResourcesReadTypescriptPdfNotesRoute
+  '/resources/read/typescript-practice-questions': typeof MarketingResourcesReadTypescriptPracticeQuestionsRoute
+  '/resources/read/typescript-project-case-study': typeof MarketingResourcesReadTypescriptProjectCaseStudyRoute
+  '/resources/read/typescript-project-guide': typeof MarketingResourcesReadTypescriptProjectGuideRoute
+  '/resources/read/typescript-quick-revision-notes': typeof MarketingResourcesReadTypescriptQuickRevisionNotesRoute
+  '/resources/read/typescript-real-world-case-study': typeof MarketingResourcesReadTypescriptRealWorldCaseStudyRoute
+  '/resources/read/typescript-reference-guide': typeof MarketingResourcesReadTypescriptReferenceGuideRoute
+  '/resources/read/typescript-sample-exercises': typeof MarketingResourcesReadTypescriptSampleExercisesRoute
+  '/resources/read/typescript-step-by-step-learning-guide': typeof MarketingResourcesReadTypescriptStepByStepLearningGuideRoute
+  '/resources/read/typescript-tips-tricks': typeof MarketingResourcesReadTypescriptTipsTricksRoute
   '/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
   '/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
   '/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
@@ -8194,6 +8383,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
   '/_marketing/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
   '/_marketing/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
+  '/_marketing/resources/read/typescript-advanced-concepts': typeof MarketingResourcesReadTypescriptAdvancedConceptsRoute
+  '/_marketing/resources/read/typescript-answer-key': typeof MarketingResourcesReadTypescriptAnswerKeyRoute
+  '/_marketing/resources/read/typescript-beginner-guide': typeof MarketingResourcesReadTypescriptBeginnerGuideRoute
+  '/_marketing/resources/read/typescript-best-practices': typeof MarketingResourcesReadTypescriptBestPracticesRoute
+  '/_marketing/resources/read/typescript-cheat-sheet': typeof MarketingResourcesReadTypescriptCheatSheetRoute
+  '/_marketing/resources/read/typescript-common-mistakes': typeof MarketingResourcesReadTypescriptCommonMistakesRoute
+  '/_marketing/resources/read/typescript-complete-tutorial': typeof MarketingResourcesReadTypescriptCompleteTutorialRoute
+  '/_marketing/resources/read/typescript-frequently-asked-questions': typeof MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/typescript-glossary': typeof MarketingResourcesReadTypescriptGlossaryRoute
+  '/_marketing/resources/read/typescript-interview-questions': typeof MarketingResourcesReadTypescriptInterviewQuestionsRoute
+  '/_marketing/resources/read/typescript-learning-roadmap': typeof MarketingResourcesReadTypescriptLearningRoadmapRoute
+  '/_marketing/resources/read/typescript-pdf-notes': typeof MarketingResourcesReadTypescriptPdfNotesRoute
+  '/_marketing/resources/read/typescript-practice-questions': typeof MarketingResourcesReadTypescriptPracticeQuestionsRoute
+  '/_marketing/resources/read/typescript-project-case-study': typeof MarketingResourcesReadTypescriptProjectCaseStudyRoute
+  '/_marketing/resources/read/typescript-project-guide': typeof MarketingResourcesReadTypescriptProjectGuideRoute
+  '/_marketing/resources/read/typescript-quick-revision-notes': typeof MarketingResourcesReadTypescriptQuickRevisionNotesRoute
+  '/_marketing/resources/read/typescript-real-world-case-study': typeof MarketingResourcesReadTypescriptRealWorldCaseStudyRoute
+  '/_marketing/resources/read/typescript-reference-guide': typeof MarketingResourcesReadTypescriptReferenceGuideRoute
+  '/_marketing/resources/read/typescript-sample-exercises': typeof MarketingResourcesReadTypescriptSampleExercisesRoute
+  '/_marketing/resources/read/typescript-step-by-step-learning-guide': typeof MarketingResourcesReadTypescriptStepByStepLearningGuideRoute
+  '/_marketing/resources/read/typescript-tips-tricks': typeof MarketingResourcesReadTypescriptTipsTricksRoute
   '/_marketing/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
   '/_marketing/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
   '/_marketing/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
@@ -9017,6 +9227,27 @@ export interface FileRouteTypes {
     | '/resources/read/tableau-sample-exercises'
     | '/resources/read/tableau-step-by-step-learning-guide'
     | '/resources/read/tableau-tips-tricks'
+    | '/resources/read/typescript-advanced-concepts'
+    | '/resources/read/typescript-answer-key'
+    | '/resources/read/typescript-beginner-guide'
+    | '/resources/read/typescript-best-practices'
+    | '/resources/read/typescript-cheat-sheet'
+    | '/resources/read/typescript-common-mistakes'
+    | '/resources/read/typescript-complete-tutorial'
+    | '/resources/read/typescript-frequently-asked-questions'
+    | '/resources/read/typescript-glossary'
+    | '/resources/read/typescript-interview-questions'
+    | '/resources/read/typescript-learning-roadmap'
+    | '/resources/read/typescript-pdf-notes'
+    | '/resources/read/typescript-practice-questions'
+    | '/resources/read/typescript-project-case-study'
+    | '/resources/read/typescript-project-guide'
+    | '/resources/read/typescript-quick-revision-notes'
+    | '/resources/read/typescript-real-world-case-study'
+    | '/resources/read/typescript-reference-guide'
+    | '/resources/read/typescript-sample-exercises'
+    | '/resources/read/typescript-step-by-step-learning-guide'
+    | '/resources/read/typescript-tips-tricks'
     | '/resources/read/ux-design-advanced-concepts'
     | '/resources/read/ux-design-answer-key'
     | '/resources/read/ux-design-beginner-guide'
@@ -9837,6 +10068,27 @@ export interface FileRouteTypes {
     | '/resources/read/tableau-sample-exercises'
     | '/resources/read/tableau-step-by-step-learning-guide'
     | '/resources/read/tableau-tips-tricks'
+    | '/resources/read/typescript-advanced-concepts'
+    | '/resources/read/typescript-answer-key'
+    | '/resources/read/typescript-beginner-guide'
+    | '/resources/read/typescript-best-practices'
+    | '/resources/read/typescript-cheat-sheet'
+    | '/resources/read/typescript-common-mistakes'
+    | '/resources/read/typescript-complete-tutorial'
+    | '/resources/read/typescript-frequently-asked-questions'
+    | '/resources/read/typescript-glossary'
+    | '/resources/read/typescript-interview-questions'
+    | '/resources/read/typescript-learning-roadmap'
+    | '/resources/read/typescript-pdf-notes'
+    | '/resources/read/typescript-practice-questions'
+    | '/resources/read/typescript-project-case-study'
+    | '/resources/read/typescript-project-guide'
+    | '/resources/read/typescript-quick-revision-notes'
+    | '/resources/read/typescript-real-world-case-study'
+    | '/resources/read/typescript-reference-guide'
+    | '/resources/read/typescript-sample-exercises'
+    | '/resources/read/typescript-step-by-step-learning-guide'
+    | '/resources/read/typescript-tips-tricks'
     | '/resources/read/ux-design-advanced-concepts'
     | '/resources/read/ux-design-answer-key'
     | '/resources/read/ux-design-beginner-guide'
@@ -10661,6 +10913,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/tableau-sample-exercises'
     | '/_marketing/resources/read/tableau-step-by-step-learning-guide'
     | '/_marketing/resources/read/tableau-tips-tricks'
+    | '/_marketing/resources/read/typescript-advanced-concepts'
+    | '/_marketing/resources/read/typescript-answer-key'
+    | '/_marketing/resources/read/typescript-beginner-guide'
+    | '/_marketing/resources/read/typescript-best-practices'
+    | '/_marketing/resources/read/typescript-cheat-sheet'
+    | '/_marketing/resources/read/typescript-common-mistakes'
+    | '/_marketing/resources/read/typescript-complete-tutorial'
+    | '/_marketing/resources/read/typescript-frequently-asked-questions'
+    | '/_marketing/resources/read/typescript-glossary'
+    | '/_marketing/resources/read/typescript-interview-questions'
+    | '/_marketing/resources/read/typescript-learning-roadmap'
+    | '/_marketing/resources/read/typescript-pdf-notes'
+    | '/_marketing/resources/read/typescript-practice-questions'
+    | '/_marketing/resources/read/typescript-project-case-study'
+    | '/_marketing/resources/read/typescript-project-guide'
+    | '/_marketing/resources/read/typescript-quick-revision-notes'
+    | '/_marketing/resources/read/typescript-real-world-case-study'
+    | '/_marketing/resources/read/typescript-reference-guide'
+    | '/_marketing/resources/read/typescript-sample-exercises'
+    | '/_marketing/resources/read/typescript-step-by-step-learning-guide'
+    | '/_marketing/resources/read/typescript-tips-tricks'
     | '/_marketing/resources/read/ux-design-advanced-concepts'
     | '/_marketing/resources/read/ux-design-answer-key'
     | '/_marketing/resources/read/ux-design-beginner-guide'
@@ -11138,6 +11411,153 @@ declare module '@tanstack/react-router' {
       path: '/read/ux-design-advanced-concepts'
       fullPath: '/resources/read/ux-design-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadUxDesignAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-tips-tricks': {
+      id: '/_marketing/resources/read/typescript-tips-tricks'
+      path: '/read/typescript-tips-tricks'
+      fullPath: '/resources/read/typescript-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/typescript-step-by-step-learning-guide'
+      path: '/read/typescript-step-by-step-learning-guide'
+      fullPath: '/resources/read/typescript-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-sample-exercises': {
+      id: '/_marketing/resources/read/typescript-sample-exercises'
+      path: '/read/typescript-sample-exercises'
+      fullPath: '/resources/read/typescript-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-reference-guide': {
+      id: '/_marketing/resources/read/typescript-reference-guide'
+      path: '/read/typescript-reference-guide'
+      fullPath: '/resources/read/typescript-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-real-world-case-study': {
+      id: '/_marketing/resources/read/typescript-real-world-case-study'
+      path: '/read/typescript-real-world-case-study'
+      fullPath: '/resources/read/typescript-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-quick-revision-notes': {
+      id: '/_marketing/resources/read/typescript-quick-revision-notes'
+      path: '/read/typescript-quick-revision-notes'
+      fullPath: '/resources/read/typescript-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-project-guide': {
+      id: '/_marketing/resources/read/typescript-project-guide'
+      path: '/read/typescript-project-guide'
+      fullPath: '/resources/read/typescript-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-project-case-study': {
+      id: '/_marketing/resources/read/typescript-project-case-study'
+      path: '/read/typescript-project-case-study'
+      fullPath: '/resources/read/typescript-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-practice-questions': {
+      id: '/_marketing/resources/read/typescript-practice-questions'
+      path: '/read/typescript-practice-questions'
+      fullPath: '/resources/read/typescript-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-pdf-notes': {
+      id: '/_marketing/resources/read/typescript-pdf-notes'
+      path: '/read/typescript-pdf-notes'
+      fullPath: '/resources/read/typescript-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-learning-roadmap': {
+      id: '/_marketing/resources/read/typescript-learning-roadmap'
+      path: '/read/typescript-learning-roadmap'
+      fullPath: '/resources/read/typescript-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-interview-questions': {
+      id: '/_marketing/resources/read/typescript-interview-questions'
+      path: '/read/typescript-interview-questions'
+      fullPath: '/resources/read/typescript-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-glossary': {
+      id: '/_marketing/resources/read/typescript-glossary'
+      path: '/read/typescript-glossary'
+      fullPath: '/resources/read/typescript-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-frequently-asked-questions': {
+      id: '/_marketing/resources/read/typescript-frequently-asked-questions'
+      path: '/read/typescript-frequently-asked-questions'
+      fullPath: '/resources/read/typescript-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-complete-tutorial': {
+      id: '/_marketing/resources/read/typescript-complete-tutorial'
+      path: '/read/typescript-complete-tutorial'
+      fullPath: '/resources/read/typescript-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-common-mistakes': {
+      id: '/_marketing/resources/read/typescript-common-mistakes'
+      path: '/read/typescript-common-mistakes'
+      fullPath: '/resources/read/typescript-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-cheat-sheet': {
+      id: '/_marketing/resources/read/typescript-cheat-sheet'
+      path: '/read/typescript-cheat-sheet'
+      fullPath: '/resources/read/typescript-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-best-practices': {
+      id: '/_marketing/resources/read/typescript-best-practices'
+      path: '/read/typescript-best-practices'
+      fullPath: '/resources/read/typescript-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-beginner-guide': {
+      id: '/_marketing/resources/read/typescript-beginner-guide'
+      path: '/read/typescript-beginner-guide'
+      fullPath: '/resources/read/typescript-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-answer-key': {
+      id: '/_marketing/resources/read/typescript-answer-key'
+      path: '/read/typescript-answer-key'
+      fullPath: '/resources/read/typescript-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/typescript-advanced-concepts': {
+      id: '/_marketing/resources/read/typescript-advanced-concepts'
+      path: '/read/typescript-advanced-concepts'
+      fullPath: '/resources/read/typescript-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadTypescriptAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/tableau-tips-tricks': {
@@ -17343,6 +17763,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadTableauSampleExercisesRoute: typeof MarketingResourcesReadTableauSampleExercisesRoute
   MarketingResourcesReadTableauStepByStepLearningGuideRoute: typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
   MarketingResourcesReadTableauTipsTricksRoute: typeof MarketingResourcesReadTableauTipsTricksRoute
+  MarketingResourcesReadTypescriptAdvancedConceptsRoute: typeof MarketingResourcesReadTypescriptAdvancedConceptsRoute
+  MarketingResourcesReadTypescriptAnswerKeyRoute: typeof MarketingResourcesReadTypescriptAnswerKeyRoute
+  MarketingResourcesReadTypescriptBeginnerGuideRoute: typeof MarketingResourcesReadTypescriptBeginnerGuideRoute
+  MarketingResourcesReadTypescriptBestPracticesRoute: typeof MarketingResourcesReadTypescriptBestPracticesRoute
+  MarketingResourcesReadTypescriptCheatSheetRoute: typeof MarketingResourcesReadTypescriptCheatSheetRoute
+  MarketingResourcesReadTypescriptCommonMistakesRoute: typeof MarketingResourcesReadTypescriptCommonMistakesRoute
+  MarketingResourcesReadTypescriptCompleteTutorialRoute: typeof MarketingResourcesReadTypescriptCompleteTutorialRoute
+  MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadTypescriptGlossaryRoute: typeof MarketingResourcesReadTypescriptGlossaryRoute
+  MarketingResourcesReadTypescriptInterviewQuestionsRoute: typeof MarketingResourcesReadTypescriptInterviewQuestionsRoute
+  MarketingResourcesReadTypescriptLearningRoadmapRoute: typeof MarketingResourcesReadTypescriptLearningRoadmapRoute
+  MarketingResourcesReadTypescriptPdfNotesRoute: typeof MarketingResourcesReadTypescriptPdfNotesRoute
+  MarketingResourcesReadTypescriptPracticeQuestionsRoute: typeof MarketingResourcesReadTypescriptPracticeQuestionsRoute
+  MarketingResourcesReadTypescriptProjectCaseStudyRoute: typeof MarketingResourcesReadTypescriptProjectCaseStudyRoute
+  MarketingResourcesReadTypescriptProjectGuideRoute: typeof MarketingResourcesReadTypescriptProjectGuideRoute
+  MarketingResourcesReadTypescriptQuickRevisionNotesRoute: typeof MarketingResourcesReadTypescriptQuickRevisionNotesRoute
+  MarketingResourcesReadTypescriptRealWorldCaseStudyRoute: typeof MarketingResourcesReadTypescriptRealWorldCaseStudyRoute
+  MarketingResourcesReadTypescriptReferenceGuideRoute: typeof MarketingResourcesReadTypescriptReferenceGuideRoute
+  MarketingResourcesReadTypescriptSampleExercisesRoute: typeof MarketingResourcesReadTypescriptSampleExercisesRoute
+  MarketingResourcesReadTypescriptStepByStepLearningGuideRoute: typeof MarketingResourcesReadTypescriptStepByStepLearningGuideRoute
+  MarketingResourcesReadTypescriptTipsTricksRoute: typeof MarketingResourcesReadTypescriptTipsTricksRoute
   MarketingResourcesReadUxDesignAdvancedConceptsRoute: typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
   MarketingResourcesReadUxDesignAnswerKeyRoute: typeof MarketingResourcesReadUxDesignAnswerKeyRoute
   MarketingResourcesReadUxDesignBeginnerGuideRoute: typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
@@ -18848,6 +19289,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadTableauStepByStepLearningGuideRoute,
   MarketingResourcesReadTableauTipsTricksRoute:
     MarketingResourcesReadTableauTipsTricksRoute,
+  MarketingResourcesReadTypescriptAdvancedConceptsRoute:
+    MarketingResourcesReadTypescriptAdvancedConceptsRoute,
+  MarketingResourcesReadTypescriptAnswerKeyRoute:
+    MarketingResourcesReadTypescriptAnswerKeyRoute,
+  MarketingResourcesReadTypescriptBeginnerGuideRoute:
+    MarketingResourcesReadTypescriptBeginnerGuideRoute,
+  MarketingResourcesReadTypescriptBestPracticesRoute:
+    MarketingResourcesReadTypescriptBestPracticesRoute,
+  MarketingResourcesReadTypescriptCheatSheetRoute:
+    MarketingResourcesReadTypescriptCheatSheetRoute,
+  MarketingResourcesReadTypescriptCommonMistakesRoute:
+    MarketingResourcesReadTypescriptCommonMistakesRoute,
+  MarketingResourcesReadTypescriptCompleteTutorialRoute:
+    MarketingResourcesReadTypescriptCompleteTutorialRoute,
+  MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadTypescriptFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadTypescriptGlossaryRoute:
+    MarketingResourcesReadTypescriptGlossaryRoute,
+  MarketingResourcesReadTypescriptInterviewQuestionsRoute:
+    MarketingResourcesReadTypescriptInterviewQuestionsRoute,
+  MarketingResourcesReadTypescriptLearningRoadmapRoute:
+    MarketingResourcesReadTypescriptLearningRoadmapRoute,
+  MarketingResourcesReadTypescriptPdfNotesRoute:
+    MarketingResourcesReadTypescriptPdfNotesRoute,
+  MarketingResourcesReadTypescriptPracticeQuestionsRoute:
+    MarketingResourcesReadTypescriptPracticeQuestionsRoute,
+  MarketingResourcesReadTypescriptProjectCaseStudyRoute:
+    MarketingResourcesReadTypescriptProjectCaseStudyRoute,
+  MarketingResourcesReadTypescriptProjectGuideRoute:
+    MarketingResourcesReadTypescriptProjectGuideRoute,
+  MarketingResourcesReadTypescriptQuickRevisionNotesRoute:
+    MarketingResourcesReadTypescriptQuickRevisionNotesRoute,
+  MarketingResourcesReadTypescriptRealWorldCaseStudyRoute:
+    MarketingResourcesReadTypescriptRealWorldCaseStudyRoute,
+  MarketingResourcesReadTypescriptReferenceGuideRoute:
+    MarketingResourcesReadTypescriptReferenceGuideRoute,
+  MarketingResourcesReadTypescriptSampleExercisesRoute:
+    MarketingResourcesReadTypescriptSampleExercisesRoute,
+  MarketingResourcesReadTypescriptStepByStepLearningGuideRoute:
+    MarketingResourcesReadTypescriptStepByStepLearningGuideRoute,
+  MarketingResourcesReadTypescriptTipsTricksRoute:
+    MarketingResourcesReadTypescriptTipsTricksRoute,
   MarketingResourcesReadUxDesignAdvancedConceptsRoute:
     MarketingResourcesReadUxDesignAdvancedConceptsRoute,
   MarketingResourcesReadUxDesignAnswerKeyRoute:
@@ -18952,13 +19435,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
