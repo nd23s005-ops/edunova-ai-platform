@@ -148,7 +148,7 @@ const AZ: Entry[] = [
 
 function Page() {
   return (
-    <ReaderShell resource={RESOURCE} toc={TOC}>
+    <ReaderShell resource={RESOURCE} toc={TOC} related={RELATED}>
       <Section id="how-to" title="1. Using this Glossary">
         <ul className="list-disc space-y-1 pl-5">
           <li>Each entry gives a beginner-friendly definition, a technical note, an example and related concepts.</li>

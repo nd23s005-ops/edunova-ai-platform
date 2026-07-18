@@ -53,7 +53,7 @@ export const Route = createFileRoute("/_marketing/resources/read/pe-advanced-con
 
 function Page() {
   return (
-    <ReaderShell resource={RESOURCE} toc={TOC}>
+    <ReaderShell resource={RESOURCE} toc={TOC} related={RELATED}>
       <Section id="objectives" title="Learning Objectives">
         <ul className="list-disc space-y-1 pl-5">
           <li>Master advanced prompting strategies used in production LLM systems.</li>

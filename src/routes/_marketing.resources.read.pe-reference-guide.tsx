@@ -53,7 +53,7 @@ export const Route = createFileRoute("/_marketing/resources/read/pe-reference-gu
 
 function Page() {
   return (
-    <ReaderShell resource={RESOURCE} toc={TOC}>
+    <ReaderShell resource={RESOURCE} toc={TOC} related={RELATED}>
       <Section id="fund" title="1. Prompt Engineering Fundamentals">
         <ul className="list-disc space-y-1 pl-5">
           <li>A prompt is a token sequence that conditions the next-token distribution of an LLM.</li>
