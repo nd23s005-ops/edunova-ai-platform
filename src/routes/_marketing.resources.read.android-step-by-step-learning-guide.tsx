@@ -166,7 +166,7 @@ fun ProductsScreen(vm: ProductsViewModel = hiltViewModel()) {
   val state by vm.uiState.collectAsStateWithLifecycle()
   when (val s = state) {
     UiState.Loading    -> CircularProgressIndicator()
-    is UiState.Error   -> Text("Error: ${s.message}")
+    is UiState.Error   -> Text("Error: " + s.message)
     is UiState.Success -> LazyColumn {
       items(s.items, key = { it.id }) { p -> ProductRow(p) }
     }
