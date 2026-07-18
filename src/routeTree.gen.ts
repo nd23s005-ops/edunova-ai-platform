@@ -123,12 +123,15 @@ import { Route as MarketingResourcesReadDlBeginnerGuideRouteImport } from './rou
 import { Route as MarketingResourcesReadDlAnswerKeyRouteImport } from './routes/_marketing.resources.read.dl-answer-key'
 import { Route as MarketingResourcesReadDlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.dl-advanced-concepts'
 import { Route as MarketingResourcesReadDbmsTipsTricksRouteImport } from './routes/_marketing.resources.read.dbms-tips-tricks'
+import { Route as MarketingResourcesReadDbmsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.dbms-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadDbmsReferenceGuideRouteImport } from './routes/_marketing.resources.read.dbms-reference-guide'
 import { Route as MarketingResourcesReadDbmsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.dbms-practice-questions'
 import { Route as MarketingResourcesReadDbmsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.dbms-learning-roadmap'
 import { Route as MarketingResourcesReadDbmsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.dbms-interview-questions'
 import { Route as MarketingResourcesReadDbmsGlossaryRouteImport } from './routes/_marketing.resources.read.dbms-glossary'
 import { Route as MarketingResourcesReadDbmsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.dbms-frequently-asked-questions'
+import { Route as MarketingResourcesReadDbmsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.dbms-complete-tutorial'
+import { Route as MarketingResourcesReadDbmsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dbms-beginner-guide'
 import { Route as MarketingResourcesReadDbmsAnswerKeyRouteImport } from './routes/_marketing.resources.read.dbms-answer-key'
 import { Route as MarketingResourcesReadDbmsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.dbms-advanced-concepts'
 import { Route as MarketingResourcesReadAiTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-tips-tricks'
@@ -817,6 +820,12 @@ const MarketingResourcesReadDbmsTipsTricksRoute =
     path: '/read/dbms-tips-tricks',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDbmsStepByStepLearningGuideRoute =
+  MarketingResourcesReadDbmsStepByStepLearningGuideRouteImport.update({
+    id: '/read/dbms-step-by-step-learning-guide',
+    path: '/read/dbms-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDbmsReferenceGuideRoute =
   MarketingResourcesReadDbmsReferenceGuideRouteImport.update({
     id: '/read/dbms-reference-guide',
@@ -851,6 +860,18 @@ const MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute =
   MarketingResourcesReadDbmsFrequentlyAskedQuestionsRouteImport.update({
     id: '/read/dbms-frequently-asked-questions',
     path: '/read/dbms-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDbmsCompleteTutorialRoute =
+  MarketingResourcesReadDbmsCompleteTutorialRouteImport.update({
+    id: '/read/dbms-complete-tutorial',
+    path: '/read/dbms-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadDbmsBeginnerGuideRoute =
+  MarketingResourcesReadDbmsBeginnerGuideRouteImport.update({
+    id: '/read/dbms-beginner-guide',
+    path: '/read/dbms-beginner-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadDbmsAnswerKeyRoute =
@@ -1141,12 +1162,15 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
   '/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
+  '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
+  '/resources/read/dbms-complete-tutorial': typeof MarketingResourcesReadDbmsCompleteTutorialRoute
   '/resources/read/dbms-frequently-asked-questions': typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute
   '/resources/read/dbms-glossary': typeof MarketingResourcesReadDbmsGlossaryRoute
   '/resources/read/dbms-interview-questions': typeof MarketingResourcesReadDbmsInterviewQuestionsRoute
   '/resources/read/dbms-learning-roadmap': typeof MarketingResourcesReadDbmsLearningRoadmapRoute
   '/resources/read/dbms-practice-questions': typeof MarketingResourcesReadDbmsPracticeQuestionsRoute
   '/resources/read/dbms-reference-guide': typeof MarketingResourcesReadDbmsReferenceGuideRoute
+  '/resources/read/dbms-step-by-step-learning-guide': typeof MarketingResourcesReadDbmsStepByStepLearningGuideRoute
   '/resources/read/dbms-tips-tricks': typeof MarketingResourcesReadDbmsTipsTricksRoute
   '/resources/read/dl-advanced-concepts': typeof MarketingResourcesReadDlAdvancedConceptsRoute
   '/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
@@ -1295,12 +1319,15 @@ export interface FileRoutesByTo {
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
   '/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
+  '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
+  '/resources/read/dbms-complete-tutorial': typeof MarketingResourcesReadDbmsCompleteTutorialRoute
   '/resources/read/dbms-frequently-asked-questions': typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute
   '/resources/read/dbms-glossary': typeof MarketingResourcesReadDbmsGlossaryRoute
   '/resources/read/dbms-interview-questions': typeof MarketingResourcesReadDbmsInterviewQuestionsRoute
   '/resources/read/dbms-learning-roadmap': typeof MarketingResourcesReadDbmsLearningRoadmapRoute
   '/resources/read/dbms-practice-questions': typeof MarketingResourcesReadDbmsPracticeQuestionsRoute
   '/resources/read/dbms-reference-guide': typeof MarketingResourcesReadDbmsReferenceGuideRoute
+  '/resources/read/dbms-step-by-step-learning-guide': typeof MarketingResourcesReadDbmsStepByStepLearningGuideRoute
   '/resources/read/dbms-tips-tricks': typeof MarketingResourcesReadDbmsTipsTricksRoute
   '/resources/read/dl-advanced-concepts': typeof MarketingResourcesReadDlAdvancedConceptsRoute
   '/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
@@ -1454,12 +1481,15 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
   '/_marketing/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/_marketing/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
+  '/_marketing/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
+  '/_marketing/resources/read/dbms-complete-tutorial': typeof MarketingResourcesReadDbmsCompleteTutorialRoute
   '/_marketing/resources/read/dbms-frequently-asked-questions': typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/dbms-glossary': typeof MarketingResourcesReadDbmsGlossaryRoute
   '/_marketing/resources/read/dbms-interview-questions': typeof MarketingResourcesReadDbmsInterviewQuestionsRoute
   '/_marketing/resources/read/dbms-learning-roadmap': typeof MarketingResourcesReadDbmsLearningRoadmapRoute
   '/_marketing/resources/read/dbms-practice-questions': typeof MarketingResourcesReadDbmsPracticeQuestionsRoute
   '/_marketing/resources/read/dbms-reference-guide': typeof MarketingResourcesReadDbmsReferenceGuideRoute
+  '/_marketing/resources/read/dbms-step-by-step-learning-guide': typeof MarketingResourcesReadDbmsStepByStepLearningGuideRoute
   '/_marketing/resources/read/dbms-tips-tricks': typeof MarketingResourcesReadDbmsTipsTricksRoute
   '/_marketing/resources/read/dl-advanced-concepts': typeof MarketingResourcesReadDlAdvancedConceptsRoute
   '/_marketing/resources/read/dl-answer-key': typeof MarketingResourcesReadDlAnswerKeyRoute
@@ -1611,12 +1641,15 @@ export interface FileRouteTypes {
     | '/resources/read/ai-tips-tricks'
     | '/resources/read/dbms-advanced-concepts'
     | '/resources/read/dbms-answer-key'
+    | '/resources/read/dbms-beginner-guide'
+    | '/resources/read/dbms-complete-tutorial'
     | '/resources/read/dbms-frequently-asked-questions'
     | '/resources/read/dbms-glossary'
     | '/resources/read/dbms-interview-questions'
     | '/resources/read/dbms-learning-roadmap'
     | '/resources/read/dbms-practice-questions'
     | '/resources/read/dbms-reference-guide'
+    | '/resources/read/dbms-step-by-step-learning-guide'
     | '/resources/read/dbms-tips-tricks'
     | '/resources/read/dl-advanced-concepts'
     | '/resources/read/dl-answer-key'
@@ -1765,12 +1798,15 @@ export interface FileRouteTypes {
     | '/resources/read/ai-tips-tricks'
     | '/resources/read/dbms-advanced-concepts'
     | '/resources/read/dbms-answer-key'
+    | '/resources/read/dbms-beginner-guide'
+    | '/resources/read/dbms-complete-tutorial'
     | '/resources/read/dbms-frequently-asked-questions'
     | '/resources/read/dbms-glossary'
     | '/resources/read/dbms-interview-questions'
     | '/resources/read/dbms-learning-roadmap'
     | '/resources/read/dbms-practice-questions'
     | '/resources/read/dbms-reference-guide'
+    | '/resources/read/dbms-step-by-step-learning-guide'
     | '/resources/read/dbms-tips-tricks'
     | '/resources/read/dl-advanced-concepts'
     | '/resources/read/dl-answer-key'
@@ -1923,12 +1959,15 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-tips-tricks'
     | '/_marketing/resources/read/dbms-advanced-concepts'
     | '/_marketing/resources/read/dbms-answer-key'
+    | '/_marketing/resources/read/dbms-beginner-guide'
+    | '/_marketing/resources/read/dbms-complete-tutorial'
     | '/_marketing/resources/read/dbms-frequently-asked-questions'
     | '/_marketing/resources/read/dbms-glossary'
     | '/_marketing/resources/read/dbms-interview-questions'
     | '/_marketing/resources/read/dbms-learning-roadmap'
     | '/_marketing/resources/read/dbms-practice-questions'
     | '/_marketing/resources/read/dbms-reference-guide'
+    | '/_marketing/resources/read/dbms-step-by-step-learning-guide'
     | '/_marketing/resources/read/dbms-tips-tricks'
     | '/_marketing/resources/read/dl-advanced-concepts'
     | '/_marketing/resources/read/dl-answer-key'
@@ -2824,6 +2863,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDbmsTipsTricksRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/dbms-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/dbms-step-by-step-learning-guide'
+      path: '/read/dbms-step-by-step-learning-guide'
+      fullPath: '/resources/read/dbms-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDbmsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dbms-reference-guide': {
       id: '/_marketing/resources/read/dbms-reference-guide'
       path: '/read/dbms-reference-guide'
@@ -2864,6 +2910,20 @@ declare module '@tanstack/react-router' {
       path: '/read/dbms-frequently-asked-questions'
       fullPath: '/resources/read/dbms-frequently-asked-questions'
       preLoaderRoute: typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dbms-complete-tutorial': {
+      id: '/_marketing/resources/read/dbms-complete-tutorial'
+      path: '/read/dbms-complete-tutorial'
+      fullPath: '/resources/read/dbms-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadDbmsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/dbms-beginner-guide': {
+      id: '/_marketing/resources/read/dbms-beginner-guide'
+      path: '/read/dbms-beginner-guide'
+      fullPath: '/resources/read/dbms-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadDbmsBeginnerGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/dbms-answer-key': {
@@ -3277,12 +3337,15 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiTipsTricksRoute: typeof MarketingResourcesReadAiTipsTricksRoute
   MarketingResourcesReadDbmsAdvancedConceptsRoute: typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   MarketingResourcesReadDbmsAnswerKeyRoute: typeof MarketingResourcesReadDbmsAnswerKeyRoute
+  MarketingResourcesReadDbmsBeginnerGuideRoute: typeof MarketingResourcesReadDbmsBeginnerGuideRoute
+  MarketingResourcesReadDbmsCompleteTutorialRoute: typeof MarketingResourcesReadDbmsCompleteTutorialRoute
   MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute
   MarketingResourcesReadDbmsGlossaryRoute: typeof MarketingResourcesReadDbmsGlossaryRoute
   MarketingResourcesReadDbmsInterviewQuestionsRoute: typeof MarketingResourcesReadDbmsInterviewQuestionsRoute
   MarketingResourcesReadDbmsLearningRoadmapRoute: typeof MarketingResourcesReadDbmsLearningRoadmapRoute
   MarketingResourcesReadDbmsPracticeQuestionsRoute: typeof MarketingResourcesReadDbmsPracticeQuestionsRoute
   MarketingResourcesReadDbmsReferenceGuideRoute: typeof MarketingResourcesReadDbmsReferenceGuideRoute
+  MarketingResourcesReadDbmsStepByStepLearningGuideRoute: typeof MarketingResourcesReadDbmsStepByStepLearningGuideRoute
   MarketingResourcesReadDbmsTipsTricksRoute: typeof MarketingResourcesReadDbmsTipsTricksRoute
   MarketingResourcesReadDlAdvancedConceptsRoute: typeof MarketingResourcesReadDlAdvancedConceptsRoute
   MarketingResourcesReadDlAnswerKeyRoute: typeof MarketingResourcesReadDlAnswerKeyRoute
@@ -3402,6 +3465,10 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDbmsAdvancedConceptsRoute,
   MarketingResourcesReadDbmsAnswerKeyRoute:
     MarketingResourcesReadDbmsAnswerKeyRoute,
+  MarketingResourcesReadDbmsBeginnerGuideRoute:
+    MarketingResourcesReadDbmsBeginnerGuideRoute,
+  MarketingResourcesReadDbmsCompleteTutorialRoute:
+    MarketingResourcesReadDbmsCompleteTutorialRoute,
   MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute:
     MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute,
   MarketingResourcesReadDbmsGlossaryRoute:
@@ -3414,6 +3481,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDbmsPracticeQuestionsRoute,
   MarketingResourcesReadDbmsReferenceGuideRoute:
     MarketingResourcesReadDbmsReferenceGuideRoute,
+  MarketingResourcesReadDbmsStepByStepLearningGuideRoute:
+    MarketingResourcesReadDbmsStepByStepLearningGuideRoute,
   MarketingResourcesReadDbmsTipsTricksRoute:
     MarketingResourcesReadDbmsTipsTricksRoute,
   MarketingResourcesReadDlAdvancedConceptsRoute:
