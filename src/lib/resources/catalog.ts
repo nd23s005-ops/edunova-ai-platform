@@ -391,6 +391,9 @@ const READER_ROUTES: Record<string, string> = {
  "prompt-engineering--sample-exercises": "/resources/read/pe-sample-exercises",
  "prompt-engineering--project-guide": "/resources/read/pe-project-guide",
  "prompt-engineering--project-case-study": "/resources/read/pe-project-case-study",
+ "prompt-engineering--interview-questions": "/resources/read/pe-interview-questions",
+ "prompt-engineering--practice-questions": "/resources/read/pe-practice-questions",
+ "prompt-engineering--answer-key": "/resources/read/pe-answer-key",
 
 
 
