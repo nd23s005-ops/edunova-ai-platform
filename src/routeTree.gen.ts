@@ -353,6 +353,27 @@ import { Route as MarketingResourcesReadOperatingSystemsBestPracticesRouteImport
 import { Route as MarketingResourcesReadOperatingSystemsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.operating-systems-beginner-guide'
 import { Route as MarketingResourcesReadOperatingSystemsAnswerKeyRouteImport } from './routes/_marketing.resources.read.operating-systems-answer-key'
 import { Route as MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.operating-systems-advanced-concepts'
+import { Route as MarketingResourcesReadNextjsTipsTricksRouteImport } from './routes/_marketing.resources.read.nextjs-tips-tricks'
+import { Route as MarketingResourcesReadNextjsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.nextjs-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadNextjsSampleExercisesRouteImport } from './routes/_marketing.resources.read.nextjs-sample-exercises'
+import { Route as MarketingResourcesReadNextjsReferenceGuideRouteImport } from './routes/_marketing.resources.read.nextjs-reference-guide'
+import { Route as MarketingResourcesReadNextjsRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.nextjs-real-world-case-study'
+import { Route as MarketingResourcesReadNextjsQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.nextjs-quick-revision-notes'
+import { Route as MarketingResourcesReadNextjsProjectGuideRouteImport } from './routes/_marketing.resources.read.nextjs-project-guide'
+import { Route as MarketingResourcesReadNextjsProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.nextjs-project-case-study'
+import { Route as MarketingResourcesReadNextjsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.nextjs-practice-questions'
+import { Route as MarketingResourcesReadNextjsPdfNotesRouteImport } from './routes/_marketing.resources.read.nextjs-pdf-notes'
+import { Route as MarketingResourcesReadNextjsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.nextjs-learning-roadmap'
+import { Route as MarketingResourcesReadNextjsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.nextjs-interview-questions'
+import { Route as MarketingResourcesReadNextjsGlossaryRouteImport } from './routes/_marketing.resources.read.nextjs-glossary'
+import { Route as MarketingResourcesReadNextjsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.nextjs-frequently-asked-questions'
+import { Route as MarketingResourcesReadNextjsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.nextjs-complete-tutorial'
+import { Route as MarketingResourcesReadNextjsCommonMistakesRouteImport } from './routes/_marketing.resources.read.nextjs-common-mistakes'
+import { Route as MarketingResourcesReadNextjsCheatSheetRouteImport } from './routes/_marketing.resources.read.nextjs-cheat-sheet'
+import { Route as MarketingResourcesReadNextjsBestPracticesRouteImport } from './routes/_marketing.resources.read.nextjs-best-practices'
+import { Route as MarketingResourcesReadNextjsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.nextjs-beginner-guide'
+import { Route as MarketingResourcesReadNextjsAnswerKeyRouteImport } from './routes/_marketing.resources.read.nextjs-answer-key'
+import { Route as MarketingResourcesReadNextjsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.nextjs-advanced-concepts'
 import { Route as MarketingResourcesReadNetworkSecurityTipsTricksRouteImport } from './routes/_marketing.resources.read.network-security-tips-tricks'
 import { Route as MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.network-security-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadNetworkSecurityReferenceGuideRouteImport } from './routes/_marketing.resources.read.network-security-reference-guide'
@@ -2932,6 +2953,132 @@ const MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute =
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport.update({
     id: '/read/operating-systems-advanced-concepts',
     path: '/read/operating-systems-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsTipsTricksRoute =
+  MarketingResourcesReadNextjsTipsTricksRouteImport.update({
+    id: '/read/nextjs-tips-tricks',
+    path: '/read/nextjs-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsStepByStepLearningGuideRoute =
+  MarketingResourcesReadNextjsStepByStepLearningGuideRouteImport.update({
+    id: '/read/nextjs-step-by-step-learning-guide',
+    path: '/read/nextjs-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsSampleExercisesRoute =
+  MarketingResourcesReadNextjsSampleExercisesRouteImport.update({
+    id: '/read/nextjs-sample-exercises',
+    path: '/read/nextjs-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsReferenceGuideRoute =
+  MarketingResourcesReadNextjsReferenceGuideRouteImport.update({
+    id: '/read/nextjs-reference-guide',
+    path: '/read/nextjs-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsRealWorldCaseStudyRoute =
+  MarketingResourcesReadNextjsRealWorldCaseStudyRouteImport.update({
+    id: '/read/nextjs-real-world-case-study',
+    path: '/read/nextjs-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsQuickRevisionNotesRoute =
+  MarketingResourcesReadNextjsQuickRevisionNotesRouteImport.update({
+    id: '/read/nextjs-quick-revision-notes',
+    path: '/read/nextjs-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsProjectGuideRoute =
+  MarketingResourcesReadNextjsProjectGuideRouteImport.update({
+    id: '/read/nextjs-project-guide',
+    path: '/read/nextjs-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsProjectCaseStudyRoute =
+  MarketingResourcesReadNextjsProjectCaseStudyRouteImport.update({
+    id: '/read/nextjs-project-case-study',
+    path: '/read/nextjs-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsPracticeQuestionsRoute =
+  MarketingResourcesReadNextjsPracticeQuestionsRouteImport.update({
+    id: '/read/nextjs-practice-questions',
+    path: '/read/nextjs-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsPdfNotesRoute =
+  MarketingResourcesReadNextjsPdfNotesRouteImport.update({
+    id: '/read/nextjs-pdf-notes',
+    path: '/read/nextjs-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsLearningRoadmapRoute =
+  MarketingResourcesReadNextjsLearningRoadmapRouteImport.update({
+    id: '/read/nextjs-learning-roadmap',
+    path: '/read/nextjs-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsInterviewQuestionsRoute =
+  MarketingResourcesReadNextjsInterviewQuestionsRouteImport.update({
+    id: '/read/nextjs-interview-questions',
+    path: '/read/nextjs-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsGlossaryRoute =
+  MarketingResourcesReadNextjsGlossaryRouteImport.update({
+    id: '/read/nextjs-glossary',
+    path: '/read/nextjs-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadNextjsFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/nextjs-frequently-asked-questions',
+    path: '/read/nextjs-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsCompleteTutorialRoute =
+  MarketingResourcesReadNextjsCompleteTutorialRouteImport.update({
+    id: '/read/nextjs-complete-tutorial',
+    path: '/read/nextjs-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsCommonMistakesRoute =
+  MarketingResourcesReadNextjsCommonMistakesRouteImport.update({
+    id: '/read/nextjs-common-mistakes',
+    path: '/read/nextjs-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsCheatSheetRoute =
+  MarketingResourcesReadNextjsCheatSheetRouteImport.update({
+    id: '/read/nextjs-cheat-sheet',
+    path: '/read/nextjs-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsBestPracticesRoute =
+  MarketingResourcesReadNextjsBestPracticesRouteImport.update({
+    id: '/read/nextjs-best-practices',
+    path: '/read/nextjs-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsBeginnerGuideRoute =
+  MarketingResourcesReadNextjsBeginnerGuideRouteImport.update({
+    id: '/read/nextjs-beginner-guide',
+    path: '/read/nextjs-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsAnswerKeyRoute =
+  MarketingResourcesReadNextjsAnswerKeyRouteImport.update({
+    id: '/read/nextjs-answer-key',
+    path: '/read/nextjs-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNextjsAdvancedConceptsRoute =
+  MarketingResourcesReadNextjsAdvancedConceptsRouteImport.update({
+    id: '/read/nextjs-advanced-concepts',
+    path: '/read/nextjs-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadNetworkSecurityTipsTricksRoute =
@@ -6771,6 +6918,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/network-security-reference-guide': typeof MarketingResourcesReadNetworkSecurityReferenceGuideRoute
   '/resources/read/network-security-step-by-step-learning-guide': typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute
   '/resources/read/network-security-tips-tricks': typeof MarketingResourcesReadNetworkSecurityTipsTricksRoute
+  '/resources/read/nextjs-advanced-concepts': typeof MarketingResourcesReadNextjsAdvancedConceptsRoute
+  '/resources/read/nextjs-answer-key': typeof MarketingResourcesReadNextjsAnswerKeyRoute
+  '/resources/read/nextjs-beginner-guide': typeof MarketingResourcesReadNextjsBeginnerGuideRoute
+  '/resources/read/nextjs-best-practices': typeof MarketingResourcesReadNextjsBestPracticesRoute
+  '/resources/read/nextjs-cheat-sheet': typeof MarketingResourcesReadNextjsCheatSheetRoute
+  '/resources/read/nextjs-common-mistakes': typeof MarketingResourcesReadNextjsCommonMistakesRoute
+  '/resources/read/nextjs-complete-tutorial': typeof MarketingResourcesReadNextjsCompleteTutorialRoute
+  '/resources/read/nextjs-frequently-asked-questions': typeof MarketingResourcesReadNextjsFrequentlyAskedQuestionsRoute
+  '/resources/read/nextjs-glossary': typeof MarketingResourcesReadNextjsGlossaryRoute
+  '/resources/read/nextjs-interview-questions': typeof MarketingResourcesReadNextjsInterviewQuestionsRoute
+  '/resources/read/nextjs-learning-roadmap': typeof MarketingResourcesReadNextjsLearningRoadmapRoute
+  '/resources/read/nextjs-pdf-notes': typeof MarketingResourcesReadNextjsPdfNotesRoute
+  '/resources/read/nextjs-practice-questions': typeof MarketingResourcesReadNextjsPracticeQuestionsRoute
+  '/resources/read/nextjs-project-case-study': typeof MarketingResourcesReadNextjsProjectCaseStudyRoute
+  '/resources/read/nextjs-project-guide': typeof MarketingResourcesReadNextjsProjectGuideRoute
+  '/resources/read/nextjs-quick-revision-notes': typeof MarketingResourcesReadNextjsQuickRevisionNotesRoute
+  '/resources/read/nextjs-real-world-case-study': typeof MarketingResourcesReadNextjsRealWorldCaseStudyRoute
+  '/resources/read/nextjs-reference-guide': typeof MarketingResourcesReadNextjsReferenceGuideRoute
+  '/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
+  '/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
+  '/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
   '/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -7654,6 +7822,27 @@ export interface FileRoutesByTo {
   '/resources/read/network-security-reference-guide': typeof MarketingResourcesReadNetworkSecurityReferenceGuideRoute
   '/resources/read/network-security-step-by-step-learning-guide': typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute
   '/resources/read/network-security-tips-tricks': typeof MarketingResourcesReadNetworkSecurityTipsTricksRoute
+  '/resources/read/nextjs-advanced-concepts': typeof MarketingResourcesReadNextjsAdvancedConceptsRoute
+  '/resources/read/nextjs-answer-key': typeof MarketingResourcesReadNextjsAnswerKeyRoute
+  '/resources/read/nextjs-beginner-guide': typeof MarketingResourcesReadNextjsBeginnerGuideRoute
+  '/resources/read/nextjs-best-practices': typeof MarketingResourcesReadNextjsBestPracticesRoute
+  '/resources/read/nextjs-cheat-sheet': typeof MarketingResourcesReadNextjsCheatSheetRoute
+  '/resources/read/nextjs-common-mistakes': typeof MarketingResourcesReadNextjsCommonMistakesRoute
+  '/resources/read/nextjs-complete-tutorial': typeof MarketingResourcesReadNextjsCompleteTutorialRoute
+  '/resources/read/nextjs-frequently-asked-questions': typeof MarketingResourcesReadNextjsFrequentlyAskedQuestionsRoute
+  '/resources/read/nextjs-glossary': typeof MarketingResourcesReadNextjsGlossaryRoute
+  '/resources/read/nextjs-interview-questions': typeof MarketingResourcesReadNextjsInterviewQuestionsRoute
+  '/resources/read/nextjs-learning-roadmap': typeof MarketingResourcesReadNextjsLearningRoadmapRoute
+  '/resources/read/nextjs-pdf-notes': typeof MarketingResourcesReadNextjsPdfNotesRoute
+  '/resources/read/nextjs-practice-questions': typeof MarketingResourcesReadNextjsPracticeQuestionsRoute
+  '/resources/read/nextjs-project-case-study': typeof MarketingResourcesReadNextjsProjectCaseStudyRoute
+  '/resources/read/nextjs-project-guide': typeof MarketingResourcesReadNextjsProjectGuideRoute
+  '/resources/read/nextjs-quick-revision-notes': typeof MarketingResourcesReadNextjsQuickRevisionNotesRoute
+  '/resources/read/nextjs-real-world-case-study': typeof MarketingResourcesReadNextjsRealWorldCaseStudyRoute
+  '/resources/read/nextjs-reference-guide': typeof MarketingResourcesReadNextjsReferenceGuideRoute
+  '/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
+  '/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
+  '/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
   '/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -8542,6 +8731,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/network-security-reference-guide': typeof MarketingResourcesReadNetworkSecurityReferenceGuideRoute
   '/_marketing/resources/read/network-security-step-by-step-learning-guide': typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute
   '/_marketing/resources/read/network-security-tips-tricks': typeof MarketingResourcesReadNetworkSecurityTipsTricksRoute
+  '/_marketing/resources/read/nextjs-advanced-concepts': typeof MarketingResourcesReadNextjsAdvancedConceptsRoute
+  '/_marketing/resources/read/nextjs-answer-key': typeof MarketingResourcesReadNextjsAnswerKeyRoute
+  '/_marketing/resources/read/nextjs-beginner-guide': typeof MarketingResourcesReadNextjsBeginnerGuideRoute
+  '/_marketing/resources/read/nextjs-best-practices': typeof MarketingResourcesReadNextjsBestPracticesRoute
+  '/_marketing/resources/read/nextjs-cheat-sheet': typeof MarketingResourcesReadNextjsCheatSheetRoute
+  '/_marketing/resources/read/nextjs-common-mistakes': typeof MarketingResourcesReadNextjsCommonMistakesRoute
+  '/_marketing/resources/read/nextjs-complete-tutorial': typeof MarketingResourcesReadNextjsCompleteTutorialRoute
+  '/_marketing/resources/read/nextjs-frequently-asked-questions': typeof MarketingResourcesReadNextjsFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/nextjs-glossary': typeof MarketingResourcesReadNextjsGlossaryRoute
+  '/_marketing/resources/read/nextjs-interview-questions': typeof MarketingResourcesReadNextjsInterviewQuestionsRoute
+  '/_marketing/resources/read/nextjs-learning-roadmap': typeof MarketingResourcesReadNextjsLearningRoadmapRoute
+  '/_marketing/resources/read/nextjs-pdf-notes': typeof MarketingResourcesReadNextjsPdfNotesRoute
+  '/_marketing/resources/read/nextjs-practice-questions': typeof MarketingResourcesReadNextjsPracticeQuestionsRoute
+  '/_marketing/resources/read/nextjs-project-case-study': typeof MarketingResourcesReadNextjsProjectCaseStudyRoute
+  '/_marketing/resources/read/nextjs-project-guide': typeof MarketingResourcesReadNextjsProjectGuideRoute
+  '/_marketing/resources/read/nextjs-quick-revision-notes': typeof MarketingResourcesReadNextjsQuickRevisionNotesRoute
+  '/_marketing/resources/read/nextjs-real-world-case-study': typeof MarketingResourcesReadNextjsRealWorldCaseStudyRoute
+  '/_marketing/resources/read/nextjs-reference-guide': typeof MarketingResourcesReadNextjsReferenceGuideRoute
+  '/_marketing/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
+  '/_marketing/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
+  '/_marketing/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
   '/_marketing/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   '/_marketing/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   '/_marketing/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -9428,6 +9638,27 @@ export interface FileRouteTypes {
     | '/resources/read/network-security-reference-guide'
     | '/resources/read/network-security-step-by-step-learning-guide'
     | '/resources/read/network-security-tips-tricks'
+    | '/resources/read/nextjs-advanced-concepts'
+    | '/resources/read/nextjs-answer-key'
+    | '/resources/read/nextjs-beginner-guide'
+    | '/resources/read/nextjs-best-practices'
+    | '/resources/read/nextjs-cheat-sheet'
+    | '/resources/read/nextjs-common-mistakes'
+    | '/resources/read/nextjs-complete-tutorial'
+    | '/resources/read/nextjs-frequently-asked-questions'
+    | '/resources/read/nextjs-glossary'
+    | '/resources/read/nextjs-interview-questions'
+    | '/resources/read/nextjs-learning-roadmap'
+    | '/resources/read/nextjs-pdf-notes'
+    | '/resources/read/nextjs-practice-questions'
+    | '/resources/read/nextjs-project-case-study'
+    | '/resources/read/nextjs-project-guide'
+    | '/resources/read/nextjs-quick-revision-notes'
+    | '/resources/read/nextjs-real-world-case-study'
+    | '/resources/read/nextjs-reference-guide'
+    | '/resources/read/nextjs-sample-exercises'
+    | '/resources/read/nextjs-step-by-step-learning-guide'
+    | '/resources/read/nextjs-tips-tricks'
     | '/resources/read/operating-systems-advanced-concepts'
     | '/resources/read/operating-systems-answer-key'
     | '/resources/read/operating-systems-beginner-guide'
@@ -10311,6 +10542,27 @@ export interface FileRouteTypes {
     | '/resources/read/network-security-reference-guide'
     | '/resources/read/network-security-step-by-step-learning-guide'
     | '/resources/read/network-security-tips-tricks'
+    | '/resources/read/nextjs-advanced-concepts'
+    | '/resources/read/nextjs-answer-key'
+    | '/resources/read/nextjs-beginner-guide'
+    | '/resources/read/nextjs-best-practices'
+    | '/resources/read/nextjs-cheat-sheet'
+    | '/resources/read/nextjs-common-mistakes'
+    | '/resources/read/nextjs-complete-tutorial'
+    | '/resources/read/nextjs-frequently-asked-questions'
+    | '/resources/read/nextjs-glossary'
+    | '/resources/read/nextjs-interview-questions'
+    | '/resources/read/nextjs-learning-roadmap'
+    | '/resources/read/nextjs-pdf-notes'
+    | '/resources/read/nextjs-practice-questions'
+    | '/resources/read/nextjs-project-case-study'
+    | '/resources/read/nextjs-project-guide'
+    | '/resources/read/nextjs-quick-revision-notes'
+    | '/resources/read/nextjs-real-world-case-study'
+    | '/resources/read/nextjs-reference-guide'
+    | '/resources/read/nextjs-sample-exercises'
+    | '/resources/read/nextjs-step-by-step-learning-guide'
+    | '/resources/read/nextjs-tips-tricks'
     | '/resources/read/operating-systems-advanced-concepts'
     | '/resources/read/operating-systems-answer-key'
     | '/resources/read/operating-systems-beginner-guide'
@@ -11198,6 +11450,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/network-security-reference-guide'
     | '/_marketing/resources/read/network-security-step-by-step-learning-guide'
     | '/_marketing/resources/read/network-security-tips-tricks'
+    | '/_marketing/resources/read/nextjs-advanced-concepts'
+    | '/_marketing/resources/read/nextjs-answer-key'
+    | '/_marketing/resources/read/nextjs-beginner-guide'
+    | '/_marketing/resources/read/nextjs-best-practices'
+    | '/_marketing/resources/read/nextjs-cheat-sheet'
+    | '/_marketing/resources/read/nextjs-common-mistakes'
+    | '/_marketing/resources/read/nextjs-complete-tutorial'
+    | '/_marketing/resources/read/nextjs-frequently-asked-questions'
+    | '/_marketing/resources/read/nextjs-glossary'
+    | '/_marketing/resources/read/nextjs-interview-questions'
+    | '/_marketing/resources/read/nextjs-learning-roadmap'
+    | '/_marketing/resources/read/nextjs-pdf-notes'
+    | '/_marketing/resources/read/nextjs-practice-questions'
+    | '/_marketing/resources/read/nextjs-project-case-study'
+    | '/_marketing/resources/read/nextjs-project-guide'
+    | '/_marketing/resources/read/nextjs-quick-revision-notes'
+    | '/_marketing/resources/read/nextjs-real-world-case-study'
+    | '/_marketing/resources/read/nextjs-reference-guide'
+    | '/_marketing/resources/read/nextjs-sample-exercises'
+    | '/_marketing/resources/read/nextjs-step-by-step-learning-guide'
+    | '/_marketing/resources/read/nextjs-tips-tricks'
     | '/_marketing/resources/read/operating-systems-advanced-concepts'
     | '/_marketing/resources/read/operating-systems-answer-key'
     | '/_marketing/resources/read/operating-systems-beginner-guide'
@@ -13931,6 +14204,153 @@ declare module '@tanstack/react-router' {
       path: '/read/operating-systems-advanced-concepts'
       fullPath: '/resources/read/operating-systems-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-tips-tricks': {
+      id: '/_marketing/resources/read/nextjs-tips-tricks'
+      path: '/read/nextjs-tips-tricks'
+      fullPath: '/resources/read/nextjs-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/nextjs-step-by-step-learning-guide'
+      path: '/read/nextjs-step-by-step-learning-guide'
+      fullPath: '/resources/read/nextjs-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-sample-exercises': {
+      id: '/_marketing/resources/read/nextjs-sample-exercises'
+      path: '/read/nextjs-sample-exercises'
+      fullPath: '/resources/read/nextjs-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-reference-guide': {
+      id: '/_marketing/resources/read/nextjs-reference-guide'
+      path: '/read/nextjs-reference-guide'
+      fullPath: '/resources/read/nextjs-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-real-world-case-study': {
+      id: '/_marketing/resources/read/nextjs-real-world-case-study'
+      path: '/read/nextjs-real-world-case-study'
+      fullPath: '/resources/read/nextjs-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-quick-revision-notes': {
+      id: '/_marketing/resources/read/nextjs-quick-revision-notes'
+      path: '/read/nextjs-quick-revision-notes'
+      fullPath: '/resources/read/nextjs-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-project-guide': {
+      id: '/_marketing/resources/read/nextjs-project-guide'
+      path: '/read/nextjs-project-guide'
+      fullPath: '/resources/read/nextjs-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-project-case-study': {
+      id: '/_marketing/resources/read/nextjs-project-case-study'
+      path: '/read/nextjs-project-case-study'
+      fullPath: '/resources/read/nextjs-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-practice-questions': {
+      id: '/_marketing/resources/read/nextjs-practice-questions'
+      path: '/read/nextjs-practice-questions'
+      fullPath: '/resources/read/nextjs-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-pdf-notes': {
+      id: '/_marketing/resources/read/nextjs-pdf-notes'
+      path: '/read/nextjs-pdf-notes'
+      fullPath: '/resources/read/nextjs-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-learning-roadmap': {
+      id: '/_marketing/resources/read/nextjs-learning-roadmap'
+      path: '/read/nextjs-learning-roadmap'
+      fullPath: '/resources/read/nextjs-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-interview-questions': {
+      id: '/_marketing/resources/read/nextjs-interview-questions'
+      path: '/read/nextjs-interview-questions'
+      fullPath: '/resources/read/nextjs-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-glossary': {
+      id: '/_marketing/resources/read/nextjs-glossary'
+      path: '/read/nextjs-glossary'
+      fullPath: '/resources/read/nextjs-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-frequently-asked-questions': {
+      id: '/_marketing/resources/read/nextjs-frequently-asked-questions'
+      path: '/read/nextjs-frequently-asked-questions'
+      fullPath: '/resources/read/nextjs-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-complete-tutorial': {
+      id: '/_marketing/resources/read/nextjs-complete-tutorial'
+      path: '/read/nextjs-complete-tutorial'
+      fullPath: '/resources/read/nextjs-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-common-mistakes': {
+      id: '/_marketing/resources/read/nextjs-common-mistakes'
+      path: '/read/nextjs-common-mistakes'
+      fullPath: '/resources/read/nextjs-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-cheat-sheet': {
+      id: '/_marketing/resources/read/nextjs-cheat-sheet'
+      path: '/read/nextjs-cheat-sheet'
+      fullPath: '/resources/read/nextjs-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-best-practices': {
+      id: '/_marketing/resources/read/nextjs-best-practices'
+      path: '/read/nextjs-best-practices'
+      fullPath: '/resources/read/nextjs-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-beginner-guide': {
+      id: '/_marketing/resources/read/nextjs-beginner-guide'
+      path: '/read/nextjs-beginner-guide'
+      fullPath: '/resources/read/nextjs-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-answer-key': {
+      id: '/_marketing/resources/read/nextjs-answer-key'
+      path: '/read/nextjs-answer-key'
+      fullPath: '/resources/read/nextjs-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nextjs-advanced-concepts': {
+      id: '/_marketing/resources/read/nextjs-advanced-concepts'
+      path: '/read/nextjs-advanced-concepts'
+      fullPath: '/resources/read/nextjs-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadNextjsAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/network-security-tips-tricks': {
@@ -18384,6 +18804,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadNetworkSecurityReferenceGuideRoute: typeof MarketingResourcesReadNetworkSecurityReferenceGuideRoute
   MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute: typeof MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute
   MarketingResourcesReadNetworkSecurityTipsTricksRoute: typeof MarketingResourcesReadNetworkSecurityTipsTricksRoute
+  MarketingResourcesReadNextjsAdvancedConceptsRoute: typeof MarketingResourcesReadNextjsAdvancedConceptsRoute
+  MarketingResourcesReadNextjsAnswerKeyRoute: typeof MarketingResourcesReadNextjsAnswerKeyRoute
+  MarketingResourcesReadNextjsBeginnerGuideRoute: typeof MarketingResourcesReadNextjsBeginnerGuideRoute
+  MarketingResourcesReadNextjsBestPracticesRoute: typeof MarketingResourcesReadNextjsBestPracticesRoute
+  MarketingResourcesReadNextjsCheatSheetRoute: typeof MarketingResourcesReadNextjsCheatSheetRoute
+  MarketingResourcesReadNextjsCommonMistakesRoute: typeof MarketingResourcesReadNextjsCommonMistakesRoute
+  MarketingResourcesReadNextjsCompleteTutorialRoute: typeof MarketingResourcesReadNextjsCompleteTutorialRoute
+  MarketingResourcesReadNextjsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadNextjsFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadNextjsGlossaryRoute: typeof MarketingResourcesReadNextjsGlossaryRoute
+  MarketingResourcesReadNextjsInterviewQuestionsRoute: typeof MarketingResourcesReadNextjsInterviewQuestionsRoute
+  MarketingResourcesReadNextjsLearningRoadmapRoute: typeof MarketingResourcesReadNextjsLearningRoadmapRoute
+  MarketingResourcesReadNextjsPdfNotesRoute: typeof MarketingResourcesReadNextjsPdfNotesRoute
+  MarketingResourcesReadNextjsPracticeQuestionsRoute: typeof MarketingResourcesReadNextjsPracticeQuestionsRoute
+  MarketingResourcesReadNextjsProjectCaseStudyRoute: typeof MarketingResourcesReadNextjsProjectCaseStudyRoute
+  MarketingResourcesReadNextjsProjectGuideRoute: typeof MarketingResourcesReadNextjsProjectGuideRoute
+  MarketingResourcesReadNextjsQuickRevisionNotesRoute: typeof MarketingResourcesReadNextjsQuickRevisionNotesRoute
+  MarketingResourcesReadNextjsRealWorldCaseStudyRoute: typeof MarketingResourcesReadNextjsRealWorldCaseStudyRoute
+  MarketingResourcesReadNextjsReferenceGuideRoute: typeof MarketingResourcesReadNextjsReferenceGuideRoute
+  MarketingResourcesReadNextjsSampleExercisesRoute: typeof MarketingResourcesReadNextjsSampleExercisesRoute
+  MarketingResourcesReadNextjsStepByStepLearningGuideRoute: typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
+  MarketingResourcesReadNextjsTipsTricksRoute: typeof MarketingResourcesReadNextjsTipsTricksRoute
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute: typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
   MarketingResourcesReadOperatingSystemsAnswerKeyRoute: typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
   MarketingResourcesReadOperatingSystemsBeginnerGuideRoute: typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
@@ -19737,6 +20178,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadNetworkSecurityStepByStepLearningGuideRoute,
   MarketingResourcesReadNetworkSecurityTipsTricksRoute:
     MarketingResourcesReadNetworkSecurityTipsTricksRoute,
+  MarketingResourcesReadNextjsAdvancedConceptsRoute:
+    MarketingResourcesReadNextjsAdvancedConceptsRoute,
+  MarketingResourcesReadNextjsAnswerKeyRoute:
+    MarketingResourcesReadNextjsAnswerKeyRoute,
+  MarketingResourcesReadNextjsBeginnerGuideRoute:
+    MarketingResourcesReadNextjsBeginnerGuideRoute,
+  MarketingResourcesReadNextjsBestPracticesRoute:
+    MarketingResourcesReadNextjsBestPracticesRoute,
+  MarketingResourcesReadNextjsCheatSheetRoute:
+    MarketingResourcesReadNextjsCheatSheetRoute,
+  MarketingResourcesReadNextjsCommonMistakesRoute:
+    MarketingResourcesReadNextjsCommonMistakesRoute,
+  MarketingResourcesReadNextjsCompleteTutorialRoute:
+    MarketingResourcesReadNextjsCompleteTutorialRoute,
+  MarketingResourcesReadNextjsFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadNextjsFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadNextjsGlossaryRoute:
+    MarketingResourcesReadNextjsGlossaryRoute,
+  MarketingResourcesReadNextjsInterviewQuestionsRoute:
+    MarketingResourcesReadNextjsInterviewQuestionsRoute,
+  MarketingResourcesReadNextjsLearningRoadmapRoute:
+    MarketingResourcesReadNextjsLearningRoadmapRoute,
+  MarketingResourcesReadNextjsPdfNotesRoute:
+    MarketingResourcesReadNextjsPdfNotesRoute,
+  MarketingResourcesReadNextjsPracticeQuestionsRoute:
+    MarketingResourcesReadNextjsPracticeQuestionsRoute,
+  MarketingResourcesReadNextjsProjectCaseStudyRoute:
+    MarketingResourcesReadNextjsProjectCaseStudyRoute,
+  MarketingResourcesReadNextjsProjectGuideRoute:
+    MarketingResourcesReadNextjsProjectGuideRoute,
+  MarketingResourcesReadNextjsQuickRevisionNotesRoute:
+    MarketingResourcesReadNextjsQuickRevisionNotesRoute,
+  MarketingResourcesReadNextjsRealWorldCaseStudyRoute:
+    MarketingResourcesReadNextjsRealWorldCaseStudyRoute,
+  MarketingResourcesReadNextjsReferenceGuideRoute:
+    MarketingResourcesReadNextjsReferenceGuideRoute,
+  MarketingResourcesReadNextjsSampleExercisesRoute:
+    MarketingResourcesReadNextjsSampleExercisesRoute,
+  MarketingResourcesReadNextjsStepByStepLearningGuideRoute:
+    MarketingResourcesReadNextjsStepByStepLearningGuideRoute,
+  MarketingResourcesReadNextjsTipsTricksRoute:
+    MarketingResourcesReadNextjsTipsTricksRoute,
   MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute:
     MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute,
   MarketingResourcesReadOperatingSystemsAnswerKeyRoute:
