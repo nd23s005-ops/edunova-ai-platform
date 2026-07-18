@@ -52,6 +52,7 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as MarketingResourcesReadMlTipsTricksRouteImport } from './routes/_marketing.resources.read.ml-tips-tricks'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlSampleExercisesRouteImport } from './routes/_marketing.resources.read.ml-sample-exercises'
 import { Route as MarketingResourcesReadMlRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.ml-real-world-case-study'
@@ -60,7 +61,9 @@ import { Route as MarketingResourcesReadMlProjectGuideRouteImport } from './rout
 import { Route as MarketingResourcesReadMlProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.ml-project-case-study'
 import { Route as MarketingResourcesReadMlPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.ml-practice-questions'
 import { Route as MarketingResourcesReadMlPdfNotesRouteImport } from './routes/_marketing.resources.read.ml-pdf-notes'
+import { Route as MarketingResourcesReadMlLearningRoadmapRouteImport } from './routes/_marketing.resources.read.ml-learning-roadmap'
 import { Route as MarketingResourcesReadMlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ml-interview-questions'
+import { Route as MarketingResourcesReadMlFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.ml-frequently-asked-questions'
 import { Route as MarketingResourcesReadMlCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ml-complete-tutorial'
 import { Route as MarketingResourcesReadMlCommonMistakesRouteImport } from './routes/_marketing.resources.read.ml-common-mistakes'
 import { Route as MarketingResourcesReadMlCheatSheetRouteImport } from './routes/_marketing.resources.read.ml-cheat-sheet'
@@ -327,6 +330,12 @@ const DashboardDashboardMockTestsIndexRoute =
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
   } as any)
+const MarketingResourcesReadMlTipsTricksRoute =
+  MarketingResourcesReadMlTipsTricksRouteImport.update({
+    id: '/read/ml-tips-tricks',
+    path: '/read/ml-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadMlStepByStepLearningGuideRoute =
   MarketingResourcesReadMlStepByStepLearningGuideRouteImport.update({
     id: '/read/ml-step-by-step-learning-guide',
@@ -375,10 +384,22 @@ const MarketingResourcesReadMlPdfNotesRoute =
     path: '/read/ml-pdf-notes',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadMlLearningRoadmapRoute =
+  MarketingResourcesReadMlLearningRoadmapRouteImport.update({
+    id: '/read/ml-learning-roadmap',
+    path: '/read/ml-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadMlInterviewQuestionsRoute =
   MarketingResourcesReadMlInterviewQuestionsRouteImport.update({
     id: '/read/ml-interview-questions',
     path: '/read/ml-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMlFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadMlFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/ml-frequently-asked-questions',
+    path: '/read/ml-frequently-asked-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlCompleteTutorialRoute =
@@ -696,7 +717,9 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-cheat-sheet': typeof MarketingResourcesReadMlCheatSheetRoute
   '/resources/read/ml-common-mistakes': typeof MarketingResourcesReadMlCommonMistakesRoute
   '/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/resources/read/ml-frequently-asked-questions': typeof MarketingResourcesReadMlFrequentlyAskedQuestionsRoute
   '/resources/read/ml-interview-questions': typeof MarketingResourcesReadMlInterviewQuestionsRoute
+  '/resources/read/ml-learning-roadmap': typeof MarketingResourcesReadMlLearningRoadmapRoute
   '/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/resources/read/ml-practice-questions': typeof MarketingResourcesReadMlPracticeQuestionsRoute
   '/resources/read/ml-project-case-study': typeof MarketingResourcesReadMlProjectCaseStudyRoute
@@ -705,6 +728,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-real-world-case-study': typeof MarketingResourcesReadMlRealWorldCaseStudyRoute
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
+  '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -786,7 +810,9 @@ export interface FileRoutesByTo {
   '/resources/read/ml-cheat-sheet': typeof MarketingResourcesReadMlCheatSheetRoute
   '/resources/read/ml-common-mistakes': typeof MarketingResourcesReadMlCommonMistakesRoute
   '/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/resources/read/ml-frequently-asked-questions': typeof MarketingResourcesReadMlFrequentlyAskedQuestionsRoute
   '/resources/read/ml-interview-questions': typeof MarketingResourcesReadMlInterviewQuestionsRoute
+  '/resources/read/ml-learning-roadmap': typeof MarketingResourcesReadMlLearningRoadmapRoute
   '/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/resources/read/ml-practice-questions': typeof MarketingResourcesReadMlPracticeQuestionsRoute
   '/resources/read/ml-project-case-study': typeof MarketingResourcesReadMlProjectCaseStudyRoute
@@ -795,6 +821,7 @@ export interface FileRoutesByTo {
   '/resources/read/ml-real-world-case-study': typeof MarketingResourcesReadMlRealWorldCaseStudyRoute
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
+  '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -881,7 +908,9 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-cheat-sheet': typeof MarketingResourcesReadMlCheatSheetRoute
   '/_marketing/resources/read/ml-common-mistakes': typeof MarketingResourcesReadMlCommonMistakesRoute
   '/_marketing/resources/read/ml-complete-tutorial': typeof MarketingResourcesReadMlCompleteTutorialRoute
+  '/_marketing/resources/read/ml-frequently-asked-questions': typeof MarketingResourcesReadMlFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/ml-interview-questions': typeof MarketingResourcesReadMlInterviewQuestionsRoute
+  '/_marketing/resources/read/ml-learning-roadmap': typeof MarketingResourcesReadMlLearningRoadmapRoute
   '/_marketing/resources/read/ml-pdf-notes': typeof MarketingResourcesReadMlPdfNotesRoute
   '/_marketing/resources/read/ml-practice-questions': typeof MarketingResourcesReadMlPracticeQuestionsRoute
   '/_marketing/resources/read/ml-project-case-study': typeof MarketingResourcesReadMlProjectCaseStudyRoute
@@ -890,6 +919,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-real-world-case-study': typeof MarketingResourcesReadMlRealWorldCaseStudyRoute
   '/_marketing/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
+  '/_marketing/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -974,7 +1004,9 @@ export interface FileRouteTypes {
     | '/resources/read/ml-cheat-sheet'
     | '/resources/read/ml-common-mistakes'
     | '/resources/read/ml-complete-tutorial'
+    | '/resources/read/ml-frequently-asked-questions'
     | '/resources/read/ml-interview-questions'
+    | '/resources/read/ml-learning-roadmap'
     | '/resources/read/ml-pdf-notes'
     | '/resources/read/ml-practice-questions'
     | '/resources/read/ml-project-case-study'
@@ -983,6 +1015,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-real-world-case-study'
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
+    | '/resources/read/ml-tips-tricks'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -1064,7 +1097,9 @@ export interface FileRouteTypes {
     | '/resources/read/ml-cheat-sheet'
     | '/resources/read/ml-common-mistakes'
     | '/resources/read/ml-complete-tutorial'
+    | '/resources/read/ml-frequently-asked-questions'
     | '/resources/read/ml-interview-questions'
+    | '/resources/read/ml-learning-roadmap'
     | '/resources/read/ml-pdf-notes'
     | '/resources/read/ml-practice-questions'
     | '/resources/read/ml-project-case-study'
@@ -1073,6 +1108,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-real-world-case-study'
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
+    | '/resources/read/ml-tips-tricks'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -1158,7 +1194,9 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-cheat-sheet'
     | '/_marketing/resources/read/ml-common-mistakes'
     | '/_marketing/resources/read/ml-complete-tutorial'
+    | '/_marketing/resources/read/ml-frequently-asked-questions'
     | '/_marketing/resources/read/ml-interview-questions'
+    | '/_marketing/resources/read/ml-learning-roadmap'
     | '/_marketing/resources/read/ml-pdf-notes'
     | '/_marketing/resources/read/ml-practice-questions'
     | '/_marketing/resources/read/ml-project-case-study'
@@ -1167,6 +1205,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-real-world-case-study'
     | '/_marketing/resources/read/ml-sample-exercises'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
+    | '/_marketing/resources/read/ml-tips-tricks'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/mock-tests/ai/$categoryId'
@@ -1495,6 +1534,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_marketing/resources/read/ml-tips-tricks': {
+      id: '/_marketing/resources/read/ml-tips-tricks'
+      path: '/read/ml-tips-tricks'
+      fullPath: '/resources/read/ml-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadMlTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ml-step-by-step-learning-guide': {
       id: '/_marketing/resources/read/ml-step-by-step-learning-guide'
       path: '/read/ml-step-by-step-learning-guide'
@@ -1551,11 +1597,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadMlPdfNotesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ml-learning-roadmap': {
+      id: '/_marketing/resources/read/ml-learning-roadmap'
+      path: '/read/ml-learning-roadmap'
+      fullPath: '/resources/read/ml-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadMlLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ml-interview-questions': {
       id: '/_marketing/resources/read/ml-interview-questions'
       path: '/read/ml-interview-questions'
       fullPath: '/resources/read/ml-interview-questions'
       preLoaderRoute: typeof MarketingResourcesReadMlInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ml-frequently-asked-questions': {
+      id: '/_marketing/resources/read/ml-frequently-asked-questions'
+      path: '/read/ml-frequently-asked-questions'
+      fullPath: '/resources/read/ml-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMlFrequentlyAskedQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-complete-tutorial': {
@@ -2001,7 +2061,9 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlCheatSheetRoute: typeof MarketingResourcesReadMlCheatSheetRoute
   MarketingResourcesReadMlCommonMistakesRoute: typeof MarketingResourcesReadMlCommonMistakesRoute
   MarketingResourcesReadMlCompleteTutorialRoute: typeof MarketingResourcesReadMlCompleteTutorialRoute
+  MarketingResourcesReadMlFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadMlFrequentlyAskedQuestionsRoute
   MarketingResourcesReadMlInterviewQuestionsRoute: typeof MarketingResourcesReadMlInterviewQuestionsRoute
+  MarketingResourcesReadMlLearningRoadmapRoute: typeof MarketingResourcesReadMlLearningRoadmapRoute
   MarketingResourcesReadMlPdfNotesRoute: typeof MarketingResourcesReadMlPdfNotesRoute
   MarketingResourcesReadMlPracticeQuestionsRoute: typeof MarketingResourcesReadMlPracticeQuestionsRoute
   MarketingResourcesReadMlProjectCaseStudyRoute: typeof MarketingResourcesReadMlProjectCaseStudyRoute
@@ -2010,6 +2072,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlRealWorldCaseStudyRoute: typeof MarketingResourcesReadMlRealWorldCaseStudyRoute
   MarketingResourcesReadMlSampleExercisesRoute: typeof MarketingResourcesReadMlSampleExercisesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
+  MarketingResourcesReadMlTipsTricksRoute: typeof MarketingResourcesReadMlTipsTricksRoute
 }
 
 const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
@@ -2067,8 +2130,12 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlCommonMistakesRoute,
   MarketingResourcesReadMlCompleteTutorialRoute:
     MarketingResourcesReadMlCompleteTutorialRoute,
+  MarketingResourcesReadMlFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadMlFrequentlyAskedQuestionsRoute,
   MarketingResourcesReadMlInterviewQuestionsRoute:
     MarketingResourcesReadMlInterviewQuestionsRoute,
+  MarketingResourcesReadMlLearningRoadmapRoute:
+    MarketingResourcesReadMlLearningRoadmapRoute,
   MarketingResourcesReadMlPdfNotesRoute: MarketingResourcesReadMlPdfNotesRoute,
   MarketingResourcesReadMlPracticeQuestionsRoute:
     MarketingResourcesReadMlPracticeQuestionsRoute,
@@ -2084,6 +2151,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlSampleExercisesRoute,
   MarketingResourcesReadMlStepByStepLearningGuideRoute:
     MarketingResourcesReadMlStepByStepLearningGuideRoute,
+  MarketingResourcesReadMlTipsTricksRoute:
+    MarketingResourcesReadMlTipsTricksRoute,
 }
 
 const MarketingResourcesRouteWithChildren =
