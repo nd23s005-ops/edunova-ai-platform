@@ -239,6 +239,27 @@ import { Route as MarketingResourcesReadGenaiInterviewQuestionsRouteImport } fro
 import { Route as MarketingResourcesReadGenaiFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.genai-frequently-asked-questions'
 import { Route as MarketingResourcesReadGenaiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.genai-complete-tutorial'
 import { Route as MarketingResourcesReadGenaiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.genai-beginner-guide'
+import { Route as MarketingResourcesReadFigmaTipsAndTricksRouteImport } from './routes/_marketing.resources.read.figma-tips-and-tricks'
+import { Route as MarketingResourcesReadFigmaStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.figma-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadFigmaSampleExercisesRouteImport } from './routes/_marketing.resources.read.figma-sample-exercises'
+import { Route as MarketingResourcesReadFigmaReferenceGuideRouteImport } from './routes/_marketing.resources.read.figma-reference-guide'
+import { Route as MarketingResourcesReadFigmaRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.figma-real-world-case-study'
+import { Route as MarketingResourcesReadFigmaQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.figma-quick-revision-notes'
+import { Route as MarketingResourcesReadFigmaProjectGuideRouteImport } from './routes/_marketing.resources.read.figma-project-guide'
+import { Route as MarketingResourcesReadFigmaProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.figma-project-case-study'
+import { Route as MarketingResourcesReadFigmaPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.figma-practice-questions'
+import { Route as MarketingResourcesReadFigmaPdfNotesRouteImport } from './routes/_marketing.resources.read.figma-pdf-notes'
+import { Route as MarketingResourcesReadFigmaLearningRoadmapRouteImport } from './routes/_marketing.resources.read.figma-learning-roadmap'
+import { Route as MarketingResourcesReadFigmaInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.figma-interview-questions'
+import { Route as MarketingResourcesReadFigmaGlossaryRouteImport } from './routes/_marketing.resources.read.figma-glossary'
+import { Route as MarketingResourcesReadFigmaFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.figma-frequently-asked-questions'
+import { Route as MarketingResourcesReadFigmaCompleteTutorialRouteImport } from './routes/_marketing.resources.read.figma-complete-tutorial'
+import { Route as MarketingResourcesReadFigmaCommonMistakesRouteImport } from './routes/_marketing.resources.read.figma-common-mistakes'
+import { Route as MarketingResourcesReadFigmaCheatSheetRouteImport } from './routes/_marketing.resources.read.figma-cheat-sheet'
+import { Route as MarketingResourcesReadFigmaBestPracticesRouteImport } from './routes/_marketing.resources.read.figma-best-practices'
+import { Route as MarketingResourcesReadFigmaBeginnerGuideRouteImport } from './routes/_marketing.resources.read.figma-beginner-guide'
+import { Route as MarketingResourcesReadFigmaAnswerKeyRouteImport } from './routes/_marketing.resources.read.figma-answer-key'
+import { Route as MarketingResourcesReadFigmaAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.figma-advanced-concepts'
 import { Route as MarketingResourcesReadDsaTipsAndTricksRouteImport } from './routes/_marketing.resources.read.dsa-tips-and-tricks'
 import { Route as MarketingResourcesReadDsaStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.dsa-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadDsaSampleExercisesRouteImport } from './routes/_marketing.resources.read.dsa-sample-exercises'
@@ -1709,6 +1730,132 @@ const MarketingResourcesReadGenaiBeginnerGuideRoute =
     path: '/read/genai-beginner-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadFigmaTipsAndTricksRoute =
+  MarketingResourcesReadFigmaTipsAndTricksRouteImport.update({
+    id: '/read/figma-tips-and-tricks',
+    path: '/read/figma-tips-and-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaStepByStepLearningGuideRoute =
+  MarketingResourcesReadFigmaStepByStepLearningGuideRouteImport.update({
+    id: '/read/figma-step-by-step-learning-guide',
+    path: '/read/figma-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaSampleExercisesRoute =
+  MarketingResourcesReadFigmaSampleExercisesRouteImport.update({
+    id: '/read/figma-sample-exercises',
+    path: '/read/figma-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaReferenceGuideRoute =
+  MarketingResourcesReadFigmaReferenceGuideRouteImport.update({
+    id: '/read/figma-reference-guide',
+    path: '/read/figma-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaRealWorldCaseStudyRoute =
+  MarketingResourcesReadFigmaRealWorldCaseStudyRouteImport.update({
+    id: '/read/figma-real-world-case-study',
+    path: '/read/figma-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaQuickRevisionNotesRoute =
+  MarketingResourcesReadFigmaQuickRevisionNotesRouteImport.update({
+    id: '/read/figma-quick-revision-notes',
+    path: '/read/figma-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaProjectGuideRoute =
+  MarketingResourcesReadFigmaProjectGuideRouteImport.update({
+    id: '/read/figma-project-guide',
+    path: '/read/figma-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaProjectCaseStudyRoute =
+  MarketingResourcesReadFigmaProjectCaseStudyRouteImport.update({
+    id: '/read/figma-project-case-study',
+    path: '/read/figma-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaPracticeQuestionsRoute =
+  MarketingResourcesReadFigmaPracticeQuestionsRouteImport.update({
+    id: '/read/figma-practice-questions',
+    path: '/read/figma-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaPdfNotesRoute =
+  MarketingResourcesReadFigmaPdfNotesRouteImport.update({
+    id: '/read/figma-pdf-notes',
+    path: '/read/figma-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaLearningRoadmapRoute =
+  MarketingResourcesReadFigmaLearningRoadmapRouteImport.update({
+    id: '/read/figma-learning-roadmap',
+    path: '/read/figma-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaInterviewQuestionsRoute =
+  MarketingResourcesReadFigmaInterviewQuestionsRouteImport.update({
+    id: '/read/figma-interview-questions',
+    path: '/read/figma-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaGlossaryRoute =
+  MarketingResourcesReadFigmaGlossaryRouteImport.update({
+    id: '/read/figma-glossary',
+    path: '/read/figma-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadFigmaFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/figma-frequently-asked-questions',
+    path: '/read/figma-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaCompleteTutorialRoute =
+  MarketingResourcesReadFigmaCompleteTutorialRouteImport.update({
+    id: '/read/figma-complete-tutorial',
+    path: '/read/figma-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaCommonMistakesRoute =
+  MarketingResourcesReadFigmaCommonMistakesRouteImport.update({
+    id: '/read/figma-common-mistakes',
+    path: '/read/figma-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaCheatSheetRoute =
+  MarketingResourcesReadFigmaCheatSheetRouteImport.update({
+    id: '/read/figma-cheat-sheet',
+    path: '/read/figma-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaBestPracticesRoute =
+  MarketingResourcesReadFigmaBestPracticesRouteImport.update({
+    id: '/read/figma-best-practices',
+    path: '/read/figma-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaBeginnerGuideRoute =
+  MarketingResourcesReadFigmaBeginnerGuideRouteImport.update({
+    id: '/read/figma-beginner-guide',
+    path: '/read/figma-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaAnswerKeyRoute =
+  MarketingResourcesReadFigmaAnswerKeyRouteImport.update({
+    id: '/read/figma-answer-key',
+    path: '/read/figma-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadFigmaAdvancedConceptsRoute =
+  MarketingResourcesReadFigmaAdvancedConceptsRouteImport.update({
+    id: '/read/figma-advanced-concepts',
+    path: '/read/figma-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDsaTipsAndTricksRoute =
   MarketingResourcesReadDsaTipsAndTricksRouteImport.update({
     id: '/read/dsa-tips-and-tricks',
@@ -2575,6 +2722,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
   '/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
   '/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
+  '/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
+  '/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
+  '/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
+  '/resources/read/figma-best-practices': typeof MarketingResourcesReadFigmaBestPracticesRoute
+  '/resources/read/figma-cheat-sheet': typeof MarketingResourcesReadFigmaCheatSheetRoute
+  '/resources/read/figma-common-mistakes': typeof MarketingResourcesReadFigmaCommonMistakesRoute
+  '/resources/read/figma-complete-tutorial': typeof MarketingResourcesReadFigmaCompleteTutorialRoute
+  '/resources/read/figma-frequently-asked-questions': typeof MarketingResourcesReadFigmaFrequentlyAskedQuestionsRoute
+  '/resources/read/figma-glossary': typeof MarketingResourcesReadFigmaGlossaryRoute
+  '/resources/read/figma-interview-questions': typeof MarketingResourcesReadFigmaInterviewQuestionsRoute
+  '/resources/read/figma-learning-roadmap': typeof MarketingResourcesReadFigmaLearningRoadmapRoute
+  '/resources/read/figma-pdf-notes': typeof MarketingResourcesReadFigmaPdfNotesRoute
+  '/resources/read/figma-practice-questions': typeof MarketingResourcesReadFigmaPracticeQuestionsRoute
+  '/resources/read/figma-project-case-study': typeof MarketingResourcesReadFigmaProjectCaseStudyRoute
+  '/resources/read/figma-project-guide': typeof MarketingResourcesReadFigmaProjectGuideRoute
+  '/resources/read/figma-quick-revision-notes': typeof MarketingResourcesReadFigmaQuickRevisionNotesRoute
+  '/resources/read/figma-real-world-case-study': typeof MarketingResourcesReadFigmaRealWorldCaseStudyRoute
+  '/resources/read/figma-reference-guide': typeof MarketingResourcesReadFigmaReferenceGuideRoute
+  '/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
+  '/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
+  '/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -2921,6 +3089,27 @@ export interface FileRoutesByTo {
   '/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
   '/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
   '/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
+  '/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
+  '/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
+  '/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
+  '/resources/read/figma-best-practices': typeof MarketingResourcesReadFigmaBestPracticesRoute
+  '/resources/read/figma-cheat-sheet': typeof MarketingResourcesReadFigmaCheatSheetRoute
+  '/resources/read/figma-common-mistakes': typeof MarketingResourcesReadFigmaCommonMistakesRoute
+  '/resources/read/figma-complete-tutorial': typeof MarketingResourcesReadFigmaCompleteTutorialRoute
+  '/resources/read/figma-frequently-asked-questions': typeof MarketingResourcesReadFigmaFrequentlyAskedQuestionsRoute
+  '/resources/read/figma-glossary': typeof MarketingResourcesReadFigmaGlossaryRoute
+  '/resources/read/figma-interview-questions': typeof MarketingResourcesReadFigmaInterviewQuestionsRoute
+  '/resources/read/figma-learning-roadmap': typeof MarketingResourcesReadFigmaLearningRoadmapRoute
+  '/resources/read/figma-pdf-notes': typeof MarketingResourcesReadFigmaPdfNotesRoute
+  '/resources/read/figma-practice-questions': typeof MarketingResourcesReadFigmaPracticeQuestionsRoute
+  '/resources/read/figma-project-case-study': typeof MarketingResourcesReadFigmaProjectCaseStudyRoute
+  '/resources/read/figma-project-guide': typeof MarketingResourcesReadFigmaProjectGuideRoute
+  '/resources/read/figma-quick-revision-notes': typeof MarketingResourcesReadFigmaQuickRevisionNotesRoute
+  '/resources/read/figma-real-world-case-study': typeof MarketingResourcesReadFigmaRealWorldCaseStudyRoute
+  '/resources/read/figma-reference-guide': typeof MarketingResourcesReadFigmaReferenceGuideRoute
+  '/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
+  '/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
+  '/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -3272,6 +3461,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
   '/_marketing/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
   '/_marketing/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
+  '/_marketing/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
+  '/_marketing/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
+  '/_marketing/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
+  '/_marketing/resources/read/figma-best-practices': typeof MarketingResourcesReadFigmaBestPracticesRoute
+  '/_marketing/resources/read/figma-cheat-sheet': typeof MarketingResourcesReadFigmaCheatSheetRoute
+  '/_marketing/resources/read/figma-common-mistakes': typeof MarketingResourcesReadFigmaCommonMistakesRoute
+  '/_marketing/resources/read/figma-complete-tutorial': typeof MarketingResourcesReadFigmaCompleteTutorialRoute
+  '/_marketing/resources/read/figma-frequently-asked-questions': typeof MarketingResourcesReadFigmaFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/figma-glossary': typeof MarketingResourcesReadFigmaGlossaryRoute
+  '/_marketing/resources/read/figma-interview-questions': typeof MarketingResourcesReadFigmaInterviewQuestionsRoute
+  '/_marketing/resources/read/figma-learning-roadmap': typeof MarketingResourcesReadFigmaLearningRoadmapRoute
+  '/_marketing/resources/read/figma-pdf-notes': typeof MarketingResourcesReadFigmaPdfNotesRoute
+  '/_marketing/resources/read/figma-practice-questions': typeof MarketingResourcesReadFigmaPracticeQuestionsRoute
+  '/_marketing/resources/read/figma-project-case-study': typeof MarketingResourcesReadFigmaProjectCaseStudyRoute
+  '/_marketing/resources/read/figma-project-guide': typeof MarketingResourcesReadFigmaProjectGuideRoute
+  '/_marketing/resources/read/figma-quick-revision-notes': typeof MarketingResourcesReadFigmaQuickRevisionNotesRoute
+  '/_marketing/resources/read/figma-real-world-case-study': typeof MarketingResourcesReadFigmaRealWorldCaseStudyRoute
+  '/_marketing/resources/read/figma-reference-guide': typeof MarketingResourcesReadFigmaReferenceGuideRoute
+  '/_marketing/resources/read/figma-sample-exercises': typeof MarketingResourcesReadFigmaSampleExercisesRoute
+  '/_marketing/resources/read/figma-step-by-step-learning-guide': typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
+  '/_marketing/resources/read/figma-tips-and-tricks': typeof MarketingResourcesReadFigmaTipsAndTricksRoute
   '/_marketing/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/_marketing/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   '/_marketing/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -3621,6 +3831,27 @@ export interface FileRouteTypes {
     | '/resources/read/dsa-sample-exercises'
     | '/resources/read/dsa-step-by-step-learning-guide'
     | '/resources/read/dsa-tips-and-tricks'
+    | '/resources/read/figma-advanced-concepts'
+    | '/resources/read/figma-answer-key'
+    | '/resources/read/figma-beginner-guide'
+    | '/resources/read/figma-best-practices'
+    | '/resources/read/figma-cheat-sheet'
+    | '/resources/read/figma-common-mistakes'
+    | '/resources/read/figma-complete-tutorial'
+    | '/resources/read/figma-frequently-asked-questions'
+    | '/resources/read/figma-glossary'
+    | '/resources/read/figma-interview-questions'
+    | '/resources/read/figma-learning-roadmap'
+    | '/resources/read/figma-pdf-notes'
+    | '/resources/read/figma-practice-questions'
+    | '/resources/read/figma-project-case-study'
+    | '/resources/read/figma-project-guide'
+    | '/resources/read/figma-quick-revision-notes'
+    | '/resources/read/figma-real-world-case-study'
+    | '/resources/read/figma-reference-guide'
+    | '/resources/read/figma-sample-exercises'
+    | '/resources/read/figma-step-by-step-learning-guide'
+    | '/resources/read/figma-tips-and-tricks'
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
     | '/resources/read/genai-frequently-asked-questions'
@@ -3967,6 +4198,27 @@ export interface FileRouteTypes {
     | '/resources/read/dsa-sample-exercises'
     | '/resources/read/dsa-step-by-step-learning-guide'
     | '/resources/read/dsa-tips-and-tricks'
+    | '/resources/read/figma-advanced-concepts'
+    | '/resources/read/figma-answer-key'
+    | '/resources/read/figma-beginner-guide'
+    | '/resources/read/figma-best-practices'
+    | '/resources/read/figma-cheat-sheet'
+    | '/resources/read/figma-common-mistakes'
+    | '/resources/read/figma-complete-tutorial'
+    | '/resources/read/figma-frequently-asked-questions'
+    | '/resources/read/figma-glossary'
+    | '/resources/read/figma-interview-questions'
+    | '/resources/read/figma-learning-roadmap'
+    | '/resources/read/figma-pdf-notes'
+    | '/resources/read/figma-practice-questions'
+    | '/resources/read/figma-project-case-study'
+    | '/resources/read/figma-project-guide'
+    | '/resources/read/figma-quick-revision-notes'
+    | '/resources/read/figma-real-world-case-study'
+    | '/resources/read/figma-reference-guide'
+    | '/resources/read/figma-sample-exercises'
+    | '/resources/read/figma-step-by-step-learning-guide'
+    | '/resources/read/figma-tips-and-tricks'
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
     | '/resources/read/genai-frequently-asked-questions'
@@ -4317,6 +4569,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dsa-sample-exercises'
     | '/_marketing/resources/read/dsa-step-by-step-learning-guide'
     | '/_marketing/resources/read/dsa-tips-and-tricks'
+    | '/_marketing/resources/read/figma-advanced-concepts'
+    | '/_marketing/resources/read/figma-answer-key'
+    | '/_marketing/resources/read/figma-beginner-guide'
+    | '/_marketing/resources/read/figma-best-practices'
+    | '/_marketing/resources/read/figma-cheat-sheet'
+    | '/_marketing/resources/read/figma-common-mistakes'
+    | '/_marketing/resources/read/figma-complete-tutorial'
+    | '/_marketing/resources/read/figma-frequently-asked-questions'
+    | '/_marketing/resources/read/figma-glossary'
+    | '/_marketing/resources/read/figma-interview-questions'
+    | '/_marketing/resources/read/figma-learning-roadmap'
+    | '/_marketing/resources/read/figma-pdf-notes'
+    | '/_marketing/resources/read/figma-practice-questions'
+    | '/_marketing/resources/read/figma-project-case-study'
+    | '/_marketing/resources/read/figma-project-guide'
+    | '/_marketing/resources/read/figma-quick-revision-notes'
+    | '/_marketing/resources/read/figma-real-world-case-study'
+    | '/_marketing/resources/read/figma-reference-guide'
+    | '/_marketing/resources/read/figma-sample-exercises'
+    | '/_marketing/resources/read/figma-step-by-step-learning-guide'
+    | '/_marketing/resources/read/figma-tips-and-tricks'
     | '/_marketing/resources/read/genai-beginner-guide'
     | '/_marketing/resources/read/genai-complete-tutorial'
     | '/_marketing/resources/read/genai-frequently-asked-questions'
@@ -6140,6 +6413,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadGenaiBeginnerGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/figma-tips-and-tricks': {
+      id: '/_marketing/resources/read/figma-tips-and-tricks'
+      path: '/read/figma-tips-and-tricks'
+      fullPath: '/resources/read/figma-tips-and-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaTipsAndTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/figma-step-by-step-learning-guide'
+      path: '/read/figma-step-by-step-learning-guide'
+      fullPath: '/resources/read/figma-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-sample-exercises': {
+      id: '/_marketing/resources/read/figma-sample-exercises'
+      path: '/read/figma-sample-exercises'
+      fullPath: '/resources/read/figma-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-reference-guide': {
+      id: '/_marketing/resources/read/figma-reference-guide'
+      path: '/read/figma-reference-guide'
+      fullPath: '/resources/read/figma-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-real-world-case-study': {
+      id: '/_marketing/resources/read/figma-real-world-case-study'
+      path: '/read/figma-real-world-case-study'
+      fullPath: '/resources/read/figma-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-quick-revision-notes': {
+      id: '/_marketing/resources/read/figma-quick-revision-notes'
+      path: '/read/figma-quick-revision-notes'
+      fullPath: '/resources/read/figma-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-project-guide': {
+      id: '/_marketing/resources/read/figma-project-guide'
+      path: '/read/figma-project-guide'
+      fullPath: '/resources/read/figma-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-project-case-study': {
+      id: '/_marketing/resources/read/figma-project-case-study'
+      path: '/read/figma-project-case-study'
+      fullPath: '/resources/read/figma-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-practice-questions': {
+      id: '/_marketing/resources/read/figma-practice-questions'
+      path: '/read/figma-practice-questions'
+      fullPath: '/resources/read/figma-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-pdf-notes': {
+      id: '/_marketing/resources/read/figma-pdf-notes'
+      path: '/read/figma-pdf-notes'
+      fullPath: '/resources/read/figma-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-learning-roadmap': {
+      id: '/_marketing/resources/read/figma-learning-roadmap'
+      path: '/read/figma-learning-roadmap'
+      fullPath: '/resources/read/figma-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-interview-questions': {
+      id: '/_marketing/resources/read/figma-interview-questions'
+      path: '/read/figma-interview-questions'
+      fullPath: '/resources/read/figma-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-glossary': {
+      id: '/_marketing/resources/read/figma-glossary'
+      path: '/read/figma-glossary'
+      fullPath: '/resources/read/figma-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-frequently-asked-questions': {
+      id: '/_marketing/resources/read/figma-frequently-asked-questions'
+      path: '/read/figma-frequently-asked-questions'
+      fullPath: '/resources/read/figma-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-complete-tutorial': {
+      id: '/_marketing/resources/read/figma-complete-tutorial'
+      path: '/read/figma-complete-tutorial'
+      fullPath: '/resources/read/figma-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-common-mistakes': {
+      id: '/_marketing/resources/read/figma-common-mistakes'
+      path: '/read/figma-common-mistakes'
+      fullPath: '/resources/read/figma-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-cheat-sheet': {
+      id: '/_marketing/resources/read/figma-cheat-sheet'
+      path: '/read/figma-cheat-sheet'
+      fullPath: '/resources/read/figma-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-best-practices': {
+      id: '/_marketing/resources/read/figma-best-practices'
+      path: '/read/figma-best-practices'
+      fullPath: '/resources/read/figma-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-beginner-guide': {
+      id: '/_marketing/resources/read/figma-beginner-guide'
+      path: '/read/figma-beginner-guide'
+      fullPath: '/resources/read/figma-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-answer-key': {
+      id: '/_marketing/resources/read/figma-answer-key'
+      path: '/read/figma-answer-key'
+      fullPath: '/resources/read/figma-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/figma-advanced-concepts': {
+      id: '/_marketing/resources/read/figma-advanced-concepts'
+      path: '/read/figma-advanced-concepts'
+      fullPath: '/resources/read/figma-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadFigmaAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dsa-tips-and-tricks': {
       id: '/_marketing/resources/read/dsa-tips-and-tricks'
       path: '/read/dsa-tips-and-tricks'
@@ -7207,6 +7627,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDsaSampleExercisesRoute: typeof MarketingResourcesReadDsaSampleExercisesRoute
   MarketingResourcesReadDsaStepByStepLearningGuideRoute: typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
   MarketingResourcesReadDsaTipsAndTricksRoute: typeof MarketingResourcesReadDsaTipsAndTricksRoute
+  MarketingResourcesReadFigmaAdvancedConceptsRoute: typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
+  MarketingResourcesReadFigmaAnswerKeyRoute: typeof MarketingResourcesReadFigmaAnswerKeyRoute
+  MarketingResourcesReadFigmaBeginnerGuideRoute: typeof MarketingResourcesReadFigmaBeginnerGuideRoute
+  MarketingResourcesReadFigmaBestPracticesRoute: typeof MarketingResourcesReadFigmaBestPracticesRoute
+  MarketingResourcesReadFigmaCheatSheetRoute: typeof MarketingResourcesReadFigmaCheatSheetRoute
+  MarketingResourcesReadFigmaCommonMistakesRoute: typeof MarketingResourcesReadFigmaCommonMistakesRoute
+  MarketingResourcesReadFigmaCompleteTutorialRoute: typeof MarketingResourcesReadFigmaCompleteTutorialRoute
+  MarketingResourcesReadFigmaFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadFigmaFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadFigmaGlossaryRoute: typeof MarketingResourcesReadFigmaGlossaryRoute
+  MarketingResourcesReadFigmaInterviewQuestionsRoute: typeof MarketingResourcesReadFigmaInterviewQuestionsRoute
+  MarketingResourcesReadFigmaLearningRoadmapRoute: typeof MarketingResourcesReadFigmaLearningRoadmapRoute
+  MarketingResourcesReadFigmaPdfNotesRoute: typeof MarketingResourcesReadFigmaPdfNotesRoute
+  MarketingResourcesReadFigmaPracticeQuestionsRoute: typeof MarketingResourcesReadFigmaPracticeQuestionsRoute
+  MarketingResourcesReadFigmaProjectCaseStudyRoute: typeof MarketingResourcesReadFigmaProjectCaseStudyRoute
+  MarketingResourcesReadFigmaProjectGuideRoute: typeof MarketingResourcesReadFigmaProjectGuideRoute
+  MarketingResourcesReadFigmaQuickRevisionNotesRoute: typeof MarketingResourcesReadFigmaQuickRevisionNotesRoute
+  MarketingResourcesReadFigmaRealWorldCaseStudyRoute: typeof MarketingResourcesReadFigmaRealWorldCaseStudyRoute
+  MarketingResourcesReadFigmaReferenceGuideRoute: typeof MarketingResourcesReadFigmaReferenceGuideRoute
+  MarketingResourcesReadFigmaSampleExercisesRoute: typeof MarketingResourcesReadFigmaSampleExercisesRoute
+  MarketingResourcesReadFigmaStepByStepLearningGuideRoute: typeof MarketingResourcesReadFigmaStepByStepLearningGuideRoute
+  MarketingResourcesReadFigmaTipsAndTricksRoute: typeof MarketingResourcesReadFigmaTipsAndTricksRoute
   MarketingResourcesReadGenaiBeginnerGuideRoute: typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   MarketingResourcesReadGenaiCompleteTutorialRoute: typeof MarketingResourcesReadGenaiCompleteTutorialRoute
   MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
@@ -7604,6 +8045,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDsaStepByStepLearningGuideRoute,
   MarketingResourcesReadDsaTipsAndTricksRoute:
     MarketingResourcesReadDsaTipsAndTricksRoute,
+  MarketingResourcesReadFigmaAdvancedConceptsRoute:
+    MarketingResourcesReadFigmaAdvancedConceptsRoute,
+  MarketingResourcesReadFigmaAnswerKeyRoute:
+    MarketingResourcesReadFigmaAnswerKeyRoute,
+  MarketingResourcesReadFigmaBeginnerGuideRoute:
+    MarketingResourcesReadFigmaBeginnerGuideRoute,
+  MarketingResourcesReadFigmaBestPracticesRoute:
+    MarketingResourcesReadFigmaBestPracticesRoute,
+  MarketingResourcesReadFigmaCheatSheetRoute:
+    MarketingResourcesReadFigmaCheatSheetRoute,
+  MarketingResourcesReadFigmaCommonMistakesRoute:
+    MarketingResourcesReadFigmaCommonMistakesRoute,
+  MarketingResourcesReadFigmaCompleteTutorialRoute:
+    MarketingResourcesReadFigmaCompleteTutorialRoute,
+  MarketingResourcesReadFigmaFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadFigmaFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadFigmaGlossaryRoute:
+    MarketingResourcesReadFigmaGlossaryRoute,
+  MarketingResourcesReadFigmaInterviewQuestionsRoute:
+    MarketingResourcesReadFigmaInterviewQuestionsRoute,
+  MarketingResourcesReadFigmaLearningRoadmapRoute:
+    MarketingResourcesReadFigmaLearningRoadmapRoute,
+  MarketingResourcesReadFigmaPdfNotesRoute:
+    MarketingResourcesReadFigmaPdfNotesRoute,
+  MarketingResourcesReadFigmaPracticeQuestionsRoute:
+    MarketingResourcesReadFigmaPracticeQuestionsRoute,
+  MarketingResourcesReadFigmaProjectCaseStudyRoute:
+    MarketingResourcesReadFigmaProjectCaseStudyRoute,
+  MarketingResourcesReadFigmaProjectGuideRoute:
+    MarketingResourcesReadFigmaProjectGuideRoute,
+  MarketingResourcesReadFigmaQuickRevisionNotesRoute:
+    MarketingResourcesReadFigmaQuickRevisionNotesRoute,
+  MarketingResourcesReadFigmaRealWorldCaseStudyRoute:
+    MarketingResourcesReadFigmaRealWorldCaseStudyRoute,
+  MarketingResourcesReadFigmaReferenceGuideRoute:
+    MarketingResourcesReadFigmaReferenceGuideRoute,
+  MarketingResourcesReadFigmaSampleExercisesRoute:
+    MarketingResourcesReadFigmaSampleExercisesRoute,
+  MarketingResourcesReadFigmaStepByStepLearningGuideRoute:
+    MarketingResourcesReadFigmaStepByStepLearningGuideRoute,
+  MarketingResourcesReadFigmaTipsAndTricksRoute:
+    MarketingResourcesReadFigmaTipsAndTricksRoute,
   MarketingResourcesReadGenaiBeginnerGuideRoute:
     MarketingResourcesReadGenaiBeginnerGuideRoute,
   MarketingResourcesReadGenaiCompleteTutorialRoute:
