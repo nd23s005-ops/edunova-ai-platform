@@ -53,6 +53,7 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as MarketingResourcesReadSdTipsTricksRouteImport } from './routes/_marketing.resources.read.sd-tips-tricks'
 import { Route as MarketingResourcesReadSdStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.sd-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadSdQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.sd-quick-revision-notes'
 import { Route as MarketingResourcesReadSdPdfNotesRouteImport } from './routes/_marketing.resources.read.sd-pdf-notes'
@@ -416,6 +417,12 @@ const DashboardDashboardMockTestsIndexRoute =
     id: '/dashboard/mock-tests/',
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
+  } as any)
+const MarketingResourcesReadSdTipsTricksRoute =
+  MarketingResourcesReadSdTipsTricksRouteImport.update({
+    id: '/read/sd-tips-tricks',
+    path: '/read/sd-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadSdStepByStepLearningGuideRoute =
   MarketingResourcesReadSdStepByStepLearningGuideRouteImport.update({
@@ -1377,6 +1384,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/sd-pdf-notes': typeof MarketingResourcesReadSdPdfNotesRoute
   '/resources/read/sd-quick-revision-notes': typeof MarketingResourcesReadSdQuickRevisionNotesRoute
   '/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
+  '/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -1551,6 +1559,7 @@ export interface FileRoutesByTo {
   '/resources/read/sd-pdf-notes': typeof MarketingResourcesReadSdPdfNotesRoute
   '/resources/read/sd-quick-revision-notes': typeof MarketingResourcesReadSdQuickRevisionNotesRoute
   '/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
+  '/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -1730,6 +1739,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/sd-pdf-notes': typeof MarketingResourcesReadSdPdfNotesRoute
   '/_marketing/resources/read/sd-quick-revision-notes': typeof MarketingResourcesReadSdQuickRevisionNotesRoute
   '/_marketing/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
+  '/_marketing/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -1907,6 +1917,7 @@ export interface FileRouteTypes {
     | '/resources/read/sd-pdf-notes'
     | '/resources/read/sd-quick-revision-notes'
     | '/resources/read/sd-step-by-step-learning-guide'
+    | '/resources/read/sd-tips-tricks'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -2081,6 +2092,7 @@ export interface FileRouteTypes {
     | '/resources/read/sd-pdf-notes'
     | '/resources/read/sd-quick-revision-notes'
     | '/resources/read/sd-step-by-step-learning-guide'
+    | '/resources/read/sd-tips-tricks'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -2259,6 +2271,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/sd-pdf-notes'
     | '/_marketing/resources/read/sd-quick-revision-notes'
     | '/_marketing/resources/read/sd-step-by-step-learning-guide'
+    | '/_marketing/resources/read/sd-tips-tricks'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/mock-tests/ai/$categoryId'
@@ -2593,6 +2606,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/'
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_marketing/resources/read/sd-tips-tricks': {
+      id: '/_marketing/resources/read/sd-tips-tricks'
+      path: '/read/sd-tips-tricks'
+      fullPath: '/resources/read/sd-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadSdTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/sd-step-by-step-learning-guide': {
       id: '/_marketing/resources/read/sd-step-by-step-learning-guide'
@@ -3773,6 +3793,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadSdPdfNotesRoute: typeof MarketingResourcesReadSdPdfNotesRoute
   MarketingResourcesReadSdQuickRevisionNotesRoute: typeof MarketingResourcesReadSdQuickRevisionNotesRoute
   MarketingResourcesReadSdStepByStepLearningGuideRoute: typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
+  MarketingResourcesReadSdTipsTricksRoute: typeof MarketingResourcesReadSdTipsTricksRoute
 }
 
 const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
@@ -4007,6 +4028,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadSdQuickRevisionNotesRoute,
   MarketingResourcesReadSdStepByStepLearningGuideRoute:
     MarketingResourcesReadSdStepByStepLearningGuideRoute,
+  MarketingResourcesReadSdTipsTricksRoute:
+    MarketingResourcesReadSdTipsTricksRoute,
 }
 
 const MarketingResourcesRouteWithChildren =
