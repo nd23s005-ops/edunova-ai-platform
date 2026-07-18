@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ReaderShell, Section, Figure, FAQItem, Callout, Code, References, type ReaderResource, type TocItem } from "@/components/resources/ReaderShell";
+import { ReaderShell, Section, Figure, FAQItem, Callout, Code, type ReaderResource, type TocItem } from "@/components/resources/ReaderShell";
 
 const RESOURCE: ReaderResource = {
   id: "operating-systems-best-practices",
@@ -243,14 +243,14 @@ perf top`}</Code>
         <FAQItem q="Should I read the Linux kernel source?">Skim it after you understand the concepts — start with schedulers and VFS.</FAQItem>
       </Section>
 
-      <References
-        items={[
-          { label: "Operating System Concepts — Silberschatz, Galvin, Gagne", href: "https://www.os-book.com/" },
-          { label: "Modern Operating Systems — Tanenbaum", href: "https://cs.vu.nl/~ast/" },
-          { label: "The Linux Programming Interface — Michael Kerrisk", href: "https://man7.org/tlpi/" },
-          { label: "OSTEP — Three Easy Pieces (free online)", href: "https://pages.cs.wisc.edu/~remzi/OSTEP/" },
-        ]}
-      />
+      <Section id="references" title="Further Reading & References">
+        <ul className="list-disc space-y-1 pl-5">
+          <li><a className="text-primary hover:underline" href="https://www.os-book.com/" target="_blank" rel="noreferrer">Operating System Concepts — Silberschatz, Galvin, Gagne</a></li>
+          <li><a className="text-primary hover:underline" href="https://cs.vu.nl/~ast/" target="_blank" rel="noreferrer">Modern Operating Systems — Tanenbaum</a></li>
+          <li><a className="text-primary hover:underline" href="https://man7.org/tlpi/" target="_blank" rel="noreferrer">The Linux Programming Interface — Michael Kerrisk</a></li>
+          <li><a className="text-primary hover:underline" href="https://pages.cs.wisc.edu/~remzi/OSTEP/" target="_blank" rel="noreferrer">OSTEP — Operating Systems: Three Easy Pieces (free online)</a></li>
+        </ul>
+      </Section>
 
       <Section id="disclaimer" title="Disclaimer">
         <p className="text-sm text-muted-foreground">This resource is provided for educational purposes only. Commands and configuration examples may differ across distributions and kernel versions — always verify against the official documentation for your environment before applying in production.</p>
