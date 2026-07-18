@@ -53,6 +53,24 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as MarketingResourcesReadUxDesignTipsAndTricksRouteImport } from './routes/_marketing.resources.read.ux-design-tips-and-tricks'
+import { Route as MarketingResourcesReadUxDesignStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ux-design-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadUxDesignReferenceGuideRouteImport } from './routes/_marketing.resources.read.ux-design-reference-guide'
+import { Route as MarketingResourcesReadUxDesignRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.ux-design-real-world-case-study'
+import { Route as MarketingResourcesReadUxDesignQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ux-design-quick-revision-notes'
+import { Route as MarketingResourcesReadUxDesignPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.ux-design-practice-questions'
+import { Route as MarketingResourcesReadUxDesignPdfNotesRouteImport } from './routes/_marketing.resources.read.ux-design-pdf-notes'
+import { Route as MarketingResourcesReadUxDesignLearningRoadmapRouteImport } from './routes/_marketing.resources.read.ux-design-learning-roadmap'
+import { Route as MarketingResourcesReadUxDesignInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ux-design-interview-questions'
+import { Route as MarketingResourcesReadUxDesignGlossaryRouteImport } from './routes/_marketing.resources.read.ux-design-glossary'
+import { Route as MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.ux-design-frequently-asked-questions'
+import { Route as MarketingResourcesReadUxDesignCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ux-design-complete-tutorial'
+import { Route as MarketingResourcesReadUxDesignCommonMistakesRouteImport } from './routes/_marketing.resources.read.ux-design-common-mistakes'
+import { Route as MarketingResourcesReadUxDesignCheatSheetRouteImport } from './routes/_marketing.resources.read.ux-design-cheat-sheet'
+import { Route as MarketingResourcesReadUxDesignBestPracticesRouteImport } from './routes/_marketing.resources.read.ux-design-best-practices'
+import { Route as MarketingResourcesReadUxDesignBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ux-design-beginner-guide'
+import { Route as MarketingResourcesReadUxDesignAnswerKeyRouteImport } from './routes/_marketing.resources.read.ux-design-answer-key'
+import { Route as MarketingResourcesReadUxDesignAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ux-design-advanced-concepts'
 import { Route as MarketingResourcesReadSdTipsTricksRouteImport } from './routes/_marketing.resources.read.sd-tips-tricks'
 import { Route as MarketingResourcesReadSdStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.sd-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadSdReferenceGuideRouteImport } from './routes/_marketing.resources.read.sd-reference-guide'
@@ -609,6 +627,114 @@ const DashboardDashboardMockTestsIndexRoute =
     id: '/dashboard/mock-tests/',
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
+  } as any)
+const MarketingResourcesReadUxDesignTipsAndTricksRoute =
+  MarketingResourcesReadUxDesignTipsAndTricksRouteImport.update({
+    id: '/read/ux-design-tips-and-tricks',
+    path: '/read/ux-design-tips-and-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignStepByStepLearningGuideRoute =
+  MarketingResourcesReadUxDesignStepByStepLearningGuideRouteImport.update({
+    id: '/read/ux-design-step-by-step-learning-guide',
+    path: '/read/ux-design-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignReferenceGuideRoute =
+  MarketingResourcesReadUxDesignReferenceGuideRouteImport.update({
+    id: '/read/ux-design-reference-guide',
+    path: '/read/ux-design-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignRealWorldCaseStudyRoute =
+  MarketingResourcesReadUxDesignRealWorldCaseStudyRouteImport.update({
+    id: '/read/ux-design-real-world-case-study',
+    path: '/read/ux-design-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignQuickRevisionNotesRoute =
+  MarketingResourcesReadUxDesignQuickRevisionNotesRouteImport.update({
+    id: '/read/ux-design-quick-revision-notes',
+    path: '/read/ux-design-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignPracticeQuestionsRoute =
+  MarketingResourcesReadUxDesignPracticeQuestionsRouteImport.update({
+    id: '/read/ux-design-practice-questions',
+    path: '/read/ux-design-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignPdfNotesRoute =
+  MarketingResourcesReadUxDesignPdfNotesRouteImport.update({
+    id: '/read/ux-design-pdf-notes',
+    path: '/read/ux-design-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignLearningRoadmapRoute =
+  MarketingResourcesReadUxDesignLearningRoadmapRouteImport.update({
+    id: '/read/ux-design-learning-roadmap',
+    path: '/read/ux-design-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignInterviewQuestionsRoute =
+  MarketingResourcesReadUxDesignInterviewQuestionsRouteImport.update({
+    id: '/read/ux-design-interview-questions',
+    path: '/read/ux-design-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignGlossaryRoute =
+  MarketingResourcesReadUxDesignGlossaryRouteImport.update({
+    id: '/read/ux-design-glossary',
+    path: '/read/ux-design-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/ux-design-frequently-asked-questions',
+    path: '/read/ux-design-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignCompleteTutorialRoute =
+  MarketingResourcesReadUxDesignCompleteTutorialRouteImport.update({
+    id: '/read/ux-design-complete-tutorial',
+    path: '/read/ux-design-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignCommonMistakesRoute =
+  MarketingResourcesReadUxDesignCommonMistakesRouteImport.update({
+    id: '/read/ux-design-common-mistakes',
+    path: '/read/ux-design-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignCheatSheetRoute =
+  MarketingResourcesReadUxDesignCheatSheetRouteImport.update({
+    id: '/read/ux-design-cheat-sheet',
+    path: '/read/ux-design-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignBestPracticesRoute =
+  MarketingResourcesReadUxDesignBestPracticesRouteImport.update({
+    id: '/read/ux-design-best-practices',
+    path: '/read/ux-design-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignBeginnerGuideRoute =
+  MarketingResourcesReadUxDesignBeginnerGuideRouteImport.update({
+    id: '/read/ux-design-beginner-guide',
+    path: '/read/ux-design-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignAnswerKeyRoute =
+  MarketingResourcesReadUxDesignAnswerKeyRouteImport.update({
+    id: '/read/ux-design-answer-key',
+    path: '/read/ux-design-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadUxDesignAdvancedConceptsRoute =
+  MarketingResourcesReadUxDesignAdvancedConceptsRouteImport.update({
+    id: '/read/ux-design-advanced-concepts',
+    path: '/read/ux-design-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadSdTipsTricksRoute =
   MarketingResourcesReadSdTipsTricksRouteImport.update({
@@ -2929,6 +3055,24 @@ export interface FileRoutesByFullPath {
   '/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
+  '/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
+  '/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
+  '/resources/read/ux-design-best-practices': typeof MarketingResourcesReadUxDesignBestPracticesRoute
+  '/resources/read/ux-design-cheat-sheet': typeof MarketingResourcesReadUxDesignCheatSheetRoute
+  '/resources/read/ux-design-common-mistakes': typeof MarketingResourcesReadUxDesignCommonMistakesRoute
+  '/resources/read/ux-design-complete-tutorial': typeof MarketingResourcesReadUxDesignCompleteTutorialRoute
+  '/resources/read/ux-design-frequently-asked-questions': typeof MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRoute
+  '/resources/read/ux-design-glossary': typeof MarketingResourcesReadUxDesignGlossaryRoute
+  '/resources/read/ux-design-interview-questions': typeof MarketingResourcesReadUxDesignInterviewQuestionsRoute
+  '/resources/read/ux-design-learning-roadmap': typeof MarketingResourcesReadUxDesignLearningRoadmapRoute
+  '/resources/read/ux-design-pdf-notes': typeof MarketingResourcesReadUxDesignPdfNotesRoute
+  '/resources/read/ux-design-practice-questions': typeof MarketingResourcesReadUxDesignPracticeQuestionsRoute
+  '/resources/read/ux-design-quick-revision-notes': typeof MarketingResourcesReadUxDesignQuickRevisionNotesRoute
+  '/resources/read/ux-design-real-world-case-study': typeof MarketingResourcesReadUxDesignRealWorldCaseStudyRoute
+  '/resources/read/ux-design-reference-guide': typeof MarketingResourcesReadUxDesignReferenceGuideRoute
+  '/resources/read/ux-design-step-by-step-learning-guide': typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRoute
+  '/resources/read/ux-design-tips-and-tricks': typeof MarketingResourcesReadUxDesignTipsAndTricksRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -3296,6 +3440,24 @@ export interface FileRoutesByTo {
   '/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
+  '/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
+  '/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
+  '/resources/read/ux-design-best-practices': typeof MarketingResourcesReadUxDesignBestPracticesRoute
+  '/resources/read/ux-design-cheat-sheet': typeof MarketingResourcesReadUxDesignCheatSheetRoute
+  '/resources/read/ux-design-common-mistakes': typeof MarketingResourcesReadUxDesignCommonMistakesRoute
+  '/resources/read/ux-design-complete-tutorial': typeof MarketingResourcesReadUxDesignCompleteTutorialRoute
+  '/resources/read/ux-design-frequently-asked-questions': typeof MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRoute
+  '/resources/read/ux-design-glossary': typeof MarketingResourcesReadUxDesignGlossaryRoute
+  '/resources/read/ux-design-interview-questions': typeof MarketingResourcesReadUxDesignInterviewQuestionsRoute
+  '/resources/read/ux-design-learning-roadmap': typeof MarketingResourcesReadUxDesignLearningRoadmapRoute
+  '/resources/read/ux-design-pdf-notes': typeof MarketingResourcesReadUxDesignPdfNotesRoute
+  '/resources/read/ux-design-practice-questions': typeof MarketingResourcesReadUxDesignPracticeQuestionsRoute
+  '/resources/read/ux-design-quick-revision-notes': typeof MarketingResourcesReadUxDesignQuickRevisionNotesRoute
+  '/resources/read/ux-design-real-world-case-study': typeof MarketingResourcesReadUxDesignRealWorldCaseStudyRoute
+  '/resources/read/ux-design-reference-guide': typeof MarketingResourcesReadUxDesignReferenceGuideRoute
+  '/resources/read/ux-design-step-by-step-learning-guide': typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRoute
+  '/resources/read/ux-design-tips-and-tricks': typeof MarketingResourcesReadUxDesignTipsAndTricksRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -3668,6 +3830,24 @@ export interface FileRoutesById {
   '/_marketing/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/_marketing/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/_marketing/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/_marketing/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
+  '/_marketing/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
+  '/_marketing/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
+  '/_marketing/resources/read/ux-design-best-practices': typeof MarketingResourcesReadUxDesignBestPracticesRoute
+  '/_marketing/resources/read/ux-design-cheat-sheet': typeof MarketingResourcesReadUxDesignCheatSheetRoute
+  '/_marketing/resources/read/ux-design-common-mistakes': typeof MarketingResourcesReadUxDesignCommonMistakesRoute
+  '/_marketing/resources/read/ux-design-complete-tutorial': typeof MarketingResourcesReadUxDesignCompleteTutorialRoute
+  '/_marketing/resources/read/ux-design-frequently-asked-questions': typeof MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/ux-design-glossary': typeof MarketingResourcesReadUxDesignGlossaryRoute
+  '/_marketing/resources/read/ux-design-interview-questions': typeof MarketingResourcesReadUxDesignInterviewQuestionsRoute
+  '/_marketing/resources/read/ux-design-learning-roadmap': typeof MarketingResourcesReadUxDesignLearningRoadmapRoute
+  '/_marketing/resources/read/ux-design-pdf-notes': typeof MarketingResourcesReadUxDesignPdfNotesRoute
+  '/_marketing/resources/read/ux-design-practice-questions': typeof MarketingResourcesReadUxDesignPracticeQuestionsRoute
+  '/_marketing/resources/read/ux-design-quick-revision-notes': typeof MarketingResourcesReadUxDesignQuickRevisionNotesRoute
+  '/_marketing/resources/read/ux-design-real-world-case-study': typeof MarketingResourcesReadUxDesignRealWorldCaseStudyRoute
+  '/_marketing/resources/read/ux-design-reference-guide': typeof MarketingResourcesReadUxDesignReferenceGuideRoute
+  '/_marketing/resources/read/ux-design-step-by-step-learning-guide': typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRoute
+  '/_marketing/resources/read/ux-design-tips-and-tricks': typeof MarketingResourcesReadUxDesignTipsAndTricksRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -4038,6 +4218,24 @@ export interface FileRouteTypes {
     | '/resources/read/sd-reference-guide'
     | '/resources/read/sd-step-by-step-learning-guide'
     | '/resources/read/sd-tips-tricks'
+    | '/resources/read/ux-design-advanced-concepts'
+    | '/resources/read/ux-design-answer-key'
+    | '/resources/read/ux-design-beginner-guide'
+    | '/resources/read/ux-design-best-practices'
+    | '/resources/read/ux-design-cheat-sheet'
+    | '/resources/read/ux-design-common-mistakes'
+    | '/resources/read/ux-design-complete-tutorial'
+    | '/resources/read/ux-design-frequently-asked-questions'
+    | '/resources/read/ux-design-glossary'
+    | '/resources/read/ux-design-interview-questions'
+    | '/resources/read/ux-design-learning-roadmap'
+    | '/resources/read/ux-design-pdf-notes'
+    | '/resources/read/ux-design-practice-questions'
+    | '/resources/read/ux-design-quick-revision-notes'
+    | '/resources/read/ux-design-real-world-case-study'
+    | '/resources/read/ux-design-reference-guide'
+    | '/resources/read/ux-design-step-by-step-learning-guide'
+    | '/resources/read/ux-design-tips-and-tricks'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -4405,6 +4603,24 @@ export interface FileRouteTypes {
     | '/resources/read/sd-reference-guide'
     | '/resources/read/sd-step-by-step-learning-guide'
     | '/resources/read/sd-tips-tricks'
+    | '/resources/read/ux-design-advanced-concepts'
+    | '/resources/read/ux-design-answer-key'
+    | '/resources/read/ux-design-beginner-guide'
+    | '/resources/read/ux-design-best-practices'
+    | '/resources/read/ux-design-cheat-sheet'
+    | '/resources/read/ux-design-common-mistakes'
+    | '/resources/read/ux-design-complete-tutorial'
+    | '/resources/read/ux-design-frequently-asked-questions'
+    | '/resources/read/ux-design-glossary'
+    | '/resources/read/ux-design-interview-questions'
+    | '/resources/read/ux-design-learning-roadmap'
+    | '/resources/read/ux-design-pdf-notes'
+    | '/resources/read/ux-design-practice-questions'
+    | '/resources/read/ux-design-quick-revision-notes'
+    | '/resources/read/ux-design-real-world-case-study'
+    | '/resources/read/ux-design-reference-guide'
+    | '/resources/read/ux-design-step-by-step-learning-guide'
+    | '/resources/read/ux-design-tips-and-tricks'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -4776,6 +4992,24 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/sd-reference-guide'
     | '/_marketing/resources/read/sd-step-by-step-learning-guide'
     | '/_marketing/resources/read/sd-tips-tricks'
+    | '/_marketing/resources/read/ux-design-advanced-concepts'
+    | '/_marketing/resources/read/ux-design-answer-key'
+    | '/_marketing/resources/read/ux-design-beginner-guide'
+    | '/_marketing/resources/read/ux-design-best-practices'
+    | '/_marketing/resources/read/ux-design-cheat-sheet'
+    | '/_marketing/resources/read/ux-design-common-mistakes'
+    | '/_marketing/resources/read/ux-design-complete-tutorial'
+    | '/_marketing/resources/read/ux-design-frequently-asked-questions'
+    | '/_marketing/resources/read/ux-design-glossary'
+    | '/_marketing/resources/read/ux-design-interview-questions'
+    | '/_marketing/resources/read/ux-design-learning-roadmap'
+    | '/_marketing/resources/read/ux-design-pdf-notes'
+    | '/_marketing/resources/read/ux-design-practice-questions'
+    | '/_marketing/resources/read/ux-design-quick-revision-notes'
+    | '/_marketing/resources/read/ux-design-real-world-case-study'
+    | '/_marketing/resources/read/ux-design-reference-guide'
+    | '/_marketing/resources/read/ux-design-step-by-step-learning-guide'
+    | '/_marketing/resources/read/ux-design-tips-and-tricks'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/mock-tests/ai/$categoryId'
@@ -5110,6 +5344,132 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/'
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_marketing/resources/read/ux-design-tips-and-tricks': {
+      id: '/_marketing/resources/read/ux-design-tips-and-tricks'
+      path: '/read/ux-design-tips-and-tricks'
+      fullPath: '/resources/read/ux-design-tips-and-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignTipsAndTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/ux-design-step-by-step-learning-guide'
+      path: '/read/ux-design-step-by-step-learning-guide'
+      fullPath: '/resources/read/ux-design-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-reference-guide': {
+      id: '/_marketing/resources/read/ux-design-reference-guide'
+      path: '/read/ux-design-reference-guide'
+      fullPath: '/resources/read/ux-design-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-real-world-case-study': {
+      id: '/_marketing/resources/read/ux-design-real-world-case-study'
+      path: '/read/ux-design-real-world-case-study'
+      fullPath: '/resources/read/ux-design-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-quick-revision-notes': {
+      id: '/_marketing/resources/read/ux-design-quick-revision-notes'
+      path: '/read/ux-design-quick-revision-notes'
+      fullPath: '/resources/read/ux-design-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-practice-questions': {
+      id: '/_marketing/resources/read/ux-design-practice-questions'
+      path: '/read/ux-design-practice-questions'
+      fullPath: '/resources/read/ux-design-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-pdf-notes': {
+      id: '/_marketing/resources/read/ux-design-pdf-notes'
+      path: '/read/ux-design-pdf-notes'
+      fullPath: '/resources/read/ux-design-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-learning-roadmap': {
+      id: '/_marketing/resources/read/ux-design-learning-roadmap'
+      path: '/read/ux-design-learning-roadmap'
+      fullPath: '/resources/read/ux-design-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-interview-questions': {
+      id: '/_marketing/resources/read/ux-design-interview-questions'
+      path: '/read/ux-design-interview-questions'
+      fullPath: '/resources/read/ux-design-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-glossary': {
+      id: '/_marketing/resources/read/ux-design-glossary'
+      path: '/read/ux-design-glossary'
+      fullPath: '/resources/read/ux-design-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-frequently-asked-questions': {
+      id: '/_marketing/resources/read/ux-design-frequently-asked-questions'
+      path: '/read/ux-design-frequently-asked-questions'
+      fullPath: '/resources/read/ux-design-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-complete-tutorial': {
+      id: '/_marketing/resources/read/ux-design-complete-tutorial'
+      path: '/read/ux-design-complete-tutorial'
+      fullPath: '/resources/read/ux-design-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-common-mistakes': {
+      id: '/_marketing/resources/read/ux-design-common-mistakes'
+      path: '/read/ux-design-common-mistakes'
+      fullPath: '/resources/read/ux-design-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-cheat-sheet': {
+      id: '/_marketing/resources/read/ux-design-cheat-sheet'
+      path: '/read/ux-design-cheat-sheet'
+      fullPath: '/resources/read/ux-design-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-best-practices': {
+      id: '/_marketing/resources/read/ux-design-best-practices'
+      path: '/read/ux-design-best-practices'
+      fullPath: '/resources/read/ux-design-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-beginner-guide': {
+      id: '/_marketing/resources/read/ux-design-beginner-guide'
+      path: '/read/ux-design-beginner-guide'
+      fullPath: '/resources/read/ux-design-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-answer-key': {
+      id: '/_marketing/resources/read/ux-design-answer-key'
+      path: '/read/ux-design-answer-key'
+      fullPath: '/resources/read/ux-design-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ux-design-advanced-concepts': {
+      id: '/_marketing/resources/read/ux-design-advanced-concepts'
+      path: '/read/ux-design-advanced-concepts'
+      fullPath: '/resources/read/ux-design-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadUxDesignAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/sd-tips-tricks': {
       id: '/_marketing/resources/read/sd-tips-tricks'
@@ -7834,6 +8194,24 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadSdReferenceGuideRoute: typeof MarketingResourcesReadSdReferenceGuideRoute
   MarketingResourcesReadSdStepByStepLearningGuideRoute: typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   MarketingResourcesReadSdTipsTricksRoute: typeof MarketingResourcesReadSdTipsTricksRoute
+  MarketingResourcesReadUxDesignAdvancedConceptsRoute: typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
+  MarketingResourcesReadUxDesignAnswerKeyRoute: typeof MarketingResourcesReadUxDesignAnswerKeyRoute
+  MarketingResourcesReadUxDesignBeginnerGuideRoute: typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
+  MarketingResourcesReadUxDesignBestPracticesRoute: typeof MarketingResourcesReadUxDesignBestPracticesRoute
+  MarketingResourcesReadUxDesignCheatSheetRoute: typeof MarketingResourcesReadUxDesignCheatSheetRoute
+  MarketingResourcesReadUxDesignCommonMistakesRoute: typeof MarketingResourcesReadUxDesignCommonMistakesRoute
+  MarketingResourcesReadUxDesignCompleteTutorialRoute: typeof MarketingResourcesReadUxDesignCompleteTutorialRoute
+  MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadUxDesignGlossaryRoute: typeof MarketingResourcesReadUxDesignGlossaryRoute
+  MarketingResourcesReadUxDesignInterviewQuestionsRoute: typeof MarketingResourcesReadUxDesignInterviewQuestionsRoute
+  MarketingResourcesReadUxDesignLearningRoadmapRoute: typeof MarketingResourcesReadUxDesignLearningRoadmapRoute
+  MarketingResourcesReadUxDesignPdfNotesRoute: typeof MarketingResourcesReadUxDesignPdfNotesRoute
+  MarketingResourcesReadUxDesignPracticeQuestionsRoute: typeof MarketingResourcesReadUxDesignPracticeQuestionsRoute
+  MarketingResourcesReadUxDesignQuickRevisionNotesRoute: typeof MarketingResourcesReadUxDesignQuickRevisionNotesRoute
+  MarketingResourcesReadUxDesignRealWorldCaseStudyRoute: typeof MarketingResourcesReadUxDesignRealWorldCaseStudyRoute
+  MarketingResourcesReadUxDesignReferenceGuideRoute: typeof MarketingResourcesReadUxDesignReferenceGuideRoute
+  MarketingResourcesReadUxDesignStepByStepLearningGuideRoute: typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRoute
+  MarketingResourcesReadUxDesignTipsAndTricksRoute: typeof MarketingResourcesReadUxDesignTipsAndTricksRoute
 }
 
 const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
@@ -8451,6 +8829,42 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadSdStepByStepLearningGuideRoute,
   MarketingResourcesReadSdTipsTricksRoute:
     MarketingResourcesReadSdTipsTricksRoute,
+  MarketingResourcesReadUxDesignAdvancedConceptsRoute:
+    MarketingResourcesReadUxDesignAdvancedConceptsRoute,
+  MarketingResourcesReadUxDesignAnswerKeyRoute:
+    MarketingResourcesReadUxDesignAnswerKeyRoute,
+  MarketingResourcesReadUxDesignBeginnerGuideRoute:
+    MarketingResourcesReadUxDesignBeginnerGuideRoute,
+  MarketingResourcesReadUxDesignBestPracticesRoute:
+    MarketingResourcesReadUxDesignBestPracticesRoute,
+  MarketingResourcesReadUxDesignCheatSheetRoute:
+    MarketingResourcesReadUxDesignCheatSheetRoute,
+  MarketingResourcesReadUxDesignCommonMistakesRoute:
+    MarketingResourcesReadUxDesignCommonMistakesRoute,
+  MarketingResourcesReadUxDesignCompleteTutorialRoute:
+    MarketingResourcesReadUxDesignCompleteTutorialRoute,
+  MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadUxDesignFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadUxDesignGlossaryRoute:
+    MarketingResourcesReadUxDesignGlossaryRoute,
+  MarketingResourcesReadUxDesignInterviewQuestionsRoute:
+    MarketingResourcesReadUxDesignInterviewQuestionsRoute,
+  MarketingResourcesReadUxDesignLearningRoadmapRoute:
+    MarketingResourcesReadUxDesignLearningRoadmapRoute,
+  MarketingResourcesReadUxDesignPdfNotesRoute:
+    MarketingResourcesReadUxDesignPdfNotesRoute,
+  MarketingResourcesReadUxDesignPracticeQuestionsRoute:
+    MarketingResourcesReadUxDesignPracticeQuestionsRoute,
+  MarketingResourcesReadUxDesignQuickRevisionNotesRoute:
+    MarketingResourcesReadUxDesignQuickRevisionNotesRoute,
+  MarketingResourcesReadUxDesignRealWorldCaseStudyRoute:
+    MarketingResourcesReadUxDesignRealWorldCaseStudyRoute,
+  MarketingResourcesReadUxDesignReferenceGuideRoute:
+    MarketingResourcesReadUxDesignReferenceGuideRoute,
+  MarketingResourcesReadUxDesignStepByStepLearningGuideRoute:
+    MarketingResourcesReadUxDesignStepByStepLearningGuideRoute,
+  MarketingResourcesReadUxDesignTipsAndTricksRoute:
+    MarketingResourcesReadUxDesignTipsAndTricksRoute,
 }
 
 const MarketingResourcesRouteWithChildren =
