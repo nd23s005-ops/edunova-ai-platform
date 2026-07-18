@@ -86,6 +86,7 @@ import { Route as MarketingResourcesReadRustBestPracticesRouteImport } from './r
 import { Route as MarketingResourcesReadRustBeginnerGuideRouteImport } from './routes/_marketing.resources.read.rust-beginner-guide'
 import { Route as MarketingResourcesReadRustAnswerKeyRouteImport } from './routes/_marketing.resources.read.rust-answer-key'
 import { Route as MarketingResourcesReadRustAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.rust-advanced-concepts'
+import { Route as MarketingResourcesReadReactBeginnerGuideRouteImport } from './routes/_marketing.resources.read.react-beginner-guide'
 import { Route as MarketingResourcesReadPeTipsTricksRouteImport } from './routes/_marketing.resources.read.pe-tips-tricks'
 import { Route as MarketingResourcesReadPeStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pe-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPeSampleExercisesRouteImport } from './routes/_marketing.resources.read.pe-sample-exercises'
@@ -659,6 +660,12 @@ const MarketingResourcesReadRustAdvancedConceptsRoute =
   MarketingResourcesReadRustAdvancedConceptsRouteImport.update({
     id: '/read/rust-advanced-concepts',
     path: '/read/rust-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactBeginnerGuideRoute =
+  MarketingResourcesReadReactBeginnerGuideRouteImport.update({
+    id: '/read/react-beginner-guide',
+    path: '/read/react-beginner-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeTipsTricksRoute =
@@ -1712,6 +1719,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
   '/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
@@ -1932,6 +1940,7 @@ export interface FileRoutesByTo {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
   '/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
@@ -2157,6 +2166,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/_marketing/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/_marketing/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/_marketing/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
   '/_marketing/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/_marketing/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/_marketing/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
@@ -2380,6 +2390,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/react-beginner-guide'
     | '/resources/read/rust-advanced-concepts'
     | '/resources/read/rust-answer-key'
     | '/resources/read/rust-beginner-guide'
@@ -2600,6 +2611,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/react-beginner-guide'
     | '/resources/read/rust-advanced-concepts'
     | '/resources/read/rust-answer-key'
     | '/resources/read/rust-beginner-guide'
@@ -2824,6 +2836,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-sample-exercises'
     | '/_marketing/resources/read/pe-step-by-step-learning-guide'
     | '/_marketing/resources/read/pe-tips-tricks'
+    | '/_marketing/resources/read/react-beginner-guide'
     | '/_marketing/resources/read/rust-advanced-concepts'
     | '/_marketing/resources/read/rust-answer-key'
     | '/_marketing/resources/read/rust-beginner-guide'
@@ -3421,6 +3434,13 @@ declare module '@tanstack/react-router' {
       path: '/read/rust-advanced-concepts'
       fullPath: '/resources/read/rust-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadRustAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-beginner-guide': {
+      id: '/_marketing/resources/read/react-beginner-guide'
+      path: '/read/react-beginner-guide'
+      fullPath: '/resources/read/react-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadReactBeginnerGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-tips-tricks': {
@@ -4706,6 +4726,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeSampleExercisesRoute: typeof MarketingResourcesReadPeSampleExercisesRoute
   MarketingResourcesReadPeStepByStepLearningGuideRoute: typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   MarketingResourcesReadPeTipsTricksRoute: typeof MarketingResourcesReadPeTipsTricksRoute
+  MarketingResourcesReadReactBeginnerGuideRoute: typeof MarketingResourcesReadReactBeginnerGuideRoute
   MarketingResourcesReadRustAdvancedConceptsRoute: typeof MarketingResourcesReadRustAdvancedConceptsRoute
   MarketingResourcesReadRustAnswerKeyRoute: typeof MarketingResourcesReadRustAnswerKeyRoute
   MarketingResourcesReadRustBeginnerGuideRoute: typeof MarketingResourcesReadRustBeginnerGuideRoute
@@ -4998,6 +5019,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeStepByStepLearningGuideRoute,
   MarketingResourcesReadPeTipsTricksRoute:
     MarketingResourcesReadPeTipsTricksRoute,
+  MarketingResourcesReadReactBeginnerGuideRoute:
+    MarketingResourcesReadReactBeginnerGuideRoute,
   MarketingResourcesReadRustAdvancedConceptsRoute:
     MarketingResourcesReadRustAdvancedConceptsRoute,
   MarketingResourcesReadRustAnswerKeyRoute:
