@@ -47,17 +47,39 @@ export const Route = createFileRoute("/_marketing/resources/")({
 
 const CATEGORY_GROUPS = Array.from(new Set(COURSE_CATALOG.map((c) => c.category)));
 const LEVELS = ["All", "Beginner", "Intermediate", "Advanced"] as const;
+const ALL_TOPICS = Array.from(new Set(COURSE_CATALOG.flatMap((c) => c.tags))).sort((a, b) => a.localeCompare(b));
+
+const READING_TIMES = [
+  { value: "All", label: "Any length" },
+  { value: "short", label: "Quick reads (< 20 min)" },
+  { value: "standard", label: "Standard (20–40 min)" },
+  { value: "deep", label: "Deep dives (40+ min)" },
+] as const;
+type ReadingTime = (typeof READING_TIMES)[number]["value"];
+
+const DIFFICULTY_TO_TIME: Record<string, ReadingTime> = {
+  Beginner: "short",
+  Intermediate: "standard",
+  Advanced: "deep",
+};
 
 function ResourcesIndex() {
   const [q, setQ] = useState("");
   const [group, setGroup] = useState<string>("All");
   const [level, setLevel] = useState<(typeof LEVELS)[number]>("All");
+  const [readingTime, setReadingTime] = useState<ReadingTime>("All");
+  const [topics, setTopics] = useState<string[]>([]);
+
+  const toggleTopic = (t: string) =>
+    setTopics((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
 
   const filtered = useMemo(() => {
     const s = q.trim().toLowerCase();
     return COURSE_CATALOG.filter((c) => {
       if (group !== "All" && c.category !== group) return false;
       if (level !== "All" && c.difficulty !== level) return false;
+      if (readingTime !== "All" && DIFFICULTY_TO_TIME[c.difficulty] !== readingTime) return false;
+      if (topics.length > 0 && !topics.every((t) => c.tags.includes(t))) return false;
       if (!s) return true;
       return (
         c.title.toLowerCase().includes(s) ||
@@ -66,7 +88,10 @@ function ResourcesIndex() {
         c.tags.some((t) => t.toLowerCase().includes(s))
       );
     });
-  }, [q, group, level]);
+  }, [q, group, level, readingTime, topics]);
+
+  const hasActiveFilters = group !== "All" || level !== "All" || readingTime !== "All" || topics.length > 0 || q.length > 0;
+  const clearAll = () => { setGroup("All"); setLevel("All"); setReadingTime("All"); setTopics([]); setQ(""); };
 
   const totalResources = COURSE_CATALOG.length * RESOURCE_KINDS.length;
 
@@ -131,30 +156,63 @@ function ResourcesIndex() {
         description="Every course card opens a dedicated resources page with all 21 document types."
       >
         {/* Filters */}
-        <div className="mb-6 flex flex-wrap items-center gap-3 rounded-2xl border border-border/60 bg-card p-4 shadow-sm">
-          <div className="flex items-center gap-2 text-sm font-medium">
-            <Filter className="h-4 w-4 text-primary" /> Filters
+        <div className="mb-6 rounded-2xl border border-border/60 bg-card p-4 shadow-sm">
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2 text-sm font-medium">
+              <Filter className="h-4 w-4 text-primary" /> Filters
+            </div>
+            <Select value={group} onValueChange={setGroup}>
+              <SelectTrigger className="h-9 w-[180px]"><SelectValue placeholder="Category" /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="All">All categories</SelectItem>
+                {CATEGORY_GROUPS.map((g) => <SelectItem key={g} value={g}>{g}</SelectItem>)}
+              </SelectContent>
+            </Select>
+            <Select value={level} onValueChange={(v) => setLevel(v as typeof level)}>
+              <SelectTrigger className="h-9 w-[150px]"><SelectValue placeholder="Difficulty" /></SelectTrigger>
+              <SelectContent>
+                {LEVELS.map((l) => <SelectItem key={l} value={l}>{l === "All" ? "All difficulties" : l}</SelectItem>)}
+              </SelectContent>
+            </Select>
+            <Select value={readingTime} onValueChange={(v) => setReadingTime(v as ReadingTime)}>
+              <SelectTrigger className="h-9 w-[210px]"><SelectValue placeholder="Reading time" /></SelectTrigger>
+              <SelectContent>
+                {READING_TIMES.map((r) => <SelectItem key={r.value} value={r.value}>{r.label}</SelectItem>)}
+              </SelectContent>
+            </Select>
+            <div className="ml-auto text-xs text-muted-foreground">
+              Showing <span className="font-semibold text-foreground">{filtered.length}</span> of {COURSE_CATALOG.length} courses
+            </div>
+            {hasActiveFilters && (
+              <Button variant="ghost" size="sm" onClick={clearAll}>Clear</Button>
+            )}
           </div>
-          <Select value={group} onValueChange={setGroup}>
-            <SelectTrigger className="h-9 w-[200px]"><SelectValue placeholder="Category" /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="All">All categories</SelectItem>
-              {CATEGORY_GROUPS.map((g) => <SelectItem key={g} value={g}>{g}</SelectItem>)}
-            </SelectContent>
-          </Select>
-          <Select value={level} onValueChange={(v) => setLevel(v as typeof level)}>
-            <SelectTrigger className="h-9 w-[150px]"><SelectValue placeholder="Level" /></SelectTrigger>
-            <SelectContent>
-              {LEVELS.map((l) => <SelectItem key={l} value={l}>{l}</SelectItem>)}
-            </SelectContent>
-          </Select>
-          <div className="ml-auto text-xs text-muted-foreground">
-            Showing <span className="font-semibold text-foreground">{filtered.length}</span> of {COURSE_CATALOG.length} courses
+
+          <div className="mt-4 border-t border-border/60 pt-4">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Topics</p>
+            <div className="flex flex-wrap gap-1.5">
+              {ALL_TOPICS.map((t) => {
+                const active = topics.includes(t);
+                return (
+                  <button
+                    key={t}
+                    type="button"
+                    onClick={() => toggleTopic(t)}
+                    aria-pressed={active}
+                    className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium transition ${
+                      active
+                        ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                        : "border-border/70 bg-background hover:border-primary/40 hover:bg-primary/5"
+                    }`}
+                  >
+                    <Tag className="h-3 w-3" /> {t}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          {(group !== "All" || level !== "All" || q) && (
-            <Button variant="ghost" size="sm" onClick={() => { setGroup("All"); setLevel("All"); setQ(""); }}>Clear</Button>
-          )}
         </div>
+
 
         {filtered.length ? (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
