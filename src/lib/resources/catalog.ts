@@ -196,6 +196,7 @@ const SLUG_IMAGE: Record<string, string> = {
   "mongodb": "photo-1633412802994-5c058f151b66",
   "data-science": "photo-1460925895917-afdab827c52f",
   "data-analytics": "photo-1551288049-bebda4e38f71",
+  "pandas": "photo-1551288049-bebda4e38f71",
   "aws": "photo-1451187580459-43490279c0fa",
   "azure": "photo-1451187580459-43490279c0fa",
   "gcp": "photo-1451187580459-43490279c0fa",
