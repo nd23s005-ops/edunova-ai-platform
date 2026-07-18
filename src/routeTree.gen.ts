@@ -398,6 +398,27 @@ import { Route as MarketingResourcesReadDbmsBestPracticesRouteImport } from './r
 import { Route as MarketingResourcesReadDbmsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dbms-beginner-guide'
 import { Route as MarketingResourcesReadDbmsAnswerKeyRouteImport } from './routes/_marketing.resources.read.dbms-answer-key'
 import { Route as MarketingResourcesReadDbmsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.dbms-advanced-concepts'
+import { Route as MarketingResourcesReadCyberSecurityTipsTricksRouteImport } from './routes/_marketing.resources.read.cyber-security-tips-tricks'
+import { Route as MarketingResourcesReadCyberSecurityStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.cyber-security-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadCyberSecuritySampleExercisesRouteImport } from './routes/_marketing.resources.read.cyber-security-sample-exercises'
+import { Route as MarketingResourcesReadCyberSecurityReferenceGuideRouteImport } from './routes/_marketing.resources.read.cyber-security-reference-guide'
+import { Route as MarketingResourcesReadCyberSecurityRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.cyber-security-real-world-case-study'
+import { Route as MarketingResourcesReadCyberSecurityQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.cyber-security-quick-revision-notes'
+import { Route as MarketingResourcesReadCyberSecurityProjectGuideRouteImport } from './routes/_marketing.resources.read.cyber-security-project-guide'
+import { Route as MarketingResourcesReadCyberSecurityProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.cyber-security-project-case-study'
+import { Route as MarketingResourcesReadCyberSecurityPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.cyber-security-practice-questions'
+import { Route as MarketingResourcesReadCyberSecurityPdfNotesRouteImport } from './routes/_marketing.resources.read.cyber-security-pdf-notes'
+import { Route as MarketingResourcesReadCyberSecurityLearningRoadmapRouteImport } from './routes/_marketing.resources.read.cyber-security-learning-roadmap'
+import { Route as MarketingResourcesReadCyberSecurityInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.cyber-security-interview-questions'
+import { Route as MarketingResourcesReadCyberSecurityGlossaryRouteImport } from './routes/_marketing.resources.read.cyber-security-glossary'
+import { Route as MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.cyber-security-frequently-asked-questions'
+import { Route as MarketingResourcesReadCyberSecurityCompleteTutorialRouteImport } from './routes/_marketing.resources.read.cyber-security-complete-tutorial'
+import { Route as MarketingResourcesReadCyberSecurityCommonMistakesRouteImport } from './routes/_marketing.resources.read.cyber-security-common-mistakes'
+import { Route as MarketingResourcesReadCyberSecurityCheatSheetRouteImport } from './routes/_marketing.resources.read.cyber-security-cheat-sheet'
+import { Route as MarketingResourcesReadCyberSecurityBestPracticesRouteImport } from './routes/_marketing.resources.read.cyber-security-best-practices'
+import { Route as MarketingResourcesReadCyberSecurityBeginnerGuideRouteImport } from './routes/_marketing.resources.read.cyber-security-beginner-guide'
+import { Route as MarketingResourcesReadCyberSecurityAnswerKeyRouteImport } from './routes/_marketing.resources.read.cyber-security-answer-key'
+import { Route as MarketingResourcesReadCyberSecurityAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.cyber-security-advanced-concepts'
 import { Route as MarketingResourcesReadComputerNetworksTipsAndTricksRouteImport } from './routes/_marketing.resources.read.computer-networks-tips-and-tricks'
 import { Route as MarketingResourcesReadComputerNetworksStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.computer-networks-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadComputerNetworksSampleExercisesRouteImport } from './routes/_marketing.resources.read.computer-networks-sample-exercises'
@@ -2771,6 +2792,134 @@ const MarketingResourcesReadDbmsAdvancedConceptsRoute =
     path: '/read/dbms-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadCyberSecurityTipsTricksRoute =
+  MarketingResourcesReadCyberSecurityTipsTricksRouteImport.update({
+    id: '/read/cyber-security-tips-tricks',
+    path: '/read/cyber-security-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute =
+  MarketingResourcesReadCyberSecurityStepByStepLearningGuideRouteImport.update({
+    id: '/read/cyber-security-step-by-step-learning-guide',
+    path: '/read/cyber-security-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecuritySampleExercisesRoute =
+  MarketingResourcesReadCyberSecuritySampleExercisesRouteImport.update({
+    id: '/read/cyber-security-sample-exercises',
+    path: '/read/cyber-security-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityReferenceGuideRoute =
+  MarketingResourcesReadCyberSecurityReferenceGuideRouteImport.update({
+    id: '/read/cyber-security-reference-guide',
+    path: '/read/cyber-security-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityRealWorldCaseStudyRoute =
+  MarketingResourcesReadCyberSecurityRealWorldCaseStudyRouteImport.update({
+    id: '/read/cyber-security-real-world-case-study',
+    path: '/read/cyber-security-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityQuickRevisionNotesRoute =
+  MarketingResourcesReadCyberSecurityQuickRevisionNotesRouteImport.update({
+    id: '/read/cyber-security-quick-revision-notes',
+    path: '/read/cyber-security-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityProjectGuideRoute =
+  MarketingResourcesReadCyberSecurityProjectGuideRouteImport.update({
+    id: '/read/cyber-security-project-guide',
+    path: '/read/cyber-security-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityProjectCaseStudyRoute =
+  MarketingResourcesReadCyberSecurityProjectCaseStudyRouteImport.update({
+    id: '/read/cyber-security-project-case-study',
+    path: '/read/cyber-security-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityPracticeQuestionsRoute =
+  MarketingResourcesReadCyberSecurityPracticeQuestionsRouteImport.update({
+    id: '/read/cyber-security-practice-questions',
+    path: '/read/cyber-security-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityPdfNotesRoute =
+  MarketingResourcesReadCyberSecurityPdfNotesRouteImport.update({
+    id: '/read/cyber-security-pdf-notes',
+    path: '/read/cyber-security-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityLearningRoadmapRoute =
+  MarketingResourcesReadCyberSecurityLearningRoadmapRouteImport.update({
+    id: '/read/cyber-security-learning-roadmap',
+    path: '/read/cyber-security-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityInterviewQuestionsRoute =
+  MarketingResourcesReadCyberSecurityInterviewQuestionsRouteImport.update({
+    id: '/read/cyber-security-interview-questions',
+    path: '/read/cyber-security-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityGlossaryRoute =
+  MarketingResourcesReadCyberSecurityGlossaryRouteImport.update({
+    id: '/read/cyber-security-glossary',
+    path: '/read/cyber-security-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRouteImport.update(
+    {
+      id: '/read/cyber-security-frequently-asked-questions',
+      path: '/read/cyber-security-frequently-asked-questions',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadCyberSecurityCompleteTutorialRoute =
+  MarketingResourcesReadCyberSecurityCompleteTutorialRouteImport.update({
+    id: '/read/cyber-security-complete-tutorial',
+    path: '/read/cyber-security-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityCommonMistakesRoute =
+  MarketingResourcesReadCyberSecurityCommonMistakesRouteImport.update({
+    id: '/read/cyber-security-common-mistakes',
+    path: '/read/cyber-security-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityCheatSheetRoute =
+  MarketingResourcesReadCyberSecurityCheatSheetRouteImport.update({
+    id: '/read/cyber-security-cheat-sheet',
+    path: '/read/cyber-security-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityBestPracticesRoute =
+  MarketingResourcesReadCyberSecurityBestPracticesRouteImport.update({
+    id: '/read/cyber-security-best-practices',
+    path: '/read/cyber-security-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityBeginnerGuideRoute =
+  MarketingResourcesReadCyberSecurityBeginnerGuideRouteImport.update({
+    id: '/read/cyber-security-beginner-guide',
+    path: '/read/cyber-security-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityAnswerKeyRoute =
+  MarketingResourcesReadCyberSecurityAnswerKeyRouteImport.update({
+    id: '/read/cyber-security-answer-key',
+    path: '/read/cyber-security-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCyberSecurityAdvancedConceptsRoute =
+  MarketingResourcesReadCyberSecurityAdvancedConceptsRouteImport.update({
+    id: '/read/cyber-security-advanced-concepts',
+    path: '/read/cyber-security-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadComputerNetworksTipsAndTricksRoute =
   MarketingResourcesReadComputerNetworksTipsAndTricksRouteImport.update({
     id: '/read/computer-networks-tips-and-tricks',
@@ -3196,6 +3345,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
   '/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
   '/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
+  '/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
+  '/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
+  '/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
+  '/resources/read/cyber-security-best-practices': typeof MarketingResourcesReadCyberSecurityBestPracticesRoute
+  '/resources/read/cyber-security-cheat-sheet': typeof MarketingResourcesReadCyberSecurityCheatSheetRoute
+  '/resources/read/cyber-security-common-mistakes': typeof MarketingResourcesReadCyberSecurityCommonMistakesRoute
+  '/resources/read/cyber-security-complete-tutorial': typeof MarketingResourcesReadCyberSecurityCompleteTutorialRoute
+  '/resources/read/cyber-security-frequently-asked-questions': typeof MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRoute
+  '/resources/read/cyber-security-glossary': typeof MarketingResourcesReadCyberSecurityGlossaryRoute
+  '/resources/read/cyber-security-interview-questions': typeof MarketingResourcesReadCyberSecurityInterviewQuestionsRoute
+  '/resources/read/cyber-security-learning-roadmap': typeof MarketingResourcesReadCyberSecurityLearningRoadmapRoute
+  '/resources/read/cyber-security-pdf-notes': typeof MarketingResourcesReadCyberSecurityPdfNotesRoute
+  '/resources/read/cyber-security-practice-questions': typeof MarketingResourcesReadCyberSecurityPracticeQuestionsRoute
+  '/resources/read/cyber-security-project-case-study': typeof MarketingResourcesReadCyberSecurityProjectCaseStudyRoute
+  '/resources/read/cyber-security-project-guide': typeof MarketingResourcesReadCyberSecurityProjectGuideRoute
+  '/resources/read/cyber-security-quick-revision-notes': typeof MarketingResourcesReadCyberSecurityQuickRevisionNotesRoute
+  '/resources/read/cyber-security-real-world-case-study': typeof MarketingResourcesReadCyberSecurityRealWorldCaseStudyRoute
+  '/resources/read/cyber-security-reference-guide': typeof MarketingResourcesReadCyberSecurityReferenceGuideRoute
+  '/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
+  '/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
+  '/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
   '/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -3638,6 +3808,27 @@ export interface FileRoutesByTo {
   '/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
   '/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
   '/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
+  '/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
+  '/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
+  '/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
+  '/resources/read/cyber-security-best-practices': typeof MarketingResourcesReadCyberSecurityBestPracticesRoute
+  '/resources/read/cyber-security-cheat-sheet': typeof MarketingResourcesReadCyberSecurityCheatSheetRoute
+  '/resources/read/cyber-security-common-mistakes': typeof MarketingResourcesReadCyberSecurityCommonMistakesRoute
+  '/resources/read/cyber-security-complete-tutorial': typeof MarketingResourcesReadCyberSecurityCompleteTutorialRoute
+  '/resources/read/cyber-security-frequently-asked-questions': typeof MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRoute
+  '/resources/read/cyber-security-glossary': typeof MarketingResourcesReadCyberSecurityGlossaryRoute
+  '/resources/read/cyber-security-interview-questions': typeof MarketingResourcesReadCyberSecurityInterviewQuestionsRoute
+  '/resources/read/cyber-security-learning-roadmap': typeof MarketingResourcesReadCyberSecurityLearningRoadmapRoute
+  '/resources/read/cyber-security-pdf-notes': typeof MarketingResourcesReadCyberSecurityPdfNotesRoute
+  '/resources/read/cyber-security-practice-questions': typeof MarketingResourcesReadCyberSecurityPracticeQuestionsRoute
+  '/resources/read/cyber-security-project-case-study': typeof MarketingResourcesReadCyberSecurityProjectCaseStudyRoute
+  '/resources/read/cyber-security-project-guide': typeof MarketingResourcesReadCyberSecurityProjectGuideRoute
+  '/resources/read/cyber-security-quick-revision-notes': typeof MarketingResourcesReadCyberSecurityQuickRevisionNotesRoute
+  '/resources/read/cyber-security-real-world-case-study': typeof MarketingResourcesReadCyberSecurityRealWorldCaseStudyRoute
+  '/resources/read/cyber-security-reference-guide': typeof MarketingResourcesReadCyberSecurityReferenceGuideRoute
+  '/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
+  '/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
+  '/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
   '/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -4085,6 +4276,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
   '/_marketing/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
   '/_marketing/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
+  '/_marketing/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
+  '/_marketing/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
+  '/_marketing/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
+  '/_marketing/resources/read/cyber-security-best-practices': typeof MarketingResourcesReadCyberSecurityBestPracticesRoute
+  '/_marketing/resources/read/cyber-security-cheat-sheet': typeof MarketingResourcesReadCyberSecurityCheatSheetRoute
+  '/_marketing/resources/read/cyber-security-common-mistakes': typeof MarketingResourcesReadCyberSecurityCommonMistakesRoute
+  '/_marketing/resources/read/cyber-security-complete-tutorial': typeof MarketingResourcesReadCyberSecurityCompleteTutorialRoute
+  '/_marketing/resources/read/cyber-security-frequently-asked-questions': typeof MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/cyber-security-glossary': typeof MarketingResourcesReadCyberSecurityGlossaryRoute
+  '/_marketing/resources/read/cyber-security-interview-questions': typeof MarketingResourcesReadCyberSecurityInterviewQuestionsRoute
+  '/_marketing/resources/read/cyber-security-learning-roadmap': typeof MarketingResourcesReadCyberSecurityLearningRoadmapRoute
+  '/_marketing/resources/read/cyber-security-pdf-notes': typeof MarketingResourcesReadCyberSecurityPdfNotesRoute
+  '/_marketing/resources/read/cyber-security-practice-questions': typeof MarketingResourcesReadCyberSecurityPracticeQuestionsRoute
+  '/_marketing/resources/read/cyber-security-project-case-study': typeof MarketingResourcesReadCyberSecurityProjectCaseStudyRoute
+  '/_marketing/resources/read/cyber-security-project-guide': typeof MarketingResourcesReadCyberSecurityProjectGuideRoute
+  '/_marketing/resources/read/cyber-security-quick-revision-notes': typeof MarketingResourcesReadCyberSecurityQuickRevisionNotesRoute
+  '/_marketing/resources/read/cyber-security-real-world-case-study': typeof MarketingResourcesReadCyberSecurityRealWorldCaseStudyRoute
+  '/_marketing/resources/read/cyber-security-reference-guide': typeof MarketingResourcesReadCyberSecurityReferenceGuideRoute
+  '/_marketing/resources/read/cyber-security-sample-exercises': typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
+  '/_marketing/resources/read/cyber-security-step-by-step-learning-guide': typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
+  '/_marketing/resources/read/cyber-security-tips-tricks': typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
   '/_marketing/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/_marketing/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/_marketing/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -4530,6 +4742,27 @@ export interface FileRouteTypes {
     | '/resources/read/computer-networks-sample-exercises'
     | '/resources/read/computer-networks-step-by-step-learning-guide'
     | '/resources/read/computer-networks-tips-and-tricks'
+    | '/resources/read/cyber-security-advanced-concepts'
+    | '/resources/read/cyber-security-answer-key'
+    | '/resources/read/cyber-security-beginner-guide'
+    | '/resources/read/cyber-security-best-practices'
+    | '/resources/read/cyber-security-cheat-sheet'
+    | '/resources/read/cyber-security-common-mistakes'
+    | '/resources/read/cyber-security-complete-tutorial'
+    | '/resources/read/cyber-security-frequently-asked-questions'
+    | '/resources/read/cyber-security-glossary'
+    | '/resources/read/cyber-security-interview-questions'
+    | '/resources/read/cyber-security-learning-roadmap'
+    | '/resources/read/cyber-security-pdf-notes'
+    | '/resources/read/cyber-security-practice-questions'
+    | '/resources/read/cyber-security-project-case-study'
+    | '/resources/read/cyber-security-project-guide'
+    | '/resources/read/cyber-security-quick-revision-notes'
+    | '/resources/read/cyber-security-real-world-case-study'
+    | '/resources/read/cyber-security-reference-guide'
+    | '/resources/read/cyber-security-sample-exercises'
+    | '/resources/read/cyber-security-step-by-step-learning-guide'
+    | '/resources/read/cyber-security-tips-tricks'
     | '/resources/read/dbms-advanced-concepts'
     | '/resources/read/dbms-answer-key'
     | '/resources/read/dbms-beginner-guide'
@@ -4972,6 +5205,27 @@ export interface FileRouteTypes {
     | '/resources/read/computer-networks-sample-exercises'
     | '/resources/read/computer-networks-step-by-step-learning-guide'
     | '/resources/read/computer-networks-tips-and-tricks'
+    | '/resources/read/cyber-security-advanced-concepts'
+    | '/resources/read/cyber-security-answer-key'
+    | '/resources/read/cyber-security-beginner-guide'
+    | '/resources/read/cyber-security-best-practices'
+    | '/resources/read/cyber-security-cheat-sheet'
+    | '/resources/read/cyber-security-common-mistakes'
+    | '/resources/read/cyber-security-complete-tutorial'
+    | '/resources/read/cyber-security-frequently-asked-questions'
+    | '/resources/read/cyber-security-glossary'
+    | '/resources/read/cyber-security-interview-questions'
+    | '/resources/read/cyber-security-learning-roadmap'
+    | '/resources/read/cyber-security-pdf-notes'
+    | '/resources/read/cyber-security-practice-questions'
+    | '/resources/read/cyber-security-project-case-study'
+    | '/resources/read/cyber-security-project-guide'
+    | '/resources/read/cyber-security-quick-revision-notes'
+    | '/resources/read/cyber-security-real-world-case-study'
+    | '/resources/read/cyber-security-reference-guide'
+    | '/resources/read/cyber-security-sample-exercises'
+    | '/resources/read/cyber-security-step-by-step-learning-guide'
+    | '/resources/read/cyber-security-tips-tricks'
     | '/resources/read/dbms-advanced-concepts'
     | '/resources/read/dbms-answer-key'
     | '/resources/read/dbms-beginner-guide'
@@ -5418,6 +5672,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/computer-networks-sample-exercises'
     | '/_marketing/resources/read/computer-networks-step-by-step-learning-guide'
     | '/_marketing/resources/read/computer-networks-tips-and-tricks'
+    | '/_marketing/resources/read/cyber-security-advanced-concepts'
+    | '/_marketing/resources/read/cyber-security-answer-key'
+    | '/_marketing/resources/read/cyber-security-beginner-guide'
+    | '/_marketing/resources/read/cyber-security-best-practices'
+    | '/_marketing/resources/read/cyber-security-cheat-sheet'
+    | '/_marketing/resources/read/cyber-security-common-mistakes'
+    | '/_marketing/resources/read/cyber-security-complete-tutorial'
+    | '/_marketing/resources/read/cyber-security-frequently-asked-questions'
+    | '/_marketing/resources/read/cyber-security-glossary'
+    | '/_marketing/resources/read/cyber-security-interview-questions'
+    | '/_marketing/resources/read/cyber-security-learning-roadmap'
+    | '/_marketing/resources/read/cyber-security-pdf-notes'
+    | '/_marketing/resources/read/cyber-security-practice-questions'
+    | '/_marketing/resources/read/cyber-security-project-case-study'
+    | '/_marketing/resources/read/cyber-security-project-guide'
+    | '/_marketing/resources/read/cyber-security-quick-revision-notes'
+    | '/_marketing/resources/read/cyber-security-real-world-case-study'
+    | '/_marketing/resources/read/cyber-security-reference-guide'
+    | '/_marketing/resources/read/cyber-security-sample-exercises'
+    | '/_marketing/resources/read/cyber-security-step-by-step-learning-guide'
+    | '/_marketing/resources/read/cyber-security-tips-tricks'
     | '/_marketing/resources/read/dbms-advanced-concepts'
     | '/_marketing/resources/read/dbms-answer-key'
     | '/_marketing/resources/read/dbms-beginner-guide'
@@ -8513,6 +8788,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDbmsAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/cyber-security-tips-tricks': {
+      id: '/_marketing/resources/read/cyber-security-tips-tricks'
+      path: '/read/cyber-security-tips-tricks'
+      fullPath: '/resources/read/cyber-security-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/cyber-security-step-by-step-learning-guide'
+      path: '/read/cyber-security-step-by-step-learning-guide'
+      fullPath: '/resources/read/cyber-security-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-sample-exercises': {
+      id: '/_marketing/resources/read/cyber-security-sample-exercises'
+      path: '/read/cyber-security-sample-exercises'
+      fullPath: '/resources/read/cyber-security-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecuritySampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-reference-guide': {
+      id: '/_marketing/resources/read/cyber-security-reference-guide'
+      path: '/read/cyber-security-reference-guide'
+      fullPath: '/resources/read/cyber-security-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-real-world-case-study': {
+      id: '/_marketing/resources/read/cyber-security-real-world-case-study'
+      path: '/read/cyber-security-real-world-case-study'
+      fullPath: '/resources/read/cyber-security-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-quick-revision-notes': {
+      id: '/_marketing/resources/read/cyber-security-quick-revision-notes'
+      path: '/read/cyber-security-quick-revision-notes'
+      fullPath: '/resources/read/cyber-security-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-project-guide': {
+      id: '/_marketing/resources/read/cyber-security-project-guide'
+      path: '/read/cyber-security-project-guide'
+      fullPath: '/resources/read/cyber-security-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-project-case-study': {
+      id: '/_marketing/resources/read/cyber-security-project-case-study'
+      path: '/read/cyber-security-project-case-study'
+      fullPath: '/resources/read/cyber-security-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-practice-questions': {
+      id: '/_marketing/resources/read/cyber-security-practice-questions'
+      path: '/read/cyber-security-practice-questions'
+      fullPath: '/resources/read/cyber-security-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-pdf-notes': {
+      id: '/_marketing/resources/read/cyber-security-pdf-notes'
+      path: '/read/cyber-security-pdf-notes'
+      fullPath: '/resources/read/cyber-security-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-learning-roadmap': {
+      id: '/_marketing/resources/read/cyber-security-learning-roadmap'
+      path: '/read/cyber-security-learning-roadmap'
+      fullPath: '/resources/read/cyber-security-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-interview-questions': {
+      id: '/_marketing/resources/read/cyber-security-interview-questions'
+      path: '/read/cyber-security-interview-questions'
+      fullPath: '/resources/read/cyber-security-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-glossary': {
+      id: '/_marketing/resources/read/cyber-security-glossary'
+      path: '/read/cyber-security-glossary'
+      fullPath: '/resources/read/cyber-security-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-frequently-asked-questions': {
+      id: '/_marketing/resources/read/cyber-security-frequently-asked-questions'
+      path: '/read/cyber-security-frequently-asked-questions'
+      fullPath: '/resources/read/cyber-security-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-complete-tutorial': {
+      id: '/_marketing/resources/read/cyber-security-complete-tutorial'
+      path: '/read/cyber-security-complete-tutorial'
+      fullPath: '/resources/read/cyber-security-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-common-mistakes': {
+      id: '/_marketing/resources/read/cyber-security-common-mistakes'
+      path: '/read/cyber-security-common-mistakes'
+      fullPath: '/resources/read/cyber-security-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-cheat-sheet': {
+      id: '/_marketing/resources/read/cyber-security-cheat-sheet'
+      path: '/read/cyber-security-cheat-sheet'
+      fullPath: '/resources/read/cyber-security-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-best-practices': {
+      id: '/_marketing/resources/read/cyber-security-best-practices'
+      path: '/read/cyber-security-best-practices'
+      fullPath: '/resources/read/cyber-security-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-beginner-guide': {
+      id: '/_marketing/resources/read/cyber-security-beginner-guide'
+      path: '/read/cyber-security-beginner-guide'
+      fullPath: '/resources/read/cyber-security-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-answer-key': {
+      id: '/_marketing/resources/read/cyber-security-answer-key'
+      path: '/read/cyber-security-answer-key'
+      fullPath: '/resources/read/cyber-security-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cyber-security-advanced-concepts': {
+      id: '/_marketing/resources/read/cyber-security-advanced-concepts'
+      path: '/read/cyber-security-advanced-concepts'
+      fullPath: '/resources/read/cyber-security-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/computer-networks-tips-and-tricks': {
       id: '/_marketing/resources/read/computer-networks-tips-and-tricks'
       path: '/read/computer-networks-tips-and-tricks'
@@ -9076,6 +9498,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadComputerNetworksSampleExercisesRoute: typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
   MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute: typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
   MarketingResourcesReadComputerNetworksTipsAndTricksRoute: typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
+  MarketingResourcesReadCyberSecurityAdvancedConceptsRoute: typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
+  MarketingResourcesReadCyberSecurityAnswerKeyRoute: typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
+  MarketingResourcesReadCyberSecurityBeginnerGuideRoute: typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
+  MarketingResourcesReadCyberSecurityBestPracticesRoute: typeof MarketingResourcesReadCyberSecurityBestPracticesRoute
+  MarketingResourcesReadCyberSecurityCheatSheetRoute: typeof MarketingResourcesReadCyberSecurityCheatSheetRoute
+  MarketingResourcesReadCyberSecurityCommonMistakesRoute: typeof MarketingResourcesReadCyberSecurityCommonMistakesRoute
+  MarketingResourcesReadCyberSecurityCompleteTutorialRoute: typeof MarketingResourcesReadCyberSecurityCompleteTutorialRoute
+  MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadCyberSecurityGlossaryRoute: typeof MarketingResourcesReadCyberSecurityGlossaryRoute
+  MarketingResourcesReadCyberSecurityInterviewQuestionsRoute: typeof MarketingResourcesReadCyberSecurityInterviewQuestionsRoute
+  MarketingResourcesReadCyberSecurityLearningRoadmapRoute: typeof MarketingResourcesReadCyberSecurityLearningRoadmapRoute
+  MarketingResourcesReadCyberSecurityPdfNotesRoute: typeof MarketingResourcesReadCyberSecurityPdfNotesRoute
+  MarketingResourcesReadCyberSecurityPracticeQuestionsRoute: typeof MarketingResourcesReadCyberSecurityPracticeQuestionsRoute
+  MarketingResourcesReadCyberSecurityProjectCaseStudyRoute: typeof MarketingResourcesReadCyberSecurityProjectCaseStudyRoute
+  MarketingResourcesReadCyberSecurityProjectGuideRoute: typeof MarketingResourcesReadCyberSecurityProjectGuideRoute
+  MarketingResourcesReadCyberSecurityQuickRevisionNotesRoute: typeof MarketingResourcesReadCyberSecurityQuickRevisionNotesRoute
+  MarketingResourcesReadCyberSecurityRealWorldCaseStudyRoute: typeof MarketingResourcesReadCyberSecurityRealWorldCaseStudyRoute
+  MarketingResourcesReadCyberSecurityReferenceGuideRoute: typeof MarketingResourcesReadCyberSecurityReferenceGuideRoute
+  MarketingResourcesReadCyberSecuritySampleExercisesRoute: typeof MarketingResourcesReadCyberSecuritySampleExercisesRoute
+  MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute: typeof MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute
+  MarketingResourcesReadCyberSecurityTipsTricksRoute: typeof MarketingResourcesReadCyberSecurityTipsTricksRoute
   MarketingResourcesReadDbmsAdvancedConceptsRoute: typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   MarketingResourcesReadDbmsAnswerKeyRoute: typeof MarketingResourcesReadDbmsAnswerKeyRoute
   MarketingResourcesReadDbmsBeginnerGuideRoute: typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -9508,6 +9951,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute,
   MarketingResourcesReadComputerNetworksTipsAndTricksRoute:
     MarketingResourcesReadComputerNetworksTipsAndTricksRoute,
+  MarketingResourcesReadCyberSecurityAdvancedConceptsRoute:
+    MarketingResourcesReadCyberSecurityAdvancedConceptsRoute,
+  MarketingResourcesReadCyberSecurityAnswerKeyRoute:
+    MarketingResourcesReadCyberSecurityAnswerKeyRoute,
+  MarketingResourcesReadCyberSecurityBeginnerGuideRoute:
+    MarketingResourcesReadCyberSecurityBeginnerGuideRoute,
+  MarketingResourcesReadCyberSecurityBestPracticesRoute:
+    MarketingResourcesReadCyberSecurityBestPracticesRoute,
+  MarketingResourcesReadCyberSecurityCheatSheetRoute:
+    MarketingResourcesReadCyberSecurityCheatSheetRoute,
+  MarketingResourcesReadCyberSecurityCommonMistakesRoute:
+    MarketingResourcesReadCyberSecurityCommonMistakesRoute,
+  MarketingResourcesReadCyberSecurityCompleteTutorialRoute:
+    MarketingResourcesReadCyberSecurityCompleteTutorialRoute,
+  MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadCyberSecurityFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadCyberSecurityGlossaryRoute:
+    MarketingResourcesReadCyberSecurityGlossaryRoute,
+  MarketingResourcesReadCyberSecurityInterviewQuestionsRoute:
+    MarketingResourcesReadCyberSecurityInterviewQuestionsRoute,
+  MarketingResourcesReadCyberSecurityLearningRoadmapRoute:
+    MarketingResourcesReadCyberSecurityLearningRoadmapRoute,
+  MarketingResourcesReadCyberSecurityPdfNotesRoute:
+    MarketingResourcesReadCyberSecurityPdfNotesRoute,
+  MarketingResourcesReadCyberSecurityPracticeQuestionsRoute:
+    MarketingResourcesReadCyberSecurityPracticeQuestionsRoute,
+  MarketingResourcesReadCyberSecurityProjectCaseStudyRoute:
+    MarketingResourcesReadCyberSecurityProjectCaseStudyRoute,
+  MarketingResourcesReadCyberSecurityProjectGuideRoute:
+    MarketingResourcesReadCyberSecurityProjectGuideRoute,
+  MarketingResourcesReadCyberSecurityQuickRevisionNotesRoute:
+    MarketingResourcesReadCyberSecurityQuickRevisionNotesRoute,
+  MarketingResourcesReadCyberSecurityRealWorldCaseStudyRoute:
+    MarketingResourcesReadCyberSecurityRealWorldCaseStudyRoute,
+  MarketingResourcesReadCyberSecurityReferenceGuideRoute:
+    MarketingResourcesReadCyberSecurityReferenceGuideRoute,
+  MarketingResourcesReadCyberSecuritySampleExercisesRoute:
+    MarketingResourcesReadCyberSecuritySampleExercisesRoute,
+  MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute:
+    MarketingResourcesReadCyberSecurityStepByStepLearningGuideRoute,
+  MarketingResourcesReadCyberSecurityTipsTricksRoute:
+    MarketingResourcesReadCyberSecurityTipsTricksRoute,
   MarketingResourcesReadDbmsAdvancedConceptsRoute:
     MarketingResourcesReadDbmsAdvancedConceptsRoute,
   MarketingResourcesReadDbmsAnswerKeyRoute:
