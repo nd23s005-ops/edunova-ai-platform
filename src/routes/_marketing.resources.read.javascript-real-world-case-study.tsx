@@ -105,7 +105,7 @@ const example = () => {
       </Section>
 
       <Section id="s4" title="4. Optimization">
-        <p>Bundle < 200KB, image lazy-loading.</p>
+        <p>Bundle Bundle < 200KBlt; 200KB, image lazy-loading.</p>
         <Code lang="js">{`// Optimization — illustrative snippet
 const example = () => {
   // apply concepts covered above
