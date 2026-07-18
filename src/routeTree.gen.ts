@@ -860,6 +860,27 @@ import { Route as MarketingResourcesReadAwsBestPracticesRouteImport } from './ro
 import { Route as MarketingResourcesReadAwsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.aws-beginner-guide'
 import { Route as MarketingResourcesReadAwsAnswerKeyRouteImport } from './routes/_marketing.resources.read.aws-answer-key'
 import { Route as MarketingResourcesReadAwsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.aws-advanced-concepts'
+import { Route as MarketingResourcesReadAngularTipsTricksRouteImport } from './routes/_marketing.resources.read.angular-tips-tricks'
+import { Route as MarketingResourcesReadAngularStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.angular-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadAngularSampleExercisesRouteImport } from './routes/_marketing.resources.read.angular-sample-exercises'
+import { Route as MarketingResourcesReadAngularReferenceGuideRouteImport } from './routes/_marketing.resources.read.angular-reference-guide'
+import { Route as MarketingResourcesReadAngularRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.angular-real-world-case-study'
+import { Route as MarketingResourcesReadAngularQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.angular-quick-revision-notes'
+import { Route as MarketingResourcesReadAngularProjectGuideRouteImport } from './routes/_marketing.resources.read.angular-project-guide'
+import { Route as MarketingResourcesReadAngularProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.angular-project-case-study'
+import { Route as MarketingResourcesReadAngularPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.angular-practice-questions'
+import { Route as MarketingResourcesReadAngularPdfNotesRouteImport } from './routes/_marketing.resources.read.angular-pdf-notes'
+import { Route as MarketingResourcesReadAngularLearningRoadmapRouteImport } from './routes/_marketing.resources.read.angular-learning-roadmap'
+import { Route as MarketingResourcesReadAngularInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.angular-interview-questions'
+import { Route as MarketingResourcesReadAngularGlossaryRouteImport } from './routes/_marketing.resources.read.angular-glossary'
+import { Route as MarketingResourcesReadAngularFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.angular-frequently-asked-questions'
+import { Route as MarketingResourcesReadAngularCompleteTutorialRouteImport } from './routes/_marketing.resources.read.angular-complete-tutorial'
+import { Route as MarketingResourcesReadAngularCommonMistakesRouteImport } from './routes/_marketing.resources.read.angular-common-mistakes'
+import { Route as MarketingResourcesReadAngularCheatSheetRouteImport } from './routes/_marketing.resources.read.angular-cheat-sheet'
+import { Route as MarketingResourcesReadAngularBestPracticesRouteImport } from './routes/_marketing.resources.read.angular-best-practices'
+import { Route as MarketingResourcesReadAngularBeginnerGuideRouteImport } from './routes/_marketing.resources.read.angular-beginner-guide'
+import { Route as MarketingResourcesReadAngularAnswerKeyRouteImport } from './routes/_marketing.resources.read.angular-answer-key'
+import { Route as MarketingResourcesReadAngularAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.angular-advanced-concepts'
 import { Route as MarketingResourcesReadAiTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-tips-tricks'
 import { Route as MarketingResourcesReadAiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadAiSampleExercisesRouteImport } from './routes/_marketing.resources.read.ai-sample-exercises'
@@ -6011,6 +6032,132 @@ const MarketingResourcesReadAwsAdvancedConceptsRoute =
     path: '/read/aws-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAngularTipsTricksRoute =
+  MarketingResourcesReadAngularTipsTricksRouteImport.update({
+    id: '/read/angular-tips-tricks',
+    path: '/read/angular-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularStepByStepLearningGuideRoute =
+  MarketingResourcesReadAngularStepByStepLearningGuideRouteImport.update({
+    id: '/read/angular-step-by-step-learning-guide',
+    path: '/read/angular-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularSampleExercisesRoute =
+  MarketingResourcesReadAngularSampleExercisesRouteImport.update({
+    id: '/read/angular-sample-exercises',
+    path: '/read/angular-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularReferenceGuideRoute =
+  MarketingResourcesReadAngularReferenceGuideRouteImport.update({
+    id: '/read/angular-reference-guide',
+    path: '/read/angular-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularRealWorldCaseStudyRoute =
+  MarketingResourcesReadAngularRealWorldCaseStudyRouteImport.update({
+    id: '/read/angular-real-world-case-study',
+    path: '/read/angular-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularQuickRevisionNotesRoute =
+  MarketingResourcesReadAngularQuickRevisionNotesRouteImport.update({
+    id: '/read/angular-quick-revision-notes',
+    path: '/read/angular-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularProjectGuideRoute =
+  MarketingResourcesReadAngularProjectGuideRouteImport.update({
+    id: '/read/angular-project-guide',
+    path: '/read/angular-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularProjectCaseStudyRoute =
+  MarketingResourcesReadAngularProjectCaseStudyRouteImport.update({
+    id: '/read/angular-project-case-study',
+    path: '/read/angular-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularPracticeQuestionsRoute =
+  MarketingResourcesReadAngularPracticeQuestionsRouteImport.update({
+    id: '/read/angular-practice-questions',
+    path: '/read/angular-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularPdfNotesRoute =
+  MarketingResourcesReadAngularPdfNotesRouteImport.update({
+    id: '/read/angular-pdf-notes',
+    path: '/read/angular-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularLearningRoadmapRoute =
+  MarketingResourcesReadAngularLearningRoadmapRouteImport.update({
+    id: '/read/angular-learning-roadmap',
+    path: '/read/angular-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularInterviewQuestionsRoute =
+  MarketingResourcesReadAngularInterviewQuestionsRouteImport.update({
+    id: '/read/angular-interview-questions',
+    path: '/read/angular-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularGlossaryRoute =
+  MarketingResourcesReadAngularGlossaryRouteImport.update({
+    id: '/read/angular-glossary',
+    path: '/read/angular-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadAngularFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/angular-frequently-asked-questions',
+    path: '/read/angular-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularCompleteTutorialRoute =
+  MarketingResourcesReadAngularCompleteTutorialRouteImport.update({
+    id: '/read/angular-complete-tutorial',
+    path: '/read/angular-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularCommonMistakesRoute =
+  MarketingResourcesReadAngularCommonMistakesRouteImport.update({
+    id: '/read/angular-common-mistakes',
+    path: '/read/angular-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularCheatSheetRoute =
+  MarketingResourcesReadAngularCheatSheetRouteImport.update({
+    id: '/read/angular-cheat-sheet',
+    path: '/read/angular-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularBestPracticesRoute =
+  MarketingResourcesReadAngularBestPracticesRouteImport.update({
+    id: '/read/angular-best-practices',
+    path: '/read/angular-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularBeginnerGuideRoute =
+  MarketingResourcesReadAngularBeginnerGuideRouteImport.update({
+    id: '/read/angular-beginner-guide',
+    path: '/read/angular-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularAnswerKeyRoute =
+  MarketingResourcesReadAngularAnswerKeyRouteImport.update({
+    id: '/read/angular-answer-key',
+    path: '/read/angular-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAngularAdvancedConceptsRoute =
+  MarketingResourcesReadAngularAdvancedConceptsRouteImport.update({
+    id: '/read/angular-advanced-concepts',
+    path: '/read/angular-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiTipsTricksRoute =
   MarketingResourcesReadAiTipsTricksRouteImport.update({
     id: '/read/ai-tips-tricks',
@@ -6432,6 +6579,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/angular-advanced-concepts': typeof MarketingResourcesReadAngularAdvancedConceptsRoute
+  '/resources/read/angular-answer-key': typeof MarketingResourcesReadAngularAnswerKeyRoute
+  '/resources/read/angular-beginner-guide': typeof MarketingResourcesReadAngularBeginnerGuideRoute
+  '/resources/read/angular-best-practices': typeof MarketingResourcesReadAngularBestPracticesRoute
+  '/resources/read/angular-cheat-sheet': typeof MarketingResourcesReadAngularCheatSheetRoute
+  '/resources/read/angular-common-mistakes': typeof MarketingResourcesReadAngularCommonMistakesRoute
+  '/resources/read/angular-complete-tutorial': typeof MarketingResourcesReadAngularCompleteTutorialRoute
+  '/resources/read/angular-frequently-asked-questions': typeof MarketingResourcesReadAngularFrequentlyAskedQuestionsRoute
+  '/resources/read/angular-glossary': typeof MarketingResourcesReadAngularGlossaryRoute
+  '/resources/read/angular-interview-questions': typeof MarketingResourcesReadAngularInterviewQuestionsRoute
+  '/resources/read/angular-learning-roadmap': typeof MarketingResourcesReadAngularLearningRoadmapRoute
+  '/resources/read/angular-pdf-notes': typeof MarketingResourcesReadAngularPdfNotesRoute
+  '/resources/read/angular-practice-questions': typeof MarketingResourcesReadAngularPracticeQuestionsRoute
+  '/resources/read/angular-project-case-study': typeof MarketingResourcesReadAngularProjectCaseStudyRoute
+  '/resources/read/angular-project-guide': typeof MarketingResourcesReadAngularProjectGuideRoute
+  '/resources/read/angular-quick-revision-notes': typeof MarketingResourcesReadAngularQuickRevisionNotesRoute
+  '/resources/read/angular-real-world-case-study': typeof MarketingResourcesReadAngularRealWorldCaseStudyRoute
+  '/resources/read/angular-reference-guide': typeof MarketingResourcesReadAngularReferenceGuideRoute
+  '/resources/read/angular-sample-exercises': typeof MarketingResourcesReadAngularSampleExercisesRoute
+  '/resources/read/angular-step-by-step-learning-guide': typeof MarketingResourcesReadAngularStepByStepLearningGuideRoute
+  '/resources/read/angular-tips-tricks': typeof MarketingResourcesReadAngularTipsTricksRoute
   '/resources/read/aws-advanced-concepts': typeof MarketingResourcesReadAwsAdvancedConceptsRoute
   '/resources/read/aws-answer-key': typeof MarketingResourcesReadAwsAnswerKeyRoute
   '/resources/read/aws-beginner-guide': typeof MarketingResourcesReadAwsBeginnerGuideRoute
@@ -7336,6 +7504,27 @@ export interface FileRoutesByTo {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/angular-advanced-concepts': typeof MarketingResourcesReadAngularAdvancedConceptsRoute
+  '/resources/read/angular-answer-key': typeof MarketingResourcesReadAngularAnswerKeyRoute
+  '/resources/read/angular-beginner-guide': typeof MarketingResourcesReadAngularBeginnerGuideRoute
+  '/resources/read/angular-best-practices': typeof MarketingResourcesReadAngularBestPracticesRoute
+  '/resources/read/angular-cheat-sheet': typeof MarketingResourcesReadAngularCheatSheetRoute
+  '/resources/read/angular-common-mistakes': typeof MarketingResourcesReadAngularCommonMistakesRoute
+  '/resources/read/angular-complete-tutorial': typeof MarketingResourcesReadAngularCompleteTutorialRoute
+  '/resources/read/angular-frequently-asked-questions': typeof MarketingResourcesReadAngularFrequentlyAskedQuestionsRoute
+  '/resources/read/angular-glossary': typeof MarketingResourcesReadAngularGlossaryRoute
+  '/resources/read/angular-interview-questions': typeof MarketingResourcesReadAngularInterviewQuestionsRoute
+  '/resources/read/angular-learning-roadmap': typeof MarketingResourcesReadAngularLearningRoadmapRoute
+  '/resources/read/angular-pdf-notes': typeof MarketingResourcesReadAngularPdfNotesRoute
+  '/resources/read/angular-practice-questions': typeof MarketingResourcesReadAngularPracticeQuestionsRoute
+  '/resources/read/angular-project-case-study': typeof MarketingResourcesReadAngularProjectCaseStudyRoute
+  '/resources/read/angular-project-guide': typeof MarketingResourcesReadAngularProjectGuideRoute
+  '/resources/read/angular-quick-revision-notes': typeof MarketingResourcesReadAngularQuickRevisionNotesRoute
+  '/resources/read/angular-real-world-case-study': typeof MarketingResourcesReadAngularRealWorldCaseStudyRoute
+  '/resources/read/angular-reference-guide': typeof MarketingResourcesReadAngularReferenceGuideRoute
+  '/resources/read/angular-sample-exercises': typeof MarketingResourcesReadAngularSampleExercisesRoute
+  '/resources/read/angular-step-by-step-learning-guide': typeof MarketingResourcesReadAngularStepByStepLearningGuideRoute
+  '/resources/read/angular-tips-tricks': typeof MarketingResourcesReadAngularTipsTricksRoute
   '/resources/read/aws-advanced-concepts': typeof MarketingResourcesReadAwsAdvancedConceptsRoute
   '/resources/read/aws-answer-key': typeof MarketingResourcesReadAwsAnswerKeyRoute
   '/resources/read/aws-beginner-guide': typeof MarketingResourcesReadAwsBeginnerGuideRoute
@@ -8245,6 +8434,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/_marketing/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/_marketing/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/_marketing/resources/read/angular-advanced-concepts': typeof MarketingResourcesReadAngularAdvancedConceptsRoute
+  '/_marketing/resources/read/angular-answer-key': typeof MarketingResourcesReadAngularAnswerKeyRoute
+  '/_marketing/resources/read/angular-beginner-guide': typeof MarketingResourcesReadAngularBeginnerGuideRoute
+  '/_marketing/resources/read/angular-best-practices': typeof MarketingResourcesReadAngularBestPracticesRoute
+  '/_marketing/resources/read/angular-cheat-sheet': typeof MarketingResourcesReadAngularCheatSheetRoute
+  '/_marketing/resources/read/angular-common-mistakes': typeof MarketingResourcesReadAngularCommonMistakesRoute
+  '/_marketing/resources/read/angular-complete-tutorial': typeof MarketingResourcesReadAngularCompleteTutorialRoute
+  '/_marketing/resources/read/angular-frequently-asked-questions': typeof MarketingResourcesReadAngularFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/angular-glossary': typeof MarketingResourcesReadAngularGlossaryRoute
+  '/_marketing/resources/read/angular-interview-questions': typeof MarketingResourcesReadAngularInterviewQuestionsRoute
+  '/_marketing/resources/read/angular-learning-roadmap': typeof MarketingResourcesReadAngularLearningRoadmapRoute
+  '/_marketing/resources/read/angular-pdf-notes': typeof MarketingResourcesReadAngularPdfNotesRoute
+  '/_marketing/resources/read/angular-practice-questions': typeof MarketingResourcesReadAngularPracticeQuestionsRoute
+  '/_marketing/resources/read/angular-project-case-study': typeof MarketingResourcesReadAngularProjectCaseStudyRoute
+  '/_marketing/resources/read/angular-project-guide': typeof MarketingResourcesReadAngularProjectGuideRoute
+  '/_marketing/resources/read/angular-quick-revision-notes': typeof MarketingResourcesReadAngularQuickRevisionNotesRoute
+  '/_marketing/resources/read/angular-real-world-case-study': typeof MarketingResourcesReadAngularRealWorldCaseStudyRoute
+  '/_marketing/resources/read/angular-reference-guide': typeof MarketingResourcesReadAngularReferenceGuideRoute
+  '/_marketing/resources/read/angular-sample-exercises': typeof MarketingResourcesReadAngularSampleExercisesRoute
+  '/_marketing/resources/read/angular-step-by-step-learning-guide': typeof MarketingResourcesReadAngularStepByStepLearningGuideRoute
+  '/_marketing/resources/read/angular-tips-tricks': typeof MarketingResourcesReadAngularTipsTricksRoute
   '/_marketing/resources/read/aws-advanced-concepts': typeof MarketingResourcesReadAwsAdvancedConceptsRoute
   '/_marketing/resources/read/aws-answer-key': typeof MarketingResourcesReadAwsAnswerKeyRoute
   '/_marketing/resources/read/aws-beginner-guide': typeof MarketingResourcesReadAwsBeginnerGuideRoute
@@ -9152,6 +9362,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/angular-advanced-concepts'
+    | '/resources/read/angular-answer-key'
+    | '/resources/read/angular-beginner-guide'
+    | '/resources/read/angular-best-practices'
+    | '/resources/read/angular-cheat-sheet'
+    | '/resources/read/angular-common-mistakes'
+    | '/resources/read/angular-complete-tutorial'
+    | '/resources/read/angular-frequently-asked-questions'
+    | '/resources/read/angular-glossary'
+    | '/resources/read/angular-interview-questions'
+    | '/resources/read/angular-learning-roadmap'
+    | '/resources/read/angular-pdf-notes'
+    | '/resources/read/angular-practice-questions'
+    | '/resources/read/angular-project-case-study'
+    | '/resources/read/angular-project-guide'
+    | '/resources/read/angular-quick-revision-notes'
+    | '/resources/read/angular-real-world-case-study'
+    | '/resources/read/angular-reference-guide'
+    | '/resources/read/angular-sample-exercises'
+    | '/resources/read/angular-step-by-step-learning-guide'
+    | '/resources/read/angular-tips-tricks'
     | '/resources/read/aws-advanced-concepts'
     | '/resources/read/aws-answer-key'
     | '/resources/read/aws-beginner-guide'
@@ -10056,6 +10287,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/angular-advanced-concepts'
+    | '/resources/read/angular-answer-key'
+    | '/resources/read/angular-beginner-guide'
+    | '/resources/read/angular-best-practices'
+    | '/resources/read/angular-cheat-sheet'
+    | '/resources/read/angular-common-mistakes'
+    | '/resources/read/angular-complete-tutorial'
+    | '/resources/read/angular-frequently-asked-questions'
+    | '/resources/read/angular-glossary'
+    | '/resources/read/angular-interview-questions'
+    | '/resources/read/angular-learning-roadmap'
+    | '/resources/read/angular-pdf-notes'
+    | '/resources/read/angular-practice-questions'
+    | '/resources/read/angular-project-case-study'
+    | '/resources/read/angular-project-guide'
+    | '/resources/read/angular-quick-revision-notes'
+    | '/resources/read/angular-real-world-case-study'
+    | '/resources/read/angular-reference-guide'
+    | '/resources/read/angular-sample-exercises'
+    | '/resources/read/angular-step-by-step-learning-guide'
+    | '/resources/read/angular-tips-tricks'
     | '/resources/read/aws-advanced-concepts'
     | '/resources/read/aws-answer-key'
     | '/resources/read/aws-beginner-guide'
@@ -10964,6 +11216,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-sample-exercises'
     | '/_marketing/resources/read/ai-step-by-step-learning-guide'
     | '/_marketing/resources/read/ai-tips-tricks'
+    | '/_marketing/resources/read/angular-advanced-concepts'
+    | '/_marketing/resources/read/angular-answer-key'
+    | '/_marketing/resources/read/angular-beginner-guide'
+    | '/_marketing/resources/read/angular-best-practices'
+    | '/_marketing/resources/read/angular-cheat-sheet'
+    | '/_marketing/resources/read/angular-common-mistakes'
+    | '/_marketing/resources/read/angular-complete-tutorial'
+    | '/_marketing/resources/read/angular-frequently-asked-questions'
+    | '/_marketing/resources/read/angular-glossary'
+    | '/_marketing/resources/read/angular-interview-questions'
+    | '/_marketing/resources/read/angular-learning-roadmap'
+    | '/_marketing/resources/read/angular-pdf-notes'
+    | '/_marketing/resources/read/angular-practice-questions'
+    | '/_marketing/resources/read/angular-project-case-study'
+    | '/_marketing/resources/read/angular-project-guide'
+    | '/_marketing/resources/read/angular-quick-revision-notes'
+    | '/_marketing/resources/read/angular-real-world-case-study'
+    | '/_marketing/resources/read/angular-reference-guide'
+    | '/_marketing/resources/read/angular-sample-exercises'
+    | '/_marketing/resources/read/angular-step-by-step-learning-guide'
+    | '/_marketing/resources/read/angular-tips-tricks'
     | '/_marketing/resources/read/aws-advanced-concepts'
     | '/_marketing/resources/read/aws-answer-key'
     | '/_marketing/resources/read/aws-beginner-guide'
@@ -17755,6 +18028,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAwsAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/angular-tips-tricks': {
+      id: '/_marketing/resources/read/angular-tips-tricks'
+      path: '/read/angular-tips-tricks'
+      fullPath: '/resources/read/angular-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadAngularTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/angular-step-by-step-learning-guide'
+      path: '/read/angular-step-by-step-learning-guide'
+      fullPath: '/resources/read/angular-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAngularStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-sample-exercises': {
+      id: '/_marketing/resources/read/angular-sample-exercises'
+      path: '/read/angular-sample-exercises'
+      fullPath: '/resources/read/angular-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadAngularSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-reference-guide': {
+      id: '/_marketing/resources/read/angular-reference-guide'
+      path: '/read/angular-reference-guide'
+      fullPath: '/resources/read/angular-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAngularReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-real-world-case-study': {
+      id: '/_marketing/resources/read/angular-real-world-case-study'
+      path: '/read/angular-real-world-case-study'
+      fullPath: '/resources/read/angular-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAngularRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-quick-revision-notes': {
+      id: '/_marketing/resources/read/angular-quick-revision-notes'
+      path: '/read/angular-quick-revision-notes'
+      fullPath: '/resources/read/angular-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAngularQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-project-guide': {
+      id: '/_marketing/resources/read/angular-project-guide'
+      path: '/read/angular-project-guide'
+      fullPath: '/resources/read/angular-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAngularProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-project-case-study': {
+      id: '/_marketing/resources/read/angular-project-case-study'
+      path: '/read/angular-project-case-study'
+      fullPath: '/resources/read/angular-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAngularProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-practice-questions': {
+      id: '/_marketing/resources/read/angular-practice-questions'
+      path: '/read/angular-practice-questions'
+      fullPath: '/resources/read/angular-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAngularPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-pdf-notes': {
+      id: '/_marketing/resources/read/angular-pdf-notes'
+      path: '/read/angular-pdf-notes'
+      fullPath: '/resources/read/angular-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAngularPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-learning-roadmap': {
+      id: '/_marketing/resources/read/angular-learning-roadmap'
+      path: '/read/angular-learning-roadmap'
+      fullPath: '/resources/read/angular-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadAngularLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-interview-questions': {
+      id: '/_marketing/resources/read/angular-interview-questions'
+      path: '/read/angular-interview-questions'
+      fullPath: '/resources/read/angular-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAngularInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-glossary': {
+      id: '/_marketing/resources/read/angular-glossary'
+      path: '/read/angular-glossary'
+      fullPath: '/resources/read/angular-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadAngularGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-frequently-asked-questions': {
+      id: '/_marketing/resources/read/angular-frequently-asked-questions'
+      path: '/read/angular-frequently-asked-questions'
+      fullPath: '/resources/read/angular-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAngularFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-complete-tutorial': {
+      id: '/_marketing/resources/read/angular-complete-tutorial'
+      path: '/read/angular-complete-tutorial'
+      fullPath: '/resources/read/angular-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadAngularCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-common-mistakes': {
+      id: '/_marketing/resources/read/angular-common-mistakes'
+      path: '/read/angular-common-mistakes'
+      fullPath: '/resources/read/angular-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadAngularCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-cheat-sheet': {
+      id: '/_marketing/resources/read/angular-cheat-sheet'
+      path: '/read/angular-cheat-sheet'
+      fullPath: '/resources/read/angular-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadAngularCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-best-practices': {
+      id: '/_marketing/resources/read/angular-best-practices'
+      path: '/read/angular-best-practices'
+      fullPath: '/resources/read/angular-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadAngularBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-beginner-guide': {
+      id: '/_marketing/resources/read/angular-beginner-guide'
+      path: '/read/angular-beginner-guide'
+      fullPath: '/resources/read/angular-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAngularBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-answer-key': {
+      id: '/_marketing/resources/read/angular-answer-key'
+      path: '/read/angular-answer-key'
+      fullPath: '/resources/read/angular-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadAngularAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/angular-advanced-concepts': {
+      id: '/_marketing/resources/read/angular-advanced-concepts'
+      path: '/read/angular-advanced-concepts'
+      fullPath: '/resources/read/angular-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadAngularAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-tips-tricks': {
       id: '/_marketing/resources/read/ai-tips-tricks'
       path: '/read/ai-tips-tricks'
@@ -18318,6 +18738,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiSampleExercisesRoute: typeof MarketingResourcesReadAiSampleExercisesRoute
   MarketingResourcesReadAiStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   MarketingResourcesReadAiTipsTricksRoute: typeof MarketingResourcesReadAiTipsTricksRoute
+  MarketingResourcesReadAngularAdvancedConceptsRoute: typeof MarketingResourcesReadAngularAdvancedConceptsRoute
+  MarketingResourcesReadAngularAnswerKeyRoute: typeof MarketingResourcesReadAngularAnswerKeyRoute
+  MarketingResourcesReadAngularBeginnerGuideRoute: typeof MarketingResourcesReadAngularBeginnerGuideRoute
+  MarketingResourcesReadAngularBestPracticesRoute: typeof MarketingResourcesReadAngularBestPracticesRoute
+  MarketingResourcesReadAngularCheatSheetRoute: typeof MarketingResourcesReadAngularCheatSheetRoute
+  MarketingResourcesReadAngularCommonMistakesRoute: typeof MarketingResourcesReadAngularCommonMistakesRoute
+  MarketingResourcesReadAngularCompleteTutorialRoute: typeof MarketingResourcesReadAngularCompleteTutorialRoute
+  MarketingResourcesReadAngularFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadAngularFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadAngularGlossaryRoute: typeof MarketingResourcesReadAngularGlossaryRoute
+  MarketingResourcesReadAngularInterviewQuestionsRoute: typeof MarketingResourcesReadAngularInterviewQuestionsRoute
+  MarketingResourcesReadAngularLearningRoadmapRoute: typeof MarketingResourcesReadAngularLearningRoadmapRoute
+  MarketingResourcesReadAngularPdfNotesRoute: typeof MarketingResourcesReadAngularPdfNotesRoute
+  MarketingResourcesReadAngularPracticeQuestionsRoute: typeof MarketingResourcesReadAngularPracticeQuestionsRoute
+  MarketingResourcesReadAngularProjectCaseStudyRoute: typeof MarketingResourcesReadAngularProjectCaseStudyRoute
+  MarketingResourcesReadAngularProjectGuideRoute: typeof MarketingResourcesReadAngularProjectGuideRoute
+  MarketingResourcesReadAngularQuickRevisionNotesRoute: typeof MarketingResourcesReadAngularQuickRevisionNotesRoute
+  MarketingResourcesReadAngularRealWorldCaseStudyRoute: typeof MarketingResourcesReadAngularRealWorldCaseStudyRoute
+  MarketingResourcesReadAngularReferenceGuideRoute: typeof MarketingResourcesReadAngularReferenceGuideRoute
+  MarketingResourcesReadAngularSampleExercisesRoute: typeof MarketingResourcesReadAngularSampleExercisesRoute
+  MarketingResourcesReadAngularStepByStepLearningGuideRoute: typeof MarketingResourcesReadAngularStepByStepLearningGuideRoute
+  MarketingResourcesReadAngularTipsTricksRoute: typeof MarketingResourcesReadAngularTipsTricksRoute
   MarketingResourcesReadAwsAdvancedConceptsRoute: typeof MarketingResourcesReadAwsAdvancedConceptsRoute
   MarketingResourcesReadAwsAnswerKeyRoute: typeof MarketingResourcesReadAwsAnswerKeyRoute
   MarketingResourcesReadAwsBeginnerGuideRoute: typeof MarketingResourcesReadAwsBeginnerGuideRoute
@@ -19212,6 +19653,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAiStepByStepLearningGuideRoute,
   MarketingResourcesReadAiTipsTricksRoute:
     MarketingResourcesReadAiTipsTricksRoute,
+  MarketingResourcesReadAngularAdvancedConceptsRoute:
+    MarketingResourcesReadAngularAdvancedConceptsRoute,
+  MarketingResourcesReadAngularAnswerKeyRoute:
+    MarketingResourcesReadAngularAnswerKeyRoute,
+  MarketingResourcesReadAngularBeginnerGuideRoute:
+    MarketingResourcesReadAngularBeginnerGuideRoute,
+  MarketingResourcesReadAngularBestPracticesRoute:
+    MarketingResourcesReadAngularBestPracticesRoute,
+  MarketingResourcesReadAngularCheatSheetRoute:
+    MarketingResourcesReadAngularCheatSheetRoute,
+  MarketingResourcesReadAngularCommonMistakesRoute:
+    MarketingResourcesReadAngularCommonMistakesRoute,
+  MarketingResourcesReadAngularCompleteTutorialRoute:
+    MarketingResourcesReadAngularCompleteTutorialRoute,
+  MarketingResourcesReadAngularFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadAngularFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadAngularGlossaryRoute:
+    MarketingResourcesReadAngularGlossaryRoute,
+  MarketingResourcesReadAngularInterviewQuestionsRoute:
+    MarketingResourcesReadAngularInterviewQuestionsRoute,
+  MarketingResourcesReadAngularLearningRoadmapRoute:
+    MarketingResourcesReadAngularLearningRoadmapRoute,
+  MarketingResourcesReadAngularPdfNotesRoute:
+    MarketingResourcesReadAngularPdfNotesRoute,
+  MarketingResourcesReadAngularPracticeQuestionsRoute:
+    MarketingResourcesReadAngularPracticeQuestionsRoute,
+  MarketingResourcesReadAngularProjectCaseStudyRoute:
+    MarketingResourcesReadAngularProjectCaseStudyRoute,
+  MarketingResourcesReadAngularProjectGuideRoute:
+    MarketingResourcesReadAngularProjectGuideRoute,
+  MarketingResourcesReadAngularQuickRevisionNotesRoute:
+    MarketingResourcesReadAngularQuickRevisionNotesRoute,
+  MarketingResourcesReadAngularRealWorldCaseStudyRoute:
+    MarketingResourcesReadAngularRealWorldCaseStudyRoute,
+  MarketingResourcesReadAngularReferenceGuideRoute:
+    MarketingResourcesReadAngularReferenceGuideRoute,
+  MarketingResourcesReadAngularSampleExercisesRoute:
+    MarketingResourcesReadAngularSampleExercisesRoute,
+  MarketingResourcesReadAngularStepByStepLearningGuideRoute:
+    MarketingResourcesReadAngularStepByStepLearningGuideRoute,
+  MarketingResourcesReadAngularTipsTricksRoute:
+    MarketingResourcesReadAngularTipsTricksRoute,
   MarketingResourcesReadAwsAdvancedConceptsRoute:
     MarketingResourcesReadAwsAdvancedConceptsRoute,
   MarketingResourcesReadAwsAnswerKeyRoute:
