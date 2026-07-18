@@ -128,6 +128,27 @@ import { Route as MarketingResourcesReadPeBestPracticesRouteImport } from './rou
 import { Route as MarketingResourcesReadPeBeginnerGuideRouteImport } from './routes/_marketing.resources.read.pe-beginner-guide'
 import { Route as MarketingResourcesReadPeAnswerKeyRouteImport } from './routes/_marketing.resources.read.pe-answer-key'
 import { Route as MarketingResourcesReadPeAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.pe-advanced-concepts'
+import { Route as MarketingResourcesReadOperatingSystemsTipsAndTricksRouteImport } from './routes/_marketing.resources.read.operating-systems-tips-and-tricks'
+import { Route as MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.operating-systems-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadOperatingSystemsSampleExercisesRouteImport } from './routes/_marketing.resources.read.operating-systems-sample-exercises'
+import { Route as MarketingResourcesReadOperatingSystemsReferenceGuideRouteImport } from './routes/_marketing.resources.read.operating-systems-reference-guide'
+import { Route as MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.operating-systems-real-world-case-study'
+import { Route as MarketingResourcesReadOperatingSystemsQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.operating-systems-quick-revision-notes'
+import { Route as MarketingResourcesReadOperatingSystemsProjectGuideRouteImport } from './routes/_marketing.resources.read.operating-systems-project-guide'
+import { Route as MarketingResourcesReadOperatingSystemsProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.operating-systems-project-case-study'
+import { Route as MarketingResourcesReadOperatingSystemsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.operating-systems-practice-questions'
+import { Route as MarketingResourcesReadOperatingSystemsPdfNotesRouteImport } from './routes/_marketing.resources.read.operating-systems-pdf-notes'
+import { Route as MarketingResourcesReadOperatingSystemsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.operating-systems-learning-roadmap'
+import { Route as MarketingResourcesReadOperatingSystemsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.operating-systems-interview-questions'
+import { Route as MarketingResourcesReadOperatingSystemsGlossaryRouteImport } from './routes/_marketing.resources.read.operating-systems-glossary'
+import { Route as MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.operating-systems-frequently-asked-questions'
+import { Route as MarketingResourcesReadOperatingSystemsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.operating-systems-complete-tutorial'
+import { Route as MarketingResourcesReadOperatingSystemsCommonMistakesRouteImport } from './routes/_marketing.resources.read.operating-systems-common-mistakes'
+import { Route as MarketingResourcesReadOperatingSystemsCheatSheetRouteImport } from './routes/_marketing.resources.read.operating-systems-cheat-sheet'
+import { Route as MarketingResourcesReadOperatingSystemsBestPracticesRouteImport } from './routes/_marketing.resources.read.operating-systems-best-practices'
+import { Route as MarketingResourcesReadOperatingSystemsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.operating-systems-beginner-guide'
+import { Route as MarketingResourcesReadOperatingSystemsAnswerKeyRouteImport } from './routes/_marketing.resources.read.operating-systems-answer-key'
+import { Route as MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.operating-systems-advanced-concepts'
 import { Route as MarketingResourcesReadMlTipsTricksRouteImport } from './routes/_marketing.resources.read.ml-tips-tricks'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlSampleExercisesRouteImport } from './routes/_marketing.resources.read.ml-sample-exercises'
@@ -995,6 +1016,136 @@ const MarketingResourcesReadPeAdvancedConceptsRoute =
   MarketingResourcesReadPeAdvancedConceptsRouteImport.update({
     id: '/read/pe-advanced-concepts',
     path: '/read/pe-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsTipsAndTricksRoute =
+  MarketingResourcesReadOperatingSystemsTipsAndTricksRouteImport.update({
+    id: '/read/operating-systems-tips-and-tricks',
+    path: '/read/operating-systems-tips-and-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute =
+  MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRouteImport.update(
+    {
+      id: '/read/operating-systems-step-by-step-learning-guide',
+      path: '/read/operating-systems-step-by-step-learning-guide',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadOperatingSystemsSampleExercisesRoute =
+  MarketingResourcesReadOperatingSystemsSampleExercisesRouteImport.update({
+    id: '/read/operating-systems-sample-exercises',
+    path: '/read/operating-systems-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsReferenceGuideRoute =
+  MarketingResourcesReadOperatingSystemsReferenceGuideRouteImport.update({
+    id: '/read/operating-systems-reference-guide',
+    path: '/read/operating-systems-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRoute =
+  MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRouteImport.update({
+    id: '/read/operating-systems-real-world-case-study',
+    path: '/read/operating-systems-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsQuickRevisionNotesRoute =
+  MarketingResourcesReadOperatingSystemsQuickRevisionNotesRouteImport.update({
+    id: '/read/operating-systems-quick-revision-notes',
+    path: '/read/operating-systems-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsProjectGuideRoute =
+  MarketingResourcesReadOperatingSystemsProjectGuideRouteImport.update({
+    id: '/read/operating-systems-project-guide',
+    path: '/read/operating-systems-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsProjectCaseStudyRoute =
+  MarketingResourcesReadOperatingSystemsProjectCaseStudyRouteImport.update({
+    id: '/read/operating-systems-project-case-study',
+    path: '/read/operating-systems-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsPracticeQuestionsRoute =
+  MarketingResourcesReadOperatingSystemsPracticeQuestionsRouteImport.update({
+    id: '/read/operating-systems-practice-questions',
+    path: '/read/operating-systems-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsPdfNotesRoute =
+  MarketingResourcesReadOperatingSystemsPdfNotesRouteImport.update({
+    id: '/read/operating-systems-pdf-notes',
+    path: '/read/operating-systems-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsLearningRoadmapRoute =
+  MarketingResourcesReadOperatingSystemsLearningRoadmapRouteImport.update({
+    id: '/read/operating-systems-learning-roadmap',
+    path: '/read/operating-systems-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsInterviewQuestionsRoute =
+  MarketingResourcesReadOperatingSystemsInterviewQuestionsRouteImport.update({
+    id: '/read/operating-systems-interview-questions',
+    path: '/read/operating-systems-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsGlossaryRoute =
+  MarketingResourcesReadOperatingSystemsGlossaryRouteImport.update({
+    id: '/read/operating-systems-glossary',
+    path: '/read/operating-systems-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRouteImport.update(
+    {
+      id: '/read/operating-systems-frequently-asked-questions',
+      path: '/read/operating-systems-frequently-asked-questions',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadOperatingSystemsCompleteTutorialRoute =
+  MarketingResourcesReadOperatingSystemsCompleteTutorialRouteImport.update({
+    id: '/read/operating-systems-complete-tutorial',
+    path: '/read/operating-systems-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsCommonMistakesRoute =
+  MarketingResourcesReadOperatingSystemsCommonMistakesRouteImport.update({
+    id: '/read/operating-systems-common-mistakes',
+    path: '/read/operating-systems-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsCheatSheetRoute =
+  MarketingResourcesReadOperatingSystemsCheatSheetRouteImport.update({
+    id: '/read/operating-systems-cheat-sheet',
+    path: '/read/operating-systems-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsBestPracticesRoute =
+  MarketingResourcesReadOperatingSystemsBestPracticesRouteImport.update({
+    id: '/read/operating-systems-best-practices',
+    path: '/read/operating-systems-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsBeginnerGuideRoute =
+  MarketingResourcesReadOperatingSystemsBeginnerGuideRouteImport.update({
+    id: '/read/operating-systems-beginner-guide',
+    path: '/read/operating-systems-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsAnswerKeyRoute =
+  MarketingResourcesReadOperatingSystemsAnswerKeyRouteImport.update({
+    id: '/read/operating-systems-answer-key',
+    path: '/read/operating-systems-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute =
+  MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport.update({
+    id: '/read/operating-systems-advanced-concepts',
+    path: '/read/operating-systems-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlTipsTricksRoute =
@@ -2346,6 +2497,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
+  '/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
+  '/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
+  '/resources/read/operating-systems-best-practices': typeof MarketingResourcesReadOperatingSystemsBestPracticesRoute
+  '/resources/read/operating-systems-cheat-sheet': typeof MarketingResourcesReadOperatingSystemsCheatSheetRoute
+  '/resources/read/operating-systems-common-mistakes': typeof MarketingResourcesReadOperatingSystemsCommonMistakesRoute
+  '/resources/read/operating-systems-complete-tutorial': typeof MarketingResourcesReadOperatingSystemsCompleteTutorialRoute
+  '/resources/read/operating-systems-frequently-asked-questions': typeof MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRoute
+  '/resources/read/operating-systems-glossary': typeof MarketingResourcesReadOperatingSystemsGlossaryRoute
+  '/resources/read/operating-systems-interview-questions': typeof MarketingResourcesReadOperatingSystemsInterviewQuestionsRoute
+  '/resources/read/operating-systems-learning-roadmap': typeof MarketingResourcesReadOperatingSystemsLearningRoadmapRoute
+  '/resources/read/operating-systems-pdf-notes': typeof MarketingResourcesReadOperatingSystemsPdfNotesRoute
+  '/resources/read/operating-systems-practice-questions': typeof MarketingResourcesReadOperatingSystemsPracticeQuestionsRoute
+  '/resources/read/operating-systems-project-case-study': typeof MarketingResourcesReadOperatingSystemsProjectCaseStudyRoute
+  '/resources/read/operating-systems-project-guide': typeof MarketingResourcesReadOperatingSystemsProjectGuideRoute
+  '/resources/read/operating-systems-quick-revision-notes': typeof MarketingResourcesReadOperatingSystemsQuickRevisionNotesRoute
+  '/resources/read/operating-systems-real-world-case-study': typeof MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRoute
+  '/resources/read/operating-systems-reference-guide': typeof MarketingResourcesReadOperatingSystemsReferenceGuideRoute
+  '/resources/read/operating-systems-sample-exercises': typeof MarketingResourcesReadOperatingSystemsSampleExercisesRoute
+  '/resources/read/operating-systems-step-by-step-learning-guide': typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute
+  '/resources/read/operating-systems-tips-and-tricks': typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRoute
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
@@ -2650,6 +2822,27 @@ export interface FileRoutesByTo {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
+  '/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
+  '/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
+  '/resources/read/operating-systems-best-practices': typeof MarketingResourcesReadOperatingSystemsBestPracticesRoute
+  '/resources/read/operating-systems-cheat-sheet': typeof MarketingResourcesReadOperatingSystemsCheatSheetRoute
+  '/resources/read/operating-systems-common-mistakes': typeof MarketingResourcesReadOperatingSystemsCommonMistakesRoute
+  '/resources/read/operating-systems-complete-tutorial': typeof MarketingResourcesReadOperatingSystemsCompleteTutorialRoute
+  '/resources/read/operating-systems-frequently-asked-questions': typeof MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRoute
+  '/resources/read/operating-systems-glossary': typeof MarketingResourcesReadOperatingSystemsGlossaryRoute
+  '/resources/read/operating-systems-interview-questions': typeof MarketingResourcesReadOperatingSystemsInterviewQuestionsRoute
+  '/resources/read/operating-systems-learning-roadmap': typeof MarketingResourcesReadOperatingSystemsLearningRoadmapRoute
+  '/resources/read/operating-systems-pdf-notes': typeof MarketingResourcesReadOperatingSystemsPdfNotesRoute
+  '/resources/read/operating-systems-practice-questions': typeof MarketingResourcesReadOperatingSystemsPracticeQuestionsRoute
+  '/resources/read/operating-systems-project-case-study': typeof MarketingResourcesReadOperatingSystemsProjectCaseStudyRoute
+  '/resources/read/operating-systems-project-guide': typeof MarketingResourcesReadOperatingSystemsProjectGuideRoute
+  '/resources/read/operating-systems-quick-revision-notes': typeof MarketingResourcesReadOperatingSystemsQuickRevisionNotesRoute
+  '/resources/read/operating-systems-real-world-case-study': typeof MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRoute
+  '/resources/read/operating-systems-reference-guide': typeof MarketingResourcesReadOperatingSystemsReferenceGuideRoute
+  '/resources/read/operating-systems-sample-exercises': typeof MarketingResourcesReadOperatingSystemsSampleExercisesRoute
+  '/resources/read/operating-systems-step-by-step-learning-guide': typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute
+  '/resources/read/operating-systems-tips-and-tricks': typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRoute
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
@@ -2959,6 +3152,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/_marketing/resources/read/operating-systems-advanced-concepts': typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
+  '/_marketing/resources/read/operating-systems-answer-key': typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
+  '/_marketing/resources/read/operating-systems-beginner-guide': typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
+  '/_marketing/resources/read/operating-systems-best-practices': typeof MarketingResourcesReadOperatingSystemsBestPracticesRoute
+  '/_marketing/resources/read/operating-systems-cheat-sheet': typeof MarketingResourcesReadOperatingSystemsCheatSheetRoute
+  '/_marketing/resources/read/operating-systems-common-mistakes': typeof MarketingResourcesReadOperatingSystemsCommonMistakesRoute
+  '/_marketing/resources/read/operating-systems-complete-tutorial': typeof MarketingResourcesReadOperatingSystemsCompleteTutorialRoute
+  '/_marketing/resources/read/operating-systems-frequently-asked-questions': typeof MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/operating-systems-glossary': typeof MarketingResourcesReadOperatingSystemsGlossaryRoute
+  '/_marketing/resources/read/operating-systems-interview-questions': typeof MarketingResourcesReadOperatingSystemsInterviewQuestionsRoute
+  '/_marketing/resources/read/operating-systems-learning-roadmap': typeof MarketingResourcesReadOperatingSystemsLearningRoadmapRoute
+  '/_marketing/resources/read/operating-systems-pdf-notes': typeof MarketingResourcesReadOperatingSystemsPdfNotesRoute
+  '/_marketing/resources/read/operating-systems-practice-questions': typeof MarketingResourcesReadOperatingSystemsPracticeQuestionsRoute
+  '/_marketing/resources/read/operating-systems-project-case-study': typeof MarketingResourcesReadOperatingSystemsProjectCaseStudyRoute
+  '/_marketing/resources/read/operating-systems-project-guide': typeof MarketingResourcesReadOperatingSystemsProjectGuideRoute
+  '/_marketing/resources/read/operating-systems-quick-revision-notes': typeof MarketingResourcesReadOperatingSystemsQuickRevisionNotesRoute
+  '/_marketing/resources/read/operating-systems-real-world-case-study': typeof MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRoute
+  '/_marketing/resources/read/operating-systems-reference-guide': typeof MarketingResourcesReadOperatingSystemsReferenceGuideRoute
+  '/_marketing/resources/read/operating-systems-sample-exercises': typeof MarketingResourcesReadOperatingSystemsSampleExercisesRoute
+  '/_marketing/resources/read/operating-systems-step-by-step-learning-guide': typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute
+  '/_marketing/resources/read/operating-systems-tips-and-tricks': typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRoute
   '/_marketing/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/_marketing/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/_marketing/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
@@ -3266,6 +3480,27 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/operating-systems-advanced-concepts'
+    | '/resources/read/operating-systems-answer-key'
+    | '/resources/read/operating-systems-beginner-guide'
+    | '/resources/read/operating-systems-best-practices'
+    | '/resources/read/operating-systems-cheat-sheet'
+    | '/resources/read/operating-systems-common-mistakes'
+    | '/resources/read/operating-systems-complete-tutorial'
+    | '/resources/read/operating-systems-frequently-asked-questions'
+    | '/resources/read/operating-systems-glossary'
+    | '/resources/read/operating-systems-interview-questions'
+    | '/resources/read/operating-systems-learning-roadmap'
+    | '/resources/read/operating-systems-pdf-notes'
+    | '/resources/read/operating-systems-practice-questions'
+    | '/resources/read/operating-systems-project-case-study'
+    | '/resources/read/operating-systems-project-guide'
+    | '/resources/read/operating-systems-quick-revision-notes'
+    | '/resources/read/operating-systems-real-world-case-study'
+    | '/resources/read/operating-systems-reference-guide'
+    | '/resources/read/operating-systems-sample-exercises'
+    | '/resources/read/operating-systems-step-by-step-learning-guide'
+    | '/resources/read/operating-systems-tips-and-tricks'
     | '/resources/read/pe-advanced-concepts'
     | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
@@ -3570,6 +3805,27 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/operating-systems-advanced-concepts'
+    | '/resources/read/operating-systems-answer-key'
+    | '/resources/read/operating-systems-beginner-guide'
+    | '/resources/read/operating-systems-best-practices'
+    | '/resources/read/operating-systems-cheat-sheet'
+    | '/resources/read/operating-systems-common-mistakes'
+    | '/resources/read/operating-systems-complete-tutorial'
+    | '/resources/read/operating-systems-frequently-asked-questions'
+    | '/resources/read/operating-systems-glossary'
+    | '/resources/read/operating-systems-interview-questions'
+    | '/resources/read/operating-systems-learning-roadmap'
+    | '/resources/read/operating-systems-pdf-notes'
+    | '/resources/read/operating-systems-practice-questions'
+    | '/resources/read/operating-systems-project-case-study'
+    | '/resources/read/operating-systems-project-guide'
+    | '/resources/read/operating-systems-quick-revision-notes'
+    | '/resources/read/operating-systems-real-world-case-study'
+    | '/resources/read/operating-systems-reference-guide'
+    | '/resources/read/operating-systems-sample-exercises'
+    | '/resources/read/operating-systems-step-by-step-learning-guide'
+    | '/resources/read/operating-systems-tips-and-tricks'
     | '/resources/read/pe-advanced-concepts'
     | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
@@ -3878,6 +4134,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-sample-exercises'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-tips-tricks'
+    | '/_marketing/resources/read/operating-systems-advanced-concepts'
+    | '/_marketing/resources/read/operating-systems-answer-key'
+    | '/_marketing/resources/read/operating-systems-beginner-guide'
+    | '/_marketing/resources/read/operating-systems-best-practices'
+    | '/_marketing/resources/read/operating-systems-cheat-sheet'
+    | '/_marketing/resources/read/operating-systems-common-mistakes'
+    | '/_marketing/resources/read/operating-systems-complete-tutorial'
+    | '/_marketing/resources/read/operating-systems-frequently-asked-questions'
+    | '/_marketing/resources/read/operating-systems-glossary'
+    | '/_marketing/resources/read/operating-systems-interview-questions'
+    | '/_marketing/resources/read/operating-systems-learning-roadmap'
+    | '/_marketing/resources/read/operating-systems-pdf-notes'
+    | '/_marketing/resources/read/operating-systems-practice-questions'
+    | '/_marketing/resources/read/operating-systems-project-case-study'
+    | '/_marketing/resources/read/operating-systems-project-guide'
+    | '/_marketing/resources/read/operating-systems-quick-revision-notes'
+    | '/_marketing/resources/read/operating-systems-real-world-case-study'
+    | '/_marketing/resources/read/operating-systems-reference-guide'
+    | '/_marketing/resources/read/operating-systems-sample-exercises'
+    | '/_marketing/resources/read/operating-systems-step-by-step-learning-guide'
+    | '/_marketing/resources/read/operating-systems-tips-and-tricks'
     | '/_marketing/resources/read/pe-advanced-concepts'
     | '/_marketing/resources/read/pe-answer-key'
     | '/_marketing/resources/read/pe-beginner-guide'
@@ -4811,6 +5088,153 @@ declare module '@tanstack/react-router' {
       path: '/read/pe-advanced-concepts'
       fullPath: '/resources/read/pe-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadPeAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-tips-and-tricks': {
+      id: '/_marketing/resources/read/operating-systems-tips-and-tricks'
+      path: '/read/operating-systems-tips-and-tricks'
+      fullPath: '/resources/read/operating-systems-tips-and-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/operating-systems-step-by-step-learning-guide'
+      path: '/read/operating-systems-step-by-step-learning-guide'
+      fullPath: '/resources/read/operating-systems-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-sample-exercises': {
+      id: '/_marketing/resources/read/operating-systems-sample-exercises'
+      path: '/read/operating-systems-sample-exercises'
+      fullPath: '/resources/read/operating-systems-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-reference-guide': {
+      id: '/_marketing/resources/read/operating-systems-reference-guide'
+      path: '/read/operating-systems-reference-guide'
+      fullPath: '/resources/read/operating-systems-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-real-world-case-study': {
+      id: '/_marketing/resources/read/operating-systems-real-world-case-study'
+      path: '/read/operating-systems-real-world-case-study'
+      fullPath: '/resources/read/operating-systems-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-quick-revision-notes': {
+      id: '/_marketing/resources/read/operating-systems-quick-revision-notes'
+      path: '/read/operating-systems-quick-revision-notes'
+      fullPath: '/resources/read/operating-systems-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-project-guide': {
+      id: '/_marketing/resources/read/operating-systems-project-guide'
+      path: '/read/operating-systems-project-guide'
+      fullPath: '/resources/read/operating-systems-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-project-case-study': {
+      id: '/_marketing/resources/read/operating-systems-project-case-study'
+      path: '/read/operating-systems-project-case-study'
+      fullPath: '/resources/read/operating-systems-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-practice-questions': {
+      id: '/_marketing/resources/read/operating-systems-practice-questions'
+      path: '/read/operating-systems-practice-questions'
+      fullPath: '/resources/read/operating-systems-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-pdf-notes': {
+      id: '/_marketing/resources/read/operating-systems-pdf-notes'
+      path: '/read/operating-systems-pdf-notes'
+      fullPath: '/resources/read/operating-systems-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-learning-roadmap': {
+      id: '/_marketing/resources/read/operating-systems-learning-roadmap'
+      path: '/read/operating-systems-learning-roadmap'
+      fullPath: '/resources/read/operating-systems-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-interview-questions': {
+      id: '/_marketing/resources/read/operating-systems-interview-questions'
+      path: '/read/operating-systems-interview-questions'
+      fullPath: '/resources/read/operating-systems-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-glossary': {
+      id: '/_marketing/resources/read/operating-systems-glossary'
+      path: '/read/operating-systems-glossary'
+      fullPath: '/resources/read/operating-systems-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-frequently-asked-questions': {
+      id: '/_marketing/resources/read/operating-systems-frequently-asked-questions'
+      path: '/read/operating-systems-frequently-asked-questions'
+      fullPath: '/resources/read/operating-systems-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-complete-tutorial': {
+      id: '/_marketing/resources/read/operating-systems-complete-tutorial'
+      path: '/read/operating-systems-complete-tutorial'
+      fullPath: '/resources/read/operating-systems-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-common-mistakes': {
+      id: '/_marketing/resources/read/operating-systems-common-mistakes'
+      path: '/read/operating-systems-common-mistakes'
+      fullPath: '/resources/read/operating-systems-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-cheat-sheet': {
+      id: '/_marketing/resources/read/operating-systems-cheat-sheet'
+      path: '/read/operating-systems-cheat-sheet'
+      fullPath: '/resources/read/operating-systems-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-best-practices': {
+      id: '/_marketing/resources/read/operating-systems-best-practices'
+      path: '/read/operating-systems-best-practices'
+      fullPath: '/resources/read/operating-systems-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-beginner-guide': {
+      id: '/_marketing/resources/read/operating-systems-beginner-guide'
+      path: '/read/operating-systems-beginner-guide'
+      fullPath: '/resources/read/operating-systems-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-answer-key': {
+      id: '/_marketing/resources/read/operating-systems-answer-key'
+      path: '/read/operating-systems-answer-key'
+      fullPath: '/resources/read/operating-systems-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/operating-systems-advanced-concepts': {
+      id: '/_marketing/resources/read/operating-systems-advanced-concepts'
+      path: '/read/operating-systems-advanced-concepts'
+      fullPath: '/resources/read/operating-systems-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-tips-tricks': {
@@ -6432,6 +6856,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlSampleExercisesRoute: typeof MarketingResourcesReadMlSampleExercisesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   MarketingResourcesReadMlTipsTricksRoute: typeof MarketingResourcesReadMlTipsTricksRoute
+  MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute: typeof MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute
+  MarketingResourcesReadOperatingSystemsAnswerKeyRoute: typeof MarketingResourcesReadOperatingSystemsAnswerKeyRoute
+  MarketingResourcesReadOperatingSystemsBeginnerGuideRoute: typeof MarketingResourcesReadOperatingSystemsBeginnerGuideRoute
+  MarketingResourcesReadOperatingSystemsBestPracticesRoute: typeof MarketingResourcesReadOperatingSystemsBestPracticesRoute
+  MarketingResourcesReadOperatingSystemsCheatSheetRoute: typeof MarketingResourcesReadOperatingSystemsCheatSheetRoute
+  MarketingResourcesReadOperatingSystemsCommonMistakesRoute: typeof MarketingResourcesReadOperatingSystemsCommonMistakesRoute
+  MarketingResourcesReadOperatingSystemsCompleteTutorialRoute: typeof MarketingResourcesReadOperatingSystemsCompleteTutorialRoute
+  MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadOperatingSystemsGlossaryRoute: typeof MarketingResourcesReadOperatingSystemsGlossaryRoute
+  MarketingResourcesReadOperatingSystemsInterviewQuestionsRoute: typeof MarketingResourcesReadOperatingSystemsInterviewQuestionsRoute
+  MarketingResourcesReadOperatingSystemsLearningRoadmapRoute: typeof MarketingResourcesReadOperatingSystemsLearningRoadmapRoute
+  MarketingResourcesReadOperatingSystemsPdfNotesRoute: typeof MarketingResourcesReadOperatingSystemsPdfNotesRoute
+  MarketingResourcesReadOperatingSystemsPracticeQuestionsRoute: typeof MarketingResourcesReadOperatingSystemsPracticeQuestionsRoute
+  MarketingResourcesReadOperatingSystemsProjectCaseStudyRoute: typeof MarketingResourcesReadOperatingSystemsProjectCaseStudyRoute
+  MarketingResourcesReadOperatingSystemsProjectGuideRoute: typeof MarketingResourcesReadOperatingSystemsProjectGuideRoute
+  MarketingResourcesReadOperatingSystemsQuickRevisionNotesRoute: typeof MarketingResourcesReadOperatingSystemsQuickRevisionNotesRoute
+  MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRoute: typeof MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRoute
+  MarketingResourcesReadOperatingSystemsReferenceGuideRoute: typeof MarketingResourcesReadOperatingSystemsReferenceGuideRoute
+  MarketingResourcesReadOperatingSystemsSampleExercisesRoute: typeof MarketingResourcesReadOperatingSystemsSampleExercisesRoute
+  MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute: typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute
+  MarketingResourcesReadOperatingSystemsTipsAndTricksRoute: typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRoute
   MarketingResourcesReadPeAdvancedConceptsRoute: typeof MarketingResourcesReadPeAdvancedConceptsRoute
   MarketingResourcesReadPeAnswerKeyRoute: typeof MarketingResourcesReadPeAnswerKeyRoute
   MarketingResourcesReadPeBeginnerGuideRoute: typeof MarketingResourcesReadPeBeginnerGuideRoute
@@ -6852,6 +7297,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlStepByStepLearningGuideRoute,
   MarketingResourcesReadMlTipsTricksRoute:
     MarketingResourcesReadMlTipsTricksRoute,
+  MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute:
+    MarketingResourcesReadOperatingSystemsAdvancedConceptsRoute,
+  MarketingResourcesReadOperatingSystemsAnswerKeyRoute:
+    MarketingResourcesReadOperatingSystemsAnswerKeyRoute,
+  MarketingResourcesReadOperatingSystemsBeginnerGuideRoute:
+    MarketingResourcesReadOperatingSystemsBeginnerGuideRoute,
+  MarketingResourcesReadOperatingSystemsBestPracticesRoute:
+    MarketingResourcesReadOperatingSystemsBestPracticesRoute,
+  MarketingResourcesReadOperatingSystemsCheatSheetRoute:
+    MarketingResourcesReadOperatingSystemsCheatSheetRoute,
+  MarketingResourcesReadOperatingSystemsCommonMistakesRoute:
+    MarketingResourcesReadOperatingSystemsCommonMistakesRoute,
+  MarketingResourcesReadOperatingSystemsCompleteTutorialRoute:
+    MarketingResourcesReadOperatingSystemsCompleteTutorialRoute,
+  MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadOperatingSystemsFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadOperatingSystemsGlossaryRoute:
+    MarketingResourcesReadOperatingSystemsGlossaryRoute,
+  MarketingResourcesReadOperatingSystemsInterviewQuestionsRoute:
+    MarketingResourcesReadOperatingSystemsInterviewQuestionsRoute,
+  MarketingResourcesReadOperatingSystemsLearningRoadmapRoute:
+    MarketingResourcesReadOperatingSystemsLearningRoadmapRoute,
+  MarketingResourcesReadOperatingSystemsPdfNotesRoute:
+    MarketingResourcesReadOperatingSystemsPdfNotesRoute,
+  MarketingResourcesReadOperatingSystemsPracticeQuestionsRoute:
+    MarketingResourcesReadOperatingSystemsPracticeQuestionsRoute,
+  MarketingResourcesReadOperatingSystemsProjectCaseStudyRoute:
+    MarketingResourcesReadOperatingSystemsProjectCaseStudyRoute,
+  MarketingResourcesReadOperatingSystemsProjectGuideRoute:
+    MarketingResourcesReadOperatingSystemsProjectGuideRoute,
+  MarketingResourcesReadOperatingSystemsQuickRevisionNotesRoute:
+    MarketingResourcesReadOperatingSystemsQuickRevisionNotesRoute,
+  MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRoute:
+    MarketingResourcesReadOperatingSystemsRealWorldCaseStudyRoute,
+  MarketingResourcesReadOperatingSystemsReferenceGuideRoute:
+    MarketingResourcesReadOperatingSystemsReferenceGuideRoute,
+  MarketingResourcesReadOperatingSystemsSampleExercisesRoute:
+    MarketingResourcesReadOperatingSystemsSampleExercisesRoute,
+  MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute:
+    MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute,
+  MarketingResourcesReadOperatingSystemsTipsAndTricksRoute:
+    MarketingResourcesReadOperatingSystemsTipsAndTricksRoute,
   MarketingResourcesReadPeAdvancedConceptsRoute:
     MarketingResourcesReadPeAdvancedConceptsRoute,
   MarketingResourcesReadPeAnswerKeyRoute:
