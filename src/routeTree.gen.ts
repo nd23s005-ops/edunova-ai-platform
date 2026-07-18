@@ -587,6 +587,27 @@ import { Route as MarketingResourcesReadCyberSecurityBestPracticesRouteImport } 
 import { Route as MarketingResourcesReadCyberSecurityBeginnerGuideRouteImport } from './routes/_marketing.resources.read.cyber-security-beginner-guide'
 import { Route as MarketingResourcesReadCyberSecurityAnswerKeyRouteImport } from './routes/_marketing.resources.read.cyber-security-answer-key'
 import { Route as MarketingResourcesReadCyberSecurityAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.cyber-security-advanced-concepts'
+import { Route as MarketingResourcesReadCppTipsTricksRouteImport } from './routes/_marketing.resources.read.cpp-tips-tricks'
+import { Route as MarketingResourcesReadCppStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.cpp-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadCppSampleExercisesRouteImport } from './routes/_marketing.resources.read.cpp-sample-exercises'
+import { Route as MarketingResourcesReadCppReferenceGuideRouteImport } from './routes/_marketing.resources.read.cpp-reference-guide'
+import { Route as MarketingResourcesReadCppRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.cpp-real-world-case-study'
+import { Route as MarketingResourcesReadCppQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.cpp-quick-revision-notes'
+import { Route as MarketingResourcesReadCppProjectGuideRouteImport } from './routes/_marketing.resources.read.cpp-project-guide'
+import { Route as MarketingResourcesReadCppProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.cpp-project-case-study'
+import { Route as MarketingResourcesReadCppPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.cpp-practice-questions'
+import { Route as MarketingResourcesReadCppPdfNotesRouteImport } from './routes/_marketing.resources.read.cpp-pdf-notes'
+import { Route as MarketingResourcesReadCppLearningRoadmapRouteImport } from './routes/_marketing.resources.read.cpp-learning-roadmap'
+import { Route as MarketingResourcesReadCppInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.cpp-interview-questions'
+import { Route as MarketingResourcesReadCppGlossaryRouteImport } from './routes/_marketing.resources.read.cpp-glossary'
+import { Route as MarketingResourcesReadCppFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.cpp-frequently-asked-questions'
+import { Route as MarketingResourcesReadCppCompleteTutorialRouteImport } from './routes/_marketing.resources.read.cpp-complete-tutorial'
+import { Route as MarketingResourcesReadCppCommonMistakesRouteImport } from './routes/_marketing.resources.read.cpp-common-mistakes'
+import { Route as MarketingResourcesReadCppCheatSheetRouteImport } from './routes/_marketing.resources.read.cpp-cheat-sheet'
+import { Route as MarketingResourcesReadCppBestPracticesRouteImport } from './routes/_marketing.resources.read.cpp-best-practices'
+import { Route as MarketingResourcesReadCppBeginnerGuideRouteImport } from './routes/_marketing.resources.read.cpp-beginner-guide'
+import { Route as MarketingResourcesReadCppAnswerKeyRouteImport } from './routes/_marketing.resources.read.cpp-answer-key'
+import { Route as MarketingResourcesReadCppAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.cpp-advanced-concepts'
 import { Route as MarketingResourcesReadComputerNetworksTipsAndTricksRouteImport } from './routes/_marketing.resources.read.computer-networks-tips-and-tricks'
 import { Route as MarketingResourcesReadComputerNetworksStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.computer-networks-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadComputerNetworksSampleExercisesRouteImport } from './routes/_marketing.resources.read.computer-networks-sample-exercises'
@@ -4180,6 +4201,132 @@ const MarketingResourcesReadCyberSecurityAdvancedConceptsRoute =
     path: '/read/cyber-security-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadCppTipsTricksRoute =
+  MarketingResourcesReadCppTipsTricksRouteImport.update({
+    id: '/read/cpp-tips-tricks',
+    path: '/read/cpp-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppStepByStepLearningGuideRoute =
+  MarketingResourcesReadCppStepByStepLearningGuideRouteImport.update({
+    id: '/read/cpp-step-by-step-learning-guide',
+    path: '/read/cpp-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppSampleExercisesRoute =
+  MarketingResourcesReadCppSampleExercisesRouteImport.update({
+    id: '/read/cpp-sample-exercises',
+    path: '/read/cpp-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppReferenceGuideRoute =
+  MarketingResourcesReadCppReferenceGuideRouteImport.update({
+    id: '/read/cpp-reference-guide',
+    path: '/read/cpp-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppRealWorldCaseStudyRoute =
+  MarketingResourcesReadCppRealWorldCaseStudyRouteImport.update({
+    id: '/read/cpp-real-world-case-study',
+    path: '/read/cpp-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppQuickRevisionNotesRoute =
+  MarketingResourcesReadCppQuickRevisionNotesRouteImport.update({
+    id: '/read/cpp-quick-revision-notes',
+    path: '/read/cpp-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppProjectGuideRoute =
+  MarketingResourcesReadCppProjectGuideRouteImport.update({
+    id: '/read/cpp-project-guide',
+    path: '/read/cpp-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppProjectCaseStudyRoute =
+  MarketingResourcesReadCppProjectCaseStudyRouteImport.update({
+    id: '/read/cpp-project-case-study',
+    path: '/read/cpp-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppPracticeQuestionsRoute =
+  MarketingResourcesReadCppPracticeQuestionsRouteImport.update({
+    id: '/read/cpp-practice-questions',
+    path: '/read/cpp-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppPdfNotesRoute =
+  MarketingResourcesReadCppPdfNotesRouteImport.update({
+    id: '/read/cpp-pdf-notes',
+    path: '/read/cpp-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppLearningRoadmapRoute =
+  MarketingResourcesReadCppLearningRoadmapRouteImport.update({
+    id: '/read/cpp-learning-roadmap',
+    path: '/read/cpp-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppInterviewQuestionsRoute =
+  MarketingResourcesReadCppInterviewQuestionsRouteImport.update({
+    id: '/read/cpp-interview-questions',
+    path: '/read/cpp-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppGlossaryRoute =
+  MarketingResourcesReadCppGlossaryRouteImport.update({
+    id: '/read/cpp-glossary',
+    path: '/read/cpp-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadCppFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/cpp-frequently-asked-questions',
+    path: '/read/cpp-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppCompleteTutorialRoute =
+  MarketingResourcesReadCppCompleteTutorialRouteImport.update({
+    id: '/read/cpp-complete-tutorial',
+    path: '/read/cpp-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppCommonMistakesRoute =
+  MarketingResourcesReadCppCommonMistakesRouteImport.update({
+    id: '/read/cpp-common-mistakes',
+    path: '/read/cpp-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppCheatSheetRoute =
+  MarketingResourcesReadCppCheatSheetRouteImport.update({
+    id: '/read/cpp-cheat-sheet',
+    path: '/read/cpp-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppBestPracticesRoute =
+  MarketingResourcesReadCppBestPracticesRouteImport.update({
+    id: '/read/cpp-best-practices',
+    path: '/read/cpp-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppBeginnerGuideRoute =
+  MarketingResourcesReadCppBeginnerGuideRouteImport.update({
+    id: '/read/cpp-beginner-guide',
+    path: '/read/cpp-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppAnswerKeyRoute =
+  MarketingResourcesReadCppAnswerKeyRouteImport.update({
+    id: '/read/cpp-answer-key',
+    path: '/read/cpp-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadCppAdvancedConceptsRoute =
+  MarketingResourcesReadCppAdvancedConceptsRouteImport.update({
+    id: '/read/cpp-advanced-concepts',
+    path: '/read/cpp-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadComputerNetworksTipsAndTricksRoute =
   MarketingResourcesReadComputerNetworksTipsAndTricksRouteImport.update({
     id: '/read/computer-networks-tips-and-tricks',
@@ -5193,6 +5340,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
   '/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
   '/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
+  '/resources/read/cpp-advanced-concepts': typeof MarketingResourcesReadCppAdvancedConceptsRoute
+  '/resources/read/cpp-answer-key': typeof MarketingResourcesReadCppAnswerKeyRoute
+  '/resources/read/cpp-beginner-guide': typeof MarketingResourcesReadCppBeginnerGuideRoute
+  '/resources/read/cpp-best-practices': typeof MarketingResourcesReadCppBestPracticesRoute
+  '/resources/read/cpp-cheat-sheet': typeof MarketingResourcesReadCppCheatSheetRoute
+  '/resources/read/cpp-common-mistakes': typeof MarketingResourcesReadCppCommonMistakesRoute
+  '/resources/read/cpp-complete-tutorial': typeof MarketingResourcesReadCppCompleteTutorialRoute
+  '/resources/read/cpp-frequently-asked-questions': typeof MarketingResourcesReadCppFrequentlyAskedQuestionsRoute
+  '/resources/read/cpp-glossary': typeof MarketingResourcesReadCppGlossaryRoute
+  '/resources/read/cpp-interview-questions': typeof MarketingResourcesReadCppInterviewQuestionsRoute
+  '/resources/read/cpp-learning-roadmap': typeof MarketingResourcesReadCppLearningRoadmapRoute
+  '/resources/read/cpp-pdf-notes': typeof MarketingResourcesReadCppPdfNotesRoute
+  '/resources/read/cpp-practice-questions': typeof MarketingResourcesReadCppPracticeQuestionsRoute
+  '/resources/read/cpp-project-case-study': typeof MarketingResourcesReadCppProjectCaseStudyRoute
+  '/resources/read/cpp-project-guide': typeof MarketingResourcesReadCppProjectGuideRoute
+  '/resources/read/cpp-quick-revision-notes': typeof MarketingResourcesReadCppQuickRevisionNotesRoute
+  '/resources/read/cpp-real-world-case-study': typeof MarketingResourcesReadCppRealWorldCaseStudyRoute
+  '/resources/read/cpp-reference-guide': typeof MarketingResourcesReadCppReferenceGuideRoute
+  '/resources/read/cpp-sample-exercises': typeof MarketingResourcesReadCppSampleExercisesRoute
+  '/resources/read/cpp-step-by-step-learning-guide': typeof MarketingResourcesReadCppStepByStepLearningGuideRoute
+  '/resources/read/cpp-tips-tricks': typeof MarketingResourcesReadCppTipsTricksRoute
   '/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
   '/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
   '/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
@@ -5908,6 +6076,27 @@ export interface FileRoutesByTo {
   '/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
   '/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
   '/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
+  '/resources/read/cpp-advanced-concepts': typeof MarketingResourcesReadCppAdvancedConceptsRoute
+  '/resources/read/cpp-answer-key': typeof MarketingResourcesReadCppAnswerKeyRoute
+  '/resources/read/cpp-beginner-guide': typeof MarketingResourcesReadCppBeginnerGuideRoute
+  '/resources/read/cpp-best-practices': typeof MarketingResourcesReadCppBestPracticesRoute
+  '/resources/read/cpp-cheat-sheet': typeof MarketingResourcesReadCppCheatSheetRoute
+  '/resources/read/cpp-common-mistakes': typeof MarketingResourcesReadCppCommonMistakesRoute
+  '/resources/read/cpp-complete-tutorial': typeof MarketingResourcesReadCppCompleteTutorialRoute
+  '/resources/read/cpp-frequently-asked-questions': typeof MarketingResourcesReadCppFrequentlyAskedQuestionsRoute
+  '/resources/read/cpp-glossary': typeof MarketingResourcesReadCppGlossaryRoute
+  '/resources/read/cpp-interview-questions': typeof MarketingResourcesReadCppInterviewQuestionsRoute
+  '/resources/read/cpp-learning-roadmap': typeof MarketingResourcesReadCppLearningRoadmapRoute
+  '/resources/read/cpp-pdf-notes': typeof MarketingResourcesReadCppPdfNotesRoute
+  '/resources/read/cpp-practice-questions': typeof MarketingResourcesReadCppPracticeQuestionsRoute
+  '/resources/read/cpp-project-case-study': typeof MarketingResourcesReadCppProjectCaseStudyRoute
+  '/resources/read/cpp-project-guide': typeof MarketingResourcesReadCppProjectGuideRoute
+  '/resources/read/cpp-quick-revision-notes': typeof MarketingResourcesReadCppQuickRevisionNotesRoute
+  '/resources/read/cpp-real-world-case-study': typeof MarketingResourcesReadCppRealWorldCaseStudyRoute
+  '/resources/read/cpp-reference-guide': typeof MarketingResourcesReadCppReferenceGuideRoute
+  '/resources/read/cpp-sample-exercises': typeof MarketingResourcesReadCppSampleExercisesRoute
+  '/resources/read/cpp-step-by-step-learning-guide': typeof MarketingResourcesReadCppStepByStepLearningGuideRoute
+  '/resources/read/cpp-tips-tricks': typeof MarketingResourcesReadCppTipsTricksRoute
   '/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
   '/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
   '/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
@@ -6628,6 +6817,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
   '/_marketing/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
   '/_marketing/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
+  '/_marketing/resources/read/cpp-advanced-concepts': typeof MarketingResourcesReadCppAdvancedConceptsRoute
+  '/_marketing/resources/read/cpp-answer-key': typeof MarketingResourcesReadCppAnswerKeyRoute
+  '/_marketing/resources/read/cpp-beginner-guide': typeof MarketingResourcesReadCppBeginnerGuideRoute
+  '/_marketing/resources/read/cpp-best-practices': typeof MarketingResourcesReadCppBestPracticesRoute
+  '/_marketing/resources/read/cpp-cheat-sheet': typeof MarketingResourcesReadCppCheatSheetRoute
+  '/_marketing/resources/read/cpp-common-mistakes': typeof MarketingResourcesReadCppCommonMistakesRoute
+  '/_marketing/resources/read/cpp-complete-tutorial': typeof MarketingResourcesReadCppCompleteTutorialRoute
+  '/_marketing/resources/read/cpp-frequently-asked-questions': typeof MarketingResourcesReadCppFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/cpp-glossary': typeof MarketingResourcesReadCppGlossaryRoute
+  '/_marketing/resources/read/cpp-interview-questions': typeof MarketingResourcesReadCppInterviewQuestionsRoute
+  '/_marketing/resources/read/cpp-learning-roadmap': typeof MarketingResourcesReadCppLearningRoadmapRoute
+  '/_marketing/resources/read/cpp-pdf-notes': typeof MarketingResourcesReadCppPdfNotesRoute
+  '/_marketing/resources/read/cpp-practice-questions': typeof MarketingResourcesReadCppPracticeQuestionsRoute
+  '/_marketing/resources/read/cpp-project-case-study': typeof MarketingResourcesReadCppProjectCaseStudyRoute
+  '/_marketing/resources/read/cpp-project-guide': typeof MarketingResourcesReadCppProjectGuideRoute
+  '/_marketing/resources/read/cpp-quick-revision-notes': typeof MarketingResourcesReadCppQuickRevisionNotesRoute
+  '/_marketing/resources/read/cpp-real-world-case-study': typeof MarketingResourcesReadCppRealWorldCaseStudyRoute
+  '/_marketing/resources/read/cpp-reference-guide': typeof MarketingResourcesReadCppReferenceGuideRoute
+  '/_marketing/resources/read/cpp-sample-exercises': typeof MarketingResourcesReadCppSampleExercisesRoute
+  '/_marketing/resources/read/cpp-step-by-step-learning-guide': typeof MarketingResourcesReadCppStepByStepLearningGuideRoute
+  '/_marketing/resources/read/cpp-tips-tricks': typeof MarketingResourcesReadCppTipsTricksRoute
   '/_marketing/resources/read/cyber-security-advanced-concepts': typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
   '/_marketing/resources/read/cyber-security-answer-key': typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
   '/_marketing/resources/read/cyber-security-beginner-guide': typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
@@ -7346,6 +7556,27 @@ export interface FileRouteTypes {
     | '/resources/read/computer-networks-sample-exercises'
     | '/resources/read/computer-networks-step-by-step-learning-guide'
     | '/resources/read/computer-networks-tips-and-tricks'
+    | '/resources/read/cpp-advanced-concepts'
+    | '/resources/read/cpp-answer-key'
+    | '/resources/read/cpp-beginner-guide'
+    | '/resources/read/cpp-best-practices'
+    | '/resources/read/cpp-cheat-sheet'
+    | '/resources/read/cpp-common-mistakes'
+    | '/resources/read/cpp-complete-tutorial'
+    | '/resources/read/cpp-frequently-asked-questions'
+    | '/resources/read/cpp-glossary'
+    | '/resources/read/cpp-interview-questions'
+    | '/resources/read/cpp-learning-roadmap'
+    | '/resources/read/cpp-pdf-notes'
+    | '/resources/read/cpp-practice-questions'
+    | '/resources/read/cpp-project-case-study'
+    | '/resources/read/cpp-project-guide'
+    | '/resources/read/cpp-quick-revision-notes'
+    | '/resources/read/cpp-real-world-case-study'
+    | '/resources/read/cpp-reference-guide'
+    | '/resources/read/cpp-sample-exercises'
+    | '/resources/read/cpp-step-by-step-learning-guide'
+    | '/resources/read/cpp-tips-tricks'
     | '/resources/read/cyber-security-advanced-concepts'
     | '/resources/read/cyber-security-answer-key'
     | '/resources/read/cyber-security-beginner-guide'
@@ -8061,6 +8292,27 @@ export interface FileRouteTypes {
     | '/resources/read/computer-networks-sample-exercises'
     | '/resources/read/computer-networks-step-by-step-learning-guide'
     | '/resources/read/computer-networks-tips-and-tricks'
+    | '/resources/read/cpp-advanced-concepts'
+    | '/resources/read/cpp-answer-key'
+    | '/resources/read/cpp-beginner-guide'
+    | '/resources/read/cpp-best-practices'
+    | '/resources/read/cpp-cheat-sheet'
+    | '/resources/read/cpp-common-mistakes'
+    | '/resources/read/cpp-complete-tutorial'
+    | '/resources/read/cpp-frequently-asked-questions'
+    | '/resources/read/cpp-glossary'
+    | '/resources/read/cpp-interview-questions'
+    | '/resources/read/cpp-learning-roadmap'
+    | '/resources/read/cpp-pdf-notes'
+    | '/resources/read/cpp-practice-questions'
+    | '/resources/read/cpp-project-case-study'
+    | '/resources/read/cpp-project-guide'
+    | '/resources/read/cpp-quick-revision-notes'
+    | '/resources/read/cpp-real-world-case-study'
+    | '/resources/read/cpp-reference-guide'
+    | '/resources/read/cpp-sample-exercises'
+    | '/resources/read/cpp-step-by-step-learning-guide'
+    | '/resources/read/cpp-tips-tricks'
     | '/resources/read/cyber-security-advanced-concepts'
     | '/resources/read/cyber-security-answer-key'
     | '/resources/read/cyber-security-beginner-guide'
@@ -8780,6 +9032,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/computer-networks-sample-exercises'
     | '/_marketing/resources/read/computer-networks-step-by-step-learning-guide'
     | '/_marketing/resources/read/computer-networks-tips-and-tricks'
+    | '/_marketing/resources/read/cpp-advanced-concepts'
+    | '/_marketing/resources/read/cpp-answer-key'
+    | '/_marketing/resources/read/cpp-beginner-guide'
+    | '/_marketing/resources/read/cpp-best-practices'
+    | '/_marketing/resources/read/cpp-cheat-sheet'
+    | '/_marketing/resources/read/cpp-common-mistakes'
+    | '/_marketing/resources/read/cpp-complete-tutorial'
+    | '/_marketing/resources/read/cpp-frequently-asked-questions'
+    | '/_marketing/resources/read/cpp-glossary'
+    | '/_marketing/resources/read/cpp-interview-questions'
+    | '/_marketing/resources/read/cpp-learning-roadmap'
+    | '/_marketing/resources/read/cpp-pdf-notes'
+    | '/_marketing/resources/read/cpp-practice-questions'
+    | '/_marketing/resources/read/cpp-project-case-study'
+    | '/_marketing/resources/read/cpp-project-guide'
+    | '/_marketing/resources/read/cpp-quick-revision-notes'
+    | '/_marketing/resources/read/cpp-real-world-case-study'
+    | '/_marketing/resources/read/cpp-reference-guide'
+    | '/_marketing/resources/read/cpp-sample-exercises'
+    | '/_marketing/resources/read/cpp-step-by-step-learning-guide'
+    | '/_marketing/resources/read/cpp-tips-tricks'
     | '/_marketing/resources/read/cyber-security-advanced-concepts'
     | '/_marketing/resources/read/cyber-security-answer-key'
     | '/_marketing/resources/read/cyber-security-beginner-guide'
@@ -13387,6 +13660,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/cpp-tips-tricks': {
+      id: '/_marketing/resources/read/cpp-tips-tricks'
+      path: '/read/cpp-tips-tricks'
+      fullPath: '/resources/read/cpp-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadCppTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/cpp-step-by-step-learning-guide'
+      path: '/read/cpp-step-by-step-learning-guide'
+      fullPath: '/resources/read/cpp-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCppStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-sample-exercises': {
+      id: '/_marketing/resources/read/cpp-sample-exercises'
+      path: '/read/cpp-sample-exercises'
+      fullPath: '/resources/read/cpp-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadCppSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-reference-guide': {
+      id: '/_marketing/resources/read/cpp-reference-guide'
+      path: '/read/cpp-reference-guide'
+      fullPath: '/resources/read/cpp-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCppReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-real-world-case-study': {
+      id: '/_marketing/resources/read/cpp-real-world-case-study'
+      path: '/read/cpp-real-world-case-study'
+      fullPath: '/resources/read/cpp-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadCppRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-quick-revision-notes': {
+      id: '/_marketing/resources/read/cpp-quick-revision-notes'
+      path: '/read/cpp-quick-revision-notes'
+      fullPath: '/resources/read/cpp-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadCppQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-project-guide': {
+      id: '/_marketing/resources/read/cpp-project-guide'
+      path: '/read/cpp-project-guide'
+      fullPath: '/resources/read/cpp-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCppProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-project-case-study': {
+      id: '/_marketing/resources/read/cpp-project-case-study'
+      path: '/read/cpp-project-case-study'
+      fullPath: '/resources/read/cpp-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadCppProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-practice-questions': {
+      id: '/_marketing/resources/read/cpp-practice-questions'
+      path: '/read/cpp-practice-questions'
+      fullPath: '/resources/read/cpp-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCppPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-pdf-notes': {
+      id: '/_marketing/resources/read/cpp-pdf-notes'
+      path: '/read/cpp-pdf-notes'
+      fullPath: '/resources/read/cpp-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadCppPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-learning-roadmap': {
+      id: '/_marketing/resources/read/cpp-learning-roadmap'
+      path: '/read/cpp-learning-roadmap'
+      fullPath: '/resources/read/cpp-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadCppLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-interview-questions': {
+      id: '/_marketing/resources/read/cpp-interview-questions'
+      path: '/read/cpp-interview-questions'
+      fullPath: '/resources/read/cpp-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCppInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-glossary': {
+      id: '/_marketing/resources/read/cpp-glossary'
+      path: '/read/cpp-glossary'
+      fullPath: '/resources/read/cpp-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadCppGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-frequently-asked-questions': {
+      id: '/_marketing/resources/read/cpp-frequently-asked-questions'
+      path: '/read/cpp-frequently-asked-questions'
+      fullPath: '/resources/read/cpp-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadCppFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-complete-tutorial': {
+      id: '/_marketing/resources/read/cpp-complete-tutorial'
+      path: '/read/cpp-complete-tutorial'
+      fullPath: '/resources/read/cpp-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadCppCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-common-mistakes': {
+      id: '/_marketing/resources/read/cpp-common-mistakes'
+      path: '/read/cpp-common-mistakes'
+      fullPath: '/resources/read/cpp-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadCppCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-cheat-sheet': {
+      id: '/_marketing/resources/read/cpp-cheat-sheet'
+      path: '/read/cpp-cheat-sheet'
+      fullPath: '/resources/read/cpp-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadCppCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-best-practices': {
+      id: '/_marketing/resources/read/cpp-best-practices'
+      path: '/read/cpp-best-practices'
+      fullPath: '/resources/read/cpp-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadCppBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-beginner-guide': {
+      id: '/_marketing/resources/read/cpp-beginner-guide'
+      path: '/read/cpp-beginner-guide'
+      fullPath: '/resources/read/cpp-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadCppBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-answer-key': {
+      id: '/_marketing/resources/read/cpp-answer-key'
+      path: '/read/cpp-answer-key'
+      fullPath: '/resources/read/cpp-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadCppAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/cpp-advanced-concepts': {
+      id: '/_marketing/resources/read/cpp-advanced-concepts'
+      path: '/read/cpp-advanced-concepts'
+      fullPath: '/resources/read/cpp-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadCppAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/computer-networks-tips-and-tricks': {
       id: '/_marketing/resources/read/computer-networks-tips-and-tricks'
       path: '/read/computer-networks-tips-and-tricks'
@@ -14622,6 +15042,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadComputerNetworksSampleExercisesRoute: typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
   MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute: typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
   MarketingResourcesReadComputerNetworksTipsAndTricksRoute: typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
+  MarketingResourcesReadCppAdvancedConceptsRoute: typeof MarketingResourcesReadCppAdvancedConceptsRoute
+  MarketingResourcesReadCppAnswerKeyRoute: typeof MarketingResourcesReadCppAnswerKeyRoute
+  MarketingResourcesReadCppBeginnerGuideRoute: typeof MarketingResourcesReadCppBeginnerGuideRoute
+  MarketingResourcesReadCppBestPracticesRoute: typeof MarketingResourcesReadCppBestPracticesRoute
+  MarketingResourcesReadCppCheatSheetRoute: typeof MarketingResourcesReadCppCheatSheetRoute
+  MarketingResourcesReadCppCommonMistakesRoute: typeof MarketingResourcesReadCppCommonMistakesRoute
+  MarketingResourcesReadCppCompleteTutorialRoute: typeof MarketingResourcesReadCppCompleteTutorialRoute
+  MarketingResourcesReadCppFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadCppFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadCppGlossaryRoute: typeof MarketingResourcesReadCppGlossaryRoute
+  MarketingResourcesReadCppInterviewQuestionsRoute: typeof MarketingResourcesReadCppInterviewQuestionsRoute
+  MarketingResourcesReadCppLearningRoadmapRoute: typeof MarketingResourcesReadCppLearningRoadmapRoute
+  MarketingResourcesReadCppPdfNotesRoute: typeof MarketingResourcesReadCppPdfNotesRoute
+  MarketingResourcesReadCppPracticeQuestionsRoute: typeof MarketingResourcesReadCppPracticeQuestionsRoute
+  MarketingResourcesReadCppProjectCaseStudyRoute: typeof MarketingResourcesReadCppProjectCaseStudyRoute
+  MarketingResourcesReadCppProjectGuideRoute: typeof MarketingResourcesReadCppProjectGuideRoute
+  MarketingResourcesReadCppQuickRevisionNotesRoute: typeof MarketingResourcesReadCppQuickRevisionNotesRoute
+  MarketingResourcesReadCppRealWorldCaseStudyRoute: typeof MarketingResourcesReadCppRealWorldCaseStudyRoute
+  MarketingResourcesReadCppReferenceGuideRoute: typeof MarketingResourcesReadCppReferenceGuideRoute
+  MarketingResourcesReadCppSampleExercisesRoute: typeof MarketingResourcesReadCppSampleExercisesRoute
+  MarketingResourcesReadCppStepByStepLearningGuideRoute: typeof MarketingResourcesReadCppStepByStepLearningGuideRoute
+  MarketingResourcesReadCppTipsTricksRoute: typeof MarketingResourcesReadCppTipsTricksRoute
   MarketingResourcesReadCyberSecurityAdvancedConceptsRoute: typeof MarketingResourcesReadCyberSecurityAdvancedConceptsRoute
   MarketingResourcesReadCyberSecurityAnswerKeyRoute: typeof MarketingResourcesReadCyberSecurityAnswerKeyRoute
   MarketingResourcesReadCyberSecurityBeginnerGuideRoute: typeof MarketingResourcesReadCyberSecurityBeginnerGuideRoute
@@ -15411,6 +15852,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute,
   MarketingResourcesReadComputerNetworksTipsAndTricksRoute:
     MarketingResourcesReadComputerNetworksTipsAndTricksRoute,
+  MarketingResourcesReadCppAdvancedConceptsRoute:
+    MarketingResourcesReadCppAdvancedConceptsRoute,
+  MarketingResourcesReadCppAnswerKeyRoute:
+    MarketingResourcesReadCppAnswerKeyRoute,
+  MarketingResourcesReadCppBeginnerGuideRoute:
+    MarketingResourcesReadCppBeginnerGuideRoute,
+  MarketingResourcesReadCppBestPracticesRoute:
+    MarketingResourcesReadCppBestPracticesRoute,
+  MarketingResourcesReadCppCheatSheetRoute:
+    MarketingResourcesReadCppCheatSheetRoute,
+  MarketingResourcesReadCppCommonMistakesRoute:
+    MarketingResourcesReadCppCommonMistakesRoute,
+  MarketingResourcesReadCppCompleteTutorialRoute:
+    MarketingResourcesReadCppCompleteTutorialRoute,
+  MarketingResourcesReadCppFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadCppFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadCppGlossaryRoute:
+    MarketingResourcesReadCppGlossaryRoute,
+  MarketingResourcesReadCppInterviewQuestionsRoute:
+    MarketingResourcesReadCppInterviewQuestionsRoute,
+  MarketingResourcesReadCppLearningRoadmapRoute:
+    MarketingResourcesReadCppLearningRoadmapRoute,
+  MarketingResourcesReadCppPdfNotesRoute:
+    MarketingResourcesReadCppPdfNotesRoute,
+  MarketingResourcesReadCppPracticeQuestionsRoute:
+    MarketingResourcesReadCppPracticeQuestionsRoute,
+  MarketingResourcesReadCppProjectCaseStudyRoute:
+    MarketingResourcesReadCppProjectCaseStudyRoute,
+  MarketingResourcesReadCppProjectGuideRoute:
+    MarketingResourcesReadCppProjectGuideRoute,
+  MarketingResourcesReadCppQuickRevisionNotesRoute:
+    MarketingResourcesReadCppQuickRevisionNotesRoute,
+  MarketingResourcesReadCppRealWorldCaseStudyRoute:
+    MarketingResourcesReadCppRealWorldCaseStudyRoute,
+  MarketingResourcesReadCppReferenceGuideRoute:
+    MarketingResourcesReadCppReferenceGuideRoute,
+  MarketingResourcesReadCppSampleExercisesRoute:
+    MarketingResourcesReadCppSampleExercisesRoute,
+  MarketingResourcesReadCppStepByStepLearningGuideRoute:
+    MarketingResourcesReadCppStepByStepLearningGuideRoute,
+  MarketingResourcesReadCppTipsTricksRoute:
+    MarketingResourcesReadCppTipsTricksRoute,
   MarketingResourcesReadCyberSecurityAdvancedConceptsRoute:
     MarketingResourcesReadCyberSecurityAdvancedConceptsRoute,
   MarketingResourcesReadCyberSecurityAnswerKeyRoute:
