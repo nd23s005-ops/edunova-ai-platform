@@ -37,6 +37,13 @@ const TOC: TocItem[] = [
   { id: "disclaimer", label: "Disclaimer" },
 ];
 
+
+const RELATED = [
+  { title: "Prompt Engineering — Glossary", tag: "AI & Data", time: "14 min" },
+  { title: "Prompt Engineering — Reference Guide", tag: "AI & Data", time: "43 min" },
+  { title: "Generative AI — Complete Tutorial", tag: "AI & Data", time: "45 min" },
+];
+
 export const Route = createFileRoute("/_marketing/resources/read/pe-advanced-concepts")({
   head: () => ({
     meta: [
