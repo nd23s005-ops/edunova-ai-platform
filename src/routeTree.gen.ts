@@ -218,6 +218,27 @@ import { Route as MarketingResourcesReadDbmsBestPracticesRouteImport } from './r
 import { Route as MarketingResourcesReadDbmsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dbms-beginner-guide'
 import { Route as MarketingResourcesReadDbmsAnswerKeyRouteImport } from './routes/_marketing.resources.read.dbms-answer-key'
 import { Route as MarketingResourcesReadDbmsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.dbms-advanced-concepts'
+import { Route as MarketingResourcesReadComputerNetworksTipsAndTricksRouteImport } from './routes/_marketing.resources.read.computer-networks-tips-and-tricks'
+import { Route as MarketingResourcesReadComputerNetworksStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.computer-networks-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadComputerNetworksSampleExercisesRouteImport } from './routes/_marketing.resources.read.computer-networks-sample-exercises'
+import { Route as MarketingResourcesReadComputerNetworksReferenceGuideRouteImport } from './routes/_marketing.resources.read.computer-networks-reference-guide'
+import { Route as MarketingResourcesReadComputerNetworksRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.computer-networks-real-world-case-study'
+import { Route as MarketingResourcesReadComputerNetworksQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.computer-networks-quick-revision-notes'
+import { Route as MarketingResourcesReadComputerNetworksProjectGuideRouteImport } from './routes/_marketing.resources.read.computer-networks-project-guide'
+import { Route as MarketingResourcesReadComputerNetworksProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.computer-networks-project-case-study'
+import { Route as MarketingResourcesReadComputerNetworksPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.computer-networks-practice-questions'
+import { Route as MarketingResourcesReadComputerNetworksPdfNotesRouteImport } from './routes/_marketing.resources.read.computer-networks-pdf-notes'
+import { Route as MarketingResourcesReadComputerNetworksLearningRoadmapRouteImport } from './routes/_marketing.resources.read.computer-networks-learning-roadmap'
+import { Route as MarketingResourcesReadComputerNetworksInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.computer-networks-interview-questions'
+import { Route as MarketingResourcesReadComputerNetworksGlossaryRouteImport } from './routes/_marketing.resources.read.computer-networks-glossary'
+import { Route as MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.computer-networks-frequently-asked-questions'
+import { Route as MarketingResourcesReadComputerNetworksCompleteTutorialRouteImport } from './routes/_marketing.resources.read.computer-networks-complete-tutorial'
+import { Route as MarketingResourcesReadComputerNetworksCommonMistakesRouteImport } from './routes/_marketing.resources.read.computer-networks-common-mistakes'
+import { Route as MarketingResourcesReadComputerNetworksCheatSheetRouteImport } from './routes/_marketing.resources.read.computer-networks-cheat-sheet'
+import { Route as MarketingResourcesReadComputerNetworksBestPracticesRouteImport } from './routes/_marketing.resources.read.computer-networks-best-practices'
+import { Route as MarketingResourcesReadComputerNetworksBeginnerGuideRouteImport } from './routes/_marketing.resources.read.computer-networks-beginner-guide'
+import { Route as MarketingResourcesReadComputerNetworksAnswerKeyRouteImport } from './routes/_marketing.resources.read.computer-networks-answer-key'
+import { Route as MarketingResourcesReadComputerNetworksAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.computer-networks-advanced-concepts'
 import { Route as MarketingResourcesReadAiTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-tips-tricks'
 import { Route as MarketingResourcesReadAiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadAiSampleExercisesRouteImport } from './routes/_marketing.resources.read.ai-sample-exercises'
@@ -1474,6 +1495,136 @@ const MarketingResourcesReadDbmsAdvancedConceptsRoute =
     path: '/read/dbms-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadComputerNetworksTipsAndTricksRoute =
+  MarketingResourcesReadComputerNetworksTipsAndTricksRouteImport.update({
+    id: '/read/computer-networks-tips-and-tricks',
+    path: '/read/computer-networks-tips-and-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute =
+  MarketingResourcesReadComputerNetworksStepByStepLearningGuideRouteImport.update(
+    {
+      id: '/read/computer-networks-step-by-step-learning-guide',
+      path: '/read/computer-networks-step-by-step-learning-guide',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadComputerNetworksSampleExercisesRoute =
+  MarketingResourcesReadComputerNetworksSampleExercisesRouteImport.update({
+    id: '/read/computer-networks-sample-exercises',
+    path: '/read/computer-networks-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksReferenceGuideRoute =
+  MarketingResourcesReadComputerNetworksReferenceGuideRouteImport.update({
+    id: '/read/computer-networks-reference-guide',
+    path: '/read/computer-networks-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksRealWorldCaseStudyRoute =
+  MarketingResourcesReadComputerNetworksRealWorldCaseStudyRouteImport.update({
+    id: '/read/computer-networks-real-world-case-study',
+    path: '/read/computer-networks-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksQuickRevisionNotesRoute =
+  MarketingResourcesReadComputerNetworksQuickRevisionNotesRouteImport.update({
+    id: '/read/computer-networks-quick-revision-notes',
+    path: '/read/computer-networks-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksProjectGuideRoute =
+  MarketingResourcesReadComputerNetworksProjectGuideRouteImport.update({
+    id: '/read/computer-networks-project-guide',
+    path: '/read/computer-networks-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksProjectCaseStudyRoute =
+  MarketingResourcesReadComputerNetworksProjectCaseStudyRouteImport.update({
+    id: '/read/computer-networks-project-case-study',
+    path: '/read/computer-networks-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksPracticeQuestionsRoute =
+  MarketingResourcesReadComputerNetworksPracticeQuestionsRouteImport.update({
+    id: '/read/computer-networks-practice-questions',
+    path: '/read/computer-networks-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksPdfNotesRoute =
+  MarketingResourcesReadComputerNetworksPdfNotesRouteImport.update({
+    id: '/read/computer-networks-pdf-notes',
+    path: '/read/computer-networks-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksLearningRoadmapRoute =
+  MarketingResourcesReadComputerNetworksLearningRoadmapRouteImport.update({
+    id: '/read/computer-networks-learning-roadmap',
+    path: '/read/computer-networks-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksInterviewQuestionsRoute =
+  MarketingResourcesReadComputerNetworksInterviewQuestionsRouteImport.update({
+    id: '/read/computer-networks-interview-questions',
+    path: '/read/computer-networks-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksGlossaryRoute =
+  MarketingResourcesReadComputerNetworksGlossaryRouteImport.update({
+    id: '/read/computer-networks-glossary',
+    path: '/read/computer-networks-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRouteImport.update(
+    {
+      id: '/read/computer-networks-frequently-asked-questions',
+      path: '/read/computer-networks-frequently-asked-questions',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadComputerNetworksCompleteTutorialRoute =
+  MarketingResourcesReadComputerNetworksCompleteTutorialRouteImport.update({
+    id: '/read/computer-networks-complete-tutorial',
+    path: '/read/computer-networks-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksCommonMistakesRoute =
+  MarketingResourcesReadComputerNetworksCommonMistakesRouteImport.update({
+    id: '/read/computer-networks-common-mistakes',
+    path: '/read/computer-networks-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksCheatSheetRoute =
+  MarketingResourcesReadComputerNetworksCheatSheetRouteImport.update({
+    id: '/read/computer-networks-cheat-sheet',
+    path: '/read/computer-networks-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksBestPracticesRoute =
+  MarketingResourcesReadComputerNetworksBestPracticesRouteImport.update({
+    id: '/read/computer-networks-best-practices',
+    path: '/read/computer-networks-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksBeginnerGuideRoute =
+  MarketingResourcesReadComputerNetworksBeginnerGuideRouteImport.update({
+    id: '/read/computer-networks-beginner-guide',
+    path: '/read/computer-networks-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksAnswerKeyRoute =
+  MarketingResourcesReadComputerNetworksAnswerKeyRouteImport.update({
+    id: '/read/computer-networks-answer-key',
+    path: '/read/computer-networks-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadComputerNetworksAdvancedConceptsRoute =
+  MarketingResourcesReadComputerNetworksAdvancedConceptsRouteImport.update({
+    id: '/read/computer-networks-advanced-concepts',
+    path: '/read/computer-networks-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiTipsTricksRoute =
   MarketingResourcesReadAiTipsTricksRouteImport.update({
     id: '/read/ai-tips-tricks',
@@ -1748,6 +1899,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
+  '/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
+  '/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
+  '/resources/read/computer-networks-best-practices': typeof MarketingResourcesReadComputerNetworksBestPracticesRoute
+  '/resources/read/computer-networks-cheat-sheet': typeof MarketingResourcesReadComputerNetworksCheatSheetRoute
+  '/resources/read/computer-networks-common-mistakes': typeof MarketingResourcesReadComputerNetworksCommonMistakesRoute
+  '/resources/read/computer-networks-complete-tutorial': typeof MarketingResourcesReadComputerNetworksCompleteTutorialRoute
+  '/resources/read/computer-networks-frequently-asked-questions': typeof MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRoute
+  '/resources/read/computer-networks-glossary': typeof MarketingResourcesReadComputerNetworksGlossaryRoute
+  '/resources/read/computer-networks-interview-questions': typeof MarketingResourcesReadComputerNetworksInterviewQuestionsRoute
+  '/resources/read/computer-networks-learning-roadmap': typeof MarketingResourcesReadComputerNetworksLearningRoadmapRoute
+  '/resources/read/computer-networks-pdf-notes': typeof MarketingResourcesReadComputerNetworksPdfNotesRoute
+  '/resources/read/computer-networks-practice-questions': typeof MarketingResourcesReadComputerNetworksPracticeQuestionsRoute
+  '/resources/read/computer-networks-project-case-study': typeof MarketingResourcesReadComputerNetworksProjectCaseStudyRoute
+  '/resources/read/computer-networks-project-guide': typeof MarketingResourcesReadComputerNetworksProjectGuideRoute
+  '/resources/read/computer-networks-quick-revision-notes': typeof MarketingResourcesReadComputerNetworksQuickRevisionNotesRoute
+  '/resources/read/computer-networks-real-world-case-study': typeof MarketingResourcesReadComputerNetworksRealWorldCaseStudyRoute
+  '/resources/read/computer-networks-reference-guide': typeof MarketingResourcesReadComputerNetworksReferenceGuideRoute
+  '/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
+  '/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
+  '/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
   '/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -1989,6 +2161,27 @@ export interface FileRoutesByTo {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
+  '/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
+  '/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
+  '/resources/read/computer-networks-best-practices': typeof MarketingResourcesReadComputerNetworksBestPracticesRoute
+  '/resources/read/computer-networks-cheat-sheet': typeof MarketingResourcesReadComputerNetworksCheatSheetRoute
+  '/resources/read/computer-networks-common-mistakes': typeof MarketingResourcesReadComputerNetworksCommonMistakesRoute
+  '/resources/read/computer-networks-complete-tutorial': typeof MarketingResourcesReadComputerNetworksCompleteTutorialRoute
+  '/resources/read/computer-networks-frequently-asked-questions': typeof MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRoute
+  '/resources/read/computer-networks-glossary': typeof MarketingResourcesReadComputerNetworksGlossaryRoute
+  '/resources/read/computer-networks-interview-questions': typeof MarketingResourcesReadComputerNetworksInterviewQuestionsRoute
+  '/resources/read/computer-networks-learning-roadmap': typeof MarketingResourcesReadComputerNetworksLearningRoadmapRoute
+  '/resources/read/computer-networks-pdf-notes': typeof MarketingResourcesReadComputerNetworksPdfNotesRoute
+  '/resources/read/computer-networks-practice-questions': typeof MarketingResourcesReadComputerNetworksPracticeQuestionsRoute
+  '/resources/read/computer-networks-project-case-study': typeof MarketingResourcesReadComputerNetworksProjectCaseStudyRoute
+  '/resources/read/computer-networks-project-guide': typeof MarketingResourcesReadComputerNetworksProjectGuideRoute
+  '/resources/read/computer-networks-quick-revision-notes': typeof MarketingResourcesReadComputerNetworksQuickRevisionNotesRoute
+  '/resources/read/computer-networks-real-world-case-study': typeof MarketingResourcesReadComputerNetworksRealWorldCaseStudyRoute
+  '/resources/read/computer-networks-reference-guide': typeof MarketingResourcesReadComputerNetworksReferenceGuideRoute
+  '/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
+  '/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
+  '/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
   '/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -2235,6 +2428,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/_marketing/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/_marketing/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/_marketing/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
+  '/_marketing/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
+  '/_marketing/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
+  '/_marketing/resources/read/computer-networks-best-practices': typeof MarketingResourcesReadComputerNetworksBestPracticesRoute
+  '/_marketing/resources/read/computer-networks-cheat-sheet': typeof MarketingResourcesReadComputerNetworksCheatSheetRoute
+  '/_marketing/resources/read/computer-networks-common-mistakes': typeof MarketingResourcesReadComputerNetworksCommonMistakesRoute
+  '/_marketing/resources/read/computer-networks-complete-tutorial': typeof MarketingResourcesReadComputerNetworksCompleteTutorialRoute
+  '/_marketing/resources/read/computer-networks-frequently-asked-questions': typeof MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/computer-networks-glossary': typeof MarketingResourcesReadComputerNetworksGlossaryRoute
+  '/_marketing/resources/read/computer-networks-interview-questions': typeof MarketingResourcesReadComputerNetworksInterviewQuestionsRoute
+  '/_marketing/resources/read/computer-networks-learning-roadmap': typeof MarketingResourcesReadComputerNetworksLearningRoadmapRoute
+  '/_marketing/resources/read/computer-networks-pdf-notes': typeof MarketingResourcesReadComputerNetworksPdfNotesRoute
+  '/_marketing/resources/read/computer-networks-practice-questions': typeof MarketingResourcesReadComputerNetworksPracticeQuestionsRoute
+  '/_marketing/resources/read/computer-networks-project-case-study': typeof MarketingResourcesReadComputerNetworksProjectCaseStudyRoute
+  '/_marketing/resources/read/computer-networks-project-guide': typeof MarketingResourcesReadComputerNetworksProjectGuideRoute
+  '/_marketing/resources/read/computer-networks-quick-revision-notes': typeof MarketingResourcesReadComputerNetworksQuickRevisionNotesRoute
+  '/_marketing/resources/read/computer-networks-real-world-case-study': typeof MarketingResourcesReadComputerNetworksRealWorldCaseStudyRoute
+  '/_marketing/resources/read/computer-networks-reference-guide': typeof MarketingResourcesReadComputerNetworksReferenceGuideRoute
+  '/_marketing/resources/read/computer-networks-sample-exercises': typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
+  '/_marketing/resources/read/computer-networks-step-by-step-learning-guide': typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
+  '/_marketing/resources/read/computer-networks-tips-and-tricks': typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
   '/_marketing/resources/read/dbms-advanced-concepts': typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   '/_marketing/resources/read/dbms-answer-key': typeof MarketingResourcesReadDbmsAnswerKeyRoute
   '/_marketing/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -2479,6 +2693,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/computer-networks-advanced-concepts'
+    | '/resources/read/computer-networks-answer-key'
+    | '/resources/read/computer-networks-beginner-guide'
+    | '/resources/read/computer-networks-best-practices'
+    | '/resources/read/computer-networks-cheat-sheet'
+    | '/resources/read/computer-networks-common-mistakes'
+    | '/resources/read/computer-networks-complete-tutorial'
+    | '/resources/read/computer-networks-frequently-asked-questions'
+    | '/resources/read/computer-networks-glossary'
+    | '/resources/read/computer-networks-interview-questions'
+    | '/resources/read/computer-networks-learning-roadmap'
+    | '/resources/read/computer-networks-pdf-notes'
+    | '/resources/read/computer-networks-practice-questions'
+    | '/resources/read/computer-networks-project-case-study'
+    | '/resources/read/computer-networks-project-guide'
+    | '/resources/read/computer-networks-quick-revision-notes'
+    | '/resources/read/computer-networks-real-world-case-study'
+    | '/resources/read/computer-networks-reference-guide'
+    | '/resources/read/computer-networks-sample-exercises'
+    | '/resources/read/computer-networks-step-by-step-learning-guide'
+    | '/resources/read/computer-networks-tips-and-tricks'
     | '/resources/read/dbms-advanced-concepts'
     | '/resources/read/dbms-answer-key'
     | '/resources/read/dbms-beginner-guide'
@@ -2720,6 +2955,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/computer-networks-advanced-concepts'
+    | '/resources/read/computer-networks-answer-key'
+    | '/resources/read/computer-networks-beginner-guide'
+    | '/resources/read/computer-networks-best-practices'
+    | '/resources/read/computer-networks-cheat-sheet'
+    | '/resources/read/computer-networks-common-mistakes'
+    | '/resources/read/computer-networks-complete-tutorial'
+    | '/resources/read/computer-networks-frequently-asked-questions'
+    | '/resources/read/computer-networks-glossary'
+    | '/resources/read/computer-networks-interview-questions'
+    | '/resources/read/computer-networks-learning-roadmap'
+    | '/resources/read/computer-networks-pdf-notes'
+    | '/resources/read/computer-networks-practice-questions'
+    | '/resources/read/computer-networks-project-case-study'
+    | '/resources/read/computer-networks-project-guide'
+    | '/resources/read/computer-networks-quick-revision-notes'
+    | '/resources/read/computer-networks-real-world-case-study'
+    | '/resources/read/computer-networks-reference-guide'
+    | '/resources/read/computer-networks-sample-exercises'
+    | '/resources/read/computer-networks-step-by-step-learning-guide'
+    | '/resources/read/computer-networks-tips-and-tricks'
     | '/resources/read/dbms-advanced-concepts'
     | '/resources/read/dbms-answer-key'
     | '/resources/read/dbms-beginner-guide'
@@ -2965,6 +3221,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-sample-exercises'
     | '/_marketing/resources/read/ai-step-by-step-learning-guide'
     | '/_marketing/resources/read/ai-tips-tricks'
+    | '/_marketing/resources/read/computer-networks-advanced-concepts'
+    | '/_marketing/resources/read/computer-networks-answer-key'
+    | '/_marketing/resources/read/computer-networks-beginner-guide'
+    | '/_marketing/resources/read/computer-networks-best-practices'
+    | '/_marketing/resources/read/computer-networks-cheat-sheet'
+    | '/_marketing/resources/read/computer-networks-common-mistakes'
+    | '/_marketing/resources/read/computer-networks-complete-tutorial'
+    | '/_marketing/resources/read/computer-networks-frequently-asked-questions'
+    | '/_marketing/resources/read/computer-networks-glossary'
+    | '/_marketing/resources/read/computer-networks-interview-questions'
+    | '/_marketing/resources/read/computer-networks-learning-roadmap'
+    | '/_marketing/resources/read/computer-networks-pdf-notes'
+    | '/_marketing/resources/read/computer-networks-practice-questions'
+    | '/_marketing/resources/read/computer-networks-project-case-study'
+    | '/_marketing/resources/read/computer-networks-project-guide'
+    | '/_marketing/resources/read/computer-networks-quick-revision-notes'
+    | '/_marketing/resources/read/computer-networks-real-world-case-study'
+    | '/_marketing/resources/read/computer-networks-reference-guide'
+    | '/_marketing/resources/read/computer-networks-sample-exercises'
+    | '/_marketing/resources/read/computer-networks-step-by-step-learning-guide'
+    | '/_marketing/resources/read/computer-networks-tips-and-tricks'
     | '/_marketing/resources/read/dbms-advanced-concepts'
     | '/_marketing/resources/read/dbms-answer-key'
     | '/_marketing/resources/read/dbms-beginner-guide'
@@ -4620,6 +4897,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDbmsAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/computer-networks-tips-and-tricks': {
+      id: '/_marketing/resources/read/computer-networks-tips-and-tricks'
+      path: '/read/computer-networks-tips-and-tricks'
+      fullPath: '/resources/read/computer-networks-tips-and-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksTipsAndTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/computer-networks-step-by-step-learning-guide'
+      path: '/read/computer-networks-step-by-step-learning-guide'
+      fullPath: '/resources/read/computer-networks-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-sample-exercises': {
+      id: '/_marketing/resources/read/computer-networks-sample-exercises'
+      path: '/read/computer-networks-sample-exercises'
+      fullPath: '/resources/read/computer-networks-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-reference-guide': {
+      id: '/_marketing/resources/read/computer-networks-reference-guide'
+      path: '/read/computer-networks-reference-guide'
+      fullPath: '/resources/read/computer-networks-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-real-world-case-study': {
+      id: '/_marketing/resources/read/computer-networks-real-world-case-study'
+      path: '/read/computer-networks-real-world-case-study'
+      fullPath: '/resources/read/computer-networks-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-quick-revision-notes': {
+      id: '/_marketing/resources/read/computer-networks-quick-revision-notes'
+      path: '/read/computer-networks-quick-revision-notes'
+      fullPath: '/resources/read/computer-networks-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-project-guide': {
+      id: '/_marketing/resources/read/computer-networks-project-guide'
+      path: '/read/computer-networks-project-guide'
+      fullPath: '/resources/read/computer-networks-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-project-case-study': {
+      id: '/_marketing/resources/read/computer-networks-project-case-study'
+      path: '/read/computer-networks-project-case-study'
+      fullPath: '/resources/read/computer-networks-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-practice-questions': {
+      id: '/_marketing/resources/read/computer-networks-practice-questions'
+      path: '/read/computer-networks-practice-questions'
+      fullPath: '/resources/read/computer-networks-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-pdf-notes': {
+      id: '/_marketing/resources/read/computer-networks-pdf-notes'
+      path: '/read/computer-networks-pdf-notes'
+      fullPath: '/resources/read/computer-networks-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-learning-roadmap': {
+      id: '/_marketing/resources/read/computer-networks-learning-roadmap'
+      path: '/read/computer-networks-learning-roadmap'
+      fullPath: '/resources/read/computer-networks-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-interview-questions': {
+      id: '/_marketing/resources/read/computer-networks-interview-questions'
+      path: '/read/computer-networks-interview-questions'
+      fullPath: '/resources/read/computer-networks-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-glossary': {
+      id: '/_marketing/resources/read/computer-networks-glossary'
+      path: '/read/computer-networks-glossary'
+      fullPath: '/resources/read/computer-networks-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-frequently-asked-questions': {
+      id: '/_marketing/resources/read/computer-networks-frequently-asked-questions'
+      path: '/read/computer-networks-frequently-asked-questions'
+      fullPath: '/resources/read/computer-networks-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-complete-tutorial': {
+      id: '/_marketing/resources/read/computer-networks-complete-tutorial'
+      path: '/read/computer-networks-complete-tutorial'
+      fullPath: '/resources/read/computer-networks-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-common-mistakes': {
+      id: '/_marketing/resources/read/computer-networks-common-mistakes'
+      path: '/read/computer-networks-common-mistakes'
+      fullPath: '/resources/read/computer-networks-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-cheat-sheet': {
+      id: '/_marketing/resources/read/computer-networks-cheat-sheet'
+      path: '/read/computer-networks-cheat-sheet'
+      fullPath: '/resources/read/computer-networks-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-best-practices': {
+      id: '/_marketing/resources/read/computer-networks-best-practices'
+      path: '/read/computer-networks-best-practices'
+      fullPath: '/resources/read/computer-networks-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-beginner-guide': {
+      id: '/_marketing/resources/read/computer-networks-beginner-guide'
+      path: '/read/computer-networks-beginner-guide'
+      fullPath: '/resources/read/computer-networks-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-answer-key': {
+      id: '/_marketing/resources/read/computer-networks-answer-key'
+      path: '/read/computer-networks-answer-key'
+      fullPath: '/resources/read/computer-networks-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/computer-networks-advanced-concepts': {
+      id: '/_marketing/resources/read/computer-networks-advanced-concepts'
+      path: '/read/computer-networks-advanced-concepts'
+      fullPath: '/resources/read/computer-networks-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-tips-tricks': {
       id: '/_marketing/resources/read/ai-tips-tricks'
       path: '/read/ai-tips-tricks'
@@ -5015,6 +5439,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiSampleExercisesRoute: typeof MarketingResourcesReadAiSampleExercisesRoute
   MarketingResourcesReadAiStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   MarketingResourcesReadAiTipsTricksRoute: typeof MarketingResourcesReadAiTipsTricksRoute
+  MarketingResourcesReadComputerNetworksAdvancedConceptsRoute: typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
+  MarketingResourcesReadComputerNetworksAnswerKeyRoute: typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
+  MarketingResourcesReadComputerNetworksBeginnerGuideRoute: typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
+  MarketingResourcesReadComputerNetworksBestPracticesRoute: typeof MarketingResourcesReadComputerNetworksBestPracticesRoute
+  MarketingResourcesReadComputerNetworksCheatSheetRoute: typeof MarketingResourcesReadComputerNetworksCheatSheetRoute
+  MarketingResourcesReadComputerNetworksCommonMistakesRoute: typeof MarketingResourcesReadComputerNetworksCommonMistakesRoute
+  MarketingResourcesReadComputerNetworksCompleteTutorialRoute: typeof MarketingResourcesReadComputerNetworksCompleteTutorialRoute
+  MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadComputerNetworksGlossaryRoute: typeof MarketingResourcesReadComputerNetworksGlossaryRoute
+  MarketingResourcesReadComputerNetworksInterviewQuestionsRoute: typeof MarketingResourcesReadComputerNetworksInterviewQuestionsRoute
+  MarketingResourcesReadComputerNetworksLearningRoadmapRoute: typeof MarketingResourcesReadComputerNetworksLearningRoadmapRoute
+  MarketingResourcesReadComputerNetworksPdfNotesRoute: typeof MarketingResourcesReadComputerNetworksPdfNotesRoute
+  MarketingResourcesReadComputerNetworksPracticeQuestionsRoute: typeof MarketingResourcesReadComputerNetworksPracticeQuestionsRoute
+  MarketingResourcesReadComputerNetworksProjectCaseStudyRoute: typeof MarketingResourcesReadComputerNetworksProjectCaseStudyRoute
+  MarketingResourcesReadComputerNetworksProjectGuideRoute: typeof MarketingResourcesReadComputerNetworksProjectGuideRoute
+  MarketingResourcesReadComputerNetworksQuickRevisionNotesRoute: typeof MarketingResourcesReadComputerNetworksQuickRevisionNotesRoute
+  MarketingResourcesReadComputerNetworksRealWorldCaseStudyRoute: typeof MarketingResourcesReadComputerNetworksRealWorldCaseStudyRoute
+  MarketingResourcesReadComputerNetworksReferenceGuideRoute: typeof MarketingResourcesReadComputerNetworksReferenceGuideRoute
+  MarketingResourcesReadComputerNetworksSampleExercisesRoute: typeof MarketingResourcesReadComputerNetworksSampleExercisesRoute
+  MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute: typeof MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute
+  MarketingResourcesReadComputerNetworksTipsAndTricksRoute: typeof MarketingResourcesReadComputerNetworksTipsAndTricksRoute
   MarketingResourcesReadDbmsAdvancedConceptsRoute: typeof MarketingResourcesReadDbmsAdvancedConceptsRoute
   MarketingResourcesReadDbmsAnswerKeyRoute: typeof MarketingResourcesReadDbmsAnswerKeyRoute
   MarketingResourcesReadDbmsBeginnerGuideRoute: typeof MarketingResourcesReadDbmsBeginnerGuideRoute
@@ -5225,6 +5670,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAiStepByStepLearningGuideRoute,
   MarketingResourcesReadAiTipsTricksRoute:
     MarketingResourcesReadAiTipsTricksRoute,
+  MarketingResourcesReadComputerNetworksAdvancedConceptsRoute:
+    MarketingResourcesReadComputerNetworksAdvancedConceptsRoute,
+  MarketingResourcesReadComputerNetworksAnswerKeyRoute:
+    MarketingResourcesReadComputerNetworksAnswerKeyRoute,
+  MarketingResourcesReadComputerNetworksBeginnerGuideRoute:
+    MarketingResourcesReadComputerNetworksBeginnerGuideRoute,
+  MarketingResourcesReadComputerNetworksBestPracticesRoute:
+    MarketingResourcesReadComputerNetworksBestPracticesRoute,
+  MarketingResourcesReadComputerNetworksCheatSheetRoute:
+    MarketingResourcesReadComputerNetworksCheatSheetRoute,
+  MarketingResourcesReadComputerNetworksCommonMistakesRoute:
+    MarketingResourcesReadComputerNetworksCommonMistakesRoute,
+  MarketingResourcesReadComputerNetworksCompleteTutorialRoute:
+    MarketingResourcesReadComputerNetworksCompleteTutorialRoute,
+  MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadComputerNetworksFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadComputerNetworksGlossaryRoute:
+    MarketingResourcesReadComputerNetworksGlossaryRoute,
+  MarketingResourcesReadComputerNetworksInterviewQuestionsRoute:
+    MarketingResourcesReadComputerNetworksInterviewQuestionsRoute,
+  MarketingResourcesReadComputerNetworksLearningRoadmapRoute:
+    MarketingResourcesReadComputerNetworksLearningRoadmapRoute,
+  MarketingResourcesReadComputerNetworksPdfNotesRoute:
+    MarketingResourcesReadComputerNetworksPdfNotesRoute,
+  MarketingResourcesReadComputerNetworksPracticeQuestionsRoute:
+    MarketingResourcesReadComputerNetworksPracticeQuestionsRoute,
+  MarketingResourcesReadComputerNetworksProjectCaseStudyRoute:
+    MarketingResourcesReadComputerNetworksProjectCaseStudyRoute,
+  MarketingResourcesReadComputerNetworksProjectGuideRoute:
+    MarketingResourcesReadComputerNetworksProjectGuideRoute,
+  MarketingResourcesReadComputerNetworksQuickRevisionNotesRoute:
+    MarketingResourcesReadComputerNetworksQuickRevisionNotesRoute,
+  MarketingResourcesReadComputerNetworksRealWorldCaseStudyRoute:
+    MarketingResourcesReadComputerNetworksRealWorldCaseStudyRoute,
+  MarketingResourcesReadComputerNetworksReferenceGuideRoute:
+    MarketingResourcesReadComputerNetworksReferenceGuideRoute,
+  MarketingResourcesReadComputerNetworksSampleExercisesRoute:
+    MarketingResourcesReadComputerNetworksSampleExercisesRoute,
+  MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute:
+    MarketingResourcesReadComputerNetworksStepByStepLearningGuideRoute,
+  MarketingResourcesReadComputerNetworksTipsAndTricksRoute:
+    MarketingResourcesReadComputerNetworksTipsAndTricksRoute,
   MarketingResourcesReadDbmsAdvancedConceptsRoute:
     MarketingResourcesReadDbmsAdvancedConceptsRoute,
   MarketingResourcesReadDbmsAnswerKeyRoute:
