@@ -1070,6 +1070,27 @@ import { Route as MarketingResourcesReadAngularBestPracticesRouteImport } from '
 import { Route as MarketingResourcesReadAngularBeginnerGuideRouteImport } from './routes/_marketing.resources.read.angular-beginner-guide'
 import { Route as MarketingResourcesReadAngularAnswerKeyRouteImport } from './routes/_marketing.resources.read.angular-answer-key'
 import { Route as MarketingResourcesReadAngularAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.angular-advanced-concepts'
+import { Route as MarketingResourcesReadAndroidTipsTricksRouteImport } from './routes/_marketing.resources.read.android-tips-tricks'
+import { Route as MarketingResourcesReadAndroidStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.android-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadAndroidSampleExercisesRouteImport } from './routes/_marketing.resources.read.android-sample-exercises'
+import { Route as MarketingResourcesReadAndroidReferenceGuideRouteImport } from './routes/_marketing.resources.read.android-reference-guide'
+import { Route as MarketingResourcesReadAndroidRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.android-real-world-case-study'
+import { Route as MarketingResourcesReadAndroidQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.android-quick-revision-notes'
+import { Route as MarketingResourcesReadAndroidProjectGuideRouteImport } from './routes/_marketing.resources.read.android-project-guide'
+import { Route as MarketingResourcesReadAndroidProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.android-project-case-study'
+import { Route as MarketingResourcesReadAndroidPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.android-practice-questions'
+import { Route as MarketingResourcesReadAndroidPdfNotesRouteImport } from './routes/_marketing.resources.read.android-pdf-notes'
+import { Route as MarketingResourcesReadAndroidLearningRoadmapRouteImport } from './routes/_marketing.resources.read.android-learning-roadmap'
+import { Route as MarketingResourcesReadAndroidInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.android-interview-questions'
+import { Route as MarketingResourcesReadAndroidGlossaryRouteImport } from './routes/_marketing.resources.read.android-glossary'
+import { Route as MarketingResourcesReadAndroidFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.android-frequently-asked-questions'
+import { Route as MarketingResourcesReadAndroidCompleteTutorialRouteImport } from './routes/_marketing.resources.read.android-complete-tutorial'
+import { Route as MarketingResourcesReadAndroidCommonMistakesRouteImport } from './routes/_marketing.resources.read.android-common-mistakes'
+import { Route as MarketingResourcesReadAndroidCheatSheetRouteImport } from './routes/_marketing.resources.read.android-cheat-sheet'
+import { Route as MarketingResourcesReadAndroidBestPracticesRouteImport } from './routes/_marketing.resources.read.android-best-practices'
+import { Route as MarketingResourcesReadAndroidBeginnerGuideRouteImport } from './routes/_marketing.resources.read.android-beginner-guide'
+import { Route as MarketingResourcesReadAndroidAnswerKeyRouteImport } from './routes/_marketing.resources.read.android-answer-key'
+import { Route as MarketingResourcesReadAndroidAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.android-advanced-concepts'
 import { Route as MarketingResourcesReadAiTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-tips-tricks'
 import { Route as MarketingResourcesReadAiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadAiSampleExercisesRouteImport } from './routes/_marketing.resources.read.ai-sample-exercises'
@@ -7483,6 +7504,132 @@ const MarketingResourcesReadAngularAdvancedConceptsRoute =
     path: '/read/angular-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAndroidTipsTricksRoute =
+  MarketingResourcesReadAndroidTipsTricksRouteImport.update({
+    id: '/read/android-tips-tricks',
+    path: '/read/android-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidStepByStepLearningGuideRoute =
+  MarketingResourcesReadAndroidStepByStepLearningGuideRouteImport.update({
+    id: '/read/android-step-by-step-learning-guide',
+    path: '/read/android-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidSampleExercisesRoute =
+  MarketingResourcesReadAndroidSampleExercisesRouteImport.update({
+    id: '/read/android-sample-exercises',
+    path: '/read/android-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidReferenceGuideRoute =
+  MarketingResourcesReadAndroidReferenceGuideRouteImport.update({
+    id: '/read/android-reference-guide',
+    path: '/read/android-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidRealWorldCaseStudyRoute =
+  MarketingResourcesReadAndroidRealWorldCaseStudyRouteImport.update({
+    id: '/read/android-real-world-case-study',
+    path: '/read/android-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidQuickRevisionNotesRoute =
+  MarketingResourcesReadAndroidQuickRevisionNotesRouteImport.update({
+    id: '/read/android-quick-revision-notes',
+    path: '/read/android-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidProjectGuideRoute =
+  MarketingResourcesReadAndroidProjectGuideRouteImport.update({
+    id: '/read/android-project-guide',
+    path: '/read/android-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidProjectCaseStudyRoute =
+  MarketingResourcesReadAndroidProjectCaseStudyRouteImport.update({
+    id: '/read/android-project-case-study',
+    path: '/read/android-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidPracticeQuestionsRoute =
+  MarketingResourcesReadAndroidPracticeQuestionsRouteImport.update({
+    id: '/read/android-practice-questions',
+    path: '/read/android-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidPdfNotesRoute =
+  MarketingResourcesReadAndroidPdfNotesRouteImport.update({
+    id: '/read/android-pdf-notes',
+    path: '/read/android-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidLearningRoadmapRoute =
+  MarketingResourcesReadAndroidLearningRoadmapRouteImport.update({
+    id: '/read/android-learning-roadmap',
+    path: '/read/android-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidInterviewQuestionsRoute =
+  MarketingResourcesReadAndroidInterviewQuestionsRouteImport.update({
+    id: '/read/android-interview-questions',
+    path: '/read/android-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidGlossaryRoute =
+  MarketingResourcesReadAndroidGlossaryRouteImport.update({
+    id: '/read/android-glossary',
+    path: '/read/android-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadAndroidFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/android-frequently-asked-questions',
+    path: '/read/android-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidCompleteTutorialRoute =
+  MarketingResourcesReadAndroidCompleteTutorialRouteImport.update({
+    id: '/read/android-complete-tutorial',
+    path: '/read/android-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidCommonMistakesRoute =
+  MarketingResourcesReadAndroidCommonMistakesRouteImport.update({
+    id: '/read/android-common-mistakes',
+    path: '/read/android-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidCheatSheetRoute =
+  MarketingResourcesReadAndroidCheatSheetRouteImport.update({
+    id: '/read/android-cheat-sheet',
+    path: '/read/android-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidBestPracticesRoute =
+  MarketingResourcesReadAndroidBestPracticesRouteImport.update({
+    id: '/read/android-best-practices',
+    path: '/read/android-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidBeginnerGuideRoute =
+  MarketingResourcesReadAndroidBeginnerGuideRouteImport.update({
+    id: '/read/android-beginner-guide',
+    path: '/read/android-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidAnswerKeyRoute =
+  MarketingResourcesReadAndroidAnswerKeyRouteImport.update({
+    id: '/read/android-answer-key',
+    path: '/read/android-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAndroidAdvancedConceptsRoute =
+  MarketingResourcesReadAndroidAdvancedConceptsRouteImport.update({
+    id: '/read/android-advanced-concepts',
+    path: '/read/android-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiTipsTricksRoute =
   MarketingResourcesReadAiTipsTricksRouteImport.update({
     id: '/read/ai-tips-tricks',
@@ -7904,6 +8051,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/android-advanced-concepts': typeof MarketingResourcesReadAndroidAdvancedConceptsRoute
+  '/resources/read/android-answer-key': typeof MarketingResourcesReadAndroidAnswerKeyRoute
+  '/resources/read/android-beginner-guide': typeof MarketingResourcesReadAndroidBeginnerGuideRoute
+  '/resources/read/android-best-practices': typeof MarketingResourcesReadAndroidBestPracticesRoute
+  '/resources/read/android-cheat-sheet': typeof MarketingResourcesReadAndroidCheatSheetRoute
+  '/resources/read/android-common-mistakes': typeof MarketingResourcesReadAndroidCommonMistakesRoute
+  '/resources/read/android-complete-tutorial': typeof MarketingResourcesReadAndroidCompleteTutorialRoute
+  '/resources/read/android-frequently-asked-questions': typeof MarketingResourcesReadAndroidFrequentlyAskedQuestionsRoute
+  '/resources/read/android-glossary': typeof MarketingResourcesReadAndroidGlossaryRoute
+  '/resources/read/android-interview-questions': typeof MarketingResourcesReadAndroidInterviewQuestionsRoute
+  '/resources/read/android-learning-roadmap': typeof MarketingResourcesReadAndroidLearningRoadmapRoute
+  '/resources/read/android-pdf-notes': typeof MarketingResourcesReadAndroidPdfNotesRoute
+  '/resources/read/android-practice-questions': typeof MarketingResourcesReadAndroidPracticeQuestionsRoute
+  '/resources/read/android-project-case-study': typeof MarketingResourcesReadAndroidProjectCaseStudyRoute
+  '/resources/read/android-project-guide': typeof MarketingResourcesReadAndroidProjectGuideRoute
+  '/resources/read/android-quick-revision-notes': typeof MarketingResourcesReadAndroidQuickRevisionNotesRoute
+  '/resources/read/android-real-world-case-study': typeof MarketingResourcesReadAndroidRealWorldCaseStudyRoute
+  '/resources/read/android-reference-guide': typeof MarketingResourcesReadAndroidReferenceGuideRoute
+  '/resources/read/android-sample-exercises': typeof MarketingResourcesReadAndroidSampleExercisesRoute
+  '/resources/read/android-step-by-step-learning-guide': typeof MarketingResourcesReadAndroidStepByStepLearningGuideRoute
+  '/resources/read/android-tips-tricks': typeof MarketingResourcesReadAndroidTipsTricksRoute
   '/resources/read/angular-advanced-concepts': typeof MarketingResourcesReadAngularAdvancedConceptsRoute
   '/resources/read/angular-answer-key': typeof MarketingResourcesReadAngularAnswerKeyRoute
   '/resources/read/angular-beginner-guide': typeof MarketingResourcesReadAngularBeginnerGuideRoute
@@ -9018,6 +9186,27 @@ export interface FileRoutesByTo {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/android-advanced-concepts': typeof MarketingResourcesReadAndroidAdvancedConceptsRoute
+  '/resources/read/android-answer-key': typeof MarketingResourcesReadAndroidAnswerKeyRoute
+  '/resources/read/android-beginner-guide': typeof MarketingResourcesReadAndroidBeginnerGuideRoute
+  '/resources/read/android-best-practices': typeof MarketingResourcesReadAndroidBestPracticesRoute
+  '/resources/read/android-cheat-sheet': typeof MarketingResourcesReadAndroidCheatSheetRoute
+  '/resources/read/android-common-mistakes': typeof MarketingResourcesReadAndroidCommonMistakesRoute
+  '/resources/read/android-complete-tutorial': typeof MarketingResourcesReadAndroidCompleteTutorialRoute
+  '/resources/read/android-frequently-asked-questions': typeof MarketingResourcesReadAndroidFrequentlyAskedQuestionsRoute
+  '/resources/read/android-glossary': typeof MarketingResourcesReadAndroidGlossaryRoute
+  '/resources/read/android-interview-questions': typeof MarketingResourcesReadAndroidInterviewQuestionsRoute
+  '/resources/read/android-learning-roadmap': typeof MarketingResourcesReadAndroidLearningRoadmapRoute
+  '/resources/read/android-pdf-notes': typeof MarketingResourcesReadAndroidPdfNotesRoute
+  '/resources/read/android-practice-questions': typeof MarketingResourcesReadAndroidPracticeQuestionsRoute
+  '/resources/read/android-project-case-study': typeof MarketingResourcesReadAndroidProjectCaseStudyRoute
+  '/resources/read/android-project-guide': typeof MarketingResourcesReadAndroidProjectGuideRoute
+  '/resources/read/android-quick-revision-notes': typeof MarketingResourcesReadAndroidQuickRevisionNotesRoute
+  '/resources/read/android-real-world-case-study': typeof MarketingResourcesReadAndroidRealWorldCaseStudyRoute
+  '/resources/read/android-reference-guide': typeof MarketingResourcesReadAndroidReferenceGuideRoute
+  '/resources/read/android-sample-exercises': typeof MarketingResourcesReadAndroidSampleExercisesRoute
+  '/resources/read/android-step-by-step-learning-guide': typeof MarketingResourcesReadAndroidStepByStepLearningGuideRoute
+  '/resources/read/android-tips-tricks': typeof MarketingResourcesReadAndroidTipsTricksRoute
   '/resources/read/angular-advanced-concepts': typeof MarketingResourcesReadAngularAdvancedConceptsRoute
   '/resources/read/angular-answer-key': typeof MarketingResourcesReadAngularAnswerKeyRoute
   '/resources/read/angular-beginner-guide': typeof MarketingResourcesReadAngularBeginnerGuideRoute
@@ -10137,6 +10326,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/_marketing/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/_marketing/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/_marketing/resources/read/android-advanced-concepts': typeof MarketingResourcesReadAndroidAdvancedConceptsRoute
+  '/_marketing/resources/read/android-answer-key': typeof MarketingResourcesReadAndroidAnswerKeyRoute
+  '/_marketing/resources/read/android-beginner-guide': typeof MarketingResourcesReadAndroidBeginnerGuideRoute
+  '/_marketing/resources/read/android-best-practices': typeof MarketingResourcesReadAndroidBestPracticesRoute
+  '/_marketing/resources/read/android-cheat-sheet': typeof MarketingResourcesReadAndroidCheatSheetRoute
+  '/_marketing/resources/read/android-common-mistakes': typeof MarketingResourcesReadAndroidCommonMistakesRoute
+  '/_marketing/resources/read/android-complete-tutorial': typeof MarketingResourcesReadAndroidCompleteTutorialRoute
+  '/_marketing/resources/read/android-frequently-asked-questions': typeof MarketingResourcesReadAndroidFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/android-glossary': typeof MarketingResourcesReadAndroidGlossaryRoute
+  '/_marketing/resources/read/android-interview-questions': typeof MarketingResourcesReadAndroidInterviewQuestionsRoute
+  '/_marketing/resources/read/android-learning-roadmap': typeof MarketingResourcesReadAndroidLearningRoadmapRoute
+  '/_marketing/resources/read/android-pdf-notes': typeof MarketingResourcesReadAndroidPdfNotesRoute
+  '/_marketing/resources/read/android-practice-questions': typeof MarketingResourcesReadAndroidPracticeQuestionsRoute
+  '/_marketing/resources/read/android-project-case-study': typeof MarketingResourcesReadAndroidProjectCaseStudyRoute
+  '/_marketing/resources/read/android-project-guide': typeof MarketingResourcesReadAndroidProjectGuideRoute
+  '/_marketing/resources/read/android-quick-revision-notes': typeof MarketingResourcesReadAndroidQuickRevisionNotesRoute
+  '/_marketing/resources/read/android-real-world-case-study': typeof MarketingResourcesReadAndroidRealWorldCaseStudyRoute
+  '/_marketing/resources/read/android-reference-guide': typeof MarketingResourcesReadAndroidReferenceGuideRoute
+  '/_marketing/resources/read/android-sample-exercises': typeof MarketingResourcesReadAndroidSampleExercisesRoute
+  '/_marketing/resources/read/android-step-by-step-learning-guide': typeof MarketingResourcesReadAndroidStepByStepLearningGuideRoute
+  '/_marketing/resources/read/android-tips-tricks': typeof MarketingResourcesReadAndroidTipsTricksRoute
   '/_marketing/resources/read/angular-advanced-concepts': typeof MarketingResourcesReadAngularAdvancedConceptsRoute
   '/_marketing/resources/read/angular-answer-key': typeof MarketingResourcesReadAngularAnswerKeyRoute
   '/_marketing/resources/read/angular-beginner-guide': typeof MarketingResourcesReadAngularBeginnerGuideRoute
@@ -11254,6 +11464,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/android-advanced-concepts'
+    | '/resources/read/android-answer-key'
+    | '/resources/read/android-beginner-guide'
+    | '/resources/read/android-best-practices'
+    | '/resources/read/android-cheat-sheet'
+    | '/resources/read/android-common-mistakes'
+    | '/resources/read/android-complete-tutorial'
+    | '/resources/read/android-frequently-asked-questions'
+    | '/resources/read/android-glossary'
+    | '/resources/read/android-interview-questions'
+    | '/resources/read/android-learning-roadmap'
+    | '/resources/read/android-pdf-notes'
+    | '/resources/read/android-practice-questions'
+    | '/resources/read/android-project-case-study'
+    | '/resources/read/android-project-guide'
+    | '/resources/read/android-quick-revision-notes'
+    | '/resources/read/android-real-world-case-study'
+    | '/resources/read/android-reference-guide'
+    | '/resources/read/android-sample-exercises'
+    | '/resources/read/android-step-by-step-learning-guide'
+    | '/resources/read/android-tips-tricks'
     | '/resources/read/angular-advanced-concepts'
     | '/resources/read/angular-answer-key'
     | '/resources/read/angular-beginner-guide'
@@ -12368,6 +12599,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/android-advanced-concepts'
+    | '/resources/read/android-answer-key'
+    | '/resources/read/android-beginner-guide'
+    | '/resources/read/android-best-practices'
+    | '/resources/read/android-cheat-sheet'
+    | '/resources/read/android-common-mistakes'
+    | '/resources/read/android-complete-tutorial'
+    | '/resources/read/android-frequently-asked-questions'
+    | '/resources/read/android-glossary'
+    | '/resources/read/android-interview-questions'
+    | '/resources/read/android-learning-roadmap'
+    | '/resources/read/android-pdf-notes'
+    | '/resources/read/android-practice-questions'
+    | '/resources/read/android-project-case-study'
+    | '/resources/read/android-project-guide'
+    | '/resources/read/android-quick-revision-notes'
+    | '/resources/read/android-real-world-case-study'
+    | '/resources/read/android-reference-guide'
+    | '/resources/read/android-sample-exercises'
+    | '/resources/read/android-step-by-step-learning-guide'
+    | '/resources/read/android-tips-tricks'
     | '/resources/read/angular-advanced-concepts'
     | '/resources/read/angular-answer-key'
     | '/resources/read/angular-beginner-guide'
@@ -13486,6 +13738,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-sample-exercises'
     | '/_marketing/resources/read/ai-step-by-step-learning-guide'
     | '/_marketing/resources/read/ai-tips-tricks'
+    | '/_marketing/resources/read/android-advanced-concepts'
+    | '/_marketing/resources/read/android-answer-key'
+    | '/_marketing/resources/read/android-beginner-guide'
+    | '/_marketing/resources/read/android-best-practices'
+    | '/_marketing/resources/read/android-cheat-sheet'
+    | '/_marketing/resources/read/android-common-mistakes'
+    | '/_marketing/resources/read/android-complete-tutorial'
+    | '/_marketing/resources/read/android-frequently-asked-questions'
+    | '/_marketing/resources/read/android-glossary'
+    | '/_marketing/resources/read/android-interview-questions'
+    | '/_marketing/resources/read/android-learning-roadmap'
+    | '/_marketing/resources/read/android-pdf-notes'
+    | '/_marketing/resources/read/android-practice-questions'
+    | '/_marketing/resources/read/android-project-case-study'
+    | '/_marketing/resources/read/android-project-guide'
+    | '/_marketing/resources/read/android-quick-revision-notes'
+    | '/_marketing/resources/read/android-real-world-case-study'
+    | '/_marketing/resources/read/android-reference-guide'
+    | '/_marketing/resources/read/android-sample-exercises'
+    | '/_marketing/resources/read/android-step-by-step-learning-guide'
+    | '/_marketing/resources/read/android-tips-tricks'
     | '/_marketing/resources/read/angular-advanced-concepts'
     | '/_marketing/resources/read/angular-answer-key'
     | '/_marketing/resources/read/angular-beginner-guide'
@@ -21957,6 +22230,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadAngularAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/android-tips-tricks': {
+      id: '/_marketing/resources/read/android-tips-tricks'
+      path: '/read/android-tips-tricks'
+      fullPath: '/resources/read/android-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/android-step-by-step-learning-guide'
+      path: '/read/android-step-by-step-learning-guide'
+      fullPath: '/resources/read/android-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-sample-exercises': {
+      id: '/_marketing/resources/read/android-sample-exercises'
+      path: '/read/android-sample-exercises'
+      fullPath: '/resources/read/android-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-reference-guide': {
+      id: '/_marketing/resources/read/android-reference-guide'
+      path: '/read/android-reference-guide'
+      fullPath: '/resources/read/android-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-real-world-case-study': {
+      id: '/_marketing/resources/read/android-real-world-case-study'
+      path: '/read/android-real-world-case-study'
+      fullPath: '/resources/read/android-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-quick-revision-notes': {
+      id: '/_marketing/resources/read/android-quick-revision-notes'
+      path: '/read/android-quick-revision-notes'
+      fullPath: '/resources/read/android-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-project-guide': {
+      id: '/_marketing/resources/read/android-project-guide'
+      path: '/read/android-project-guide'
+      fullPath: '/resources/read/android-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-project-case-study': {
+      id: '/_marketing/resources/read/android-project-case-study'
+      path: '/read/android-project-case-study'
+      fullPath: '/resources/read/android-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-practice-questions': {
+      id: '/_marketing/resources/read/android-practice-questions'
+      path: '/read/android-practice-questions'
+      fullPath: '/resources/read/android-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-pdf-notes': {
+      id: '/_marketing/resources/read/android-pdf-notes'
+      path: '/read/android-pdf-notes'
+      fullPath: '/resources/read/android-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-learning-roadmap': {
+      id: '/_marketing/resources/read/android-learning-roadmap'
+      path: '/read/android-learning-roadmap'
+      fullPath: '/resources/read/android-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-interview-questions': {
+      id: '/_marketing/resources/read/android-interview-questions'
+      path: '/read/android-interview-questions'
+      fullPath: '/resources/read/android-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-glossary': {
+      id: '/_marketing/resources/read/android-glossary'
+      path: '/read/android-glossary'
+      fullPath: '/resources/read/android-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-frequently-asked-questions': {
+      id: '/_marketing/resources/read/android-frequently-asked-questions'
+      path: '/read/android-frequently-asked-questions'
+      fullPath: '/resources/read/android-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-complete-tutorial': {
+      id: '/_marketing/resources/read/android-complete-tutorial'
+      path: '/read/android-complete-tutorial'
+      fullPath: '/resources/read/android-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-common-mistakes': {
+      id: '/_marketing/resources/read/android-common-mistakes'
+      path: '/read/android-common-mistakes'
+      fullPath: '/resources/read/android-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-cheat-sheet': {
+      id: '/_marketing/resources/read/android-cheat-sheet'
+      path: '/read/android-cheat-sheet'
+      fullPath: '/resources/read/android-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-best-practices': {
+      id: '/_marketing/resources/read/android-best-practices'
+      path: '/read/android-best-practices'
+      fullPath: '/resources/read/android-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-beginner-guide': {
+      id: '/_marketing/resources/read/android-beginner-guide'
+      path: '/read/android-beginner-guide'
+      fullPath: '/resources/read/android-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-answer-key': {
+      id: '/_marketing/resources/read/android-answer-key'
+      path: '/read/android-answer-key'
+      fullPath: '/resources/read/android-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/android-advanced-concepts': {
+      id: '/_marketing/resources/read/android-advanced-concepts'
+      path: '/read/android-advanced-concepts'
+      fullPath: '/resources/read/android-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadAndroidAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-tips-tricks': {
       id: '/_marketing/resources/read/ai-tips-tricks'
       path: '/read/ai-tips-tricks'
@@ -22520,6 +22940,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiSampleExercisesRoute: typeof MarketingResourcesReadAiSampleExercisesRoute
   MarketingResourcesReadAiStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   MarketingResourcesReadAiTipsTricksRoute: typeof MarketingResourcesReadAiTipsTricksRoute
+  MarketingResourcesReadAndroidAdvancedConceptsRoute: typeof MarketingResourcesReadAndroidAdvancedConceptsRoute
+  MarketingResourcesReadAndroidAnswerKeyRoute: typeof MarketingResourcesReadAndroidAnswerKeyRoute
+  MarketingResourcesReadAndroidBeginnerGuideRoute: typeof MarketingResourcesReadAndroidBeginnerGuideRoute
+  MarketingResourcesReadAndroidBestPracticesRoute: typeof MarketingResourcesReadAndroidBestPracticesRoute
+  MarketingResourcesReadAndroidCheatSheetRoute: typeof MarketingResourcesReadAndroidCheatSheetRoute
+  MarketingResourcesReadAndroidCommonMistakesRoute: typeof MarketingResourcesReadAndroidCommonMistakesRoute
+  MarketingResourcesReadAndroidCompleteTutorialRoute: typeof MarketingResourcesReadAndroidCompleteTutorialRoute
+  MarketingResourcesReadAndroidFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadAndroidFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadAndroidGlossaryRoute: typeof MarketingResourcesReadAndroidGlossaryRoute
+  MarketingResourcesReadAndroidInterviewQuestionsRoute: typeof MarketingResourcesReadAndroidInterviewQuestionsRoute
+  MarketingResourcesReadAndroidLearningRoadmapRoute: typeof MarketingResourcesReadAndroidLearningRoadmapRoute
+  MarketingResourcesReadAndroidPdfNotesRoute: typeof MarketingResourcesReadAndroidPdfNotesRoute
+  MarketingResourcesReadAndroidPracticeQuestionsRoute: typeof MarketingResourcesReadAndroidPracticeQuestionsRoute
+  MarketingResourcesReadAndroidProjectCaseStudyRoute: typeof MarketingResourcesReadAndroidProjectCaseStudyRoute
+  MarketingResourcesReadAndroidProjectGuideRoute: typeof MarketingResourcesReadAndroidProjectGuideRoute
+  MarketingResourcesReadAndroidQuickRevisionNotesRoute: typeof MarketingResourcesReadAndroidQuickRevisionNotesRoute
+  MarketingResourcesReadAndroidRealWorldCaseStudyRoute: typeof MarketingResourcesReadAndroidRealWorldCaseStudyRoute
+  MarketingResourcesReadAndroidReferenceGuideRoute: typeof MarketingResourcesReadAndroidReferenceGuideRoute
+  MarketingResourcesReadAndroidSampleExercisesRoute: typeof MarketingResourcesReadAndroidSampleExercisesRoute
+  MarketingResourcesReadAndroidStepByStepLearningGuideRoute: typeof MarketingResourcesReadAndroidStepByStepLearningGuideRoute
+  MarketingResourcesReadAndroidTipsTricksRoute: typeof MarketingResourcesReadAndroidTipsTricksRoute
   MarketingResourcesReadAngularAdvancedConceptsRoute: typeof MarketingResourcesReadAngularAdvancedConceptsRoute
   MarketingResourcesReadAngularAnswerKeyRoute: typeof MarketingResourcesReadAngularAnswerKeyRoute
   MarketingResourcesReadAngularBeginnerGuideRoute: typeof MarketingResourcesReadAngularBeginnerGuideRoute
@@ -23624,6 +24065,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAiStepByStepLearningGuideRoute,
   MarketingResourcesReadAiTipsTricksRoute:
     MarketingResourcesReadAiTipsTricksRoute,
+  MarketingResourcesReadAndroidAdvancedConceptsRoute:
+    MarketingResourcesReadAndroidAdvancedConceptsRoute,
+  MarketingResourcesReadAndroidAnswerKeyRoute:
+    MarketingResourcesReadAndroidAnswerKeyRoute,
+  MarketingResourcesReadAndroidBeginnerGuideRoute:
+    MarketingResourcesReadAndroidBeginnerGuideRoute,
+  MarketingResourcesReadAndroidBestPracticesRoute:
+    MarketingResourcesReadAndroidBestPracticesRoute,
+  MarketingResourcesReadAndroidCheatSheetRoute:
+    MarketingResourcesReadAndroidCheatSheetRoute,
+  MarketingResourcesReadAndroidCommonMistakesRoute:
+    MarketingResourcesReadAndroidCommonMistakesRoute,
+  MarketingResourcesReadAndroidCompleteTutorialRoute:
+    MarketingResourcesReadAndroidCompleteTutorialRoute,
+  MarketingResourcesReadAndroidFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadAndroidFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadAndroidGlossaryRoute:
+    MarketingResourcesReadAndroidGlossaryRoute,
+  MarketingResourcesReadAndroidInterviewQuestionsRoute:
+    MarketingResourcesReadAndroidInterviewQuestionsRoute,
+  MarketingResourcesReadAndroidLearningRoadmapRoute:
+    MarketingResourcesReadAndroidLearningRoadmapRoute,
+  MarketingResourcesReadAndroidPdfNotesRoute:
+    MarketingResourcesReadAndroidPdfNotesRoute,
+  MarketingResourcesReadAndroidPracticeQuestionsRoute:
+    MarketingResourcesReadAndroidPracticeQuestionsRoute,
+  MarketingResourcesReadAndroidProjectCaseStudyRoute:
+    MarketingResourcesReadAndroidProjectCaseStudyRoute,
+  MarketingResourcesReadAndroidProjectGuideRoute:
+    MarketingResourcesReadAndroidProjectGuideRoute,
+  MarketingResourcesReadAndroidQuickRevisionNotesRoute:
+    MarketingResourcesReadAndroidQuickRevisionNotesRoute,
+  MarketingResourcesReadAndroidRealWorldCaseStudyRoute:
+    MarketingResourcesReadAndroidRealWorldCaseStudyRoute,
+  MarketingResourcesReadAndroidReferenceGuideRoute:
+    MarketingResourcesReadAndroidReferenceGuideRoute,
+  MarketingResourcesReadAndroidSampleExercisesRoute:
+    MarketingResourcesReadAndroidSampleExercisesRoute,
+  MarketingResourcesReadAndroidStepByStepLearningGuideRoute:
+    MarketingResourcesReadAndroidStepByStepLearningGuideRoute,
+  MarketingResourcesReadAndroidTipsTricksRoute:
+    MarketingResourcesReadAndroidTipsTricksRoute,
   MarketingResourcesReadAngularAdvancedConceptsRoute:
     MarketingResourcesReadAngularAdvancedConceptsRoute,
   MarketingResourcesReadAngularAnswerKeyRoute:
