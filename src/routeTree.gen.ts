@@ -92,6 +92,27 @@ import { Route as MarketingResourcesReadTableauBestPracticesRouteImport } from '
 import { Route as MarketingResourcesReadTableauBeginnerGuideRouteImport } from './routes/_marketing.resources.read.tableau-beginner-guide'
 import { Route as MarketingResourcesReadTableauAnswerKeyRouteImport } from './routes/_marketing.resources.read.tableau-answer-key'
 import { Route as MarketingResourcesReadTableauAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.tableau-advanced-concepts'
+import { Route as MarketingResourcesReadSqlTipsTricksRouteImport } from './routes/_marketing.resources.read.sql-tips-tricks'
+import { Route as MarketingResourcesReadSqlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.sql-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadSqlSampleExercisesRouteImport } from './routes/_marketing.resources.read.sql-sample-exercises'
+import { Route as MarketingResourcesReadSqlReferenceGuideRouteImport } from './routes/_marketing.resources.read.sql-reference-guide'
+import { Route as MarketingResourcesReadSqlRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.sql-real-world-case-study'
+import { Route as MarketingResourcesReadSqlQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.sql-quick-revision-notes'
+import { Route as MarketingResourcesReadSqlProjectGuideRouteImport } from './routes/_marketing.resources.read.sql-project-guide'
+import { Route as MarketingResourcesReadSqlProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.sql-project-case-study'
+import { Route as MarketingResourcesReadSqlPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.sql-practice-questions'
+import { Route as MarketingResourcesReadSqlPdfNotesRouteImport } from './routes/_marketing.resources.read.sql-pdf-notes'
+import { Route as MarketingResourcesReadSqlLearningRoadmapRouteImport } from './routes/_marketing.resources.read.sql-learning-roadmap'
+import { Route as MarketingResourcesReadSqlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.sql-interview-questions'
+import { Route as MarketingResourcesReadSqlGlossaryRouteImport } from './routes/_marketing.resources.read.sql-glossary'
+import { Route as MarketingResourcesReadSqlFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.sql-frequently-asked-questions'
+import { Route as MarketingResourcesReadSqlCompleteTutorialRouteImport } from './routes/_marketing.resources.read.sql-complete-tutorial'
+import { Route as MarketingResourcesReadSqlCommonMistakesRouteImport } from './routes/_marketing.resources.read.sql-common-mistakes'
+import { Route as MarketingResourcesReadSqlCheatSheetRouteImport } from './routes/_marketing.resources.read.sql-cheat-sheet'
+import { Route as MarketingResourcesReadSqlBestPracticesRouteImport } from './routes/_marketing.resources.read.sql-best-practices'
+import { Route as MarketingResourcesReadSqlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.sql-beginner-guide'
+import { Route as MarketingResourcesReadSqlAnswerKeyRouteImport } from './routes/_marketing.resources.read.sql-answer-key'
+import { Route as MarketingResourcesReadSqlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.sql-advanced-concepts'
 import { Route as MarketingResourcesReadSdTipsTricksRouteImport } from './routes/_marketing.resources.read.sd-tips-tricks'
 import { Route as MarketingResourcesReadSdStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.sd-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadSdReferenceGuideRouteImport } from './routes/_marketing.resources.read.sd-reference-guide'
@@ -1211,6 +1232,132 @@ const MarketingResourcesReadTableauAdvancedConceptsRoute =
   MarketingResourcesReadTableauAdvancedConceptsRouteImport.update({
     id: '/read/tableau-advanced-concepts',
     path: '/read/tableau-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlTipsTricksRoute =
+  MarketingResourcesReadSqlTipsTricksRouteImport.update({
+    id: '/read/sql-tips-tricks',
+    path: '/read/sql-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlStepByStepLearningGuideRoute =
+  MarketingResourcesReadSqlStepByStepLearningGuideRouteImport.update({
+    id: '/read/sql-step-by-step-learning-guide',
+    path: '/read/sql-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlSampleExercisesRoute =
+  MarketingResourcesReadSqlSampleExercisesRouteImport.update({
+    id: '/read/sql-sample-exercises',
+    path: '/read/sql-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlReferenceGuideRoute =
+  MarketingResourcesReadSqlReferenceGuideRouteImport.update({
+    id: '/read/sql-reference-guide',
+    path: '/read/sql-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlRealWorldCaseStudyRoute =
+  MarketingResourcesReadSqlRealWorldCaseStudyRouteImport.update({
+    id: '/read/sql-real-world-case-study',
+    path: '/read/sql-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlQuickRevisionNotesRoute =
+  MarketingResourcesReadSqlQuickRevisionNotesRouteImport.update({
+    id: '/read/sql-quick-revision-notes',
+    path: '/read/sql-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlProjectGuideRoute =
+  MarketingResourcesReadSqlProjectGuideRouteImport.update({
+    id: '/read/sql-project-guide',
+    path: '/read/sql-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlProjectCaseStudyRoute =
+  MarketingResourcesReadSqlProjectCaseStudyRouteImport.update({
+    id: '/read/sql-project-case-study',
+    path: '/read/sql-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlPracticeQuestionsRoute =
+  MarketingResourcesReadSqlPracticeQuestionsRouteImport.update({
+    id: '/read/sql-practice-questions',
+    path: '/read/sql-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlPdfNotesRoute =
+  MarketingResourcesReadSqlPdfNotesRouteImport.update({
+    id: '/read/sql-pdf-notes',
+    path: '/read/sql-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlLearningRoadmapRoute =
+  MarketingResourcesReadSqlLearningRoadmapRouteImport.update({
+    id: '/read/sql-learning-roadmap',
+    path: '/read/sql-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlInterviewQuestionsRoute =
+  MarketingResourcesReadSqlInterviewQuestionsRouteImport.update({
+    id: '/read/sql-interview-questions',
+    path: '/read/sql-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlGlossaryRoute =
+  MarketingResourcesReadSqlGlossaryRouteImport.update({
+    id: '/read/sql-glossary',
+    path: '/read/sql-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadSqlFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/sql-frequently-asked-questions',
+    path: '/read/sql-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlCompleteTutorialRoute =
+  MarketingResourcesReadSqlCompleteTutorialRouteImport.update({
+    id: '/read/sql-complete-tutorial',
+    path: '/read/sql-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlCommonMistakesRoute =
+  MarketingResourcesReadSqlCommonMistakesRouteImport.update({
+    id: '/read/sql-common-mistakes',
+    path: '/read/sql-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlCheatSheetRoute =
+  MarketingResourcesReadSqlCheatSheetRouteImport.update({
+    id: '/read/sql-cheat-sheet',
+    path: '/read/sql-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlBestPracticesRoute =
+  MarketingResourcesReadSqlBestPracticesRouteImport.update({
+    id: '/read/sql-best-practices',
+    path: '/read/sql-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlBeginnerGuideRoute =
+  MarketingResourcesReadSqlBeginnerGuideRouteImport.update({
+    id: '/read/sql-beginner-guide',
+    path: '/read/sql-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlAnswerKeyRoute =
+  MarketingResourcesReadSqlAnswerKeyRouteImport.update({
+    id: '/read/sql-answer-key',
+    path: '/read/sql-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSqlAdvancedConceptsRoute =
+  MarketingResourcesReadSqlAdvancedConceptsRouteImport.update({
+    id: '/read/sql-advanced-concepts',
+    path: '/read/sql-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadSdTipsTricksRoute =
@@ -5856,6 +6003,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/resources/read/sql-advanced-concepts': typeof MarketingResourcesReadSqlAdvancedConceptsRoute
+  '/resources/read/sql-answer-key': typeof MarketingResourcesReadSqlAnswerKeyRoute
+  '/resources/read/sql-beginner-guide': typeof MarketingResourcesReadSqlBeginnerGuideRoute
+  '/resources/read/sql-best-practices': typeof MarketingResourcesReadSqlBestPracticesRoute
+  '/resources/read/sql-cheat-sheet': typeof MarketingResourcesReadSqlCheatSheetRoute
+  '/resources/read/sql-common-mistakes': typeof MarketingResourcesReadSqlCommonMistakesRoute
+  '/resources/read/sql-complete-tutorial': typeof MarketingResourcesReadSqlCompleteTutorialRoute
+  '/resources/read/sql-frequently-asked-questions': typeof MarketingResourcesReadSqlFrequentlyAskedQuestionsRoute
+  '/resources/read/sql-glossary': typeof MarketingResourcesReadSqlGlossaryRoute
+  '/resources/read/sql-interview-questions': typeof MarketingResourcesReadSqlInterviewQuestionsRoute
+  '/resources/read/sql-learning-roadmap': typeof MarketingResourcesReadSqlLearningRoadmapRoute
+  '/resources/read/sql-pdf-notes': typeof MarketingResourcesReadSqlPdfNotesRoute
+  '/resources/read/sql-practice-questions': typeof MarketingResourcesReadSqlPracticeQuestionsRoute
+  '/resources/read/sql-project-case-study': typeof MarketingResourcesReadSqlProjectCaseStudyRoute
+  '/resources/read/sql-project-guide': typeof MarketingResourcesReadSqlProjectGuideRoute
+  '/resources/read/sql-quick-revision-notes': typeof MarketingResourcesReadSqlQuickRevisionNotesRoute
+  '/resources/read/sql-real-world-case-study': typeof MarketingResourcesReadSqlRealWorldCaseStudyRoute
+  '/resources/read/sql-reference-guide': typeof MarketingResourcesReadSqlReferenceGuideRoute
+  '/resources/read/sql-sample-exercises': typeof MarketingResourcesReadSqlSampleExercisesRoute
+  '/resources/read/sql-step-by-step-learning-guide': typeof MarketingResourcesReadSqlStepByStepLearningGuideRoute
+  '/resources/read/sql-tips-tricks': typeof MarketingResourcesReadSqlTipsTricksRoute
   '/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
   '/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
   '/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
@@ -6592,6 +6760,27 @@ export interface FileRoutesByTo {
   '/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/resources/read/sql-advanced-concepts': typeof MarketingResourcesReadSqlAdvancedConceptsRoute
+  '/resources/read/sql-answer-key': typeof MarketingResourcesReadSqlAnswerKeyRoute
+  '/resources/read/sql-beginner-guide': typeof MarketingResourcesReadSqlBeginnerGuideRoute
+  '/resources/read/sql-best-practices': typeof MarketingResourcesReadSqlBestPracticesRoute
+  '/resources/read/sql-cheat-sheet': typeof MarketingResourcesReadSqlCheatSheetRoute
+  '/resources/read/sql-common-mistakes': typeof MarketingResourcesReadSqlCommonMistakesRoute
+  '/resources/read/sql-complete-tutorial': typeof MarketingResourcesReadSqlCompleteTutorialRoute
+  '/resources/read/sql-frequently-asked-questions': typeof MarketingResourcesReadSqlFrequentlyAskedQuestionsRoute
+  '/resources/read/sql-glossary': typeof MarketingResourcesReadSqlGlossaryRoute
+  '/resources/read/sql-interview-questions': typeof MarketingResourcesReadSqlInterviewQuestionsRoute
+  '/resources/read/sql-learning-roadmap': typeof MarketingResourcesReadSqlLearningRoadmapRoute
+  '/resources/read/sql-pdf-notes': typeof MarketingResourcesReadSqlPdfNotesRoute
+  '/resources/read/sql-practice-questions': typeof MarketingResourcesReadSqlPracticeQuestionsRoute
+  '/resources/read/sql-project-case-study': typeof MarketingResourcesReadSqlProjectCaseStudyRoute
+  '/resources/read/sql-project-guide': typeof MarketingResourcesReadSqlProjectGuideRoute
+  '/resources/read/sql-quick-revision-notes': typeof MarketingResourcesReadSqlQuickRevisionNotesRoute
+  '/resources/read/sql-real-world-case-study': typeof MarketingResourcesReadSqlRealWorldCaseStudyRoute
+  '/resources/read/sql-reference-guide': typeof MarketingResourcesReadSqlReferenceGuideRoute
+  '/resources/read/sql-sample-exercises': typeof MarketingResourcesReadSqlSampleExercisesRoute
+  '/resources/read/sql-step-by-step-learning-guide': typeof MarketingResourcesReadSqlStepByStepLearningGuideRoute
+  '/resources/read/sql-tips-tricks': typeof MarketingResourcesReadSqlTipsTricksRoute
   '/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
   '/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
   '/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
@@ -7333,6 +7522,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/_marketing/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/_marketing/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/_marketing/resources/read/sql-advanced-concepts': typeof MarketingResourcesReadSqlAdvancedConceptsRoute
+  '/_marketing/resources/read/sql-answer-key': typeof MarketingResourcesReadSqlAnswerKeyRoute
+  '/_marketing/resources/read/sql-beginner-guide': typeof MarketingResourcesReadSqlBeginnerGuideRoute
+  '/_marketing/resources/read/sql-best-practices': typeof MarketingResourcesReadSqlBestPracticesRoute
+  '/_marketing/resources/read/sql-cheat-sheet': typeof MarketingResourcesReadSqlCheatSheetRoute
+  '/_marketing/resources/read/sql-common-mistakes': typeof MarketingResourcesReadSqlCommonMistakesRoute
+  '/_marketing/resources/read/sql-complete-tutorial': typeof MarketingResourcesReadSqlCompleteTutorialRoute
+  '/_marketing/resources/read/sql-frequently-asked-questions': typeof MarketingResourcesReadSqlFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/sql-glossary': typeof MarketingResourcesReadSqlGlossaryRoute
+  '/_marketing/resources/read/sql-interview-questions': typeof MarketingResourcesReadSqlInterviewQuestionsRoute
+  '/_marketing/resources/read/sql-learning-roadmap': typeof MarketingResourcesReadSqlLearningRoadmapRoute
+  '/_marketing/resources/read/sql-pdf-notes': typeof MarketingResourcesReadSqlPdfNotesRoute
+  '/_marketing/resources/read/sql-practice-questions': typeof MarketingResourcesReadSqlPracticeQuestionsRoute
+  '/_marketing/resources/read/sql-project-case-study': typeof MarketingResourcesReadSqlProjectCaseStudyRoute
+  '/_marketing/resources/read/sql-project-guide': typeof MarketingResourcesReadSqlProjectGuideRoute
+  '/_marketing/resources/read/sql-quick-revision-notes': typeof MarketingResourcesReadSqlQuickRevisionNotesRoute
+  '/_marketing/resources/read/sql-real-world-case-study': typeof MarketingResourcesReadSqlRealWorldCaseStudyRoute
+  '/_marketing/resources/read/sql-reference-guide': typeof MarketingResourcesReadSqlReferenceGuideRoute
+  '/_marketing/resources/read/sql-sample-exercises': typeof MarketingResourcesReadSqlSampleExercisesRoute
+  '/_marketing/resources/read/sql-step-by-step-learning-guide': typeof MarketingResourcesReadSqlStepByStepLearningGuideRoute
+  '/_marketing/resources/read/sql-tips-tricks': typeof MarketingResourcesReadSqlTipsTricksRoute
   '/_marketing/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
   '/_marketing/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
   '/_marketing/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
@@ -8072,6 +8282,27 @@ export interface FileRouteTypes {
     | '/resources/read/sd-reference-guide'
     | '/resources/read/sd-step-by-step-learning-guide'
     | '/resources/read/sd-tips-tricks'
+    | '/resources/read/sql-advanced-concepts'
+    | '/resources/read/sql-answer-key'
+    | '/resources/read/sql-beginner-guide'
+    | '/resources/read/sql-best-practices'
+    | '/resources/read/sql-cheat-sheet'
+    | '/resources/read/sql-common-mistakes'
+    | '/resources/read/sql-complete-tutorial'
+    | '/resources/read/sql-frequently-asked-questions'
+    | '/resources/read/sql-glossary'
+    | '/resources/read/sql-interview-questions'
+    | '/resources/read/sql-learning-roadmap'
+    | '/resources/read/sql-pdf-notes'
+    | '/resources/read/sql-practice-questions'
+    | '/resources/read/sql-project-case-study'
+    | '/resources/read/sql-project-guide'
+    | '/resources/read/sql-quick-revision-notes'
+    | '/resources/read/sql-real-world-case-study'
+    | '/resources/read/sql-reference-guide'
+    | '/resources/read/sql-sample-exercises'
+    | '/resources/read/sql-step-by-step-learning-guide'
+    | '/resources/read/sql-tips-tricks'
     | '/resources/read/tableau-advanced-concepts'
     | '/resources/read/tableau-answer-key'
     | '/resources/read/tableau-beginner-guide'
@@ -8808,6 +9039,27 @@ export interface FileRouteTypes {
     | '/resources/read/sd-reference-guide'
     | '/resources/read/sd-step-by-step-learning-guide'
     | '/resources/read/sd-tips-tricks'
+    | '/resources/read/sql-advanced-concepts'
+    | '/resources/read/sql-answer-key'
+    | '/resources/read/sql-beginner-guide'
+    | '/resources/read/sql-best-practices'
+    | '/resources/read/sql-cheat-sheet'
+    | '/resources/read/sql-common-mistakes'
+    | '/resources/read/sql-complete-tutorial'
+    | '/resources/read/sql-frequently-asked-questions'
+    | '/resources/read/sql-glossary'
+    | '/resources/read/sql-interview-questions'
+    | '/resources/read/sql-learning-roadmap'
+    | '/resources/read/sql-pdf-notes'
+    | '/resources/read/sql-practice-questions'
+    | '/resources/read/sql-project-case-study'
+    | '/resources/read/sql-project-guide'
+    | '/resources/read/sql-quick-revision-notes'
+    | '/resources/read/sql-real-world-case-study'
+    | '/resources/read/sql-reference-guide'
+    | '/resources/read/sql-sample-exercises'
+    | '/resources/read/sql-step-by-step-learning-guide'
+    | '/resources/read/sql-tips-tricks'
     | '/resources/read/tableau-advanced-concepts'
     | '/resources/read/tableau-answer-key'
     | '/resources/read/tableau-beginner-guide'
@@ -9548,6 +9800,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/sd-reference-guide'
     | '/_marketing/resources/read/sd-step-by-step-learning-guide'
     | '/_marketing/resources/read/sd-tips-tricks'
+    | '/_marketing/resources/read/sql-advanced-concepts'
+    | '/_marketing/resources/read/sql-answer-key'
+    | '/_marketing/resources/read/sql-beginner-guide'
+    | '/_marketing/resources/read/sql-best-practices'
+    | '/_marketing/resources/read/sql-cheat-sheet'
+    | '/_marketing/resources/read/sql-common-mistakes'
+    | '/_marketing/resources/read/sql-complete-tutorial'
+    | '/_marketing/resources/read/sql-frequently-asked-questions'
+    | '/_marketing/resources/read/sql-glossary'
+    | '/_marketing/resources/read/sql-interview-questions'
+    | '/_marketing/resources/read/sql-learning-roadmap'
+    | '/_marketing/resources/read/sql-pdf-notes'
+    | '/_marketing/resources/read/sql-practice-questions'
+    | '/_marketing/resources/read/sql-project-case-study'
+    | '/_marketing/resources/read/sql-project-guide'
+    | '/_marketing/resources/read/sql-quick-revision-notes'
+    | '/_marketing/resources/read/sql-real-world-case-study'
+    | '/_marketing/resources/read/sql-reference-guide'
+    | '/_marketing/resources/read/sql-sample-exercises'
+    | '/_marketing/resources/read/sql-step-by-step-learning-guide'
+    | '/_marketing/resources/read/sql-tips-tricks'
     | '/_marketing/resources/read/tableau-advanced-concepts'
     | '/_marketing/resources/read/tableau-answer-key'
     | '/_marketing/resources/read/tableau-beginner-guide'
@@ -10193,6 +10466,153 @@ declare module '@tanstack/react-router' {
       path: '/read/tableau-advanced-concepts'
       fullPath: '/resources/read/tableau-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadTableauAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-tips-tricks': {
+      id: '/_marketing/resources/read/sql-tips-tricks'
+      path: '/read/sql-tips-tricks'
+      fullPath: '/resources/read/sql-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadSqlTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/sql-step-by-step-learning-guide'
+      path: '/read/sql-step-by-step-learning-guide'
+      fullPath: '/resources/read/sql-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadSqlStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-sample-exercises': {
+      id: '/_marketing/resources/read/sql-sample-exercises'
+      path: '/read/sql-sample-exercises'
+      fullPath: '/resources/read/sql-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadSqlSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-reference-guide': {
+      id: '/_marketing/resources/read/sql-reference-guide'
+      path: '/read/sql-reference-guide'
+      fullPath: '/resources/read/sql-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadSqlReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-real-world-case-study': {
+      id: '/_marketing/resources/read/sql-real-world-case-study'
+      path: '/read/sql-real-world-case-study'
+      fullPath: '/resources/read/sql-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadSqlRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-quick-revision-notes': {
+      id: '/_marketing/resources/read/sql-quick-revision-notes'
+      path: '/read/sql-quick-revision-notes'
+      fullPath: '/resources/read/sql-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadSqlQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-project-guide': {
+      id: '/_marketing/resources/read/sql-project-guide'
+      path: '/read/sql-project-guide'
+      fullPath: '/resources/read/sql-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadSqlProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-project-case-study': {
+      id: '/_marketing/resources/read/sql-project-case-study'
+      path: '/read/sql-project-case-study'
+      fullPath: '/resources/read/sql-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadSqlProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-practice-questions': {
+      id: '/_marketing/resources/read/sql-practice-questions'
+      path: '/read/sql-practice-questions'
+      fullPath: '/resources/read/sql-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadSqlPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-pdf-notes': {
+      id: '/_marketing/resources/read/sql-pdf-notes'
+      path: '/read/sql-pdf-notes'
+      fullPath: '/resources/read/sql-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadSqlPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-learning-roadmap': {
+      id: '/_marketing/resources/read/sql-learning-roadmap'
+      path: '/read/sql-learning-roadmap'
+      fullPath: '/resources/read/sql-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadSqlLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-interview-questions': {
+      id: '/_marketing/resources/read/sql-interview-questions'
+      path: '/read/sql-interview-questions'
+      fullPath: '/resources/read/sql-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadSqlInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-glossary': {
+      id: '/_marketing/resources/read/sql-glossary'
+      path: '/read/sql-glossary'
+      fullPath: '/resources/read/sql-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadSqlGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-frequently-asked-questions': {
+      id: '/_marketing/resources/read/sql-frequently-asked-questions'
+      path: '/read/sql-frequently-asked-questions'
+      fullPath: '/resources/read/sql-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadSqlFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-complete-tutorial': {
+      id: '/_marketing/resources/read/sql-complete-tutorial'
+      path: '/read/sql-complete-tutorial'
+      fullPath: '/resources/read/sql-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadSqlCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-common-mistakes': {
+      id: '/_marketing/resources/read/sql-common-mistakes'
+      path: '/read/sql-common-mistakes'
+      fullPath: '/resources/read/sql-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadSqlCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-cheat-sheet': {
+      id: '/_marketing/resources/read/sql-cheat-sheet'
+      path: '/read/sql-cheat-sheet'
+      fullPath: '/resources/read/sql-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadSqlCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-best-practices': {
+      id: '/_marketing/resources/read/sql-best-practices'
+      path: '/read/sql-best-practices'
+      fullPath: '/resources/read/sql-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadSqlBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-beginner-guide': {
+      id: '/_marketing/resources/read/sql-beginner-guide'
+      path: '/read/sql-beginner-guide'
+      fullPath: '/resources/read/sql-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadSqlBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-answer-key': {
+      id: '/_marketing/resources/read/sql-answer-key'
+      path: '/read/sql-answer-key'
+      fullPath: '/resources/read/sql-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadSqlAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sql-advanced-concepts': {
+      id: '/_marketing/resources/read/sql-advanced-concepts'
+      path: '/read/sql-advanced-concepts'
+      fullPath: '/resources/read/sql-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadSqlAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/sd-tips-tricks': {
@@ -15558,6 +15978,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadSdReferenceGuideRoute: typeof MarketingResourcesReadSdReferenceGuideRoute
   MarketingResourcesReadSdStepByStepLearningGuideRoute: typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   MarketingResourcesReadSdTipsTricksRoute: typeof MarketingResourcesReadSdTipsTricksRoute
+  MarketingResourcesReadSqlAdvancedConceptsRoute: typeof MarketingResourcesReadSqlAdvancedConceptsRoute
+  MarketingResourcesReadSqlAnswerKeyRoute: typeof MarketingResourcesReadSqlAnswerKeyRoute
+  MarketingResourcesReadSqlBeginnerGuideRoute: typeof MarketingResourcesReadSqlBeginnerGuideRoute
+  MarketingResourcesReadSqlBestPracticesRoute: typeof MarketingResourcesReadSqlBestPracticesRoute
+  MarketingResourcesReadSqlCheatSheetRoute: typeof MarketingResourcesReadSqlCheatSheetRoute
+  MarketingResourcesReadSqlCommonMistakesRoute: typeof MarketingResourcesReadSqlCommonMistakesRoute
+  MarketingResourcesReadSqlCompleteTutorialRoute: typeof MarketingResourcesReadSqlCompleteTutorialRoute
+  MarketingResourcesReadSqlFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadSqlFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadSqlGlossaryRoute: typeof MarketingResourcesReadSqlGlossaryRoute
+  MarketingResourcesReadSqlInterviewQuestionsRoute: typeof MarketingResourcesReadSqlInterviewQuestionsRoute
+  MarketingResourcesReadSqlLearningRoadmapRoute: typeof MarketingResourcesReadSqlLearningRoadmapRoute
+  MarketingResourcesReadSqlPdfNotesRoute: typeof MarketingResourcesReadSqlPdfNotesRoute
+  MarketingResourcesReadSqlPracticeQuestionsRoute: typeof MarketingResourcesReadSqlPracticeQuestionsRoute
+  MarketingResourcesReadSqlProjectCaseStudyRoute: typeof MarketingResourcesReadSqlProjectCaseStudyRoute
+  MarketingResourcesReadSqlProjectGuideRoute: typeof MarketingResourcesReadSqlProjectGuideRoute
+  MarketingResourcesReadSqlQuickRevisionNotesRoute: typeof MarketingResourcesReadSqlQuickRevisionNotesRoute
+  MarketingResourcesReadSqlRealWorldCaseStudyRoute: typeof MarketingResourcesReadSqlRealWorldCaseStudyRoute
+  MarketingResourcesReadSqlReferenceGuideRoute: typeof MarketingResourcesReadSqlReferenceGuideRoute
+  MarketingResourcesReadSqlSampleExercisesRoute: typeof MarketingResourcesReadSqlSampleExercisesRoute
+  MarketingResourcesReadSqlStepByStepLearningGuideRoute: typeof MarketingResourcesReadSqlStepByStepLearningGuideRoute
+  MarketingResourcesReadSqlTipsTricksRoute: typeof MarketingResourcesReadSqlTipsTricksRoute
   MarketingResourcesReadTableauAdvancedConceptsRoute: typeof MarketingResourcesReadTableauAdvancedConceptsRoute
   MarketingResourcesReadTableauAnswerKeyRoute: typeof MarketingResourcesReadTableauAnswerKeyRoute
   MarketingResourcesReadTableauBeginnerGuideRoute: typeof MarketingResourcesReadTableauBeginnerGuideRoute
@@ -16874,6 +17315,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadSdStepByStepLearningGuideRoute,
   MarketingResourcesReadSdTipsTricksRoute:
     MarketingResourcesReadSdTipsTricksRoute,
+  MarketingResourcesReadSqlAdvancedConceptsRoute:
+    MarketingResourcesReadSqlAdvancedConceptsRoute,
+  MarketingResourcesReadSqlAnswerKeyRoute:
+    MarketingResourcesReadSqlAnswerKeyRoute,
+  MarketingResourcesReadSqlBeginnerGuideRoute:
+    MarketingResourcesReadSqlBeginnerGuideRoute,
+  MarketingResourcesReadSqlBestPracticesRoute:
+    MarketingResourcesReadSqlBestPracticesRoute,
+  MarketingResourcesReadSqlCheatSheetRoute:
+    MarketingResourcesReadSqlCheatSheetRoute,
+  MarketingResourcesReadSqlCommonMistakesRoute:
+    MarketingResourcesReadSqlCommonMistakesRoute,
+  MarketingResourcesReadSqlCompleteTutorialRoute:
+    MarketingResourcesReadSqlCompleteTutorialRoute,
+  MarketingResourcesReadSqlFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadSqlFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadSqlGlossaryRoute:
+    MarketingResourcesReadSqlGlossaryRoute,
+  MarketingResourcesReadSqlInterviewQuestionsRoute:
+    MarketingResourcesReadSqlInterviewQuestionsRoute,
+  MarketingResourcesReadSqlLearningRoadmapRoute:
+    MarketingResourcesReadSqlLearningRoadmapRoute,
+  MarketingResourcesReadSqlPdfNotesRoute:
+    MarketingResourcesReadSqlPdfNotesRoute,
+  MarketingResourcesReadSqlPracticeQuestionsRoute:
+    MarketingResourcesReadSqlPracticeQuestionsRoute,
+  MarketingResourcesReadSqlProjectCaseStudyRoute:
+    MarketingResourcesReadSqlProjectCaseStudyRoute,
+  MarketingResourcesReadSqlProjectGuideRoute:
+    MarketingResourcesReadSqlProjectGuideRoute,
+  MarketingResourcesReadSqlQuickRevisionNotesRoute:
+    MarketingResourcesReadSqlQuickRevisionNotesRoute,
+  MarketingResourcesReadSqlRealWorldCaseStudyRoute:
+    MarketingResourcesReadSqlRealWorldCaseStudyRoute,
+  MarketingResourcesReadSqlReferenceGuideRoute:
+    MarketingResourcesReadSqlReferenceGuideRoute,
+  MarketingResourcesReadSqlSampleExercisesRoute:
+    MarketingResourcesReadSqlSampleExercisesRoute,
+  MarketingResourcesReadSqlStepByStepLearningGuideRoute:
+    MarketingResourcesReadSqlStepByStepLearningGuideRoute,
+  MarketingResourcesReadSqlTipsTricksRoute:
+    MarketingResourcesReadSqlTipsTricksRoute,
   MarketingResourcesReadTableauAdvancedConceptsRoute:
     MarketingResourcesReadTableauAdvancedConceptsRoute,
   MarketingResourcesReadTableauAnswerKeyRoute:
