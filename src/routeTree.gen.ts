@@ -108,6 +108,7 @@ import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './rou
 import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/_marketing.resources.read.ml-answer-key'
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
 import { Route as MarketingResourcesReadGoStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.go-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadGoPdfNotesRouteImport } from './routes/_marketing.resources.read.go-pdf-notes'
 import { Route as MarketingResourcesReadGoCompleteTutorialRouteImport } from './routes/_marketing.resources.read.go-complete-tutorial'
 import { Route as MarketingResourcesReadGoBeginnerGuideRouteImport } from './routes/_marketing.resources.read.go-beginner-guide'
 import { Route as MarketingResourcesReadGenaiRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.genai-real-world-case-study'
@@ -754,6 +755,12 @@ const MarketingResourcesReadGoStepByStepLearningGuideRoute =
     path: '/read/go-step-by-step-learning-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadGoPdfNotesRoute =
+  MarketingResourcesReadGoPdfNotesRouteImport.update({
+    id: '/read/go-pdf-notes',
+    path: '/read/go-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadGoCompleteTutorialRoute =
   MarketingResourcesReadGoCompleteTutorialRouteImport.update({
     id: '/read/go-complete-tutorial',
@@ -1378,6 +1385,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
   '/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
+  '/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1559,6 +1567,7 @@ export interface FileRoutesByTo {
   '/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
   '/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
+  '/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1745,6 +1754,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
   '/_marketing/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/_marketing/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
+  '/_marketing/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
   '/_marketing/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/_marketing/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1929,6 +1939,7 @@ export interface FileRouteTypes {
     | '/resources/read/genai-real-world-case-study'
     | '/resources/read/go-beginner-guide'
     | '/resources/read/go-complete-tutorial'
+    | '/resources/read/go-pdf-notes'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
@@ -2110,6 +2121,7 @@ export interface FileRouteTypes {
     | '/resources/read/genai-real-world-case-study'
     | '/resources/read/go-beginner-guide'
     | '/resources/read/go-complete-tutorial'
+    | '/resources/read/go-pdf-notes'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
@@ -2295,6 +2307,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/genai-real-world-case-study'
     | '/_marketing/resources/read/go-beginner-guide'
     | '/_marketing/resources/read/go-complete-tutorial'
+    | '/_marketing/resources/read/go-pdf-notes'
     | '/_marketing/resources/read/go-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-advanced-concepts'
     | '/_marketing/resources/read/ml-answer-key'
@@ -3068,6 +3081,13 @@ declare module '@tanstack/react-router' {
       path: '/read/go-step-by-step-learning-guide'
       fullPath: '/resources/read/go-step-by-step-learning-guide'
       preLoaderRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/go-pdf-notes': {
+      id: '/_marketing/resources/read/go-pdf-notes'
+      path: '/read/go-pdf-notes'
+      fullPath: '/resources/read/go-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadGoPdfNotesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/go-complete-tutorial': {
@@ -3865,6 +3885,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadGenaiRealWorldCaseStudyRoute: typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
   MarketingResourcesReadGoBeginnerGuideRoute: typeof MarketingResourcesReadGoBeginnerGuideRoute
   MarketingResourcesReadGoCompleteTutorialRoute: typeof MarketingResourcesReadGoCompleteTutorialRoute
+  MarketingResourcesReadGoPdfNotesRoute: typeof MarketingResourcesReadGoPdfNotesRoute
   MarketingResourcesReadGoStepByStepLearningGuideRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
   MarketingResourcesReadMlAnswerKeyRoute: typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -4063,6 +4084,7 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadGoBeginnerGuideRoute,
   MarketingResourcesReadGoCompleteTutorialRoute:
     MarketingResourcesReadGoCompleteTutorialRoute,
+  MarketingResourcesReadGoPdfNotesRoute: MarketingResourcesReadGoPdfNotesRoute,
   MarketingResourcesReadGoStepByStepLearningGuideRoute:
     MarketingResourcesReadGoStepByStepLearningGuideRoute,
   MarketingResourcesReadMlAdvancedConceptsRoute:
