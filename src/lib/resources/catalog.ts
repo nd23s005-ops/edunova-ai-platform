@@ -104,7 +104,7 @@ export const COURSE_CATALOG: CourseCatalogEntry[] = [
 
   // Data & Analytics
   { slug: "data-science", title: "Data Science", category: "Data & Analytics", tagline: "Analytics, ML, visualization, and storytelling with data.", difficulty: "Intermediate", tags: ["Data", "ML", "Viz"], gradient: "from-pink-500 to-rose-500" },
-  { slug: "data-analytics", title: "Data Analytics", category: "Data & Analytics", tagline: "SQL, Excel, Python, and BI tools for data-driven decisions.", difficulty: "Beginner", tags: ["Analytics", "SQL", "BI"], gradient: "from-pink-500 to-fuchsia-500" },
+  { slug: "data-analytics", title: "Data Analytics", category: "Data & Analytics", tagline: "SQL, Excel, Python, and BI tools for data-driven decisions.", difficulty: "Intermediate", tags: ["Analytics", "SQL"], gradient: "from-pink-500 to-fuchsia-500" },
   { slug: "numpy", title: "NumPy", category: "Data & Analytics", tagline: "Arrays, broadcasting, and numerical computing in Python.", difficulty: "Beginner", tags: ["NumPy", "Python"], gradient: "from-rose-500 to-pink-500" },
   { slug: "pandas", title: "Pandas", category: "Data & Analytics", tagline: "DataFrames, groupby, joins, and real-world data wrangling.", difficulty: "Beginner", tags: ["Pandas", "Python"], gradient: "from-pink-500 to-rose-500" },
   { slug: "power-bi", title: "Power BI", category: "Data & Analytics", tagline: "Modeling, DAX, and building executive-ready dashboards.", difficulty: "Beginner", tags: ["Power BI", "DAX"], gradient: "from-yellow-500 to-amber-500" },
@@ -1356,6 +1356,27 @@ const READER_ROUTES: Record<string, string> = {
     "data-science--advanced-concepts": "/resources/read/data-science-advanced-concepts",
     "data-science--glossary": "/resources/read/data-science-glossary",
     "data-science--reference-guide": "/resources/read/data-science-reference-guide",
+    "data-analytics--beginner-guide": "/resources/read/data-analytics-beginner-guide",
+    "data-analytics--complete-tutorial": "/resources/read/data-analytics-complete-tutorial",
+    "data-analytics--step-by-step-learning-guide": "/resources/read/data-analytics-step-by-step-learning-guide",
+    "data-analytics--pdf-notes": "/resources/read/data-analytics-pdf-notes",
+    "data-analytics--quick-revision-notes": "/resources/read/data-analytics-quick-revision-notes",
+    "data-analytics--cheat-sheet": "/resources/read/data-analytics-cheat-sheet",
+    "data-analytics--interview-questions": "/resources/read/data-analytics-interview-questions",
+    "data-analytics--practice-questions": "/resources/read/data-analytics-practice-questions",
+    "data-analytics--answer-key": "/resources/read/data-analytics-answer-key",
+    "data-analytics--sample-exercises": "/resources/read/data-analytics-sample-exercises",
+    "data-analytics--project-guide": "/resources/read/data-analytics-project-guide",
+    "data-analytics--project-case-study": "/resources/read/data-analytics-project-case-study",
+    "data-analytics--real-world-case-study": "/resources/read/data-analytics-real-world-case-study",
+    "data-analytics--best-practices": "/resources/read/data-analytics-best-practices",
+    "data-analytics--common-mistakes": "/resources/read/data-analytics-common-mistakes",
+    "data-analytics--frequently-asked-questions": "/resources/read/data-analytics-frequently-asked-questions",
+    "data-analytics--learning-roadmap": "/resources/read/data-analytics-learning-roadmap",
+    "data-analytics--tips-tricks": "/resources/read/data-analytics-tips-tricks",
+    "data-analytics--advanced-concepts": "/resources/read/data-analytics-advanced-concepts",
+    "data-analytics--glossary": "/resources/read/data-analytics-glossary",
+    "data-analytics--reference-guide": "/resources/read/data-analytics-reference-guide",
 };
 
 
