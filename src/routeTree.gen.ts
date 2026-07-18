@@ -287,6 +287,27 @@ import { Route as MarketingResourcesReadNetworkSecurityBestPracticesRouteImport 
 import { Route as MarketingResourcesReadNetworkSecurityBeginnerGuideRouteImport } from './routes/_marketing.resources.read.network-security-beginner-guide'
 import { Route as MarketingResourcesReadNetworkSecurityAnswerKeyRouteImport } from './routes/_marketing.resources.read.network-security-answer-key'
 import { Route as MarketingResourcesReadNetworkSecurityAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.network-security-advanced-concepts'
+import { Route as MarketingResourcesReadMysqlTipsTricksRouteImport } from './routes/_marketing.resources.read.mysql-tips-tricks'
+import { Route as MarketingResourcesReadMysqlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.mysql-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadMysqlSampleExercisesRouteImport } from './routes/_marketing.resources.read.mysql-sample-exercises'
+import { Route as MarketingResourcesReadMysqlReferenceGuideRouteImport } from './routes/_marketing.resources.read.mysql-reference-guide'
+import { Route as MarketingResourcesReadMysqlRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.mysql-real-world-case-study'
+import { Route as MarketingResourcesReadMysqlQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.mysql-quick-revision-notes'
+import { Route as MarketingResourcesReadMysqlProjectGuideRouteImport } from './routes/_marketing.resources.read.mysql-project-guide'
+import { Route as MarketingResourcesReadMysqlProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.mysql-project-case-study'
+import { Route as MarketingResourcesReadMysqlPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.mysql-practice-questions'
+import { Route as MarketingResourcesReadMysqlPdfNotesRouteImport } from './routes/_marketing.resources.read.mysql-pdf-notes'
+import { Route as MarketingResourcesReadMysqlLearningRoadmapRouteImport } from './routes/_marketing.resources.read.mysql-learning-roadmap'
+import { Route as MarketingResourcesReadMysqlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.mysql-interview-questions'
+import { Route as MarketingResourcesReadMysqlGlossaryRouteImport } from './routes/_marketing.resources.read.mysql-glossary'
+import { Route as MarketingResourcesReadMysqlFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.mysql-frequently-asked-questions'
+import { Route as MarketingResourcesReadMysqlCompleteTutorialRouteImport } from './routes/_marketing.resources.read.mysql-complete-tutorial'
+import { Route as MarketingResourcesReadMysqlCommonMistakesRouteImport } from './routes/_marketing.resources.read.mysql-common-mistakes'
+import { Route as MarketingResourcesReadMysqlCheatSheetRouteImport } from './routes/_marketing.resources.read.mysql-cheat-sheet'
+import { Route as MarketingResourcesReadMysqlBestPracticesRouteImport } from './routes/_marketing.resources.read.mysql-best-practices'
+import { Route as MarketingResourcesReadMysqlBeginnerGuideRouteImport } from './routes/_marketing.resources.read.mysql-beginner-guide'
+import { Route as MarketingResourcesReadMysqlAnswerKeyRouteImport } from './routes/_marketing.resources.read.mysql-answer-key'
+import { Route as MarketingResourcesReadMysqlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.mysql-advanced-concepts'
 import { Route as MarketingResourcesReadMlTipsTricksRouteImport } from './routes/_marketing.resources.read.ml-tips-tricks'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlSampleExercisesRouteImport } from './routes/_marketing.resources.read.ml-sample-exercises'
@@ -2414,6 +2435,132 @@ const MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute =
   MarketingResourcesReadNetworkSecurityAdvancedConceptsRouteImport.update({
     id: '/read/network-security-advanced-concepts',
     path: '/read/network-security-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlTipsTricksRoute =
+  MarketingResourcesReadMysqlTipsTricksRouteImport.update({
+    id: '/read/mysql-tips-tricks',
+    path: '/read/mysql-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlStepByStepLearningGuideRoute =
+  MarketingResourcesReadMysqlStepByStepLearningGuideRouteImport.update({
+    id: '/read/mysql-step-by-step-learning-guide',
+    path: '/read/mysql-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlSampleExercisesRoute =
+  MarketingResourcesReadMysqlSampleExercisesRouteImport.update({
+    id: '/read/mysql-sample-exercises',
+    path: '/read/mysql-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlReferenceGuideRoute =
+  MarketingResourcesReadMysqlReferenceGuideRouteImport.update({
+    id: '/read/mysql-reference-guide',
+    path: '/read/mysql-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlRealWorldCaseStudyRoute =
+  MarketingResourcesReadMysqlRealWorldCaseStudyRouteImport.update({
+    id: '/read/mysql-real-world-case-study',
+    path: '/read/mysql-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlQuickRevisionNotesRoute =
+  MarketingResourcesReadMysqlQuickRevisionNotesRouteImport.update({
+    id: '/read/mysql-quick-revision-notes',
+    path: '/read/mysql-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlProjectGuideRoute =
+  MarketingResourcesReadMysqlProjectGuideRouteImport.update({
+    id: '/read/mysql-project-guide',
+    path: '/read/mysql-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlProjectCaseStudyRoute =
+  MarketingResourcesReadMysqlProjectCaseStudyRouteImport.update({
+    id: '/read/mysql-project-case-study',
+    path: '/read/mysql-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlPracticeQuestionsRoute =
+  MarketingResourcesReadMysqlPracticeQuestionsRouteImport.update({
+    id: '/read/mysql-practice-questions',
+    path: '/read/mysql-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlPdfNotesRoute =
+  MarketingResourcesReadMysqlPdfNotesRouteImport.update({
+    id: '/read/mysql-pdf-notes',
+    path: '/read/mysql-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlLearningRoadmapRoute =
+  MarketingResourcesReadMysqlLearningRoadmapRouteImport.update({
+    id: '/read/mysql-learning-roadmap',
+    path: '/read/mysql-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlInterviewQuestionsRoute =
+  MarketingResourcesReadMysqlInterviewQuestionsRouteImport.update({
+    id: '/read/mysql-interview-questions',
+    path: '/read/mysql-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlGlossaryRoute =
+  MarketingResourcesReadMysqlGlossaryRouteImport.update({
+    id: '/read/mysql-glossary',
+    path: '/read/mysql-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadMysqlFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/mysql-frequently-asked-questions',
+    path: '/read/mysql-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlCompleteTutorialRoute =
+  MarketingResourcesReadMysqlCompleteTutorialRouteImport.update({
+    id: '/read/mysql-complete-tutorial',
+    path: '/read/mysql-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlCommonMistakesRoute =
+  MarketingResourcesReadMysqlCommonMistakesRouteImport.update({
+    id: '/read/mysql-common-mistakes',
+    path: '/read/mysql-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlCheatSheetRoute =
+  MarketingResourcesReadMysqlCheatSheetRouteImport.update({
+    id: '/read/mysql-cheat-sheet',
+    path: '/read/mysql-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlBestPracticesRoute =
+  MarketingResourcesReadMysqlBestPracticesRouteImport.update({
+    id: '/read/mysql-best-practices',
+    path: '/read/mysql-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlBeginnerGuideRoute =
+  MarketingResourcesReadMysqlBeginnerGuideRouteImport.update({
+    id: '/read/mysql-beginner-guide',
+    path: '/read/mysql-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlAnswerKeyRoute =
+  MarketingResourcesReadMysqlAnswerKeyRouteImport.update({
+    id: '/read/mysql-answer-key',
+    path: '/read/mysql-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMysqlAdvancedConceptsRoute =
+  MarketingResourcesReadMysqlAdvancedConceptsRouteImport.update({
+    id: '/read/mysql-advanced-concepts',
+    path: '/read/mysql-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlTipsTricksRoute =
@@ -5829,6 +5976,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/mysql-advanced-concepts': typeof MarketingResourcesReadMysqlAdvancedConceptsRoute
+  '/resources/read/mysql-answer-key': typeof MarketingResourcesReadMysqlAnswerKeyRoute
+  '/resources/read/mysql-beginner-guide': typeof MarketingResourcesReadMysqlBeginnerGuideRoute
+  '/resources/read/mysql-best-practices': typeof MarketingResourcesReadMysqlBestPracticesRoute
+  '/resources/read/mysql-cheat-sheet': typeof MarketingResourcesReadMysqlCheatSheetRoute
+  '/resources/read/mysql-common-mistakes': typeof MarketingResourcesReadMysqlCommonMistakesRoute
+  '/resources/read/mysql-complete-tutorial': typeof MarketingResourcesReadMysqlCompleteTutorialRoute
+  '/resources/read/mysql-frequently-asked-questions': typeof MarketingResourcesReadMysqlFrequentlyAskedQuestionsRoute
+  '/resources/read/mysql-glossary': typeof MarketingResourcesReadMysqlGlossaryRoute
+  '/resources/read/mysql-interview-questions': typeof MarketingResourcesReadMysqlInterviewQuestionsRoute
+  '/resources/read/mysql-learning-roadmap': typeof MarketingResourcesReadMysqlLearningRoadmapRoute
+  '/resources/read/mysql-pdf-notes': typeof MarketingResourcesReadMysqlPdfNotesRoute
+  '/resources/read/mysql-practice-questions': typeof MarketingResourcesReadMysqlPracticeQuestionsRoute
+  '/resources/read/mysql-project-case-study': typeof MarketingResourcesReadMysqlProjectCaseStudyRoute
+  '/resources/read/mysql-project-guide': typeof MarketingResourcesReadMysqlProjectGuideRoute
+  '/resources/read/mysql-quick-revision-notes': typeof MarketingResourcesReadMysqlQuickRevisionNotesRoute
+  '/resources/read/mysql-real-world-case-study': typeof MarketingResourcesReadMysqlRealWorldCaseStudyRoute
+  '/resources/read/mysql-reference-guide': typeof MarketingResourcesReadMysqlReferenceGuideRoute
+  '/resources/read/mysql-sample-exercises': typeof MarketingResourcesReadMysqlSampleExercisesRoute
+  '/resources/read/mysql-step-by-step-learning-guide': typeof MarketingResourcesReadMysqlStepByStepLearningGuideRoute
+  '/resources/read/mysql-tips-tricks': typeof MarketingResourcesReadMysqlTipsTricksRoute
   '/resources/read/network-security-advanced-concepts': typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute
   '/resources/read/network-security-answer-key': typeof MarketingResourcesReadNetworkSecurityAnswerKeyRoute
   '/resources/read/network-security-beginner-guide': typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRoute
@@ -6586,6 +6754,27 @@ export interface FileRoutesByTo {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/mysql-advanced-concepts': typeof MarketingResourcesReadMysqlAdvancedConceptsRoute
+  '/resources/read/mysql-answer-key': typeof MarketingResourcesReadMysqlAnswerKeyRoute
+  '/resources/read/mysql-beginner-guide': typeof MarketingResourcesReadMysqlBeginnerGuideRoute
+  '/resources/read/mysql-best-practices': typeof MarketingResourcesReadMysqlBestPracticesRoute
+  '/resources/read/mysql-cheat-sheet': typeof MarketingResourcesReadMysqlCheatSheetRoute
+  '/resources/read/mysql-common-mistakes': typeof MarketingResourcesReadMysqlCommonMistakesRoute
+  '/resources/read/mysql-complete-tutorial': typeof MarketingResourcesReadMysqlCompleteTutorialRoute
+  '/resources/read/mysql-frequently-asked-questions': typeof MarketingResourcesReadMysqlFrequentlyAskedQuestionsRoute
+  '/resources/read/mysql-glossary': typeof MarketingResourcesReadMysqlGlossaryRoute
+  '/resources/read/mysql-interview-questions': typeof MarketingResourcesReadMysqlInterviewQuestionsRoute
+  '/resources/read/mysql-learning-roadmap': typeof MarketingResourcesReadMysqlLearningRoadmapRoute
+  '/resources/read/mysql-pdf-notes': typeof MarketingResourcesReadMysqlPdfNotesRoute
+  '/resources/read/mysql-practice-questions': typeof MarketingResourcesReadMysqlPracticeQuestionsRoute
+  '/resources/read/mysql-project-case-study': typeof MarketingResourcesReadMysqlProjectCaseStudyRoute
+  '/resources/read/mysql-project-guide': typeof MarketingResourcesReadMysqlProjectGuideRoute
+  '/resources/read/mysql-quick-revision-notes': typeof MarketingResourcesReadMysqlQuickRevisionNotesRoute
+  '/resources/read/mysql-real-world-case-study': typeof MarketingResourcesReadMysqlRealWorldCaseStudyRoute
+  '/resources/read/mysql-reference-guide': typeof MarketingResourcesReadMysqlReferenceGuideRoute
+  '/resources/read/mysql-sample-exercises': typeof MarketingResourcesReadMysqlSampleExercisesRoute
+  '/resources/read/mysql-step-by-step-learning-guide': typeof MarketingResourcesReadMysqlStepByStepLearningGuideRoute
+  '/resources/read/mysql-tips-tricks': typeof MarketingResourcesReadMysqlTipsTricksRoute
   '/resources/read/network-security-advanced-concepts': typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute
   '/resources/read/network-security-answer-key': typeof MarketingResourcesReadNetworkSecurityAnswerKeyRoute
   '/resources/read/network-security-beginner-guide': typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRoute
@@ -7348,6 +7537,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/_marketing/resources/read/mysql-advanced-concepts': typeof MarketingResourcesReadMysqlAdvancedConceptsRoute
+  '/_marketing/resources/read/mysql-answer-key': typeof MarketingResourcesReadMysqlAnswerKeyRoute
+  '/_marketing/resources/read/mysql-beginner-guide': typeof MarketingResourcesReadMysqlBeginnerGuideRoute
+  '/_marketing/resources/read/mysql-best-practices': typeof MarketingResourcesReadMysqlBestPracticesRoute
+  '/_marketing/resources/read/mysql-cheat-sheet': typeof MarketingResourcesReadMysqlCheatSheetRoute
+  '/_marketing/resources/read/mysql-common-mistakes': typeof MarketingResourcesReadMysqlCommonMistakesRoute
+  '/_marketing/resources/read/mysql-complete-tutorial': typeof MarketingResourcesReadMysqlCompleteTutorialRoute
+  '/_marketing/resources/read/mysql-frequently-asked-questions': typeof MarketingResourcesReadMysqlFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/mysql-glossary': typeof MarketingResourcesReadMysqlGlossaryRoute
+  '/_marketing/resources/read/mysql-interview-questions': typeof MarketingResourcesReadMysqlInterviewQuestionsRoute
+  '/_marketing/resources/read/mysql-learning-roadmap': typeof MarketingResourcesReadMysqlLearningRoadmapRoute
+  '/_marketing/resources/read/mysql-pdf-notes': typeof MarketingResourcesReadMysqlPdfNotesRoute
+  '/_marketing/resources/read/mysql-practice-questions': typeof MarketingResourcesReadMysqlPracticeQuestionsRoute
+  '/_marketing/resources/read/mysql-project-case-study': typeof MarketingResourcesReadMysqlProjectCaseStudyRoute
+  '/_marketing/resources/read/mysql-project-guide': typeof MarketingResourcesReadMysqlProjectGuideRoute
+  '/_marketing/resources/read/mysql-quick-revision-notes': typeof MarketingResourcesReadMysqlQuickRevisionNotesRoute
+  '/_marketing/resources/read/mysql-real-world-case-study': typeof MarketingResourcesReadMysqlRealWorldCaseStudyRoute
+  '/_marketing/resources/read/mysql-reference-guide': typeof MarketingResourcesReadMysqlReferenceGuideRoute
+  '/_marketing/resources/read/mysql-sample-exercises': typeof MarketingResourcesReadMysqlSampleExercisesRoute
+  '/_marketing/resources/read/mysql-step-by-step-learning-guide': typeof MarketingResourcesReadMysqlStepByStepLearningGuideRoute
+  '/_marketing/resources/read/mysql-tips-tricks': typeof MarketingResourcesReadMysqlTipsTricksRoute
   '/_marketing/resources/read/network-security-advanced-concepts': typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute
   '/_marketing/resources/read/network-security-answer-key': typeof MarketingResourcesReadNetworkSecurityAnswerKeyRoute
   '/_marketing/resources/read/network-security-beginner-guide': typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRoute
@@ -8108,6 +8318,27 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/mysql-advanced-concepts'
+    | '/resources/read/mysql-answer-key'
+    | '/resources/read/mysql-beginner-guide'
+    | '/resources/read/mysql-best-practices'
+    | '/resources/read/mysql-cheat-sheet'
+    | '/resources/read/mysql-common-mistakes'
+    | '/resources/read/mysql-complete-tutorial'
+    | '/resources/read/mysql-frequently-asked-questions'
+    | '/resources/read/mysql-glossary'
+    | '/resources/read/mysql-interview-questions'
+    | '/resources/read/mysql-learning-roadmap'
+    | '/resources/read/mysql-pdf-notes'
+    | '/resources/read/mysql-practice-questions'
+    | '/resources/read/mysql-project-case-study'
+    | '/resources/read/mysql-project-guide'
+    | '/resources/read/mysql-quick-revision-notes'
+    | '/resources/read/mysql-real-world-case-study'
+    | '/resources/read/mysql-reference-guide'
+    | '/resources/read/mysql-sample-exercises'
+    | '/resources/read/mysql-step-by-step-learning-guide'
+    | '/resources/read/mysql-tips-tricks'
     | '/resources/read/network-security-advanced-concepts'
     | '/resources/read/network-security-answer-key'
     | '/resources/read/network-security-beginner-guide'
@@ -8865,6 +9096,27 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/mysql-advanced-concepts'
+    | '/resources/read/mysql-answer-key'
+    | '/resources/read/mysql-beginner-guide'
+    | '/resources/read/mysql-best-practices'
+    | '/resources/read/mysql-cheat-sheet'
+    | '/resources/read/mysql-common-mistakes'
+    | '/resources/read/mysql-complete-tutorial'
+    | '/resources/read/mysql-frequently-asked-questions'
+    | '/resources/read/mysql-glossary'
+    | '/resources/read/mysql-interview-questions'
+    | '/resources/read/mysql-learning-roadmap'
+    | '/resources/read/mysql-pdf-notes'
+    | '/resources/read/mysql-practice-questions'
+    | '/resources/read/mysql-project-case-study'
+    | '/resources/read/mysql-project-guide'
+    | '/resources/read/mysql-quick-revision-notes'
+    | '/resources/read/mysql-real-world-case-study'
+    | '/resources/read/mysql-reference-guide'
+    | '/resources/read/mysql-sample-exercises'
+    | '/resources/read/mysql-step-by-step-learning-guide'
+    | '/resources/read/mysql-tips-tricks'
     | '/resources/read/network-security-advanced-concepts'
     | '/resources/read/network-security-answer-key'
     | '/resources/read/network-security-beginner-guide'
@@ -9626,6 +9878,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-sample-exercises'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-tips-tricks'
+    | '/_marketing/resources/read/mysql-advanced-concepts'
+    | '/_marketing/resources/read/mysql-answer-key'
+    | '/_marketing/resources/read/mysql-beginner-guide'
+    | '/_marketing/resources/read/mysql-best-practices'
+    | '/_marketing/resources/read/mysql-cheat-sheet'
+    | '/_marketing/resources/read/mysql-common-mistakes'
+    | '/_marketing/resources/read/mysql-complete-tutorial'
+    | '/_marketing/resources/read/mysql-frequently-asked-questions'
+    | '/_marketing/resources/read/mysql-glossary'
+    | '/_marketing/resources/read/mysql-interview-questions'
+    | '/_marketing/resources/read/mysql-learning-roadmap'
+    | '/_marketing/resources/read/mysql-pdf-notes'
+    | '/_marketing/resources/read/mysql-practice-questions'
+    | '/_marketing/resources/read/mysql-project-case-study'
+    | '/_marketing/resources/read/mysql-project-guide'
+    | '/_marketing/resources/read/mysql-quick-revision-notes'
+    | '/_marketing/resources/read/mysql-real-world-case-study'
+    | '/_marketing/resources/read/mysql-reference-guide'
+    | '/_marketing/resources/read/mysql-sample-exercises'
+    | '/_marketing/resources/read/mysql-step-by-step-learning-guide'
+    | '/_marketing/resources/read/mysql-tips-tricks'
     | '/_marketing/resources/read/network-security-advanced-concepts'
     | '/_marketing/resources/read/network-security-answer-key'
     | '/_marketing/resources/read/network-security-beginner-guide'
@@ -11831,6 +12104,153 @@ declare module '@tanstack/react-router' {
       path: '/read/network-security-advanced-concepts'
       fullPath: '/resources/read/network-security-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-tips-tricks': {
+      id: '/_marketing/resources/read/mysql-tips-tricks'
+      path: '/read/mysql-tips-tricks'
+      fullPath: '/resources/read/mysql-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/mysql-step-by-step-learning-guide'
+      path: '/read/mysql-step-by-step-learning-guide'
+      fullPath: '/resources/read/mysql-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-sample-exercises': {
+      id: '/_marketing/resources/read/mysql-sample-exercises'
+      path: '/read/mysql-sample-exercises'
+      fullPath: '/resources/read/mysql-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-reference-guide': {
+      id: '/_marketing/resources/read/mysql-reference-guide'
+      path: '/read/mysql-reference-guide'
+      fullPath: '/resources/read/mysql-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-real-world-case-study': {
+      id: '/_marketing/resources/read/mysql-real-world-case-study'
+      path: '/read/mysql-real-world-case-study'
+      fullPath: '/resources/read/mysql-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-quick-revision-notes': {
+      id: '/_marketing/resources/read/mysql-quick-revision-notes'
+      path: '/read/mysql-quick-revision-notes'
+      fullPath: '/resources/read/mysql-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-project-guide': {
+      id: '/_marketing/resources/read/mysql-project-guide'
+      path: '/read/mysql-project-guide'
+      fullPath: '/resources/read/mysql-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-project-case-study': {
+      id: '/_marketing/resources/read/mysql-project-case-study'
+      path: '/read/mysql-project-case-study'
+      fullPath: '/resources/read/mysql-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-practice-questions': {
+      id: '/_marketing/resources/read/mysql-practice-questions'
+      path: '/read/mysql-practice-questions'
+      fullPath: '/resources/read/mysql-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-pdf-notes': {
+      id: '/_marketing/resources/read/mysql-pdf-notes'
+      path: '/read/mysql-pdf-notes'
+      fullPath: '/resources/read/mysql-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-learning-roadmap': {
+      id: '/_marketing/resources/read/mysql-learning-roadmap'
+      path: '/read/mysql-learning-roadmap'
+      fullPath: '/resources/read/mysql-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-interview-questions': {
+      id: '/_marketing/resources/read/mysql-interview-questions'
+      path: '/read/mysql-interview-questions'
+      fullPath: '/resources/read/mysql-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-glossary': {
+      id: '/_marketing/resources/read/mysql-glossary'
+      path: '/read/mysql-glossary'
+      fullPath: '/resources/read/mysql-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-frequently-asked-questions': {
+      id: '/_marketing/resources/read/mysql-frequently-asked-questions'
+      path: '/read/mysql-frequently-asked-questions'
+      fullPath: '/resources/read/mysql-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-complete-tutorial': {
+      id: '/_marketing/resources/read/mysql-complete-tutorial'
+      path: '/read/mysql-complete-tutorial'
+      fullPath: '/resources/read/mysql-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-common-mistakes': {
+      id: '/_marketing/resources/read/mysql-common-mistakes'
+      path: '/read/mysql-common-mistakes'
+      fullPath: '/resources/read/mysql-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-cheat-sheet': {
+      id: '/_marketing/resources/read/mysql-cheat-sheet'
+      path: '/read/mysql-cheat-sheet'
+      fullPath: '/resources/read/mysql-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-best-practices': {
+      id: '/_marketing/resources/read/mysql-best-practices'
+      path: '/read/mysql-best-practices'
+      fullPath: '/resources/read/mysql-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-beginner-guide': {
+      id: '/_marketing/resources/read/mysql-beginner-guide'
+      path: '/read/mysql-beginner-guide'
+      fullPath: '/resources/read/mysql-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-answer-key': {
+      id: '/_marketing/resources/read/mysql-answer-key'
+      path: '/read/mysql-answer-key'
+      fullPath: '/resources/read/mysql-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/mysql-advanced-concepts': {
+      id: '/_marketing/resources/read/mysql-advanced-concepts'
+      path: '/read/mysql-advanced-concepts'
+      fullPath: '/resources/read/mysql-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadMysqlAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-tips-tricks': {
@@ -15804,6 +16224,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlSampleExercisesRoute: typeof MarketingResourcesReadMlSampleExercisesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   MarketingResourcesReadMlTipsTricksRoute: typeof MarketingResourcesReadMlTipsTricksRoute
+  MarketingResourcesReadMysqlAdvancedConceptsRoute: typeof MarketingResourcesReadMysqlAdvancedConceptsRoute
+  MarketingResourcesReadMysqlAnswerKeyRoute: typeof MarketingResourcesReadMysqlAnswerKeyRoute
+  MarketingResourcesReadMysqlBeginnerGuideRoute: typeof MarketingResourcesReadMysqlBeginnerGuideRoute
+  MarketingResourcesReadMysqlBestPracticesRoute: typeof MarketingResourcesReadMysqlBestPracticesRoute
+  MarketingResourcesReadMysqlCheatSheetRoute: typeof MarketingResourcesReadMysqlCheatSheetRoute
+  MarketingResourcesReadMysqlCommonMistakesRoute: typeof MarketingResourcesReadMysqlCommonMistakesRoute
+  MarketingResourcesReadMysqlCompleteTutorialRoute: typeof MarketingResourcesReadMysqlCompleteTutorialRoute
+  MarketingResourcesReadMysqlFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadMysqlFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadMysqlGlossaryRoute: typeof MarketingResourcesReadMysqlGlossaryRoute
+  MarketingResourcesReadMysqlInterviewQuestionsRoute: typeof MarketingResourcesReadMysqlInterviewQuestionsRoute
+  MarketingResourcesReadMysqlLearningRoadmapRoute: typeof MarketingResourcesReadMysqlLearningRoadmapRoute
+  MarketingResourcesReadMysqlPdfNotesRoute: typeof MarketingResourcesReadMysqlPdfNotesRoute
+  MarketingResourcesReadMysqlPracticeQuestionsRoute: typeof MarketingResourcesReadMysqlPracticeQuestionsRoute
+  MarketingResourcesReadMysqlProjectCaseStudyRoute: typeof MarketingResourcesReadMysqlProjectCaseStudyRoute
+  MarketingResourcesReadMysqlProjectGuideRoute: typeof MarketingResourcesReadMysqlProjectGuideRoute
+  MarketingResourcesReadMysqlQuickRevisionNotesRoute: typeof MarketingResourcesReadMysqlQuickRevisionNotesRoute
+  MarketingResourcesReadMysqlRealWorldCaseStudyRoute: typeof MarketingResourcesReadMysqlRealWorldCaseStudyRoute
+  MarketingResourcesReadMysqlReferenceGuideRoute: typeof MarketingResourcesReadMysqlReferenceGuideRoute
+  MarketingResourcesReadMysqlSampleExercisesRoute: typeof MarketingResourcesReadMysqlSampleExercisesRoute
+  MarketingResourcesReadMysqlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMysqlStepByStepLearningGuideRoute
+  MarketingResourcesReadMysqlTipsTricksRoute: typeof MarketingResourcesReadMysqlTipsTricksRoute
   MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute: typeof MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute
   MarketingResourcesReadNetworkSecurityAnswerKeyRoute: typeof MarketingResourcesReadNetworkSecurityAnswerKeyRoute
   MarketingResourcesReadNetworkSecurityBeginnerGuideRoute: typeof MarketingResourcesReadNetworkSecurityBeginnerGuideRoute
@@ -16971,6 +17412,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlStepByStepLearningGuideRoute,
   MarketingResourcesReadMlTipsTricksRoute:
     MarketingResourcesReadMlTipsTricksRoute,
+  MarketingResourcesReadMysqlAdvancedConceptsRoute:
+    MarketingResourcesReadMysqlAdvancedConceptsRoute,
+  MarketingResourcesReadMysqlAnswerKeyRoute:
+    MarketingResourcesReadMysqlAnswerKeyRoute,
+  MarketingResourcesReadMysqlBeginnerGuideRoute:
+    MarketingResourcesReadMysqlBeginnerGuideRoute,
+  MarketingResourcesReadMysqlBestPracticesRoute:
+    MarketingResourcesReadMysqlBestPracticesRoute,
+  MarketingResourcesReadMysqlCheatSheetRoute:
+    MarketingResourcesReadMysqlCheatSheetRoute,
+  MarketingResourcesReadMysqlCommonMistakesRoute:
+    MarketingResourcesReadMysqlCommonMistakesRoute,
+  MarketingResourcesReadMysqlCompleteTutorialRoute:
+    MarketingResourcesReadMysqlCompleteTutorialRoute,
+  MarketingResourcesReadMysqlFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadMysqlFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadMysqlGlossaryRoute:
+    MarketingResourcesReadMysqlGlossaryRoute,
+  MarketingResourcesReadMysqlInterviewQuestionsRoute:
+    MarketingResourcesReadMysqlInterviewQuestionsRoute,
+  MarketingResourcesReadMysqlLearningRoadmapRoute:
+    MarketingResourcesReadMysqlLearningRoadmapRoute,
+  MarketingResourcesReadMysqlPdfNotesRoute:
+    MarketingResourcesReadMysqlPdfNotesRoute,
+  MarketingResourcesReadMysqlPracticeQuestionsRoute:
+    MarketingResourcesReadMysqlPracticeQuestionsRoute,
+  MarketingResourcesReadMysqlProjectCaseStudyRoute:
+    MarketingResourcesReadMysqlProjectCaseStudyRoute,
+  MarketingResourcesReadMysqlProjectGuideRoute:
+    MarketingResourcesReadMysqlProjectGuideRoute,
+  MarketingResourcesReadMysqlQuickRevisionNotesRoute:
+    MarketingResourcesReadMysqlQuickRevisionNotesRoute,
+  MarketingResourcesReadMysqlRealWorldCaseStudyRoute:
+    MarketingResourcesReadMysqlRealWorldCaseStudyRoute,
+  MarketingResourcesReadMysqlReferenceGuideRoute:
+    MarketingResourcesReadMysqlReferenceGuideRoute,
+  MarketingResourcesReadMysqlSampleExercisesRoute:
+    MarketingResourcesReadMysqlSampleExercisesRoute,
+  MarketingResourcesReadMysqlStepByStepLearningGuideRoute:
+    MarketingResourcesReadMysqlStepByStepLearningGuideRoute,
+  MarketingResourcesReadMysqlTipsTricksRoute:
+    MarketingResourcesReadMysqlTipsTricksRoute,
   MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute:
     MarketingResourcesReadNetworkSecurityAdvancedConceptsRoute,
   MarketingResourcesReadNetworkSecurityAnswerKeyRoute:
