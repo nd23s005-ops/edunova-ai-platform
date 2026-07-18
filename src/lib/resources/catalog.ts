@@ -388,6 +388,9 @@ const READER_ROUTES: Record<string, string> = {
  "prompt-engineering--pdf-notes": "/resources/read/pe-pdf-notes",
  "prompt-engineering--quick-revision-notes": "/resources/read/pe-quick-revision-notes",
  "prompt-engineering--cheat-sheet": "/resources/read/pe-cheat-sheet",
+ "prompt-engineering--sample-exercises": "/resources/read/pe-sample-exercises",
+ "prompt-engineering--project-guide": "/resources/read/pe-project-guide",
+ "prompt-engineering--project-case-study": "/resources/read/pe-project-case-study",
 
 
 
