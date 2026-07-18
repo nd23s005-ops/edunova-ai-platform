@@ -461,6 +461,27 @@ import { Route as MarketingResourcesReadComputerNetworksBestPracticesRouteImport
 import { Route as MarketingResourcesReadComputerNetworksBeginnerGuideRouteImport } from './routes/_marketing.resources.read.computer-networks-beginner-guide'
 import { Route as MarketingResourcesReadComputerNetworksAnswerKeyRouteImport } from './routes/_marketing.resources.read.computer-networks-answer-key'
 import { Route as MarketingResourcesReadComputerNetworksAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.computer-networks-advanced-concepts'
+import { Route as MarketingResourcesReadAzureTipsTricksRouteImport } from './routes/_marketing.resources.read.azure-tips-tricks'
+import { Route as MarketingResourcesReadAzureStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.azure-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadAzureSampleExercisesRouteImport } from './routes/_marketing.resources.read.azure-sample-exercises'
+import { Route as MarketingResourcesReadAzureReferenceGuideRouteImport } from './routes/_marketing.resources.read.azure-reference-guide'
+import { Route as MarketingResourcesReadAzureRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.azure-real-world-case-study'
+import { Route as MarketingResourcesReadAzureQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.azure-quick-revision-notes'
+import { Route as MarketingResourcesReadAzureProjectGuideRouteImport } from './routes/_marketing.resources.read.azure-project-guide'
+import { Route as MarketingResourcesReadAzureProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.azure-project-case-study'
+import { Route as MarketingResourcesReadAzurePracticeQuestionsRouteImport } from './routes/_marketing.resources.read.azure-practice-questions'
+import { Route as MarketingResourcesReadAzurePdfNotesRouteImport } from './routes/_marketing.resources.read.azure-pdf-notes'
+import { Route as MarketingResourcesReadAzureLearningRoadmapRouteImport } from './routes/_marketing.resources.read.azure-learning-roadmap'
+import { Route as MarketingResourcesReadAzureInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.azure-interview-questions'
+import { Route as MarketingResourcesReadAzureGlossaryRouteImport } from './routes/_marketing.resources.read.azure-glossary'
+import { Route as MarketingResourcesReadAzureFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.azure-frequently-asked-questions'
+import { Route as MarketingResourcesReadAzureCompleteTutorialRouteImport } from './routes/_marketing.resources.read.azure-complete-tutorial'
+import { Route as MarketingResourcesReadAzureCommonMistakesRouteImport } from './routes/_marketing.resources.read.azure-common-mistakes'
+import { Route as MarketingResourcesReadAzureCheatSheetRouteImport } from './routes/_marketing.resources.read.azure-cheat-sheet'
+import { Route as MarketingResourcesReadAzureBestPracticesRouteImport } from './routes/_marketing.resources.read.azure-best-practices'
+import { Route as MarketingResourcesReadAzureBeginnerGuideRouteImport } from './routes/_marketing.resources.read.azure-beginner-guide'
+import { Route as MarketingResourcesReadAzureAnswerKeyRouteImport } from './routes/_marketing.resources.read.azure-answer-key'
+import { Route as MarketingResourcesReadAzureAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.azure-advanced-concepts'
 import { Route as MarketingResourcesReadAiTipsTricksRouteImport } from './routes/_marketing.resources.read.ai-tips-tricks'
 import { Route as MarketingResourcesReadAiStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ai-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadAiSampleExercisesRouteImport } from './routes/_marketing.resources.read.ai-sample-exercises'
@@ -3197,6 +3218,132 @@ const MarketingResourcesReadComputerNetworksAdvancedConceptsRoute =
     path: '/read/computer-networks-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadAzureTipsTricksRoute =
+  MarketingResourcesReadAzureTipsTricksRouteImport.update({
+    id: '/read/azure-tips-tricks',
+    path: '/read/azure-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureStepByStepLearningGuideRoute =
+  MarketingResourcesReadAzureStepByStepLearningGuideRouteImport.update({
+    id: '/read/azure-step-by-step-learning-guide',
+    path: '/read/azure-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureSampleExercisesRoute =
+  MarketingResourcesReadAzureSampleExercisesRouteImport.update({
+    id: '/read/azure-sample-exercises',
+    path: '/read/azure-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureReferenceGuideRoute =
+  MarketingResourcesReadAzureReferenceGuideRouteImport.update({
+    id: '/read/azure-reference-guide',
+    path: '/read/azure-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureRealWorldCaseStudyRoute =
+  MarketingResourcesReadAzureRealWorldCaseStudyRouteImport.update({
+    id: '/read/azure-real-world-case-study',
+    path: '/read/azure-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureQuickRevisionNotesRoute =
+  MarketingResourcesReadAzureQuickRevisionNotesRouteImport.update({
+    id: '/read/azure-quick-revision-notes',
+    path: '/read/azure-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureProjectGuideRoute =
+  MarketingResourcesReadAzureProjectGuideRouteImport.update({
+    id: '/read/azure-project-guide',
+    path: '/read/azure-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureProjectCaseStudyRoute =
+  MarketingResourcesReadAzureProjectCaseStudyRouteImport.update({
+    id: '/read/azure-project-case-study',
+    path: '/read/azure-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzurePracticeQuestionsRoute =
+  MarketingResourcesReadAzurePracticeQuestionsRouteImport.update({
+    id: '/read/azure-practice-questions',
+    path: '/read/azure-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzurePdfNotesRoute =
+  MarketingResourcesReadAzurePdfNotesRouteImport.update({
+    id: '/read/azure-pdf-notes',
+    path: '/read/azure-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureLearningRoadmapRoute =
+  MarketingResourcesReadAzureLearningRoadmapRouteImport.update({
+    id: '/read/azure-learning-roadmap',
+    path: '/read/azure-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureInterviewQuestionsRoute =
+  MarketingResourcesReadAzureInterviewQuestionsRouteImport.update({
+    id: '/read/azure-interview-questions',
+    path: '/read/azure-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureGlossaryRoute =
+  MarketingResourcesReadAzureGlossaryRouteImport.update({
+    id: '/read/azure-glossary',
+    path: '/read/azure-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadAzureFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/azure-frequently-asked-questions',
+    path: '/read/azure-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureCompleteTutorialRoute =
+  MarketingResourcesReadAzureCompleteTutorialRouteImport.update({
+    id: '/read/azure-complete-tutorial',
+    path: '/read/azure-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureCommonMistakesRoute =
+  MarketingResourcesReadAzureCommonMistakesRouteImport.update({
+    id: '/read/azure-common-mistakes',
+    path: '/read/azure-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureCheatSheetRoute =
+  MarketingResourcesReadAzureCheatSheetRouteImport.update({
+    id: '/read/azure-cheat-sheet',
+    path: '/read/azure-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureBestPracticesRoute =
+  MarketingResourcesReadAzureBestPracticesRouteImport.update({
+    id: '/read/azure-best-practices',
+    path: '/read/azure-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureBeginnerGuideRoute =
+  MarketingResourcesReadAzureBeginnerGuideRouteImport.update({
+    id: '/read/azure-beginner-guide',
+    path: '/read/azure-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureAnswerKeyRoute =
+  MarketingResourcesReadAzureAnswerKeyRouteImport.update({
+    id: '/read/azure-answer-key',
+    path: '/read/azure-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadAzureAdvancedConceptsRoute =
+  MarketingResourcesReadAzureAdvancedConceptsRouteImport.update({
+    id: '/read/azure-advanced-concepts',
+    path: '/read/azure-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadAiTipsTricksRoute =
   MarketingResourcesReadAiTipsTricksRouteImport.update({
     id: '/read/ai-tips-tricks',
@@ -3471,6 +3618,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/azure-advanced-concepts': typeof MarketingResourcesReadAzureAdvancedConceptsRoute
+  '/resources/read/azure-answer-key': typeof MarketingResourcesReadAzureAnswerKeyRoute
+  '/resources/read/azure-beginner-guide': typeof MarketingResourcesReadAzureBeginnerGuideRoute
+  '/resources/read/azure-best-practices': typeof MarketingResourcesReadAzureBestPracticesRoute
+  '/resources/read/azure-cheat-sheet': typeof MarketingResourcesReadAzureCheatSheetRoute
+  '/resources/read/azure-common-mistakes': typeof MarketingResourcesReadAzureCommonMistakesRoute
+  '/resources/read/azure-complete-tutorial': typeof MarketingResourcesReadAzureCompleteTutorialRoute
+  '/resources/read/azure-frequently-asked-questions': typeof MarketingResourcesReadAzureFrequentlyAskedQuestionsRoute
+  '/resources/read/azure-glossary': typeof MarketingResourcesReadAzureGlossaryRoute
+  '/resources/read/azure-interview-questions': typeof MarketingResourcesReadAzureInterviewQuestionsRoute
+  '/resources/read/azure-learning-roadmap': typeof MarketingResourcesReadAzureLearningRoadmapRoute
+  '/resources/read/azure-pdf-notes': typeof MarketingResourcesReadAzurePdfNotesRoute
+  '/resources/read/azure-practice-questions': typeof MarketingResourcesReadAzurePracticeQuestionsRoute
+  '/resources/read/azure-project-case-study': typeof MarketingResourcesReadAzureProjectCaseStudyRoute
+  '/resources/read/azure-project-guide': typeof MarketingResourcesReadAzureProjectGuideRoute
+  '/resources/read/azure-quick-revision-notes': typeof MarketingResourcesReadAzureQuickRevisionNotesRoute
+  '/resources/read/azure-real-world-case-study': typeof MarketingResourcesReadAzureRealWorldCaseStudyRoute
+  '/resources/read/azure-reference-guide': typeof MarketingResourcesReadAzureReferenceGuideRoute
+  '/resources/read/azure-sample-exercises': typeof MarketingResourcesReadAzureSampleExercisesRoute
+  '/resources/read/azure-step-by-step-learning-guide': typeof MarketingResourcesReadAzureStepByStepLearningGuideRoute
+  '/resources/read/azure-tips-tricks': typeof MarketingResourcesReadAzureTipsTricksRoute
   '/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
   '/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
   '/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
@@ -3955,6 +4123,27 @@ export interface FileRoutesByTo {
   '/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/resources/read/azure-advanced-concepts': typeof MarketingResourcesReadAzureAdvancedConceptsRoute
+  '/resources/read/azure-answer-key': typeof MarketingResourcesReadAzureAnswerKeyRoute
+  '/resources/read/azure-beginner-guide': typeof MarketingResourcesReadAzureBeginnerGuideRoute
+  '/resources/read/azure-best-practices': typeof MarketingResourcesReadAzureBestPracticesRoute
+  '/resources/read/azure-cheat-sheet': typeof MarketingResourcesReadAzureCheatSheetRoute
+  '/resources/read/azure-common-mistakes': typeof MarketingResourcesReadAzureCommonMistakesRoute
+  '/resources/read/azure-complete-tutorial': typeof MarketingResourcesReadAzureCompleteTutorialRoute
+  '/resources/read/azure-frequently-asked-questions': typeof MarketingResourcesReadAzureFrequentlyAskedQuestionsRoute
+  '/resources/read/azure-glossary': typeof MarketingResourcesReadAzureGlossaryRoute
+  '/resources/read/azure-interview-questions': typeof MarketingResourcesReadAzureInterviewQuestionsRoute
+  '/resources/read/azure-learning-roadmap': typeof MarketingResourcesReadAzureLearningRoadmapRoute
+  '/resources/read/azure-pdf-notes': typeof MarketingResourcesReadAzurePdfNotesRoute
+  '/resources/read/azure-practice-questions': typeof MarketingResourcesReadAzurePracticeQuestionsRoute
+  '/resources/read/azure-project-case-study': typeof MarketingResourcesReadAzureProjectCaseStudyRoute
+  '/resources/read/azure-project-guide': typeof MarketingResourcesReadAzureProjectGuideRoute
+  '/resources/read/azure-quick-revision-notes': typeof MarketingResourcesReadAzureQuickRevisionNotesRoute
+  '/resources/read/azure-real-world-case-study': typeof MarketingResourcesReadAzureRealWorldCaseStudyRoute
+  '/resources/read/azure-reference-guide': typeof MarketingResourcesReadAzureReferenceGuideRoute
+  '/resources/read/azure-sample-exercises': typeof MarketingResourcesReadAzureSampleExercisesRoute
+  '/resources/read/azure-step-by-step-learning-guide': typeof MarketingResourcesReadAzureStepByStepLearningGuideRoute
+  '/resources/read/azure-tips-tricks': typeof MarketingResourcesReadAzureTipsTricksRoute
   '/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
   '/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
   '/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
@@ -4444,6 +4633,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ai-sample-exercises': typeof MarketingResourcesReadAiSampleExercisesRoute
   '/_marketing/resources/read/ai-step-by-step-learning-guide': typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   '/_marketing/resources/read/ai-tips-tricks': typeof MarketingResourcesReadAiTipsTricksRoute
+  '/_marketing/resources/read/azure-advanced-concepts': typeof MarketingResourcesReadAzureAdvancedConceptsRoute
+  '/_marketing/resources/read/azure-answer-key': typeof MarketingResourcesReadAzureAnswerKeyRoute
+  '/_marketing/resources/read/azure-beginner-guide': typeof MarketingResourcesReadAzureBeginnerGuideRoute
+  '/_marketing/resources/read/azure-best-practices': typeof MarketingResourcesReadAzureBestPracticesRoute
+  '/_marketing/resources/read/azure-cheat-sheet': typeof MarketingResourcesReadAzureCheatSheetRoute
+  '/_marketing/resources/read/azure-common-mistakes': typeof MarketingResourcesReadAzureCommonMistakesRoute
+  '/_marketing/resources/read/azure-complete-tutorial': typeof MarketingResourcesReadAzureCompleteTutorialRoute
+  '/_marketing/resources/read/azure-frequently-asked-questions': typeof MarketingResourcesReadAzureFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/azure-glossary': typeof MarketingResourcesReadAzureGlossaryRoute
+  '/_marketing/resources/read/azure-interview-questions': typeof MarketingResourcesReadAzureInterviewQuestionsRoute
+  '/_marketing/resources/read/azure-learning-roadmap': typeof MarketingResourcesReadAzureLearningRoadmapRoute
+  '/_marketing/resources/read/azure-pdf-notes': typeof MarketingResourcesReadAzurePdfNotesRoute
+  '/_marketing/resources/read/azure-practice-questions': typeof MarketingResourcesReadAzurePracticeQuestionsRoute
+  '/_marketing/resources/read/azure-project-case-study': typeof MarketingResourcesReadAzureProjectCaseStudyRoute
+  '/_marketing/resources/read/azure-project-guide': typeof MarketingResourcesReadAzureProjectGuideRoute
+  '/_marketing/resources/read/azure-quick-revision-notes': typeof MarketingResourcesReadAzureQuickRevisionNotesRoute
+  '/_marketing/resources/read/azure-real-world-case-study': typeof MarketingResourcesReadAzureRealWorldCaseStudyRoute
+  '/_marketing/resources/read/azure-reference-guide': typeof MarketingResourcesReadAzureReferenceGuideRoute
+  '/_marketing/resources/read/azure-sample-exercises': typeof MarketingResourcesReadAzureSampleExercisesRoute
+  '/_marketing/resources/read/azure-step-by-step-learning-guide': typeof MarketingResourcesReadAzureStepByStepLearningGuideRoute
+  '/_marketing/resources/read/azure-tips-tricks': typeof MarketingResourcesReadAzureTipsTricksRoute
   '/_marketing/resources/read/computer-networks-advanced-concepts': typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
   '/_marketing/resources/read/computer-networks-answer-key': typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
   '/_marketing/resources/read/computer-networks-beginner-guide': typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
@@ -4931,6 +5141,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/azure-advanced-concepts'
+    | '/resources/read/azure-answer-key'
+    | '/resources/read/azure-beginner-guide'
+    | '/resources/read/azure-best-practices'
+    | '/resources/read/azure-cheat-sheet'
+    | '/resources/read/azure-common-mistakes'
+    | '/resources/read/azure-complete-tutorial'
+    | '/resources/read/azure-frequently-asked-questions'
+    | '/resources/read/azure-glossary'
+    | '/resources/read/azure-interview-questions'
+    | '/resources/read/azure-learning-roadmap'
+    | '/resources/read/azure-pdf-notes'
+    | '/resources/read/azure-practice-questions'
+    | '/resources/read/azure-project-case-study'
+    | '/resources/read/azure-project-guide'
+    | '/resources/read/azure-quick-revision-notes'
+    | '/resources/read/azure-real-world-case-study'
+    | '/resources/read/azure-reference-guide'
+    | '/resources/read/azure-sample-exercises'
+    | '/resources/read/azure-step-by-step-learning-guide'
+    | '/resources/read/azure-tips-tricks'
     | '/resources/read/computer-networks-advanced-concepts'
     | '/resources/read/computer-networks-answer-key'
     | '/resources/read/computer-networks-beginner-guide'
@@ -5415,6 +5646,27 @@ export interface FileRouteTypes {
     | '/resources/read/ai-sample-exercises'
     | '/resources/read/ai-step-by-step-learning-guide'
     | '/resources/read/ai-tips-tricks'
+    | '/resources/read/azure-advanced-concepts'
+    | '/resources/read/azure-answer-key'
+    | '/resources/read/azure-beginner-guide'
+    | '/resources/read/azure-best-practices'
+    | '/resources/read/azure-cheat-sheet'
+    | '/resources/read/azure-common-mistakes'
+    | '/resources/read/azure-complete-tutorial'
+    | '/resources/read/azure-frequently-asked-questions'
+    | '/resources/read/azure-glossary'
+    | '/resources/read/azure-interview-questions'
+    | '/resources/read/azure-learning-roadmap'
+    | '/resources/read/azure-pdf-notes'
+    | '/resources/read/azure-practice-questions'
+    | '/resources/read/azure-project-case-study'
+    | '/resources/read/azure-project-guide'
+    | '/resources/read/azure-quick-revision-notes'
+    | '/resources/read/azure-real-world-case-study'
+    | '/resources/read/azure-reference-guide'
+    | '/resources/read/azure-sample-exercises'
+    | '/resources/read/azure-step-by-step-learning-guide'
+    | '/resources/read/azure-tips-tricks'
     | '/resources/read/computer-networks-advanced-concepts'
     | '/resources/read/computer-networks-answer-key'
     | '/resources/read/computer-networks-beginner-guide'
@@ -5903,6 +6155,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ai-sample-exercises'
     | '/_marketing/resources/read/ai-step-by-step-learning-guide'
     | '/_marketing/resources/read/ai-tips-tricks'
+    | '/_marketing/resources/read/azure-advanced-concepts'
+    | '/_marketing/resources/read/azure-answer-key'
+    | '/_marketing/resources/read/azure-beginner-guide'
+    | '/_marketing/resources/read/azure-best-practices'
+    | '/_marketing/resources/read/azure-cheat-sheet'
+    | '/_marketing/resources/read/azure-common-mistakes'
+    | '/_marketing/resources/read/azure-complete-tutorial'
+    | '/_marketing/resources/read/azure-frequently-asked-questions'
+    | '/_marketing/resources/read/azure-glossary'
+    | '/_marketing/resources/read/azure-interview-questions'
+    | '/_marketing/resources/read/azure-learning-roadmap'
+    | '/_marketing/resources/read/azure-pdf-notes'
+    | '/_marketing/resources/read/azure-practice-questions'
+    | '/_marketing/resources/read/azure-project-case-study'
+    | '/_marketing/resources/read/azure-project-guide'
+    | '/_marketing/resources/read/azure-quick-revision-notes'
+    | '/_marketing/resources/read/azure-real-world-case-study'
+    | '/_marketing/resources/read/azure-reference-guide'
+    | '/_marketing/resources/read/azure-sample-exercises'
+    | '/_marketing/resources/read/azure-step-by-step-learning-guide'
+    | '/_marketing/resources/read/azure-tips-tricks'
     | '/_marketing/resources/read/computer-networks-advanced-concepts'
     | '/_marketing/resources/read/computer-networks-answer-key'
     | '/_marketing/resources/read/computer-networks-beginner-guide'
@@ -9502,6 +9775,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/azure-tips-tricks': {
+      id: '/_marketing/resources/read/azure-tips-tricks'
+      path: '/read/azure-tips-tricks'
+      fullPath: '/resources/read/azure-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadAzureTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/azure-step-by-step-learning-guide'
+      path: '/read/azure-step-by-step-learning-guide'
+      fullPath: '/resources/read/azure-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAzureStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-sample-exercises': {
+      id: '/_marketing/resources/read/azure-sample-exercises'
+      path: '/read/azure-sample-exercises'
+      fullPath: '/resources/read/azure-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadAzureSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-reference-guide': {
+      id: '/_marketing/resources/read/azure-reference-guide'
+      path: '/read/azure-reference-guide'
+      fullPath: '/resources/read/azure-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAzureReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-real-world-case-study': {
+      id: '/_marketing/resources/read/azure-real-world-case-study'
+      path: '/read/azure-real-world-case-study'
+      fullPath: '/resources/read/azure-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAzureRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-quick-revision-notes': {
+      id: '/_marketing/resources/read/azure-quick-revision-notes'
+      path: '/read/azure-quick-revision-notes'
+      fullPath: '/resources/read/azure-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAzureQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-project-guide': {
+      id: '/_marketing/resources/read/azure-project-guide'
+      path: '/read/azure-project-guide'
+      fullPath: '/resources/read/azure-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAzureProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-project-case-study': {
+      id: '/_marketing/resources/read/azure-project-case-study'
+      path: '/read/azure-project-case-study'
+      fullPath: '/resources/read/azure-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadAzureProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-practice-questions': {
+      id: '/_marketing/resources/read/azure-practice-questions'
+      path: '/read/azure-practice-questions'
+      fullPath: '/resources/read/azure-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAzurePracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-pdf-notes': {
+      id: '/_marketing/resources/read/azure-pdf-notes'
+      path: '/read/azure-pdf-notes'
+      fullPath: '/resources/read/azure-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadAzurePdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-learning-roadmap': {
+      id: '/_marketing/resources/read/azure-learning-roadmap'
+      path: '/read/azure-learning-roadmap'
+      fullPath: '/resources/read/azure-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadAzureLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-interview-questions': {
+      id: '/_marketing/resources/read/azure-interview-questions'
+      path: '/read/azure-interview-questions'
+      fullPath: '/resources/read/azure-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAzureInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-glossary': {
+      id: '/_marketing/resources/read/azure-glossary'
+      path: '/read/azure-glossary'
+      fullPath: '/resources/read/azure-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadAzureGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-frequently-asked-questions': {
+      id: '/_marketing/resources/read/azure-frequently-asked-questions'
+      path: '/read/azure-frequently-asked-questions'
+      fullPath: '/resources/read/azure-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadAzureFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-complete-tutorial': {
+      id: '/_marketing/resources/read/azure-complete-tutorial'
+      path: '/read/azure-complete-tutorial'
+      fullPath: '/resources/read/azure-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadAzureCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-common-mistakes': {
+      id: '/_marketing/resources/read/azure-common-mistakes'
+      path: '/read/azure-common-mistakes'
+      fullPath: '/resources/read/azure-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadAzureCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-cheat-sheet': {
+      id: '/_marketing/resources/read/azure-cheat-sheet'
+      path: '/read/azure-cheat-sheet'
+      fullPath: '/resources/read/azure-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadAzureCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-best-practices': {
+      id: '/_marketing/resources/read/azure-best-practices'
+      path: '/read/azure-best-practices'
+      fullPath: '/resources/read/azure-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadAzureBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-beginner-guide': {
+      id: '/_marketing/resources/read/azure-beginner-guide'
+      path: '/read/azure-beginner-guide'
+      fullPath: '/resources/read/azure-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadAzureBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-answer-key': {
+      id: '/_marketing/resources/read/azure-answer-key'
+      path: '/read/azure-answer-key'
+      fullPath: '/resources/read/azure-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadAzureAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/azure-advanced-concepts': {
+      id: '/_marketing/resources/read/azure-advanced-concepts'
+      path: '/read/azure-advanced-concepts'
+      fullPath: '/resources/read/azure-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadAzureAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/ai-tips-tricks': {
       id: '/_marketing/resources/read/ai-tips-tricks'
       path: '/read/ai-tips-tricks'
@@ -9897,6 +10317,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadAiSampleExercisesRoute: typeof MarketingResourcesReadAiSampleExercisesRoute
   MarketingResourcesReadAiStepByStepLearningGuideRoute: typeof MarketingResourcesReadAiStepByStepLearningGuideRoute
   MarketingResourcesReadAiTipsTricksRoute: typeof MarketingResourcesReadAiTipsTricksRoute
+  MarketingResourcesReadAzureAdvancedConceptsRoute: typeof MarketingResourcesReadAzureAdvancedConceptsRoute
+  MarketingResourcesReadAzureAnswerKeyRoute: typeof MarketingResourcesReadAzureAnswerKeyRoute
+  MarketingResourcesReadAzureBeginnerGuideRoute: typeof MarketingResourcesReadAzureBeginnerGuideRoute
+  MarketingResourcesReadAzureBestPracticesRoute: typeof MarketingResourcesReadAzureBestPracticesRoute
+  MarketingResourcesReadAzureCheatSheetRoute: typeof MarketingResourcesReadAzureCheatSheetRoute
+  MarketingResourcesReadAzureCommonMistakesRoute: typeof MarketingResourcesReadAzureCommonMistakesRoute
+  MarketingResourcesReadAzureCompleteTutorialRoute: typeof MarketingResourcesReadAzureCompleteTutorialRoute
+  MarketingResourcesReadAzureFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadAzureFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadAzureGlossaryRoute: typeof MarketingResourcesReadAzureGlossaryRoute
+  MarketingResourcesReadAzureInterviewQuestionsRoute: typeof MarketingResourcesReadAzureInterviewQuestionsRoute
+  MarketingResourcesReadAzureLearningRoadmapRoute: typeof MarketingResourcesReadAzureLearningRoadmapRoute
+  MarketingResourcesReadAzurePdfNotesRoute: typeof MarketingResourcesReadAzurePdfNotesRoute
+  MarketingResourcesReadAzurePracticeQuestionsRoute: typeof MarketingResourcesReadAzurePracticeQuestionsRoute
+  MarketingResourcesReadAzureProjectCaseStudyRoute: typeof MarketingResourcesReadAzureProjectCaseStudyRoute
+  MarketingResourcesReadAzureProjectGuideRoute: typeof MarketingResourcesReadAzureProjectGuideRoute
+  MarketingResourcesReadAzureQuickRevisionNotesRoute: typeof MarketingResourcesReadAzureQuickRevisionNotesRoute
+  MarketingResourcesReadAzureRealWorldCaseStudyRoute: typeof MarketingResourcesReadAzureRealWorldCaseStudyRoute
+  MarketingResourcesReadAzureReferenceGuideRoute: typeof MarketingResourcesReadAzureReferenceGuideRoute
+  MarketingResourcesReadAzureSampleExercisesRoute: typeof MarketingResourcesReadAzureSampleExercisesRoute
+  MarketingResourcesReadAzureStepByStepLearningGuideRoute: typeof MarketingResourcesReadAzureStepByStepLearningGuideRoute
+  MarketingResourcesReadAzureTipsTricksRoute: typeof MarketingResourcesReadAzureTipsTricksRoute
   MarketingResourcesReadComputerNetworksAdvancedConceptsRoute: typeof MarketingResourcesReadComputerNetworksAdvancedConceptsRoute
   MarketingResourcesReadComputerNetworksAnswerKeyRoute: typeof MarketingResourcesReadComputerNetworksAnswerKeyRoute
   MarketingResourcesReadComputerNetworksBeginnerGuideRoute: typeof MarketingResourcesReadComputerNetworksBeginnerGuideRoute
@@ -10350,6 +10791,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadAiStepByStepLearningGuideRoute,
   MarketingResourcesReadAiTipsTricksRoute:
     MarketingResourcesReadAiTipsTricksRoute,
+  MarketingResourcesReadAzureAdvancedConceptsRoute:
+    MarketingResourcesReadAzureAdvancedConceptsRoute,
+  MarketingResourcesReadAzureAnswerKeyRoute:
+    MarketingResourcesReadAzureAnswerKeyRoute,
+  MarketingResourcesReadAzureBeginnerGuideRoute:
+    MarketingResourcesReadAzureBeginnerGuideRoute,
+  MarketingResourcesReadAzureBestPracticesRoute:
+    MarketingResourcesReadAzureBestPracticesRoute,
+  MarketingResourcesReadAzureCheatSheetRoute:
+    MarketingResourcesReadAzureCheatSheetRoute,
+  MarketingResourcesReadAzureCommonMistakesRoute:
+    MarketingResourcesReadAzureCommonMistakesRoute,
+  MarketingResourcesReadAzureCompleteTutorialRoute:
+    MarketingResourcesReadAzureCompleteTutorialRoute,
+  MarketingResourcesReadAzureFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadAzureFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadAzureGlossaryRoute:
+    MarketingResourcesReadAzureGlossaryRoute,
+  MarketingResourcesReadAzureInterviewQuestionsRoute:
+    MarketingResourcesReadAzureInterviewQuestionsRoute,
+  MarketingResourcesReadAzureLearningRoadmapRoute:
+    MarketingResourcesReadAzureLearningRoadmapRoute,
+  MarketingResourcesReadAzurePdfNotesRoute:
+    MarketingResourcesReadAzurePdfNotesRoute,
+  MarketingResourcesReadAzurePracticeQuestionsRoute:
+    MarketingResourcesReadAzurePracticeQuestionsRoute,
+  MarketingResourcesReadAzureProjectCaseStudyRoute:
+    MarketingResourcesReadAzureProjectCaseStudyRoute,
+  MarketingResourcesReadAzureProjectGuideRoute:
+    MarketingResourcesReadAzureProjectGuideRoute,
+  MarketingResourcesReadAzureQuickRevisionNotesRoute:
+    MarketingResourcesReadAzureQuickRevisionNotesRoute,
+  MarketingResourcesReadAzureRealWorldCaseStudyRoute:
+    MarketingResourcesReadAzureRealWorldCaseStudyRoute,
+  MarketingResourcesReadAzureReferenceGuideRoute:
+    MarketingResourcesReadAzureReferenceGuideRoute,
+  MarketingResourcesReadAzureSampleExercisesRoute:
+    MarketingResourcesReadAzureSampleExercisesRoute,
+  MarketingResourcesReadAzureStepByStepLearningGuideRoute:
+    MarketingResourcesReadAzureStepByStepLearningGuideRoute,
+  MarketingResourcesReadAzureTipsTricksRoute:
+    MarketingResourcesReadAzureTipsTricksRoute,
   MarketingResourcesReadComputerNetworksAdvancedConceptsRoute:
     MarketingResourcesReadComputerNetworksAdvancedConceptsRoute,
   MarketingResourcesReadComputerNetworksAnswerKeyRoute:
