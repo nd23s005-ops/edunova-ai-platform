@@ -69,6 +69,7 @@ import { Route as MarketingResourcesReadPeFrequentlyAskedQuestionsRouteImport } 
 import { Route as MarketingResourcesReadPeCompleteTutorialRouteImport } from './routes/_marketing.resources.read.pe-complete-tutorial'
 import { Route as MarketingResourcesReadPeCheatSheetRouteImport } from './routes/_marketing.resources.read.pe-cheat-sheet'
 import { Route as MarketingResourcesReadPeBeginnerGuideRouteImport } from './routes/_marketing.resources.read.pe-beginner-guide'
+import { Route as MarketingResourcesReadPeAnswerKeyRouteImport } from './routes/_marketing.resources.read.pe-answer-key'
 import { Route as MarketingResourcesReadPeAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.pe-advanced-concepts'
 import { Route as MarketingResourcesReadMlTipsTricksRouteImport } from './routes/_marketing.resources.read.ml-tips-tricks'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
@@ -478,6 +479,12 @@ const MarketingResourcesReadPeBeginnerGuideRoute =
   MarketingResourcesReadPeBeginnerGuideRouteImport.update({
     id: '/read/pe-beginner-guide',
     path: '/read/pe-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPeAnswerKeyRoute =
+  MarketingResourcesReadPeAnswerKeyRouteImport.update({
+    id: '/read/pe-answer-key',
+    path: '/read/pe-answer-key',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeAdvancedConceptsRoute =
@@ -1097,6 +1104,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
   '/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
   '/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
@@ -1238,6 +1246,7 @@ export interface FileRoutesByTo {
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
   '/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
   '/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
@@ -1384,6 +1393,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/_marketing/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/_marketing/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/_marketing/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
   '/_marketing/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
   '/_marketing/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
@@ -1528,6 +1538,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
     | '/resources/read/pe-advanced-concepts'
+    | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
     | '/resources/read/pe-cheat-sheet'
     | '/resources/read/pe-complete-tutorial'
@@ -1669,6 +1680,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
     | '/resources/read/pe-advanced-concepts'
+    | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
     | '/resources/read/pe-cheat-sheet'
     | '/resources/read/pe-complete-tutorial'
@@ -1814,6 +1826,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-tips-tricks'
     | '/_marketing/resources/read/pe-advanced-concepts'
+    | '/_marketing/resources/read/pe-answer-key'
     | '/_marketing/resources/read/pe-beginner-guide'
     | '/_marketing/resources/read/pe-cheat-sheet'
     | '/_marketing/resources/read/pe-complete-tutorial'
@@ -2275,6 +2288,13 @@ declare module '@tanstack/react-router' {
       path: '/read/pe-beginner-guide'
       fullPath: '/resources/read/pe-beginner-guide'
       preLoaderRoute: typeof MarketingResourcesReadPeBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pe-answer-key': {
+      id: '/_marketing/resources/read/pe-answer-key'
+      path: '/read/pe-answer-key'
+      fullPath: '/resources/read/pe-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadPeAnswerKeyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-advanced-concepts': {
@@ -3064,6 +3084,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   MarketingResourcesReadMlTipsTricksRoute: typeof MarketingResourcesReadMlTipsTricksRoute
   MarketingResourcesReadPeAdvancedConceptsRoute: typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  MarketingResourcesReadPeAnswerKeyRoute: typeof MarketingResourcesReadPeAnswerKeyRoute
   MarketingResourcesReadPeBeginnerGuideRoute: typeof MarketingResourcesReadPeBeginnerGuideRoute
   MarketingResourcesReadPeCheatSheetRoute: typeof MarketingResourcesReadPeCheatSheetRoute
   MarketingResourcesReadPeCompleteTutorialRoute: typeof MarketingResourcesReadPeCompleteTutorialRoute
@@ -3219,6 +3240,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlTipsTricksRoute,
   MarketingResourcesReadPeAdvancedConceptsRoute:
     MarketingResourcesReadPeAdvancedConceptsRoute,
+  MarketingResourcesReadPeAnswerKeyRoute:
+    MarketingResourcesReadPeAnswerKeyRoute,
   MarketingResourcesReadPeBeginnerGuideRoute:
     MarketingResourcesReadPeBeginnerGuideRoute,
   MarketingResourcesReadPeCheatSheetRoute:
