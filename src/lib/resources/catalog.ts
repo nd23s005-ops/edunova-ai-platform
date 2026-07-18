@@ -104,7 +104,7 @@ export const COURSE_CATALOG: CourseCatalogEntry[] = [
 
   // Data & Analytics
   { slug: "data-science", title: "Data Science", category: "Data & Analytics", tagline: "Analytics, ML, visualization, and storytelling with data.", difficulty: "Intermediate", tags: ["Data", "ML", "Viz"], gradient: "from-pink-500 to-rose-500" },
-  { slug: "data-analytics", title: "Data Analytics", category: "Data & Analytics", tagline: "SQL, Excel, Python, and BI tools for data-driven decisions.", difficulty: "Beginner", tags: ["Analytics", "SQL", "BI"], gradient: "from-pink-500 to-fuchsia-500" },
+  { slug: "data-analytics", title: "Data Analytics", category: "Data & Analytics", tagline: "SQL, Excel, Python, and BI tools for data-driven decisions.", difficulty: "Intermediate", tags: ["Analytics", "SQL"], gradient: "from-pink-500 to-fuchsia-500" },
   { slug: "numpy", title: "NumPy", category: "Data & Analytics", tagline: "Arrays, broadcasting, and numerical computing in Python.", difficulty: "Beginner", tags: ["NumPy", "Python"], gradient: "from-rose-500 to-pink-500" },
   { slug: "pandas", title: "Pandas", category: "Data & Analytics", tagline: "DataFrames, groupby, joins, and real-world data wrangling.", difficulty: "Beginner", tags: ["Pandas", "Python"], gradient: "from-pink-500 to-rose-500" },
   { slug: "power-bi", title: "Power BI", category: "Data & Analytics", tagline: "Modeling, DAX, and building executive-ready dashboards.", difficulty: "Beginner", tags: ["Power BI", "DAX"], gradient: "from-yellow-500 to-amber-500" },
