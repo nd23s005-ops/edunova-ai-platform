@@ -436,6 +436,13 @@ const READER_ROUTES: Record<string, string> = {
    "go--pdf-notes": "/resources/read/go-pdf-notes",
    "go--quick-revision-notes": "/resources/read/go-quick-revision-notes",
    "go--cheat-sheet": "/resources/read/go-cheat-sheet",
+   "go--interview-questions": "/resources/read/go-interview-questions",
+   "go--practice-questions": "/resources/read/go-practice-questions",
+   "go--answer-key": "/resources/read/go-answer-key",
+   "go--sample-exercises": "/resources/read/go-sample-exercises",
+   "go--project-guide": "/resources/read/go-project-guide",
+   "go--project-case-study": "/resources/read/go-project-case-study",
+
 
 
 
