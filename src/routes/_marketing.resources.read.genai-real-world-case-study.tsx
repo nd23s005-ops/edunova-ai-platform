@@ -452,7 +452,7 @@ Wk12 █████            5.4    ← target 7.0 achieved`}</pre>
           <li><strong>Latency &lt; 3s is non-negotiable.</strong> Agents abandon slower tools.</li>
           <li><strong>Observability from day 1.</strong> You cannot fix what you cannot see.</li>
           <li><strong>Involve compliance early.</strong> GDPR audit prep took a full sprint.</li>
-          <li><strong>Human-in-the-loop stays.</strong> Autonomy on refunds > $200 was never enabled.</li>
+          <li><strong>Human-in-the-loop stays.</strong> Autonomy on refunds &gt; $200 was never enabled.</title></li>
         </ol>
 
         <h4 className="mt-3 font-semibold">Best practices we now enforce</h4>
