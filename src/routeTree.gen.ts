@@ -25,6 +25,7 @@ import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
 import { Route as MarketingExploreRouteImport } from './routes/_marketing.explore'
 import { Route as MarketingCommunityRouteImport } from './routes/_marketing.community'
+import { Route as MarketingAdaptiveAiTutorialsRouteImport } from './routes/_marketing.adaptive-ai-tutorials'
 import { Route as MarketingAboutRouteImport } from './routes/_marketing.about'
 import { Route as AuthVerifySuccessRouteImport } from './routes/_auth.verify-success'
 import { Route as AuthVerifyFailedRouteImport } from './routes/_auth.verify-failed'
@@ -186,6 +187,12 @@ const MarketingCommunityRoute = MarketingCommunityRouteImport.update({
   path: '/community',
   getParentRoute: () => MarketingRoute,
 } as any)
+const MarketingAdaptiveAiTutorialsRoute =
+  MarketingAdaptiveAiTutorialsRouteImport.update({
+    id: '/adaptive-ai-tutorials',
+    path: '/adaptive-ai-tutorials',
+    getParentRoute: () => MarketingRoute,
+  } as any)
 const MarketingAboutRoute = MarketingAboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -685,6 +692,7 @@ export interface FileRoutesByFullPath {
   '/verify-failed': typeof AuthVerifyFailedRoute
   '/verify-success': typeof AuthVerifySuccessRoute
   '/about': typeof MarketingAboutRoute
+  '/adaptive-ai-tutorials': typeof MarketingAdaptiveAiTutorialsRoute
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRouteWithChildren
@@ -782,6 +790,7 @@ export interface FileRoutesByTo {
   '/verify-failed': typeof AuthVerifyFailedRoute
   '/verify-success': typeof AuthVerifySuccessRoute
   '/about': typeof MarketingAboutRoute
+  '/adaptive-ai-tutorials': typeof MarketingAdaptiveAiTutorialsRoute
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/api/chat': typeof ApiChatRoute
@@ -881,6 +890,7 @@ export interface FileRoutesById {
   '/_auth/verify-failed': typeof AuthVerifyFailedRoute
   '/_auth/verify-success': typeof AuthVerifySuccessRoute
   '/_marketing/about': typeof MarketingAboutRoute
+  '/_marketing/adaptive-ai-tutorials': typeof MarketingAdaptiveAiTutorialsRoute
   '/_marketing/community': typeof MarketingCommunityRoute
   '/_marketing/explore': typeof MarketingExploreRoute
   '/_marketing/resources': typeof MarketingResourcesRouteWithChildren
@@ -981,6 +991,7 @@ export interface FileRouteTypes {
     | '/verify-failed'
     | '/verify-success'
     | '/about'
+    | '/adaptive-ai-tutorials'
     | '/community'
     | '/explore'
     | '/resources'
@@ -1078,6 +1089,7 @@ export interface FileRouteTypes {
     | '/verify-failed'
     | '/verify-success'
     | '/about'
+    | '/adaptive-ai-tutorials'
     | '/community'
     | '/explore'
     | '/api/chat'
@@ -1176,6 +1188,7 @@ export interface FileRouteTypes {
     | '/_auth/verify-failed'
     | '/_auth/verify-success'
     | '/_marketing/about'
+    | '/_marketing/adaptive-ai-tutorials'
     | '/_marketing/community'
     | '/_marketing/explore'
     | '/_marketing/resources'
@@ -1382,6 +1395,13 @@ declare module '@tanstack/react-router' {
       path: '/community'
       fullPath: '/community'
       preLoaderRoute: typeof MarketingCommunityRouteImport
+      parentRoute: typeof MarketingRoute
+    }
+    '/_marketing/adaptive-ai-tutorials': {
+      id: '/_marketing/adaptive-ai-tutorials'
+      path: '/adaptive-ai-tutorials'
+      fullPath: '/adaptive-ai-tutorials'
+      preLoaderRoute: typeof MarketingAdaptiveAiTutorialsRouteImport
       parentRoute: typeof MarketingRoute
     }
     '/_marketing/about': {
@@ -2228,6 +2248,7 @@ const MarketingResourcesRouteWithChildren =
 
 interface MarketingRouteChildren {
   MarketingAboutRoute: typeof MarketingAboutRoute
+  MarketingAdaptiveAiTutorialsRoute: typeof MarketingAdaptiveAiTutorialsRoute
   MarketingCommunityRoute: typeof MarketingCommunityRoute
   MarketingExploreRoute: typeof MarketingExploreRoute
   MarketingResourcesRoute: typeof MarketingResourcesRouteWithChildren
@@ -2241,6 +2262,7 @@ interface MarketingRouteChildren {
 
 const MarketingRouteChildren: MarketingRouteChildren = {
   MarketingAboutRoute: MarketingAboutRoute,
+  MarketingAdaptiveAiTutorialsRoute: MarketingAdaptiveAiTutorialsRoute,
   MarketingCommunityRoute: MarketingCommunityRoute,
   MarketingExploreRoute: MarketingExploreRoute,
   MarketingResourcesRoute: MarketingResourcesRouteWithChildren,
