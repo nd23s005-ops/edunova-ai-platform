@@ -77,6 +77,7 @@ import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './
 import { Route as MarketingResourcesReadGenaiRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.genai-real-world-case-study'
 import { Route as MarketingResourcesReadGenaiPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.genai-practice-questions'
 import { Route as MarketingResourcesReadGenaiInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.genai-interview-questions'
+import { Route as MarketingResourcesReadGenaiFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.genai-frequently-asked-questions'
 import { Route as MarketingResourcesReadGenaiCompleteTutorialRouteImport } from './routes/_marketing.resources.read.genai-complete-tutorial'
 import { Route as MarketingResourcesReadGenaiBeginnerGuideRouteImport } from './routes/_marketing.resources.read.genai-beginner-guide'
 import { Route as MarketingResourcesReadDlTipsTricksRouteImport } from './routes/_marketing.resources.read.dl-tips-tricks'
@@ -508,6 +509,12 @@ const MarketingResourcesReadGenaiInterviewQuestionsRoute =
   MarketingResourcesReadGenaiInterviewQuestionsRouteImport.update({
     id: '/read/genai-interview-questions',
     path: '/read/genai-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadGenaiFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/genai-frequently-asked-questions',
+    path: '/read/genai-frequently-asked-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadGenaiCompleteTutorialRoute =
@@ -945,6 +952,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
+  '/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
   '/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
   '/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
@@ -1068,6 +1076,7 @@ export interface FileRoutesByTo {
   '/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
   '/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
+  '/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
   '/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
   '/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
@@ -1196,6 +1205,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dl-tips-tricks': typeof MarketingResourcesReadDlTipsTricksRoute
   '/_marketing/resources/read/genai-beginner-guide': typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   '/_marketing/resources/read/genai-complete-tutorial': typeof MarketingResourcesReadGenaiCompleteTutorialRoute
+  '/_marketing/resources/read/genai-frequently-asked-questions': typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
   '/_marketing/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/_marketing/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
@@ -1322,6 +1332,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-tips-tricks'
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
+    | '/resources/read/genai-frequently-asked-questions'
     | '/resources/read/genai-interview-questions'
     | '/resources/read/genai-practice-questions'
     | '/resources/read/genai-real-world-case-study'
@@ -1445,6 +1456,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-tips-tricks'
     | '/resources/read/genai-beginner-guide'
     | '/resources/read/genai-complete-tutorial'
+    | '/resources/read/genai-frequently-asked-questions'
     | '/resources/read/genai-interview-questions'
     | '/resources/read/genai-practice-questions'
     | '/resources/read/genai-real-world-case-study'
@@ -1572,6 +1584,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dl-tips-tricks'
     | '/_marketing/resources/read/genai-beginner-guide'
     | '/_marketing/resources/read/genai-complete-tutorial'
+    | '/_marketing/resources/read/genai-frequently-asked-questions'
     | '/_marketing/resources/read/genai-interview-questions'
     | '/_marketing/resources/read/genai-practice-questions'
     | '/_marketing/resources/read/genai-real-world-case-study'
@@ -2097,6 +2110,13 @@ declare module '@tanstack/react-router' {
       path: '/read/genai-interview-questions'
       fullPath: '/resources/read/genai-interview-questions'
       preLoaderRoute: typeof MarketingResourcesReadGenaiInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/genai-frequently-asked-questions': {
+      id: '/_marketing/resources/read/genai-frequently-asked-questions'
+      path: '/read/genai-frequently-asked-questions'
+      fullPath: '/resources/read/genai-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/genai-complete-tutorial': {
@@ -2678,6 +2698,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDlTipsTricksRoute: typeof MarketingResourcesReadDlTipsTricksRoute
   MarketingResourcesReadGenaiBeginnerGuideRoute: typeof MarketingResourcesReadGenaiBeginnerGuideRoute
   MarketingResourcesReadGenaiCompleteTutorialRoute: typeof MarketingResourcesReadGenaiCompleteTutorialRoute
+  MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute
   MarketingResourcesReadGenaiInterviewQuestionsRoute: typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
   MarketingResourcesReadGenaiPracticeQuestionsRoute: typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   MarketingResourcesReadGenaiRealWorldCaseStudyRoute: typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
@@ -2791,6 +2812,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadGenaiBeginnerGuideRoute,
   MarketingResourcesReadGenaiCompleteTutorialRoute:
     MarketingResourcesReadGenaiCompleteTutorialRoute,
+  MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadGenaiFrequentlyAskedQuestionsRoute,
   MarketingResourcesReadGenaiInterviewQuestionsRoute:
     MarketingResourcesReadGenaiInterviewQuestionsRoute,
   MarketingResourcesReadGenaiPracticeQuestionsRoute:
