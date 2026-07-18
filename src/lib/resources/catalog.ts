@@ -427,6 +427,9 @@ const READER_ROUTES: Record<string, string> = {
    "system-design--frequently-asked-questions": "/resources/read/sd-frequently-asked-questions",
    "system-design--learning-roadmap": "/resources/read/sd-learning-roadmap",
    "system-design--tips-tricks": "/resources/read/sd-tips-tricks",
+   "system-design--advanced-concepts": "/resources/read/sd-advanced-concepts",
+   "system-design--glossary": "/resources/read/sd-glossary",
+   "system-design--reference-guide": "/resources/read/sd-reference-guide",
 
 
 
