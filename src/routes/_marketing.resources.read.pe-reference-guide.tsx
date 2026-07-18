@@ -62,7 +62,7 @@ function Page() {
         </ul>
         <Figure
           src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1600&q=80"
-          alt="Prompt lifecycle reference diagram"
+
           caption="Reference — prompt lifecycle from template → render → call → parse → evaluate."
         />
       </Section>

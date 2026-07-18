@@ -53,6 +53,9 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as MarketingResourcesReadPeReferenceGuideRouteImport } from './routes/_marketing.resources.read.pe-reference-guide'
+import { Route as MarketingResourcesReadPeGlossaryRouteImport } from './routes/_marketing.resources.read.pe-glossary'
+import { Route as MarketingResourcesReadPeAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.pe-advanced-concepts'
 import { Route as MarketingResourcesReadMlTipsTricksRouteImport } from './routes/_marketing.resources.read.ml-tips-tricks'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlSampleExercisesRouteImport } from './routes/_marketing.resources.read.ml-sample-exercises'
@@ -366,6 +369,24 @@ const DashboardDashboardMockTestsIndexRoute =
     id: '/dashboard/mock-tests/',
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
+  } as any)
+const MarketingResourcesReadPeReferenceGuideRoute =
+  MarketingResourcesReadPeReferenceGuideRouteImport.update({
+    id: '/read/pe-reference-guide',
+    path: '/read/pe-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPeGlossaryRoute =
+  MarketingResourcesReadPeGlossaryRouteImport.update({
+    id: '/read/pe-glossary',
+    path: '/read/pe-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPeAdvancedConceptsRoute =
+  MarketingResourcesReadPeAdvancedConceptsRouteImport.update({
+    id: '/read/pe-advanced-concepts',
+    path: '/read/pe-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlTipsTricksRoute =
   MarketingResourcesReadMlTipsTricksRouteImport.update({
@@ -977,6 +998,9 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
+  '/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -1101,6 +1125,9 @@ export interface FileRoutesByTo {
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
+  '/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -1230,6 +1257,9 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
+  '/_marketing/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/_marketing/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
+  '/_marketing/resources/read/pe-reference-guide': typeof MarketingResourcesReadPeReferenceGuideRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -1357,6 +1387,9 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/pe-advanced-concepts'
+    | '/resources/read/pe-glossary'
+    | '/resources/read/pe-reference-guide'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -1481,6 +1514,9 @@ export interface FileRouteTypes {
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
+    | '/resources/read/pe-advanced-concepts'
+    | '/resources/read/pe-glossary'
+    | '/resources/read/pe-reference-guide'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -1609,6 +1645,9 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-sample-exercises'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-tips-tricks'
+    | '/_marketing/resources/read/pe-advanced-concepts'
+    | '/_marketing/resources/read/pe-glossary'
+    | '/_marketing/resources/read/pe-reference-guide'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/mock-tests/ai/$categoryId'
@@ -1943,6 +1982,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/'
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_marketing/resources/read/pe-reference-guide': {
+      id: '/_marketing/resources/read/pe-reference-guide'
+      path: '/read/pe-reference-guide'
+      fullPath: '/resources/read/pe-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPeReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pe-glossary': {
+      id: '/_marketing/resources/read/pe-glossary'
+      path: '/read/pe-glossary'
+      fullPath: '/resources/read/pe-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadPeGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pe-advanced-concepts': {
+      id: '/_marketing/resources/read/pe-advanced-concepts'
+      path: '/read/pe-advanced-concepts'
+      fullPath: '/resources/read/pe-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadPeAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-tips-tricks': {
       id: '/_marketing/resources/read/ml-tips-tricks'
@@ -2723,6 +2783,9 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlSampleExercisesRoute: typeof MarketingResourcesReadMlSampleExercisesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   MarketingResourcesReadMlTipsTricksRoute: typeof MarketingResourcesReadMlTipsTricksRoute
+  MarketingResourcesReadPeAdvancedConceptsRoute: typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  MarketingResourcesReadPeGlossaryRoute: typeof MarketingResourcesReadPeGlossaryRoute
+  MarketingResourcesReadPeReferenceGuideRoute: typeof MarketingResourcesReadPeReferenceGuideRoute
 }
 
 const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
@@ -2860,6 +2923,11 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlStepByStepLearningGuideRoute,
   MarketingResourcesReadMlTipsTricksRoute:
     MarketingResourcesReadMlTipsTricksRoute,
+  MarketingResourcesReadPeAdvancedConceptsRoute:
+    MarketingResourcesReadPeAdvancedConceptsRoute,
+  MarketingResourcesReadPeGlossaryRoute: MarketingResourcesReadPeGlossaryRoute,
+  MarketingResourcesReadPeReferenceGuideRoute:
+    MarketingResourcesReadPeReferenceGuideRoute,
 }
 
 const MarketingResourcesRouteWithChildren =

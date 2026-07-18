@@ -71,7 +71,7 @@ function Page() {
         </p>
         <Figure
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80"
-          alt="LLM prompt lifecycle: tokenise, attend, sample, decode"
+
           caption="Prompt lifecycle — tokenisation → context assembly → attention → sampling → detokenisation."
         />
         <Callout tone="info" title="Mental model">
@@ -220,7 +220,7 @@ function Page() {
         </ul>
         <Figure
           src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80"
-          alt="Enterprise prompt system dashboards"
+
           caption="Enterprise prompt platform — registry, evaluation, observability and cost dashboards."
         />
       </Section>
