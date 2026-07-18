@@ -1314,7 +1314,29 @@ const READER_ROUTES: Record<string, string> = {
     "nodejs--advanced-concepts": "/resources/read/nodejs-advanced-concepts",
     "nodejs--glossary": "/resources/read/nodejs-glossary",
     "nodejs--reference-guide": "/resources/read/nodejs-reference-guide",
+    "mongodb--beginner-guide": "/resources/read/mongodb-beginner-guide",
+    "mongodb--complete-tutorial": "/resources/read/mongodb-complete-tutorial",
+    "mongodb--step-by-step-learning-guide": "/resources/read/mongodb-step-by-step-learning-guide",
+    "mongodb--pdf-notes": "/resources/read/mongodb-pdf-notes",
+    "mongodb--quick-revision-notes": "/resources/read/mongodb-quick-revision-notes",
+    "mongodb--cheat-sheet": "/resources/read/mongodb-cheat-sheet",
+    "mongodb--interview-questions": "/resources/read/mongodb-interview-questions",
+    "mongodb--practice-questions": "/resources/read/mongodb-practice-questions",
+    "mongodb--answer-key": "/resources/read/mongodb-answer-key",
+    "mongodb--sample-exercises": "/resources/read/mongodb-sample-exercises",
+    "mongodb--project-guide": "/resources/read/mongodb-project-guide",
+    "mongodb--project-case-study": "/resources/read/mongodb-project-case-study",
+    "mongodb--real-world-case-study": "/resources/read/mongodb-real-world-case-study",
+    "mongodb--best-practices": "/resources/read/mongodb-best-practices",
+    "mongodb--common-mistakes": "/resources/read/mongodb-common-mistakes",
+    "mongodb--frequently-asked-questions": "/resources/read/mongodb-frequently-asked-questions",
+    "mongodb--learning-roadmap": "/resources/read/mongodb-learning-roadmap",
+    "mongodb--tips-tricks": "/resources/read/mongodb-tips-tricks",
+    "mongodb--advanced-concepts": "/resources/read/mongodb-advanced-concepts",
+    "mongodb--glossary": "/resources/read/mongodb-glossary",
+    "mongodb--reference-guide": "/resources/read/mongodb-reference-guide",
 };
+
 
 export function getResourceReaderPath(id: string): string | null {
   return READER_ROUTES[id] ?? null;
