@@ -71,6 +71,27 @@ import { Route as MarketingResourcesReadUxDesignBestPracticesRouteImport } from 
 import { Route as MarketingResourcesReadUxDesignBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ux-design-beginner-guide'
 import { Route as MarketingResourcesReadUxDesignAnswerKeyRouteImport } from './routes/_marketing.resources.read.ux-design-answer-key'
 import { Route as MarketingResourcesReadUxDesignAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ux-design-advanced-concepts'
+import { Route as MarketingResourcesReadTableauTipsTricksRouteImport } from './routes/_marketing.resources.read.tableau-tips-tricks'
+import { Route as MarketingResourcesReadTableauStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.tableau-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadTableauSampleExercisesRouteImport } from './routes/_marketing.resources.read.tableau-sample-exercises'
+import { Route as MarketingResourcesReadTableauReferenceGuideRouteImport } from './routes/_marketing.resources.read.tableau-reference-guide'
+import { Route as MarketingResourcesReadTableauRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.tableau-real-world-case-study'
+import { Route as MarketingResourcesReadTableauQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.tableau-quick-revision-notes'
+import { Route as MarketingResourcesReadTableauProjectGuideRouteImport } from './routes/_marketing.resources.read.tableau-project-guide'
+import { Route as MarketingResourcesReadTableauProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.tableau-project-case-study'
+import { Route as MarketingResourcesReadTableauPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.tableau-practice-questions'
+import { Route as MarketingResourcesReadTableauPdfNotesRouteImport } from './routes/_marketing.resources.read.tableau-pdf-notes'
+import { Route as MarketingResourcesReadTableauLearningRoadmapRouteImport } from './routes/_marketing.resources.read.tableau-learning-roadmap'
+import { Route as MarketingResourcesReadTableauInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.tableau-interview-questions'
+import { Route as MarketingResourcesReadTableauGlossaryRouteImport } from './routes/_marketing.resources.read.tableau-glossary'
+import { Route as MarketingResourcesReadTableauFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.tableau-frequently-asked-questions'
+import { Route as MarketingResourcesReadTableauCompleteTutorialRouteImport } from './routes/_marketing.resources.read.tableau-complete-tutorial'
+import { Route as MarketingResourcesReadTableauCommonMistakesRouteImport } from './routes/_marketing.resources.read.tableau-common-mistakes'
+import { Route as MarketingResourcesReadTableauCheatSheetRouteImport } from './routes/_marketing.resources.read.tableau-cheat-sheet'
+import { Route as MarketingResourcesReadTableauBestPracticesRouteImport } from './routes/_marketing.resources.read.tableau-best-practices'
+import { Route as MarketingResourcesReadTableauBeginnerGuideRouteImport } from './routes/_marketing.resources.read.tableau-beginner-guide'
+import { Route as MarketingResourcesReadTableauAnswerKeyRouteImport } from './routes/_marketing.resources.read.tableau-answer-key'
+import { Route as MarketingResourcesReadTableauAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.tableau-advanced-concepts'
 import { Route as MarketingResourcesReadSdTipsTricksRouteImport } from './routes/_marketing.resources.read.sd-tips-tricks'
 import { Route as MarketingResourcesReadSdStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.sd-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadSdReferenceGuideRouteImport } from './routes/_marketing.resources.read.sd-reference-guide'
@@ -896,6 +917,132 @@ const MarketingResourcesReadUxDesignAdvancedConceptsRoute =
   MarketingResourcesReadUxDesignAdvancedConceptsRouteImport.update({
     id: '/read/ux-design-advanced-concepts',
     path: '/read/ux-design-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauTipsTricksRoute =
+  MarketingResourcesReadTableauTipsTricksRouteImport.update({
+    id: '/read/tableau-tips-tricks',
+    path: '/read/tableau-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauStepByStepLearningGuideRoute =
+  MarketingResourcesReadTableauStepByStepLearningGuideRouteImport.update({
+    id: '/read/tableau-step-by-step-learning-guide',
+    path: '/read/tableau-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauSampleExercisesRoute =
+  MarketingResourcesReadTableauSampleExercisesRouteImport.update({
+    id: '/read/tableau-sample-exercises',
+    path: '/read/tableau-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauReferenceGuideRoute =
+  MarketingResourcesReadTableauReferenceGuideRouteImport.update({
+    id: '/read/tableau-reference-guide',
+    path: '/read/tableau-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauRealWorldCaseStudyRoute =
+  MarketingResourcesReadTableauRealWorldCaseStudyRouteImport.update({
+    id: '/read/tableau-real-world-case-study',
+    path: '/read/tableau-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauQuickRevisionNotesRoute =
+  MarketingResourcesReadTableauQuickRevisionNotesRouteImport.update({
+    id: '/read/tableau-quick-revision-notes',
+    path: '/read/tableau-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauProjectGuideRoute =
+  MarketingResourcesReadTableauProjectGuideRouteImport.update({
+    id: '/read/tableau-project-guide',
+    path: '/read/tableau-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauProjectCaseStudyRoute =
+  MarketingResourcesReadTableauProjectCaseStudyRouteImport.update({
+    id: '/read/tableau-project-case-study',
+    path: '/read/tableau-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauPracticeQuestionsRoute =
+  MarketingResourcesReadTableauPracticeQuestionsRouteImport.update({
+    id: '/read/tableau-practice-questions',
+    path: '/read/tableau-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauPdfNotesRoute =
+  MarketingResourcesReadTableauPdfNotesRouteImport.update({
+    id: '/read/tableau-pdf-notes',
+    path: '/read/tableau-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauLearningRoadmapRoute =
+  MarketingResourcesReadTableauLearningRoadmapRouteImport.update({
+    id: '/read/tableau-learning-roadmap',
+    path: '/read/tableau-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauInterviewQuestionsRoute =
+  MarketingResourcesReadTableauInterviewQuestionsRouteImport.update({
+    id: '/read/tableau-interview-questions',
+    path: '/read/tableau-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauGlossaryRoute =
+  MarketingResourcesReadTableauGlossaryRouteImport.update({
+    id: '/read/tableau-glossary',
+    path: '/read/tableau-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadTableauFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/tableau-frequently-asked-questions',
+    path: '/read/tableau-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauCompleteTutorialRoute =
+  MarketingResourcesReadTableauCompleteTutorialRouteImport.update({
+    id: '/read/tableau-complete-tutorial',
+    path: '/read/tableau-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauCommonMistakesRoute =
+  MarketingResourcesReadTableauCommonMistakesRouteImport.update({
+    id: '/read/tableau-common-mistakes',
+    path: '/read/tableau-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauCheatSheetRoute =
+  MarketingResourcesReadTableauCheatSheetRouteImport.update({
+    id: '/read/tableau-cheat-sheet',
+    path: '/read/tableau-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauBestPracticesRoute =
+  MarketingResourcesReadTableauBestPracticesRouteImport.update({
+    id: '/read/tableau-best-practices',
+    path: '/read/tableau-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauBeginnerGuideRoute =
+  MarketingResourcesReadTableauBeginnerGuideRouteImport.update({
+    id: '/read/tableau-beginner-guide',
+    path: '/read/tableau-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauAnswerKeyRoute =
+  MarketingResourcesReadTableauAnswerKeyRouteImport.update({
+    id: '/read/tableau-answer-key',
+    path: '/read/tableau-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadTableauAdvancedConceptsRoute =
+  MarketingResourcesReadTableauAdvancedConceptsRouteImport.update({
+    id: '/read/tableau-advanced-concepts',
+    path: '/read/tableau-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadSdTipsTricksRoute =
@@ -4365,6 +4512,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
+  '/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
+  '/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
+  '/resources/read/tableau-best-practices': typeof MarketingResourcesReadTableauBestPracticesRoute
+  '/resources/read/tableau-cheat-sheet': typeof MarketingResourcesReadTableauCheatSheetRoute
+  '/resources/read/tableau-common-mistakes': typeof MarketingResourcesReadTableauCommonMistakesRoute
+  '/resources/read/tableau-complete-tutorial': typeof MarketingResourcesReadTableauCompleteTutorialRoute
+  '/resources/read/tableau-frequently-asked-questions': typeof MarketingResourcesReadTableauFrequentlyAskedQuestionsRoute
+  '/resources/read/tableau-glossary': typeof MarketingResourcesReadTableauGlossaryRoute
+  '/resources/read/tableau-interview-questions': typeof MarketingResourcesReadTableauInterviewQuestionsRoute
+  '/resources/read/tableau-learning-roadmap': typeof MarketingResourcesReadTableauLearningRoadmapRoute
+  '/resources/read/tableau-pdf-notes': typeof MarketingResourcesReadTableauPdfNotesRoute
+  '/resources/read/tableau-practice-questions': typeof MarketingResourcesReadTableauPracticeQuestionsRoute
+  '/resources/read/tableau-project-case-study': typeof MarketingResourcesReadTableauProjectCaseStudyRoute
+  '/resources/read/tableau-project-guide': typeof MarketingResourcesReadTableauProjectGuideRoute
+  '/resources/read/tableau-quick-revision-notes': typeof MarketingResourcesReadTableauQuickRevisionNotesRoute
+  '/resources/read/tableau-real-world-case-study': typeof MarketingResourcesReadTableauRealWorldCaseStudyRoute
+  '/resources/read/tableau-reference-guide': typeof MarketingResourcesReadTableauReferenceGuideRoute
+  '/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
+  '/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
+  '/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
   '/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
   '/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
   '/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
@@ -4912,6 +5080,27 @@ export interface FileRoutesByTo {
   '/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
+  '/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
+  '/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
+  '/resources/read/tableau-best-practices': typeof MarketingResourcesReadTableauBestPracticesRoute
+  '/resources/read/tableau-cheat-sheet': typeof MarketingResourcesReadTableauCheatSheetRoute
+  '/resources/read/tableau-common-mistakes': typeof MarketingResourcesReadTableauCommonMistakesRoute
+  '/resources/read/tableau-complete-tutorial': typeof MarketingResourcesReadTableauCompleteTutorialRoute
+  '/resources/read/tableau-frequently-asked-questions': typeof MarketingResourcesReadTableauFrequentlyAskedQuestionsRoute
+  '/resources/read/tableau-glossary': typeof MarketingResourcesReadTableauGlossaryRoute
+  '/resources/read/tableau-interview-questions': typeof MarketingResourcesReadTableauInterviewQuestionsRoute
+  '/resources/read/tableau-learning-roadmap': typeof MarketingResourcesReadTableauLearningRoadmapRoute
+  '/resources/read/tableau-pdf-notes': typeof MarketingResourcesReadTableauPdfNotesRoute
+  '/resources/read/tableau-practice-questions': typeof MarketingResourcesReadTableauPracticeQuestionsRoute
+  '/resources/read/tableau-project-case-study': typeof MarketingResourcesReadTableauProjectCaseStudyRoute
+  '/resources/read/tableau-project-guide': typeof MarketingResourcesReadTableauProjectGuideRoute
+  '/resources/read/tableau-quick-revision-notes': typeof MarketingResourcesReadTableauQuickRevisionNotesRoute
+  '/resources/read/tableau-real-world-case-study': typeof MarketingResourcesReadTableauRealWorldCaseStudyRoute
+  '/resources/read/tableau-reference-guide': typeof MarketingResourcesReadTableauReferenceGuideRoute
+  '/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
+  '/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
+  '/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
   '/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
   '/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
   '/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
@@ -5464,6 +5653,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/sd-reference-guide': typeof MarketingResourcesReadSdReferenceGuideRoute
   '/_marketing/resources/read/sd-step-by-step-learning-guide': typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   '/_marketing/resources/read/sd-tips-tricks': typeof MarketingResourcesReadSdTipsTricksRoute
+  '/_marketing/resources/read/tableau-advanced-concepts': typeof MarketingResourcesReadTableauAdvancedConceptsRoute
+  '/_marketing/resources/read/tableau-answer-key': typeof MarketingResourcesReadTableauAnswerKeyRoute
+  '/_marketing/resources/read/tableau-beginner-guide': typeof MarketingResourcesReadTableauBeginnerGuideRoute
+  '/_marketing/resources/read/tableau-best-practices': typeof MarketingResourcesReadTableauBestPracticesRoute
+  '/_marketing/resources/read/tableau-cheat-sheet': typeof MarketingResourcesReadTableauCheatSheetRoute
+  '/_marketing/resources/read/tableau-common-mistakes': typeof MarketingResourcesReadTableauCommonMistakesRoute
+  '/_marketing/resources/read/tableau-complete-tutorial': typeof MarketingResourcesReadTableauCompleteTutorialRoute
+  '/_marketing/resources/read/tableau-frequently-asked-questions': typeof MarketingResourcesReadTableauFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/tableau-glossary': typeof MarketingResourcesReadTableauGlossaryRoute
+  '/_marketing/resources/read/tableau-interview-questions': typeof MarketingResourcesReadTableauInterviewQuestionsRoute
+  '/_marketing/resources/read/tableau-learning-roadmap': typeof MarketingResourcesReadTableauLearningRoadmapRoute
+  '/_marketing/resources/read/tableau-pdf-notes': typeof MarketingResourcesReadTableauPdfNotesRoute
+  '/_marketing/resources/read/tableau-practice-questions': typeof MarketingResourcesReadTableauPracticeQuestionsRoute
+  '/_marketing/resources/read/tableau-project-case-study': typeof MarketingResourcesReadTableauProjectCaseStudyRoute
+  '/_marketing/resources/read/tableau-project-guide': typeof MarketingResourcesReadTableauProjectGuideRoute
+  '/_marketing/resources/read/tableau-quick-revision-notes': typeof MarketingResourcesReadTableauQuickRevisionNotesRoute
+  '/_marketing/resources/read/tableau-real-world-case-study': typeof MarketingResourcesReadTableauRealWorldCaseStudyRoute
+  '/_marketing/resources/read/tableau-reference-guide': typeof MarketingResourcesReadTableauReferenceGuideRoute
+  '/_marketing/resources/read/tableau-sample-exercises': typeof MarketingResourcesReadTableauSampleExercisesRoute
+  '/_marketing/resources/read/tableau-step-by-step-learning-guide': typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
+  '/_marketing/resources/read/tableau-tips-tricks': typeof MarketingResourcesReadTableauTipsTricksRoute
   '/_marketing/resources/read/ux-design-advanced-concepts': typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
   '/_marketing/resources/read/ux-design-answer-key': typeof MarketingResourcesReadUxDesignAnswerKeyRoute
   '/_marketing/resources/read/ux-design-beginner-guide': typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
@@ -6014,6 +6224,27 @@ export interface FileRouteTypes {
     | '/resources/read/sd-reference-guide'
     | '/resources/read/sd-step-by-step-learning-guide'
     | '/resources/read/sd-tips-tricks'
+    | '/resources/read/tableau-advanced-concepts'
+    | '/resources/read/tableau-answer-key'
+    | '/resources/read/tableau-beginner-guide'
+    | '/resources/read/tableau-best-practices'
+    | '/resources/read/tableau-cheat-sheet'
+    | '/resources/read/tableau-common-mistakes'
+    | '/resources/read/tableau-complete-tutorial'
+    | '/resources/read/tableau-frequently-asked-questions'
+    | '/resources/read/tableau-glossary'
+    | '/resources/read/tableau-interview-questions'
+    | '/resources/read/tableau-learning-roadmap'
+    | '/resources/read/tableau-pdf-notes'
+    | '/resources/read/tableau-practice-questions'
+    | '/resources/read/tableau-project-case-study'
+    | '/resources/read/tableau-project-guide'
+    | '/resources/read/tableau-quick-revision-notes'
+    | '/resources/read/tableau-real-world-case-study'
+    | '/resources/read/tableau-reference-guide'
+    | '/resources/read/tableau-sample-exercises'
+    | '/resources/read/tableau-step-by-step-learning-guide'
+    | '/resources/read/tableau-tips-tricks'
     | '/resources/read/ux-design-advanced-concepts'
     | '/resources/read/ux-design-answer-key'
     | '/resources/read/ux-design-beginner-guide'
@@ -6561,6 +6792,27 @@ export interface FileRouteTypes {
     | '/resources/read/sd-reference-guide'
     | '/resources/read/sd-step-by-step-learning-guide'
     | '/resources/read/sd-tips-tricks'
+    | '/resources/read/tableau-advanced-concepts'
+    | '/resources/read/tableau-answer-key'
+    | '/resources/read/tableau-beginner-guide'
+    | '/resources/read/tableau-best-practices'
+    | '/resources/read/tableau-cheat-sheet'
+    | '/resources/read/tableau-common-mistakes'
+    | '/resources/read/tableau-complete-tutorial'
+    | '/resources/read/tableau-frequently-asked-questions'
+    | '/resources/read/tableau-glossary'
+    | '/resources/read/tableau-interview-questions'
+    | '/resources/read/tableau-learning-roadmap'
+    | '/resources/read/tableau-pdf-notes'
+    | '/resources/read/tableau-practice-questions'
+    | '/resources/read/tableau-project-case-study'
+    | '/resources/read/tableau-project-guide'
+    | '/resources/read/tableau-quick-revision-notes'
+    | '/resources/read/tableau-real-world-case-study'
+    | '/resources/read/tableau-reference-guide'
+    | '/resources/read/tableau-sample-exercises'
+    | '/resources/read/tableau-step-by-step-learning-guide'
+    | '/resources/read/tableau-tips-tricks'
     | '/resources/read/ux-design-advanced-concepts'
     | '/resources/read/ux-design-answer-key'
     | '/resources/read/ux-design-beginner-guide'
@@ -7112,6 +7364,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/sd-reference-guide'
     | '/_marketing/resources/read/sd-step-by-step-learning-guide'
     | '/_marketing/resources/read/sd-tips-tricks'
+    | '/_marketing/resources/read/tableau-advanced-concepts'
+    | '/_marketing/resources/read/tableau-answer-key'
+    | '/_marketing/resources/read/tableau-beginner-guide'
+    | '/_marketing/resources/read/tableau-best-practices'
+    | '/_marketing/resources/read/tableau-cheat-sheet'
+    | '/_marketing/resources/read/tableau-common-mistakes'
+    | '/_marketing/resources/read/tableau-complete-tutorial'
+    | '/_marketing/resources/read/tableau-frequently-asked-questions'
+    | '/_marketing/resources/read/tableau-glossary'
+    | '/_marketing/resources/read/tableau-interview-questions'
+    | '/_marketing/resources/read/tableau-learning-roadmap'
+    | '/_marketing/resources/read/tableau-pdf-notes'
+    | '/_marketing/resources/read/tableau-practice-questions'
+    | '/_marketing/resources/read/tableau-project-case-study'
+    | '/_marketing/resources/read/tableau-project-guide'
+    | '/_marketing/resources/read/tableau-quick-revision-notes'
+    | '/_marketing/resources/read/tableau-real-world-case-study'
+    | '/_marketing/resources/read/tableau-reference-guide'
+    | '/_marketing/resources/read/tableau-sample-exercises'
+    | '/_marketing/resources/read/tableau-step-by-step-learning-guide'
+    | '/_marketing/resources/read/tableau-tips-tricks'
     | '/_marketing/resources/read/ux-design-advanced-concepts'
     | '/_marketing/resources/read/ux-design-answer-key'
     | '/_marketing/resources/read/ux-design-beginner-guide'
@@ -7589,6 +7862,153 @@ declare module '@tanstack/react-router' {
       path: '/read/ux-design-advanced-concepts'
       fullPath: '/resources/read/ux-design-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadUxDesignAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-tips-tricks': {
+      id: '/_marketing/resources/read/tableau-tips-tricks'
+      path: '/read/tableau-tips-tricks'
+      fullPath: '/resources/read/tableau-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadTableauTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/tableau-step-by-step-learning-guide'
+      path: '/read/tableau-step-by-step-learning-guide'
+      fullPath: '/resources/read/tableau-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTableauStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-sample-exercises': {
+      id: '/_marketing/resources/read/tableau-sample-exercises'
+      path: '/read/tableau-sample-exercises'
+      fullPath: '/resources/read/tableau-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadTableauSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-reference-guide': {
+      id: '/_marketing/resources/read/tableau-reference-guide'
+      path: '/read/tableau-reference-guide'
+      fullPath: '/resources/read/tableau-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTableauReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-real-world-case-study': {
+      id: '/_marketing/resources/read/tableau-real-world-case-study'
+      path: '/read/tableau-real-world-case-study'
+      fullPath: '/resources/read/tableau-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadTableauRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-quick-revision-notes': {
+      id: '/_marketing/resources/read/tableau-quick-revision-notes'
+      path: '/read/tableau-quick-revision-notes'
+      fullPath: '/resources/read/tableau-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadTableauQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-project-guide': {
+      id: '/_marketing/resources/read/tableau-project-guide'
+      path: '/read/tableau-project-guide'
+      fullPath: '/resources/read/tableau-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTableauProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-project-case-study': {
+      id: '/_marketing/resources/read/tableau-project-case-study'
+      path: '/read/tableau-project-case-study'
+      fullPath: '/resources/read/tableau-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadTableauProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-practice-questions': {
+      id: '/_marketing/resources/read/tableau-practice-questions'
+      path: '/read/tableau-practice-questions'
+      fullPath: '/resources/read/tableau-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTableauPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-pdf-notes': {
+      id: '/_marketing/resources/read/tableau-pdf-notes'
+      path: '/read/tableau-pdf-notes'
+      fullPath: '/resources/read/tableau-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadTableauPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-learning-roadmap': {
+      id: '/_marketing/resources/read/tableau-learning-roadmap'
+      path: '/read/tableau-learning-roadmap'
+      fullPath: '/resources/read/tableau-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadTableauLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-interview-questions': {
+      id: '/_marketing/resources/read/tableau-interview-questions'
+      path: '/read/tableau-interview-questions'
+      fullPath: '/resources/read/tableau-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTableauInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-glossary': {
+      id: '/_marketing/resources/read/tableau-glossary'
+      path: '/read/tableau-glossary'
+      fullPath: '/resources/read/tableau-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadTableauGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-frequently-asked-questions': {
+      id: '/_marketing/resources/read/tableau-frequently-asked-questions'
+      path: '/read/tableau-frequently-asked-questions'
+      fullPath: '/resources/read/tableau-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadTableauFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-complete-tutorial': {
+      id: '/_marketing/resources/read/tableau-complete-tutorial'
+      path: '/read/tableau-complete-tutorial'
+      fullPath: '/resources/read/tableau-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadTableauCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-common-mistakes': {
+      id: '/_marketing/resources/read/tableau-common-mistakes'
+      path: '/read/tableau-common-mistakes'
+      fullPath: '/resources/read/tableau-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadTableauCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-cheat-sheet': {
+      id: '/_marketing/resources/read/tableau-cheat-sheet'
+      path: '/read/tableau-cheat-sheet'
+      fullPath: '/resources/read/tableau-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadTableauCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-best-practices': {
+      id: '/_marketing/resources/read/tableau-best-practices'
+      path: '/read/tableau-best-practices'
+      fullPath: '/resources/read/tableau-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadTableauBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-beginner-guide': {
+      id: '/_marketing/resources/read/tableau-beginner-guide'
+      path: '/read/tableau-beginner-guide'
+      fullPath: '/resources/read/tableau-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadTableauBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-answer-key': {
+      id: '/_marketing/resources/read/tableau-answer-key'
+      path: '/read/tableau-answer-key'
+      fullPath: '/resources/read/tableau-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadTableauAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/tableau-advanced-concepts': {
+      id: '/_marketing/resources/read/tableau-advanced-concepts'
+      path: '/read/tableau-advanced-concepts'
+      fullPath: '/resources/read/tableau-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadTableauAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/sd-tips-tricks': {
@@ -11610,6 +12030,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadSdReferenceGuideRoute: typeof MarketingResourcesReadSdReferenceGuideRoute
   MarketingResourcesReadSdStepByStepLearningGuideRoute: typeof MarketingResourcesReadSdStepByStepLearningGuideRoute
   MarketingResourcesReadSdTipsTricksRoute: typeof MarketingResourcesReadSdTipsTricksRoute
+  MarketingResourcesReadTableauAdvancedConceptsRoute: typeof MarketingResourcesReadTableauAdvancedConceptsRoute
+  MarketingResourcesReadTableauAnswerKeyRoute: typeof MarketingResourcesReadTableauAnswerKeyRoute
+  MarketingResourcesReadTableauBeginnerGuideRoute: typeof MarketingResourcesReadTableauBeginnerGuideRoute
+  MarketingResourcesReadTableauBestPracticesRoute: typeof MarketingResourcesReadTableauBestPracticesRoute
+  MarketingResourcesReadTableauCheatSheetRoute: typeof MarketingResourcesReadTableauCheatSheetRoute
+  MarketingResourcesReadTableauCommonMistakesRoute: typeof MarketingResourcesReadTableauCommonMistakesRoute
+  MarketingResourcesReadTableauCompleteTutorialRoute: typeof MarketingResourcesReadTableauCompleteTutorialRoute
+  MarketingResourcesReadTableauFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadTableauFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadTableauGlossaryRoute: typeof MarketingResourcesReadTableauGlossaryRoute
+  MarketingResourcesReadTableauInterviewQuestionsRoute: typeof MarketingResourcesReadTableauInterviewQuestionsRoute
+  MarketingResourcesReadTableauLearningRoadmapRoute: typeof MarketingResourcesReadTableauLearningRoadmapRoute
+  MarketingResourcesReadTableauPdfNotesRoute: typeof MarketingResourcesReadTableauPdfNotesRoute
+  MarketingResourcesReadTableauPracticeQuestionsRoute: typeof MarketingResourcesReadTableauPracticeQuestionsRoute
+  MarketingResourcesReadTableauProjectCaseStudyRoute: typeof MarketingResourcesReadTableauProjectCaseStudyRoute
+  MarketingResourcesReadTableauProjectGuideRoute: typeof MarketingResourcesReadTableauProjectGuideRoute
+  MarketingResourcesReadTableauQuickRevisionNotesRoute: typeof MarketingResourcesReadTableauQuickRevisionNotesRoute
+  MarketingResourcesReadTableauRealWorldCaseStudyRoute: typeof MarketingResourcesReadTableauRealWorldCaseStudyRoute
+  MarketingResourcesReadTableauReferenceGuideRoute: typeof MarketingResourcesReadTableauReferenceGuideRoute
+  MarketingResourcesReadTableauSampleExercisesRoute: typeof MarketingResourcesReadTableauSampleExercisesRoute
+  MarketingResourcesReadTableauStepByStepLearningGuideRoute: typeof MarketingResourcesReadTableauStepByStepLearningGuideRoute
+  MarketingResourcesReadTableauTipsTricksRoute: typeof MarketingResourcesReadTableauTipsTricksRoute
   MarketingResourcesReadUxDesignAdvancedConceptsRoute: typeof MarketingResourcesReadUxDesignAdvancedConceptsRoute
   MarketingResourcesReadUxDesignAnswerKeyRoute: typeof MarketingResourcesReadUxDesignAnswerKeyRoute
   MarketingResourcesReadUxDesignBeginnerGuideRoute: typeof MarketingResourcesReadUxDesignBeginnerGuideRoute
@@ -12569,6 +13010,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadSdStepByStepLearningGuideRoute,
   MarketingResourcesReadSdTipsTricksRoute:
     MarketingResourcesReadSdTipsTricksRoute,
+  MarketingResourcesReadTableauAdvancedConceptsRoute:
+    MarketingResourcesReadTableauAdvancedConceptsRoute,
+  MarketingResourcesReadTableauAnswerKeyRoute:
+    MarketingResourcesReadTableauAnswerKeyRoute,
+  MarketingResourcesReadTableauBeginnerGuideRoute:
+    MarketingResourcesReadTableauBeginnerGuideRoute,
+  MarketingResourcesReadTableauBestPracticesRoute:
+    MarketingResourcesReadTableauBestPracticesRoute,
+  MarketingResourcesReadTableauCheatSheetRoute:
+    MarketingResourcesReadTableauCheatSheetRoute,
+  MarketingResourcesReadTableauCommonMistakesRoute:
+    MarketingResourcesReadTableauCommonMistakesRoute,
+  MarketingResourcesReadTableauCompleteTutorialRoute:
+    MarketingResourcesReadTableauCompleteTutorialRoute,
+  MarketingResourcesReadTableauFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadTableauFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadTableauGlossaryRoute:
+    MarketingResourcesReadTableauGlossaryRoute,
+  MarketingResourcesReadTableauInterviewQuestionsRoute:
+    MarketingResourcesReadTableauInterviewQuestionsRoute,
+  MarketingResourcesReadTableauLearningRoadmapRoute:
+    MarketingResourcesReadTableauLearningRoadmapRoute,
+  MarketingResourcesReadTableauPdfNotesRoute:
+    MarketingResourcesReadTableauPdfNotesRoute,
+  MarketingResourcesReadTableauPracticeQuestionsRoute:
+    MarketingResourcesReadTableauPracticeQuestionsRoute,
+  MarketingResourcesReadTableauProjectCaseStudyRoute:
+    MarketingResourcesReadTableauProjectCaseStudyRoute,
+  MarketingResourcesReadTableauProjectGuideRoute:
+    MarketingResourcesReadTableauProjectGuideRoute,
+  MarketingResourcesReadTableauQuickRevisionNotesRoute:
+    MarketingResourcesReadTableauQuickRevisionNotesRoute,
+  MarketingResourcesReadTableauRealWorldCaseStudyRoute:
+    MarketingResourcesReadTableauRealWorldCaseStudyRoute,
+  MarketingResourcesReadTableauReferenceGuideRoute:
+    MarketingResourcesReadTableauReferenceGuideRoute,
+  MarketingResourcesReadTableauSampleExercisesRoute:
+    MarketingResourcesReadTableauSampleExercisesRoute,
+  MarketingResourcesReadTableauStepByStepLearningGuideRoute:
+    MarketingResourcesReadTableauStepByStepLearningGuideRoute,
+  MarketingResourcesReadTableauTipsTricksRoute:
+    MarketingResourcesReadTableauTipsTricksRoute,
   MarketingResourcesReadUxDesignAdvancedConceptsRoute:
     MarketingResourcesReadUxDesignAdvancedConceptsRoute,
   MarketingResourcesReadUxDesignAnswerKeyRoute:
