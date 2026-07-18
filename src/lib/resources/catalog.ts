@@ -403,6 +403,10 @@ const READER_ROUTES: Record<string, string> = {
   "dbms--advanced-concepts": "/resources/read/dbms-advanced-concepts",
   "dbms--glossary": "/resources/read/dbms-glossary",
   "dbms--reference-guide": "/resources/read/dbms-reference-guide",
+  "dbms--interview-questions": "/resources/read/dbms-interview-questions",
+  "dbms--practice-questions": "/resources/read/dbms-practice-questions",
+  "dbms--answer-key": "/resources/read/dbms-answer-key",
+
 
 
 
