@@ -314,6 +314,27 @@ import { Route as MarketingResourcesReadFigmaBestPracticesRouteImport } from './
 import { Route as MarketingResourcesReadFigmaBeginnerGuideRouteImport } from './routes/_marketing.resources.read.figma-beginner-guide'
 import { Route as MarketingResourcesReadFigmaAnswerKeyRouteImport } from './routes/_marketing.resources.read.figma-answer-key'
 import { Route as MarketingResourcesReadFigmaAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.figma-advanced-concepts'
+import { Route as MarketingResourcesReadEthicalHackingTipsTricksRouteImport } from './routes/_marketing.resources.read.ethical-hacking-tips-tricks'
+import { Route as MarketingResourcesReadEthicalHackingStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ethical-hacking-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadEthicalHackingSampleExercisesRouteImport } from './routes/_marketing.resources.read.ethical-hacking-sample-exercises'
+import { Route as MarketingResourcesReadEthicalHackingReferenceGuideRouteImport } from './routes/_marketing.resources.read.ethical-hacking-reference-guide'
+import { Route as MarketingResourcesReadEthicalHackingRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.ethical-hacking-real-world-case-study'
+import { Route as MarketingResourcesReadEthicalHackingQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ethical-hacking-quick-revision-notes'
+import { Route as MarketingResourcesReadEthicalHackingProjectGuideRouteImport } from './routes/_marketing.resources.read.ethical-hacking-project-guide'
+import { Route as MarketingResourcesReadEthicalHackingProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.ethical-hacking-project-case-study'
+import { Route as MarketingResourcesReadEthicalHackingPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.ethical-hacking-practice-questions'
+import { Route as MarketingResourcesReadEthicalHackingPdfNotesRouteImport } from './routes/_marketing.resources.read.ethical-hacking-pdf-notes'
+import { Route as MarketingResourcesReadEthicalHackingLearningRoadmapRouteImport } from './routes/_marketing.resources.read.ethical-hacking-learning-roadmap'
+import { Route as MarketingResourcesReadEthicalHackingInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.ethical-hacking-interview-questions'
+import { Route as MarketingResourcesReadEthicalHackingGlossaryRouteImport } from './routes/_marketing.resources.read.ethical-hacking-glossary'
+import { Route as MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.ethical-hacking-frequently-asked-questions'
+import { Route as MarketingResourcesReadEthicalHackingCompleteTutorialRouteImport } from './routes/_marketing.resources.read.ethical-hacking-complete-tutorial'
+import { Route as MarketingResourcesReadEthicalHackingCommonMistakesRouteImport } from './routes/_marketing.resources.read.ethical-hacking-common-mistakes'
+import { Route as MarketingResourcesReadEthicalHackingCheatSheetRouteImport } from './routes/_marketing.resources.read.ethical-hacking-cheat-sheet'
+import { Route as MarketingResourcesReadEthicalHackingBestPracticesRouteImport } from './routes/_marketing.resources.read.ethical-hacking-best-practices'
+import { Route as MarketingResourcesReadEthicalHackingBeginnerGuideRouteImport } from './routes/_marketing.resources.read.ethical-hacking-beginner-guide'
+import { Route as MarketingResourcesReadEthicalHackingAnswerKeyRouteImport } from './routes/_marketing.resources.read.ethical-hacking-answer-key'
+import { Route as MarketingResourcesReadEthicalHackingAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ethical-hacking-advanced-concepts'
 import { Route as MarketingResourcesReadDsaTipsAndTricksRouteImport } from './routes/_marketing.resources.read.dsa-tips-and-tricks'
 import { Route as MarketingResourcesReadDsaStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.dsa-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadDsaSampleExercisesRouteImport } from './routes/_marketing.resources.read.dsa-sample-exercises'
@@ -2242,6 +2263,136 @@ const MarketingResourcesReadFigmaAdvancedConceptsRoute =
     path: '/read/figma-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadEthicalHackingTipsTricksRoute =
+  MarketingResourcesReadEthicalHackingTipsTricksRouteImport.update({
+    id: '/read/ethical-hacking-tips-tricks',
+    path: '/read/ethical-hacking-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute =
+  MarketingResourcesReadEthicalHackingStepByStepLearningGuideRouteImport.update(
+    {
+      id: '/read/ethical-hacking-step-by-step-learning-guide',
+      path: '/read/ethical-hacking-step-by-step-learning-guide',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadEthicalHackingSampleExercisesRoute =
+  MarketingResourcesReadEthicalHackingSampleExercisesRouteImport.update({
+    id: '/read/ethical-hacking-sample-exercises',
+    path: '/read/ethical-hacking-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingReferenceGuideRoute =
+  MarketingResourcesReadEthicalHackingReferenceGuideRouteImport.update({
+    id: '/read/ethical-hacking-reference-guide',
+    path: '/read/ethical-hacking-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingRealWorldCaseStudyRoute =
+  MarketingResourcesReadEthicalHackingRealWorldCaseStudyRouteImport.update({
+    id: '/read/ethical-hacking-real-world-case-study',
+    path: '/read/ethical-hacking-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingQuickRevisionNotesRoute =
+  MarketingResourcesReadEthicalHackingQuickRevisionNotesRouteImport.update({
+    id: '/read/ethical-hacking-quick-revision-notes',
+    path: '/read/ethical-hacking-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingProjectGuideRoute =
+  MarketingResourcesReadEthicalHackingProjectGuideRouteImport.update({
+    id: '/read/ethical-hacking-project-guide',
+    path: '/read/ethical-hacking-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingProjectCaseStudyRoute =
+  MarketingResourcesReadEthicalHackingProjectCaseStudyRouteImport.update({
+    id: '/read/ethical-hacking-project-case-study',
+    path: '/read/ethical-hacking-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingPracticeQuestionsRoute =
+  MarketingResourcesReadEthicalHackingPracticeQuestionsRouteImport.update({
+    id: '/read/ethical-hacking-practice-questions',
+    path: '/read/ethical-hacking-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingPdfNotesRoute =
+  MarketingResourcesReadEthicalHackingPdfNotesRouteImport.update({
+    id: '/read/ethical-hacking-pdf-notes',
+    path: '/read/ethical-hacking-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingLearningRoadmapRoute =
+  MarketingResourcesReadEthicalHackingLearningRoadmapRouteImport.update({
+    id: '/read/ethical-hacking-learning-roadmap',
+    path: '/read/ethical-hacking-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingInterviewQuestionsRoute =
+  MarketingResourcesReadEthicalHackingInterviewQuestionsRouteImport.update({
+    id: '/read/ethical-hacking-interview-questions',
+    path: '/read/ethical-hacking-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingGlossaryRoute =
+  MarketingResourcesReadEthicalHackingGlossaryRouteImport.update({
+    id: '/read/ethical-hacking-glossary',
+    path: '/read/ethical-hacking-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRouteImport.update(
+    {
+      id: '/read/ethical-hacking-frequently-asked-questions',
+      path: '/read/ethical-hacking-frequently-asked-questions',
+      getParentRoute: () => MarketingResourcesRoute,
+    } as any,
+  )
+const MarketingResourcesReadEthicalHackingCompleteTutorialRoute =
+  MarketingResourcesReadEthicalHackingCompleteTutorialRouteImport.update({
+    id: '/read/ethical-hacking-complete-tutorial',
+    path: '/read/ethical-hacking-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingCommonMistakesRoute =
+  MarketingResourcesReadEthicalHackingCommonMistakesRouteImport.update({
+    id: '/read/ethical-hacking-common-mistakes',
+    path: '/read/ethical-hacking-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingCheatSheetRoute =
+  MarketingResourcesReadEthicalHackingCheatSheetRouteImport.update({
+    id: '/read/ethical-hacking-cheat-sheet',
+    path: '/read/ethical-hacking-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingBestPracticesRoute =
+  MarketingResourcesReadEthicalHackingBestPracticesRouteImport.update({
+    id: '/read/ethical-hacking-best-practices',
+    path: '/read/ethical-hacking-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingBeginnerGuideRoute =
+  MarketingResourcesReadEthicalHackingBeginnerGuideRouteImport.update({
+    id: '/read/ethical-hacking-beginner-guide',
+    path: '/read/ethical-hacking-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingAnswerKeyRoute =
+  MarketingResourcesReadEthicalHackingAnswerKeyRouteImport.update({
+    id: '/read/ethical-hacking-answer-key',
+    path: '/read/ethical-hacking-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadEthicalHackingAdvancedConceptsRoute =
+  MarketingResourcesReadEthicalHackingAdvancedConceptsRouteImport.update({
+    id: '/read/ethical-hacking-advanced-concepts',
+    path: '/read/ethical-hacking-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDsaTipsAndTricksRoute =
   MarketingResourcesReadDsaTipsAndTricksRouteImport.update({
     id: '/read/dsa-tips-and-tricks',
@@ -3108,6 +3259,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
   '/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
   '/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
+  '/resources/read/ethical-hacking-advanced-concepts': typeof MarketingResourcesReadEthicalHackingAdvancedConceptsRoute
+  '/resources/read/ethical-hacking-answer-key': typeof MarketingResourcesReadEthicalHackingAnswerKeyRoute
+  '/resources/read/ethical-hacking-beginner-guide': typeof MarketingResourcesReadEthicalHackingBeginnerGuideRoute
+  '/resources/read/ethical-hacking-best-practices': typeof MarketingResourcesReadEthicalHackingBestPracticesRoute
+  '/resources/read/ethical-hacking-cheat-sheet': typeof MarketingResourcesReadEthicalHackingCheatSheetRoute
+  '/resources/read/ethical-hacking-common-mistakes': typeof MarketingResourcesReadEthicalHackingCommonMistakesRoute
+  '/resources/read/ethical-hacking-complete-tutorial': typeof MarketingResourcesReadEthicalHackingCompleteTutorialRoute
+  '/resources/read/ethical-hacking-frequently-asked-questions': typeof MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRoute
+  '/resources/read/ethical-hacking-glossary': typeof MarketingResourcesReadEthicalHackingGlossaryRoute
+  '/resources/read/ethical-hacking-interview-questions': typeof MarketingResourcesReadEthicalHackingInterviewQuestionsRoute
+  '/resources/read/ethical-hacking-learning-roadmap': typeof MarketingResourcesReadEthicalHackingLearningRoadmapRoute
+  '/resources/read/ethical-hacking-pdf-notes': typeof MarketingResourcesReadEthicalHackingPdfNotesRoute
+  '/resources/read/ethical-hacking-practice-questions': typeof MarketingResourcesReadEthicalHackingPracticeQuestionsRoute
+  '/resources/read/ethical-hacking-project-case-study': typeof MarketingResourcesReadEthicalHackingProjectCaseStudyRoute
+  '/resources/read/ethical-hacking-project-guide': typeof MarketingResourcesReadEthicalHackingProjectGuideRoute
+  '/resources/read/ethical-hacking-quick-revision-notes': typeof MarketingResourcesReadEthicalHackingQuickRevisionNotesRoute
+  '/resources/read/ethical-hacking-real-world-case-study': typeof MarketingResourcesReadEthicalHackingRealWorldCaseStudyRoute
+  '/resources/read/ethical-hacking-reference-guide': typeof MarketingResourcesReadEthicalHackingReferenceGuideRoute
+  '/resources/read/ethical-hacking-sample-exercises': typeof MarketingResourcesReadEthicalHackingSampleExercisesRoute
+  '/resources/read/ethical-hacking-step-by-step-learning-guide': typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute
+  '/resources/read/ethical-hacking-tips-tricks': typeof MarketingResourcesReadEthicalHackingTipsTricksRoute
   '/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
   '/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
   '/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
@@ -3529,6 +3701,27 @@ export interface FileRoutesByTo {
   '/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
   '/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
   '/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
+  '/resources/read/ethical-hacking-advanced-concepts': typeof MarketingResourcesReadEthicalHackingAdvancedConceptsRoute
+  '/resources/read/ethical-hacking-answer-key': typeof MarketingResourcesReadEthicalHackingAnswerKeyRoute
+  '/resources/read/ethical-hacking-beginner-guide': typeof MarketingResourcesReadEthicalHackingBeginnerGuideRoute
+  '/resources/read/ethical-hacking-best-practices': typeof MarketingResourcesReadEthicalHackingBestPracticesRoute
+  '/resources/read/ethical-hacking-cheat-sheet': typeof MarketingResourcesReadEthicalHackingCheatSheetRoute
+  '/resources/read/ethical-hacking-common-mistakes': typeof MarketingResourcesReadEthicalHackingCommonMistakesRoute
+  '/resources/read/ethical-hacking-complete-tutorial': typeof MarketingResourcesReadEthicalHackingCompleteTutorialRoute
+  '/resources/read/ethical-hacking-frequently-asked-questions': typeof MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRoute
+  '/resources/read/ethical-hacking-glossary': typeof MarketingResourcesReadEthicalHackingGlossaryRoute
+  '/resources/read/ethical-hacking-interview-questions': typeof MarketingResourcesReadEthicalHackingInterviewQuestionsRoute
+  '/resources/read/ethical-hacking-learning-roadmap': typeof MarketingResourcesReadEthicalHackingLearningRoadmapRoute
+  '/resources/read/ethical-hacking-pdf-notes': typeof MarketingResourcesReadEthicalHackingPdfNotesRoute
+  '/resources/read/ethical-hacking-practice-questions': typeof MarketingResourcesReadEthicalHackingPracticeQuestionsRoute
+  '/resources/read/ethical-hacking-project-case-study': typeof MarketingResourcesReadEthicalHackingProjectCaseStudyRoute
+  '/resources/read/ethical-hacking-project-guide': typeof MarketingResourcesReadEthicalHackingProjectGuideRoute
+  '/resources/read/ethical-hacking-quick-revision-notes': typeof MarketingResourcesReadEthicalHackingQuickRevisionNotesRoute
+  '/resources/read/ethical-hacking-real-world-case-study': typeof MarketingResourcesReadEthicalHackingRealWorldCaseStudyRoute
+  '/resources/read/ethical-hacking-reference-guide': typeof MarketingResourcesReadEthicalHackingReferenceGuideRoute
+  '/resources/read/ethical-hacking-sample-exercises': typeof MarketingResourcesReadEthicalHackingSampleExercisesRoute
+  '/resources/read/ethical-hacking-step-by-step-learning-guide': typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute
+  '/resources/read/ethical-hacking-tips-tricks': typeof MarketingResourcesReadEthicalHackingTipsTricksRoute
   '/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
   '/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
   '/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
@@ -3955,6 +4148,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dsa-sample-exercises': typeof MarketingResourcesReadDsaSampleExercisesRoute
   '/_marketing/resources/read/dsa-step-by-step-learning-guide': typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
   '/_marketing/resources/read/dsa-tips-and-tricks': typeof MarketingResourcesReadDsaTipsAndTricksRoute
+  '/_marketing/resources/read/ethical-hacking-advanced-concepts': typeof MarketingResourcesReadEthicalHackingAdvancedConceptsRoute
+  '/_marketing/resources/read/ethical-hacking-answer-key': typeof MarketingResourcesReadEthicalHackingAnswerKeyRoute
+  '/_marketing/resources/read/ethical-hacking-beginner-guide': typeof MarketingResourcesReadEthicalHackingBeginnerGuideRoute
+  '/_marketing/resources/read/ethical-hacking-best-practices': typeof MarketingResourcesReadEthicalHackingBestPracticesRoute
+  '/_marketing/resources/read/ethical-hacking-cheat-sheet': typeof MarketingResourcesReadEthicalHackingCheatSheetRoute
+  '/_marketing/resources/read/ethical-hacking-common-mistakes': typeof MarketingResourcesReadEthicalHackingCommonMistakesRoute
+  '/_marketing/resources/read/ethical-hacking-complete-tutorial': typeof MarketingResourcesReadEthicalHackingCompleteTutorialRoute
+  '/_marketing/resources/read/ethical-hacking-frequently-asked-questions': typeof MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/ethical-hacking-glossary': typeof MarketingResourcesReadEthicalHackingGlossaryRoute
+  '/_marketing/resources/read/ethical-hacking-interview-questions': typeof MarketingResourcesReadEthicalHackingInterviewQuestionsRoute
+  '/_marketing/resources/read/ethical-hacking-learning-roadmap': typeof MarketingResourcesReadEthicalHackingLearningRoadmapRoute
+  '/_marketing/resources/read/ethical-hacking-pdf-notes': typeof MarketingResourcesReadEthicalHackingPdfNotesRoute
+  '/_marketing/resources/read/ethical-hacking-practice-questions': typeof MarketingResourcesReadEthicalHackingPracticeQuestionsRoute
+  '/_marketing/resources/read/ethical-hacking-project-case-study': typeof MarketingResourcesReadEthicalHackingProjectCaseStudyRoute
+  '/_marketing/resources/read/ethical-hacking-project-guide': typeof MarketingResourcesReadEthicalHackingProjectGuideRoute
+  '/_marketing/resources/read/ethical-hacking-quick-revision-notes': typeof MarketingResourcesReadEthicalHackingQuickRevisionNotesRoute
+  '/_marketing/resources/read/ethical-hacking-real-world-case-study': typeof MarketingResourcesReadEthicalHackingRealWorldCaseStudyRoute
+  '/_marketing/resources/read/ethical-hacking-reference-guide': typeof MarketingResourcesReadEthicalHackingReferenceGuideRoute
+  '/_marketing/resources/read/ethical-hacking-sample-exercises': typeof MarketingResourcesReadEthicalHackingSampleExercisesRoute
+  '/_marketing/resources/read/ethical-hacking-step-by-step-learning-guide': typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute
+  '/_marketing/resources/read/ethical-hacking-tips-tricks': typeof MarketingResourcesReadEthicalHackingTipsTricksRoute
   '/_marketing/resources/read/figma-advanced-concepts': typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
   '/_marketing/resources/read/figma-answer-key': typeof MarketingResourcesReadFigmaAnswerKeyRoute
   '/_marketing/resources/read/figma-beginner-guide': typeof MarketingResourcesReadFigmaBeginnerGuideRoute
@@ -4379,6 +4593,27 @@ export interface FileRouteTypes {
     | '/resources/read/dsa-sample-exercises'
     | '/resources/read/dsa-step-by-step-learning-guide'
     | '/resources/read/dsa-tips-and-tricks'
+    | '/resources/read/ethical-hacking-advanced-concepts'
+    | '/resources/read/ethical-hacking-answer-key'
+    | '/resources/read/ethical-hacking-beginner-guide'
+    | '/resources/read/ethical-hacking-best-practices'
+    | '/resources/read/ethical-hacking-cheat-sheet'
+    | '/resources/read/ethical-hacking-common-mistakes'
+    | '/resources/read/ethical-hacking-complete-tutorial'
+    | '/resources/read/ethical-hacking-frequently-asked-questions'
+    | '/resources/read/ethical-hacking-glossary'
+    | '/resources/read/ethical-hacking-interview-questions'
+    | '/resources/read/ethical-hacking-learning-roadmap'
+    | '/resources/read/ethical-hacking-pdf-notes'
+    | '/resources/read/ethical-hacking-practice-questions'
+    | '/resources/read/ethical-hacking-project-case-study'
+    | '/resources/read/ethical-hacking-project-guide'
+    | '/resources/read/ethical-hacking-quick-revision-notes'
+    | '/resources/read/ethical-hacking-real-world-case-study'
+    | '/resources/read/ethical-hacking-reference-guide'
+    | '/resources/read/ethical-hacking-sample-exercises'
+    | '/resources/read/ethical-hacking-step-by-step-learning-guide'
+    | '/resources/read/ethical-hacking-tips-tricks'
     | '/resources/read/figma-advanced-concepts'
     | '/resources/read/figma-answer-key'
     | '/resources/read/figma-beginner-guide'
@@ -4800,6 +5035,27 @@ export interface FileRouteTypes {
     | '/resources/read/dsa-sample-exercises'
     | '/resources/read/dsa-step-by-step-learning-guide'
     | '/resources/read/dsa-tips-and-tricks'
+    | '/resources/read/ethical-hacking-advanced-concepts'
+    | '/resources/read/ethical-hacking-answer-key'
+    | '/resources/read/ethical-hacking-beginner-guide'
+    | '/resources/read/ethical-hacking-best-practices'
+    | '/resources/read/ethical-hacking-cheat-sheet'
+    | '/resources/read/ethical-hacking-common-mistakes'
+    | '/resources/read/ethical-hacking-complete-tutorial'
+    | '/resources/read/ethical-hacking-frequently-asked-questions'
+    | '/resources/read/ethical-hacking-glossary'
+    | '/resources/read/ethical-hacking-interview-questions'
+    | '/resources/read/ethical-hacking-learning-roadmap'
+    | '/resources/read/ethical-hacking-pdf-notes'
+    | '/resources/read/ethical-hacking-practice-questions'
+    | '/resources/read/ethical-hacking-project-case-study'
+    | '/resources/read/ethical-hacking-project-guide'
+    | '/resources/read/ethical-hacking-quick-revision-notes'
+    | '/resources/read/ethical-hacking-real-world-case-study'
+    | '/resources/read/ethical-hacking-reference-guide'
+    | '/resources/read/ethical-hacking-sample-exercises'
+    | '/resources/read/ethical-hacking-step-by-step-learning-guide'
+    | '/resources/read/ethical-hacking-tips-tricks'
     | '/resources/read/figma-advanced-concepts'
     | '/resources/read/figma-answer-key'
     | '/resources/read/figma-beginner-guide'
@@ -5225,6 +5481,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dsa-sample-exercises'
     | '/_marketing/resources/read/dsa-step-by-step-learning-guide'
     | '/_marketing/resources/read/dsa-tips-and-tricks'
+    | '/_marketing/resources/read/ethical-hacking-advanced-concepts'
+    | '/_marketing/resources/read/ethical-hacking-answer-key'
+    | '/_marketing/resources/read/ethical-hacking-beginner-guide'
+    | '/_marketing/resources/read/ethical-hacking-best-practices'
+    | '/_marketing/resources/read/ethical-hacking-cheat-sheet'
+    | '/_marketing/resources/read/ethical-hacking-common-mistakes'
+    | '/_marketing/resources/read/ethical-hacking-complete-tutorial'
+    | '/_marketing/resources/read/ethical-hacking-frequently-asked-questions'
+    | '/_marketing/resources/read/ethical-hacking-glossary'
+    | '/_marketing/resources/read/ethical-hacking-interview-questions'
+    | '/_marketing/resources/read/ethical-hacking-learning-roadmap'
+    | '/_marketing/resources/read/ethical-hacking-pdf-notes'
+    | '/_marketing/resources/read/ethical-hacking-practice-questions'
+    | '/_marketing/resources/read/ethical-hacking-project-case-study'
+    | '/_marketing/resources/read/ethical-hacking-project-guide'
+    | '/_marketing/resources/read/ethical-hacking-quick-revision-notes'
+    | '/_marketing/resources/read/ethical-hacking-real-world-case-study'
+    | '/_marketing/resources/read/ethical-hacking-reference-guide'
+    | '/_marketing/resources/read/ethical-hacking-sample-exercises'
+    | '/_marketing/resources/read/ethical-hacking-step-by-step-learning-guide'
+    | '/_marketing/resources/read/ethical-hacking-tips-tricks'
     | '/_marketing/resources/read/figma-advanced-concepts'
     | '/_marketing/resources/read/figma-answer-key'
     | '/_marketing/resources/read/figma-beginner-guide'
@@ -7648,6 +7925,153 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadFigmaAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/ethical-hacking-tips-tricks': {
+      id: '/_marketing/resources/read/ethical-hacking-tips-tricks'
+      path: '/read/ethical-hacking-tips-tricks'
+      fullPath: '/resources/read/ethical-hacking-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/ethical-hacking-step-by-step-learning-guide'
+      path: '/read/ethical-hacking-step-by-step-learning-guide'
+      fullPath: '/resources/read/ethical-hacking-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-sample-exercises': {
+      id: '/_marketing/resources/read/ethical-hacking-sample-exercises'
+      path: '/read/ethical-hacking-sample-exercises'
+      fullPath: '/resources/read/ethical-hacking-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-reference-guide': {
+      id: '/_marketing/resources/read/ethical-hacking-reference-guide'
+      path: '/read/ethical-hacking-reference-guide'
+      fullPath: '/resources/read/ethical-hacking-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-real-world-case-study': {
+      id: '/_marketing/resources/read/ethical-hacking-real-world-case-study'
+      path: '/read/ethical-hacking-real-world-case-study'
+      fullPath: '/resources/read/ethical-hacking-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-quick-revision-notes': {
+      id: '/_marketing/resources/read/ethical-hacking-quick-revision-notes'
+      path: '/read/ethical-hacking-quick-revision-notes'
+      fullPath: '/resources/read/ethical-hacking-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-project-guide': {
+      id: '/_marketing/resources/read/ethical-hacking-project-guide'
+      path: '/read/ethical-hacking-project-guide'
+      fullPath: '/resources/read/ethical-hacking-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-project-case-study': {
+      id: '/_marketing/resources/read/ethical-hacking-project-case-study'
+      path: '/read/ethical-hacking-project-case-study'
+      fullPath: '/resources/read/ethical-hacking-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-practice-questions': {
+      id: '/_marketing/resources/read/ethical-hacking-practice-questions'
+      path: '/read/ethical-hacking-practice-questions'
+      fullPath: '/resources/read/ethical-hacking-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-pdf-notes': {
+      id: '/_marketing/resources/read/ethical-hacking-pdf-notes'
+      path: '/read/ethical-hacking-pdf-notes'
+      fullPath: '/resources/read/ethical-hacking-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-learning-roadmap': {
+      id: '/_marketing/resources/read/ethical-hacking-learning-roadmap'
+      path: '/read/ethical-hacking-learning-roadmap'
+      fullPath: '/resources/read/ethical-hacking-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-interview-questions': {
+      id: '/_marketing/resources/read/ethical-hacking-interview-questions'
+      path: '/read/ethical-hacking-interview-questions'
+      fullPath: '/resources/read/ethical-hacking-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-glossary': {
+      id: '/_marketing/resources/read/ethical-hacking-glossary'
+      path: '/read/ethical-hacking-glossary'
+      fullPath: '/resources/read/ethical-hacking-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-frequently-asked-questions': {
+      id: '/_marketing/resources/read/ethical-hacking-frequently-asked-questions'
+      path: '/read/ethical-hacking-frequently-asked-questions'
+      fullPath: '/resources/read/ethical-hacking-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-complete-tutorial': {
+      id: '/_marketing/resources/read/ethical-hacking-complete-tutorial'
+      path: '/read/ethical-hacking-complete-tutorial'
+      fullPath: '/resources/read/ethical-hacking-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-common-mistakes': {
+      id: '/_marketing/resources/read/ethical-hacking-common-mistakes'
+      path: '/read/ethical-hacking-common-mistakes'
+      fullPath: '/resources/read/ethical-hacking-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-cheat-sheet': {
+      id: '/_marketing/resources/read/ethical-hacking-cheat-sheet'
+      path: '/read/ethical-hacking-cheat-sheet'
+      fullPath: '/resources/read/ethical-hacking-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-best-practices': {
+      id: '/_marketing/resources/read/ethical-hacking-best-practices'
+      path: '/read/ethical-hacking-best-practices'
+      fullPath: '/resources/read/ethical-hacking-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-beginner-guide': {
+      id: '/_marketing/resources/read/ethical-hacking-beginner-guide'
+      path: '/read/ethical-hacking-beginner-guide'
+      fullPath: '/resources/read/ethical-hacking-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-answer-key': {
+      id: '/_marketing/resources/read/ethical-hacking-answer-key'
+      path: '/read/ethical-hacking-answer-key'
+      fullPath: '/resources/read/ethical-hacking-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ethical-hacking-advanced-concepts': {
+      id: '/_marketing/resources/read/ethical-hacking-advanced-concepts'
+      path: '/read/ethical-hacking-advanced-concepts'
+      fullPath: '/resources/read/ethical-hacking-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadEthicalHackingAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dsa-tips-and-tricks': {
       id: '/_marketing/resources/read/dsa-tips-and-tricks'
       path: '/read/dsa-tips-and-tricks'
@@ -8715,6 +9139,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDsaSampleExercisesRoute: typeof MarketingResourcesReadDsaSampleExercisesRoute
   MarketingResourcesReadDsaStepByStepLearningGuideRoute: typeof MarketingResourcesReadDsaStepByStepLearningGuideRoute
   MarketingResourcesReadDsaTipsAndTricksRoute: typeof MarketingResourcesReadDsaTipsAndTricksRoute
+  MarketingResourcesReadEthicalHackingAdvancedConceptsRoute: typeof MarketingResourcesReadEthicalHackingAdvancedConceptsRoute
+  MarketingResourcesReadEthicalHackingAnswerKeyRoute: typeof MarketingResourcesReadEthicalHackingAnswerKeyRoute
+  MarketingResourcesReadEthicalHackingBeginnerGuideRoute: typeof MarketingResourcesReadEthicalHackingBeginnerGuideRoute
+  MarketingResourcesReadEthicalHackingBestPracticesRoute: typeof MarketingResourcesReadEthicalHackingBestPracticesRoute
+  MarketingResourcesReadEthicalHackingCheatSheetRoute: typeof MarketingResourcesReadEthicalHackingCheatSheetRoute
+  MarketingResourcesReadEthicalHackingCommonMistakesRoute: typeof MarketingResourcesReadEthicalHackingCommonMistakesRoute
+  MarketingResourcesReadEthicalHackingCompleteTutorialRoute: typeof MarketingResourcesReadEthicalHackingCompleteTutorialRoute
+  MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadEthicalHackingGlossaryRoute: typeof MarketingResourcesReadEthicalHackingGlossaryRoute
+  MarketingResourcesReadEthicalHackingInterviewQuestionsRoute: typeof MarketingResourcesReadEthicalHackingInterviewQuestionsRoute
+  MarketingResourcesReadEthicalHackingLearningRoadmapRoute: typeof MarketingResourcesReadEthicalHackingLearningRoadmapRoute
+  MarketingResourcesReadEthicalHackingPdfNotesRoute: typeof MarketingResourcesReadEthicalHackingPdfNotesRoute
+  MarketingResourcesReadEthicalHackingPracticeQuestionsRoute: typeof MarketingResourcesReadEthicalHackingPracticeQuestionsRoute
+  MarketingResourcesReadEthicalHackingProjectCaseStudyRoute: typeof MarketingResourcesReadEthicalHackingProjectCaseStudyRoute
+  MarketingResourcesReadEthicalHackingProjectGuideRoute: typeof MarketingResourcesReadEthicalHackingProjectGuideRoute
+  MarketingResourcesReadEthicalHackingQuickRevisionNotesRoute: typeof MarketingResourcesReadEthicalHackingQuickRevisionNotesRoute
+  MarketingResourcesReadEthicalHackingRealWorldCaseStudyRoute: typeof MarketingResourcesReadEthicalHackingRealWorldCaseStudyRoute
+  MarketingResourcesReadEthicalHackingReferenceGuideRoute: typeof MarketingResourcesReadEthicalHackingReferenceGuideRoute
+  MarketingResourcesReadEthicalHackingSampleExercisesRoute: typeof MarketingResourcesReadEthicalHackingSampleExercisesRoute
+  MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute: typeof MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute
+  MarketingResourcesReadEthicalHackingTipsTricksRoute: typeof MarketingResourcesReadEthicalHackingTipsTricksRoute
   MarketingResourcesReadFigmaAdvancedConceptsRoute: typeof MarketingResourcesReadFigmaAdvancedConceptsRoute
   MarketingResourcesReadFigmaAnswerKeyRoute: typeof MarketingResourcesReadFigmaAnswerKeyRoute
   MarketingResourcesReadFigmaBeginnerGuideRoute: typeof MarketingResourcesReadFigmaBeginnerGuideRoute
@@ -9187,6 +9632,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDsaStepByStepLearningGuideRoute,
   MarketingResourcesReadDsaTipsAndTricksRoute:
     MarketingResourcesReadDsaTipsAndTricksRoute,
+  MarketingResourcesReadEthicalHackingAdvancedConceptsRoute:
+    MarketingResourcesReadEthicalHackingAdvancedConceptsRoute,
+  MarketingResourcesReadEthicalHackingAnswerKeyRoute:
+    MarketingResourcesReadEthicalHackingAnswerKeyRoute,
+  MarketingResourcesReadEthicalHackingBeginnerGuideRoute:
+    MarketingResourcesReadEthicalHackingBeginnerGuideRoute,
+  MarketingResourcesReadEthicalHackingBestPracticesRoute:
+    MarketingResourcesReadEthicalHackingBestPracticesRoute,
+  MarketingResourcesReadEthicalHackingCheatSheetRoute:
+    MarketingResourcesReadEthicalHackingCheatSheetRoute,
+  MarketingResourcesReadEthicalHackingCommonMistakesRoute:
+    MarketingResourcesReadEthicalHackingCommonMistakesRoute,
+  MarketingResourcesReadEthicalHackingCompleteTutorialRoute:
+    MarketingResourcesReadEthicalHackingCompleteTutorialRoute,
+  MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadEthicalHackingFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadEthicalHackingGlossaryRoute:
+    MarketingResourcesReadEthicalHackingGlossaryRoute,
+  MarketingResourcesReadEthicalHackingInterviewQuestionsRoute:
+    MarketingResourcesReadEthicalHackingInterviewQuestionsRoute,
+  MarketingResourcesReadEthicalHackingLearningRoadmapRoute:
+    MarketingResourcesReadEthicalHackingLearningRoadmapRoute,
+  MarketingResourcesReadEthicalHackingPdfNotesRoute:
+    MarketingResourcesReadEthicalHackingPdfNotesRoute,
+  MarketingResourcesReadEthicalHackingPracticeQuestionsRoute:
+    MarketingResourcesReadEthicalHackingPracticeQuestionsRoute,
+  MarketingResourcesReadEthicalHackingProjectCaseStudyRoute:
+    MarketingResourcesReadEthicalHackingProjectCaseStudyRoute,
+  MarketingResourcesReadEthicalHackingProjectGuideRoute:
+    MarketingResourcesReadEthicalHackingProjectGuideRoute,
+  MarketingResourcesReadEthicalHackingQuickRevisionNotesRoute:
+    MarketingResourcesReadEthicalHackingQuickRevisionNotesRoute,
+  MarketingResourcesReadEthicalHackingRealWorldCaseStudyRoute:
+    MarketingResourcesReadEthicalHackingRealWorldCaseStudyRoute,
+  MarketingResourcesReadEthicalHackingReferenceGuideRoute:
+    MarketingResourcesReadEthicalHackingReferenceGuideRoute,
+  MarketingResourcesReadEthicalHackingSampleExercisesRoute:
+    MarketingResourcesReadEthicalHackingSampleExercisesRoute,
+  MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute:
+    MarketingResourcesReadEthicalHackingStepByStepLearningGuideRoute,
+  MarketingResourcesReadEthicalHackingTipsTricksRoute:
+    MarketingResourcesReadEthicalHackingTipsTricksRoute,
   MarketingResourcesReadFigmaAdvancedConceptsRoute:
     MarketingResourcesReadFigmaAdvancedConceptsRoute,
   MarketingResourcesReadFigmaAnswerKeyRoute:
