@@ -65,15 +65,27 @@ import { Route as MarketingResourcesReadSdCompleteTutorialRouteImport } from './
 import { Route as MarketingResourcesReadSdCheatSheetRouteImport } from './routes/_marketing.resources.read.sd-cheat-sheet'
 import { Route as MarketingResourcesReadSdBeginnerGuideRouteImport } from './routes/_marketing.resources.read.sd-beginner-guide'
 import { Route as MarketingResourcesReadSdAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.sd-advanced-concepts'
+import { Route as MarketingResourcesReadRustTipsAndTricksRouteImport } from './routes/_marketing.resources.read.rust-tips-and-tricks'
 import { Route as MarketingResourcesReadRustStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.rust-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadRustSampleExercisesRouteImport } from './routes/_marketing.resources.read.rust-sample-exercises'
+import { Route as MarketingResourcesReadRustReferenceGuideRouteImport } from './routes/_marketing.resources.read.rust-reference-guide'
+import { Route as MarketingResourcesReadRustRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.rust-real-world-case-study'
 import { Route as MarketingResourcesReadRustQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.rust-quick-revision-notes'
+import { Route as MarketingResourcesReadRustProjectGuideRouteImport } from './routes/_marketing.resources.read.rust-project-guide'
+import { Route as MarketingResourcesReadRustProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.rust-project-case-study'
 import { Route as MarketingResourcesReadRustPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.rust-practice-questions'
 import { Route as MarketingResourcesReadRustPdfNotesRouteImport } from './routes/_marketing.resources.read.rust-pdf-notes'
+import { Route as MarketingResourcesReadRustLearningRoadmapRouteImport } from './routes/_marketing.resources.read.rust-learning-roadmap'
 import { Route as MarketingResourcesReadRustInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.rust-interview-questions'
+import { Route as MarketingResourcesReadRustGlossaryRouteImport } from './routes/_marketing.resources.read.rust-glossary'
+import { Route as MarketingResourcesReadRustFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.rust-frequently-asked-questions'
 import { Route as MarketingResourcesReadRustCompleteTutorialRouteImport } from './routes/_marketing.resources.read.rust-complete-tutorial'
+import { Route as MarketingResourcesReadRustCommonMistakesRouteImport } from './routes/_marketing.resources.read.rust-common-mistakes'
 import { Route as MarketingResourcesReadRustCheatSheetRouteImport } from './routes/_marketing.resources.read.rust-cheat-sheet'
+import { Route as MarketingResourcesReadRustBestPracticesRouteImport } from './routes/_marketing.resources.read.rust-best-practices'
 import { Route as MarketingResourcesReadRustBeginnerGuideRouteImport } from './routes/_marketing.resources.read.rust-beginner-guide'
 import { Route as MarketingResourcesReadRustAnswerKeyRouteImport } from './routes/_marketing.resources.read.rust-answer-key'
+import { Route as MarketingResourcesReadRustAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.rust-advanced-concepts'
 import { Route as MarketingResourcesReadPeTipsTricksRouteImport } from './routes/_marketing.resources.read.pe-tips-tricks'
 import { Route as MarketingResourcesReadPeStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pe-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPeSampleExercisesRouteImport } from './routes/_marketing.resources.read.pe-sample-exercises'
@@ -523,16 +535,52 @@ const MarketingResourcesReadSdAdvancedConceptsRoute =
     path: '/read/sd-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadRustTipsAndTricksRoute =
+  MarketingResourcesReadRustTipsAndTricksRouteImport.update({
+    id: '/read/rust-tips-and-tricks',
+    path: '/read/rust-tips-and-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadRustStepByStepLearningGuideRoute =
   MarketingResourcesReadRustStepByStepLearningGuideRouteImport.update({
     id: '/read/rust-step-by-step-learning-guide',
     path: '/read/rust-step-by-step-learning-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadRustSampleExercisesRoute =
+  MarketingResourcesReadRustSampleExercisesRouteImport.update({
+    id: '/read/rust-sample-exercises',
+    path: '/read/rust-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadRustReferenceGuideRoute =
+  MarketingResourcesReadRustReferenceGuideRouteImport.update({
+    id: '/read/rust-reference-guide',
+    path: '/read/rust-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadRustRealWorldCaseStudyRoute =
+  MarketingResourcesReadRustRealWorldCaseStudyRouteImport.update({
+    id: '/read/rust-real-world-case-study',
+    path: '/read/rust-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadRustQuickRevisionNotesRoute =
   MarketingResourcesReadRustQuickRevisionNotesRouteImport.update({
     id: '/read/rust-quick-revision-notes',
     path: '/read/rust-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadRustProjectGuideRoute =
+  MarketingResourcesReadRustProjectGuideRouteImport.update({
+    id: '/read/rust-project-guide',
+    path: '/read/rust-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadRustProjectCaseStudyRoute =
+  MarketingResourcesReadRustProjectCaseStudyRouteImport.update({
+    id: '/read/rust-project-case-study',
+    path: '/read/rust-project-case-study',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadRustPracticeQuestionsRoute =
@@ -547,10 +595,28 @@ const MarketingResourcesReadRustPdfNotesRoute =
     path: '/read/rust-pdf-notes',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadRustLearningRoadmapRoute =
+  MarketingResourcesReadRustLearningRoadmapRouteImport.update({
+    id: '/read/rust-learning-roadmap',
+    path: '/read/rust-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadRustInterviewQuestionsRoute =
   MarketingResourcesReadRustInterviewQuestionsRouteImport.update({
     id: '/read/rust-interview-questions',
     path: '/read/rust-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadRustGlossaryRoute =
+  MarketingResourcesReadRustGlossaryRouteImport.update({
+    id: '/read/rust-glossary',
+    path: '/read/rust-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadRustFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadRustFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/rust-frequently-asked-questions',
+    path: '/read/rust-frequently-asked-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadRustCompleteTutorialRoute =
@@ -559,10 +625,22 @@ const MarketingResourcesReadRustCompleteTutorialRoute =
     path: '/read/rust-complete-tutorial',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadRustCommonMistakesRoute =
+  MarketingResourcesReadRustCommonMistakesRouteImport.update({
+    id: '/read/rust-common-mistakes',
+    path: '/read/rust-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadRustCheatSheetRoute =
   MarketingResourcesReadRustCheatSheetRouteImport.update({
     id: '/read/rust-cheat-sheet',
     path: '/read/rust-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadRustBestPracticesRoute =
+  MarketingResourcesReadRustBestPracticesRouteImport.update({
+    id: '/read/rust-best-practices',
+    path: '/read/rust-best-practices',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadRustBeginnerGuideRoute =
@@ -575,6 +653,12 @@ const MarketingResourcesReadRustAnswerKeyRoute =
   MarketingResourcesReadRustAnswerKeyRouteImport.update({
     id: '/read/rust-answer-key',
     path: '/read/rust-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadRustAdvancedConceptsRoute =
+  MarketingResourcesReadRustAdvancedConceptsRouteImport.update({
+    id: '/read/rust-advanced-concepts',
+    path: '/read/rust-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeTipsTricksRoute =
@@ -1628,15 +1712,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
+  '/resources/read/rust-best-practices': typeof MarketingResourcesReadRustBestPracticesRoute
   '/resources/read/rust-cheat-sheet': typeof MarketingResourcesReadRustCheatSheetRoute
+  '/resources/read/rust-common-mistakes': typeof MarketingResourcesReadRustCommonMistakesRoute
   '/resources/read/rust-complete-tutorial': typeof MarketingResourcesReadRustCompleteTutorialRoute
+  '/resources/read/rust-frequently-asked-questions': typeof MarketingResourcesReadRustFrequentlyAskedQuestionsRoute
+  '/resources/read/rust-glossary': typeof MarketingResourcesReadRustGlossaryRoute
   '/resources/read/rust-interview-questions': typeof MarketingResourcesReadRustInterviewQuestionsRoute
+  '/resources/read/rust-learning-roadmap': typeof MarketingResourcesReadRustLearningRoadmapRoute
   '/resources/read/rust-pdf-notes': typeof MarketingResourcesReadRustPdfNotesRoute
   '/resources/read/rust-practice-questions': typeof MarketingResourcesReadRustPracticeQuestionsRoute
+  '/resources/read/rust-project-case-study': typeof MarketingResourcesReadRustProjectCaseStudyRoute
+  '/resources/read/rust-project-guide': typeof MarketingResourcesReadRustProjectGuideRoute
   '/resources/read/rust-quick-revision-notes': typeof MarketingResourcesReadRustQuickRevisionNotesRoute
+  '/resources/read/rust-real-world-case-study': typeof MarketingResourcesReadRustRealWorldCaseStudyRoute
+  '/resources/read/rust-reference-guide': typeof MarketingResourcesReadRustReferenceGuideRoute
+  '/resources/read/rust-sample-exercises': typeof MarketingResourcesReadRustSampleExercisesRoute
   '/resources/read/rust-step-by-step-learning-guide': typeof MarketingResourcesReadRustStepByStepLearningGuideRoute
+  '/resources/read/rust-tips-and-tricks': typeof MarketingResourcesReadRustTipsAndTricksRoute
   '/resources/read/sd-advanced-concepts': typeof MarketingResourcesReadSdAdvancedConceptsRoute
   '/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
   '/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
@@ -1836,15 +1932,27 @@ export interface FileRoutesByTo {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
+  '/resources/read/rust-best-practices': typeof MarketingResourcesReadRustBestPracticesRoute
   '/resources/read/rust-cheat-sheet': typeof MarketingResourcesReadRustCheatSheetRoute
+  '/resources/read/rust-common-mistakes': typeof MarketingResourcesReadRustCommonMistakesRoute
   '/resources/read/rust-complete-tutorial': typeof MarketingResourcesReadRustCompleteTutorialRoute
+  '/resources/read/rust-frequently-asked-questions': typeof MarketingResourcesReadRustFrequentlyAskedQuestionsRoute
+  '/resources/read/rust-glossary': typeof MarketingResourcesReadRustGlossaryRoute
   '/resources/read/rust-interview-questions': typeof MarketingResourcesReadRustInterviewQuestionsRoute
+  '/resources/read/rust-learning-roadmap': typeof MarketingResourcesReadRustLearningRoadmapRoute
   '/resources/read/rust-pdf-notes': typeof MarketingResourcesReadRustPdfNotesRoute
   '/resources/read/rust-practice-questions': typeof MarketingResourcesReadRustPracticeQuestionsRoute
+  '/resources/read/rust-project-case-study': typeof MarketingResourcesReadRustProjectCaseStudyRoute
+  '/resources/read/rust-project-guide': typeof MarketingResourcesReadRustProjectGuideRoute
   '/resources/read/rust-quick-revision-notes': typeof MarketingResourcesReadRustQuickRevisionNotesRoute
+  '/resources/read/rust-real-world-case-study': typeof MarketingResourcesReadRustRealWorldCaseStudyRoute
+  '/resources/read/rust-reference-guide': typeof MarketingResourcesReadRustReferenceGuideRoute
+  '/resources/read/rust-sample-exercises': typeof MarketingResourcesReadRustSampleExercisesRoute
   '/resources/read/rust-step-by-step-learning-guide': typeof MarketingResourcesReadRustStepByStepLearningGuideRoute
+  '/resources/read/rust-tips-and-tricks': typeof MarketingResourcesReadRustTipsAndTricksRoute
   '/resources/read/sd-advanced-concepts': typeof MarketingResourcesReadSdAdvancedConceptsRoute
   '/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
   '/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
@@ -2049,15 +2157,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/_marketing/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/_marketing/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/_marketing/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/_marketing/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/_marketing/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
+  '/_marketing/resources/read/rust-best-practices': typeof MarketingResourcesReadRustBestPracticesRoute
   '/_marketing/resources/read/rust-cheat-sheet': typeof MarketingResourcesReadRustCheatSheetRoute
+  '/_marketing/resources/read/rust-common-mistakes': typeof MarketingResourcesReadRustCommonMistakesRoute
   '/_marketing/resources/read/rust-complete-tutorial': typeof MarketingResourcesReadRustCompleteTutorialRoute
+  '/_marketing/resources/read/rust-frequently-asked-questions': typeof MarketingResourcesReadRustFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/rust-glossary': typeof MarketingResourcesReadRustGlossaryRoute
   '/_marketing/resources/read/rust-interview-questions': typeof MarketingResourcesReadRustInterviewQuestionsRoute
+  '/_marketing/resources/read/rust-learning-roadmap': typeof MarketingResourcesReadRustLearningRoadmapRoute
   '/_marketing/resources/read/rust-pdf-notes': typeof MarketingResourcesReadRustPdfNotesRoute
   '/_marketing/resources/read/rust-practice-questions': typeof MarketingResourcesReadRustPracticeQuestionsRoute
+  '/_marketing/resources/read/rust-project-case-study': typeof MarketingResourcesReadRustProjectCaseStudyRoute
+  '/_marketing/resources/read/rust-project-guide': typeof MarketingResourcesReadRustProjectGuideRoute
   '/_marketing/resources/read/rust-quick-revision-notes': typeof MarketingResourcesReadRustQuickRevisionNotesRoute
+  '/_marketing/resources/read/rust-real-world-case-study': typeof MarketingResourcesReadRustRealWorldCaseStudyRoute
+  '/_marketing/resources/read/rust-reference-guide': typeof MarketingResourcesReadRustReferenceGuideRoute
+  '/_marketing/resources/read/rust-sample-exercises': typeof MarketingResourcesReadRustSampleExercisesRoute
   '/_marketing/resources/read/rust-step-by-step-learning-guide': typeof MarketingResourcesReadRustStepByStepLearningGuideRoute
+  '/_marketing/resources/read/rust-tips-and-tricks': typeof MarketingResourcesReadRustTipsAndTricksRoute
   '/_marketing/resources/read/sd-advanced-concepts': typeof MarketingResourcesReadSdAdvancedConceptsRoute
   '/_marketing/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
   '/_marketing/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
@@ -2260,15 +2380,27 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/rust-advanced-concepts'
     | '/resources/read/rust-answer-key'
     | '/resources/read/rust-beginner-guide'
+    | '/resources/read/rust-best-practices'
     | '/resources/read/rust-cheat-sheet'
+    | '/resources/read/rust-common-mistakes'
     | '/resources/read/rust-complete-tutorial'
+    | '/resources/read/rust-frequently-asked-questions'
+    | '/resources/read/rust-glossary'
     | '/resources/read/rust-interview-questions'
+    | '/resources/read/rust-learning-roadmap'
     | '/resources/read/rust-pdf-notes'
     | '/resources/read/rust-practice-questions'
+    | '/resources/read/rust-project-case-study'
+    | '/resources/read/rust-project-guide'
     | '/resources/read/rust-quick-revision-notes'
+    | '/resources/read/rust-real-world-case-study'
+    | '/resources/read/rust-reference-guide'
+    | '/resources/read/rust-sample-exercises'
     | '/resources/read/rust-step-by-step-learning-guide'
+    | '/resources/read/rust-tips-and-tricks'
     | '/resources/read/sd-advanced-concepts'
     | '/resources/read/sd-beginner-guide'
     | '/resources/read/sd-cheat-sheet'
@@ -2468,15 +2600,27 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/rust-advanced-concepts'
     | '/resources/read/rust-answer-key'
     | '/resources/read/rust-beginner-guide'
+    | '/resources/read/rust-best-practices'
     | '/resources/read/rust-cheat-sheet'
+    | '/resources/read/rust-common-mistakes'
     | '/resources/read/rust-complete-tutorial'
+    | '/resources/read/rust-frequently-asked-questions'
+    | '/resources/read/rust-glossary'
     | '/resources/read/rust-interview-questions'
+    | '/resources/read/rust-learning-roadmap'
     | '/resources/read/rust-pdf-notes'
     | '/resources/read/rust-practice-questions'
+    | '/resources/read/rust-project-case-study'
+    | '/resources/read/rust-project-guide'
     | '/resources/read/rust-quick-revision-notes'
+    | '/resources/read/rust-real-world-case-study'
+    | '/resources/read/rust-reference-guide'
+    | '/resources/read/rust-sample-exercises'
     | '/resources/read/rust-step-by-step-learning-guide'
+    | '/resources/read/rust-tips-and-tricks'
     | '/resources/read/sd-advanced-concepts'
     | '/resources/read/sd-beginner-guide'
     | '/resources/read/sd-cheat-sheet'
@@ -2680,15 +2824,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-sample-exercises'
     | '/_marketing/resources/read/pe-step-by-step-learning-guide'
     | '/_marketing/resources/read/pe-tips-tricks'
+    | '/_marketing/resources/read/rust-advanced-concepts'
     | '/_marketing/resources/read/rust-answer-key'
     | '/_marketing/resources/read/rust-beginner-guide'
+    | '/_marketing/resources/read/rust-best-practices'
     | '/_marketing/resources/read/rust-cheat-sheet'
+    | '/_marketing/resources/read/rust-common-mistakes'
     | '/_marketing/resources/read/rust-complete-tutorial'
+    | '/_marketing/resources/read/rust-frequently-asked-questions'
+    | '/_marketing/resources/read/rust-glossary'
     | '/_marketing/resources/read/rust-interview-questions'
+    | '/_marketing/resources/read/rust-learning-roadmap'
     | '/_marketing/resources/read/rust-pdf-notes'
     | '/_marketing/resources/read/rust-practice-questions'
+    | '/_marketing/resources/read/rust-project-case-study'
+    | '/_marketing/resources/read/rust-project-guide'
     | '/_marketing/resources/read/rust-quick-revision-notes'
+    | '/_marketing/resources/read/rust-real-world-case-study'
+    | '/_marketing/resources/read/rust-reference-guide'
+    | '/_marketing/resources/read/rust-sample-exercises'
     | '/_marketing/resources/read/rust-step-by-step-learning-guide'
+    | '/_marketing/resources/read/rust-tips-and-tricks'
     | '/_marketing/resources/read/sd-advanced-concepts'
     | '/_marketing/resources/read/sd-beginner-guide'
     | '/_marketing/resources/read/sd-cheat-sheet'
@@ -3120,6 +3276,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadSdAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/rust-tips-and-tricks': {
+      id: '/_marketing/resources/read/rust-tips-and-tricks'
+      path: '/read/rust-tips-and-tricks'
+      fullPath: '/resources/read/rust-tips-and-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadRustTipsAndTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/rust-step-by-step-learning-guide': {
       id: '/_marketing/resources/read/rust-step-by-step-learning-guide'
       path: '/read/rust-step-by-step-learning-guide'
@@ -3127,11 +3290,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadRustStepByStepLearningGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/rust-sample-exercises': {
+      id: '/_marketing/resources/read/rust-sample-exercises'
+      path: '/read/rust-sample-exercises'
+      fullPath: '/resources/read/rust-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadRustSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/rust-reference-guide': {
+      id: '/_marketing/resources/read/rust-reference-guide'
+      path: '/read/rust-reference-guide'
+      fullPath: '/resources/read/rust-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadRustReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/rust-real-world-case-study': {
+      id: '/_marketing/resources/read/rust-real-world-case-study'
+      path: '/read/rust-real-world-case-study'
+      fullPath: '/resources/read/rust-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadRustRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/rust-quick-revision-notes': {
       id: '/_marketing/resources/read/rust-quick-revision-notes'
       path: '/read/rust-quick-revision-notes'
       fullPath: '/resources/read/rust-quick-revision-notes'
       preLoaderRoute: typeof MarketingResourcesReadRustQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/rust-project-guide': {
+      id: '/_marketing/resources/read/rust-project-guide'
+      path: '/read/rust-project-guide'
+      fullPath: '/resources/read/rust-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadRustProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/rust-project-case-study': {
+      id: '/_marketing/resources/read/rust-project-case-study'
+      path: '/read/rust-project-case-study'
+      fullPath: '/resources/read/rust-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadRustProjectCaseStudyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/rust-practice-questions': {
@@ -3148,11 +3346,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadRustPdfNotesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/rust-learning-roadmap': {
+      id: '/_marketing/resources/read/rust-learning-roadmap'
+      path: '/read/rust-learning-roadmap'
+      fullPath: '/resources/read/rust-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadRustLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/rust-interview-questions': {
       id: '/_marketing/resources/read/rust-interview-questions'
       path: '/read/rust-interview-questions'
       fullPath: '/resources/read/rust-interview-questions'
       preLoaderRoute: typeof MarketingResourcesReadRustInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/rust-glossary': {
+      id: '/_marketing/resources/read/rust-glossary'
+      path: '/read/rust-glossary'
+      fullPath: '/resources/read/rust-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadRustGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/rust-frequently-asked-questions': {
+      id: '/_marketing/resources/read/rust-frequently-asked-questions'
+      path: '/read/rust-frequently-asked-questions'
+      fullPath: '/resources/read/rust-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadRustFrequentlyAskedQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/rust-complete-tutorial': {
@@ -3162,11 +3381,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadRustCompleteTutorialRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/rust-common-mistakes': {
+      id: '/_marketing/resources/read/rust-common-mistakes'
+      path: '/read/rust-common-mistakes'
+      fullPath: '/resources/read/rust-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadRustCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/rust-cheat-sheet': {
       id: '/_marketing/resources/read/rust-cheat-sheet'
       path: '/read/rust-cheat-sheet'
       fullPath: '/resources/read/rust-cheat-sheet'
       preLoaderRoute: typeof MarketingResourcesReadRustCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/rust-best-practices': {
+      id: '/_marketing/resources/read/rust-best-practices'
+      path: '/read/rust-best-practices'
+      fullPath: '/resources/read/rust-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadRustBestPracticesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/rust-beginner-guide': {
@@ -3181,6 +3414,13 @@ declare module '@tanstack/react-router' {
       path: '/read/rust-answer-key'
       fullPath: '/resources/read/rust-answer-key'
       preLoaderRoute: typeof MarketingResourcesReadRustAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/rust-advanced-concepts': {
+      id: '/_marketing/resources/read/rust-advanced-concepts'
+      path: '/read/rust-advanced-concepts'
+      fullPath: '/resources/read/rust-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadRustAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-tips-tricks': {
@@ -4466,15 +4706,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeSampleExercisesRoute: typeof MarketingResourcesReadPeSampleExercisesRoute
   MarketingResourcesReadPeStepByStepLearningGuideRoute: typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   MarketingResourcesReadPeTipsTricksRoute: typeof MarketingResourcesReadPeTipsTricksRoute
+  MarketingResourcesReadRustAdvancedConceptsRoute: typeof MarketingResourcesReadRustAdvancedConceptsRoute
   MarketingResourcesReadRustAnswerKeyRoute: typeof MarketingResourcesReadRustAnswerKeyRoute
   MarketingResourcesReadRustBeginnerGuideRoute: typeof MarketingResourcesReadRustBeginnerGuideRoute
+  MarketingResourcesReadRustBestPracticesRoute: typeof MarketingResourcesReadRustBestPracticesRoute
   MarketingResourcesReadRustCheatSheetRoute: typeof MarketingResourcesReadRustCheatSheetRoute
+  MarketingResourcesReadRustCommonMistakesRoute: typeof MarketingResourcesReadRustCommonMistakesRoute
   MarketingResourcesReadRustCompleteTutorialRoute: typeof MarketingResourcesReadRustCompleteTutorialRoute
+  MarketingResourcesReadRustFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadRustFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadRustGlossaryRoute: typeof MarketingResourcesReadRustGlossaryRoute
   MarketingResourcesReadRustInterviewQuestionsRoute: typeof MarketingResourcesReadRustInterviewQuestionsRoute
+  MarketingResourcesReadRustLearningRoadmapRoute: typeof MarketingResourcesReadRustLearningRoadmapRoute
   MarketingResourcesReadRustPdfNotesRoute: typeof MarketingResourcesReadRustPdfNotesRoute
   MarketingResourcesReadRustPracticeQuestionsRoute: typeof MarketingResourcesReadRustPracticeQuestionsRoute
+  MarketingResourcesReadRustProjectCaseStudyRoute: typeof MarketingResourcesReadRustProjectCaseStudyRoute
+  MarketingResourcesReadRustProjectGuideRoute: typeof MarketingResourcesReadRustProjectGuideRoute
   MarketingResourcesReadRustQuickRevisionNotesRoute: typeof MarketingResourcesReadRustQuickRevisionNotesRoute
+  MarketingResourcesReadRustRealWorldCaseStudyRoute: typeof MarketingResourcesReadRustRealWorldCaseStudyRoute
+  MarketingResourcesReadRustReferenceGuideRoute: typeof MarketingResourcesReadRustReferenceGuideRoute
+  MarketingResourcesReadRustSampleExercisesRoute: typeof MarketingResourcesReadRustSampleExercisesRoute
   MarketingResourcesReadRustStepByStepLearningGuideRoute: typeof MarketingResourcesReadRustStepByStepLearningGuideRoute
+  MarketingResourcesReadRustTipsAndTricksRoute: typeof MarketingResourcesReadRustTipsAndTricksRoute
   MarketingResourcesReadSdAdvancedConceptsRoute: typeof MarketingResourcesReadSdAdvancedConceptsRoute
   MarketingResourcesReadSdBeginnerGuideRoute: typeof MarketingResourcesReadSdBeginnerGuideRoute
   MarketingResourcesReadSdCheatSheetRoute: typeof MarketingResourcesReadSdCheatSheetRoute
@@ -4746,24 +4998,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeStepByStepLearningGuideRoute,
   MarketingResourcesReadPeTipsTricksRoute:
     MarketingResourcesReadPeTipsTricksRoute,
+  MarketingResourcesReadRustAdvancedConceptsRoute:
+    MarketingResourcesReadRustAdvancedConceptsRoute,
   MarketingResourcesReadRustAnswerKeyRoute:
     MarketingResourcesReadRustAnswerKeyRoute,
   MarketingResourcesReadRustBeginnerGuideRoute:
     MarketingResourcesReadRustBeginnerGuideRoute,
+  MarketingResourcesReadRustBestPracticesRoute:
+    MarketingResourcesReadRustBestPracticesRoute,
   MarketingResourcesReadRustCheatSheetRoute:
     MarketingResourcesReadRustCheatSheetRoute,
+  MarketingResourcesReadRustCommonMistakesRoute:
+    MarketingResourcesReadRustCommonMistakesRoute,
   MarketingResourcesReadRustCompleteTutorialRoute:
     MarketingResourcesReadRustCompleteTutorialRoute,
+  MarketingResourcesReadRustFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadRustFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadRustGlossaryRoute:
+    MarketingResourcesReadRustGlossaryRoute,
   MarketingResourcesReadRustInterviewQuestionsRoute:
     MarketingResourcesReadRustInterviewQuestionsRoute,
+  MarketingResourcesReadRustLearningRoadmapRoute:
+    MarketingResourcesReadRustLearningRoadmapRoute,
   MarketingResourcesReadRustPdfNotesRoute:
     MarketingResourcesReadRustPdfNotesRoute,
   MarketingResourcesReadRustPracticeQuestionsRoute:
     MarketingResourcesReadRustPracticeQuestionsRoute,
+  MarketingResourcesReadRustProjectCaseStudyRoute:
+    MarketingResourcesReadRustProjectCaseStudyRoute,
+  MarketingResourcesReadRustProjectGuideRoute:
+    MarketingResourcesReadRustProjectGuideRoute,
   MarketingResourcesReadRustQuickRevisionNotesRoute:
     MarketingResourcesReadRustQuickRevisionNotesRoute,
+  MarketingResourcesReadRustRealWorldCaseStudyRoute:
+    MarketingResourcesReadRustRealWorldCaseStudyRoute,
+  MarketingResourcesReadRustReferenceGuideRoute:
+    MarketingResourcesReadRustReferenceGuideRoute,
+  MarketingResourcesReadRustSampleExercisesRoute:
+    MarketingResourcesReadRustSampleExercisesRoute,
   MarketingResourcesReadRustStepByStepLearningGuideRoute:
     MarketingResourcesReadRustStepByStepLearningGuideRoute,
+  MarketingResourcesReadRustTipsAndTricksRoute:
+    MarketingResourcesReadRustTipsAndTricksRoute,
   MarketingResourcesReadSdAdvancedConceptsRoute:
     MarketingResourcesReadSdAdvancedConceptsRoute,
   MarketingResourcesReadSdBeginnerGuideRoute:
