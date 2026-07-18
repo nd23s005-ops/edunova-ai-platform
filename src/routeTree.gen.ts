@@ -353,6 +353,27 @@ import { Route as MarketingResourcesReadPeBestPracticesRouteImport } from './rou
 import { Route as MarketingResourcesReadPeBeginnerGuideRouteImport } from './routes/_marketing.resources.read.pe-beginner-guide'
 import { Route as MarketingResourcesReadPeAnswerKeyRouteImport } from './routes/_marketing.resources.read.pe-answer-key'
 import { Route as MarketingResourcesReadPeAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.pe-advanced-concepts'
+import { Route as MarketingResourcesReadPandasTipsTricksRouteImport } from './routes/_marketing.resources.read.pandas-tips-tricks'
+import { Route as MarketingResourcesReadPandasStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pandas-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadPandasSampleExercisesRouteImport } from './routes/_marketing.resources.read.pandas-sample-exercises'
+import { Route as MarketingResourcesReadPandasReferenceGuideRouteImport } from './routes/_marketing.resources.read.pandas-reference-guide'
+import { Route as MarketingResourcesReadPandasRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.pandas-real-world-case-study'
+import { Route as MarketingResourcesReadPandasQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.pandas-quick-revision-notes'
+import { Route as MarketingResourcesReadPandasProjectGuideRouteImport } from './routes/_marketing.resources.read.pandas-project-guide'
+import { Route as MarketingResourcesReadPandasProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.pandas-project-case-study'
+import { Route as MarketingResourcesReadPandasPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.pandas-practice-questions'
+import { Route as MarketingResourcesReadPandasPdfNotesRouteImport } from './routes/_marketing.resources.read.pandas-pdf-notes'
+import { Route as MarketingResourcesReadPandasLearningRoadmapRouteImport } from './routes/_marketing.resources.read.pandas-learning-roadmap'
+import { Route as MarketingResourcesReadPandasInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.pandas-interview-questions'
+import { Route as MarketingResourcesReadPandasGlossaryRouteImport } from './routes/_marketing.resources.read.pandas-glossary'
+import { Route as MarketingResourcesReadPandasFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.pandas-frequently-asked-questions'
+import { Route as MarketingResourcesReadPandasCompleteTutorialRouteImport } from './routes/_marketing.resources.read.pandas-complete-tutorial'
+import { Route as MarketingResourcesReadPandasCommonMistakesRouteImport } from './routes/_marketing.resources.read.pandas-common-mistakes'
+import { Route as MarketingResourcesReadPandasCheatSheetRouteImport } from './routes/_marketing.resources.read.pandas-cheat-sheet'
+import { Route as MarketingResourcesReadPandasBestPracticesRouteImport } from './routes/_marketing.resources.read.pandas-best-practices'
+import { Route as MarketingResourcesReadPandasBeginnerGuideRouteImport } from './routes/_marketing.resources.read.pandas-beginner-guide'
+import { Route as MarketingResourcesReadPandasAnswerKeyRouteImport } from './routes/_marketing.resources.read.pandas-answer-key'
+import { Route as MarketingResourcesReadPandasAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.pandas-advanced-concepts'
 import { Route as MarketingResourcesReadOperatingSystemsTipsAndTricksRouteImport } from './routes/_marketing.resources.read.operating-systems-tips-and-tricks'
 import { Route as MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.operating-systems-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadOperatingSystemsSampleExercisesRouteImport } from './routes/_marketing.resources.read.operating-systems-sample-exercises'
@@ -2991,6 +3012,132 @@ const MarketingResourcesReadPeAdvancedConceptsRoute =
   MarketingResourcesReadPeAdvancedConceptsRouteImport.update({
     id: '/read/pe-advanced-concepts',
     path: '/read/pe-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasTipsTricksRoute =
+  MarketingResourcesReadPandasTipsTricksRouteImport.update({
+    id: '/read/pandas-tips-tricks',
+    path: '/read/pandas-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasStepByStepLearningGuideRoute =
+  MarketingResourcesReadPandasStepByStepLearningGuideRouteImport.update({
+    id: '/read/pandas-step-by-step-learning-guide',
+    path: '/read/pandas-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasSampleExercisesRoute =
+  MarketingResourcesReadPandasSampleExercisesRouteImport.update({
+    id: '/read/pandas-sample-exercises',
+    path: '/read/pandas-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasReferenceGuideRoute =
+  MarketingResourcesReadPandasReferenceGuideRouteImport.update({
+    id: '/read/pandas-reference-guide',
+    path: '/read/pandas-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasRealWorldCaseStudyRoute =
+  MarketingResourcesReadPandasRealWorldCaseStudyRouteImport.update({
+    id: '/read/pandas-real-world-case-study',
+    path: '/read/pandas-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasQuickRevisionNotesRoute =
+  MarketingResourcesReadPandasQuickRevisionNotesRouteImport.update({
+    id: '/read/pandas-quick-revision-notes',
+    path: '/read/pandas-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasProjectGuideRoute =
+  MarketingResourcesReadPandasProjectGuideRouteImport.update({
+    id: '/read/pandas-project-guide',
+    path: '/read/pandas-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasProjectCaseStudyRoute =
+  MarketingResourcesReadPandasProjectCaseStudyRouteImport.update({
+    id: '/read/pandas-project-case-study',
+    path: '/read/pandas-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasPracticeQuestionsRoute =
+  MarketingResourcesReadPandasPracticeQuestionsRouteImport.update({
+    id: '/read/pandas-practice-questions',
+    path: '/read/pandas-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasPdfNotesRoute =
+  MarketingResourcesReadPandasPdfNotesRouteImport.update({
+    id: '/read/pandas-pdf-notes',
+    path: '/read/pandas-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasLearningRoadmapRoute =
+  MarketingResourcesReadPandasLearningRoadmapRouteImport.update({
+    id: '/read/pandas-learning-roadmap',
+    path: '/read/pandas-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasInterviewQuestionsRoute =
+  MarketingResourcesReadPandasInterviewQuestionsRouteImport.update({
+    id: '/read/pandas-interview-questions',
+    path: '/read/pandas-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasGlossaryRoute =
+  MarketingResourcesReadPandasGlossaryRouteImport.update({
+    id: '/read/pandas-glossary',
+    path: '/read/pandas-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadPandasFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/pandas-frequently-asked-questions',
+    path: '/read/pandas-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasCompleteTutorialRoute =
+  MarketingResourcesReadPandasCompleteTutorialRouteImport.update({
+    id: '/read/pandas-complete-tutorial',
+    path: '/read/pandas-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasCommonMistakesRoute =
+  MarketingResourcesReadPandasCommonMistakesRouteImport.update({
+    id: '/read/pandas-common-mistakes',
+    path: '/read/pandas-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasCheatSheetRoute =
+  MarketingResourcesReadPandasCheatSheetRouteImport.update({
+    id: '/read/pandas-cheat-sheet',
+    path: '/read/pandas-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasBestPracticesRoute =
+  MarketingResourcesReadPandasBestPracticesRouteImport.update({
+    id: '/read/pandas-best-practices',
+    path: '/read/pandas-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasBeginnerGuideRoute =
+  MarketingResourcesReadPandasBeginnerGuideRouteImport.update({
+    id: '/read/pandas-beginner-guide',
+    path: '/read/pandas-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasAnswerKeyRoute =
+  MarketingResourcesReadPandasAnswerKeyRouteImport.update({
+    id: '/read/pandas-answer-key',
+    path: '/read/pandas-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPandasAdvancedConceptsRoute =
+  MarketingResourcesReadPandasAdvancedConceptsRouteImport.update({
+    id: '/read/pandas-advanced-concepts',
+    path: '/read/pandas-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadOperatingSystemsTipsAndTricksRoute =
@@ -7275,6 +7422,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/operating-systems-sample-exercises': typeof MarketingResourcesReadOperatingSystemsSampleExercisesRoute
   '/resources/read/operating-systems-step-by-step-learning-guide': typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute
   '/resources/read/operating-systems-tips-and-tricks': typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRoute
+  '/resources/read/pandas-advanced-concepts': typeof MarketingResourcesReadPandasAdvancedConceptsRoute
+  '/resources/read/pandas-answer-key': typeof MarketingResourcesReadPandasAnswerKeyRoute
+  '/resources/read/pandas-beginner-guide': typeof MarketingResourcesReadPandasBeginnerGuideRoute
+  '/resources/read/pandas-best-practices': typeof MarketingResourcesReadPandasBestPracticesRoute
+  '/resources/read/pandas-cheat-sheet': typeof MarketingResourcesReadPandasCheatSheetRoute
+  '/resources/read/pandas-common-mistakes': typeof MarketingResourcesReadPandasCommonMistakesRoute
+  '/resources/read/pandas-complete-tutorial': typeof MarketingResourcesReadPandasCompleteTutorialRoute
+  '/resources/read/pandas-frequently-asked-questions': typeof MarketingResourcesReadPandasFrequentlyAskedQuestionsRoute
+  '/resources/read/pandas-glossary': typeof MarketingResourcesReadPandasGlossaryRoute
+  '/resources/read/pandas-interview-questions': typeof MarketingResourcesReadPandasInterviewQuestionsRoute
+  '/resources/read/pandas-learning-roadmap': typeof MarketingResourcesReadPandasLearningRoadmapRoute
+  '/resources/read/pandas-pdf-notes': typeof MarketingResourcesReadPandasPdfNotesRoute
+  '/resources/read/pandas-practice-questions': typeof MarketingResourcesReadPandasPracticeQuestionsRoute
+  '/resources/read/pandas-project-case-study': typeof MarketingResourcesReadPandasProjectCaseStudyRoute
+  '/resources/read/pandas-project-guide': typeof MarketingResourcesReadPandasProjectGuideRoute
+  '/resources/read/pandas-quick-revision-notes': typeof MarketingResourcesReadPandasQuickRevisionNotesRoute
+  '/resources/read/pandas-real-world-case-study': typeof MarketingResourcesReadPandasRealWorldCaseStudyRoute
+  '/resources/read/pandas-reference-guide': typeof MarketingResourcesReadPandasReferenceGuideRoute
+  '/resources/read/pandas-sample-exercises': typeof MarketingResourcesReadPandasSampleExercisesRoute
+  '/resources/read/pandas-step-by-step-learning-guide': typeof MarketingResourcesReadPandasStepByStepLearningGuideRoute
+  '/resources/read/pandas-tips-tricks': typeof MarketingResourcesReadPandasTipsTricksRoute
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
@@ -8221,6 +8389,27 @@ export interface FileRoutesByTo {
   '/resources/read/operating-systems-sample-exercises': typeof MarketingResourcesReadOperatingSystemsSampleExercisesRoute
   '/resources/read/operating-systems-step-by-step-learning-guide': typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute
   '/resources/read/operating-systems-tips-and-tricks': typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRoute
+  '/resources/read/pandas-advanced-concepts': typeof MarketingResourcesReadPandasAdvancedConceptsRoute
+  '/resources/read/pandas-answer-key': typeof MarketingResourcesReadPandasAnswerKeyRoute
+  '/resources/read/pandas-beginner-guide': typeof MarketingResourcesReadPandasBeginnerGuideRoute
+  '/resources/read/pandas-best-practices': typeof MarketingResourcesReadPandasBestPracticesRoute
+  '/resources/read/pandas-cheat-sheet': typeof MarketingResourcesReadPandasCheatSheetRoute
+  '/resources/read/pandas-common-mistakes': typeof MarketingResourcesReadPandasCommonMistakesRoute
+  '/resources/read/pandas-complete-tutorial': typeof MarketingResourcesReadPandasCompleteTutorialRoute
+  '/resources/read/pandas-frequently-asked-questions': typeof MarketingResourcesReadPandasFrequentlyAskedQuestionsRoute
+  '/resources/read/pandas-glossary': typeof MarketingResourcesReadPandasGlossaryRoute
+  '/resources/read/pandas-interview-questions': typeof MarketingResourcesReadPandasInterviewQuestionsRoute
+  '/resources/read/pandas-learning-roadmap': typeof MarketingResourcesReadPandasLearningRoadmapRoute
+  '/resources/read/pandas-pdf-notes': typeof MarketingResourcesReadPandasPdfNotesRoute
+  '/resources/read/pandas-practice-questions': typeof MarketingResourcesReadPandasPracticeQuestionsRoute
+  '/resources/read/pandas-project-case-study': typeof MarketingResourcesReadPandasProjectCaseStudyRoute
+  '/resources/read/pandas-project-guide': typeof MarketingResourcesReadPandasProjectGuideRoute
+  '/resources/read/pandas-quick-revision-notes': typeof MarketingResourcesReadPandasQuickRevisionNotesRoute
+  '/resources/read/pandas-real-world-case-study': typeof MarketingResourcesReadPandasRealWorldCaseStudyRoute
+  '/resources/read/pandas-reference-guide': typeof MarketingResourcesReadPandasReferenceGuideRoute
+  '/resources/read/pandas-sample-exercises': typeof MarketingResourcesReadPandasSampleExercisesRoute
+  '/resources/read/pandas-step-by-step-learning-guide': typeof MarketingResourcesReadPandasStepByStepLearningGuideRoute
+  '/resources/read/pandas-tips-tricks': typeof MarketingResourcesReadPandasTipsTricksRoute
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
@@ -9172,6 +9361,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/operating-systems-sample-exercises': typeof MarketingResourcesReadOperatingSystemsSampleExercisesRoute
   '/_marketing/resources/read/operating-systems-step-by-step-learning-guide': typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute
   '/_marketing/resources/read/operating-systems-tips-and-tricks': typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRoute
+  '/_marketing/resources/read/pandas-advanced-concepts': typeof MarketingResourcesReadPandasAdvancedConceptsRoute
+  '/_marketing/resources/read/pandas-answer-key': typeof MarketingResourcesReadPandasAnswerKeyRoute
+  '/_marketing/resources/read/pandas-beginner-guide': typeof MarketingResourcesReadPandasBeginnerGuideRoute
+  '/_marketing/resources/read/pandas-best-practices': typeof MarketingResourcesReadPandasBestPracticesRoute
+  '/_marketing/resources/read/pandas-cheat-sheet': typeof MarketingResourcesReadPandasCheatSheetRoute
+  '/_marketing/resources/read/pandas-common-mistakes': typeof MarketingResourcesReadPandasCommonMistakesRoute
+  '/_marketing/resources/read/pandas-complete-tutorial': typeof MarketingResourcesReadPandasCompleteTutorialRoute
+  '/_marketing/resources/read/pandas-frequently-asked-questions': typeof MarketingResourcesReadPandasFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/pandas-glossary': typeof MarketingResourcesReadPandasGlossaryRoute
+  '/_marketing/resources/read/pandas-interview-questions': typeof MarketingResourcesReadPandasInterviewQuestionsRoute
+  '/_marketing/resources/read/pandas-learning-roadmap': typeof MarketingResourcesReadPandasLearningRoadmapRoute
+  '/_marketing/resources/read/pandas-pdf-notes': typeof MarketingResourcesReadPandasPdfNotesRoute
+  '/_marketing/resources/read/pandas-practice-questions': typeof MarketingResourcesReadPandasPracticeQuestionsRoute
+  '/_marketing/resources/read/pandas-project-case-study': typeof MarketingResourcesReadPandasProjectCaseStudyRoute
+  '/_marketing/resources/read/pandas-project-guide': typeof MarketingResourcesReadPandasProjectGuideRoute
+  '/_marketing/resources/read/pandas-quick-revision-notes': typeof MarketingResourcesReadPandasQuickRevisionNotesRoute
+  '/_marketing/resources/read/pandas-real-world-case-study': typeof MarketingResourcesReadPandasRealWorldCaseStudyRoute
+  '/_marketing/resources/read/pandas-reference-guide': typeof MarketingResourcesReadPandasReferenceGuideRoute
+  '/_marketing/resources/read/pandas-sample-exercises': typeof MarketingResourcesReadPandasSampleExercisesRoute
+  '/_marketing/resources/read/pandas-step-by-step-learning-guide': typeof MarketingResourcesReadPandasStepByStepLearningGuideRoute
+  '/_marketing/resources/read/pandas-tips-tricks': typeof MarketingResourcesReadPandasTipsTricksRoute
   '/_marketing/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
   '/_marketing/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/_marketing/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
@@ -10121,6 +10331,27 @@ export interface FileRouteTypes {
     | '/resources/read/operating-systems-sample-exercises'
     | '/resources/read/operating-systems-step-by-step-learning-guide'
     | '/resources/read/operating-systems-tips-and-tricks'
+    | '/resources/read/pandas-advanced-concepts'
+    | '/resources/read/pandas-answer-key'
+    | '/resources/read/pandas-beginner-guide'
+    | '/resources/read/pandas-best-practices'
+    | '/resources/read/pandas-cheat-sheet'
+    | '/resources/read/pandas-common-mistakes'
+    | '/resources/read/pandas-complete-tutorial'
+    | '/resources/read/pandas-frequently-asked-questions'
+    | '/resources/read/pandas-glossary'
+    | '/resources/read/pandas-interview-questions'
+    | '/resources/read/pandas-learning-roadmap'
+    | '/resources/read/pandas-pdf-notes'
+    | '/resources/read/pandas-practice-questions'
+    | '/resources/read/pandas-project-case-study'
+    | '/resources/read/pandas-project-guide'
+    | '/resources/read/pandas-quick-revision-notes'
+    | '/resources/read/pandas-real-world-case-study'
+    | '/resources/read/pandas-reference-guide'
+    | '/resources/read/pandas-sample-exercises'
+    | '/resources/read/pandas-step-by-step-learning-guide'
+    | '/resources/read/pandas-tips-tricks'
     | '/resources/read/pe-advanced-concepts'
     | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
@@ -11067,6 +11298,27 @@ export interface FileRouteTypes {
     | '/resources/read/operating-systems-sample-exercises'
     | '/resources/read/operating-systems-step-by-step-learning-guide'
     | '/resources/read/operating-systems-tips-and-tricks'
+    | '/resources/read/pandas-advanced-concepts'
+    | '/resources/read/pandas-answer-key'
+    | '/resources/read/pandas-beginner-guide'
+    | '/resources/read/pandas-best-practices'
+    | '/resources/read/pandas-cheat-sheet'
+    | '/resources/read/pandas-common-mistakes'
+    | '/resources/read/pandas-complete-tutorial'
+    | '/resources/read/pandas-frequently-asked-questions'
+    | '/resources/read/pandas-glossary'
+    | '/resources/read/pandas-interview-questions'
+    | '/resources/read/pandas-learning-roadmap'
+    | '/resources/read/pandas-pdf-notes'
+    | '/resources/read/pandas-practice-questions'
+    | '/resources/read/pandas-project-case-study'
+    | '/resources/read/pandas-project-guide'
+    | '/resources/read/pandas-quick-revision-notes'
+    | '/resources/read/pandas-real-world-case-study'
+    | '/resources/read/pandas-reference-guide'
+    | '/resources/read/pandas-sample-exercises'
+    | '/resources/read/pandas-step-by-step-learning-guide'
+    | '/resources/read/pandas-tips-tricks'
     | '/resources/read/pe-advanced-concepts'
     | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
@@ -12017,6 +12269,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/operating-systems-sample-exercises'
     | '/_marketing/resources/read/operating-systems-step-by-step-learning-guide'
     | '/_marketing/resources/read/operating-systems-tips-and-tricks'
+    | '/_marketing/resources/read/pandas-advanced-concepts'
+    | '/_marketing/resources/read/pandas-answer-key'
+    | '/_marketing/resources/read/pandas-beginner-guide'
+    | '/_marketing/resources/read/pandas-best-practices'
+    | '/_marketing/resources/read/pandas-cheat-sheet'
+    | '/_marketing/resources/read/pandas-common-mistakes'
+    | '/_marketing/resources/read/pandas-complete-tutorial'
+    | '/_marketing/resources/read/pandas-frequently-asked-questions'
+    | '/_marketing/resources/read/pandas-glossary'
+    | '/_marketing/resources/read/pandas-interview-questions'
+    | '/_marketing/resources/read/pandas-learning-roadmap'
+    | '/_marketing/resources/read/pandas-pdf-notes'
+    | '/_marketing/resources/read/pandas-practice-questions'
+    | '/_marketing/resources/read/pandas-project-case-study'
+    | '/_marketing/resources/read/pandas-project-guide'
+    | '/_marketing/resources/read/pandas-quick-revision-notes'
+    | '/_marketing/resources/read/pandas-real-world-case-study'
+    | '/_marketing/resources/read/pandas-reference-guide'
+    | '/_marketing/resources/read/pandas-sample-exercises'
+    | '/_marketing/resources/read/pandas-step-by-step-learning-guide'
+    | '/_marketing/resources/read/pandas-tips-tricks'
     | '/_marketing/resources/read/pe-advanced-concepts'
     | '/_marketing/resources/read/pe-answer-key'
     | '/_marketing/resources/read/pe-beginner-guide'
@@ -14750,6 +15023,153 @@ declare module '@tanstack/react-router' {
       path: '/read/pe-advanced-concepts'
       fullPath: '/resources/read/pe-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadPeAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-tips-tricks': {
+      id: '/_marketing/resources/read/pandas-tips-tricks'
+      path: '/read/pandas-tips-tricks'
+      fullPath: '/resources/read/pandas-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadPandasTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/pandas-step-by-step-learning-guide'
+      path: '/read/pandas-step-by-step-learning-guide'
+      fullPath: '/resources/read/pandas-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPandasStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-sample-exercises': {
+      id: '/_marketing/resources/read/pandas-sample-exercises'
+      path: '/read/pandas-sample-exercises'
+      fullPath: '/resources/read/pandas-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadPandasSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-reference-guide': {
+      id: '/_marketing/resources/read/pandas-reference-guide'
+      path: '/read/pandas-reference-guide'
+      fullPath: '/resources/read/pandas-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPandasReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-real-world-case-study': {
+      id: '/_marketing/resources/read/pandas-real-world-case-study'
+      path: '/read/pandas-real-world-case-study'
+      fullPath: '/resources/read/pandas-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPandasRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-quick-revision-notes': {
+      id: '/_marketing/resources/read/pandas-quick-revision-notes'
+      path: '/read/pandas-quick-revision-notes'
+      fullPath: '/resources/read/pandas-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPandasQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-project-guide': {
+      id: '/_marketing/resources/read/pandas-project-guide'
+      path: '/read/pandas-project-guide'
+      fullPath: '/resources/read/pandas-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPandasProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-project-case-study': {
+      id: '/_marketing/resources/read/pandas-project-case-study'
+      path: '/read/pandas-project-case-study'
+      fullPath: '/resources/read/pandas-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadPandasProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-practice-questions': {
+      id: '/_marketing/resources/read/pandas-practice-questions'
+      path: '/read/pandas-practice-questions'
+      fullPath: '/resources/read/pandas-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPandasPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-pdf-notes': {
+      id: '/_marketing/resources/read/pandas-pdf-notes'
+      path: '/read/pandas-pdf-notes'
+      fullPath: '/resources/read/pandas-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadPandasPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-learning-roadmap': {
+      id: '/_marketing/resources/read/pandas-learning-roadmap'
+      path: '/read/pandas-learning-roadmap'
+      fullPath: '/resources/read/pandas-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadPandasLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-interview-questions': {
+      id: '/_marketing/resources/read/pandas-interview-questions'
+      path: '/read/pandas-interview-questions'
+      fullPath: '/resources/read/pandas-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPandasInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-glossary': {
+      id: '/_marketing/resources/read/pandas-glossary'
+      path: '/read/pandas-glossary'
+      fullPath: '/resources/read/pandas-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadPandasGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-frequently-asked-questions': {
+      id: '/_marketing/resources/read/pandas-frequently-asked-questions'
+      path: '/read/pandas-frequently-asked-questions'
+      fullPath: '/resources/read/pandas-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPandasFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-complete-tutorial': {
+      id: '/_marketing/resources/read/pandas-complete-tutorial'
+      path: '/read/pandas-complete-tutorial'
+      fullPath: '/resources/read/pandas-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadPandasCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-common-mistakes': {
+      id: '/_marketing/resources/read/pandas-common-mistakes'
+      path: '/read/pandas-common-mistakes'
+      fullPath: '/resources/read/pandas-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadPandasCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-cheat-sheet': {
+      id: '/_marketing/resources/read/pandas-cheat-sheet'
+      path: '/read/pandas-cheat-sheet'
+      fullPath: '/resources/read/pandas-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadPandasCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-best-practices': {
+      id: '/_marketing/resources/read/pandas-best-practices'
+      path: '/read/pandas-best-practices'
+      fullPath: '/resources/read/pandas-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadPandasBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-beginner-guide': {
+      id: '/_marketing/resources/read/pandas-beginner-guide'
+      path: '/read/pandas-beginner-guide'
+      fullPath: '/resources/read/pandas-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadPandasBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-answer-key': {
+      id: '/_marketing/resources/read/pandas-answer-key'
+      path: '/read/pandas-answer-key'
+      fullPath: '/resources/read/pandas-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadPandasAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pandas-advanced-concepts': {
+      id: '/_marketing/resources/read/pandas-advanced-concepts'
+      path: '/read/pandas-advanced-concepts'
+      fullPath: '/resources/read/pandas-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadPandasAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/operating-systems-tips-and-tricks': {
@@ -19707,6 +20127,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadOperatingSystemsSampleExercisesRoute: typeof MarketingResourcesReadOperatingSystemsSampleExercisesRoute
   MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute: typeof MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute
   MarketingResourcesReadOperatingSystemsTipsAndTricksRoute: typeof MarketingResourcesReadOperatingSystemsTipsAndTricksRoute
+  MarketingResourcesReadPandasAdvancedConceptsRoute: typeof MarketingResourcesReadPandasAdvancedConceptsRoute
+  MarketingResourcesReadPandasAnswerKeyRoute: typeof MarketingResourcesReadPandasAnswerKeyRoute
+  MarketingResourcesReadPandasBeginnerGuideRoute: typeof MarketingResourcesReadPandasBeginnerGuideRoute
+  MarketingResourcesReadPandasBestPracticesRoute: typeof MarketingResourcesReadPandasBestPracticesRoute
+  MarketingResourcesReadPandasCheatSheetRoute: typeof MarketingResourcesReadPandasCheatSheetRoute
+  MarketingResourcesReadPandasCommonMistakesRoute: typeof MarketingResourcesReadPandasCommonMistakesRoute
+  MarketingResourcesReadPandasCompleteTutorialRoute: typeof MarketingResourcesReadPandasCompleteTutorialRoute
+  MarketingResourcesReadPandasFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadPandasFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadPandasGlossaryRoute: typeof MarketingResourcesReadPandasGlossaryRoute
+  MarketingResourcesReadPandasInterviewQuestionsRoute: typeof MarketingResourcesReadPandasInterviewQuestionsRoute
+  MarketingResourcesReadPandasLearningRoadmapRoute: typeof MarketingResourcesReadPandasLearningRoadmapRoute
+  MarketingResourcesReadPandasPdfNotesRoute: typeof MarketingResourcesReadPandasPdfNotesRoute
+  MarketingResourcesReadPandasPracticeQuestionsRoute: typeof MarketingResourcesReadPandasPracticeQuestionsRoute
+  MarketingResourcesReadPandasProjectCaseStudyRoute: typeof MarketingResourcesReadPandasProjectCaseStudyRoute
+  MarketingResourcesReadPandasProjectGuideRoute: typeof MarketingResourcesReadPandasProjectGuideRoute
+  MarketingResourcesReadPandasQuickRevisionNotesRoute: typeof MarketingResourcesReadPandasQuickRevisionNotesRoute
+  MarketingResourcesReadPandasRealWorldCaseStudyRoute: typeof MarketingResourcesReadPandasRealWorldCaseStudyRoute
+  MarketingResourcesReadPandasReferenceGuideRoute: typeof MarketingResourcesReadPandasReferenceGuideRoute
+  MarketingResourcesReadPandasSampleExercisesRoute: typeof MarketingResourcesReadPandasSampleExercisesRoute
+  MarketingResourcesReadPandasStepByStepLearningGuideRoute: typeof MarketingResourcesReadPandasStepByStepLearningGuideRoute
+  MarketingResourcesReadPandasTipsTricksRoute: typeof MarketingResourcesReadPandasTipsTricksRoute
   MarketingResourcesReadPeAdvancedConceptsRoute: typeof MarketingResourcesReadPeAdvancedConceptsRoute
   MarketingResourcesReadPeAnswerKeyRoute: typeof MarketingResourcesReadPeAnswerKeyRoute
   MarketingResourcesReadPeBeginnerGuideRoute: typeof MarketingResourcesReadPeBeginnerGuideRoute
@@ -21186,6 +21627,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadOperatingSystemsStepByStepLearningGuideRoute,
   MarketingResourcesReadOperatingSystemsTipsAndTricksRoute:
     MarketingResourcesReadOperatingSystemsTipsAndTricksRoute,
+  MarketingResourcesReadPandasAdvancedConceptsRoute:
+    MarketingResourcesReadPandasAdvancedConceptsRoute,
+  MarketingResourcesReadPandasAnswerKeyRoute:
+    MarketingResourcesReadPandasAnswerKeyRoute,
+  MarketingResourcesReadPandasBeginnerGuideRoute:
+    MarketingResourcesReadPandasBeginnerGuideRoute,
+  MarketingResourcesReadPandasBestPracticesRoute:
+    MarketingResourcesReadPandasBestPracticesRoute,
+  MarketingResourcesReadPandasCheatSheetRoute:
+    MarketingResourcesReadPandasCheatSheetRoute,
+  MarketingResourcesReadPandasCommonMistakesRoute:
+    MarketingResourcesReadPandasCommonMistakesRoute,
+  MarketingResourcesReadPandasCompleteTutorialRoute:
+    MarketingResourcesReadPandasCompleteTutorialRoute,
+  MarketingResourcesReadPandasFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadPandasFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadPandasGlossaryRoute:
+    MarketingResourcesReadPandasGlossaryRoute,
+  MarketingResourcesReadPandasInterviewQuestionsRoute:
+    MarketingResourcesReadPandasInterviewQuestionsRoute,
+  MarketingResourcesReadPandasLearningRoadmapRoute:
+    MarketingResourcesReadPandasLearningRoadmapRoute,
+  MarketingResourcesReadPandasPdfNotesRoute:
+    MarketingResourcesReadPandasPdfNotesRoute,
+  MarketingResourcesReadPandasPracticeQuestionsRoute:
+    MarketingResourcesReadPandasPracticeQuestionsRoute,
+  MarketingResourcesReadPandasProjectCaseStudyRoute:
+    MarketingResourcesReadPandasProjectCaseStudyRoute,
+  MarketingResourcesReadPandasProjectGuideRoute:
+    MarketingResourcesReadPandasProjectGuideRoute,
+  MarketingResourcesReadPandasQuickRevisionNotesRoute:
+    MarketingResourcesReadPandasQuickRevisionNotesRoute,
+  MarketingResourcesReadPandasRealWorldCaseStudyRoute:
+    MarketingResourcesReadPandasRealWorldCaseStudyRoute,
+  MarketingResourcesReadPandasReferenceGuideRoute:
+    MarketingResourcesReadPandasReferenceGuideRoute,
+  MarketingResourcesReadPandasSampleExercisesRoute:
+    MarketingResourcesReadPandasSampleExercisesRoute,
+  MarketingResourcesReadPandasStepByStepLearningGuideRoute:
+    MarketingResourcesReadPandasStepByStepLearningGuideRoute,
+  MarketingResourcesReadPandasTipsTricksRoute:
+    MarketingResourcesReadPandasTipsTricksRoute,
   MarketingResourcesReadPeAdvancedConceptsRoute:
     MarketingResourcesReadPeAdvancedConceptsRoute,
   MarketingResourcesReadPeAnswerKeyRoute:
