@@ -53,6 +53,27 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as MarketingResourcesReadVueTipsTricksRouteImport } from './routes/_marketing.resources.read.vue-tips-tricks'
+import { Route as MarketingResourcesReadVueStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.vue-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadVueSampleExercisesRouteImport } from './routes/_marketing.resources.read.vue-sample-exercises'
+import { Route as MarketingResourcesReadVueReferenceGuideRouteImport } from './routes/_marketing.resources.read.vue-reference-guide'
+import { Route as MarketingResourcesReadVueRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.vue-real-world-case-study'
+import { Route as MarketingResourcesReadVueQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.vue-quick-revision-notes'
+import { Route as MarketingResourcesReadVueProjectGuideRouteImport } from './routes/_marketing.resources.read.vue-project-guide'
+import { Route as MarketingResourcesReadVueProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.vue-project-case-study'
+import { Route as MarketingResourcesReadVuePracticeQuestionsRouteImport } from './routes/_marketing.resources.read.vue-practice-questions'
+import { Route as MarketingResourcesReadVuePdfNotesRouteImport } from './routes/_marketing.resources.read.vue-pdf-notes'
+import { Route as MarketingResourcesReadVueLearningRoadmapRouteImport } from './routes/_marketing.resources.read.vue-learning-roadmap'
+import { Route as MarketingResourcesReadVueInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.vue-interview-questions'
+import { Route as MarketingResourcesReadVueGlossaryRouteImport } from './routes/_marketing.resources.read.vue-glossary'
+import { Route as MarketingResourcesReadVueFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.vue-frequently-asked-questions'
+import { Route as MarketingResourcesReadVueCompleteTutorialRouteImport } from './routes/_marketing.resources.read.vue-complete-tutorial'
+import { Route as MarketingResourcesReadVueCommonMistakesRouteImport } from './routes/_marketing.resources.read.vue-common-mistakes'
+import { Route as MarketingResourcesReadVueCheatSheetRouteImport } from './routes/_marketing.resources.read.vue-cheat-sheet'
+import { Route as MarketingResourcesReadVueBestPracticesRouteImport } from './routes/_marketing.resources.read.vue-best-practices'
+import { Route as MarketingResourcesReadVueBeginnerGuideRouteImport } from './routes/_marketing.resources.read.vue-beginner-guide'
+import { Route as MarketingResourcesReadVueAnswerKeyRouteImport } from './routes/_marketing.resources.read.vue-answer-key'
+import { Route as MarketingResourcesReadVueAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.vue-advanced-concepts'
 import { Route as MarketingResourcesReadUxDesignTipsAndTricksRouteImport } from './routes/_marketing.resources.read.ux-design-tips-and-tricks'
 import { Route as MarketingResourcesReadUxDesignStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ux-design-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadUxDesignReferenceGuideRouteImport } from './routes/_marketing.resources.read.ux-design-reference-guide'
@@ -1167,6 +1188,132 @@ const DashboardDashboardMockTestsIndexRoute =
     id: '/dashboard/mock-tests/',
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
+  } as any)
+const MarketingResourcesReadVueTipsTricksRoute =
+  MarketingResourcesReadVueTipsTricksRouteImport.update({
+    id: '/read/vue-tips-tricks',
+    path: '/read/vue-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueStepByStepLearningGuideRoute =
+  MarketingResourcesReadVueStepByStepLearningGuideRouteImport.update({
+    id: '/read/vue-step-by-step-learning-guide',
+    path: '/read/vue-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueSampleExercisesRoute =
+  MarketingResourcesReadVueSampleExercisesRouteImport.update({
+    id: '/read/vue-sample-exercises',
+    path: '/read/vue-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueReferenceGuideRoute =
+  MarketingResourcesReadVueReferenceGuideRouteImport.update({
+    id: '/read/vue-reference-guide',
+    path: '/read/vue-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueRealWorldCaseStudyRoute =
+  MarketingResourcesReadVueRealWorldCaseStudyRouteImport.update({
+    id: '/read/vue-real-world-case-study',
+    path: '/read/vue-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueQuickRevisionNotesRoute =
+  MarketingResourcesReadVueQuickRevisionNotesRouteImport.update({
+    id: '/read/vue-quick-revision-notes',
+    path: '/read/vue-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueProjectGuideRoute =
+  MarketingResourcesReadVueProjectGuideRouteImport.update({
+    id: '/read/vue-project-guide',
+    path: '/read/vue-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueProjectCaseStudyRoute =
+  MarketingResourcesReadVueProjectCaseStudyRouteImport.update({
+    id: '/read/vue-project-case-study',
+    path: '/read/vue-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVuePracticeQuestionsRoute =
+  MarketingResourcesReadVuePracticeQuestionsRouteImport.update({
+    id: '/read/vue-practice-questions',
+    path: '/read/vue-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVuePdfNotesRoute =
+  MarketingResourcesReadVuePdfNotesRouteImport.update({
+    id: '/read/vue-pdf-notes',
+    path: '/read/vue-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueLearningRoadmapRoute =
+  MarketingResourcesReadVueLearningRoadmapRouteImport.update({
+    id: '/read/vue-learning-roadmap',
+    path: '/read/vue-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueInterviewQuestionsRoute =
+  MarketingResourcesReadVueInterviewQuestionsRouteImport.update({
+    id: '/read/vue-interview-questions',
+    path: '/read/vue-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueGlossaryRoute =
+  MarketingResourcesReadVueGlossaryRouteImport.update({
+    id: '/read/vue-glossary',
+    path: '/read/vue-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadVueFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/vue-frequently-asked-questions',
+    path: '/read/vue-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueCompleteTutorialRoute =
+  MarketingResourcesReadVueCompleteTutorialRouteImport.update({
+    id: '/read/vue-complete-tutorial',
+    path: '/read/vue-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueCommonMistakesRoute =
+  MarketingResourcesReadVueCommonMistakesRouteImport.update({
+    id: '/read/vue-common-mistakes',
+    path: '/read/vue-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueCheatSheetRoute =
+  MarketingResourcesReadVueCheatSheetRouteImport.update({
+    id: '/read/vue-cheat-sheet',
+    path: '/read/vue-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueBestPracticesRoute =
+  MarketingResourcesReadVueBestPracticesRouteImport.update({
+    id: '/read/vue-best-practices',
+    path: '/read/vue-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueBeginnerGuideRoute =
+  MarketingResourcesReadVueBeginnerGuideRouteImport.update({
+    id: '/read/vue-beginner-guide',
+    path: '/read/vue-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueAnswerKeyRoute =
+  MarketingResourcesReadVueAnswerKeyRouteImport.update({
+    id: '/read/vue-answer-key',
+    path: '/read/vue-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadVueAdvancedConceptsRoute =
+  MarketingResourcesReadVueAdvancedConceptsRouteImport.update({
+    id: '/read/vue-advanced-concepts',
+    path: '/read/vue-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadUxDesignTipsAndTricksRoute =
   MarketingResourcesReadUxDesignTipsAndTricksRouteImport.update({
@@ -7407,6 +7554,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/ux-design-reference-guide': typeof MarketingResourcesReadUxDesignReferenceGuideRoute
   '/resources/read/ux-design-step-by-step-learning-guide': typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRoute
   '/resources/read/ux-design-tips-and-tricks': typeof MarketingResourcesReadUxDesignTipsAndTricksRoute
+  '/resources/read/vue-advanced-concepts': typeof MarketingResourcesReadVueAdvancedConceptsRoute
+  '/resources/read/vue-answer-key': typeof MarketingResourcesReadVueAnswerKeyRoute
+  '/resources/read/vue-beginner-guide': typeof MarketingResourcesReadVueBeginnerGuideRoute
+  '/resources/read/vue-best-practices': typeof MarketingResourcesReadVueBestPracticesRoute
+  '/resources/read/vue-cheat-sheet': typeof MarketingResourcesReadVueCheatSheetRoute
+  '/resources/read/vue-common-mistakes': typeof MarketingResourcesReadVueCommonMistakesRoute
+  '/resources/read/vue-complete-tutorial': typeof MarketingResourcesReadVueCompleteTutorialRoute
+  '/resources/read/vue-frequently-asked-questions': typeof MarketingResourcesReadVueFrequentlyAskedQuestionsRoute
+  '/resources/read/vue-glossary': typeof MarketingResourcesReadVueGlossaryRoute
+  '/resources/read/vue-interview-questions': typeof MarketingResourcesReadVueInterviewQuestionsRoute
+  '/resources/read/vue-learning-roadmap': typeof MarketingResourcesReadVueLearningRoadmapRoute
+  '/resources/read/vue-pdf-notes': typeof MarketingResourcesReadVuePdfNotesRoute
+  '/resources/read/vue-practice-questions': typeof MarketingResourcesReadVuePracticeQuestionsRoute
+  '/resources/read/vue-project-case-study': typeof MarketingResourcesReadVueProjectCaseStudyRoute
+  '/resources/read/vue-project-guide': typeof MarketingResourcesReadVueProjectGuideRoute
+  '/resources/read/vue-quick-revision-notes': typeof MarketingResourcesReadVueQuickRevisionNotesRoute
+  '/resources/read/vue-real-world-case-study': typeof MarketingResourcesReadVueRealWorldCaseStudyRoute
+  '/resources/read/vue-reference-guide': typeof MarketingResourcesReadVueReferenceGuideRoute
+  '/resources/read/vue-sample-exercises': typeof MarketingResourcesReadVueSampleExercisesRoute
+  '/resources/read/vue-step-by-step-learning-guide': typeof MarketingResourcesReadVueStepByStepLearningGuideRoute
+  '/resources/read/vue-tips-tricks': typeof MarketingResourcesReadVueTipsTricksRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -8332,6 +8500,27 @@ export interface FileRoutesByTo {
   '/resources/read/ux-design-reference-guide': typeof MarketingResourcesReadUxDesignReferenceGuideRoute
   '/resources/read/ux-design-step-by-step-learning-guide': typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRoute
   '/resources/read/ux-design-tips-and-tricks': typeof MarketingResourcesReadUxDesignTipsAndTricksRoute
+  '/resources/read/vue-advanced-concepts': typeof MarketingResourcesReadVueAdvancedConceptsRoute
+  '/resources/read/vue-answer-key': typeof MarketingResourcesReadVueAnswerKeyRoute
+  '/resources/read/vue-beginner-guide': typeof MarketingResourcesReadVueBeginnerGuideRoute
+  '/resources/read/vue-best-practices': typeof MarketingResourcesReadVueBestPracticesRoute
+  '/resources/read/vue-cheat-sheet': typeof MarketingResourcesReadVueCheatSheetRoute
+  '/resources/read/vue-common-mistakes': typeof MarketingResourcesReadVueCommonMistakesRoute
+  '/resources/read/vue-complete-tutorial': typeof MarketingResourcesReadVueCompleteTutorialRoute
+  '/resources/read/vue-frequently-asked-questions': typeof MarketingResourcesReadVueFrequentlyAskedQuestionsRoute
+  '/resources/read/vue-glossary': typeof MarketingResourcesReadVueGlossaryRoute
+  '/resources/read/vue-interview-questions': typeof MarketingResourcesReadVueInterviewQuestionsRoute
+  '/resources/read/vue-learning-roadmap': typeof MarketingResourcesReadVueLearningRoadmapRoute
+  '/resources/read/vue-pdf-notes': typeof MarketingResourcesReadVuePdfNotesRoute
+  '/resources/read/vue-practice-questions': typeof MarketingResourcesReadVuePracticeQuestionsRoute
+  '/resources/read/vue-project-case-study': typeof MarketingResourcesReadVueProjectCaseStudyRoute
+  '/resources/read/vue-project-guide': typeof MarketingResourcesReadVueProjectGuideRoute
+  '/resources/read/vue-quick-revision-notes': typeof MarketingResourcesReadVueQuickRevisionNotesRoute
+  '/resources/read/vue-real-world-case-study': typeof MarketingResourcesReadVueRealWorldCaseStudyRoute
+  '/resources/read/vue-reference-guide': typeof MarketingResourcesReadVueReferenceGuideRoute
+  '/resources/read/vue-sample-exercises': typeof MarketingResourcesReadVueSampleExercisesRoute
+  '/resources/read/vue-step-by-step-learning-guide': typeof MarketingResourcesReadVueStepByStepLearningGuideRoute
+  '/resources/read/vue-tips-tricks': typeof MarketingResourcesReadVueTipsTricksRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -9262,6 +9451,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ux-design-reference-guide': typeof MarketingResourcesReadUxDesignReferenceGuideRoute
   '/_marketing/resources/read/ux-design-step-by-step-learning-guide': typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRoute
   '/_marketing/resources/read/ux-design-tips-and-tricks': typeof MarketingResourcesReadUxDesignTipsAndTricksRoute
+  '/_marketing/resources/read/vue-advanced-concepts': typeof MarketingResourcesReadVueAdvancedConceptsRoute
+  '/_marketing/resources/read/vue-answer-key': typeof MarketingResourcesReadVueAnswerKeyRoute
+  '/_marketing/resources/read/vue-beginner-guide': typeof MarketingResourcesReadVueBeginnerGuideRoute
+  '/_marketing/resources/read/vue-best-practices': typeof MarketingResourcesReadVueBestPracticesRoute
+  '/_marketing/resources/read/vue-cheat-sheet': typeof MarketingResourcesReadVueCheatSheetRoute
+  '/_marketing/resources/read/vue-common-mistakes': typeof MarketingResourcesReadVueCommonMistakesRoute
+  '/_marketing/resources/read/vue-complete-tutorial': typeof MarketingResourcesReadVueCompleteTutorialRoute
+  '/_marketing/resources/read/vue-frequently-asked-questions': typeof MarketingResourcesReadVueFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/vue-glossary': typeof MarketingResourcesReadVueGlossaryRoute
+  '/_marketing/resources/read/vue-interview-questions': typeof MarketingResourcesReadVueInterviewQuestionsRoute
+  '/_marketing/resources/read/vue-learning-roadmap': typeof MarketingResourcesReadVueLearningRoadmapRoute
+  '/_marketing/resources/read/vue-pdf-notes': typeof MarketingResourcesReadVuePdfNotesRoute
+  '/_marketing/resources/read/vue-practice-questions': typeof MarketingResourcesReadVuePracticeQuestionsRoute
+  '/_marketing/resources/read/vue-project-case-study': typeof MarketingResourcesReadVueProjectCaseStudyRoute
+  '/_marketing/resources/read/vue-project-guide': typeof MarketingResourcesReadVueProjectGuideRoute
+  '/_marketing/resources/read/vue-quick-revision-notes': typeof MarketingResourcesReadVueQuickRevisionNotesRoute
+  '/_marketing/resources/read/vue-real-world-case-study': typeof MarketingResourcesReadVueRealWorldCaseStudyRoute
+  '/_marketing/resources/read/vue-reference-guide': typeof MarketingResourcesReadVueReferenceGuideRoute
+  '/_marketing/resources/read/vue-sample-exercises': typeof MarketingResourcesReadVueSampleExercisesRoute
+  '/_marketing/resources/read/vue-step-by-step-learning-guide': typeof MarketingResourcesReadVueStepByStepLearningGuideRoute
+  '/_marketing/resources/read/vue-tips-tricks': typeof MarketingResourcesReadVueTipsTricksRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
@@ -10190,6 +10400,27 @@ export interface FileRouteTypes {
     | '/resources/read/ux-design-reference-guide'
     | '/resources/read/ux-design-step-by-step-learning-guide'
     | '/resources/read/ux-design-tips-and-tricks'
+    | '/resources/read/vue-advanced-concepts'
+    | '/resources/read/vue-answer-key'
+    | '/resources/read/vue-beginner-guide'
+    | '/resources/read/vue-best-practices'
+    | '/resources/read/vue-cheat-sheet'
+    | '/resources/read/vue-common-mistakes'
+    | '/resources/read/vue-complete-tutorial'
+    | '/resources/read/vue-frequently-asked-questions'
+    | '/resources/read/vue-glossary'
+    | '/resources/read/vue-interview-questions'
+    | '/resources/read/vue-learning-roadmap'
+    | '/resources/read/vue-pdf-notes'
+    | '/resources/read/vue-practice-questions'
+    | '/resources/read/vue-project-case-study'
+    | '/resources/read/vue-project-guide'
+    | '/resources/read/vue-quick-revision-notes'
+    | '/resources/read/vue-real-world-case-study'
+    | '/resources/read/vue-reference-guide'
+    | '/resources/read/vue-sample-exercises'
+    | '/resources/read/vue-step-by-step-learning-guide'
+    | '/resources/read/vue-tips-tricks'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -11115,6 +11346,27 @@ export interface FileRouteTypes {
     | '/resources/read/ux-design-reference-guide'
     | '/resources/read/ux-design-step-by-step-learning-guide'
     | '/resources/read/ux-design-tips-and-tricks'
+    | '/resources/read/vue-advanced-concepts'
+    | '/resources/read/vue-answer-key'
+    | '/resources/read/vue-beginner-guide'
+    | '/resources/read/vue-best-practices'
+    | '/resources/read/vue-cheat-sheet'
+    | '/resources/read/vue-common-mistakes'
+    | '/resources/read/vue-complete-tutorial'
+    | '/resources/read/vue-frequently-asked-questions'
+    | '/resources/read/vue-glossary'
+    | '/resources/read/vue-interview-questions'
+    | '/resources/read/vue-learning-roadmap'
+    | '/resources/read/vue-pdf-notes'
+    | '/resources/read/vue-practice-questions'
+    | '/resources/read/vue-project-case-study'
+    | '/resources/read/vue-project-guide'
+    | '/resources/read/vue-quick-revision-notes'
+    | '/resources/read/vue-real-world-case-study'
+    | '/resources/read/vue-reference-guide'
+    | '/resources/read/vue-sample-exercises'
+    | '/resources/read/vue-step-by-step-learning-guide'
+    | '/resources/read/vue-tips-tricks'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/mock-tests/ai/$categoryId'
@@ -12044,6 +12296,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ux-design-reference-guide'
     | '/_marketing/resources/read/ux-design-step-by-step-learning-guide'
     | '/_marketing/resources/read/ux-design-tips-and-tricks'
+    | '/_marketing/resources/read/vue-advanced-concepts'
+    | '/_marketing/resources/read/vue-answer-key'
+    | '/_marketing/resources/read/vue-beginner-guide'
+    | '/_marketing/resources/read/vue-best-practices'
+    | '/_marketing/resources/read/vue-cheat-sheet'
+    | '/_marketing/resources/read/vue-common-mistakes'
+    | '/_marketing/resources/read/vue-complete-tutorial'
+    | '/_marketing/resources/read/vue-frequently-asked-questions'
+    | '/_marketing/resources/read/vue-glossary'
+    | '/_marketing/resources/read/vue-interview-questions'
+    | '/_marketing/resources/read/vue-learning-roadmap'
+    | '/_marketing/resources/read/vue-pdf-notes'
+    | '/_marketing/resources/read/vue-practice-questions'
+    | '/_marketing/resources/read/vue-project-case-study'
+    | '/_marketing/resources/read/vue-project-guide'
+    | '/_marketing/resources/read/vue-quick-revision-notes'
+    | '/_marketing/resources/read/vue-real-world-case-study'
+    | '/_marketing/resources/read/vue-reference-guide'
+    | '/_marketing/resources/read/vue-sample-exercises'
+    | '/_marketing/resources/read/vue-step-by-step-learning-guide'
+    | '/_marketing/resources/read/vue-tips-tricks'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/mock-tests/ai/$categoryId'
@@ -12378,6 +12651,153 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/'
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_marketing/resources/read/vue-tips-tricks': {
+      id: '/_marketing/resources/read/vue-tips-tricks'
+      path: '/read/vue-tips-tricks'
+      fullPath: '/resources/read/vue-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadVueTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/vue-step-by-step-learning-guide'
+      path: '/read/vue-step-by-step-learning-guide'
+      fullPath: '/resources/read/vue-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadVueStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-sample-exercises': {
+      id: '/_marketing/resources/read/vue-sample-exercises'
+      path: '/read/vue-sample-exercises'
+      fullPath: '/resources/read/vue-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadVueSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-reference-guide': {
+      id: '/_marketing/resources/read/vue-reference-guide'
+      path: '/read/vue-reference-guide'
+      fullPath: '/resources/read/vue-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadVueReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-real-world-case-study': {
+      id: '/_marketing/resources/read/vue-real-world-case-study'
+      path: '/read/vue-real-world-case-study'
+      fullPath: '/resources/read/vue-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadVueRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-quick-revision-notes': {
+      id: '/_marketing/resources/read/vue-quick-revision-notes'
+      path: '/read/vue-quick-revision-notes'
+      fullPath: '/resources/read/vue-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadVueQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-project-guide': {
+      id: '/_marketing/resources/read/vue-project-guide'
+      path: '/read/vue-project-guide'
+      fullPath: '/resources/read/vue-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadVueProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-project-case-study': {
+      id: '/_marketing/resources/read/vue-project-case-study'
+      path: '/read/vue-project-case-study'
+      fullPath: '/resources/read/vue-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadVueProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-practice-questions': {
+      id: '/_marketing/resources/read/vue-practice-questions'
+      path: '/read/vue-practice-questions'
+      fullPath: '/resources/read/vue-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadVuePracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-pdf-notes': {
+      id: '/_marketing/resources/read/vue-pdf-notes'
+      path: '/read/vue-pdf-notes'
+      fullPath: '/resources/read/vue-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadVuePdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-learning-roadmap': {
+      id: '/_marketing/resources/read/vue-learning-roadmap'
+      path: '/read/vue-learning-roadmap'
+      fullPath: '/resources/read/vue-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadVueLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-interview-questions': {
+      id: '/_marketing/resources/read/vue-interview-questions'
+      path: '/read/vue-interview-questions'
+      fullPath: '/resources/read/vue-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadVueInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-glossary': {
+      id: '/_marketing/resources/read/vue-glossary'
+      path: '/read/vue-glossary'
+      fullPath: '/resources/read/vue-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadVueGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-frequently-asked-questions': {
+      id: '/_marketing/resources/read/vue-frequently-asked-questions'
+      path: '/read/vue-frequently-asked-questions'
+      fullPath: '/resources/read/vue-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadVueFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-complete-tutorial': {
+      id: '/_marketing/resources/read/vue-complete-tutorial'
+      path: '/read/vue-complete-tutorial'
+      fullPath: '/resources/read/vue-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadVueCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-common-mistakes': {
+      id: '/_marketing/resources/read/vue-common-mistakes'
+      path: '/read/vue-common-mistakes'
+      fullPath: '/resources/read/vue-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadVueCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-cheat-sheet': {
+      id: '/_marketing/resources/read/vue-cheat-sheet'
+      path: '/read/vue-cheat-sheet'
+      fullPath: '/resources/read/vue-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadVueCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-best-practices': {
+      id: '/_marketing/resources/read/vue-best-practices'
+      path: '/read/vue-best-practices'
+      fullPath: '/resources/read/vue-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadVueBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-beginner-guide': {
+      id: '/_marketing/resources/read/vue-beginner-guide'
+      path: '/read/vue-beginner-guide'
+      fullPath: '/resources/read/vue-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadVueBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-answer-key': {
+      id: '/_marketing/resources/read/vue-answer-key'
+      path: '/read/vue-answer-key'
+      fullPath: '/resources/read/vue-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadVueAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/vue-advanced-concepts': {
+      id: '/_marketing/resources/read/vue-advanced-concepts'
+      path: '/read/vue-advanced-concepts'
+      fullPath: '/resources/read/vue-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadVueAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ux-design-tips-and-tricks': {
       id: '/_marketing/resources/read/ux-design-tips-and-tricks'
@@ -19566,6 +19986,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadUxDesignReferenceGuideRoute: typeof MarketingResourcesReadUxDesignReferenceGuideRoute
   MarketingResourcesReadUxDesignStepByStepLearningGuideRoute: typeof MarketingResourcesReadUxDesignStepByStepLearningGuideRoute
   MarketingResourcesReadUxDesignTipsAndTricksRoute: typeof MarketingResourcesReadUxDesignTipsAndTricksRoute
+  MarketingResourcesReadVueAdvancedConceptsRoute: typeof MarketingResourcesReadVueAdvancedConceptsRoute
+  MarketingResourcesReadVueAnswerKeyRoute: typeof MarketingResourcesReadVueAnswerKeyRoute
+  MarketingResourcesReadVueBeginnerGuideRoute: typeof MarketingResourcesReadVueBeginnerGuideRoute
+  MarketingResourcesReadVueBestPracticesRoute: typeof MarketingResourcesReadVueBestPracticesRoute
+  MarketingResourcesReadVueCheatSheetRoute: typeof MarketingResourcesReadVueCheatSheetRoute
+  MarketingResourcesReadVueCommonMistakesRoute: typeof MarketingResourcesReadVueCommonMistakesRoute
+  MarketingResourcesReadVueCompleteTutorialRoute: typeof MarketingResourcesReadVueCompleteTutorialRoute
+  MarketingResourcesReadVueFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadVueFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadVueGlossaryRoute: typeof MarketingResourcesReadVueGlossaryRoute
+  MarketingResourcesReadVueInterviewQuestionsRoute: typeof MarketingResourcesReadVueInterviewQuestionsRoute
+  MarketingResourcesReadVueLearningRoadmapRoute: typeof MarketingResourcesReadVueLearningRoadmapRoute
+  MarketingResourcesReadVuePdfNotesRoute: typeof MarketingResourcesReadVuePdfNotesRoute
+  MarketingResourcesReadVuePracticeQuestionsRoute: typeof MarketingResourcesReadVuePracticeQuestionsRoute
+  MarketingResourcesReadVueProjectCaseStudyRoute: typeof MarketingResourcesReadVueProjectCaseStudyRoute
+  MarketingResourcesReadVueProjectGuideRoute: typeof MarketingResourcesReadVueProjectGuideRoute
+  MarketingResourcesReadVueQuickRevisionNotesRoute: typeof MarketingResourcesReadVueQuickRevisionNotesRoute
+  MarketingResourcesReadVueRealWorldCaseStudyRoute: typeof MarketingResourcesReadVueRealWorldCaseStudyRoute
+  MarketingResourcesReadVueReferenceGuideRoute: typeof MarketingResourcesReadVueReferenceGuideRoute
+  MarketingResourcesReadVueSampleExercisesRoute: typeof MarketingResourcesReadVueSampleExercisesRoute
+  MarketingResourcesReadVueStepByStepLearningGuideRoute: typeof MarketingResourcesReadVueStepByStepLearningGuideRoute
+  MarketingResourcesReadVueTipsTricksRoute: typeof MarketingResourcesReadVueTipsTricksRoute
 }
 
 const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
@@ -21299,6 +21740,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadUxDesignStepByStepLearningGuideRoute,
   MarketingResourcesReadUxDesignTipsAndTricksRoute:
     MarketingResourcesReadUxDesignTipsAndTricksRoute,
+  MarketingResourcesReadVueAdvancedConceptsRoute:
+    MarketingResourcesReadVueAdvancedConceptsRoute,
+  MarketingResourcesReadVueAnswerKeyRoute:
+    MarketingResourcesReadVueAnswerKeyRoute,
+  MarketingResourcesReadVueBeginnerGuideRoute:
+    MarketingResourcesReadVueBeginnerGuideRoute,
+  MarketingResourcesReadVueBestPracticesRoute:
+    MarketingResourcesReadVueBestPracticesRoute,
+  MarketingResourcesReadVueCheatSheetRoute:
+    MarketingResourcesReadVueCheatSheetRoute,
+  MarketingResourcesReadVueCommonMistakesRoute:
+    MarketingResourcesReadVueCommonMistakesRoute,
+  MarketingResourcesReadVueCompleteTutorialRoute:
+    MarketingResourcesReadVueCompleteTutorialRoute,
+  MarketingResourcesReadVueFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadVueFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadVueGlossaryRoute:
+    MarketingResourcesReadVueGlossaryRoute,
+  MarketingResourcesReadVueInterviewQuestionsRoute:
+    MarketingResourcesReadVueInterviewQuestionsRoute,
+  MarketingResourcesReadVueLearningRoadmapRoute:
+    MarketingResourcesReadVueLearningRoadmapRoute,
+  MarketingResourcesReadVuePdfNotesRoute:
+    MarketingResourcesReadVuePdfNotesRoute,
+  MarketingResourcesReadVuePracticeQuestionsRoute:
+    MarketingResourcesReadVuePracticeQuestionsRoute,
+  MarketingResourcesReadVueProjectCaseStudyRoute:
+    MarketingResourcesReadVueProjectCaseStudyRoute,
+  MarketingResourcesReadVueProjectGuideRoute:
+    MarketingResourcesReadVueProjectGuideRoute,
+  MarketingResourcesReadVueQuickRevisionNotesRoute:
+    MarketingResourcesReadVueQuickRevisionNotesRoute,
+  MarketingResourcesReadVueRealWorldCaseStudyRoute:
+    MarketingResourcesReadVueRealWorldCaseStudyRoute,
+  MarketingResourcesReadVueReferenceGuideRoute:
+    MarketingResourcesReadVueReferenceGuideRoute,
+  MarketingResourcesReadVueSampleExercisesRoute:
+    MarketingResourcesReadVueSampleExercisesRoute,
+  MarketingResourcesReadVueStepByStepLearningGuideRoute:
+    MarketingResourcesReadVueStepByStepLearningGuideRoute,
+  MarketingResourcesReadVueTipsTricksRoute:
+    MarketingResourcesReadVueTipsTricksRoute,
 }
 
 const MarketingResourcesRouteWithChildren =
