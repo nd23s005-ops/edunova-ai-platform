@@ -414,7 +414,10 @@ const READER_ROUTES: Record<string, string> = {
   "dbms--cheat-sheet": "/resources/read/dbms-cheat-sheet",
   "dbms--sample-exercises": "/resources/read/dbms-sample-exercises",
   "dbms--project-guide": "/resources/read/dbms-project-guide",
-  "dbms--project-case-study": "/resources/read/dbms-project-case-study",
+   "dbms--project-case-study": "/resources/read/dbms-project-case-study",
+   "dbms--real-world-case-study": "/resources/read/dbms-real-world-case-study",
+   "dbms--best-practices": "/resources/read/dbms-best-practices",
+   "dbms--common-mistakes": "/resources/read/dbms-common-mistakes",
 
 
 
