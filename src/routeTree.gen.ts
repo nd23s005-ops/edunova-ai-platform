@@ -57,6 +57,7 @@ import { Route as MarketingResourcesReadSdStepByStepLearningGuideRouteImport } f
 import { Route as MarketingResourcesReadSdQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.sd-quick-revision-notes'
 import { Route as MarketingResourcesReadSdPdfNotesRouteImport } from './routes/_marketing.resources.read.sd-pdf-notes'
 import { Route as MarketingResourcesReadSdCompleteTutorialRouteImport } from './routes/_marketing.resources.read.sd-complete-tutorial'
+import { Route as MarketingResourcesReadSdCheatSheetRouteImport } from './routes/_marketing.resources.read.sd-cheat-sheet'
 import { Route as MarketingResourcesReadSdBeginnerGuideRouteImport } from './routes/_marketing.resources.read.sd-beginner-guide'
 import { Route as MarketingResourcesReadPeTipsTricksRouteImport } from './routes/_marketing.resources.read.pe-tips-tricks'
 import { Route as MarketingResourcesReadPeStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pe-step-by-step-learning-guide'
@@ -436,6 +437,12 @@ const MarketingResourcesReadSdCompleteTutorialRoute =
   MarketingResourcesReadSdCompleteTutorialRouteImport.update({
     id: '/read/sd-complete-tutorial',
     path: '/read/sd-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSdCheatSheetRoute =
+  MarketingResourcesReadSdCheatSheetRouteImport.update({
+    id: '/read/sd-cheat-sheet',
+    path: '/read/sd-cheat-sheet',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadSdBeginnerGuideRoute =
@@ -1349,6 +1356,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
   '/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
+  '/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
   '/resources/read/sd-complete-tutorial': typeof MarketingResourcesReadSdCompleteTutorialRoute
   '/resources/read/sd-pdf-notes': typeof MarketingResourcesReadSdPdfNotesRoute
   '/resources/read/sd-quick-revision-notes': typeof MarketingResourcesReadSdQuickRevisionNotesRoute
@@ -1520,6 +1528,7 @@ export interface FileRoutesByTo {
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
   '/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
+  '/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
   '/resources/read/sd-complete-tutorial': typeof MarketingResourcesReadSdCompleteTutorialRoute
   '/resources/read/sd-pdf-notes': typeof MarketingResourcesReadSdPdfNotesRoute
   '/resources/read/sd-quick-revision-notes': typeof MarketingResourcesReadSdQuickRevisionNotesRoute
@@ -1696,6 +1705,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/_marketing/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
   '/_marketing/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
+  '/_marketing/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
   '/_marketing/resources/read/sd-complete-tutorial': typeof MarketingResourcesReadSdCompleteTutorialRoute
   '/_marketing/resources/read/sd-pdf-notes': typeof MarketingResourcesReadSdPdfNotesRoute
   '/_marketing/resources/read/sd-quick-revision-notes': typeof MarketingResourcesReadSdQuickRevisionNotesRoute
@@ -1870,6 +1880,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
     | '/resources/read/sd-beginner-guide'
+    | '/resources/read/sd-cheat-sheet'
     | '/resources/read/sd-complete-tutorial'
     | '/resources/read/sd-pdf-notes'
     | '/resources/read/sd-quick-revision-notes'
@@ -2041,6 +2052,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
     | '/resources/read/sd-beginner-guide'
+    | '/resources/read/sd-cheat-sheet'
     | '/resources/read/sd-complete-tutorial'
     | '/resources/read/sd-pdf-notes'
     | '/resources/read/sd-quick-revision-notes'
@@ -2216,6 +2228,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-step-by-step-learning-guide'
     | '/_marketing/resources/read/pe-tips-tricks'
     | '/_marketing/resources/read/sd-beginner-guide'
+    | '/_marketing/resources/read/sd-cheat-sheet'
     | '/_marketing/resources/read/sd-complete-tutorial'
     | '/_marketing/resources/read/sd-pdf-notes'
     | '/_marketing/resources/read/sd-quick-revision-notes'
@@ -2581,6 +2594,13 @@ declare module '@tanstack/react-router' {
       path: '/read/sd-complete-tutorial'
       fullPath: '/resources/read/sd-complete-tutorial'
       preLoaderRoute: typeof MarketingResourcesReadSdCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sd-cheat-sheet': {
+      id: '/_marketing/resources/read/sd-cheat-sheet'
+      path: '/read/sd-cheat-sheet'
+      fullPath: '/resources/read/sd-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadSdCheatSheetRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/sd-beginner-guide': {
@@ -3706,6 +3726,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeStepByStepLearningGuideRoute: typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   MarketingResourcesReadPeTipsTricksRoute: typeof MarketingResourcesReadPeTipsTricksRoute
   MarketingResourcesReadSdBeginnerGuideRoute: typeof MarketingResourcesReadSdBeginnerGuideRoute
+  MarketingResourcesReadSdCheatSheetRoute: typeof MarketingResourcesReadSdCheatSheetRoute
   MarketingResourcesReadSdCompleteTutorialRoute: typeof MarketingResourcesReadSdCompleteTutorialRoute
   MarketingResourcesReadSdPdfNotesRoute: typeof MarketingResourcesReadSdPdfNotesRoute
   MarketingResourcesReadSdQuickRevisionNotesRoute: typeof MarketingResourcesReadSdQuickRevisionNotesRoute
@@ -3931,6 +3952,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeTipsTricksRoute,
   MarketingResourcesReadSdBeginnerGuideRoute:
     MarketingResourcesReadSdBeginnerGuideRoute,
+  MarketingResourcesReadSdCheatSheetRoute:
+    MarketingResourcesReadSdCheatSheetRoute,
   MarketingResourcesReadSdCompleteTutorialRoute:
     MarketingResourcesReadSdCompleteTutorialRoute,
   MarketingResourcesReadSdPdfNotesRoute: MarketingResourcesReadSdPdfNotesRoute,
