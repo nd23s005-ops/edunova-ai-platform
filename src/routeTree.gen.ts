@@ -62,6 +62,7 @@ import { Route as MarketingResourcesReadSdFrequentlyAskedQuestionsRouteImport } 
 import { Route as MarketingResourcesReadSdCompleteTutorialRouteImport } from './routes/_marketing.resources.read.sd-complete-tutorial'
 import { Route as MarketingResourcesReadSdCheatSheetRouteImport } from './routes/_marketing.resources.read.sd-cheat-sheet'
 import { Route as MarketingResourcesReadSdBeginnerGuideRouteImport } from './routes/_marketing.resources.read.sd-beginner-guide'
+import { Route as MarketingResourcesReadSdAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.sd-advanced-concepts'
 import { Route as MarketingResourcesReadPeTipsTricksRouteImport } from './routes/_marketing.resources.read.pe-tips-tricks'
 import { Route as MarketingResourcesReadPeStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pe-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPeSampleExercisesRouteImport } from './routes/_marketing.resources.read.pe-sample-exercises'
@@ -470,6 +471,12 @@ const MarketingResourcesReadSdBeginnerGuideRoute =
   MarketingResourcesReadSdBeginnerGuideRouteImport.update({
     id: '/read/sd-beginner-guide',
     path: '/read/sd-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadSdAdvancedConceptsRoute =
+  MarketingResourcesReadSdAdvancedConceptsRouteImport.update({
+    id: '/read/sd-advanced-concepts',
+    path: '/read/sd-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeTipsTricksRoute =
@@ -1376,6 +1383,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/sd-advanced-concepts': typeof MarketingResourcesReadSdAdvancedConceptsRoute
   '/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
   '/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
   '/resources/read/sd-complete-tutorial': typeof MarketingResourcesReadSdCompleteTutorialRoute
@@ -1551,6 +1559,7 @@ export interface FileRoutesByTo {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/sd-advanced-concepts': typeof MarketingResourcesReadSdAdvancedConceptsRoute
   '/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
   '/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
   '/resources/read/sd-complete-tutorial': typeof MarketingResourcesReadSdCompleteTutorialRoute
@@ -1731,6 +1740,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/_marketing/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/_marketing/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/_marketing/resources/read/sd-advanced-concepts': typeof MarketingResourcesReadSdAdvancedConceptsRoute
   '/_marketing/resources/read/sd-beginner-guide': typeof MarketingResourcesReadSdBeginnerGuideRoute
   '/_marketing/resources/read/sd-cheat-sheet': typeof MarketingResourcesReadSdCheatSheetRoute
   '/_marketing/resources/read/sd-complete-tutorial': typeof MarketingResourcesReadSdCompleteTutorialRoute
@@ -1909,6 +1919,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/sd-advanced-concepts'
     | '/resources/read/sd-beginner-guide'
     | '/resources/read/sd-cheat-sheet'
     | '/resources/read/sd-complete-tutorial'
@@ -2084,6 +2095,7 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/sd-advanced-concepts'
     | '/resources/read/sd-beginner-guide'
     | '/resources/read/sd-cheat-sheet'
     | '/resources/read/sd-complete-tutorial'
@@ -2263,6 +2275,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-sample-exercises'
     | '/_marketing/resources/read/pe-step-by-step-learning-guide'
     | '/_marketing/resources/read/pe-tips-tricks'
+    | '/_marketing/resources/read/sd-advanced-concepts'
     | '/_marketing/resources/read/sd-beginner-guide'
     | '/_marketing/resources/read/sd-cheat-sheet'
     | '/_marketing/resources/read/sd-complete-tutorial'
@@ -2668,6 +2681,13 @@ declare module '@tanstack/react-router' {
       path: '/read/sd-beginner-guide'
       fullPath: '/resources/read/sd-beginner-guide'
       preLoaderRoute: typeof MarketingResourcesReadSdBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/sd-advanced-concepts': {
+      id: '/_marketing/resources/read/sd-advanced-concepts'
+      path: '/read/sd-advanced-concepts'
+      fullPath: '/resources/read/sd-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadSdAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-tips-tricks': {
@@ -3785,6 +3805,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeSampleExercisesRoute: typeof MarketingResourcesReadPeSampleExercisesRoute
   MarketingResourcesReadPeStepByStepLearningGuideRoute: typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   MarketingResourcesReadPeTipsTricksRoute: typeof MarketingResourcesReadPeTipsTricksRoute
+  MarketingResourcesReadSdAdvancedConceptsRoute: typeof MarketingResourcesReadSdAdvancedConceptsRoute
   MarketingResourcesReadSdBeginnerGuideRoute: typeof MarketingResourcesReadSdBeginnerGuideRoute
   MarketingResourcesReadSdCheatSheetRoute: typeof MarketingResourcesReadSdCheatSheetRoute
   MarketingResourcesReadSdCompleteTutorialRoute: typeof MarketingResourcesReadSdCompleteTutorialRoute
@@ -4013,6 +4034,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeStepByStepLearningGuideRoute,
   MarketingResourcesReadPeTipsTricksRoute:
     MarketingResourcesReadPeTipsTricksRoute,
+  MarketingResourcesReadSdAdvancedConceptsRoute:
+    MarketingResourcesReadSdAdvancedConceptsRoute,
   MarketingResourcesReadSdBeginnerGuideRoute:
     MarketingResourcesReadSdBeginnerGuideRoute,
   MarketingResourcesReadSdCheatSheetRoute:
