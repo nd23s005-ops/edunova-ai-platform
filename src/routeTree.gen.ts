@@ -137,6 +137,7 @@ import { Route as MarketingResourcesReadDbmsInterviewQuestionsRouteImport } from
 import { Route as MarketingResourcesReadDbmsGlossaryRouteImport } from './routes/_marketing.resources.read.dbms-glossary'
 import { Route as MarketingResourcesReadDbmsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.dbms-frequently-asked-questions'
 import { Route as MarketingResourcesReadDbmsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.dbms-complete-tutorial'
+import { Route as MarketingResourcesReadDbmsCommonMistakesRouteImport } from './routes/_marketing.resources.read.dbms-common-mistakes'
 import { Route as MarketingResourcesReadDbmsCheatSheetRouteImport } from './routes/_marketing.resources.read.dbms-cheat-sheet'
 import { Route as MarketingResourcesReadDbmsBestPracticesRouteImport } from './routes/_marketing.resources.read.dbms-best-practices'
 import { Route as MarketingResourcesReadDbmsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.dbms-beginner-guide'
@@ -912,6 +913,12 @@ const MarketingResourcesReadDbmsCompleteTutorialRoute =
     path: '/read/dbms-complete-tutorial',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDbmsCommonMistakesRoute =
+  MarketingResourcesReadDbmsCommonMistakesRouteImport.update({
+    id: '/read/dbms-common-mistakes',
+    path: '/read/dbms-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDbmsCheatSheetRoute =
   MarketingResourcesReadDbmsCheatSheetRouteImport.update({
     id: '/read/dbms-cheat-sheet',
@@ -1221,6 +1228,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
   '/resources/read/dbms-best-practices': typeof MarketingResourcesReadDbmsBestPracticesRoute
   '/resources/read/dbms-cheat-sheet': typeof MarketingResourcesReadDbmsCheatSheetRoute
+  '/resources/read/dbms-common-mistakes': typeof MarketingResourcesReadDbmsCommonMistakesRoute
   '/resources/read/dbms-complete-tutorial': typeof MarketingResourcesReadDbmsCompleteTutorialRoute
   '/resources/read/dbms-frequently-asked-questions': typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute
   '/resources/read/dbms-glossary': typeof MarketingResourcesReadDbmsGlossaryRoute
@@ -1386,6 +1394,7 @@ export interface FileRoutesByTo {
   '/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
   '/resources/read/dbms-best-practices': typeof MarketingResourcesReadDbmsBestPracticesRoute
   '/resources/read/dbms-cheat-sheet': typeof MarketingResourcesReadDbmsCheatSheetRoute
+  '/resources/read/dbms-common-mistakes': typeof MarketingResourcesReadDbmsCommonMistakesRoute
   '/resources/read/dbms-complete-tutorial': typeof MarketingResourcesReadDbmsCompleteTutorialRoute
   '/resources/read/dbms-frequently-asked-questions': typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute
   '/resources/read/dbms-glossary': typeof MarketingResourcesReadDbmsGlossaryRoute
@@ -1556,6 +1565,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dbms-beginner-guide': typeof MarketingResourcesReadDbmsBeginnerGuideRoute
   '/_marketing/resources/read/dbms-best-practices': typeof MarketingResourcesReadDbmsBestPracticesRoute
   '/_marketing/resources/read/dbms-cheat-sheet': typeof MarketingResourcesReadDbmsCheatSheetRoute
+  '/_marketing/resources/read/dbms-common-mistakes': typeof MarketingResourcesReadDbmsCommonMistakesRoute
   '/_marketing/resources/read/dbms-complete-tutorial': typeof MarketingResourcesReadDbmsCompleteTutorialRoute
   '/_marketing/resources/read/dbms-frequently-asked-questions': typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/dbms-glossary': typeof MarketingResourcesReadDbmsGlossaryRoute
@@ -1724,6 +1734,7 @@ export interface FileRouteTypes {
     | '/resources/read/dbms-beginner-guide'
     | '/resources/read/dbms-best-practices'
     | '/resources/read/dbms-cheat-sheet'
+    | '/resources/read/dbms-common-mistakes'
     | '/resources/read/dbms-complete-tutorial'
     | '/resources/read/dbms-frequently-asked-questions'
     | '/resources/read/dbms-glossary'
@@ -1889,6 +1900,7 @@ export interface FileRouteTypes {
     | '/resources/read/dbms-beginner-guide'
     | '/resources/read/dbms-best-practices'
     | '/resources/read/dbms-cheat-sheet'
+    | '/resources/read/dbms-common-mistakes'
     | '/resources/read/dbms-complete-tutorial'
     | '/resources/read/dbms-frequently-asked-questions'
     | '/resources/read/dbms-glossary'
@@ -2058,6 +2070,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dbms-beginner-guide'
     | '/_marketing/resources/read/dbms-best-practices'
     | '/_marketing/resources/read/dbms-cheat-sheet'
+    | '/_marketing/resources/read/dbms-common-mistakes'
     | '/_marketing/resources/read/dbms-complete-tutorial'
     | '/_marketing/resources/read/dbms-frequently-asked-questions'
     | '/_marketing/resources/read/dbms-glossary'
@@ -3065,6 +3078,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDbmsCompleteTutorialRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/dbms-common-mistakes': {
+      id: '/_marketing/resources/read/dbms-common-mistakes'
+      path: '/read/dbms-common-mistakes'
+      fullPath: '/resources/read/dbms-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadDbmsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dbms-cheat-sheet': {
       id: '/_marketing/resources/read/dbms-cheat-sheet'
       path: '/read/dbms-cheat-sheet'
@@ -3500,6 +3520,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDbmsBeginnerGuideRoute: typeof MarketingResourcesReadDbmsBeginnerGuideRoute
   MarketingResourcesReadDbmsBestPracticesRoute: typeof MarketingResourcesReadDbmsBestPracticesRoute
   MarketingResourcesReadDbmsCheatSheetRoute: typeof MarketingResourcesReadDbmsCheatSheetRoute
+  MarketingResourcesReadDbmsCommonMistakesRoute: typeof MarketingResourcesReadDbmsCommonMistakesRoute
   MarketingResourcesReadDbmsCompleteTutorialRoute: typeof MarketingResourcesReadDbmsCompleteTutorialRoute
   MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute
   MarketingResourcesReadDbmsGlossaryRoute: typeof MarketingResourcesReadDbmsGlossaryRoute
@@ -3639,6 +3660,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDbmsBestPracticesRoute,
   MarketingResourcesReadDbmsCheatSheetRoute:
     MarketingResourcesReadDbmsCheatSheetRoute,
+  MarketingResourcesReadDbmsCommonMistakesRoute:
+    MarketingResourcesReadDbmsCommonMistakesRoute,
   MarketingResourcesReadDbmsCompleteTutorialRoute:
     MarketingResourcesReadDbmsCompleteTutorialRoute,
   MarketingResourcesReadDbmsFrequentlyAskedQuestionsRoute:
