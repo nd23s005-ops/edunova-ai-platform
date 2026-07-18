@@ -234,3 +234,13 @@
   0% { background-position: 0px 0px, 0px 0px; }
   100% { background-position: 48px 48px, 48px 48px; }
 }
+
+@keyframes nova-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-nova-float {
+  animation: nova-float 3.5s ease-in-out infinite;
+}
+
