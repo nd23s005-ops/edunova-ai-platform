@@ -82,6 +82,7 @@ import { Route as MarketingResourcesReadDlRealWorldCaseStudyRouteImport } from '
 import { Route as MarketingResourcesReadDlProjectGuideRouteImport } from './routes/_marketing.resources.read.dl-project-guide'
 import { Route as MarketingResourcesReadDlProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.dl-project-case-study'
 import { Route as MarketingResourcesReadDlPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.dl-practice-questions'
+import { Route as MarketingResourcesReadDlPdfNotesRouteImport } from './routes/_marketing.resources.read.dl-pdf-notes'
 import { Route as MarketingResourcesReadDlLearningRoadmapRouteImport } from './routes/_marketing.resources.read.dl-learning-roadmap'
 import { Route as MarketingResourcesReadDlInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.dl-interview-questions'
 import { Route as MarketingResourcesReadDlGlossaryRouteImport } from './routes/_marketing.resources.read.dl-glossary'
@@ -532,6 +533,12 @@ const MarketingResourcesReadDlPracticeQuestionsRoute =
     path: '/read/dl-practice-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadDlPdfNotesRoute =
+  MarketingResourcesReadDlPdfNotesRouteImport.update({
+    id: '/read/dl-pdf-notes',
+    path: '/read/dl-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadDlLearningRoadmapRoute =
   MarketingResourcesReadDlLearningRoadmapRouteImport.update({
     id: '/read/dl-learning-roadmap',
@@ -876,6 +883,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
+  '/resources/read/dl-pdf-notes': typeof MarketingResourcesReadDlPdfNotesRoute
   '/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/resources/read/dl-project-case-study': typeof MarketingResourcesReadDlProjectCaseStudyRoute
   '/resources/read/dl-project-guide': typeof MarketingResourcesReadDlProjectGuideRoute
@@ -991,6 +999,7 @@ export interface FileRoutesByTo {
   '/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
+  '/resources/read/dl-pdf-notes': typeof MarketingResourcesReadDlPdfNotesRoute
   '/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/resources/read/dl-project-case-study': typeof MarketingResourcesReadDlProjectCaseStudyRoute
   '/resources/read/dl-project-guide': typeof MarketingResourcesReadDlProjectGuideRoute
@@ -1111,6 +1120,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/dl-glossary': typeof MarketingResourcesReadDlGlossaryRoute
   '/_marketing/resources/read/dl-interview-questions': typeof MarketingResourcesReadDlInterviewQuestionsRoute
   '/_marketing/resources/read/dl-learning-roadmap': typeof MarketingResourcesReadDlLearningRoadmapRoute
+  '/_marketing/resources/read/dl-pdf-notes': typeof MarketingResourcesReadDlPdfNotesRoute
   '/_marketing/resources/read/dl-practice-questions': typeof MarketingResourcesReadDlPracticeQuestionsRoute
   '/_marketing/resources/read/dl-project-case-study': typeof MarketingResourcesReadDlProjectCaseStudyRoute
   '/_marketing/resources/read/dl-project-guide': typeof MarketingResourcesReadDlProjectGuideRoute
@@ -1229,6 +1239,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-glossary'
     | '/resources/read/dl-interview-questions'
     | '/resources/read/dl-learning-roadmap'
+    | '/resources/read/dl-pdf-notes'
     | '/resources/read/dl-practice-questions'
     | '/resources/read/dl-project-case-study'
     | '/resources/read/dl-project-guide'
@@ -1344,6 +1355,7 @@ export interface FileRouteTypes {
     | '/resources/read/dl-glossary'
     | '/resources/read/dl-interview-questions'
     | '/resources/read/dl-learning-roadmap'
+    | '/resources/read/dl-pdf-notes'
     | '/resources/read/dl-practice-questions'
     | '/resources/read/dl-project-case-study'
     | '/resources/read/dl-project-guide'
@@ -1463,6 +1475,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/dl-glossary'
     | '/_marketing/resources/read/dl-interview-questions'
     | '/_marketing/resources/read/dl-learning-roadmap'
+    | '/_marketing/resources/read/dl-pdf-notes'
     | '/_marketing/resources/read/dl-practice-questions'
     | '/_marketing/resources/read/dl-project-case-study'
     | '/_marketing/resources/read/dl-project-guide'
@@ -2030,6 +2043,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadDlPracticeQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/dl-pdf-notes': {
+      id: '/_marketing/resources/read/dl-pdf-notes'
+      path: '/read/dl-pdf-notes'
+      fullPath: '/resources/read/dl-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadDlPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/dl-learning-roadmap': {
       id: '/_marketing/resources/read/dl-learning-roadmap'
       path: '/read/dl-learning-roadmap'
@@ -2505,6 +2525,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadDlGlossaryRoute: typeof MarketingResourcesReadDlGlossaryRoute
   MarketingResourcesReadDlInterviewQuestionsRoute: typeof MarketingResourcesReadDlInterviewQuestionsRoute
   MarketingResourcesReadDlLearningRoadmapRoute: typeof MarketingResourcesReadDlLearningRoadmapRoute
+  MarketingResourcesReadDlPdfNotesRoute: typeof MarketingResourcesReadDlPdfNotesRoute
   MarketingResourcesReadDlPracticeQuestionsRoute: typeof MarketingResourcesReadDlPracticeQuestionsRoute
   MarketingResourcesReadDlProjectCaseStudyRoute: typeof MarketingResourcesReadDlProjectCaseStudyRoute
   MarketingResourcesReadDlProjectGuideRoute: typeof MarketingResourcesReadDlProjectGuideRoute
@@ -2598,6 +2619,7 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadDlInterviewQuestionsRoute,
   MarketingResourcesReadDlLearningRoadmapRoute:
     MarketingResourcesReadDlLearningRoadmapRoute,
+  MarketingResourcesReadDlPdfNotesRoute: MarketingResourcesReadDlPdfNotesRoute,
   MarketingResourcesReadDlPracticeQuestionsRoute:
     MarketingResourcesReadDlPracticeQuestionsRoute,
   MarketingResourcesReadDlProjectCaseStudyRoute:
