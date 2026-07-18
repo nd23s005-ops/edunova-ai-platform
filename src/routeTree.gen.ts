@@ -416,6 +416,27 @@ import { Route as MarketingResourcesReadNumpyBestPracticesRouteImport } from './
 import { Route as MarketingResourcesReadNumpyBeginnerGuideRouteImport } from './routes/_marketing.resources.read.numpy-beginner-guide'
 import { Route as MarketingResourcesReadNumpyAnswerKeyRouteImport } from './routes/_marketing.resources.read.numpy-answer-key'
 import { Route as MarketingResourcesReadNumpyAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.numpy-advanced-concepts'
+import { Route as MarketingResourcesReadNodejsTipsTricksRouteImport } from './routes/_marketing.resources.read.nodejs-tips-tricks'
+import { Route as MarketingResourcesReadNodejsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.nodejs-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadNodejsSampleExercisesRouteImport } from './routes/_marketing.resources.read.nodejs-sample-exercises'
+import { Route as MarketingResourcesReadNodejsReferenceGuideRouteImport } from './routes/_marketing.resources.read.nodejs-reference-guide'
+import { Route as MarketingResourcesReadNodejsRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.nodejs-real-world-case-study'
+import { Route as MarketingResourcesReadNodejsQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.nodejs-quick-revision-notes'
+import { Route as MarketingResourcesReadNodejsProjectGuideRouteImport } from './routes/_marketing.resources.read.nodejs-project-guide'
+import { Route as MarketingResourcesReadNodejsProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.nodejs-project-case-study'
+import { Route as MarketingResourcesReadNodejsPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.nodejs-practice-questions'
+import { Route as MarketingResourcesReadNodejsPdfNotesRouteImport } from './routes/_marketing.resources.read.nodejs-pdf-notes'
+import { Route as MarketingResourcesReadNodejsLearningRoadmapRouteImport } from './routes/_marketing.resources.read.nodejs-learning-roadmap'
+import { Route as MarketingResourcesReadNodejsInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.nodejs-interview-questions'
+import { Route as MarketingResourcesReadNodejsGlossaryRouteImport } from './routes/_marketing.resources.read.nodejs-glossary'
+import { Route as MarketingResourcesReadNodejsFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.nodejs-frequently-asked-questions'
+import { Route as MarketingResourcesReadNodejsCompleteTutorialRouteImport } from './routes/_marketing.resources.read.nodejs-complete-tutorial'
+import { Route as MarketingResourcesReadNodejsCommonMistakesRouteImport } from './routes/_marketing.resources.read.nodejs-common-mistakes'
+import { Route as MarketingResourcesReadNodejsCheatSheetRouteImport } from './routes/_marketing.resources.read.nodejs-cheat-sheet'
+import { Route as MarketingResourcesReadNodejsBestPracticesRouteImport } from './routes/_marketing.resources.read.nodejs-best-practices'
+import { Route as MarketingResourcesReadNodejsBeginnerGuideRouteImport } from './routes/_marketing.resources.read.nodejs-beginner-guide'
+import { Route as MarketingResourcesReadNodejsAnswerKeyRouteImport } from './routes/_marketing.resources.read.nodejs-answer-key'
+import { Route as MarketingResourcesReadNodejsAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.nodejs-advanced-concepts'
 import { Route as MarketingResourcesReadNextjsTipsTricksRouteImport } from './routes/_marketing.resources.read.nextjs-tips-tricks'
 import { Route as MarketingResourcesReadNextjsStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.nextjs-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadNextjsSampleExercisesRouteImport } from './routes/_marketing.resources.read.nextjs-sample-exercises'
@@ -3457,6 +3478,132 @@ const MarketingResourcesReadNumpyAdvancedConceptsRoute =
   MarketingResourcesReadNumpyAdvancedConceptsRouteImport.update({
     id: '/read/numpy-advanced-concepts',
     path: '/read/numpy-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsTipsTricksRoute =
+  MarketingResourcesReadNodejsTipsTricksRouteImport.update({
+    id: '/read/nodejs-tips-tricks',
+    path: '/read/nodejs-tips-tricks',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsStepByStepLearningGuideRoute =
+  MarketingResourcesReadNodejsStepByStepLearningGuideRouteImport.update({
+    id: '/read/nodejs-step-by-step-learning-guide',
+    path: '/read/nodejs-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsSampleExercisesRoute =
+  MarketingResourcesReadNodejsSampleExercisesRouteImport.update({
+    id: '/read/nodejs-sample-exercises',
+    path: '/read/nodejs-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsReferenceGuideRoute =
+  MarketingResourcesReadNodejsReferenceGuideRouteImport.update({
+    id: '/read/nodejs-reference-guide',
+    path: '/read/nodejs-reference-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsRealWorldCaseStudyRoute =
+  MarketingResourcesReadNodejsRealWorldCaseStudyRouteImport.update({
+    id: '/read/nodejs-real-world-case-study',
+    path: '/read/nodejs-real-world-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsQuickRevisionNotesRoute =
+  MarketingResourcesReadNodejsQuickRevisionNotesRouteImport.update({
+    id: '/read/nodejs-quick-revision-notes',
+    path: '/read/nodejs-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsProjectGuideRoute =
+  MarketingResourcesReadNodejsProjectGuideRouteImport.update({
+    id: '/read/nodejs-project-guide',
+    path: '/read/nodejs-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsProjectCaseStudyRoute =
+  MarketingResourcesReadNodejsProjectCaseStudyRouteImport.update({
+    id: '/read/nodejs-project-case-study',
+    path: '/read/nodejs-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsPracticeQuestionsRoute =
+  MarketingResourcesReadNodejsPracticeQuestionsRouteImport.update({
+    id: '/read/nodejs-practice-questions',
+    path: '/read/nodejs-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsPdfNotesRoute =
+  MarketingResourcesReadNodejsPdfNotesRouteImport.update({
+    id: '/read/nodejs-pdf-notes',
+    path: '/read/nodejs-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsLearningRoadmapRoute =
+  MarketingResourcesReadNodejsLearningRoadmapRouteImport.update({
+    id: '/read/nodejs-learning-roadmap',
+    path: '/read/nodejs-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsInterviewQuestionsRoute =
+  MarketingResourcesReadNodejsInterviewQuestionsRouteImport.update({
+    id: '/read/nodejs-interview-questions',
+    path: '/read/nodejs-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsGlossaryRoute =
+  MarketingResourcesReadNodejsGlossaryRouteImport.update({
+    id: '/read/nodejs-glossary',
+    path: '/read/nodejs-glossary',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsFrequentlyAskedQuestionsRoute =
+  MarketingResourcesReadNodejsFrequentlyAskedQuestionsRouteImport.update({
+    id: '/read/nodejs-frequently-asked-questions',
+    path: '/read/nodejs-frequently-asked-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsCompleteTutorialRoute =
+  MarketingResourcesReadNodejsCompleteTutorialRouteImport.update({
+    id: '/read/nodejs-complete-tutorial',
+    path: '/read/nodejs-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsCommonMistakesRoute =
+  MarketingResourcesReadNodejsCommonMistakesRouteImport.update({
+    id: '/read/nodejs-common-mistakes',
+    path: '/read/nodejs-common-mistakes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsCheatSheetRoute =
+  MarketingResourcesReadNodejsCheatSheetRouteImport.update({
+    id: '/read/nodejs-cheat-sheet',
+    path: '/read/nodejs-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsBestPracticesRoute =
+  MarketingResourcesReadNodejsBestPracticesRouteImport.update({
+    id: '/read/nodejs-best-practices',
+    path: '/read/nodejs-best-practices',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsBeginnerGuideRoute =
+  MarketingResourcesReadNodejsBeginnerGuideRouteImport.update({
+    id: '/read/nodejs-beginner-guide',
+    path: '/read/nodejs-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsAnswerKeyRoute =
+  MarketingResourcesReadNodejsAnswerKeyRouteImport.update({
+    id: '/read/nodejs-answer-key',
+    path: '/read/nodejs-answer-key',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadNodejsAdvancedConceptsRoute =
+  MarketingResourcesReadNodejsAdvancedConceptsRouteImport.update({
+    id: '/read/nodejs-advanced-concepts',
+    path: '/read/nodejs-advanced-concepts',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadNextjsTipsTricksRoute =
@@ -7884,6 +8031,27 @@ export interface FileRoutesByFullPath {
   '/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
   '/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
   '/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
+  '/resources/read/nodejs-advanced-concepts': typeof MarketingResourcesReadNodejsAdvancedConceptsRoute
+  '/resources/read/nodejs-answer-key': typeof MarketingResourcesReadNodejsAnswerKeyRoute
+  '/resources/read/nodejs-beginner-guide': typeof MarketingResourcesReadNodejsBeginnerGuideRoute
+  '/resources/read/nodejs-best-practices': typeof MarketingResourcesReadNodejsBestPracticesRoute
+  '/resources/read/nodejs-cheat-sheet': typeof MarketingResourcesReadNodejsCheatSheetRoute
+  '/resources/read/nodejs-common-mistakes': typeof MarketingResourcesReadNodejsCommonMistakesRoute
+  '/resources/read/nodejs-complete-tutorial': typeof MarketingResourcesReadNodejsCompleteTutorialRoute
+  '/resources/read/nodejs-frequently-asked-questions': typeof MarketingResourcesReadNodejsFrequentlyAskedQuestionsRoute
+  '/resources/read/nodejs-glossary': typeof MarketingResourcesReadNodejsGlossaryRoute
+  '/resources/read/nodejs-interview-questions': typeof MarketingResourcesReadNodejsInterviewQuestionsRoute
+  '/resources/read/nodejs-learning-roadmap': typeof MarketingResourcesReadNodejsLearningRoadmapRoute
+  '/resources/read/nodejs-pdf-notes': typeof MarketingResourcesReadNodejsPdfNotesRoute
+  '/resources/read/nodejs-practice-questions': typeof MarketingResourcesReadNodejsPracticeQuestionsRoute
+  '/resources/read/nodejs-project-case-study': typeof MarketingResourcesReadNodejsProjectCaseStudyRoute
+  '/resources/read/nodejs-project-guide': typeof MarketingResourcesReadNodejsProjectGuideRoute
+  '/resources/read/nodejs-quick-revision-notes': typeof MarketingResourcesReadNodejsQuickRevisionNotesRoute
+  '/resources/read/nodejs-real-world-case-study': typeof MarketingResourcesReadNodejsRealWorldCaseStudyRoute
+  '/resources/read/nodejs-reference-guide': typeof MarketingResourcesReadNodejsReferenceGuideRoute
+  '/resources/read/nodejs-sample-exercises': typeof MarketingResourcesReadNodejsSampleExercisesRoute
+  '/resources/read/nodejs-step-by-step-learning-guide': typeof MarketingResourcesReadNodejsStepByStepLearningGuideRoute
+  '/resources/read/nodejs-tips-tricks': typeof MarketingResourcesReadNodejsTipsTricksRoute
   '/resources/read/numpy-advanced-concepts': typeof MarketingResourcesReadNumpyAdvancedConceptsRoute
   '/resources/read/numpy-answer-key': typeof MarketingResourcesReadNumpyAnswerKeyRoute
   '/resources/read/numpy-beginner-guide': typeof MarketingResourcesReadNumpyBeginnerGuideRoute
@@ -8914,6 +9082,27 @@ export interface FileRoutesByTo {
   '/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
   '/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
   '/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
+  '/resources/read/nodejs-advanced-concepts': typeof MarketingResourcesReadNodejsAdvancedConceptsRoute
+  '/resources/read/nodejs-answer-key': typeof MarketingResourcesReadNodejsAnswerKeyRoute
+  '/resources/read/nodejs-beginner-guide': typeof MarketingResourcesReadNodejsBeginnerGuideRoute
+  '/resources/read/nodejs-best-practices': typeof MarketingResourcesReadNodejsBestPracticesRoute
+  '/resources/read/nodejs-cheat-sheet': typeof MarketingResourcesReadNodejsCheatSheetRoute
+  '/resources/read/nodejs-common-mistakes': typeof MarketingResourcesReadNodejsCommonMistakesRoute
+  '/resources/read/nodejs-complete-tutorial': typeof MarketingResourcesReadNodejsCompleteTutorialRoute
+  '/resources/read/nodejs-frequently-asked-questions': typeof MarketingResourcesReadNodejsFrequentlyAskedQuestionsRoute
+  '/resources/read/nodejs-glossary': typeof MarketingResourcesReadNodejsGlossaryRoute
+  '/resources/read/nodejs-interview-questions': typeof MarketingResourcesReadNodejsInterviewQuestionsRoute
+  '/resources/read/nodejs-learning-roadmap': typeof MarketingResourcesReadNodejsLearningRoadmapRoute
+  '/resources/read/nodejs-pdf-notes': typeof MarketingResourcesReadNodejsPdfNotesRoute
+  '/resources/read/nodejs-practice-questions': typeof MarketingResourcesReadNodejsPracticeQuestionsRoute
+  '/resources/read/nodejs-project-case-study': typeof MarketingResourcesReadNodejsProjectCaseStudyRoute
+  '/resources/read/nodejs-project-guide': typeof MarketingResourcesReadNodejsProjectGuideRoute
+  '/resources/read/nodejs-quick-revision-notes': typeof MarketingResourcesReadNodejsQuickRevisionNotesRoute
+  '/resources/read/nodejs-real-world-case-study': typeof MarketingResourcesReadNodejsRealWorldCaseStudyRoute
+  '/resources/read/nodejs-reference-guide': typeof MarketingResourcesReadNodejsReferenceGuideRoute
+  '/resources/read/nodejs-sample-exercises': typeof MarketingResourcesReadNodejsSampleExercisesRoute
+  '/resources/read/nodejs-step-by-step-learning-guide': typeof MarketingResourcesReadNodejsStepByStepLearningGuideRoute
+  '/resources/read/nodejs-tips-tricks': typeof MarketingResourcesReadNodejsTipsTricksRoute
   '/resources/read/numpy-advanced-concepts': typeof MarketingResourcesReadNumpyAdvancedConceptsRoute
   '/resources/read/numpy-answer-key': typeof MarketingResourcesReadNumpyAnswerKeyRoute
   '/resources/read/numpy-beginner-guide': typeof MarketingResourcesReadNumpyBeginnerGuideRoute
@@ -9949,6 +10138,27 @@ export interface FileRoutesById {
   '/_marketing/resources/read/nextjs-sample-exercises': typeof MarketingResourcesReadNextjsSampleExercisesRoute
   '/_marketing/resources/read/nextjs-step-by-step-learning-guide': typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
   '/_marketing/resources/read/nextjs-tips-tricks': typeof MarketingResourcesReadNextjsTipsTricksRoute
+  '/_marketing/resources/read/nodejs-advanced-concepts': typeof MarketingResourcesReadNodejsAdvancedConceptsRoute
+  '/_marketing/resources/read/nodejs-answer-key': typeof MarketingResourcesReadNodejsAnswerKeyRoute
+  '/_marketing/resources/read/nodejs-beginner-guide': typeof MarketingResourcesReadNodejsBeginnerGuideRoute
+  '/_marketing/resources/read/nodejs-best-practices': typeof MarketingResourcesReadNodejsBestPracticesRoute
+  '/_marketing/resources/read/nodejs-cheat-sheet': typeof MarketingResourcesReadNodejsCheatSheetRoute
+  '/_marketing/resources/read/nodejs-common-mistakes': typeof MarketingResourcesReadNodejsCommonMistakesRoute
+  '/_marketing/resources/read/nodejs-complete-tutorial': typeof MarketingResourcesReadNodejsCompleteTutorialRoute
+  '/_marketing/resources/read/nodejs-frequently-asked-questions': typeof MarketingResourcesReadNodejsFrequentlyAskedQuestionsRoute
+  '/_marketing/resources/read/nodejs-glossary': typeof MarketingResourcesReadNodejsGlossaryRoute
+  '/_marketing/resources/read/nodejs-interview-questions': typeof MarketingResourcesReadNodejsInterviewQuestionsRoute
+  '/_marketing/resources/read/nodejs-learning-roadmap': typeof MarketingResourcesReadNodejsLearningRoadmapRoute
+  '/_marketing/resources/read/nodejs-pdf-notes': typeof MarketingResourcesReadNodejsPdfNotesRoute
+  '/_marketing/resources/read/nodejs-practice-questions': typeof MarketingResourcesReadNodejsPracticeQuestionsRoute
+  '/_marketing/resources/read/nodejs-project-case-study': typeof MarketingResourcesReadNodejsProjectCaseStudyRoute
+  '/_marketing/resources/read/nodejs-project-guide': typeof MarketingResourcesReadNodejsProjectGuideRoute
+  '/_marketing/resources/read/nodejs-quick-revision-notes': typeof MarketingResourcesReadNodejsQuickRevisionNotesRoute
+  '/_marketing/resources/read/nodejs-real-world-case-study': typeof MarketingResourcesReadNodejsRealWorldCaseStudyRoute
+  '/_marketing/resources/read/nodejs-reference-guide': typeof MarketingResourcesReadNodejsReferenceGuideRoute
+  '/_marketing/resources/read/nodejs-sample-exercises': typeof MarketingResourcesReadNodejsSampleExercisesRoute
+  '/_marketing/resources/read/nodejs-step-by-step-learning-guide': typeof MarketingResourcesReadNodejsStepByStepLearningGuideRoute
+  '/_marketing/resources/read/nodejs-tips-tricks': typeof MarketingResourcesReadNodejsTipsTricksRoute
   '/_marketing/resources/read/numpy-advanced-concepts': typeof MarketingResourcesReadNumpyAdvancedConceptsRoute
   '/_marketing/resources/read/numpy-answer-key': typeof MarketingResourcesReadNumpyAnswerKeyRoute
   '/_marketing/resources/read/numpy-beginner-guide': typeof MarketingResourcesReadNumpyBeginnerGuideRoute
@@ -10982,6 +11192,27 @@ export interface FileRouteTypes {
     | '/resources/read/nextjs-sample-exercises'
     | '/resources/read/nextjs-step-by-step-learning-guide'
     | '/resources/read/nextjs-tips-tricks'
+    | '/resources/read/nodejs-advanced-concepts'
+    | '/resources/read/nodejs-answer-key'
+    | '/resources/read/nodejs-beginner-guide'
+    | '/resources/read/nodejs-best-practices'
+    | '/resources/read/nodejs-cheat-sheet'
+    | '/resources/read/nodejs-common-mistakes'
+    | '/resources/read/nodejs-complete-tutorial'
+    | '/resources/read/nodejs-frequently-asked-questions'
+    | '/resources/read/nodejs-glossary'
+    | '/resources/read/nodejs-interview-questions'
+    | '/resources/read/nodejs-learning-roadmap'
+    | '/resources/read/nodejs-pdf-notes'
+    | '/resources/read/nodejs-practice-questions'
+    | '/resources/read/nodejs-project-case-study'
+    | '/resources/read/nodejs-project-guide'
+    | '/resources/read/nodejs-quick-revision-notes'
+    | '/resources/read/nodejs-real-world-case-study'
+    | '/resources/read/nodejs-reference-guide'
+    | '/resources/read/nodejs-sample-exercises'
+    | '/resources/read/nodejs-step-by-step-learning-guide'
+    | '/resources/read/nodejs-tips-tricks'
     | '/resources/read/numpy-advanced-concepts'
     | '/resources/read/numpy-answer-key'
     | '/resources/read/numpy-beginner-guide'
@@ -12012,6 +12243,27 @@ export interface FileRouteTypes {
     | '/resources/read/nextjs-sample-exercises'
     | '/resources/read/nextjs-step-by-step-learning-guide'
     | '/resources/read/nextjs-tips-tricks'
+    | '/resources/read/nodejs-advanced-concepts'
+    | '/resources/read/nodejs-answer-key'
+    | '/resources/read/nodejs-beginner-guide'
+    | '/resources/read/nodejs-best-practices'
+    | '/resources/read/nodejs-cheat-sheet'
+    | '/resources/read/nodejs-common-mistakes'
+    | '/resources/read/nodejs-complete-tutorial'
+    | '/resources/read/nodejs-frequently-asked-questions'
+    | '/resources/read/nodejs-glossary'
+    | '/resources/read/nodejs-interview-questions'
+    | '/resources/read/nodejs-learning-roadmap'
+    | '/resources/read/nodejs-pdf-notes'
+    | '/resources/read/nodejs-practice-questions'
+    | '/resources/read/nodejs-project-case-study'
+    | '/resources/read/nodejs-project-guide'
+    | '/resources/read/nodejs-quick-revision-notes'
+    | '/resources/read/nodejs-real-world-case-study'
+    | '/resources/read/nodejs-reference-guide'
+    | '/resources/read/nodejs-sample-exercises'
+    | '/resources/read/nodejs-step-by-step-learning-guide'
+    | '/resources/read/nodejs-tips-tricks'
     | '/resources/read/numpy-advanced-concepts'
     | '/resources/read/numpy-answer-key'
     | '/resources/read/numpy-beginner-guide'
@@ -13046,6 +13298,27 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/nextjs-sample-exercises'
     | '/_marketing/resources/read/nextjs-step-by-step-learning-guide'
     | '/_marketing/resources/read/nextjs-tips-tricks'
+    | '/_marketing/resources/read/nodejs-advanced-concepts'
+    | '/_marketing/resources/read/nodejs-answer-key'
+    | '/_marketing/resources/read/nodejs-beginner-guide'
+    | '/_marketing/resources/read/nodejs-best-practices'
+    | '/_marketing/resources/read/nodejs-cheat-sheet'
+    | '/_marketing/resources/read/nodejs-common-mistakes'
+    | '/_marketing/resources/read/nodejs-complete-tutorial'
+    | '/_marketing/resources/read/nodejs-frequently-asked-questions'
+    | '/_marketing/resources/read/nodejs-glossary'
+    | '/_marketing/resources/read/nodejs-interview-questions'
+    | '/_marketing/resources/read/nodejs-learning-roadmap'
+    | '/_marketing/resources/read/nodejs-pdf-notes'
+    | '/_marketing/resources/read/nodejs-practice-questions'
+    | '/_marketing/resources/read/nodejs-project-case-study'
+    | '/_marketing/resources/read/nodejs-project-guide'
+    | '/_marketing/resources/read/nodejs-quick-revision-notes'
+    | '/_marketing/resources/read/nodejs-real-world-case-study'
+    | '/_marketing/resources/read/nodejs-reference-guide'
+    | '/_marketing/resources/read/nodejs-sample-exercises'
+    | '/_marketing/resources/read/nodejs-step-by-step-learning-guide'
+    | '/_marketing/resources/read/nodejs-tips-tricks'
     | '/_marketing/resources/read/numpy-advanced-concepts'
     | '/_marketing/resources/read/numpy-answer-key'
     | '/_marketing/resources/read/numpy-beginner-guide'
@@ -16283,6 +16556,153 @@ declare module '@tanstack/react-router' {
       path: '/read/numpy-advanced-concepts'
       fullPath: '/resources/read/numpy-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadNumpyAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-tips-tricks': {
+      id: '/_marketing/resources/read/nodejs-tips-tricks'
+      path: '/read/nodejs-tips-tricks'
+      fullPath: '/resources/read/nodejs-tips-tricks'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsTipsTricksRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/nodejs-step-by-step-learning-guide'
+      path: '/read/nodejs-step-by-step-learning-guide'
+      fullPath: '/resources/read/nodejs-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-sample-exercises': {
+      id: '/_marketing/resources/read/nodejs-sample-exercises'
+      path: '/read/nodejs-sample-exercises'
+      fullPath: '/resources/read/nodejs-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-reference-guide': {
+      id: '/_marketing/resources/read/nodejs-reference-guide'
+      path: '/read/nodejs-reference-guide'
+      fullPath: '/resources/read/nodejs-reference-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsReferenceGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-real-world-case-study': {
+      id: '/_marketing/resources/read/nodejs-real-world-case-study'
+      path: '/read/nodejs-real-world-case-study'
+      fullPath: '/resources/read/nodejs-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsRealWorldCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-quick-revision-notes': {
+      id: '/_marketing/resources/read/nodejs-quick-revision-notes'
+      path: '/read/nodejs-quick-revision-notes'
+      fullPath: '/resources/read/nodejs-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-project-guide': {
+      id: '/_marketing/resources/read/nodejs-project-guide'
+      path: '/read/nodejs-project-guide'
+      fullPath: '/resources/read/nodejs-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-project-case-study': {
+      id: '/_marketing/resources/read/nodejs-project-case-study'
+      path: '/read/nodejs-project-case-study'
+      fullPath: '/resources/read/nodejs-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-practice-questions': {
+      id: '/_marketing/resources/read/nodejs-practice-questions'
+      path: '/read/nodejs-practice-questions'
+      fullPath: '/resources/read/nodejs-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-pdf-notes': {
+      id: '/_marketing/resources/read/nodejs-pdf-notes'
+      path: '/read/nodejs-pdf-notes'
+      fullPath: '/resources/read/nodejs-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-learning-roadmap': {
+      id: '/_marketing/resources/read/nodejs-learning-roadmap'
+      path: '/read/nodejs-learning-roadmap'
+      fullPath: '/resources/read/nodejs-learning-roadmap'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-interview-questions': {
+      id: '/_marketing/resources/read/nodejs-interview-questions'
+      path: '/read/nodejs-interview-questions'
+      fullPath: '/resources/read/nodejs-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-glossary': {
+      id: '/_marketing/resources/read/nodejs-glossary'
+      path: '/read/nodejs-glossary'
+      fullPath: '/resources/read/nodejs-glossary'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsGlossaryRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-frequently-asked-questions': {
+      id: '/_marketing/resources/read/nodejs-frequently-asked-questions'
+      path: '/read/nodejs-frequently-asked-questions'
+      fullPath: '/resources/read/nodejs-frequently-asked-questions'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsFrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-complete-tutorial': {
+      id: '/_marketing/resources/read/nodejs-complete-tutorial'
+      path: '/read/nodejs-complete-tutorial'
+      fullPath: '/resources/read/nodejs-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-common-mistakes': {
+      id: '/_marketing/resources/read/nodejs-common-mistakes'
+      path: '/read/nodejs-common-mistakes'
+      fullPath: '/resources/read/nodejs-common-mistakes'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsCommonMistakesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-cheat-sheet': {
+      id: '/_marketing/resources/read/nodejs-cheat-sheet'
+      path: '/read/nodejs-cheat-sheet'
+      fullPath: '/resources/read/nodejs-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-best-practices': {
+      id: '/_marketing/resources/read/nodejs-best-practices'
+      path: '/read/nodejs-best-practices'
+      fullPath: '/resources/read/nodejs-best-practices'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsBestPracticesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-beginner-guide': {
+      id: '/_marketing/resources/read/nodejs-beginner-guide'
+      path: '/read/nodejs-beginner-guide'
+      fullPath: '/resources/read/nodejs-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-answer-key': {
+      id: '/_marketing/resources/read/nodejs-answer-key'
+      path: '/read/nodejs-answer-key'
+      fullPath: '/resources/read/nodejs-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsAnswerKeyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/nodejs-advanced-concepts': {
+      id: '/_marketing/resources/read/nodejs-advanced-concepts'
+      path: '/read/nodejs-advanced-concepts'
+      fullPath: '/resources/read/nodejs-advanced-concepts'
+      preLoaderRoute: typeof MarketingResourcesReadNodejsAdvancedConceptsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/nextjs-tips-tricks': {
@@ -21408,6 +21828,27 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadNextjsSampleExercisesRoute: typeof MarketingResourcesReadNextjsSampleExercisesRoute
   MarketingResourcesReadNextjsStepByStepLearningGuideRoute: typeof MarketingResourcesReadNextjsStepByStepLearningGuideRoute
   MarketingResourcesReadNextjsTipsTricksRoute: typeof MarketingResourcesReadNextjsTipsTricksRoute
+  MarketingResourcesReadNodejsAdvancedConceptsRoute: typeof MarketingResourcesReadNodejsAdvancedConceptsRoute
+  MarketingResourcesReadNodejsAnswerKeyRoute: typeof MarketingResourcesReadNodejsAnswerKeyRoute
+  MarketingResourcesReadNodejsBeginnerGuideRoute: typeof MarketingResourcesReadNodejsBeginnerGuideRoute
+  MarketingResourcesReadNodejsBestPracticesRoute: typeof MarketingResourcesReadNodejsBestPracticesRoute
+  MarketingResourcesReadNodejsCheatSheetRoute: typeof MarketingResourcesReadNodejsCheatSheetRoute
+  MarketingResourcesReadNodejsCommonMistakesRoute: typeof MarketingResourcesReadNodejsCommonMistakesRoute
+  MarketingResourcesReadNodejsCompleteTutorialRoute: typeof MarketingResourcesReadNodejsCompleteTutorialRoute
+  MarketingResourcesReadNodejsFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadNodejsFrequentlyAskedQuestionsRoute
+  MarketingResourcesReadNodejsGlossaryRoute: typeof MarketingResourcesReadNodejsGlossaryRoute
+  MarketingResourcesReadNodejsInterviewQuestionsRoute: typeof MarketingResourcesReadNodejsInterviewQuestionsRoute
+  MarketingResourcesReadNodejsLearningRoadmapRoute: typeof MarketingResourcesReadNodejsLearningRoadmapRoute
+  MarketingResourcesReadNodejsPdfNotesRoute: typeof MarketingResourcesReadNodejsPdfNotesRoute
+  MarketingResourcesReadNodejsPracticeQuestionsRoute: typeof MarketingResourcesReadNodejsPracticeQuestionsRoute
+  MarketingResourcesReadNodejsProjectCaseStudyRoute: typeof MarketingResourcesReadNodejsProjectCaseStudyRoute
+  MarketingResourcesReadNodejsProjectGuideRoute: typeof MarketingResourcesReadNodejsProjectGuideRoute
+  MarketingResourcesReadNodejsQuickRevisionNotesRoute: typeof MarketingResourcesReadNodejsQuickRevisionNotesRoute
+  MarketingResourcesReadNodejsRealWorldCaseStudyRoute: typeof MarketingResourcesReadNodejsRealWorldCaseStudyRoute
+  MarketingResourcesReadNodejsReferenceGuideRoute: typeof MarketingResourcesReadNodejsReferenceGuideRoute
+  MarketingResourcesReadNodejsSampleExercisesRoute: typeof MarketingResourcesReadNodejsSampleExercisesRoute
+  MarketingResourcesReadNodejsStepByStepLearningGuideRoute: typeof MarketingResourcesReadNodejsStepByStepLearningGuideRoute
+  MarketingResourcesReadNodejsTipsTricksRoute: typeof MarketingResourcesReadNodejsTipsTricksRoute
   MarketingResourcesReadNumpyAdvancedConceptsRoute: typeof MarketingResourcesReadNumpyAdvancedConceptsRoute
   MarketingResourcesReadNumpyAnswerKeyRoute: typeof MarketingResourcesReadNumpyAnswerKeyRoute
   MarketingResourcesReadNumpyBeginnerGuideRoute: typeof MarketingResourcesReadNumpyBeginnerGuideRoute
@@ -22992,6 +23433,48 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadNextjsStepByStepLearningGuideRoute,
   MarketingResourcesReadNextjsTipsTricksRoute:
     MarketingResourcesReadNextjsTipsTricksRoute,
+  MarketingResourcesReadNodejsAdvancedConceptsRoute:
+    MarketingResourcesReadNodejsAdvancedConceptsRoute,
+  MarketingResourcesReadNodejsAnswerKeyRoute:
+    MarketingResourcesReadNodejsAnswerKeyRoute,
+  MarketingResourcesReadNodejsBeginnerGuideRoute:
+    MarketingResourcesReadNodejsBeginnerGuideRoute,
+  MarketingResourcesReadNodejsBestPracticesRoute:
+    MarketingResourcesReadNodejsBestPracticesRoute,
+  MarketingResourcesReadNodejsCheatSheetRoute:
+    MarketingResourcesReadNodejsCheatSheetRoute,
+  MarketingResourcesReadNodejsCommonMistakesRoute:
+    MarketingResourcesReadNodejsCommonMistakesRoute,
+  MarketingResourcesReadNodejsCompleteTutorialRoute:
+    MarketingResourcesReadNodejsCompleteTutorialRoute,
+  MarketingResourcesReadNodejsFrequentlyAskedQuestionsRoute:
+    MarketingResourcesReadNodejsFrequentlyAskedQuestionsRoute,
+  MarketingResourcesReadNodejsGlossaryRoute:
+    MarketingResourcesReadNodejsGlossaryRoute,
+  MarketingResourcesReadNodejsInterviewQuestionsRoute:
+    MarketingResourcesReadNodejsInterviewQuestionsRoute,
+  MarketingResourcesReadNodejsLearningRoadmapRoute:
+    MarketingResourcesReadNodejsLearningRoadmapRoute,
+  MarketingResourcesReadNodejsPdfNotesRoute:
+    MarketingResourcesReadNodejsPdfNotesRoute,
+  MarketingResourcesReadNodejsPracticeQuestionsRoute:
+    MarketingResourcesReadNodejsPracticeQuestionsRoute,
+  MarketingResourcesReadNodejsProjectCaseStudyRoute:
+    MarketingResourcesReadNodejsProjectCaseStudyRoute,
+  MarketingResourcesReadNodejsProjectGuideRoute:
+    MarketingResourcesReadNodejsProjectGuideRoute,
+  MarketingResourcesReadNodejsQuickRevisionNotesRoute:
+    MarketingResourcesReadNodejsQuickRevisionNotesRoute,
+  MarketingResourcesReadNodejsRealWorldCaseStudyRoute:
+    MarketingResourcesReadNodejsRealWorldCaseStudyRoute,
+  MarketingResourcesReadNodejsReferenceGuideRoute:
+    MarketingResourcesReadNodejsReferenceGuideRoute,
+  MarketingResourcesReadNodejsSampleExercisesRoute:
+    MarketingResourcesReadNodejsSampleExercisesRoute,
+  MarketingResourcesReadNodejsStepByStepLearningGuideRoute:
+    MarketingResourcesReadNodejsStepByStepLearningGuideRoute,
+  MarketingResourcesReadNodejsTipsTricksRoute:
+    MarketingResourcesReadNodejsTipsTricksRoute,
   MarketingResourcesReadNumpyAdvancedConceptsRoute:
     MarketingResourcesReadNumpyAdvancedConceptsRoute,
   MarketingResourcesReadNumpyAnswerKeyRoute:
