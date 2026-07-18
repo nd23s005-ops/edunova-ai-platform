@@ -60,13 +60,16 @@ import { Route as MarketingResourcesReadPeReferenceGuideRouteImport } from './ro
 import { Route as MarketingResourcesReadPeQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.pe-quick-revision-notes'
 import { Route as MarketingResourcesReadPeProjectGuideRouteImport } from './routes/_marketing.resources.read.pe-project-guide'
 import { Route as MarketingResourcesReadPeProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.pe-project-case-study'
+import { Route as MarketingResourcesReadPePracticeQuestionsRouteImport } from './routes/_marketing.resources.read.pe-practice-questions'
 import { Route as MarketingResourcesReadPePdfNotesRouteImport } from './routes/_marketing.resources.read.pe-pdf-notes'
 import { Route as MarketingResourcesReadPeLearningRoadmapRouteImport } from './routes/_marketing.resources.read.pe-learning-roadmap'
+import { Route as MarketingResourcesReadPeInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.pe-interview-questions'
 import { Route as MarketingResourcesReadPeGlossaryRouteImport } from './routes/_marketing.resources.read.pe-glossary'
 import { Route as MarketingResourcesReadPeFrequentlyAskedQuestionsRouteImport } from './routes/_marketing.resources.read.pe-frequently-asked-questions'
 import { Route as MarketingResourcesReadPeCompleteTutorialRouteImport } from './routes/_marketing.resources.read.pe-complete-tutorial'
 import { Route as MarketingResourcesReadPeCheatSheetRouteImport } from './routes/_marketing.resources.read.pe-cheat-sheet'
 import { Route as MarketingResourcesReadPeBeginnerGuideRouteImport } from './routes/_marketing.resources.read.pe-beginner-guide'
+import { Route as MarketingResourcesReadPeAnswerKeyRouteImport } from './routes/_marketing.resources.read.pe-answer-key'
 import { Route as MarketingResourcesReadPeAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.pe-advanced-concepts'
 import { Route as MarketingResourcesReadMlTipsTricksRouteImport } from './routes/_marketing.resources.read.ml-tips-tricks'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
@@ -424,6 +427,12 @@ const MarketingResourcesReadPeProjectCaseStudyRoute =
     path: '/read/pe-project-case-study',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadPePracticeQuestionsRoute =
+  MarketingResourcesReadPePracticeQuestionsRouteImport.update({
+    id: '/read/pe-practice-questions',
+    path: '/read/pe-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadPePdfNotesRoute =
   MarketingResourcesReadPePdfNotesRouteImport.update({
     id: '/read/pe-pdf-notes',
@@ -434,6 +443,12 @@ const MarketingResourcesReadPeLearningRoadmapRoute =
   MarketingResourcesReadPeLearningRoadmapRouteImport.update({
     id: '/read/pe-learning-roadmap',
     path: '/read/pe-learning-roadmap',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPeInterviewQuestionsRoute =
+  MarketingResourcesReadPeInterviewQuestionsRouteImport.update({
+    id: '/read/pe-interview-questions',
+    path: '/read/pe-interview-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeGlossaryRoute =
@@ -464,6 +479,12 @@ const MarketingResourcesReadPeBeginnerGuideRoute =
   MarketingResourcesReadPeBeginnerGuideRouteImport.update({
     id: '/read/pe-beginner-guide',
     path: '/read/pe-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadPeAnswerKeyRoute =
+  MarketingResourcesReadPeAnswerKeyRouteImport.update({
+    id: '/read/pe-answer-key',
+    path: '/read/pe-answer-key',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeAdvancedConceptsRoute =
@@ -1083,13 +1104,16 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
   '/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
   '/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
   '/resources/read/pe-frequently-asked-questions': typeof MarketingResourcesReadPeFrequentlyAskedQuestionsRoute
   '/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
+  '/resources/read/pe-interview-questions': typeof MarketingResourcesReadPeInterviewQuestionsRoute
   '/resources/read/pe-learning-roadmap': typeof MarketingResourcesReadPeLearningRoadmapRoute
   '/resources/read/pe-pdf-notes': typeof MarketingResourcesReadPePdfNotesRoute
+  '/resources/read/pe-practice-questions': typeof MarketingResourcesReadPePracticeQuestionsRoute
   '/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
@@ -1222,13 +1246,16 @@ export interface FileRoutesByTo {
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
   '/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
   '/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
   '/resources/read/pe-frequently-asked-questions': typeof MarketingResourcesReadPeFrequentlyAskedQuestionsRoute
   '/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
+  '/resources/read/pe-interview-questions': typeof MarketingResourcesReadPeInterviewQuestionsRoute
   '/resources/read/pe-learning-roadmap': typeof MarketingResourcesReadPeLearningRoadmapRoute
   '/resources/read/pe-pdf-notes': typeof MarketingResourcesReadPePdfNotesRoute
+  '/resources/read/pe-practice-questions': typeof MarketingResourcesReadPePracticeQuestionsRoute
   '/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
@@ -1366,13 +1393,16 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-tips-tricks': typeof MarketingResourcesReadMlTipsTricksRoute
   '/_marketing/resources/read/pe-advanced-concepts': typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  '/_marketing/resources/read/pe-answer-key': typeof MarketingResourcesReadPeAnswerKeyRoute
   '/_marketing/resources/read/pe-beginner-guide': typeof MarketingResourcesReadPeBeginnerGuideRoute
   '/_marketing/resources/read/pe-cheat-sheet': typeof MarketingResourcesReadPeCheatSheetRoute
   '/_marketing/resources/read/pe-complete-tutorial': typeof MarketingResourcesReadPeCompleteTutorialRoute
   '/_marketing/resources/read/pe-frequently-asked-questions': typeof MarketingResourcesReadPeFrequentlyAskedQuestionsRoute
   '/_marketing/resources/read/pe-glossary': typeof MarketingResourcesReadPeGlossaryRoute
+  '/_marketing/resources/read/pe-interview-questions': typeof MarketingResourcesReadPeInterviewQuestionsRoute
   '/_marketing/resources/read/pe-learning-roadmap': typeof MarketingResourcesReadPeLearningRoadmapRoute
   '/_marketing/resources/read/pe-pdf-notes': typeof MarketingResourcesReadPePdfNotesRoute
+  '/_marketing/resources/read/pe-practice-questions': typeof MarketingResourcesReadPePracticeQuestionsRoute
   '/_marketing/resources/read/pe-project-case-study': typeof MarketingResourcesReadPeProjectCaseStudyRoute
   '/_marketing/resources/read/pe-project-guide': typeof MarketingResourcesReadPeProjectGuideRoute
   '/_marketing/resources/read/pe-quick-revision-notes': typeof MarketingResourcesReadPeQuickRevisionNotesRoute
@@ -1508,13 +1538,16 @@ export interface FileRouteTypes {
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
     | '/resources/read/pe-advanced-concepts'
+    | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
     | '/resources/read/pe-cheat-sheet'
     | '/resources/read/pe-complete-tutorial'
     | '/resources/read/pe-frequently-asked-questions'
     | '/resources/read/pe-glossary'
+    | '/resources/read/pe-interview-questions'
     | '/resources/read/pe-learning-roadmap'
     | '/resources/read/pe-pdf-notes'
+    | '/resources/read/pe-practice-questions'
     | '/resources/read/pe-project-case-study'
     | '/resources/read/pe-project-guide'
     | '/resources/read/pe-quick-revision-notes'
@@ -1647,13 +1680,16 @@ export interface FileRouteTypes {
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/resources/read/ml-tips-tricks'
     | '/resources/read/pe-advanced-concepts'
+    | '/resources/read/pe-answer-key'
     | '/resources/read/pe-beginner-guide'
     | '/resources/read/pe-cheat-sheet'
     | '/resources/read/pe-complete-tutorial'
     | '/resources/read/pe-frequently-asked-questions'
     | '/resources/read/pe-glossary'
+    | '/resources/read/pe-interview-questions'
     | '/resources/read/pe-learning-roadmap'
     | '/resources/read/pe-pdf-notes'
+    | '/resources/read/pe-practice-questions'
     | '/resources/read/pe-project-case-study'
     | '/resources/read/pe-project-guide'
     | '/resources/read/pe-quick-revision-notes'
@@ -1790,13 +1826,16 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-tips-tricks'
     | '/_marketing/resources/read/pe-advanced-concepts'
+    | '/_marketing/resources/read/pe-answer-key'
     | '/_marketing/resources/read/pe-beginner-guide'
     | '/_marketing/resources/read/pe-cheat-sheet'
     | '/_marketing/resources/read/pe-complete-tutorial'
     | '/_marketing/resources/read/pe-frequently-asked-questions'
     | '/_marketing/resources/read/pe-glossary'
+    | '/_marketing/resources/read/pe-interview-questions'
     | '/_marketing/resources/read/pe-learning-roadmap'
     | '/_marketing/resources/read/pe-pdf-notes'
+    | '/_marketing/resources/read/pe-practice-questions'
     | '/_marketing/resources/read/pe-project-case-study'
     | '/_marketing/resources/read/pe-project-guide'
     | '/_marketing/resources/read/pe-quick-revision-notes'
@@ -2188,6 +2227,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadPeProjectCaseStudyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/pe-practice-questions': {
+      id: '/_marketing/resources/read/pe-practice-questions'
+      path: '/read/pe-practice-questions'
+      fullPath: '/resources/read/pe-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPePracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/pe-pdf-notes': {
       id: '/_marketing/resources/read/pe-pdf-notes'
       path: '/read/pe-pdf-notes'
@@ -2200,6 +2246,13 @@ declare module '@tanstack/react-router' {
       path: '/read/pe-learning-roadmap'
       fullPath: '/resources/read/pe-learning-roadmap'
       preLoaderRoute: typeof MarketingResourcesReadPeLearningRoadmapRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pe-interview-questions': {
+      id: '/_marketing/resources/read/pe-interview-questions'
+      path: '/read/pe-interview-questions'
+      fullPath: '/resources/read/pe-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadPeInterviewQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-glossary': {
@@ -2235,6 +2288,13 @@ declare module '@tanstack/react-router' {
       path: '/read/pe-beginner-guide'
       fullPath: '/resources/read/pe-beginner-guide'
       preLoaderRoute: typeof MarketingResourcesReadPeBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/pe-answer-key': {
+      id: '/_marketing/resources/read/pe-answer-key'
+      path: '/read/pe-answer-key'
+      fullPath: '/resources/read/pe-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadPeAnswerKeyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-advanced-concepts': {
@@ -3024,13 +3084,16 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   MarketingResourcesReadMlTipsTricksRoute: typeof MarketingResourcesReadMlTipsTricksRoute
   MarketingResourcesReadPeAdvancedConceptsRoute: typeof MarketingResourcesReadPeAdvancedConceptsRoute
+  MarketingResourcesReadPeAnswerKeyRoute: typeof MarketingResourcesReadPeAnswerKeyRoute
   MarketingResourcesReadPeBeginnerGuideRoute: typeof MarketingResourcesReadPeBeginnerGuideRoute
   MarketingResourcesReadPeCheatSheetRoute: typeof MarketingResourcesReadPeCheatSheetRoute
   MarketingResourcesReadPeCompleteTutorialRoute: typeof MarketingResourcesReadPeCompleteTutorialRoute
   MarketingResourcesReadPeFrequentlyAskedQuestionsRoute: typeof MarketingResourcesReadPeFrequentlyAskedQuestionsRoute
   MarketingResourcesReadPeGlossaryRoute: typeof MarketingResourcesReadPeGlossaryRoute
+  MarketingResourcesReadPeInterviewQuestionsRoute: typeof MarketingResourcesReadPeInterviewQuestionsRoute
   MarketingResourcesReadPeLearningRoadmapRoute: typeof MarketingResourcesReadPeLearningRoadmapRoute
   MarketingResourcesReadPePdfNotesRoute: typeof MarketingResourcesReadPePdfNotesRoute
+  MarketingResourcesReadPePracticeQuestionsRoute: typeof MarketingResourcesReadPePracticeQuestionsRoute
   MarketingResourcesReadPeProjectCaseStudyRoute: typeof MarketingResourcesReadPeProjectCaseStudyRoute
   MarketingResourcesReadPeProjectGuideRoute: typeof MarketingResourcesReadPeProjectGuideRoute
   MarketingResourcesReadPeQuickRevisionNotesRoute: typeof MarketingResourcesReadPeQuickRevisionNotesRoute
@@ -3177,6 +3240,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlTipsTricksRoute,
   MarketingResourcesReadPeAdvancedConceptsRoute:
     MarketingResourcesReadPeAdvancedConceptsRoute,
+  MarketingResourcesReadPeAnswerKeyRoute:
+    MarketingResourcesReadPeAnswerKeyRoute,
   MarketingResourcesReadPeBeginnerGuideRoute:
     MarketingResourcesReadPeBeginnerGuideRoute,
   MarketingResourcesReadPeCheatSheetRoute:
@@ -3186,9 +3251,13 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesReadPeFrequentlyAskedQuestionsRoute:
     MarketingResourcesReadPeFrequentlyAskedQuestionsRoute,
   MarketingResourcesReadPeGlossaryRoute: MarketingResourcesReadPeGlossaryRoute,
+  MarketingResourcesReadPeInterviewQuestionsRoute:
+    MarketingResourcesReadPeInterviewQuestionsRoute,
   MarketingResourcesReadPeLearningRoadmapRoute:
     MarketingResourcesReadPeLearningRoadmapRoute,
   MarketingResourcesReadPePdfNotesRoute: MarketingResourcesReadPePdfNotesRoute,
+  MarketingResourcesReadPePracticeQuestionsRoute:
+    MarketingResourcesReadPePracticeQuestionsRoute,
   MarketingResourcesReadPeProjectCaseStudyRoute:
     MarketingResourcesReadPeProjectCaseStudyRoute,
   MarketingResourcesReadPeProjectGuideRoute:
