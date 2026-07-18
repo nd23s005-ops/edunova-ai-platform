@@ -188,6 +188,7 @@ const SLUG_IMAGE: Record<string, string> = {
   "android": "photo-1607252650355-f7fd0460ccdb",
   "swift-ios": "photo-1512941937669-90a1b58e7e9c",
   "sql": "photo-1544383835-bda2bc66a55d",
+  "mysql": "photo-1544383835-bda2bc66a55d",
   "postgresql": "photo-1633412802994-5c058f151b66",
   "mongodb": "photo-1633412802994-5c058f151b66",
   "data-science": "photo-1460925895917-afdab827c52f",
