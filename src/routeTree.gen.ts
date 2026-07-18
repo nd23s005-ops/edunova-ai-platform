@@ -108,11 +108,17 @@ import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './rou
 import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/_marketing.resources.read.ml-answer-key'
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
 import { Route as MarketingResourcesReadGoStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.go-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadGoSampleExercisesRouteImport } from './routes/_marketing.resources.read.go-sample-exercises'
 import { Route as MarketingResourcesReadGoQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.go-quick-revision-notes'
+import { Route as MarketingResourcesReadGoProjectGuideRouteImport } from './routes/_marketing.resources.read.go-project-guide'
+import { Route as MarketingResourcesReadGoProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.go-project-case-study'
+import { Route as MarketingResourcesReadGoPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.go-practice-questions'
 import { Route as MarketingResourcesReadGoPdfNotesRouteImport } from './routes/_marketing.resources.read.go-pdf-notes'
+import { Route as MarketingResourcesReadGoInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.go-interview-questions'
 import { Route as MarketingResourcesReadGoCompleteTutorialRouteImport } from './routes/_marketing.resources.read.go-complete-tutorial'
 import { Route as MarketingResourcesReadGoCheatSheetRouteImport } from './routes/_marketing.resources.read.go-cheat-sheet'
 import { Route as MarketingResourcesReadGoBeginnerGuideRouteImport } from './routes/_marketing.resources.read.go-beginner-guide'
+import { Route as MarketingResourcesReadGoAnswerKeyRouteImport } from './routes/_marketing.resources.read.go-answer-key'
 import { Route as MarketingResourcesReadGenaiRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.genai-real-world-case-study'
 import { Route as MarketingResourcesReadGenaiPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.genai-practice-questions'
 import { Route as MarketingResourcesReadGenaiInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.genai-interview-questions'
@@ -757,16 +763,46 @@ const MarketingResourcesReadGoStepByStepLearningGuideRoute =
     path: '/read/go-step-by-step-learning-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadGoSampleExercisesRoute =
+  MarketingResourcesReadGoSampleExercisesRouteImport.update({
+    id: '/read/go-sample-exercises',
+    path: '/read/go-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadGoQuickRevisionNotesRoute =
   MarketingResourcesReadGoQuickRevisionNotesRouteImport.update({
     id: '/read/go-quick-revision-notes',
     path: '/read/go-quick-revision-notes',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadGoProjectGuideRoute =
+  MarketingResourcesReadGoProjectGuideRouteImport.update({
+    id: '/read/go-project-guide',
+    path: '/read/go-project-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGoProjectCaseStudyRoute =
+  MarketingResourcesReadGoProjectCaseStudyRouteImport.update({
+    id: '/read/go-project-case-study',
+    path: '/read/go-project-case-study',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGoPracticeQuestionsRoute =
+  MarketingResourcesReadGoPracticeQuestionsRouteImport.update({
+    id: '/read/go-practice-questions',
+    path: '/read/go-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadGoPdfNotesRoute =
   MarketingResourcesReadGoPdfNotesRouteImport.update({
     id: '/read/go-pdf-notes',
     path: '/read/go-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGoInterviewQuestionsRoute =
+  MarketingResourcesReadGoInterviewQuestionsRouteImport.update({
+    id: '/read/go-interview-questions',
+    path: '/read/go-interview-questions',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadGoCompleteTutorialRoute =
@@ -785,6 +821,12 @@ const MarketingResourcesReadGoBeginnerGuideRoute =
   MarketingResourcesReadGoBeginnerGuideRouteImport.update({
     id: '/read/go-beginner-guide',
     path: '/read/go-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadGoAnswerKeyRoute =
+  MarketingResourcesReadGoAnswerKeyRouteImport.update({
+    id: '/read/go-answer-key',
+    path: '/read/go-answer-key',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadGenaiRealWorldCaseStudyRoute =
@@ -1397,11 +1439,17 @@ export interface FileRoutesByFullPath {
   '/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
   '/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
+  '/resources/read/go-answer-key': typeof MarketingResourcesReadGoAnswerKeyRoute
   '/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/resources/read/go-cheat-sheet': typeof MarketingResourcesReadGoCheatSheetRoute
   '/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
+  '/resources/read/go-interview-questions': typeof MarketingResourcesReadGoInterviewQuestionsRoute
   '/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
+  '/resources/read/go-practice-questions': typeof MarketingResourcesReadGoPracticeQuestionsRoute
+  '/resources/read/go-project-case-study': typeof MarketingResourcesReadGoProjectCaseStudyRoute
+  '/resources/read/go-project-guide': typeof MarketingResourcesReadGoProjectGuideRoute
   '/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
+  '/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1581,11 +1629,17 @@ export interface FileRoutesByTo {
   '/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
   '/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
+  '/resources/read/go-answer-key': typeof MarketingResourcesReadGoAnswerKeyRoute
   '/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/resources/read/go-cheat-sheet': typeof MarketingResourcesReadGoCheatSheetRoute
   '/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
+  '/resources/read/go-interview-questions': typeof MarketingResourcesReadGoInterviewQuestionsRoute
   '/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
+  '/resources/read/go-practice-questions': typeof MarketingResourcesReadGoPracticeQuestionsRoute
+  '/resources/read/go-project-case-study': typeof MarketingResourcesReadGoProjectCaseStudyRoute
+  '/resources/read/go-project-guide': typeof MarketingResourcesReadGoProjectGuideRoute
   '/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
+  '/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1770,11 +1824,17 @@ export interface FileRoutesById {
   '/_marketing/resources/read/genai-interview-questions': typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
   '/_marketing/resources/read/genai-practice-questions': typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   '/_marketing/resources/read/genai-real-world-case-study': typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
+  '/_marketing/resources/read/go-answer-key': typeof MarketingResourcesReadGoAnswerKeyRoute
   '/_marketing/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/_marketing/resources/read/go-cheat-sheet': typeof MarketingResourcesReadGoCheatSheetRoute
   '/_marketing/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
+  '/_marketing/resources/read/go-interview-questions': typeof MarketingResourcesReadGoInterviewQuestionsRoute
   '/_marketing/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
+  '/_marketing/resources/read/go-practice-questions': typeof MarketingResourcesReadGoPracticeQuestionsRoute
+  '/_marketing/resources/read/go-project-case-study': typeof MarketingResourcesReadGoProjectCaseStudyRoute
+  '/_marketing/resources/read/go-project-guide': typeof MarketingResourcesReadGoProjectGuideRoute
   '/_marketing/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
+  '/_marketing/resources/read/go-sample-exercises': typeof MarketingResourcesReadGoSampleExercisesRoute
   '/_marketing/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/_marketing/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1957,11 +2017,17 @@ export interface FileRouteTypes {
     | '/resources/read/genai-interview-questions'
     | '/resources/read/genai-practice-questions'
     | '/resources/read/genai-real-world-case-study'
+    | '/resources/read/go-answer-key'
     | '/resources/read/go-beginner-guide'
     | '/resources/read/go-cheat-sheet'
     | '/resources/read/go-complete-tutorial'
+    | '/resources/read/go-interview-questions'
     | '/resources/read/go-pdf-notes'
+    | '/resources/read/go-practice-questions'
+    | '/resources/read/go-project-case-study'
+    | '/resources/read/go-project-guide'
     | '/resources/read/go-quick-revision-notes'
+    | '/resources/read/go-sample-exercises'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
@@ -2141,11 +2207,17 @@ export interface FileRouteTypes {
     | '/resources/read/genai-interview-questions'
     | '/resources/read/genai-practice-questions'
     | '/resources/read/genai-real-world-case-study'
+    | '/resources/read/go-answer-key'
     | '/resources/read/go-beginner-guide'
     | '/resources/read/go-cheat-sheet'
     | '/resources/read/go-complete-tutorial'
+    | '/resources/read/go-interview-questions'
     | '/resources/read/go-pdf-notes'
+    | '/resources/read/go-practice-questions'
+    | '/resources/read/go-project-case-study'
+    | '/resources/read/go-project-guide'
     | '/resources/read/go-quick-revision-notes'
+    | '/resources/read/go-sample-exercises'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
@@ -2329,11 +2401,17 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/genai-interview-questions'
     | '/_marketing/resources/read/genai-practice-questions'
     | '/_marketing/resources/read/genai-real-world-case-study'
+    | '/_marketing/resources/read/go-answer-key'
     | '/_marketing/resources/read/go-beginner-guide'
     | '/_marketing/resources/read/go-cheat-sheet'
     | '/_marketing/resources/read/go-complete-tutorial'
+    | '/_marketing/resources/read/go-interview-questions'
     | '/_marketing/resources/read/go-pdf-notes'
+    | '/_marketing/resources/read/go-practice-questions'
+    | '/_marketing/resources/read/go-project-case-study'
+    | '/_marketing/resources/read/go-project-guide'
     | '/_marketing/resources/read/go-quick-revision-notes'
+    | '/_marketing/resources/read/go-sample-exercises'
     | '/_marketing/resources/read/go-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-advanced-concepts'
     | '/_marketing/resources/read/ml-answer-key'
@@ -3109,6 +3187,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/go-sample-exercises': {
+      id: '/_marketing/resources/read/go-sample-exercises'
+      path: '/read/go-sample-exercises'
+      fullPath: '/resources/read/go-sample-exercises'
+      preLoaderRoute: typeof MarketingResourcesReadGoSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/go-quick-revision-notes': {
       id: '/_marketing/resources/read/go-quick-revision-notes'
       path: '/read/go-quick-revision-notes'
@@ -3116,11 +3201,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingResourcesReadGoQuickRevisionNotesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
+    '/_marketing/resources/read/go-project-guide': {
+      id: '/_marketing/resources/read/go-project-guide'
+      path: '/read/go-project-guide'
+      fullPath: '/resources/read/go-project-guide'
+      preLoaderRoute: typeof MarketingResourcesReadGoProjectGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/go-project-case-study': {
+      id: '/_marketing/resources/read/go-project-case-study'
+      path: '/read/go-project-case-study'
+      fullPath: '/resources/read/go-project-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadGoProjectCaseStudyRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/go-practice-questions': {
+      id: '/_marketing/resources/read/go-practice-questions'
+      path: '/read/go-practice-questions'
+      fullPath: '/resources/read/go-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadGoPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
     '/_marketing/resources/read/go-pdf-notes': {
       id: '/_marketing/resources/read/go-pdf-notes'
       path: '/read/go-pdf-notes'
       fullPath: '/resources/read/go-pdf-notes'
       preLoaderRoute: typeof MarketingResourcesReadGoPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/go-interview-questions': {
+      id: '/_marketing/resources/read/go-interview-questions'
+      path: '/read/go-interview-questions'
+      fullPath: '/resources/read/go-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadGoInterviewQuestionsRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/go-complete-tutorial': {
@@ -3142,6 +3255,13 @@ declare module '@tanstack/react-router' {
       path: '/read/go-beginner-guide'
       fullPath: '/resources/read/go-beginner-guide'
       preLoaderRoute: typeof MarketingResourcesReadGoBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/go-answer-key': {
+      id: '/_marketing/resources/read/go-answer-key'
+      path: '/read/go-answer-key'
+      fullPath: '/resources/read/go-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadGoAnswerKeyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/genai-real-world-case-study': {
@@ -3923,11 +4043,17 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadGenaiInterviewQuestionsRoute: typeof MarketingResourcesReadGenaiInterviewQuestionsRoute
   MarketingResourcesReadGenaiPracticeQuestionsRoute: typeof MarketingResourcesReadGenaiPracticeQuestionsRoute
   MarketingResourcesReadGenaiRealWorldCaseStudyRoute: typeof MarketingResourcesReadGenaiRealWorldCaseStudyRoute
+  MarketingResourcesReadGoAnswerKeyRoute: typeof MarketingResourcesReadGoAnswerKeyRoute
   MarketingResourcesReadGoBeginnerGuideRoute: typeof MarketingResourcesReadGoBeginnerGuideRoute
   MarketingResourcesReadGoCheatSheetRoute: typeof MarketingResourcesReadGoCheatSheetRoute
   MarketingResourcesReadGoCompleteTutorialRoute: typeof MarketingResourcesReadGoCompleteTutorialRoute
+  MarketingResourcesReadGoInterviewQuestionsRoute: typeof MarketingResourcesReadGoInterviewQuestionsRoute
   MarketingResourcesReadGoPdfNotesRoute: typeof MarketingResourcesReadGoPdfNotesRoute
+  MarketingResourcesReadGoPracticeQuestionsRoute: typeof MarketingResourcesReadGoPracticeQuestionsRoute
+  MarketingResourcesReadGoProjectCaseStudyRoute: typeof MarketingResourcesReadGoProjectCaseStudyRoute
+  MarketingResourcesReadGoProjectGuideRoute: typeof MarketingResourcesReadGoProjectGuideRoute
   MarketingResourcesReadGoQuickRevisionNotesRoute: typeof MarketingResourcesReadGoQuickRevisionNotesRoute
+  MarketingResourcesReadGoSampleExercisesRoute: typeof MarketingResourcesReadGoSampleExercisesRoute
   MarketingResourcesReadGoStepByStepLearningGuideRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
   MarketingResourcesReadMlAnswerKeyRoute: typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -4122,15 +4248,27 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadGenaiPracticeQuestionsRoute,
   MarketingResourcesReadGenaiRealWorldCaseStudyRoute:
     MarketingResourcesReadGenaiRealWorldCaseStudyRoute,
+  MarketingResourcesReadGoAnswerKeyRoute:
+    MarketingResourcesReadGoAnswerKeyRoute,
   MarketingResourcesReadGoBeginnerGuideRoute:
     MarketingResourcesReadGoBeginnerGuideRoute,
   MarketingResourcesReadGoCheatSheetRoute:
     MarketingResourcesReadGoCheatSheetRoute,
   MarketingResourcesReadGoCompleteTutorialRoute:
     MarketingResourcesReadGoCompleteTutorialRoute,
+  MarketingResourcesReadGoInterviewQuestionsRoute:
+    MarketingResourcesReadGoInterviewQuestionsRoute,
   MarketingResourcesReadGoPdfNotesRoute: MarketingResourcesReadGoPdfNotesRoute,
+  MarketingResourcesReadGoPracticeQuestionsRoute:
+    MarketingResourcesReadGoPracticeQuestionsRoute,
+  MarketingResourcesReadGoProjectCaseStudyRoute:
+    MarketingResourcesReadGoProjectCaseStudyRoute,
+  MarketingResourcesReadGoProjectGuideRoute:
+    MarketingResourcesReadGoProjectGuideRoute,
   MarketingResourcesReadGoQuickRevisionNotesRoute:
     MarketingResourcesReadGoQuickRevisionNotesRoute,
+  MarketingResourcesReadGoSampleExercisesRoute:
+    MarketingResourcesReadGoSampleExercisesRoute,
   MarketingResourcesReadGoStepByStepLearningGuideRoute:
     MarketingResourcesReadGoStepByStepLearningGuideRoute,
   MarketingResourcesReadMlAdvancedConceptsRoute:
