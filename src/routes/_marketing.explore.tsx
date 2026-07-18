@@ -593,9 +593,16 @@ function CourseCard({ c, delay = 0 }: { c: Course; delay?: number }) {
     >
       {/* Thumbnail */}
       <div className={`relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br ${c.gradient}`}>
-        <div className="absolute inset-0 bg-grid-fade opacity-30" aria-hidden />
+        <img
+          src={courseImage(c.category)}
+          alt={c.title}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-70 mix-blend-luminosity transition duration-500 group-hover:scale-105 group-hover:opacity-80"
+        />
+        <div className={`absolute inset-0 bg-gradient-to-br ${c.gradient} opacity-55 mix-blend-multiply`} aria-hidden />
+        <div className="absolute inset-0 bg-grid-fade opacity-20" aria-hidden />
         <div className="absolute inset-0 grid place-items-center">
-          <Icon className="h-14 w-14 text-white/90 drop-shadow-lg transition group-hover:scale-110" />
+          <Icon className="h-12 w-12 text-white drop-shadow-lg transition group-hover:scale-110" />
         </div>
         {c.trending && (
           <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-background/95 px-2.5 py-1 text-[11px] font-semibold text-primary shadow">
@@ -613,9 +620,6 @@ function CourseCard({ c, delay = 0 }: { c: Course; delay?: number }) {
           <span className="inline-flex items-center gap-1 text-muted-foreground">
             <Clock className="h-3.5 w-3.5" /> {c.duration}
           </span>
-          <span className="ml-auto inline-flex items-center gap-1 font-medium">
-            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" /> {c.rating}
-          </span>
         </div>
 
         <h3 className="mt-3 line-clamp-2 text-base font-semibold leading-snug">{c.title}</h3>
@@ -626,9 +630,6 @@ function CourseCard({ c, delay = 0 }: { c: Course; delay?: number }) {
             <Building2 className="h-3.5 w-3.5" />
           </div>
           <span className="truncate">{c.instructor}</span>
-          <span className="ml-auto inline-flex items-center gap-1">
-            <Users className="h-3.5 w-3.5" /> {c.learners}
-          </span>
         </div>
 
         <Button className="mt-5 w-full" asChild>
@@ -637,6 +638,7 @@ function CourseCard({ c, delay = 0 }: { c: Course; delay?: number }) {
           </Link>
         </Button>
       </div>
+
     </motion.article>
   );
 }
