@@ -460,6 +460,18 @@ const READER_ROUTES: Record<string, string> = {
    "rust--interview-questions": "/resources/read/rust-interview-questions",
    "rust--practice-questions": "/resources/read/rust-practice-questions",
    "rust--answer-key": "/resources/read/rust-answer-key",
+   "rust--sample-exercises": "/resources/read/rust-sample-exercises",
+   "rust--project-guide": "/resources/read/rust-project-guide",
+   "rust--project-case-study": "/resources/read/rust-project-case-study",
+   "rust--real-world-case-study": "/resources/read/rust-real-world-case-study",
+   "rust--best-practices": "/resources/read/rust-best-practices",
+   "rust--common-mistakes": "/resources/read/rust-common-mistakes",
+   "rust--frequently-asked-questions": "/resources/read/rust-frequently-asked-questions",
+   "rust--learning-roadmap": "/resources/read/rust-learning-roadmap",
+   "rust--tips-and-tricks": "/resources/read/rust-tips-and-tricks",
+   "rust--advanced-concepts": "/resources/read/rust-advanced-concepts",
+   "rust--glossary": "/resources/read/rust-glossary",
+   "rust--reference-guide": "/resources/read/rust-reference-guide",
 
 
 
