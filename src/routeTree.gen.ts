@@ -108,6 +108,7 @@ import { Route as MarketingResourcesReadMlBeginnerGuideRouteImport } from './rou
 import { Route as MarketingResourcesReadMlAnswerKeyRouteImport } from './routes/_marketing.resources.read.ml-answer-key'
 import { Route as MarketingResourcesReadMlAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ml-advanced-concepts'
 import { Route as MarketingResourcesReadGoStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.go-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadGoQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.go-quick-revision-notes'
 import { Route as MarketingResourcesReadGoPdfNotesRouteImport } from './routes/_marketing.resources.read.go-pdf-notes'
 import { Route as MarketingResourcesReadGoCompleteTutorialRouteImport } from './routes/_marketing.resources.read.go-complete-tutorial'
 import { Route as MarketingResourcesReadGoBeginnerGuideRouteImport } from './routes/_marketing.resources.read.go-beginner-guide'
@@ -755,6 +756,12 @@ const MarketingResourcesReadGoStepByStepLearningGuideRoute =
     path: '/read/go-step-by-step-learning-guide',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
+const MarketingResourcesReadGoQuickRevisionNotesRoute =
+  MarketingResourcesReadGoQuickRevisionNotesRouteImport.update({
+    id: '/read/go-quick-revision-notes',
+    path: '/read/go-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
 const MarketingResourcesReadGoPdfNotesRoute =
   MarketingResourcesReadGoPdfNotesRouteImport.update({
     id: '/read/go-pdf-notes',
@@ -1386,6 +1393,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
   '/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
+  '/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1568,6 +1576,7 @@ export interface FileRoutesByTo {
   '/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
   '/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
+  '/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
   '/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1755,6 +1764,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/go-beginner-guide': typeof MarketingResourcesReadGoBeginnerGuideRoute
   '/_marketing/resources/read/go-complete-tutorial': typeof MarketingResourcesReadGoCompleteTutorialRoute
   '/_marketing/resources/read/go-pdf-notes': typeof MarketingResourcesReadGoPdfNotesRoute
+  '/_marketing/resources/read/go-quick-revision-notes': typeof MarketingResourcesReadGoQuickRevisionNotesRoute
   '/_marketing/resources/read/go-step-by-step-learning-guide': typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   '/_marketing/resources/read/ml-advanced-concepts': typeof MarketingResourcesReadMlAdvancedConceptsRoute
   '/_marketing/resources/read/ml-answer-key': typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -1940,6 +1950,7 @@ export interface FileRouteTypes {
     | '/resources/read/go-beginner-guide'
     | '/resources/read/go-complete-tutorial'
     | '/resources/read/go-pdf-notes'
+    | '/resources/read/go-quick-revision-notes'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
@@ -2122,6 +2133,7 @@ export interface FileRouteTypes {
     | '/resources/read/go-beginner-guide'
     | '/resources/read/go-complete-tutorial'
     | '/resources/read/go-pdf-notes'
+    | '/resources/read/go-quick-revision-notes'
     | '/resources/read/go-step-by-step-learning-guide'
     | '/resources/read/ml-advanced-concepts'
     | '/resources/read/ml-answer-key'
@@ -2308,6 +2320,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/go-beginner-guide'
     | '/_marketing/resources/read/go-complete-tutorial'
     | '/_marketing/resources/read/go-pdf-notes'
+    | '/_marketing/resources/read/go-quick-revision-notes'
     | '/_marketing/resources/read/go-step-by-step-learning-guide'
     | '/_marketing/resources/read/ml-advanced-concepts'
     | '/_marketing/resources/read/ml-answer-key'
@@ -3081,6 +3094,13 @@ declare module '@tanstack/react-router' {
       path: '/read/go-step-by-step-learning-guide'
       fullPath: '/resources/read/go-step-by-step-learning-guide'
       preLoaderRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/go-quick-revision-notes': {
+      id: '/_marketing/resources/read/go-quick-revision-notes'
+      path: '/read/go-quick-revision-notes'
+      fullPath: '/resources/read/go-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadGoQuickRevisionNotesRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/go-pdf-notes': {
@@ -3886,6 +3906,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadGoBeginnerGuideRoute: typeof MarketingResourcesReadGoBeginnerGuideRoute
   MarketingResourcesReadGoCompleteTutorialRoute: typeof MarketingResourcesReadGoCompleteTutorialRoute
   MarketingResourcesReadGoPdfNotesRoute: typeof MarketingResourcesReadGoPdfNotesRoute
+  MarketingResourcesReadGoQuickRevisionNotesRoute: typeof MarketingResourcesReadGoQuickRevisionNotesRoute
   MarketingResourcesReadGoStepByStepLearningGuideRoute: typeof MarketingResourcesReadGoStepByStepLearningGuideRoute
   MarketingResourcesReadMlAdvancedConceptsRoute: typeof MarketingResourcesReadMlAdvancedConceptsRoute
   MarketingResourcesReadMlAnswerKeyRoute: typeof MarketingResourcesReadMlAnswerKeyRoute
@@ -4085,6 +4106,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
   MarketingResourcesReadGoCompleteTutorialRoute:
     MarketingResourcesReadGoCompleteTutorialRoute,
   MarketingResourcesReadGoPdfNotesRoute: MarketingResourcesReadGoPdfNotesRoute,
+  MarketingResourcesReadGoQuickRevisionNotesRoute:
+    MarketingResourcesReadGoQuickRevisionNotesRoute,
   MarketingResourcesReadGoStepByStepLearningGuideRoute:
     MarketingResourcesReadGoStepByStepLearningGuideRoute,
   MarketingResourcesReadMlAdvancedConceptsRoute:
