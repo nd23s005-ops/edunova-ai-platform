@@ -370,6 +370,8 @@ const READER_ROUTES: Record<string, string> = {
   "deep-learning--pdf-notes": "/resources/read/dl-pdf-notes",
   "deep-learning--quick-revision-notes": "/resources/read/dl-quick-revision-notes",
   "deep-learning--cheat-sheet": "/resources/read/dl-cheat-sheet",
+  "generative-ai--beginner-guide": "/resources/read/genai-beginner-guide",
+
 
 
 
