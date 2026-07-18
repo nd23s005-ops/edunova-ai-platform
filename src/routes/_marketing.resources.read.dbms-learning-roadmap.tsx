@@ -89,7 +89,7 @@ function Page() {
           <li>Any one programming language (Python, Java, JS) — helpful, not mandatory.</li>
           <li>Set theory intuition (union, intersection).</li>
         </ul>
-        <Callout title="Tooling to install">PostgreSQL 16, DBeaver or pgAdmin, VS Code with the SQLTools extension.</Callout>
+        <Callout tone="tip" title="Tooling to install">PostgreSQL 16, DBeaver or pgAdmin, VS Code with the SQLTools extension.</Callout>
       </Section>
 
       <Section id="fundamentals" title="2. Database Fundamentals — Week 1–2">
@@ -137,7 +137,7 @@ function Page() {
           "Project 3: Inventory manager — transactions, triggers, audit log",
           "Project 4: Analytics dashboard — window functions, materialized views",
         ]} />
-        <Callout title="Push to GitHub">Include README with ER diagram, migrations, seed data, and 3 tuned queries with EXPLAIN plans.</Callout>
+        <Callout tone="tip" title="Push to GitHub">Include README with ER diagram, migrations, seed data, and 3 tuned queries with EXPLAIN plans.</Callout>
       </Section>
 
       <Section id="career" title="11. Career Preparation — Week 12">

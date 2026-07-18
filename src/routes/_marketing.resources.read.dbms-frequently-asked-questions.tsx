@@ -133,7 +133,7 @@ LEFT JOIN users u ON u.id = o.user_id;`}</pre>}
           <QA q="Composite key?" a="A primary key made of two or more columns. Common in join tables (order_id, product_id)." />
           <QA q="Surrogate vs natural key?" a="Surrogate = system-generated (UUID, serial). Natural = derived from real-world data (email, ISBN). Prefer surrogate for stability." />
           <QA q="What is a CHECK constraint?" a="Enforces a boolean expression on inserts/updates: CHECK (price >= 0)." />
-          <Callout title="Interview tip">A table can have many unique keys but only one primary key. Every primary key is a unique key, not vice versa.</Callout>
+          <Callout tone="tip" title="Interview tip">A table can have many unique keys but only one primary key. Every primary key is a unique key, not vice versa.</Callout>
         </div>
       </Section>
 
@@ -197,7 +197,7 @@ LEFT JOIN users u ON u.id = o.user_id;`}</pre>}
       </Section>
 
       <Section id="review" title="FAQ Review">
-        <Callout title="Top 50 Important Questions">
+        <Callout tone="tip" title="Top 50 Important Questions">
           Master these before any interview: DBMS vs file system, ACID, isolation levels, normalization forms, primary vs unique, INNER vs LEFT JOIN, GROUP BY vs DISTINCT, indexing trade-offs, EXPLAIN plans, SQL injection, transactions vs autocommit, deadlocks, views vs materialized views, N+1, denormalization, RLS, partitioning, sharding, replication, CAP theorem.
         </Callout>
         <p><strong>Interview Checklist:</strong> Can you write JOINs, GROUP BY, window functions, and CTEs from memory? Can you design a 3NF schema for a given domain? Can you explain when NOT to add an index?</p>

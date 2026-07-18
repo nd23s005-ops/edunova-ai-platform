@@ -151,7 +151,7 @@ function Page() {
           "For flaky writes, wrap in a transaction with SAVEPOINTs and inspect intermediate state.",
           "When results are wrong: 1) run each JOIN alone, 2) count rows at each step, 3) check for missing WHERE.",
         ]} />
-        <Callout title="Debug checklist">Query → Plan → Stats → Locks → Data. Never skip a layer.</Callout>
+        <Callout tone="tip" title="Debug checklist">Query → Plan → Stats → Locks → Data. Never skip a layer.</Callout>
       </Section>
 
       <Section id="backup" title="7. Backup & Recovery Tips">
@@ -198,7 +198,7 @@ function Page() {
       </Section>
 
       <Section id="review" title="Tips Review">
-        <Callout title="Top 50 Productivity Tips">
+        <Callout tone="tip" title="Top 50 Productivity Tips">
           Column-list SELECTs · CTEs over nested subqueries · EXPLAIN ANALYZE first · Composite index ordering · Partial indexes · UPSERT · RETURNING · Batch large writes · Materialised views · Connection pooling · UTC timestamps · Numeric money · Migrations only · Slow log · VACUUM · Statement timeouts · Parameterised queries · RLS · TLS · Tested backups.
         </Callout>
         <p><strong>Daily Database Checklist:</strong> Slow log clean? Auto-vacuum healthy? Replica lag &lt; 1s? Free space &gt; 30%? Backup succeeded last night? No blocking sessions &gt; 60s?</p>
