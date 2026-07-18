@@ -86,6 +86,15 @@ import { Route as MarketingResourcesReadRustBestPracticesRouteImport } from './r
 import { Route as MarketingResourcesReadRustBeginnerGuideRouteImport } from './routes/_marketing.resources.read.rust-beginner-guide'
 import { Route as MarketingResourcesReadRustAnswerKeyRouteImport } from './routes/_marketing.resources.read.rust-answer-key'
 import { Route as MarketingResourcesReadRustAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.rust-advanced-concepts'
+import { Route as MarketingResourcesReadReactStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.react-step-by-step-learning-guide'
+import { Route as MarketingResourcesReadReactQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.react-quick-revision-notes'
+import { Route as MarketingResourcesReadReactPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.react-practice-questions'
+import { Route as MarketingResourcesReadReactPdfNotesRouteImport } from './routes/_marketing.resources.read.react-pdf-notes'
+import { Route as MarketingResourcesReadReactInterviewQuestionsRouteImport } from './routes/_marketing.resources.read.react-interview-questions'
+import { Route as MarketingResourcesReadReactCompleteTutorialRouteImport } from './routes/_marketing.resources.read.react-complete-tutorial'
+import { Route as MarketingResourcesReadReactCheatSheetRouteImport } from './routes/_marketing.resources.read.react-cheat-sheet'
+import { Route as MarketingResourcesReadReactBeginnerGuideRouteImport } from './routes/_marketing.resources.read.react-beginner-guide'
+import { Route as MarketingResourcesReadReactAnswerKeyRouteImport } from './routes/_marketing.resources.read.react-answer-key'
 import { Route as MarketingResourcesReadPeTipsTricksRouteImport } from './routes/_marketing.resources.read.pe-tips-tricks'
 import { Route as MarketingResourcesReadPeStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.pe-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadPeSampleExercisesRouteImport } from './routes/_marketing.resources.read.pe-sample-exercises'
@@ -659,6 +668,60 @@ const MarketingResourcesReadRustAdvancedConceptsRoute =
   MarketingResourcesReadRustAdvancedConceptsRouteImport.update({
     id: '/read/rust-advanced-concepts',
     path: '/read/rust-advanced-concepts',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactStepByStepLearningGuideRoute =
+  MarketingResourcesReadReactStepByStepLearningGuideRouteImport.update({
+    id: '/read/react-step-by-step-learning-guide',
+    path: '/read/react-step-by-step-learning-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactQuickRevisionNotesRoute =
+  MarketingResourcesReadReactQuickRevisionNotesRouteImport.update({
+    id: '/read/react-quick-revision-notes',
+    path: '/read/react-quick-revision-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactPracticeQuestionsRoute =
+  MarketingResourcesReadReactPracticeQuestionsRouteImport.update({
+    id: '/read/react-practice-questions',
+    path: '/read/react-practice-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactPdfNotesRoute =
+  MarketingResourcesReadReactPdfNotesRouteImport.update({
+    id: '/read/react-pdf-notes',
+    path: '/read/react-pdf-notes',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactInterviewQuestionsRoute =
+  MarketingResourcesReadReactInterviewQuestionsRouteImport.update({
+    id: '/read/react-interview-questions',
+    path: '/read/react-interview-questions',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactCompleteTutorialRoute =
+  MarketingResourcesReadReactCompleteTutorialRouteImport.update({
+    id: '/read/react-complete-tutorial',
+    path: '/read/react-complete-tutorial',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactCheatSheetRoute =
+  MarketingResourcesReadReactCheatSheetRouteImport.update({
+    id: '/read/react-cheat-sheet',
+    path: '/read/react-cheat-sheet',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactBeginnerGuideRoute =
+  MarketingResourcesReadReactBeginnerGuideRouteImport.update({
+    id: '/read/react-beginner-guide',
+    path: '/read/react-beginner-guide',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadReactAnswerKeyRoute =
+  MarketingResourcesReadReactAnswerKeyRouteImport.update({
+    id: '/read/react-answer-key',
+    path: '/read/react-answer-key',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadPeTipsTricksRoute =
@@ -1712,6 +1775,15 @@ export interface FileRoutesByFullPath {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
+  '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
+  '/resources/read/react-cheat-sheet': typeof MarketingResourcesReadReactCheatSheetRoute
+  '/resources/read/react-complete-tutorial': typeof MarketingResourcesReadReactCompleteTutorialRoute
+  '/resources/read/react-interview-questions': typeof MarketingResourcesReadReactInterviewQuestionsRoute
+  '/resources/read/react-pdf-notes': typeof MarketingResourcesReadReactPdfNotesRoute
+  '/resources/read/react-practice-questions': typeof MarketingResourcesReadReactPracticeQuestionsRoute
+  '/resources/read/react-quick-revision-notes': typeof MarketingResourcesReadReactQuickRevisionNotesRoute
+  '/resources/read/react-step-by-step-learning-guide': typeof MarketingResourcesReadReactStepByStepLearningGuideRoute
   '/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
@@ -1932,6 +2004,15 @@ export interface FileRoutesByTo {
   '/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
+  '/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
+  '/resources/read/react-cheat-sheet': typeof MarketingResourcesReadReactCheatSheetRoute
+  '/resources/read/react-complete-tutorial': typeof MarketingResourcesReadReactCompleteTutorialRoute
+  '/resources/read/react-interview-questions': typeof MarketingResourcesReadReactInterviewQuestionsRoute
+  '/resources/read/react-pdf-notes': typeof MarketingResourcesReadReactPdfNotesRoute
+  '/resources/read/react-practice-questions': typeof MarketingResourcesReadReactPracticeQuestionsRoute
+  '/resources/read/react-quick-revision-notes': typeof MarketingResourcesReadReactQuickRevisionNotesRoute
+  '/resources/read/react-step-by-step-learning-guide': typeof MarketingResourcesReadReactStepByStepLearningGuideRoute
   '/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
@@ -2157,6 +2238,15 @@ export interface FileRoutesById {
   '/_marketing/resources/read/pe-sample-exercises': typeof MarketingResourcesReadPeSampleExercisesRoute
   '/_marketing/resources/read/pe-step-by-step-learning-guide': typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   '/_marketing/resources/read/pe-tips-tricks': typeof MarketingResourcesReadPeTipsTricksRoute
+  '/_marketing/resources/read/react-answer-key': typeof MarketingResourcesReadReactAnswerKeyRoute
+  '/_marketing/resources/read/react-beginner-guide': typeof MarketingResourcesReadReactBeginnerGuideRoute
+  '/_marketing/resources/read/react-cheat-sheet': typeof MarketingResourcesReadReactCheatSheetRoute
+  '/_marketing/resources/read/react-complete-tutorial': typeof MarketingResourcesReadReactCompleteTutorialRoute
+  '/_marketing/resources/read/react-interview-questions': typeof MarketingResourcesReadReactInterviewQuestionsRoute
+  '/_marketing/resources/read/react-pdf-notes': typeof MarketingResourcesReadReactPdfNotesRoute
+  '/_marketing/resources/read/react-practice-questions': typeof MarketingResourcesReadReactPracticeQuestionsRoute
+  '/_marketing/resources/read/react-quick-revision-notes': typeof MarketingResourcesReadReactQuickRevisionNotesRoute
+  '/_marketing/resources/read/react-step-by-step-learning-guide': typeof MarketingResourcesReadReactStepByStepLearningGuideRoute
   '/_marketing/resources/read/rust-advanced-concepts': typeof MarketingResourcesReadRustAdvancedConceptsRoute
   '/_marketing/resources/read/rust-answer-key': typeof MarketingResourcesReadRustAnswerKeyRoute
   '/_marketing/resources/read/rust-beginner-guide': typeof MarketingResourcesReadRustBeginnerGuideRoute
@@ -2380,6 +2470,15 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/react-answer-key'
+    | '/resources/read/react-beginner-guide'
+    | '/resources/read/react-cheat-sheet'
+    | '/resources/read/react-complete-tutorial'
+    | '/resources/read/react-interview-questions'
+    | '/resources/read/react-pdf-notes'
+    | '/resources/read/react-practice-questions'
+    | '/resources/read/react-quick-revision-notes'
+    | '/resources/read/react-step-by-step-learning-guide'
     | '/resources/read/rust-advanced-concepts'
     | '/resources/read/rust-answer-key'
     | '/resources/read/rust-beginner-guide'
@@ -2600,6 +2699,15 @@ export interface FileRouteTypes {
     | '/resources/read/pe-sample-exercises'
     | '/resources/read/pe-step-by-step-learning-guide'
     | '/resources/read/pe-tips-tricks'
+    | '/resources/read/react-answer-key'
+    | '/resources/read/react-beginner-guide'
+    | '/resources/read/react-cheat-sheet'
+    | '/resources/read/react-complete-tutorial'
+    | '/resources/read/react-interview-questions'
+    | '/resources/read/react-pdf-notes'
+    | '/resources/read/react-practice-questions'
+    | '/resources/read/react-quick-revision-notes'
+    | '/resources/read/react-step-by-step-learning-guide'
     | '/resources/read/rust-advanced-concepts'
     | '/resources/read/rust-answer-key'
     | '/resources/read/rust-beginner-guide'
@@ -2824,6 +2932,15 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/pe-sample-exercises'
     | '/_marketing/resources/read/pe-step-by-step-learning-guide'
     | '/_marketing/resources/read/pe-tips-tricks'
+    | '/_marketing/resources/read/react-answer-key'
+    | '/_marketing/resources/read/react-beginner-guide'
+    | '/_marketing/resources/read/react-cheat-sheet'
+    | '/_marketing/resources/read/react-complete-tutorial'
+    | '/_marketing/resources/read/react-interview-questions'
+    | '/_marketing/resources/read/react-pdf-notes'
+    | '/_marketing/resources/read/react-practice-questions'
+    | '/_marketing/resources/read/react-quick-revision-notes'
+    | '/_marketing/resources/read/react-step-by-step-learning-guide'
     | '/_marketing/resources/read/rust-advanced-concepts'
     | '/_marketing/resources/read/rust-answer-key'
     | '/_marketing/resources/read/rust-beginner-guide'
@@ -3421,6 +3538,69 @@ declare module '@tanstack/react-router' {
       path: '/read/rust-advanced-concepts'
       fullPath: '/resources/read/rust-advanced-concepts'
       preLoaderRoute: typeof MarketingResourcesReadRustAdvancedConceptsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-step-by-step-learning-guide': {
+      id: '/_marketing/resources/read/react-step-by-step-learning-guide'
+      path: '/read/react-step-by-step-learning-guide'
+      fullPath: '/resources/read/react-step-by-step-learning-guide'
+      preLoaderRoute: typeof MarketingResourcesReadReactStepByStepLearningGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-quick-revision-notes': {
+      id: '/_marketing/resources/read/react-quick-revision-notes'
+      path: '/read/react-quick-revision-notes'
+      fullPath: '/resources/read/react-quick-revision-notes'
+      preLoaderRoute: typeof MarketingResourcesReadReactQuickRevisionNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-practice-questions': {
+      id: '/_marketing/resources/read/react-practice-questions'
+      path: '/read/react-practice-questions'
+      fullPath: '/resources/read/react-practice-questions'
+      preLoaderRoute: typeof MarketingResourcesReadReactPracticeQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-pdf-notes': {
+      id: '/_marketing/resources/read/react-pdf-notes'
+      path: '/read/react-pdf-notes'
+      fullPath: '/resources/read/react-pdf-notes'
+      preLoaderRoute: typeof MarketingResourcesReadReactPdfNotesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-interview-questions': {
+      id: '/_marketing/resources/read/react-interview-questions'
+      path: '/read/react-interview-questions'
+      fullPath: '/resources/read/react-interview-questions'
+      preLoaderRoute: typeof MarketingResourcesReadReactInterviewQuestionsRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-complete-tutorial': {
+      id: '/_marketing/resources/read/react-complete-tutorial'
+      path: '/read/react-complete-tutorial'
+      fullPath: '/resources/read/react-complete-tutorial'
+      preLoaderRoute: typeof MarketingResourcesReadReactCompleteTutorialRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-cheat-sheet': {
+      id: '/_marketing/resources/read/react-cheat-sheet'
+      path: '/read/react-cheat-sheet'
+      fullPath: '/resources/read/react-cheat-sheet'
+      preLoaderRoute: typeof MarketingResourcesReadReactCheatSheetRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-beginner-guide': {
+      id: '/_marketing/resources/read/react-beginner-guide'
+      path: '/read/react-beginner-guide'
+      fullPath: '/resources/read/react-beginner-guide'
+      preLoaderRoute: typeof MarketingResourcesReadReactBeginnerGuideRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/react-answer-key': {
+      id: '/_marketing/resources/read/react-answer-key'
+      path: '/read/react-answer-key'
+      fullPath: '/resources/read/react-answer-key'
+      preLoaderRoute: typeof MarketingResourcesReadReactAnswerKeyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/pe-tips-tricks': {
@@ -4706,6 +4886,15 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadPeSampleExercisesRoute: typeof MarketingResourcesReadPeSampleExercisesRoute
   MarketingResourcesReadPeStepByStepLearningGuideRoute: typeof MarketingResourcesReadPeStepByStepLearningGuideRoute
   MarketingResourcesReadPeTipsTricksRoute: typeof MarketingResourcesReadPeTipsTricksRoute
+  MarketingResourcesReadReactAnswerKeyRoute: typeof MarketingResourcesReadReactAnswerKeyRoute
+  MarketingResourcesReadReactBeginnerGuideRoute: typeof MarketingResourcesReadReactBeginnerGuideRoute
+  MarketingResourcesReadReactCheatSheetRoute: typeof MarketingResourcesReadReactCheatSheetRoute
+  MarketingResourcesReadReactCompleteTutorialRoute: typeof MarketingResourcesReadReactCompleteTutorialRoute
+  MarketingResourcesReadReactInterviewQuestionsRoute: typeof MarketingResourcesReadReactInterviewQuestionsRoute
+  MarketingResourcesReadReactPdfNotesRoute: typeof MarketingResourcesReadReactPdfNotesRoute
+  MarketingResourcesReadReactPracticeQuestionsRoute: typeof MarketingResourcesReadReactPracticeQuestionsRoute
+  MarketingResourcesReadReactQuickRevisionNotesRoute: typeof MarketingResourcesReadReactQuickRevisionNotesRoute
+  MarketingResourcesReadReactStepByStepLearningGuideRoute: typeof MarketingResourcesReadReactStepByStepLearningGuideRoute
   MarketingResourcesReadRustAdvancedConceptsRoute: typeof MarketingResourcesReadRustAdvancedConceptsRoute
   MarketingResourcesReadRustAnswerKeyRoute: typeof MarketingResourcesReadRustAnswerKeyRoute
   MarketingResourcesReadRustBeginnerGuideRoute: typeof MarketingResourcesReadRustBeginnerGuideRoute
@@ -4998,6 +5187,24 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadPeStepByStepLearningGuideRoute,
   MarketingResourcesReadPeTipsTricksRoute:
     MarketingResourcesReadPeTipsTricksRoute,
+  MarketingResourcesReadReactAnswerKeyRoute:
+    MarketingResourcesReadReactAnswerKeyRoute,
+  MarketingResourcesReadReactBeginnerGuideRoute:
+    MarketingResourcesReadReactBeginnerGuideRoute,
+  MarketingResourcesReadReactCheatSheetRoute:
+    MarketingResourcesReadReactCheatSheetRoute,
+  MarketingResourcesReadReactCompleteTutorialRoute:
+    MarketingResourcesReadReactCompleteTutorialRoute,
+  MarketingResourcesReadReactInterviewQuestionsRoute:
+    MarketingResourcesReadReactInterviewQuestionsRoute,
+  MarketingResourcesReadReactPdfNotesRoute:
+    MarketingResourcesReadReactPdfNotesRoute,
+  MarketingResourcesReadReactPracticeQuestionsRoute:
+    MarketingResourcesReadReactPracticeQuestionsRoute,
+  MarketingResourcesReadReactQuickRevisionNotesRoute:
+    MarketingResourcesReadReactQuickRevisionNotesRoute,
+  MarketingResourcesReadReactStepByStepLearningGuideRoute:
+    MarketingResourcesReadReactStepByStepLearningGuideRoute,
   MarketingResourcesReadRustAdvancedConceptsRoute:
     MarketingResourcesReadRustAdvancedConceptsRoute,
   MarketingResourcesReadRustAnswerKeyRoute:

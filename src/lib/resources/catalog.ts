@@ -472,6 +472,17 @@ const READER_ROUTES: Record<string, string> = {
    "rust--advanced-concepts": "/resources/read/rust-advanced-concepts",
    "rust--glossary": "/resources/read/rust-glossary",
    "rust--reference-guide": "/resources/read/rust-reference-guide",
+   "react--beginner-guide": "/resources/read/react-beginner-guide",
+   "react--complete-tutorial": "/resources/read/react-complete-tutorial",
+   "react--step-by-step-learning-guide": "/resources/read/react-step-by-step-learning-guide",
+   "react--pdf-notes": "/resources/read/react-pdf-notes",
+   "react--quick-revision-notes": "/resources/read/react-quick-revision-notes",
+   "react--cheat-sheet": "/resources/read/react-cheat-sheet",
+   "react--interview-questions": "/resources/read/react-interview-questions",
+   "react--practice-questions": "/resources/read/react-practice-questions",
+   "react--answer-key": "/resources/read/react-answer-key",
+
+
 
 
 
