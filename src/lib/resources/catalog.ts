@@ -376,6 +376,9 @@ const READER_ROUTES: Record<string, string> = {
  "generative-ai--practice-questions": "/resources/read/genai-practice-questions",
  "generative-ai--real-world-case-study": "/resources/read/genai-real-world-case-study",
  "generative-ai--frequently-asked-questions": "/resources/read/genai-frequently-asked-questions",
+ "prompt-engineering--advanced-concepts": "/resources/read/pe-advanced-concepts",
+ "prompt-engineering--glossary": "/resources/read/pe-glossary",
+ "prompt-engineering--reference-guide": "/resources/read/pe-reference-guide",
 
 
 
