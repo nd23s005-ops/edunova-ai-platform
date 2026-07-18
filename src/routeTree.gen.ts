@@ -54,6 +54,7 @@ import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlSampleExercisesRouteImport } from './routes/_marketing.resources.read.ml-sample-exercises'
+import { Route as MarketingResourcesReadMlRealWorldCaseStudyRouteImport } from './routes/_marketing.resources.read.ml-real-world-case-study'
 import { Route as MarketingResourcesReadMlQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ml-quick-revision-notes'
 import { Route as MarketingResourcesReadMlProjectGuideRouteImport } from './routes/_marketing.resources.read.ml-project-guide'
 import { Route as MarketingResourcesReadMlProjectCaseStudyRouteImport } from './routes/_marketing.resources.read.ml-project-case-study'
@@ -334,6 +335,12 @@ const MarketingResourcesReadMlSampleExercisesRoute =
   MarketingResourcesReadMlSampleExercisesRouteImport.update({
     id: '/read/ml-sample-exercises',
     path: '/read/ml-sample-exercises',
+    getParentRoute: () => MarketingResourcesRoute,
+  } as any)
+const MarketingResourcesReadMlRealWorldCaseStudyRoute =
+  MarketingResourcesReadMlRealWorldCaseStudyRouteImport.update({
+    id: '/read/ml-real-world-case-study',
+    path: '/read/ml-real-world-case-study',
     getParentRoute: () => MarketingResourcesRoute,
   } as any)
 const MarketingResourcesReadMlQuickRevisionNotesRoute =
@@ -679,6 +686,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-project-case-study': typeof MarketingResourcesReadMlProjectCaseStudyRoute
   '/resources/read/ml-project-guide': typeof MarketingResourcesReadMlProjectGuideRoute
   '/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
+  '/resources/read/ml-real-world-case-study': typeof MarketingResourcesReadMlRealWorldCaseStudyRoute
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
@@ -766,6 +774,7 @@ export interface FileRoutesByTo {
   '/resources/read/ml-project-case-study': typeof MarketingResourcesReadMlProjectCaseStudyRoute
   '/resources/read/ml-project-guide': typeof MarketingResourcesReadMlProjectGuideRoute
   '/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
+  '/resources/read/ml-real-world-case-study': typeof MarketingResourcesReadMlRealWorldCaseStudyRoute
   '/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
@@ -858,6 +867,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-project-case-study': typeof MarketingResourcesReadMlProjectCaseStudyRoute
   '/_marketing/resources/read/ml-project-guide': typeof MarketingResourcesReadMlProjectGuideRoute
   '/_marketing/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
+  '/_marketing/resources/read/ml-real-world-case-study': typeof MarketingResourcesReadMlRealWorldCaseStudyRoute
   '/_marketing/resources/read/ml-sample-exercises': typeof MarketingResourcesReadMlSampleExercisesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
@@ -948,6 +958,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-project-case-study'
     | '/resources/read/ml-project-guide'
     | '/resources/read/ml-quick-revision-notes'
+    | '/resources/read/ml-real-world-case-study'
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/dashboard/mock-tests/'
@@ -1035,6 +1046,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-project-case-study'
     | '/resources/read/ml-project-guide'
     | '/resources/read/ml-quick-revision-notes'
+    | '/resources/read/ml-real-world-case-study'
     | '/resources/read/ml-sample-exercises'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/dashboard/mock-tests'
@@ -1126,6 +1138,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-project-case-study'
     | '/_marketing/resources/read/ml-project-guide'
     | '/_marketing/resources/read/ml-quick-revision-notes'
+    | '/_marketing/resources/read/ml-real-world-case-study'
     | '/_marketing/resources/read/ml-sample-exercises'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_dashboard/dashboard/mock-tests/'
@@ -1468,6 +1481,13 @@ declare module '@tanstack/react-router' {
       path: '/read/ml-sample-exercises'
       fullPath: '/resources/read/ml-sample-exercises'
       preLoaderRoute: typeof MarketingResourcesReadMlSampleExercisesRouteImport
+      parentRoute: typeof MarketingResourcesRoute
+    }
+    '/_marketing/resources/read/ml-real-world-case-study': {
+      id: '/_marketing/resources/read/ml-real-world-case-study'
+      path: '/read/ml-real-world-case-study'
+      fullPath: '/resources/read/ml-real-world-case-study'
+      preLoaderRoute: typeof MarketingResourcesReadMlRealWorldCaseStudyRouteImport
       parentRoute: typeof MarketingResourcesRoute
     }
     '/_marketing/resources/read/ml-quick-revision-notes': {
@@ -1945,6 +1965,7 @@ interface MarketingResourcesRouteChildren {
   MarketingResourcesReadMlProjectCaseStudyRoute: typeof MarketingResourcesReadMlProjectCaseStudyRoute
   MarketingResourcesReadMlProjectGuideRoute: typeof MarketingResourcesReadMlProjectGuideRoute
   MarketingResourcesReadMlQuickRevisionNotesRoute: typeof MarketingResourcesReadMlQuickRevisionNotesRoute
+  MarketingResourcesReadMlRealWorldCaseStudyRoute: typeof MarketingResourcesReadMlRealWorldCaseStudyRoute
   MarketingResourcesReadMlSampleExercisesRoute: typeof MarketingResourcesReadMlSampleExercisesRoute
   MarketingResourcesReadMlStepByStepLearningGuideRoute: typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
 }
@@ -2011,6 +2032,8 @@ const MarketingResourcesRouteChildren: MarketingResourcesRouteChildren = {
     MarketingResourcesReadMlProjectGuideRoute,
   MarketingResourcesReadMlQuickRevisionNotesRoute:
     MarketingResourcesReadMlQuickRevisionNotesRoute,
+  MarketingResourcesReadMlRealWorldCaseStudyRoute:
+    MarketingResourcesReadMlRealWorldCaseStudyRoute,
   MarketingResourcesReadMlSampleExercisesRoute:
     MarketingResourcesReadMlSampleExercisesRoute,
   MarketingResourcesReadMlStepByStepLearningGuideRoute:
