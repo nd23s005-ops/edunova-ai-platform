@@ -1335,7 +1335,29 @@ const READER_ROUTES: Record<string, string> = {
     "mongodb--advanced-concepts": "/resources/read/mongodb-advanced-concepts",
     "mongodb--glossary": "/resources/read/mongodb-glossary",
     "mongodb--reference-guide": "/resources/read/mongodb-reference-guide",
+    "data-science--beginner-guide": "/resources/read/data-science-beginner-guide",
+    "data-science--complete-tutorial": "/resources/read/data-science-complete-tutorial",
+    "data-science--step-by-step-learning-guide": "/resources/read/data-science-step-by-step-learning-guide",
+    "data-science--pdf-notes": "/resources/read/data-science-pdf-notes",
+    "data-science--quick-revision-notes": "/resources/read/data-science-quick-revision-notes",
+    "data-science--cheat-sheet": "/resources/read/data-science-cheat-sheet",
+    "data-science--interview-questions": "/resources/read/data-science-interview-questions",
+    "data-science--practice-questions": "/resources/read/data-science-practice-questions",
+    "data-science--answer-key": "/resources/read/data-science-answer-key",
+    "data-science--sample-exercises": "/resources/read/data-science-sample-exercises",
+    "data-science--project-guide": "/resources/read/data-science-project-guide",
+    "data-science--project-case-study": "/resources/read/data-science-project-case-study",
+    "data-science--real-world-case-study": "/resources/read/data-science-real-world-case-study",
+    "data-science--best-practices": "/resources/read/data-science-best-practices",
+    "data-science--common-mistakes": "/resources/read/data-science-common-mistakes",
+    "data-science--frequently-asked-questions": "/resources/read/data-science-frequently-asked-questions",
+    "data-science--learning-roadmap": "/resources/read/data-science-learning-roadmap",
+    "data-science--tips-tricks": "/resources/read/data-science-tips-tricks",
+    "data-science--advanced-concepts": "/resources/read/data-science-advanced-concepts",
+    "data-science--glossary": "/resources/read/data-science-glossary",
+    "data-science--reference-guide": "/resources/read/data-science-reference-guide",
 };
+
 
 
 export function getResourceReaderPath(id: string): string | null {
