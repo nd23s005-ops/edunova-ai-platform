@@ -105,7 +105,7 @@ const example = () => {
       </Section>
 
       <Section id="s4" title="4. Performance">
-        <p>LCP <p>LCP < 1.2s, INP < 100ms.</p>lt; 1.2s, INP <p>LCP < 1.2s, INP < 100ms.</p>lt; 100ms.</p>
+        <p>LCP &lt; 1.2s, INP &lt; 100ms.</p>
         <Code lang="js">{`// Performance — illustrative snippet
 const example = () => {
   // apply concepts covered above
