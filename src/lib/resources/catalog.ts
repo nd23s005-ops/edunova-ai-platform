@@ -412,6 +412,10 @@ const READER_ROUTES: Record<string, string> = {
   "dbms--pdf-notes": "/resources/read/dbms-pdf-notes",
   "dbms--quick-revision-notes": "/resources/read/dbms-quick-revision-notes",
   "dbms--cheat-sheet": "/resources/read/dbms-cheat-sheet",
+  "dbms--sample-exercises": "/resources/read/dbms-sample-exercises",
+  "dbms--project-guide": "/resources/read/dbms-project-guide",
+  "dbms--project-case-study": "/resources/read/dbms-project-case-study",
+
 
 
 
