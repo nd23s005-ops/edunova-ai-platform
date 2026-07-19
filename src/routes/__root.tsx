@@ -162,6 +162,11 @@ function RootComponent() {
   const router = useRouter();
 
   useEffect(() => {
+    // Install client-side failure reporter (dev/preview only; no-op in prod).
+    void import("@/lib/client-error-reporter").then(({ installClientErrorReporter }) => {
+      installClientErrorReporter();
+    });
+
     // Lazy-load client to avoid SSR touching localStorage
     let unsub: (() => void) | undefined;
     (async () => {
