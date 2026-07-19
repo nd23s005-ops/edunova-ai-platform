@@ -104,11 +104,7 @@ function SyllabusPage() {
         return (
           <section key={stage.id} className="mb-10">
             <SectionHeader
-              title={
-                <span className="flex items-center gap-2">
-                  <GraduationCap className="h-5 w-5 text-primary" /> {stage.label}
-                </span>
-              }
+              title={`${stage.label}`}
               hint={stage.grades}
             />
             <p className="mb-4 text-sm text-muted-foreground">{stage.desc}</p>

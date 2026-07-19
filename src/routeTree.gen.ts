@@ -90,6 +90,7 @@ import { Route as MarketingResourcesReadAiAnswerKeyRouteImport } from './routes/
 import { Route as MarketingResourcesReadAiAdvancedConceptsRouteImport } from './routes/_marketing.resources.read.ai-advanced-concepts'
 import { Route as MarketingResourcesReadSlugRouteImport } from './routes/_marketing.resources.read.$slug'
 import { Route as DashboardDashboardUpskillingCourseIdRouteImport } from './routes/_dashboard.dashboard.upskilling.$courseId'
+import { Route as DashboardDashboardStudentSyllabusRouteImport } from './routes/_dashboard.dashboard.student.syllabus'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
 import { Route as DashboardDashboardStudentDailyQuizRouteImport } from './routes/_dashboard.dashboard.student.daily-quiz'
 import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_dashboard.dashboard.student.browse'
@@ -551,6 +552,12 @@ const DashboardDashboardUpskillingCourseIdRoute =
     path: '/dashboard/upskilling/$courseId',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardStudentSyllabusRoute =
+  DashboardDashboardStudentSyllabusRouteImport.update({
+    id: '/syllabus',
+    path: '/syllabus',
+    getParentRoute: () => DashboardDashboardStudentRoute,
+  } as any)
 const DashboardDashboardStudentMyCoursesRoute =
   DashboardDashboardStudentMyCoursesRouteImport.update({
     id: '/my-courses',
@@ -676,6 +683,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
+  '/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/resources/read/$slug': typeof MarketingResourcesReadSlugRoute
   '/resources/read/ai-advanced-concepts': typeof MarketingResourcesReadAiAdvancedConceptsRoute
@@ -767,6 +775,7 @@ export interface FileRoutesByTo {
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
+  '/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/resources/read/$slug': typeof MarketingResourcesReadSlugRoute
   '/resources/read/ai-advanced-concepts': typeof MarketingResourcesReadAiAdvancedConceptsRoute
@@ -863,6 +872,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/_dashboard/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
+  '/_dashboard/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/_dashboard/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/_marketing/resources/read/$slug': typeof MarketingResourcesReadSlugRoute
   '/_marketing/resources/read/ai-advanced-concepts': typeof MarketingResourcesReadAiAdvancedConceptsRoute
@@ -957,6 +967,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/browse'
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
+    | '/dashboard/student/syllabus'
     | '/dashboard/upskilling/$courseId'
     | '/resources/read/$slug'
     | '/resources/read/ai-advanced-concepts'
@@ -1048,6 +1059,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/browse'
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
+    | '/dashboard/student/syllabus'
     | '/dashboard/upskilling/$courseId'
     | '/resources/read/$slug'
     | '/resources/read/ai-advanced-concepts'
@@ -1143,6 +1155,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student/browse'
     | '/_dashboard/dashboard/student/daily-quiz'
     | '/_dashboard/dashboard/student/my-courses'
+    | '/_dashboard/dashboard/student/syllabus'
     | '/_dashboard/dashboard/upskilling/$courseId'
     | '/_marketing/resources/read/$slug'
     | '/_marketing/resources/read/ai-advanced-concepts'
@@ -1774,6 +1787,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardUpskillingCourseIdRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/student/syllabus': {
+      id: '/_dashboard/dashboard/student/syllabus'
+      path: '/syllabus'
+      fullPath: '/dashboard/student/syllabus'
+      preLoaderRoute: typeof DashboardDashboardStudentSyllabusRouteImport
+      parentRoute: typeof DashboardDashboardStudentRoute
+    }
     '/_dashboard/dashboard/student/my-courses': {
       id: '/_dashboard/dashboard/student/my-courses'
       path: '/my-courses'
@@ -1929,6 +1949,7 @@ interface DashboardDashboardStudentRouteChildren {
   DashboardDashboardStudentBrowseRoute: typeof DashboardDashboardStudentBrowseRoute
   DashboardDashboardStudentDailyQuizRoute: typeof DashboardDashboardStudentDailyQuizRoute
   DashboardDashboardStudentMyCoursesRoute: typeof DashboardDashboardStudentMyCoursesRoute
+  DashboardDashboardStudentSyllabusRoute: typeof DashboardDashboardStudentSyllabusRoute
   DashboardDashboardStudentCoursesCourseIdRoute: typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
 }
 
@@ -1939,6 +1960,8 @@ const DashboardDashboardStudentRouteChildren: DashboardDashboardStudentRouteChil
       DashboardDashboardStudentDailyQuizRoute,
     DashboardDashboardStudentMyCoursesRoute:
       DashboardDashboardStudentMyCoursesRoute,
+    DashboardDashboardStudentSyllabusRoute:
+      DashboardDashboardStudentSyllabusRoute,
     DashboardDashboardStudentCoursesCourseIdRoute:
       DashboardDashboardStudentCoursesCourseIdRouteWithChildren,
   }
