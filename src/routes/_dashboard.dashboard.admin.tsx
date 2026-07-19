@@ -42,6 +42,7 @@ const SECTIONS: Section[] = [
   { to: "/dashboard/admin/analytics", label: "Analytics", description: "Platform-wide learning analytics.", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", description: "Operational and compliance reports.", icon: FileText },
   { to: "/dashboard/admin/activity", label: "Activity Logs", description: "Recent administrative actions.", icon: Activity },
+  { to: "/dashboard/admin/debug-errors", label: "Debug Errors", description: "Recent captured server & client errors.", icon: Bug, superOnly: true },
   { to: "/dashboard/admin/settings", label: "Platform Settings", description: "Configure roles, permissions and AI.", icon: Settings, superOnly: true },
   { to: "/dashboard/admin/ai-configuration", label: "AI Configuration", description: "Manage models and prompts.", icon: Sparkles, superOnly: true },
 ];
