@@ -91,6 +91,7 @@ import { Route as MarketingResourcesReadAiAdvancedConceptsRouteImport } from './
 import { Route as MarketingResourcesReadSlugRouteImport } from './routes/_marketing.resources.read.$slug'
 import { Route as DashboardDashboardUpskillingCourseIdRouteImport } from './routes/_dashboard.dashboard.upskilling.$courseId'
 import { Route as DashboardDashboardStudentSyllabusRouteImport } from './routes/_dashboard.dashboard.student.syllabus'
+import { Route as DashboardDashboardStudentProgressRouteImport } from './routes/_dashboard.dashboard.student.progress'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
 import { Route as DashboardDashboardStudentDailyQuizRouteImport } from './routes/_dashboard.dashboard.student.daily-quiz'
 import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_dashboard.dashboard.student.browse'
@@ -560,6 +561,12 @@ const DashboardDashboardStudentSyllabusRoute =
     path: '/syllabus',
     getParentRoute: () => DashboardDashboardStudentRoute,
   } as any)
+const DashboardDashboardStudentProgressRoute =
+  DashboardDashboardStudentProgressRouteImport.update({
+    id: '/progress',
+    path: '/progress',
+    getParentRoute: () => DashboardDashboardStudentRoute,
+  } as any)
 const DashboardDashboardStudentMyCoursesRoute =
   DashboardDashboardStudentMyCoursesRouteImport.update({
     id: '/my-courses',
@@ -698,6 +705,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
+  '/dashboard/student/progress': typeof DashboardDashboardStudentProgressRoute
   '/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/resources/read/$slug': typeof MarketingResourcesReadSlugRoute
@@ -792,6 +800,7 @@ export interface FileRoutesByTo {
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
+  '/dashboard/student/progress': typeof DashboardDashboardStudentProgressRoute
   '/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/resources/read/$slug': typeof MarketingResourcesReadSlugRoute
@@ -891,6 +900,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/_dashboard/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
+  '/_dashboard/dashboard/student/progress': typeof DashboardDashboardStudentProgressRoute
   '/_dashboard/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/_dashboard/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
   '/_marketing/resources/read/$slug': typeof MarketingResourcesReadSlugRoute
@@ -988,6 +998,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/browse'
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
+    | '/dashboard/student/progress'
     | '/dashboard/student/syllabus'
     | '/dashboard/upskilling/$courseId'
     | '/resources/read/$slug'
@@ -1082,6 +1093,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/browse'
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
+    | '/dashboard/student/progress'
     | '/dashboard/student/syllabus'
     | '/dashboard/upskilling/$courseId'
     | '/resources/read/$slug'
@@ -1180,6 +1192,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student/browse'
     | '/_dashboard/dashboard/student/daily-quiz'
     | '/_dashboard/dashboard/student/my-courses'
+    | '/_dashboard/dashboard/student/progress'
     | '/_dashboard/dashboard/student/syllabus'
     | '/_dashboard/dashboard/upskilling/$courseId'
     | '/_marketing/resources/read/$slug'
@@ -1820,6 +1833,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardStudentSyllabusRouteImport
       parentRoute: typeof DashboardDashboardStudentRoute
     }
+    '/_dashboard/dashboard/student/progress': {
+      id: '/_dashboard/dashboard/student/progress'
+      path: '/progress'
+      fullPath: '/dashboard/student/progress'
+      preLoaderRoute: typeof DashboardDashboardStudentProgressRouteImport
+      parentRoute: typeof DashboardDashboardStudentRoute
+    }
     '/_dashboard/dashboard/student/my-courses': {
       id: '/_dashboard/dashboard/student/my-courses'
       path: '/my-courses'
@@ -2005,6 +2025,7 @@ interface DashboardDashboardStudentRouteChildren {
   DashboardDashboardStudentBrowseRoute: typeof DashboardDashboardStudentBrowseRoute
   DashboardDashboardStudentDailyQuizRoute: typeof DashboardDashboardStudentDailyQuizRoute
   DashboardDashboardStudentMyCoursesRoute: typeof DashboardDashboardStudentMyCoursesRoute
+  DashboardDashboardStudentProgressRoute: typeof DashboardDashboardStudentProgressRoute
   DashboardDashboardStudentSyllabusRoute: typeof DashboardDashboardStudentSyllabusRoute
   DashboardDashboardStudentCoursesCourseIdRoute: typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
 }
@@ -2018,6 +2039,8 @@ const DashboardDashboardStudentRouteChildren: DashboardDashboardStudentRouteChil
       DashboardDashboardStudentDailyQuizRoute,
     DashboardDashboardStudentMyCoursesRoute:
       DashboardDashboardStudentMyCoursesRoute,
+    DashboardDashboardStudentProgressRoute:
+      DashboardDashboardStudentProgressRoute,
     DashboardDashboardStudentSyllabusRoute:
       DashboardDashboardStudentSyllabusRoute,
     DashboardDashboardStudentCoursesCourseIdRoute:
