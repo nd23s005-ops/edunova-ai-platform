@@ -29,25 +29,12 @@ type UpskillCourse = {
 const DIFFICULTIES = ["all", "beginner", "intermediate", "advanced"] as const;
 
 const FEATURED_SKILLS: string[] = [
-  "Python Programming",
-  "Java Programming",
-  "JavaScript",
-  "HTML & CSS",
-  "React.js",
-  "Node.js",
-  "Full Stack MERN Development",
-  "Artificial Intelligence",
-  "Machine Learning",
-  "Data Science",
-  "SQL & Databases",
-  "Cloud Computing (AWS)",
-  "Cyber Security",
-  "UI/UX Design",
-  "Git & GitHub",
-  "Communication Skills",
-  "Resume Building",
-  "Interview Preparation",
-  "Aptitude & Logical Reasoning",
+  "Generative AI",
+  "OpenAI",
+  "HTML",
+  "CSS",
+  "Tailwind CSS",
+  "Figma",
 ];
 
 function matchesFeatured(course: { title: string; category: string }): boolean {

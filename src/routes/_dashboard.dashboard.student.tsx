@@ -6,11 +6,12 @@ import {
   Sparkles,
   Target,
   ClipboardList,
-  
   CheckCircle2,
   PlayCircle,
   BarChart3,
-  GraduationCap,
+  NotebookText,
+  LineChart,
+  Rocket,
 } from "lucide-react";
 import { DashboardHeader, StatCard } from "@/components/dashboard/DashboardShared";
 import {
@@ -363,28 +364,40 @@ function StudentDashboard() {
         <QuickActionsGrid
           items={[
             {
+              to: "/dashboard/student/syllabus",
+              label: "My Syllabus",
+              description: "Grade-based subjects & chapters",
+              icon: <NotebookText className="h-5 w-5" />,
+            },
+            {
+              to: "/dashboard/student/assessments",
+              label: "Weekly Assessments",
+              description: "25-question AI-generated tests",
+              icon: <ClipboardList className="h-5 w-5" />,
+            },
+            {
+              to: "/dashboard/student/progress",
+              label: "Weekly Progress",
+              description: "Hours, streaks & performance",
+              icon: <LineChart className="h-5 w-5" />,
+            },
+            {
+              to: "/dashboard/upskilling",
+              label: "Upskilling Hub",
+              description: "GenAI, OpenAI, HTML, CSS & more",
+              icon: <Rocket className="h-5 w-5" />,
+            },
+            {
               to: "/dashboard/student/browse",
               label: "Browse catalog",
               description: "Explore 15+ subjects across boards",
               icon: <Compass className="h-5 w-5" />,
             },
             {
-              to: "/dashboard/student/my-courses",
-              label: "My courses",
-              description: "Resume any of your enrollments",
-              icon: <BookOpen className="h-5 w-5" />,
-            },
-            {
               to: "/dashboard/ai-assistant",
               label: "Nova AI Assistant",
               description: "Ask academic questions anytime",
               icon: <Sparkles className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/profile",
-              label: "Profile & settings",
-              description: "Update board, class and preferences",
-              icon: <GraduationCap className="h-5 w-5" />,
             },
           ]}
         />
