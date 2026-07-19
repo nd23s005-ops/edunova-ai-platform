@@ -405,6 +405,54 @@ export type Database = {
         }
         Relationships: []
       }
+      debug_error_captures: {
+        Row: {
+          capture_id: string
+          captured_at: string
+          created_at: string
+          id: string
+          location: Json | null
+          message: string
+          method: string | null
+          name: string
+          path: string | null
+          request: Json | null
+          request_id: string | null
+          response: Json | null
+          stack: string | null
+        }
+        Insert: {
+          capture_id: string
+          captured_at?: string
+          created_at?: string
+          id?: string
+          location?: Json | null
+          message: string
+          method?: string | null
+          name: string
+          path?: string | null
+          request?: Json | null
+          request_id?: string | null
+          response?: Json | null
+          stack?: string | null
+        }
+        Update: {
+          capture_id?: string
+          captured_at?: string
+          created_at?: string
+          id?: string
+          location?: Json | null
+          message?: string
+          method?: string | null
+          name?: string
+          path?: string | null
+          request?: Json | null
+          request_id?: string | null
+          response?: Json | null
+          stack?: string | null
+        }
+        Relationships: []
+      }
       lesson_progress: {
         Row: {
           completed_at: string
