@@ -6,11 +6,13 @@ import {
   Sparkles,
   Target,
   ClipboardList,
-  
   CheckCircle2,
   PlayCircle,
   BarChart3,
   GraduationCap,
+  NotebookText,
+  LineChart,
+  Rocket,
 } from "lucide-react";
 import { DashboardHeader, StatCard } from "@/components/dashboard/DashboardShared";
 import {
