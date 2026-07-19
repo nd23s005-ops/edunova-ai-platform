@@ -29,7 +29,7 @@ export const Route = createFileRoute("/api/debug/errors")({
         if (blocked) return blocked;
         const url = new URL(request.url);
         const limit = Math.min(Number(url.searchParams.get("limit") ?? 50), 200);
-        const errors = getRecentErrors(limit);
+        const errors = await getRecentErrorsHydrated(limit);
         return Response.json(
           { count: errors.length, errors },
           { headers: { "cache-control": "no-store" } },
