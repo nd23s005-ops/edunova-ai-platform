@@ -83,7 +83,7 @@ function RegisterPage() {
   const navigate = useNavigate();
   const router = useRouter();
   const queryClient = useQueryClient();
-  const { role: selectedRole, preference: selectedPref } = Route.useSearch();
+  const { role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
