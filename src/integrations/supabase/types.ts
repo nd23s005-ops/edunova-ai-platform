@@ -969,6 +969,33 @@ export type Database = {
         }
         Relationships: []
       }
+      study_sessions: {
+        Row: {
+          created_at: string
+          id: string
+          minutes: number
+          started_at: string
+          subject: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          minutes?: number
+          started_at?: string
+          subject?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          minutes?: number
+          started_at?: string
+          subject?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       subjects: {
         Row: {
           created_at: string
@@ -1186,6 +1213,139 @@ export type Database = {
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
+        }
+        Relationships: []
+      }
+      weekly_assessment_attempts: {
+        Row: {
+          answers: Json
+          assessment_id: string
+          category_scores: Json
+          created_at: string
+          id: string
+          max_score: number
+          score: number
+          submitted_at: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          answers?: Json
+          assessment_id: string
+          category_scores?: Json
+          created_at?: string
+          id?: string
+          max_score?: number
+          score?: number
+          submitted_at?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          answers?: Json
+          assessment_id?: string
+          category_scores?: Json
+          created_at?: string
+          id?: string
+          max_score?: number
+          score?: number
+          submitted_at?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "weekly_assessment_attempts_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "weekly_assessments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      weekly_assessment_questions: {
+        Row: {
+          assessment_id: string
+          category: number
+          category_name: string
+          correct_index: number
+          created_at: string
+          explanation: string | null
+          id: string
+          options: Json
+          position: number
+          prompt: string
+        }
+        Insert: {
+          assessment_id: string
+          category: number
+          category_name: string
+          correct_index: number
+          created_at?: string
+          explanation?: string | null
+          id?: string
+          options: Json
+          position: number
+          prompt: string
+        }
+        Update: {
+          assessment_id?: string
+          category?: number
+          category_name?: string
+          correct_index?: number
+          created_at?: string
+          explanation?: string | null
+          id?: string
+          options?: Json
+          position?: number
+          prompt?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "weekly_assessment_questions_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "weekly_assessments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      weekly_assessments: {
+        Row: {
+          board: string
+          class_level: number
+          created_at: string
+          id: string
+          status: string
+          subject: string
+          title: string
+          updated_at: string
+          user_id: string
+          week_start: string
+        }
+        Insert: {
+          board: string
+          class_level: number
+          created_at?: string
+          id?: string
+          status?: string
+          subject: string
+          title: string
+          updated_at?: string
+          user_id: string
+          week_start: string
+        }
+        Update: {
+          board?: string
+          class_level?: number
+          created_at?: string
+          id?: string
+          status?: string
+          subject?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+          week_start?: string
         }
         Relationships: []
       }
