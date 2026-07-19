@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { getRecentErrors, recordError } from "@/lib/error-capture";
+import { getRecentErrorsHydrated, recordError } from "@/lib/error-capture";
 
 function devOnly(): Response | undefined {
   if (process.env.NODE_ENV === "production") {
