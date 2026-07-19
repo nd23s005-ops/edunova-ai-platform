@@ -60,6 +60,97 @@ const SENSITIVE_QUERY_KEYS = /^(access_token|refresh_token|token|api[_-]?key|sec
 const ring: CapturedError[] = [];
 let lastCapturedError: { error: unknown; at: number } | undefined;
 
+// Persistence — only active on the server (Cloudflare Worker / Node).
+// The ring buffer survives cold-starts and hot-reloads by being rehydrated
+// from the `debug_error_captures` table on first read.
+const isServer = typeof window === "undefined" && typeof process !== "undefined";
+let hydrationPromise: Promise<void> | undefined;
+let hydrated = false;
+
+async function loadAdmin() {
+  if (!isServer) return null;
+  try {
+    const mod = await import("@/integrations/supabase/client.server");
+    return mod.supabaseAdmin ?? null;
+  } catch {
+    return null;
+  }
+}
+
+async function hydrateFromDb(): Promise<void> {
+  const admin = await loadAdmin();
+  if (!admin) return;
+  try {
+    const { data, error } = await admin
+      .from("debug_error_captures")
+      .select("capture_id, captured_at, name, message, stack, location, request_id, method, path, request, response")
+      .order("captured_at", { ascending: false })
+      .limit(RING_SIZE);
+    if (error || !data) return;
+    // Only fill positions the in-memory ring doesn't already know about.
+    const seen = new Set(ring.map((r) => r.id));
+    const rows = data
+      .filter((r) => !seen.has(r.capture_id))
+      .map((r) => ({
+        id: r.capture_id,
+        at: new Date(r.captured_at).getTime(),
+        name: r.name,
+        message: r.message,
+        stack: r.stack ?? undefined,
+        location: (r.location as CapturedError["location"]) ?? undefined,
+        requestId: r.request_id ?? undefined,
+        method: r.method ?? undefined,
+        path: r.path ?? undefined,
+        request: (r.request as CapturedRequest) ?? undefined,
+        response: (r.response as CapturedResponse) ?? undefined,
+      } satisfies CapturedError));
+    // Merge chronologically ascending, cap at RING_SIZE.
+    const merged = [...rows.reverse(), ...ring].slice(-RING_SIZE);
+    ring.splice(0, ring.length, ...merged);
+  } catch {
+    // Never let persistence break capture.
+  }
+}
+
+export function ensureHydrated(): Promise<void> {
+  if (hydrated) return Promise.resolve();
+  if (!hydrationPromise) {
+    hydrationPromise = hydrateFromDb().then(() => {
+      hydrated = true;
+    });
+  }
+  return hydrationPromise;
+}
+
+if (isServer) {
+  // Fire-and-forget on module load so the ring is warm by the time
+  // the first request hits getRecentErrors().
+  void ensureHydrated();
+}
+
+async function persistCapture(captured: CapturedError): Promise<void> {
+  const admin = await loadAdmin();
+  if (!admin) return;
+  try {
+    await admin.from("debug_error_captures").insert({
+      capture_id: captured.id,
+      captured_at: new Date(captured.at).toISOString(),
+      name: captured.name,
+      message: captured.message,
+      stack: captured.stack ?? null,
+      location: captured.location ?? null,
+      request_id: captured.requestId ?? null,
+      method: captured.method ?? null,
+      path: captured.path ?? null,
+      request: captured.request ?? null,
+      response: captured.response ?? null,
+    });
+  } catch {
+    // ignore — persistence is best-effort
+  }
+}
+
+
 function parseFirstFrame(stack?: string): CapturedError["location"] {
   if (!stack) return undefined;
   const lines = stack.split("\n");
@@ -168,6 +259,9 @@ export function recordError(error: unknown, meta?: Partial<CapturedError>): Capt
   lastCapturedError = { error, at: Date.now() };
   ring.push(captured);
   if (ring.length > RING_SIZE) ring.shift();
+  if (isServer) {
+    void persistCapture(captured);
+  }
   return captured;
 }
 
@@ -194,3 +288,14 @@ export function consumeLastCapturedError(): unknown {
 export function getRecentErrors(limit = RING_SIZE): CapturedError[] {
   return ring.slice(-limit).reverse();
 }
+
+/**
+ * Async variant that guarantees the persisted ring buffer is hydrated
+ * from the database before returning. Use this from debug endpoints so
+ * captures survive sandbox cold-starts and hot-reloads.
+ */
+export async function getRecentErrorsHydrated(limit = RING_SIZE): Promise<CapturedError[]> {
+  await ensureHydrated();
+  return ring.slice(-limit).reverse();
+}
+
