@@ -83,7 +83,7 @@ const tracingMiddleware = createMiddleware().server(async ({ next, request }) =>
   }
 });
 
-const errorMiddleware = createMiddleware().server(async ({ next }) => {
+const errorMiddleware = createMiddleware().server(async ({ next, request }) => {
   try {
     return await next();
   } catch (error) {
@@ -91,12 +91,23 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
       throw error;
     }
     console.error(error);
-    return new Response(renderErrorPage(), {
+    const requestId = request.headers.get("x-request-id") || newRequestId();
+    let path: string | undefined;
+    try {
+      path = new URL(request.url).pathname;
+    } catch {
+      path = undefined;
+    }
+    return new Response(renderErrorPage({ requestId, status: 500, path }), {
       status: 500,
-      headers: { "content-type": "text/html; charset=utf-8" },
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "x-request-id": requestId,
+      },
     });
   }
 });
+
 
 export const startInstance = createStart(() => ({
   functionMiddleware: [attachSupabaseAuth],
