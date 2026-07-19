@@ -376,6 +376,12 @@ function StudentDashboard() {
               icon: <ClipboardList className="h-5 w-5" />,
             },
             {
+              to: "/dashboard/student/quizzes",
+              label: "AI Quizzes",
+              description: "Physics, Chem, Math, Bio & more — fresh every time",
+              icon: <Sparkles className="h-5 w-5" />,
+            },
+            {
               to: "/dashboard/student/progress",
               label: "Weekly Progress",
               description: "Hours, streaks & performance",
