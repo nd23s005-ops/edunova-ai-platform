@@ -22,6 +22,7 @@ import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
 import { Route as OnboardingStudentProfileRouteImport } from './routes/onboarding.student-profile'
+import { Route as ApiUpstreamStatusRouteImport } from './routes/api/upstream-status'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as ApiDiagnosticsRouteImport } from './routes/api/diagnostics'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
@@ -1235,6 +1236,11 @@ const OnboardingStudentProfileRoute =
     path: '/student-profile',
     getParentRoute: () => OnboardingRoute,
   } as any)
+const ApiUpstreamStatusRoute = ApiUpstreamStatusRouteImport.update({
+  id: '/api/upstream-status',
+  path: '/api/upstream-status',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiHealthRoute = ApiHealthRouteImport.update({
   id: '/api/health',
   path: '/api/health',
@@ -8161,6 +8167,7 @@ export interface FileRoutesByFullPath {
   '/api/chat': typeof ApiChatRoute
   '/api/diagnostics': typeof ApiDiagnosticsRoute
   '/api/health': typeof ApiHealthRoute
+  '/api/upstream-status': typeof ApiUpstreamStatusRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
@@ -9321,6 +9328,7 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/api/diagnostics': typeof ApiDiagnosticsRoute
   '/api/health': typeof ApiHealthRoute
+  '/api/upstream-status': typeof ApiUpstreamStatusRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
@@ -10485,6 +10493,7 @@ export interface FileRoutesById {
   '/api/chat': typeof ApiChatRoute
   '/api/diagnostics': typeof ApiDiagnosticsRoute
   '/api/health': typeof ApiHealthRoute
+  '/api/upstream-status': typeof ApiUpstreamStatusRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/_marketing/': typeof MarketingIndexRoute
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
@@ -11649,6 +11658,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/diagnostics'
     | '/api/health'
+    | '/api/upstream-status'
     | '/onboarding/student-profile'
     | '/dashboard/$'
     | '/dashboard/admin'
@@ -12809,6 +12819,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/diagnostics'
     | '/api/health'
+    | '/api/upstream-status'
     | '/onboarding/student-profile'
     | '/dashboard/$'
     | '/dashboard/admin'
@@ -13972,6 +13983,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/diagnostics'
     | '/api/health'
+    | '/api/upstream-status'
     | '/onboarding/student-profile'
     | '/_marketing/'
     | '/_dashboard/dashboard/$'
@@ -15123,6 +15135,7 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ApiDiagnosticsRoute: typeof ApiDiagnosticsRoute
   ApiHealthRoute: typeof ApiHealthRoute
+  ApiUpstreamStatusRoute: typeof ApiUpstreamStatusRoute
   ApiDebugErrorsRoute: typeof ApiDebugErrorsRoute
 }
 
@@ -15218,6 +15231,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/onboarding/student-profile'
       preLoaderRoute: typeof OnboardingStudentProfileRouteImport
       parentRoute: typeof OnboardingRoute
+    }
+    '/api/upstream-status': {
+      id: '/api/upstream-status'
+      path: '/api/upstream-status'
+      fullPath: '/api/upstream-status'
+      preLoaderRoute: typeof ApiUpstreamStatusRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/health': {
       id: '/api/health'
@@ -26761,6 +26781,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ApiDiagnosticsRoute: ApiDiagnosticsRoute,
   ApiHealthRoute: ApiHealthRoute,
+  ApiUpstreamStatusRoute: ApiUpstreamStatusRoute,
   ApiDebugErrorsRoute: ApiDebugErrorsRoute,
 }
 export const routeTree = rootRouteImport
