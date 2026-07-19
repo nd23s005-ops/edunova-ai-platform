@@ -91,13 +91,21 @@ async function normalizeCatastrophicSsrResponse(
   const responseMeta = await captureResponseMeta(response);
   logError("h3-swallowed", captured, { ...ctx, response: responseMeta });
 
-  return new Response(renderErrorPage(), {
-    status: 500,
-    headers: {
-      "content-type": "text/html; charset=utf-8",
-      "x-request-id": ctx.requestId,
+  return new Response(
+    renderErrorPage({
+      requestId: ctx.requestId,
+      status: response.status || 500,
+      path: ctx.request.path,
+    }),
+    {
+      status: 500,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "x-request-id": ctx.requestId,
+      },
     },
-  });
+  );
+
 }
 
 function isH3SwallowedErrorBody(body: string): boolean {
