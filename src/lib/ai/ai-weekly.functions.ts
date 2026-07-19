@@ -535,12 +535,12 @@ Grade thresholds by %: A+ >=90, A 80-89, B+ 70-79, B 60-69, C 50-59, D 40-49, E 
     const { error: uerr } = await supabase
       .from("ai_weekly_attempts")
       .update({
-        answers: data.answers,
-        results: { per_question: results, by_subject: bySubject },
+        answers: data.answers as never,
+        results: { per_question: results, by_subject: bySubject } as never,
         score,
         max_score: maxScore,
         time_taken_seconds: data.timeTakenSeconds ?? null,
-        ai_feedback: aiFeedback,
+        ai_feedback: aiFeedback as never,
         submitted_at: new Date().toISOString(),
       })
       .eq("id", data.attemptId)
