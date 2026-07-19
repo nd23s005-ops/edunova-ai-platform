@@ -35,18 +35,26 @@ function newRequestId() {
 function logError(
   label: string,
   error: unknown,
-  ctx: { requestId: string; method: string; url: string },
+  ctx: {
+    requestId: string;
+    method: string;
+    url: string;
+    request?: CapturedRequest;
+    response?: CapturedResponse;
+  },
 ) {
   const captured = recordError(error, {
     requestId: ctx.requestId,
     method: ctx.method,
-    path: (() => {
+    path: ctx.request?.path ?? (() => {
       try {
         return new URL(ctx.url).pathname;
       } catch {
         return ctx.url;
       }
     })(),
+    request: ctx.request,
+    response: ctx.response,
   });
   console.error(`[${label}] ${ctx.method} ${ctx.url} · requestId=${ctx.requestId}`);
   console.error(error);
@@ -60,6 +68,8 @@ function logError(
       name: captured.name,
       message: captured.message,
       location: captured.location,
+      request: captured.request,
+      response: captured.response,
     }),
   );
 }
@@ -68,7 +78,7 @@ function logError(
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
 async function normalizeCatastrophicSsrResponse(
   response: Response,
-  ctx: { requestId: string; method: string; url: string },
+  ctx: { requestId: string; method: string; url: string; request: CapturedRequest },
 ): Promise<Response> {
   if (response.status < 500) return response;
   const contentType = response.headers.get("content-type") ?? "";
@@ -78,7 +88,8 @@ async function normalizeCatastrophicSsrResponse(
   if (!isH3SwallowedErrorBody(body)) return response;
 
   const captured = consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`);
-  logError("h3-swallowed", captured, ctx);
+  const responseMeta = await captureResponseMeta(response);
+  logError("h3-swallowed", captured, { ...ctx, response: responseMeta });
 
   return new Response(renderErrorPage(), {
     status: 500,
@@ -101,7 +112,8 @@ function isH3SwallowedErrorBody(body: string): boolean {
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     const requestId = request.headers.get("x-request-id") || newRequestId();
-    const meta = { requestId, method: request.method, url: request.url };
+    const requestMeta = captureRequestMeta(request);
+    const meta = { requestId, method: request.method, url: request.url, request: requestMeta };
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
@@ -124,3 +136,4 @@ export default {
     }
   },
 };
+
