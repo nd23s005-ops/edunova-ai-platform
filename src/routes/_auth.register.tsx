@@ -41,12 +41,13 @@ export const Route = createFileRoute("/_auth/register")({
       { name: "robots", content: "noindex" },
     ],
   }),
-  validateSearch: (search: Record<string, unknown>) => ({
-    role:
-      typeof search.role === "string" && (ALL_ROLES as readonly string[]).includes(search.role)
-        ? (search.role as AppRole)
-        : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { role?: AppRole } => {
+    const out: { role?: AppRole } = {};
+    if (typeof search.role === "string" && (ALL_ROLES as readonly string[]).includes(search.role)) {
+      out.role = search.role as AppRole;
+    }
+    return out;
+  },
   beforeLoad: async ({ search }) => {
     // Already signed in? Send to their dashboard, never back through role selection.
     const { data } = await supabase.auth.getUser();
