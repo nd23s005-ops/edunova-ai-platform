@@ -41,12 +41,13 @@ export const Route = createFileRoute("/_auth/register")({
       { name: "robots", content: "noindex" },
     ],
   }),
-  validateSearch: (search: Record<string, unknown>) => ({
-    role:
-      typeof search.role === "string" && (ALL_ROLES as readonly string[]).includes(search.role)
-        ? (search.role as AppRole)
-        : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { role?: AppRole } => {
+    const out: { role?: AppRole } = {};
+    if (typeof search.role === "string" && (ALL_ROLES as readonly string[]).includes(search.role)) {
+      out.role = search.role as AppRole;
+    }
+    return out;
+  },
   beforeLoad: async ({ search }) => {
     // Already signed in? Send to their dashboard, never back through role selection.
     const { data } = await supabase.auth.getUser();
@@ -82,7 +83,7 @@ function RegisterPage() {
   const navigate = useNavigate();
   const router = useRouter();
   const queryClient = useQueryClient();
-  const { role: selectedRole, preference: selectedPref } = Route.useSearch();
+  const { role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
@@ -100,7 +101,7 @@ function RegisterPage() {
       country: DEFAULT_COUNTRY,
       password: "",
       confirmPassword: "",
-      role: initialRole, preference: selectedPref,
+      role: initialRole,
       acceptTerms: false as unknown as true,
       acceptPrivacy: false as unknown as true,
     },

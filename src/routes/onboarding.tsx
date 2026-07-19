@@ -29,13 +29,12 @@ export const Route = createFileRoute("/onboarding")({
       { name: "robots", content: "noindex" },
     ],
   }),
-  validateSearch: (search: Record<string, unknown>) => ({
-    mode:
-      search.mode === "login" || search.mode === "register"
-        ? (search.mode as "login" | "register")
-        : undefined,
-    redirect: typeof search.redirect === "string" ? search.redirect : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { mode?: "login" | "register"; redirect?: string } => {
+    const out: { mode?: "login" | "register"; redirect?: string } = {};
+    if (search.mode === "login" || search.mode === "register") out.mode = search.mode;
+    if (typeof search.redirect === "string") out.redirect = search.redirect;
+    return out;
+  },
   beforeLoad: async () => {
     // A signed-in user with a role should never see role selection again.
     const { data } = await supabase.auth.getUser();
