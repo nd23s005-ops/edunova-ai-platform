@@ -44,9 +44,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
+  const showDetails = import.meta.env.DEV;
+
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
+    <div className="flex min-h-dvh items-center justify-center bg-background px-4 py-10">
+      <div className="w-full max-w-2xl text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           Something went wrong
         </h1>
@@ -70,10 +72,30 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             Go home
           </a>
         </div>
+        {showDetails && (
+          <details
+            open
+            className="mt-6 rounded-md border bg-muted/40 p-4 text-left text-xs"
+          >
+            <summary className="cursor-pointer font-medium">
+              {error.name}: {error.message}
+            </summary>
+            <pre className="mt-3 max-h-80 overflow-auto whitespace-pre-wrap break-words font-mono text-[11px] leading-snug text-muted-foreground">
+              {error.stack ?? "(no stack)"}
+            </pre>
+            <p className="mt-2 text-[11px] text-muted-foreground">
+              Dev-only details. Recent server errors:{" "}
+              <a href="/api/debug/errors" className="underline">
+                /api/debug/errors
+              </a>
+            </p>
+          </details>
+        )}
       </div>
     </div>
   );
 }
+
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
