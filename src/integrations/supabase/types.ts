@@ -1017,6 +1017,63 @@ export type Database = {
         }
         Relationships: []
       }
+      subject_quiz_attempts: {
+        Row: {
+          ai_feedback: string | null
+          answers: Json
+          category_scores: Json
+          created_at: string
+          difficulty: string
+          id: string
+          questions: Json
+          quiz_set: number
+          score: number
+          strengths: string[]
+          subject: string
+          submitted_at: string | null
+          time_spent_seconds: number
+          total: number
+          user_id: string
+          weaknesses: string[]
+        }
+        Insert: {
+          ai_feedback?: string | null
+          answers?: Json
+          category_scores?: Json
+          created_at?: string
+          difficulty?: string
+          id?: string
+          questions: Json
+          quiz_set: number
+          score?: number
+          strengths?: string[]
+          subject: string
+          submitted_at?: string | null
+          time_spent_seconds?: number
+          total?: number
+          user_id: string
+          weaknesses?: string[]
+        }
+        Update: {
+          ai_feedback?: string | null
+          answers?: Json
+          category_scores?: Json
+          created_at?: string
+          difficulty?: string
+          id?: string
+          questions?: Json
+          quiz_set?: number
+          score?: number
+          strengths?: string[]
+          subject?: string
+          submitted_at?: string | null
+          time_spent_seconds?: number
+          total?: number
+          user_id?: string
+          weaknesses?: string[]
+        }
+        Relationships: []
+      }
       subjects: {
         Row: {
           created_at: string
