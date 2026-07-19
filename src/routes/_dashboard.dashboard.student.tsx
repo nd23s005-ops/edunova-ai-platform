@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   PlayCircle,
   BarChart3,
-  GraduationCap,
   NotebookText,
   LineChart,
   Rocket,
