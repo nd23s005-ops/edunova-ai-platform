@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { BookOpen, GraduationCap, Search, Sparkles } from "lucide-react";
+import { BookOpen, Search, Sparkles } from "lucide-react";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
 import { SectionHeader, DashCard, EmptyState } from "@/components/dashboard/DashboardWidgets";
 import { RoleGate } from "@/components/auth/RoleGate";
