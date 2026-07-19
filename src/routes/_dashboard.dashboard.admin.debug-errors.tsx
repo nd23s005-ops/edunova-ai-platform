@@ -111,16 +111,16 @@ function DebugErrorsPage() {
       />
 
       <div className="grid gap-4 md:grid-cols-3">
-        <StatCard label="Captured" value={String(errors.length)} icon={Bug} />
+        <StatCard label="Captured" value={String(errors.length)} icon={<Bug className="h-4 w-4" />} />
         <StatCard
           label="Retention (age)"
           value={configQuery.data ? `${configQuery.data.max_age_hours}h` : "—"}
-          icon={Filter}
+          icon={<Filter className="h-4 w-4" />}
         />
         <StatCard
           label="Retention (rows)"
           value={configQuery.data ? String(configQuery.data.max_rows) : "—"}
-          icon={Filter}
+          icon={<Filter className="h-4 w-4" />}
         />
       </div>
 
