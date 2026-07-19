@@ -134,13 +134,17 @@ export default {
       return normalized;
     } catch (error) {
       logError("ssr-throw", error, meta);
-      return new Response(renderErrorPage(), {
-        status: 500,
-        headers: {
-          "content-type": "text/html; charset=utf-8",
-          "x-request-id": requestId,
+      return new Response(
+        renderErrorPage({ requestId, status: 500, path: requestMeta.path }),
+        {
+          status: 500,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "x-request-id": requestId,
+          },
         },
-      });
+      );
+
     }
   },
 };
