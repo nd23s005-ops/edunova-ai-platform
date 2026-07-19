@@ -259,6 +259,9 @@ export function recordError(error: unknown, meta?: Partial<CapturedError>): Capt
   lastCapturedError = { error, at: Date.now() };
   ring.push(captured);
   if (ring.length > RING_SIZE) ring.shift();
+  if (isServer) {
+    void persistCapture(captured);
+  }
   return captured;
 }
 
@@ -285,3 +288,14 @@ export function consumeLastCapturedError(): unknown {
 export function getRecentErrors(limit = RING_SIZE): CapturedError[] {
   return ring.slice(-limit).reverse();
 }
+
+/**
+ * Async variant that guarantees the persisted ring buffer is hydrated
+ * from the database before returning. Use this from debug endpoints so
+ * captures survive sandbox cold-starts and hot-reloads.
+ */
+export async function getRecentErrorsHydrated(limit = RING_SIZE): Promise<CapturedError[]> {
+  await ensureHydrated();
+  return ring.slice(-limit).reverse();
+}
+
