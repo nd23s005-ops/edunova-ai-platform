@@ -71,6 +71,63 @@ export type Database = {
         }
         Relationships: []
       }
+      ai_weekly_attempts: {
+        Row: {
+          ai_feedback: Json | null
+          answers: Json
+          board: string
+          class_level: number
+          created_at: string
+          id: string
+          max_score: number
+          questions: Json
+          results: Json
+          score: number
+          started_at: string
+          subjects: string[]
+          submitted_at: string | null
+          time_taken_seconds: number | null
+          user_id: string
+          week_start: string
+        }
+        Insert: {
+          ai_feedback?: Json | null
+          answers?: Json
+          board: string
+          class_level: number
+          created_at?: string
+          id?: string
+          max_score?: number
+          questions?: Json
+          results?: Json
+          score?: number
+          started_at?: string
+          subjects: string[]
+          submitted_at?: string | null
+          time_taken_seconds?: number | null
+          user_id: string
+          week_start: string
+        }
+        Update: {
+          ai_feedback?: Json | null
+          answers?: Json
+          board?: string
+          class_level?: number
+          created_at?: string
+          id?: string
+          max_score?: number
+          questions?: Json
+          results?: Json
+          score?: number
+          started_at?: string
+          subjects?: string[]
+          submitted_at?: string | null
+          time_taken_seconds?: number | null
+          user_id?: string
+          week_start?: string
+        }
+        Relationships: []
+      }
       assignment_questions: {
         Row: {
           assignment_id: string

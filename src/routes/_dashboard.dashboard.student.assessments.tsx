@@ -1,20 +1,15 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { toast } from "sonner";
-import { ClipboardList, Sparkles, CheckCircle2, PlayCircle } from "lucide-react";
+import { ClipboardList, Sparkles, CheckCircle2, PlayCircle, Clock } from "lucide-react";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
 import { SectionHeader, DashCard, EmptyState } from "@/components/dashboard/DashboardWidgets";
 import { RoleGate } from "@/components/auth/RoleGate";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Badge } from "@/components/ui/badge";
 import { supabase } from "@/integrations/supabase/client";
 import {
   ASSESSMENT_SUBJECTS,
@@ -22,9 +17,9 @@ import {
   subjectsForClass,
 } from "@/lib/syllabus/catalog";
 import {
-  listWeeklyAssessments,
-  generateWeeklyAssessment,
-} from "@/lib/ai/weekly-assessments.functions";
+  listAiWeeklyAttempts,
+  startAiWeeklyAssessment,
+} from "@/lib/ai/ai-weekly.functions";
 
 export const Route = createFileRoute("/_dashboard/dashboard/student/assessments")({
   component: AssessmentsPage,
@@ -33,9 +28,9 @@ export const Route = createFileRoute("/_dashboard/dashboard/student/assessments"
 function AssessmentsPage() {
   const navigate = useNavigate();
   const qc = useQueryClient();
-  const list = useServerFn(listWeeklyAssessments);
-  const generate = useServerFn(generateWeeklyAssessment);
-  const [subject, setSubject] = useState<string>("");
+  const list = useServerFn(listAiWeeklyAttempts);
+  const start = useServerFn(startAiWeeklyAssessment);
+  const [selected, setSelected] = useState<Set<string>>(new Set());
 
   const { data: profile } = useQuery({
     queryKey: ["me", "student_profile", "assessments"],
@@ -52,102 +47,135 @@ function AssessmentsPage() {
     staleTime: 60_000,
   });
 
-  const { data: assessments } = useQuery({
-    queryKey: ["me", "weekly-assessments"],
+  const { data: attempts } = useQuery({
+    queryKey: ["me", "ai-weekly-attempts"],
     queryFn: () => list(),
-    staleTime: 15_000,
+    staleTime: 10_000,
   });
 
-  const genMutation = useMutation({
-    mutationFn: async (input: { board: string; classLevel: number; subject: string }) => {
-      return generate({ data: input });
-    },
-    onSuccess: async (res) => {
-      toast.success(res.created ? "Assessment ready" : "Assessment already exists for this week");
-      await qc.invalidateQueries({ queryKey: ["me", "weekly-assessments"] });
-      navigate({ to: "/dashboard/student/assessments/$assessmentId", params: { assessmentId: res.id } });
-    },
-    onError: (e: Error) => toast.error(e.message ?? "Could not generate the assessment"),
-  });
-
-  const eligibleSubjects = (() => {
+  const eligibleSubjects = useMemo(() => {
     const forClass = subjectsForClass(profile?.current_class);
     const allowed = new Set(ASSESSMENT_SUBJECTS as readonly string[]);
-    return forClass.filter((s) => allowed.has(s));
-  })();
+    const filtered = forClass.filter((s) => allowed.has(s));
+    return filtered.length > 0 ? filtered : (ASSESSMENT_SUBJECTS as readonly string[]).slice();
+  }, [profile?.current_class]);
 
-  const handleGenerate = () => {
-    if (!profile?.board || !profile?.current_class) {
-      toast.error("Please set your board and class in Profile first.");
-      return;
-    }
-    if (!subject) {
-      toast.error("Choose a subject to generate an assessment.");
-      return;
-    }
-    genMutation.mutate({
-      board: profile.board,
-      classLevel: profile.current_class,
-      subject,
+  const toggle = (s: string) => {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(s)) next.delete(s);
+      else next.add(s);
+      return next;
     });
   };
 
-  const rows = assessments ?? [];
+  const startMutation = useMutation({
+    mutationFn: async (subjects: string[]) => start({ data: { subjects } }),
+    onSuccess: async (res) => {
+      await qc.invalidateQueries({ queryKey: ["me", "ai-weekly-attempts"] });
+      toast.success("Fresh assessment generated");
+      navigate({
+        to: "/dashboard/student/assessments/$assessmentId",
+        params: { assessmentId: res.attemptId },
+      });
+    },
+    onError: (e: Error) => toast.error(e.message ?? "Could not generate assessment"),
+  });
+
+  const canStart =
+    !!profile?.board &&
+    !!profile?.current_class &&
+    profile.current_class >= 6 &&
+    profile.current_class <= 12;
+
+  const handleStart = () => {
+    if (!canStart) {
+      toast.error("Weekly assessments are for classes 6–12. Complete your syllabus first.");
+      return;
+    }
+    if (selected.size === 0) {
+      toast.error("Select at least one subject.");
+      return;
+    }
+    startMutation.mutate(Array.from(selected));
+  };
+
+  const rows = attempts ?? [];
 
   return (
     <RoleGate allow={["student"]}>
       <DashboardHeader
-        title="Weekly Assessments"
+        title="AI Weekly Assessments"
         description={
           profile?.current_class
-            ? `Class ${profile.current_class} · ${boardLabel(profile.board)} · 25 questions across 5 categories`
-            : "AI-generated weekly tests to track your progress"
+            ? `Class ${profile.current_class} · ${boardLabel(profile.board)} · 5 fresh AI-generated questions per subject`
+            : "Personalised AI assessments generated fresh every attempt"
         }
       />
 
-      <DashCard className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div className="flex-1">
-          <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-            <Sparkles className="mr-1 inline h-3.5 w-3.5" /> Generate this week's assessment
-          </p>
-          <h3 className="mt-1 text-lg font-semibold">Pick a subject for your Class {profile?.current_class ?? "—"} weekly test</h3>
-          <p className="text-sm text-muted-foreground">
-            5 categories × 5 questions · Concepts, Application, Reasoning, Scenarios, Advanced.
-          </p>
+      <DashCard className="mb-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+          <div className="flex-1">
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+              <Sparkles className="mr-1 inline h-3.5 w-3.5" /> Start a fresh assessment
+            </p>
+            <h3 className="mt-1 text-lg font-semibold">
+              Pick subjects for your Class {profile?.current_class ?? "—"} weekly test
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              5 questions per subject · MCQ, fill-in, true/false, match, short answer, numerical, assertion-reason
+              {(profile?.current_class ?? 0) >= 6 ? ", programming (CS)" : ""}. Every attempt is regenerated by AI.
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Select value={subject} onValueChange={setSubject}>
-            <SelectTrigger className="min-w-[220px]">
-              <SelectValue placeholder="Choose subject" />
-            </SelectTrigger>
-            <SelectContent>
-              {(eligibleSubjects.length > 0 ? eligibleSubjects : ASSESSMENT_SUBJECTS).map((s) => (
-                <SelectItem key={s} value={s}>
-                  {s}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <Button onClick={handleGenerate} disabled={genMutation.isPending}>
-            {genMutation.isPending ? "Generating…" : "Generate"}
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {eligibleSubjects.map((s) => {
+            const active = selected.has(s);
+            return (
+              <button
+                type="button"
+                key={s}
+                onClick={() => toggle(s)}
+                className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${
+                  active
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-border/60 hover:border-primary/40"
+                }`}
+              >
+                <Checkbox checked={active} className="pointer-events-none h-4 w-4" />
+                {s}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-5 flex items-center justify-between gap-3">
+          <p className="text-xs text-muted-foreground">
+            {selected.size === 0
+              ? "No subjects selected"
+              : `${selected.size} subject${selected.size === 1 ? "" : "s"} · ${selected.size * 5} questions`}
+          </p>
+          <Button onClick={handleStart} disabled={startMutation.isPending}>
+            {startMutation.isPending ? "Generating fresh questions…" : "Generate & start"}
           </Button>
         </div>
       </DashCard>
 
       <section>
-        <SectionHeader title="Your assessments" />
+        <SectionHeader title="Assessment history" />
         {rows.length === 0 ? (
           <EmptyState
             icon={<ClipboardList className="h-5 w-5" />}
-            title="No assessments yet"
-            description="Generate your first weekly assessment above."
+            title="No attempts yet"
+            description="Pick your subjects above and start your first fresh AI assessment."
           />
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {rows.map((a) => {
-              const done = !!a.attempt?.submitted_at;
-              const pct = done && a.attempt?.max_score
-                ? Math.round(((a.attempt?.score ?? 0) / (a.attempt?.max_score ?? 1)) * 100)
+              const done = !!a.submitted_at;
+              const pct = done && Number(a.max_score) > 0
+                ? Math.round((Number(a.score) / Number(a.max_score)) * 100)
                 : null;
               return (
                 <Link
@@ -167,18 +195,31 @@ function AssessmentsPage() {
                   <p className="text-xs font-medium uppercase tracking-wider text-primary">
                     {boardLabel(a.board)} · Class {a.class_level}
                   </p>
-                  <h3 className="mt-1 line-clamp-2 text-base font-semibold">{a.subject}</h3>
+                  <div className="mt-1 flex flex-wrap gap-1">
+                    {(a.subjects ?? []).slice(0, 4).map((s: string) => (
+                      <Badge key={s} variant="secondary" className="text-[10px]">{s}</Badge>
+                    ))}
+                    {(a.subjects ?? []).length > 4 && (
+                      <Badge variant="secondary" className="text-[10px]">+{(a.subjects ?? []).length - 4}</Badge>
+                    )}
+                  </div>
                   <p className="mt-3 text-sm">
                     {done ? (
                       <span className="font-semibold text-primary">
-                        Score: {a.attempt?.score}/{a.attempt?.max_score} · {pct}%
+                        Score {a.score}/{a.max_score} · {pct}%
                       </span>
                     ) : (
-                      <span className="text-muted-foreground">Not attempted yet</span>
+                      <span className="text-muted-foreground">In progress…</span>
                     )}
                   </p>
+                  {done && a.time_taken_seconds != null && (
+                    <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
+                      <Clock className="h-3 w-3" />
+                      {Math.floor(a.time_taken_seconds / 60)}m {a.time_taken_seconds % 60}s
+                    </p>
+                  )}
                   <p className="mt-3 text-xs font-semibold text-primary">
-                    {done ? "Review →" : "Start assessment →"}
+                    {done ? "Review results →" : "Continue attempt →"}
                   </p>
                 </Link>
               );
