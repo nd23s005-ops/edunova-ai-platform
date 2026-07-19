@@ -15,12 +15,14 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as HelpDeskRouteImport } from './routes/help-desk'
+import { Route as HealthRouteImport } from './routes/health'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
 import { Route as OnboardingStudentProfileRouteImport } from './routes/onboarding.student-profile'
+import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as MarketingResourcesRouteImport } from './routes/_marketing.resources'
 import { Route as MarketingExploreRouteImport } from './routes/_marketing.explore'
@@ -1198,6 +1200,11 @@ const HelpDeskRoute = HelpDeskRouteImport.update({
   path: '/help-desk',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HealthRoute = HealthRouteImport.update({
+  id: '/health',
+  path: '/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MarketingRoute = MarketingRouteImport.update({
   id: '/_marketing',
   getParentRoute: () => rootRouteImport,
@@ -1226,6 +1233,11 @@ const OnboardingStudentProfileRoute =
     path: '/student-profile',
     getParentRoute: () => OnboardingRoute,
   } as any)
+const ApiHealthRoute = ApiHealthRouteImport.update({
+  id: '/api/health',
+  path: '/api/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
@@ -8113,6 +8125,7 @@ const DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute =
 export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/health': typeof HealthRoute
   '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
@@ -8134,6 +8147,7 @@ export interface FileRoutesByFullPath {
   '/explore': typeof MarketingExploreRoute
   '/resources': typeof MarketingResourcesRouteWithChildren
   '/api/chat': typeof ApiChatRoute
+  '/api/health': typeof ApiHealthRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
@@ -9270,6 +9284,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/health': typeof HealthRoute
   '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
@@ -9290,6 +9305,7 @@ export interface FileRoutesByTo {
   '/community': typeof MarketingCommunityRoute
   '/explore': typeof MarketingExploreRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/health': typeof ApiHealthRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
@@ -10429,6 +10445,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
+  '/health': typeof HealthRoute
   '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
@@ -10450,6 +10467,7 @@ export interface FileRoutesById {
   '/_marketing/explore': typeof MarketingExploreRoute
   '/_marketing/resources': typeof MarketingResourcesRouteWithChildren
   '/api/chat': typeof ApiChatRoute
+  '/api/health': typeof ApiHealthRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/_marketing/': typeof MarketingIndexRoute
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
@@ -11589,6 +11607,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/$'
     | '/'
+    | '/health'
     | '/help-desk'
     | '/onboarding'
     | '/privacy'
@@ -11610,6 +11629,7 @@ export interface FileRouteTypes {
     | '/explore'
     | '/resources'
     | '/api/chat'
+    | '/api/health'
     | '/onboarding/student-profile'
     | '/dashboard/$'
     | '/dashboard/admin'
@@ -12746,6 +12766,7 @@ export interface FileRouteTypes {
   to:
     | '/$'
     | '/'
+    | '/health'
     | '/help-desk'
     | '/onboarding'
     | '/privacy'
@@ -12766,6 +12787,7 @@ export interface FileRouteTypes {
     | '/community'
     | '/explore'
     | '/api/chat'
+    | '/api/health'
     | '/onboarding/student-profile'
     | '/dashboard/$'
     | '/dashboard/admin'
@@ -13904,6 +13926,7 @@ export interface FileRouteTypes {
     | '/_auth'
     | '/_dashboard'
     | '/_marketing'
+    | '/health'
     | '/help-desk'
     | '/onboarding'
     | '/privacy'
@@ -13925,6 +13948,7 @@ export interface FileRouteTypes {
     | '/_marketing/explore'
     | '/_marketing/resources'
     | '/api/chat'
+    | '/api/health'
     | '/onboarding/student-profile'
     | '/_marketing/'
     | '/_dashboard/dashboard/$'
@@ -15065,6 +15089,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
+  HealthRoute: typeof HealthRoute
   HelpDeskRoute: typeof HelpDeskRoute
   OnboardingRoute: typeof OnboardingRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
@@ -15072,6 +15097,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   UnauthorizedRoute: typeof UnauthorizedRoute
   ApiChatRoute: typeof ApiChatRoute
+  ApiHealthRoute: typeof ApiHealthRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -15118,6 +15144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HelpDeskRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/health': {
+      id: '/health'
+      path: '/health'
+      fullPath: '/health'
+      preLoaderRoute: typeof HealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_marketing': {
       id: '/_marketing'
       path: ''
@@ -15159,6 +15192,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/onboarding/student-profile'
       preLoaderRoute: typeof OnboardingStudentProfileRouteImport
       parentRoute: typeof OnboardingRoute
+    }
+    '/api/health': {
+      id: '/api/health'
+      path: '/api/health'
+      fullPath: '/api/health'
+      preLoaderRoute: typeof ApiHealthRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/chat': {
       id: '/api/chat'
@@ -26671,6 +26711,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
+  HealthRoute: HealthRoute,
   HelpDeskRoute: HelpDeskRoute,
   OnboardingRoute: OnboardingRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
@@ -26678,17 +26719,8 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   UnauthorizedRoute: UnauthorizedRoute,
   ApiChatRoute: ApiChatRoute,
+  ApiHealthRoute: ApiHealthRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
