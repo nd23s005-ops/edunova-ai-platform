@@ -101,7 +101,7 @@ function RegisterPage() {
       country: DEFAULT_COUNTRY,
       password: "",
       confirmPassword: "",
-      role: initialRole, preference: selectedPref,
+      role: initialRole,
       acceptTerms: false as unknown as true,
       acceptPrivacy: false as unknown as true,
     },
