@@ -40,6 +40,7 @@ import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-pa
 import { Route as AuthAccountCreatedRouteImport } from './routes/_auth.account-created'
 import { Route as MarketingResourcesIndexRouteImport } from './routes/_marketing.resources.index'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
+import { Route as ApiDebugErrorsRouteImport } from './routes/api/debug.errors'
 import { Route as MarketingResourcesCourseSlugRouteImport } from './routes/_marketing.resources.$courseSlug'
 import { Route as MarketingFeaturesSmartLearningPathsRouteImport } from './routes/_marketing.features.smart-learning-paths'
 import { Route as MarketingFeaturesLearningTwinRouteImport } from './routes/_marketing.features.learning-twin'
@@ -1323,6 +1324,11 @@ const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
   getParentRoute: () => DashboardRoute,
+} as any)
+const ApiDebugErrorsRoute = ApiDebugErrorsRouteImport.update({
+  id: '/api/debug/errors',
+  path: '/api/debug/errors',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const MarketingResourcesCourseSlugRoute =
   MarketingResourcesCourseSlugRouteImport.update({
@@ -8162,6 +8168,7 @@ export interface FileRoutesByFullPath {
   '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
+  '/api/debug/errors': typeof ApiDebugErrorsRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
   '/resources/': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -9320,6 +9327,7 @@ export interface FileRoutesByTo {
   '/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
+  '/api/debug/errors': typeof ApiDebugErrorsRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
   '/resources': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -10483,6 +10491,7 @@ export interface FileRoutesById {
   '/_marketing/features/learning-twin': typeof MarketingFeaturesLearningTwinRoute
   '/_marketing/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/_marketing/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
+  '/api/debug/errors': typeof ApiDebugErrorsRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
   '/_marketing/resources/': typeof MarketingResourcesIndexRoute
   '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
@@ -11644,6 +11653,7 @@ export interface FileRouteTypes {
     | '/features/learning-twin'
     | '/features/smart-learning-paths'
     | '/resources/$courseSlug'
+    | '/api/debug/errors'
     | '/dashboard/'
     | '/resources/'
     | '/dashboard/admin/support'
@@ -12802,6 +12812,7 @@ export interface FileRouteTypes {
     | '/features/learning-twin'
     | '/features/smart-learning-paths'
     | '/resources/$courseSlug'
+    | '/api/debug/errors'
     | '/dashboard'
     | '/resources'
     | '/dashboard/admin/support'
@@ -13964,6 +13975,7 @@ export interface FileRouteTypes {
     | '/_marketing/features/learning-twin'
     | '/_marketing/features/smart-learning-paths'
     | '/_marketing/resources/$courseSlug'
+    | '/api/debug/errors'
     | '/_dashboard/dashboard/'
     | '/_marketing/resources/'
     | '/_dashboard/dashboard/admin/support'
@@ -15098,6 +15110,7 @@ export interface RootRouteChildren {
   UnauthorizedRoute: typeof UnauthorizedRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiHealthRoute: typeof ApiHealthRoute
+  ApiDebugErrorsRoute: typeof ApiDebugErrorsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -15318,6 +15331,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/'
       preLoaderRoute: typeof DashboardDashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/api/debug/errors': {
+      id: '/api/debug/errors'
+      path: '/api/debug/errors'
+      fullPath: '/api/debug/errors'
+      preLoaderRoute: typeof ApiDebugErrorsRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_marketing/resources/$courseSlug': {
       id: '/_marketing/resources/$courseSlug'
@@ -26720,6 +26740,7 @@ const rootRouteChildren: RootRouteChildren = {
   UnauthorizedRoute: UnauthorizedRoute,
   ApiChatRoute: ApiChatRoute,
   ApiHealthRoute: ApiHealthRoute,
+  ApiDebugErrorsRoute: ApiDebugErrorsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
