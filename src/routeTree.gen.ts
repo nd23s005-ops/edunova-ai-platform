@@ -15,6 +15,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as HelpDeskRouteImport } from './routes/help-desk'
+import { Route as HealthRouteImport } from './routes/health'
 import { Route as MarketingRouteImport } from './routes/_marketing'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
@@ -1197,6 +1198,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const HelpDeskRoute = HelpDeskRouteImport.update({
   id: '/help-desk',
   path: '/help-desk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HealthRoute = HealthRouteImport.update({
+  id: '/health',
+  path: '/health',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarketingRoute = MarketingRouteImport.update({
@@ -8119,6 +8125,7 @@ const DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute =
 export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/health': typeof HealthRoute
   '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
@@ -9277,6 +9284,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/$': typeof SplatRoute
   '/': typeof MarketingIndexRoute
+  '/health': typeof HealthRoute
   '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
@@ -10437,6 +10445,7 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_marketing': typeof MarketingRouteWithChildren
+  '/health': typeof HealthRoute
   '/help-desk': typeof HelpDeskRoute
   '/onboarding': typeof OnboardingRouteWithChildren
   '/privacy': typeof PrivacyRoute
@@ -11598,6 +11607,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/$'
     | '/'
+    | '/health'
     | '/help-desk'
     | '/onboarding'
     | '/privacy'
@@ -12756,6 +12766,7 @@ export interface FileRouteTypes {
   to:
     | '/$'
     | '/'
+    | '/health'
     | '/help-desk'
     | '/onboarding'
     | '/privacy'
@@ -13915,6 +13926,7 @@ export interface FileRouteTypes {
     | '/_auth'
     | '/_dashboard'
     | '/_marketing'
+    | '/health'
     | '/help-desk'
     | '/onboarding'
     | '/privacy'
@@ -15077,6 +15089,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRouteWithChildren
   DashboardRoute: typeof DashboardRouteWithChildren
   MarketingRoute: typeof MarketingRouteWithChildren
+  HealthRoute: typeof HealthRoute
   HelpDeskRoute: typeof HelpDeskRoute
   OnboardingRoute: typeof OnboardingRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
@@ -15129,6 +15142,13 @@ declare module '@tanstack/react-router' {
       path: '/help-desk'
       fullPath: '/help-desk'
       preLoaderRoute: typeof HelpDeskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/health': {
+      id: '/health'
+      path: '/health'
+      fullPath: '/health'
+      preLoaderRoute: typeof HealthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_marketing': {
@@ -26691,6 +26711,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRouteWithChildren,
   DashboardRoute: DashboardRouteWithChildren,
   MarketingRoute: MarketingRouteWithChildren,
+  HealthRoute: HealthRoute,
   HelpDeskRoute: HelpDeskRoute,
   OnboardingRoute: OnboardingRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
@@ -26703,3 +26724,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
