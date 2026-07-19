@@ -12,9 +12,11 @@ export const Route = createFileRoute("/_auth/verify-email")({
       { name: "robots", content: "noindex" },
     ],
   }),
-  validateSearch: (s: Record<string, unknown>) => ({
-    email: typeof s.email === "string" ? s.email : undefined,
-  }),
+  validateSearch: (s: Record<string, unknown>): { email?: string } => {
+    const out: { email?: string } = {};
+    if (typeof s.email === "string") out.email = s.email;
+    return out;
+  },
   component: VerifyEmailPage,
 });
 
