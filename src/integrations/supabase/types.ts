@@ -453,6 +453,27 @@ export type Database = {
         }
         Relationships: []
       }
+      debug_error_retention_config: {
+        Row: {
+          id: boolean
+          max_age_hours: number
+          max_rows: number
+          updated_at: string
+        }
+        Insert: {
+          id?: boolean
+          max_age_hours?: number
+          max_rows?: number
+          updated_at?: string
+        }
+        Update: {
+          id?: boolean
+          max_age_hours?: number
+          max_rows?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       lesson_progress: {
         Row: {
           completed_at: string
@@ -1354,6 +1375,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cleanup_debug_error_captures: { Args: never; Returns: number }
       get_my_role: {
         Args: never
         Returns: Database["public"]["Enums"]["app_role"]

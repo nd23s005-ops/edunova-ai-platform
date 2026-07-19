@@ -98,6 +98,7 @@ import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_d
 import { Route as DashboardDashboardStudentAssessmentsRouteImport } from './routes/_dashboard.dashboard.student.assessments'
 import { Route as DashboardDashboardMockTestsTestIdRouteImport } from './routes/_dashboard.dashboard.mock-tests.$testId'
 import { Route as DashboardDashboardAdminSupportRouteImport } from './routes/_dashboard.dashboard.admin.support'
+import { Route as DashboardDashboardAdminDebugErrorsRouteImport } from './routes/_dashboard.dashboard.admin.debug-errors'
 import { Route as DashboardDashboardMockTestsAiIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.ai.index'
 import { Route as DashboardDashboardStudentCoursesCourseIdRouteImport } from './routes/_dashboard.dashboard.student.courses.$courseId'
 import { Route as DashboardDashboardStudentAssessmentsAssessmentIdRouteImport } from './routes/_dashboard.dashboard.student.assessments.$assessmentId'
@@ -603,6 +604,12 @@ const DashboardDashboardAdminSupportRoute =
     path: '/support',
     getParentRoute: () => DashboardDashboardAdminRoute,
   } as any)
+const DashboardDashboardAdminDebugErrorsRoute =
+  DashboardDashboardAdminDebugErrorsRouteImport.update({
+    id: '/debug-errors',
+    path: '/debug-errors',
+    getParentRoute: () => DashboardDashboardAdminRoute,
+  } as any)
 const DashboardDashboardMockTestsAiIndexRoute =
   DashboardDashboardMockTestsAiIndexRouteImport.update({
     id: '/dashboard/mock-tests/ai/',
@@ -699,6 +706,7 @@ export interface FileRoutesByFullPath {
   '/api/debug/errors': typeof ApiDebugErrorsRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
   '/resources/': typeof MarketingResourcesIndexRoute
+  '/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -794,6 +802,7 @@ export interface FileRoutesByTo {
   '/api/debug/errors': typeof ApiDebugErrorsRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
   '/resources': typeof MarketingResourcesIndexRoute
+  '/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -894,6 +903,7 @@ export interface FileRoutesById {
   '/api/debug/errors': typeof ApiDebugErrorsRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
   '/_marketing/resources/': typeof MarketingResourcesIndexRoute
+  '/_dashboard/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
   '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/_dashboard/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/_dashboard/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -992,6 +1002,7 @@ export interface FileRouteTypes {
     | '/api/debug/errors'
     | '/dashboard/'
     | '/resources/'
+    | '/dashboard/admin/debug-errors'
     | '/dashboard/admin/support'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/assessments'
@@ -1087,6 +1098,7 @@ export interface FileRouteTypes {
     | '/api/debug/errors'
     | '/dashboard'
     | '/resources'
+    | '/dashboard/admin/debug-errors'
     | '/dashboard/admin/support'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/assessments'
@@ -1186,6 +1198,7 @@ export interface FileRouteTypes {
     | '/api/debug/errors'
     | '/_dashboard/dashboard/'
     | '/_marketing/resources/'
+    | '/_dashboard/dashboard/admin/debug-errors'
     | '/_dashboard/dashboard/admin/support'
     | '/_dashboard/dashboard/mock-tests/$testId'
     | '/_dashboard/dashboard/student/assessments'
@@ -1882,6 +1895,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardAdminSupportRouteImport
       parentRoute: typeof DashboardDashboardAdminRoute
     }
+    '/_dashboard/dashboard/admin/debug-errors': {
+      id: '/_dashboard/dashboard/admin/debug-errors'
+      path: '/debug-errors'
+      fullPath: '/dashboard/admin/debug-errors'
+      preLoaderRoute: typeof DashboardDashboardAdminDebugErrorsRouteImport
+      parentRoute: typeof DashboardDashboardAdminRoute
+    }
     '/_dashboard/dashboard/mock-tests/ai/': {
       id: '/_dashboard/dashboard/mock-tests/ai/'
       path: '/dashboard/mock-tests/ai'
@@ -1968,11 +1988,14 @@ const AuthRouteChildren: AuthRouteChildren = {
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 interface DashboardDashboardAdminRouteChildren {
+  DashboardDashboardAdminDebugErrorsRoute: typeof DashboardDashboardAdminDebugErrorsRoute
   DashboardDashboardAdminSupportRoute: typeof DashboardDashboardAdminSupportRoute
 }
 
 const DashboardDashboardAdminRouteChildren: DashboardDashboardAdminRouteChildren =
   {
+    DashboardDashboardAdminDebugErrorsRoute:
+      DashboardDashboardAdminDebugErrorsRoute,
     DashboardDashboardAdminSupportRoute: DashboardDashboardAdminSupportRoute,
   }
 
