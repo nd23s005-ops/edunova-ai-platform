@@ -49,8 +49,8 @@ export const getOverview = createServerFn({ method: "POST" })
         supabase
           .from("lesson_progress")
           .select("id", { count: "exact", head: true })
-          .eq("completed", true)
-          .gte("updated_at", sinceIso),
+          .not("completed_at", "is", null)
+          .gte("completed_at", sinceIso),
       ]);
 
       const kpis: Kpi[] = [
