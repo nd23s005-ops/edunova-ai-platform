@@ -167,7 +167,7 @@ export const startUniversalAssessment = createServerFn({ method: "POST" })
     const count = data.count ?? KIND_DEFAULT_COUNT[kind];
     const timeLimit =
       typeof data.timeLimitSeconds === "number" ? data.timeLimitSeconds : KIND_DEFAULT_TIME[kind];
-      isProgrammingContext(data.subject ?? courseTitle, data.topic ?? null);
+    const isCode = isProgrammingContext(data.subject ?? courseTitle, data.topic ?? null);
     const rawTypes = (data.types ?? []) as QuestionType[];
     const types: QuestionType[] =
       rawTypes.length > 0 ? rawTypes : isCode ? DEFAULT_TYPES_CODE : DEFAULT_TYPES_TEXT;
