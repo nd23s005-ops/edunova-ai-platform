@@ -90,6 +90,50 @@ function LessonPage() {
     onError: (e: Error) => toast.error(e.message),
   });
 
+  // Reading position: restore on load, save throttled on scroll
+  const getPos = useServerFn(getReadingPosition);
+  const savePos = useServerFn(saveReadingPosition);
+  const lastSavedRef = useRef<number>(-1);
+  const restoredRef = useRef(false);
+
+  useEffect(() => {
+    if (restoredRef.current || !lesson) return;
+    restoredRef.current = true;
+    (async () => {
+      try {
+        const pos = await getPos({ data: { lessonId } });
+        if (pos && pos.scrollPercent > 5) {
+          const target = (pos.scrollPercent / 100) * (document.documentElement.scrollHeight - window.innerHeight);
+          window.scrollTo({ top: target, behavior: "smooth" });
+        }
+      } catch {
+        /* ignore */
+      }
+    })();
+  }, [lesson, lessonId, getPos]);
+
+  useEffect(() => {
+    if (!lesson) return;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    const onScroll = () => {
+      if (timer) return;
+      timer = setTimeout(() => {
+        timer = null;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? Math.round((window.scrollY / max) * 100) : 0;
+        if (Math.abs(pct - lastSavedRef.current) < 5) return;
+        lastSavedRef.current = pct;
+        savePos({ data: { lessonId, courseId, scrollPercent: Math.max(0, Math.min(100, pct)) } }).catch(() => {});
+      }, 1200);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (timer) clearTimeout(timer);
+    };
+  }, [lesson, lessonId, courseId, savePos]);
+
+
   if (isLoading || !lesson) {
     return (
       <RoleGate allow={["student"]}>
