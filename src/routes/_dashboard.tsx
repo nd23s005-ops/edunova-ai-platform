@@ -118,8 +118,20 @@ const PROFESSIONAL_NAV: NavItem[] = [
 ];
 
 
+const COLLEGE_NAV: NavItem[] = [
+  { to: "/dashboard/college", label: "My workspace", icon: GraduationCap },
+  { to: "/dashboard/student/my-courses", label: "My Courses", icon: BookOpen },
+  { to: "/dashboard/student/browse", label: "Browse Courses", icon: BookOpen },
+  { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
+  { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
+  { to: "/dashboard/student/quizzes", label: "AI Quizzes", icon: Target },
+  { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
+  AI_ASSISTANT,
+];
+
 const NAV_BY_ROLE: Record<AppRole, NavItem[]> = {
   student: STUDENT_NAV,
+  college_student: COLLEGE_NAV,
   organization: ORG_NAV,
   admin: ADMIN_NAV,
   professional: PROFESSIONAL_NAV,

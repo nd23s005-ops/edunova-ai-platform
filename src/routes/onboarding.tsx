@@ -99,10 +99,14 @@ const ROLES: RoleCard[] = [
 const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[]> = {
   student: [
     { key: "school", label: "School Student", desc: "K-12 curriculum, exam prep, homework help." },
-    { key: "college", label: "College Student", desc: "University subjects, projects, research support." },
     { key: "exam", label: "Competitive Exam Aspirant", desc: "JEE, NEET, UPSC, GRE — targeted practice." },
+    { key: "hobby", label: "Curious Learner", desc: "Explore new topics beyond the syllabus." },
   ],
-
+  college_student: [
+    { key: "engineering", label: "Engineering / Tech", desc: "CS, coding, projects, placement prep." },
+    { key: "general", label: "General Degree", desc: "Arts, commerce, sciences and research support." },
+    { key: "postgrad", label: "Post-graduate / Research", desc: "Advanced coursework, thesis, publications." },
+  ],
   professional: [
     { key: "upskill", label: "Upskilling", desc: "Stay sharp in your current role." },
     { key: "switch", label: "Career Switch", desc: "Move into a new domain confidently." },
