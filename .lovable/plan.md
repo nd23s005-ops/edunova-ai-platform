@@ -1,72 +1,132 @@
-# Universal AI Dashboard — Personalization & Role Split
 
-Existing dashboards (Student/Professional/Organization/Super Admin), sidebar, theme, AI assistant, assessments, mock tests, upskilling, syllabus, RBAC, and lazy routes are already in place. This plan adds the four gaps you selected and splits `student` into `school_student` + `college_student`.
+# Universal AI Learning Engine (Prompts 2A + 2B)
 
-## 1. Role split: `student` → `school_student` + `college_student`
+This is a large, multi-phase build. To keep it safe against the existing platform (courses, quizzes, weekly assessments, upskilling, dashboards, admin), I'll ship it in ordered phases. Each phase is independently working and typechecks clean before the next starts.
 
-Highest-risk change. Done first so the personalized dashboard can branch cleanly.
+## Decision needed first — Certificates
 
-**Migration (single call):**
-- Extend `app_role` enum: `ALTER TYPE app_role ADD VALUE 'school_student'; ADD VALUE 'college_student';`
-- Backfill: `UPDATE public.user_roles SET role = CASE WHEN sp.education_level IN ('undergraduate','graduate','postgraduate') THEN 'college_student' ELSE 'school_student' END FROM public.student_profiles sp WHERE user_roles.user_id = sp.user_id AND user_roles.role = 'student';` remaining `'student'` rows → `'school_student'`.
-- Update `handle_new_user()` to map incoming `role` metadata (`school_student`, `college_student`, legacy `student` → `school_student`, `college_student`) and set `onboarding_completed` accordingly.
-- Keep `'student'` enum value (Postgres can't drop enum values safely); code stops emitting it.
+Prompt 2B introduces **AI Certification (Course Certificate, Digital Badge, XP, Achievement Badge)**. Earlier in this project you explicitly asked me to **REMOVE ALL CERTIFICATE FEATURES** and replace them with "Completed + progress". These conflict.
 
-**Code (`src/lib/auth/roles.ts`):**
-- `AppRole = 'school_student' | 'college_student' | 'organization' | 'professional' | 'admin'`.
-- `normalizeRole()` maps legacy `'student'` → `'school_student'` for safety.
-- `homeForRole`: school → `/dashboard/student`, college → `/dashboard/college`, others unchanged.
-- Update `ROLE_LABELS`, onboarding role picker copy, RoleGate consumers, `_dashboard.tsx` NAV_BY_ROLE (add `college_student` sidebar; school keeps existing student nav minus college-only tiles), `_dashboard.dashboard.index.tsx` redirect logic.
-- New route: `src/routes/_dashboard.dashboard.college.tsx` (college workspace: enrolled courses, upskilling, AI roadmap placeholder, coding practice, placement prep, resume builder, career recs — reusing existing widgets where present, `PlaceholderPanel` for the rest).
-- School Student dashboard: remove upskilling/mock-test tiles that target working audiences; keep syllabus, assessments, quizzes, streak.
+Please pick one before I start Phase 6:
+- **A. Keep the earlier rule** — no certificates. Ship only XP + Digital Badge + Achievement Badge + "Completed" state.
+- **B. Reintroduce certificates** — full certificate page + shareable link + PDF, alongside XP/badges.
+- **C. Badges + XP only, no certificate, no PDF.**
 
-## 2. Personalized home + Continue Learning
+I'll proceed with Phases 1–5 in parallel; certificate/badge phase (6) waits on your answer.
 
-`src/components/dashboard/PersonalizedHome.tsx` — role-aware header injected at top of each workspace route:
-- Welcome message (time-of-day + full name).
-- Daily / weekly / monthly goal cards (reads `study_sessions` aggregates).
-- Continue-learning card: last row from `lesson_progress` joined to `lessons`+`courses`, deep-links to `/dashboard/student/courses/$id/lessons/$id`.
-- AI recommendation strip: server fn `getPersonalizedRecommendations` (Gemini flash) using role, recent activity, weak topics from `subject_quiz_attempts`/`ai_weekly_attempts`. Cached 10 min per user.
+## Scope note — what already exists (won't be rebuilt)
 
-## 3. Global Search (Cmd+K)
+- Courses, chapters, lessons, quizzes, assignments schema + student course routes
+- Upskilling Hub (6 curated courses)
+- AI Daily Quiz, AI Subject Quizzes, AI Weekly Assessments (Gemini)
+- Nova floating chat + dedicated AI Assistant page (already lesson-context aware)
+- Mock Tests, syllabus catalog, resources library
+- Role split (school_student, college_student, professional, organization), notifications, Cmd+K search
 
-`src/components/search/CommandPalette.tsx` using shadcn `Command` + `Dialog`:
-- Trigger: `⌘K` / `Ctrl+K` global listener, plus search button in topbar.
-- Sources: static resource catalog (`src/lib/resources/catalog.ts`), courses (`courses` table via server fn), lessons (via `useServerFn` searching enrolled courses), assessments (`ai_weekly_attempts` history).
-- Groups: Courses / Lessons / Resources / Assessments / Actions (jump to routes).
-- Fuzzy filter client-side; server fn `globalSearch({ q })` returns top-N per group.
+The Learning Engine layers **on top** of these — it does not replace `courses`, `lessons`, `chapters`, `lesson_progress`, `course_enrollments`, or the existing assistant.
 
-## 4. Notification Center + AI Insights
+## Phase 1 — Learner profile & context resolver
 
-Migration adds `public.notifications (id, user_id, kind, title, body, href, read_at, priority, created_at)` with RLS `auth.uid() = user_id`.
+Single source of truth every AI generator reads from.
 
-- `NotificationBell` in topbar (badge for unread) opens popover list; mark-as-read on click.
-- Server-side generators (called from existing flows, not new cron): on assessment submit → insert insight row; on streak breaks → insert alert; on new upskill course match → insert recommendation. Add a `generateDailyInsights` server fn callable from the dashboard index once per day per user (guarded by `last_insight_at` in profile).
-- Insights feed panel on personalized home surfaces the same rows filtered by `kind='insight'`.
+- New table `learner_context` (per user): `skill_level`, `career_goal`, `learning_speed`, `interests[]`, `weak_topics[]`, `strong_topics[]`, `preferred_depth`, updated by triggers/functions from quiz/assessment results.
+- Server fn `getLearnerContext()` — merges profile + role + recent performance + enrollments; cached per request.
+- Backfill from existing `subject_quiz_attempts` + `ai_weekly_attempts` weak/strong topics.
 
-## 5. Dashboard Customization
+## Phase 2 — AI Course Overview generator
 
-Migration adds `profiles.dashboard_prefs jsonb default '{}'` (nullable, per-user).
+On "View Course" / "Enroll":
 
-- `useDashboardPrefs()` hook reads/writes via server fn `updateDashboardPrefs`.
-- Widgets on each workspace: wrap each in `<CustomizableWidget id="..." title="..."/>` supporting pin / hide / reorder (dnd-kit already NOT installed → use HTML5 native drag or lightweight `@dnd-kit/core`; will add).
-- "Customize" button in dashboard header toggles edit mode. Compact/expanded density stored in prefs; applied via CSS variable on `<main>`.
+- New table `ai_course_overviews` (course_id + user_id unique): overview, objectives[], skills[], industry_relevance, career_opportunities[], outcomes[], prerequisites[], generated_at, model, hash.
+- Server fn `generateCourseOverview({ courseId })` — Gemini 3 Flash via Lovable AI Gateway; personalizes to learner context.
+- Course landing route reads (or lazily generates) the overview; skeleton while generating; regenerate button (rate-limited).
 
-## Sequencing
+## Phase 3 — Progressive Level Track
 
-1. Approve plan → run the two migrations (role enum + notifications/prefs) as a single migration.
-2. Regenerate types.
-3. Land role split + college dashboard route.
-4. Ship PersonalizedHome + Continue Learning card.
-5. Add Cmd+K palette + server fn.
-6. Add Notification bell, insights generation hooks, migration triggers.
-7. Add customization wrapper + prefs hook + reorder.
-8. Typecheck; verify existing modules unchanged.
+- Add columns to `course_enrollments`: `current_level` (`beginner|basic|intermediate|advanced|expert|industry_ready`), `level_progress`, `estimated_completion_minutes`.
+- Derivation function computes level from lesson_progress + quiz scores + assignment scores.
+- Reusable `<LevelTrack />` component (6-step rail) shown on course landing + student home "Continue learning" card.
 
-## Technical notes
+## Phase 4 — AI Lesson Enhancer + Resume
 
-- `app_role` enum can't drop `'student'`; code path normalizes it away, no user-visible impact.
-- All new server fns use `requireSupabaseAuth`.
-- Notifications inserted only via server fns / SQL triggers — no client writes.
-- No changes to auth flow, existing dashboards' business logic, or resource catalog.
-- Estimated ~15 new/edited files; every touched area gated to prevent regression.
+- New table `ai_lesson_content` (lesson_id + user_id): intro, concepts[], steps[], examples[], visual_description, use_cases[], summary, key_takeaways[].
+- Server fn `getOrGenerateLessonContent({ lessonId })` — generates lazily, keyed by (lesson_id, learner_context_hash) so it only regenerates when learner context materially changes.
+- Table `lesson_reading_position` (lesson_id + user_id): `scroll_percent`, `last_section`, `updated_at`.
+- Lesson route: throttled scroll writer; on load, scroll to saved position.
+- Student home "Resume learning" card uses the most recent `lesson_reading_position` + `lesson_progress`.
+
+## Phase 5 — AI Practical Learning by category
+
+Category resolver on `courses.category` → generator:
+- Programming → coding exercise (starter code, hidden tests, run in-browser sandbox: string-based checks only, no execution runtime); debugging, output prediction, code completion.
+- Design → UI/UX challenge briefs + rubric.
+- Business → case studies + strategy prompts.
+- Soft skills → communication/leadership scenarios.
+
+All generated on demand and cached per (lesson_id, user_id, kind).
+
+## Phase 6 — Certification / Badge engine (BLOCKED on decision above)
+
+Depending on A/B/C:
+- `achievements` table (badge_type, xp, awarded_at, source_id).
+- Completion trigger when course reaches `industry_ready` + all assessments passed threshold.
+- Optional certificate page/PDF (only if B).
+
+## Phase 7 — AI Tutor (Prompt 2B)
+
+- In-lesson tutor panel — a lesson-scoped variant of the existing ChatWindow.
+- New chat api sub-route `/api/chat/tutor` — same Lovable AI Gateway path, but system prompt is built from `{ lesson content, learner context, weak topics }`.
+- Actions: "Explain simpler", "Give an example", "Quiz me on this", "Hint", "Why was I wrong?" (deep-links from wrong quiz answers).
+
+## Phase 8 — AI Roadmap Generator
+
+- Table `learner_roadmaps` (user_id, generated_at, milestones jsonb).
+- Server fn regenerates when `learner_context.updated_at` changes or on demand.
+- New route `/dashboard/student/roadmap` upgraded from current placeholder to render milestones, current position, next 3 actions, and course/lesson deep links.
+
+## Phase 9 — Notes / Cheat sheets / Mind maps / Formulas
+
+- Table `ai_lesson_notes` (lesson_id + user_id + kind): smart_notes, revision, cheat_sheet, mind_map (as indented outline text — no graph lib), formula_sheet, code_snippets, key_concepts.
+- Lesson page tabbed panel: Notes / Revision / Cheat sheet / Mind map / Formulas / Snippets.
+- One "Generate all" action + per-kind regenerate.
+
+## Phase 10 — AI Assignment & Project generators
+
+- Extend `assignments` with `ai_generated boolean`, `difficulty`, `learner_id nullable` for per-learner AI assignments (existing course-wide assignments untouched).
+- New table `ai_projects` (course_id + user_id + tier `mini|intermediate|advanced|portfolio|capstone`): brief, requirements[], stretch_goals[], rubric[], evaluation_criteria[].
+- Rendered on course landing + a new `/dashboard/student/projects` index.
+
+## Phase 11 — AI Resource Recommendation
+
+- Server fn `recommendResources({ courseId, lessonId? })` returns links grouped by kind (docs, articles, videos, practice sites, GitHub, open source, case studies). URLs limited to well-known safe domains; every AI response passes a domain allowlist filter before display.
+- Shown in a "Recommended for you" tab on the lesson and course pages.
+
+## Phase 12 — Global AI Recommendations
+
+- Server fn `getRecommendations()` returning next lesson, next course, practice questions, mock tests, projects, career path, interview prep.
+- Feeds the student home "For you" strip and the notification insight writer.
+
+## Technical Details
+
+- **Model**: `google/gemini-3-flash-preview` via Lovable AI Gateway (default), through AI SDK + `createLovableAiGatewayProvider`. All prompts/tools/keys server-side. Structured output via `Output.object` with constraint-free schemas + `NoObjectGeneratedError` guard + prompt-stated limits (per `ai-sdk-lovable-gateway`).
+- **Server functions**: one `*.functions.ts` per generator under `src/lib/ai/engine/`; helpers in sibling `.server.ts` files to keep handler bodies self-contained (server-fn splitting rule).
+- **RLS**: every new `public.*` table gets GRANT + RLS + owner-scoped policy (`auth.uid() = user_id`); admin read via `has_role`.
+- **Caching keys**: `(user_id, resource_id, learner_context_hash)` so regeneration is deterministic and cheap.
+- **UI**: React Suspense + `useSuspenseQuery`; lazy-load heavy panels (Tutor, Notes, Roadmap) with `React.lazy`; skeletons match final layout to avoid CLS.
+- **Errors**: 429/402 gateway errors surfaced as inline toasts with retry-later copy; captured to existing `debug_error_captures`.
+- **Backwards compat**: no destructive migrations on existing tables; new columns are additive + nullable + defaulted.
+- **Typecheck**: `bunx tsgo` must be clean between phases.
+
+## Recommended shipping order
+
+I'll ship in two batches to keep review size sane:
+
+1. **Batch 1** (this next turn): Phases 1, 2, 3, 4 — foundation + Course Overview + Level Track + Lesson Enhancer + Resume. Highest-visibility surface for you to sanity-check before the rest is built on top.
+2. **Batch 2**: Phases 5, 7, 8, 9, 10, 11, 12.
+3. **Batch 3**: Phase 6 (after your certificate decision).
+
+Please:
+1. Pick **A / B / C** for certificates.
+2. Confirm the batch order above (or ask me to reorder — e.g. "AI Tutor first").
+
+Once you answer, I start Batch 1.
