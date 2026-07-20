@@ -54,7 +54,8 @@ function CoursesList() {
     queryFn: () => listFn({ data: { search: search || undefined, status, includeDeleted } }),
   });
 
-  async function doAction(id: string, action: Parameters<typeof transitionFn>[0]["data"]["action"]) {
+  type TransitionAction = "submit_review" | "approve" | "reject" | "publish" | "unpublish" | "archive" | "restore" | "soft_delete" | "hard_restore";
+  async function doAction(id: string, action: TransitionAction) {
     try {
       await transitionFn({ data: { id, action } });
       toast.success("Updated");
