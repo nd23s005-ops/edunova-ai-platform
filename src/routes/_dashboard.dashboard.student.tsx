@@ -14,6 +14,7 @@ import {
   Rocket,
 } from "lucide-react";
 import { DashboardHeader, StatCard } from "@/components/dashboard/DashboardShared";
+import { ResumeLearningCard } from "@/components/learning/ResumeLearningCard";
 import {
   SectionHeader,
   DashCard,
