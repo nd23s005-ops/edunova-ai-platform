@@ -97,16 +97,21 @@ import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes
 import { Route as DashboardDashboardStudentDailyQuizRouteImport } from './routes/_dashboard.dashboard.student.daily-quiz'
 import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_dashboard.dashboard.student.browse'
 import { Route as DashboardDashboardStudentAssessmentsRouteImport } from './routes/_dashboard.dashboard.student.assessments'
+import { Route as DashboardDashboardStudentAiTestsRouteImport } from './routes/_dashboard.dashboard.student.ai-tests'
 import { Route as DashboardDashboardMockTestsTestIdRouteImport } from './routes/_dashboard.dashboard.mock-tests.$testId'
 import { Route as DashboardDashboardAdminSupportRouteImport } from './routes/_dashboard.dashboard.admin.support'
 import { Route as DashboardDashboardAdminDebugErrorsRouteImport } from './routes/_dashboard.dashboard.admin.debug-errors'
 import { Route as DashboardDashboardStudentQuizzesIndexRouteImport } from './routes/_dashboard.dashboard.student.quizzes.index'
+import { Route as DashboardDashboardStudentAiTestsIndexRouteImport } from './routes/_dashboard.dashboard.student.ai-tests.index'
 import { Route as DashboardDashboardMockTestsAiIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.ai.index'
 import { Route as DashboardDashboardStudentQuizzesSubjectRouteImport } from './routes/_dashboard.dashboard.student.quizzes.$subject'
 import { Route as DashboardDashboardStudentCoursesCourseIdRouteImport } from './routes/_dashboard.dashboard.student.courses.$courseId'
 import { Route as DashboardDashboardStudentAssessmentsAssessmentIdRouteImport } from './routes/_dashboard.dashboard.student.assessments.$assessmentId'
+import { Route as DashboardDashboardStudentAiTestsNewRouteImport } from './routes/_dashboard.dashboard.student.ai-tests.new'
+import { Route as DashboardDashboardStudentAiTestsAnalyticsRouteImport } from './routes/_dashboard.dashboard.student.ai-tests.analytics'
 import { Route as DashboardDashboardMockTestsAiCategoryIdRouteImport } from './routes/_dashboard.dashboard.mock-tests.ai.$categoryId'
 import { Route as DashboardDashboardStudentQuizzesSubjectSetIdRouteImport } from './routes/_dashboard.dashboard.student.quizzes.$subject.$setId'
+import { Route as DashboardDashboardStudentAiTestsAttemptsIdRouteImport } from './routes/_dashboard.dashboard.student.ai-tests.attempts.$id'
 import { Route as DashboardDashboardStudentCoursesCourseIdQuizQuizIdRouteImport } from './routes/_dashboard.dashboard.student.courses.$courseId.quiz.$quizId'
 import { Route as DashboardDashboardStudentCoursesCourseIdLessonsLessonIdRouteImport } from './routes/_dashboard.dashboard.student.courses.$courseId.lessons.$lessonId'
 import { Route as DashboardDashboardStudentCoursesCourseIdChaptersChapterIdRouteImport } from './routes/_dashboard.dashboard.student.courses.$courseId.chapters.$chapterId'
@@ -602,6 +607,12 @@ const DashboardDashboardStudentAssessmentsRoute =
     path: '/assessments',
     getParentRoute: () => DashboardDashboardStudentRoute,
   } as any)
+const DashboardDashboardStudentAiTestsRoute =
+  DashboardDashboardStudentAiTestsRouteImport.update({
+    id: '/ai-tests',
+    path: '/ai-tests',
+    getParentRoute: () => DashboardDashboardStudentRoute,
+  } as any)
 const DashboardDashboardMockTestsTestIdRoute =
   DashboardDashboardMockTestsTestIdRouteImport.update({
     id: '/dashboard/mock-tests/$testId',
@@ -625,6 +636,12 @@ const DashboardDashboardStudentQuizzesIndexRoute =
     id: '/quizzes/',
     path: '/quizzes/',
     getParentRoute: () => DashboardDashboardStudentRoute,
+  } as any)
+const DashboardDashboardStudentAiTestsIndexRoute =
+  DashboardDashboardStudentAiTestsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => DashboardDashboardStudentAiTestsRoute,
   } as any)
 const DashboardDashboardMockTestsAiIndexRoute =
   DashboardDashboardMockTestsAiIndexRouteImport.update({
@@ -650,6 +667,18 @@ const DashboardDashboardStudentAssessmentsAssessmentIdRoute =
     path: '/$assessmentId',
     getParentRoute: () => DashboardDashboardStudentAssessmentsRoute,
   } as any)
+const DashboardDashboardStudentAiTestsNewRoute =
+  DashboardDashboardStudentAiTestsNewRouteImport.update({
+    id: '/new',
+    path: '/new',
+    getParentRoute: () => DashboardDashboardStudentAiTestsRoute,
+  } as any)
+const DashboardDashboardStudentAiTestsAnalyticsRoute =
+  DashboardDashboardStudentAiTestsAnalyticsRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => DashboardDashboardStudentAiTestsRoute,
+  } as any)
 const DashboardDashboardMockTestsAiCategoryIdRoute =
   DashboardDashboardMockTestsAiCategoryIdRouteImport.update({
     id: '/dashboard/mock-tests/ai/$categoryId',
@@ -661,6 +690,12 @@ const DashboardDashboardStudentQuizzesSubjectSetIdRoute =
     id: '/$setId',
     path: '/$setId',
     getParentRoute: () => DashboardDashboardStudentQuizzesSubjectRoute,
+  } as any)
+const DashboardDashboardStudentAiTestsAttemptsIdRoute =
+  DashboardDashboardStudentAiTestsAttemptsIdRouteImport.update({
+    id: '/attempts/$id',
+    path: '/attempts/$id',
+    getParentRoute: () => DashboardDashboardStudentAiTestsRoute,
   } as any)
 const DashboardDashboardStudentCoursesCourseIdQuizQuizIdRoute =
   DashboardDashboardStudentCoursesCourseIdQuizQuizIdRouteImport.update({
@@ -738,6 +773,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
+  '/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsRouteWithChildren
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
@@ -779,11 +815,15 @@ export interface FileRoutesByFullPath {
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
+  '/dashboard/student/ai-tests/analytics': typeof DashboardDashboardStudentAiTestsAnalyticsRoute
+  '/dashboard/student/ai-tests/new': typeof DashboardDashboardStudentAiTestsNewRoute
   '/dashboard/student/assessments/$assessmentId': typeof DashboardDashboardStudentAssessmentsAssessmentIdRoute
   '/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
   '/dashboard/student/quizzes/$subject': typeof DashboardDashboardStudentQuizzesSubjectRouteWithChildren
   '/dashboard/mock-tests/ai/': typeof DashboardDashboardMockTestsAiIndexRoute
+  '/dashboard/student/ai-tests/': typeof DashboardDashboardStudentAiTestsIndexRoute
   '/dashboard/student/quizzes/': typeof DashboardDashboardStudentQuizzesIndexRoute
+  '/dashboard/student/ai-tests/attempts/$id': typeof DashboardDashboardStudentAiTestsAttemptsIdRoute
   '/dashboard/student/quizzes/$subject/$setId': typeof DashboardDashboardStudentQuizzesSubjectSetIdRoute
   '/dashboard/student/courses/$courseId/assignments/$assignmentId': typeof DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute
   '/dashboard/student/courses/$courseId/chapters/$chapterId': typeof DashboardDashboardStudentCoursesCourseIdChaptersChapterIdRoute
@@ -879,11 +919,15 @@ export interface FileRoutesByTo {
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
+  '/dashboard/student/ai-tests/analytics': typeof DashboardDashboardStudentAiTestsAnalyticsRoute
+  '/dashboard/student/ai-tests/new': typeof DashboardDashboardStudentAiTestsNewRoute
   '/dashboard/student/assessments/$assessmentId': typeof DashboardDashboardStudentAssessmentsAssessmentIdRoute
   '/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
   '/dashboard/student/quizzes/$subject': typeof DashboardDashboardStudentQuizzesSubjectRouteWithChildren
   '/dashboard/mock-tests/ai': typeof DashboardDashboardMockTestsAiIndexRoute
+  '/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsIndexRoute
   '/dashboard/student/quizzes': typeof DashboardDashboardStudentQuizzesIndexRoute
+  '/dashboard/student/ai-tests/attempts/$id': typeof DashboardDashboardStudentAiTestsAttemptsIdRoute
   '/dashboard/student/quizzes/$subject/$setId': typeof DashboardDashboardStudentQuizzesSubjectSetIdRoute
   '/dashboard/student/courses/$courseId/assignments/$assignmentId': typeof DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute
   '/dashboard/student/courses/$courseId/chapters/$chapterId': typeof DashboardDashboardStudentCoursesCourseIdChaptersChapterIdRoute
@@ -943,6 +987,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
   '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
   '/_dashboard/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
+  '/_dashboard/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsRouteWithChildren
   '/_dashboard/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
   '/_dashboard/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
   '/_dashboard/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
@@ -984,11 +1029,15 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
+  '/_dashboard/dashboard/student/ai-tests/analytics': typeof DashboardDashboardStudentAiTestsAnalyticsRoute
+  '/_dashboard/dashboard/student/ai-tests/new': typeof DashboardDashboardStudentAiTestsNewRoute
   '/_dashboard/dashboard/student/assessments/$assessmentId': typeof DashboardDashboardStudentAssessmentsAssessmentIdRoute
   '/_dashboard/dashboard/student/courses/$courseId': typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
   '/_dashboard/dashboard/student/quizzes/$subject': typeof DashboardDashboardStudentQuizzesSubjectRouteWithChildren
   '/_dashboard/dashboard/mock-tests/ai/': typeof DashboardDashboardMockTestsAiIndexRoute
+  '/_dashboard/dashboard/student/ai-tests/': typeof DashboardDashboardStudentAiTestsIndexRoute
   '/_dashboard/dashboard/student/quizzes/': typeof DashboardDashboardStudentQuizzesIndexRoute
+  '/_dashboard/dashboard/student/ai-tests/attempts/$id': typeof DashboardDashboardStudentAiTestsAttemptsIdRoute
   '/_dashboard/dashboard/student/quizzes/$subject/$setId': typeof DashboardDashboardStudentQuizzesSubjectSetIdRoute
   '/_dashboard/dashboard/student/courses/$courseId/assignments/$assignmentId': typeof DashboardDashboardStudentCoursesCourseIdAssignmentsAssignmentIdRoute
   '/_dashboard/dashboard/student/courses/$courseId/chapters/$chapterId': typeof DashboardDashboardStudentCoursesCourseIdChaptersChapterIdRoute
@@ -1046,6 +1095,7 @@ export interface FileRouteTypes {
     | '/dashboard/admin/debug-errors'
     | '/dashboard/admin/support'
     | '/dashboard/mock-tests/$testId'
+    | '/dashboard/student/ai-tests'
     | '/dashboard/student/assessments'
     | '/dashboard/student/browse'
     | '/dashboard/student/daily-quiz'
@@ -1087,11 +1137,15 @@ export interface FileRouteTypes {
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/mock-tests/ai/$categoryId'
+    | '/dashboard/student/ai-tests/analytics'
+    | '/dashboard/student/ai-tests/new'
     | '/dashboard/student/assessments/$assessmentId'
     | '/dashboard/student/courses/$courseId'
     | '/dashboard/student/quizzes/$subject'
     | '/dashboard/mock-tests/ai/'
+    | '/dashboard/student/ai-tests/'
     | '/dashboard/student/quizzes/'
+    | '/dashboard/student/ai-tests/attempts/$id'
     | '/dashboard/student/quizzes/$subject/$setId'
     | '/dashboard/student/courses/$courseId/assignments/$assignmentId'
     | '/dashboard/student/courses/$courseId/chapters/$chapterId'
@@ -1187,11 +1241,15 @@ export interface FileRouteTypes {
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/mock-tests/ai/$categoryId'
+    | '/dashboard/student/ai-tests/analytics'
+    | '/dashboard/student/ai-tests/new'
     | '/dashboard/student/assessments/$assessmentId'
     | '/dashboard/student/courses/$courseId'
     | '/dashboard/student/quizzes/$subject'
     | '/dashboard/mock-tests/ai'
+    | '/dashboard/student/ai-tests'
     | '/dashboard/student/quizzes'
+    | '/dashboard/student/ai-tests/attempts/$id'
     | '/dashboard/student/quizzes/$subject/$setId'
     | '/dashboard/student/courses/$courseId/assignments/$assignmentId'
     | '/dashboard/student/courses/$courseId/chapters/$chapterId'
@@ -1250,6 +1308,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/admin/debug-errors'
     | '/_dashboard/dashboard/admin/support'
     | '/_dashboard/dashboard/mock-tests/$testId'
+    | '/_dashboard/dashboard/student/ai-tests'
     | '/_dashboard/dashboard/student/assessments'
     | '/_dashboard/dashboard/student/browse'
     | '/_dashboard/dashboard/student/daily-quiz'
@@ -1291,11 +1350,15 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/mock-tests/ai/$categoryId'
+    | '/_dashboard/dashboard/student/ai-tests/analytics'
+    | '/_dashboard/dashboard/student/ai-tests/new'
     | '/_dashboard/dashboard/student/assessments/$assessmentId'
     | '/_dashboard/dashboard/student/courses/$courseId'
     | '/_dashboard/dashboard/student/quizzes/$subject'
     | '/_dashboard/dashboard/mock-tests/ai/'
+    | '/_dashboard/dashboard/student/ai-tests/'
     | '/_dashboard/dashboard/student/quizzes/'
+    | '/_dashboard/dashboard/student/ai-tests/attempts/$id'
     | '/_dashboard/dashboard/student/quizzes/$subject/$setId'
     | '/_dashboard/dashboard/student/courses/$courseId/assignments/$assignmentId'
     | '/_dashboard/dashboard/student/courses/$courseId/chapters/$chapterId'
@@ -1940,6 +2003,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardStudentAssessmentsRouteImport
       parentRoute: typeof DashboardDashboardStudentRoute
     }
+    '/_dashboard/dashboard/student/ai-tests': {
+      id: '/_dashboard/dashboard/student/ai-tests'
+      path: '/ai-tests'
+      fullPath: '/dashboard/student/ai-tests'
+      preLoaderRoute: typeof DashboardDashboardStudentAiTestsRouteImport
+      parentRoute: typeof DashboardDashboardStudentRoute
+    }
     '/_dashboard/dashboard/mock-tests/$testId': {
       id: '/_dashboard/dashboard/mock-tests/$testId'
       path: '/dashboard/mock-tests/$testId'
@@ -1967,6 +2037,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/student/quizzes/'
       preLoaderRoute: typeof DashboardDashboardStudentQuizzesIndexRouteImport
       parentRoute: typeof DashboardDashboardStudentRoute
+    }
+    '/_dashboard/dashboard/student/ai-tests/': {
+      id: '/_dashboard/dashboard/student/ai-tests/'
+      path: '/'
+      fullPath: '/dashboard/student/ai-tests/'
+      preLoaderRoute: typeof DashboardDashboardStudentAiTestsIndexRouteImport
+      parentRoute: typeof DashboardDashboardStudentAiTestsRoute
     }
     '/_dashboard/dashboard/mock-tests/ai/': {
       id: '/_dashboard/dashboard/mock-tests/ai/'
@@ -1996,6 +2073,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardStudentAssessmentsAssessmentIdRouteImport
       parentRoute: typeof DashboardDashboardStudentAssessmentsRoute
     }
+    '/_dashboard/dashboard/student/ai-tests/new': {
+      id: '/_dashboard/dashboard/student/ai-tests/new'
+      path: '/new'
+      fullPath: '/dashboard/student/ai-tests/new'
+      preLoaderRoute: typeof DashboardDashboardStudentAiTestsNewRouteImport
+      parentRoute: typeof DashboardDashboardStudentAiTestsRoute
+    }
+    '/_dashboard/dashboard/student/ai-tests/analytics': {
+      id: '/_dashboard/dashboard/student/ai-tests/analytics'
+      path: '/analytics'
+      fullPath: '/dashboard/student/ai-tests/analytics'
+      preLoaderRoute: typeof DashboardDashboardStudentAiTestsAnalyticsRouteImport
+      parentRoute: typeof DashboardDashboardStudentAiTestsRoute
+    }
     '/_dashboard/dashboard/mock-tests/ai/$categoryId': {
       id: '/_dashboard/dashboard/mock-tests/ai/$categoryId'
       path: '/dashboard/mock-tests/ai/$categoryId'
@@ -2009,6 +2100,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/student/quizzes/$subject/$setId'
       preLoaderRoute: typeof DashboardDashboardStudentQuizzesSubjectSetIdRouteImport
       parentRoute: typeof DashboardDashboardStudentQuizzesSubjectRoute
+    }
+    '/_dashboard/dashboard/student/ai-tests/attempts/$id': {
+      id: '/_dashboard/dashboard/student/ai-tests/attempts/$id'
+      path: '/attempts/$id'
+      fullPath: '/dashboard/student/ai-tests/attempts/$id'
+      preLoaderRoute: typeof DashboardDashboardStudentAiTestsAttemptsIdRouteImport
+      parentRoute: typeof DashboardDashboardStudentAiTestsRoute
     }
     '/_dashboard/dashboard/student/courses/$courseId/quiz/$quizId': {
       id: '/_dashboard/dashboard/student/courses/$courseId/quiz/$quizId'
@@ -2084,6 +2182,30 @@ const DashboardDashboardAdminRouteWithChildren =
     DashboardDashboardAdminRouteChildren,
   )
 
+interface DashboardDashboardStudentAiTestsRouteChildren {
+  DashboardDashboardStudentAiTestsAnalyticsRoute: typeof DashboardDashboardStudentAiTestsAnalyticsRoute
+  DashboardDashboardStudentAiTestsNewRoute: typeof DashboardDashboardStudentAiTestsNewRoute
+  DashboardDashboardStudentAiTestsIndexRoute: typeof DashboardDashboardStudentAiTestsIndexRoute
+  DashboardDashboardStudentAiTestsAttemptsIdRoute: typeof DashboardDashboardStudentAiTestsAttemptsIdRoute
+}
+
+const DashboardDashboardStudentAiTestsRouteChildren: DashboardDashboardStudentAiTestsRouteChildren =
+  {
+    DashboardDashboardStudentAiTestsAnalyticsRoute:
+      DashboardDashboardStudentAiTestsAnalyticsRoute,
+    DashboardDashboardStudentAiTestsNewRoute:
+      DashboardDashboardStudentAiTestsNewRoute,
+    DashboardDashboardStudentAiTestsIndexRoute:
+      DashboardDashboardStudentAiTestsIndexRoute,
+    DashboardDashboardStudentAiTestsAttemptsIdRoute:
+      DashboardDashboardStudentAiTestsAttemptsIdRoute,
+  }
+
+const DashboardDashboardStudentAiTestsRouteWithChildren =
+  DashboardDashboardStudentAiTestsRoute._addFileChildren(
+    DashboardDashboardStudentAiTestsRouteChildren,
+  )
+
 interface DashboardDashboardStudentAssessmentsRouteChildren {
   DashboardDashboardStudentAssessmentsAssessmentIdRoute: typeof DashboardDashboardStudentAssessmentsAssessmentIdRoute
 }
@@ -2139,6 +2261,7 @@ const DashboardDashboardStudentQuizzesSubjectRouteWithChildren =
   )
 
 interface DashboardDashboardStudentRouteChildren {
+  DashboardDashboardStudentAiTestsRoute: typeof DashboardDashboardStudentAiTestsRouteWithChildren
   DashboardDashboardStudentAssessmentsRoute: typeof DashboardDashboardStudentAssessmentsRouteWithChildren
   DashboardDashboardStudentBrowseRoute: typeof DashboardDashboardStudentBrowseRoute
   DashboardDashboardStudentDailyQuizRoute: typeof DashboardDashboardStudentDailyQuizRoute
@@ -2152,6 +2275,8 @@ interface DashboardDashboardStudentRouteChildren {
 
 const DashboardDashboardStudentRouteChildren: DashboardDashboardStudentRouteChildren =
   {
+    DashboardDashboardStudentAiTestsRoute:
+      DashboardDashboardStudentAiTestsRouteWithChildren,
     DashboardDashboardStudentAssessmentsRoute:
       DashboardDashboardStudentAssessmentsRouteWithChildren,
     DashboardDashboardStudentBrowseRoute: DashboardDashboardStudentBrowseRoute,
