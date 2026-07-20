@@ -198,7 +198,14 @@ export const startUniversalAssessment = createServerFn({ method: "POST" })
       chapterTitle,
       lessonTitle,
       avoid,
-      learnerContext: learnerCtx ?? null,
+      learnerContext: learnerCtx
+        ? {
+            skillLevel: learnerCtx.skill_level,
+            careerGoal: learnerCtx.career_goal,
+            weakTopics: learnerCtx.weak_topics,
+            strongTopics: learnerCtx.strong_topics,
+          }
+        : null,
     });
 
     const raw = await callGatewayJSON(system, user);
