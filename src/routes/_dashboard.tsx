@@ -11,6 +11,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   BarChart3,
   BookOpen,
+  Briefcase,
   Building2,
   ClipboardList,
   FileText,
@@ -79,6 +80,7 @@ const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student/assignments", label: "Weekly Assignments", icon: ClipboardList },
   { to: "/dashboard/student/quizzes", label: "Quizzes", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
+  { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   AI_ASSISTANT,
 ];
 
@@ -116,6 +118,7 @@ const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/student/browse", label: "Browse courses", icon: BookOpen },
   { to: "/dashboard/student/my-courses", label: "My courses", icon: BookOpen },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
+  { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   AI_ASSISTANT,
 ];
 
@@ -128,6 +131,7 @@ const COLLEGE_NAV: NavItem[] = [
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   { to: "/dashboard/student/quizzes", label: "AI Quizzes", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
+  { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   AI_ASSISTANT,
 ];
 
