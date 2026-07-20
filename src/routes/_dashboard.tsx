@@ -31,6 +31,8 @@ import {
 
 import { Logo } from "@/components/brand/Logo";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { NotificationBell } from "@/components/dashboard/NotificationBell";
+import { CommandPalette } from "@/components/dashboard/CommandPalette";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
@@ -118,8 +120,20 @@ const PROFESSIONAL_NAV: NavItem[] = [
 ];
 
 
+const COLLEGE_NAV: NavItem[] = [
+  { to: "/dashboard/college", label: "My workspace", icon: GraduationCap },
+  { to: "/dashboard/student/my-courses", label: "My Courses", icon: BookOpen },
+  { to: "/dashboard/student/browse", label: "Browse Courses", icon: BookOpen },
+  { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
+  { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
+  { to: "/dashboard/student/quizzes", label: "AI Quizzes", icon: Target },
+  { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
+  AI_ASSISTANT,
+];
+
 const NAV_BY_ROLE: Record<AppRole, NavItem[]> = {
   student: STUDENT_NAV,
+  college_student: COLLEGE_NAV,
   organization: ORG_NAV,
   admin: ADMIN_NAV,
   professional: PROFESSIONAL_NAV,
@@ -277,12 +291,14 @@ function DashboardLayout() {
           <div className="lg:hidden">
             <Logo />
           </div>
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2 sm:gap-3">
+            <CommandPalette />
             {role && (
-              <span className="hidden rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground sm:inline">
+              <span className="hidden rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground md:inline">
                 {ROLE_LABELS[role]}
               </span>
             )}
+            <NotificationBell />
             <ThemeToggle />
             <Link
               to="/dashboard/profile"

@@ -2,7 +2,12 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
-const publicSignupRoleSchema = z.enum(["student", "professional", "organization"]);
+const publicSignupRoleSchema = z.enum([
+  "student",
+  "college_student",
+  "professional",
+  "organization",
+]);
 
 export const completeAuthRoleSelection = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
@@ -28,9 +33,8 @@ export const completeAuthRoleSelection = createServerFn({ method: "POST" })
     if (currentRole?.role === "admin") return "admin";
 
     if (profile?.onboarding_completed && currentRole?.role) {
-      return currentRole.role === "school_student" || currentRole.role === "college_student"
-        ? "student"
-        : currentRole.role;
+      if (currentRole.role === "school_student") return "student";
+      return currentRole.role;
     }
 
     if (currentRole?.role) {
@@ -46,6 +50,7 @@ export const completeAuthRoleSelection = createServerFn({ method: "POST" })
       if (error) throw error;
     }
 
+    // Only the school-student track keeps onboarding open (grade/board selection).
     const { error: updateError } = await supabaseAdmin
       .from("profiles")
       .upsert(

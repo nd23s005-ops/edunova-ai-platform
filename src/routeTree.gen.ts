@@ -53,6 +53,7 @@ import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboa
 import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
 import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_dashboard.dashboard.professional'
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
+import { Route as DashboardDashboardCollegeRouteImport } from './routes/_dashboard.dashboard.college'
 import { Route as DashboardDashboardAiAssistantRouteImport } from './routes/_dashboard.dashboard.ai-assistant'
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
@@ -337,6 +338,12 @@ const DashboardDashboardOrganizationRoute =
   DashboardDashboardOrganizationRouteImport.update({
     id: '/dashboard/organization',
     path: '/dashboard/organization',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardCollegeRoute =
+  DashboardDashboardCollegeRouteImport.update({
+    id: '/dashboard/college',
+    path: '/dashboard/college',
     getParentRoute: () => DashboardRoute,
   } as any)
 const DashboardDashboardAiAssistantRoute =
@@ -714,6 +721,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
+  '/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
@@ -813,6 +821,7 @@ export interface FileRoutesByTo {
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
+  '/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
@@ -917,6 +926,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
   '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/_dashboard/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
+  '/_dashboard/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
@@ -1019,6 +1029,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/ai-assistant'
+    | '/dashboard/college'
     | '/dashboard/organization'
     | '/dashboard/professional'
     | '/dashboard/profile'
@@ -1118,6 +1129,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/ai-assistant'
+    | '/dashboard/college'
     | '/dashboard/organization'
     | '/dashboard/professional'
     | '/dashboard/profile'
@@ -1221,6 +1233,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/$'
     | '/_dashboard/dashboard/admin'
     | '/_dashboard/dashboard/ai-assistant'
+    | '/_dashboard/dashboard/college'
     | '/_dashboard/dashboard/organization'
     | '/_dashboard/dashboard/professional'
     | '/_dashboard/dashboard/profile'
@@ -1617,6 +1630,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard/organization'
       fullPath: '/dashboard/organization'
       preLoaderRoute: typeof DashboardDashboardOrganizationRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/college': {
+      id: '/_dashboard/dashboard/college'
+      path: '/dashboard/college'
+      fullPath: '/dashboard/college'
+      preLoaderRoute: typeof DashboardDashboardCollegeRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/dashboard/ai-assistant': {
@@ -2160,6 +2180,7 @@ interface DashboardRouteChildren {
   DashboardDashboardSplatRoute: typeof DashboardDashboardSplatRoute
   DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRouteWithChildren
   DashboardDashboardAiAssistantRoute: typeof DashboardDashboardAiAssistantRoute
+  DashboardDashboardCollegeRoute: typeof DashboardDashboardCollegeRoute
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
   DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
   DashboardDashboardProfileRoute: typeof DashboardDashboardProfileRoute
@@ -2177,6 +2198,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardSplatRoute: DashboardDashboardSplatRoute,
   DashboardDashboardAdminRoute: DashboardDashboardAdminRouteWithChildren,
   DashboardDashboardAiAssistantRoute: DashboardDashboardAiAssistantRoute,
+  DashboardDashboardCollegeRoute: DashboardDashboardCollegeRoute,
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
   DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,
   DashboardDashboardProfileRoute: DashboardDashboardProfileRoute,
@@ -2369,13 +2391,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

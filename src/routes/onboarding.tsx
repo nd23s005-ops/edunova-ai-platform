@@ -3,7 +3,7 @@ import { createFileRoute, Link, redirect, useNavigate } from "@tanstack/react-ro
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
-  
+  BookOpenCheck,
   Building2,
   Briefcase,
   Shield,
@@ -65,10 +65,17 @@ type RoleCard = {
 const ROLES: RoleCard[] = [
   {
     key: "student",
-    title: "Student",
-    description: "Learn faster with a personal AI tutor tailored to your syllabus.",
+    title: "School Student",
+    description: "K-12 syllabus tutor, quizzes and daily assessments for CBSE, ICSE and state boards.",
     icon: GraduationCap,
     accent: "from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)]",
+  },
+  {
+    key: "college_student",
+    title: "College Student",
+    description: "University courses, coding practice, projects and placement preparation.",
+    icon: BookOpenCheck,
+    accent: "from-[oklch(0.78_0.15_200)] to-[oklch(0.6_0.17_220)]",
   },
   {
     key: "professional",
@@ -84,7 +91,6 @@ const ROLES: RoleCard[] = [
     icon: Building2,
     accent: "from-[oklch(0.7_0.15_280)] to-[oklch(0.55_0.18_290)]",
   },
-
   {
     key: "admin",
     title: "Administrator",
@@ -99,10 +105,14 @@ const ROLES: RoleCard[] = [
 const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[]> = {
   student: [
     { key: "school", label: "School Student", desc: "K-12 curriculum, exam prep, homework help." },
-    { key: "college", label: "College Student", desc: "University subjects, projects, research support." },
     { key: "exam", label: "Competitive Exam Aspirant", desc: "JEE, NEET, UPSC, GRE — targeted practice." },
+    { key: "hobby", label: "Curious Learner", desc: "Explore new topics beyond the syllabus." },
   ],
-
+  college_student: [
+    { key: "engineering", label: "Engineering / Tech", desc: "CS, coding, projects, placement prep." },
+    { key: "general", label: "General Degree", desc: "Arts, commerce, sciences and research support." },
+    { key: "postgrad", label: "Post-graduate / Research", desc: "Advanced coursework, thesis, publications." },
+  ],
   professional: [
     { key: "upskill", label: "Upskilling", desc: "Stay sharp in your current role." },
     { key: "switch", label: "Career Switch", desc: "Move into a new domain confidently." },

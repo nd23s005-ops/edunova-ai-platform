@@ -741,15 +741,53 @@ export type Database = {
         }
         Relationships: []
       }
+      notifications: {
+        Row: {
+          body: string | null
+          created_at: string
+          href: string | null
+          id: string
+          kind: string
+          priority: number
+          read_at: string | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          body?: string | null
+          created_at?: string
+          href?: string | null
+          id?: string
+          kind?: string
+          priority?: number
+          read_at?: string | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          body?: string | null
+          created_at?: string
+          href?: string | null
+          id?: string
+          kind?: string
+          priority?: number
+          read_at?: string | null
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
           bio: string | null
           country: string | null
           created_at: string
+          dashboard_prefs: Json
           dob: string | null
           full_name: string | null
           id: string
+          last_insight_at: string | null
           notif_prefs: Json
           onboarding_completed: boolean
           phone: string | null
@@ -761,9 +799,11 @@ export type Database = {
           bio?: string | null
           country?: string | null
           created_at?: string
+          dashboard_prefs?: Json
           dob?: string | null
           full_name?: string | null
           id: string
+          last_insight_at?: string | null
           notif_prefs?: Json
           onboarding_completed?: boolean
           phone?: string | null
@@ -775,9 +815,11 @@ export type Database = {
           bio?: string | null
           country?: string | null
           created_at?: string
+          dashboard_prefs?: Json
           dob?: string | null
           full_name?: string | null
           id?: string
+          last_insight_at?: string | null
           notif_prefs?: Json
           onboarding_completed?: boolean
           phone?: string | null
