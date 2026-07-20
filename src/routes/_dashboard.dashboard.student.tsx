@@ -222,6 +222,11 @@ function StudentDashboard() {
         }
       />
 
+      <div className="mb-6">
+        <ResumeLearningCard />
+      </div>
+
+
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard label="Enrolled" value={enrolled.length} icon={<BookOpen className="h-4 w-4" />} />
         <StatCard label="In progress" value={inProgress.length} icon={<PlayCircle className="h-4 w-4" />} />
