@@ -14,6 +14,127 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_course_overviews: {
+        Row: {
+          career_opportunities: Json
+          context_hash: string | null
+          course_id: string
+          created_at: string
+          id: string
+          industry_relevance: string | null
+          model: string
+          objectives: Json
+          outcomes: Json
+          overview: string
+          prerequisites: Json
+          skills: Json
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          career_opportunities?: Json
+          context_hash?: string | null
+          course_id: string
+          created_at?: string
+          id?: string
+          industry_relevance?: string | null
+          model: string
+          objectives?: Json
+          outcomes?: Json
+          overview: string
+          prerequisites?: Json
+          skills?: Json
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          career_opportunities?: Json
+          context_hash?: string | null
+          course_id?: string
+          created_at?: string
+          id?: string
+          industry_relevance?: string | null
+          model?: string
+          objectives?: Json
+          outcomes?: Json
+          overview?: string
+          prerequisites?: Json
+          skills?: Json
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_course_overviews_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      ai_lesson_content: {
+        Row: {
+          concepts: Json
+          context_hash: string | null
+          created_at: string
+          examples: Json
+          id: string
+          intro: string
+          key_takeaways: Json
+          lesson_id: string
+          model: string
+          steps: Json
+          summary: string | null
+          updated_at: string
+          use_cases: Json
+          user_id: string
+          visual_description: string | null
+        }
+        Insert: {
+          concepts?: Json
+          context_hash?: string | null
+          created_at?: string
+          examples?: Json
+          id?: string
+          intro: string
+          key_takeaways?: Json
+          lesson_id: string
+          model: string
+          steps?: Json
+          summary?: string | null
+          updated_at?: string
+          use_cases?: Json
+          user_id: string
+          visual_description?: string | null
+        }
+        Update: {
+          concepts?: Json
+          context_hash?: string | null
+          created_at?: string
+          examples?: Json
+          id?: string
+          intro?: string
+          key_takeaways?: Json
+          lesson_id?: string
+          model?: string
+          steps?: Json
+          summary?: string | null
+          updated_at?: string
+          use_cases?: Json
+          user_id?: string
+          visual_description?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_lesson_content_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "lessons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       ai_mock_test_attempts: {
         Row: {
           ai_feedback: string | null
@@ -296,24 +417,33 @@ export type Database = {
       course_enrollments: {
         Row: {
           course_id: string
+          current_level: Database["public"]["Enums"]["course_level"]
           enrolled_at: string
+          estimated_completion_minutes: number | null
           id: string
+          level_progress: number
           progress: number
           updated_at: string
           user_id: string
         }
         Insert: {
           course_id: string
+          current_level?: Database["public"]["Enums"]["course_level"]
           enrolled_at?: string
+          estimated_completion_minutes?: number | null
           id?: string
+          level_progress?: number
           progress?: number
           updated_at?: string
           user_id: string
         }
         Update: {
           course_id?: string
+          current_level?: Database["public"]["Enums"]["course_level"]
           enrolled_at?: string
+          estimated_completion_minutes?: number | null
           id?: string
+          level_progress?: number
           progress?: number
           updated_at?: string
           user_id?: string
@@ -531,6 +661,48 @@ export type Database = {
         }
         Relationships: []
       }
+      learner_context: {
+        Row: {
+          career_goal: string | null
+          context_hash: string | null
+          created_at: string
+          interests: string[]
+          learning_speed: string
+          preferred_depth: string
+          skill_level: Database["public"]["Enums"]["course_level"]
+          strong_topics: string[]
+          updated_at: string
+          user_id: string
+          weak_topics: string[]
+        }
+        Insert: {
+          career_goal?: string | null
+          context_hash?: string | null
+          created_at?: string
+          interests?: string[]
+          learning_speed?: string
+          preferred_depth?: string
+          skill_level?: Database["public"]["Enums"]["course_level"]
+          strong_topics?: string[]
+          updated_at?: string
+          user_id: string
+          weak_topics?: string[]
+        }
+        Update: {
+          career_goal?: string | null
+          context_hash?: string | null
+          created_at?: string
+          interests?: string[]
+          learning_speed?: string
+          preferred_depth?: string
+          skill_level?: Database["public"]["Enums"]["course_level"]
+          strong_topics?: string[]
+          updated_at?: string
+          user_id?: string
+          weak_topics?: string[]
+        }
+        Relationships: []
+      }
       lesson_progress: {
         Row: {
           completed_at: string
@@ -563,6 +735,48 @@ export type Database = {
           },
           {
             foreignKeyName: "lesson_progress_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "lessons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      lesson_reading_position: {
+        Row: {
+          course_id: string | null
+          last_section: string | null
+          lesson_id: string
+          scroll_percent: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          course_id?: string | null
+          last_section?: string | null
+          lesson_id: string
+          scroll_percent?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          course_id?: string | null
+          last_section?: string | null
+          lesson_id?: string
+          scroll_percent?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lesson_reading_position_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "lesson_reading_position_lesson_id_fkey"
             columns: ["lesson_id"]
             isOneToOne: false
             referencedRelation: "lessons"
@@ -1558,6 +1772,13 @@ export type Database = {
       assignment_answer_type: "short" | "long" | "worksheet"
       assignment_status: "draft" | "submitted" | "graded"
       course_difficulty: "beginner" | "intermediate" | "advanced"
+      course_level:
+        | "beginner"
+        | "basic"
+        | "intermediate"
+        | "advanced"
+        | "expert"
+        | "industry_ready"
       education_board:
         | "state_board"
         | "cbse"
@@ -1726,6 +1947,14 @@ export const Constants = {
       assignment_answer_type: ["short", "long", "worksheet"],
       assignment_status: ["draft", "submitted", "graded"],
       course_difficulty: ["beginner", "intermediate", "advanced"],
+      course_level: [
+        "beginner",
+        "basic",
+        "intermediate",
+        "advanced",
+        "expert",
+        "industry_ready",
+      ],
       education_board: [
         "state_board",
         "cbse",

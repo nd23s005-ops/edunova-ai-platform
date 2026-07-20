@@ -38,6 +38,8 @@ import {
   useCourseTotalLessons,
   useNextCourseRecommendation,
 } from "@/lib/courses/hooks";
+import { CourseOverviewPanel } from "@/components/learning/CourseOverviewPanel";
+import { LevelTrack } from "@/components/learning/LevelTrack";
 
 
 export const Route = createFileRoute(
@@ -214,6 +216,16 @@ function CourseOverviewPage() {
           )}
         </div>
       )}
+
+      {isEnrolled && (
+        <div className="mb-6">
+          <LevelTrack progress={percent} />
+        </div>
+      )}
+
+      <div className="mb-6">
+        <CourseOverviewPanel courseId={courseId} />
+      </div>
 
       {isEnrolled && isCompleted && (
         <div className="mb-6 rounded-2xl border border-primary/30 bg-primary/5 p-6 shadow-card">

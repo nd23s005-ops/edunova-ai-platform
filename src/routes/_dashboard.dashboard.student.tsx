@@ -14,6 +14,7 @@ import {
   Rocket,
 } from "lucide-react";
 import { DashboardHeader, StatCard } from "@/components/dashboard/DashboardShared";
+import { ResumeLearningCard } from "@/components/learning/ResumeLearningCard";
 import {
   SectionHeader,
   DashCard,
@@ -220,6 +221,11 @@ function StudentDashboard() {
             : "Your personalized learning workspace"
         }
       />
+
+      <div className="mb-6">
+        <ResumeLearningCard />
+      </div>
+
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard label="Enrolled" value={enrolled.length} icon={<BookOpen className="h-4 w-4" />} />
