@@ -100,7 +100,7 @@ function ThreadPage() {
       <div>
         <h2 className="mb-3 text-lg font-semibold">{data.answers.length} answers</h2>
         <div className="space-y-3">
-          {data.answers.map((a: { id: string; body: string; upvotes: number; downvotes: number; is_accepted: boolean; is_ai: boolean; author_id: string }) => (
+          {data.answers.map((a) => (
             <Card key={a.id} className={a.is_accepted ? "border-emerald-500" : ""}>
               <CardContent className="pt-4">
                 <div className="flex gap-4">
