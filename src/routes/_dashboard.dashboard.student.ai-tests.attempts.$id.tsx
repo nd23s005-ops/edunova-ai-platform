@@ -24,7 +24,10 @@ import {
   getUniversalAttempt,
   submitUniversalAssessment,
   KIND_LABEL,
+  type UniversalResult,
+  type UniversalQuestion,
 } from "@/lib/ai/universal/universal.functions";
+
 
 export const Route = createFileRoute("/_dashboard/dashboard/student/ai-tests/attempts/$id")({
   component: AttemptRunner,
