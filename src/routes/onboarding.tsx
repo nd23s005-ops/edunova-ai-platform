@@ -3,7 +3,7 @@ import { createFileRoute, Link, redirect, useNavigate } from "@tanstack/react-ro
 import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
-  
+  BookOpenCheck,
   Building2,
   Briefcase,
   Shield,
@@ -65,10 +65,17 @@ type RoleCard = {
 const ROLES: RoleCard[] = [
   {
     key: "student",
-    title: "Student",
-    description: "Learn faster with a personal AI tutor tailored to your syllabus.",
+    title: "School Student",
+    description: "K-12 syllabus tutor, quizzes and daily assessments for CBSE, ICSE and state boards.",
     icon: GraduationCap,
     accent: "from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)]",
+  },
+  {
+    key: "college_student",
+    title: "College Student",
+    description: "University courses, coding practice, projects and placement preparation.",
+    icon: BookOpenCheck,
+    accent: "from-[oklch(0.78_0.15_200)] to-[oklch(0.6_0.17_220)]",
   },
   {
     key: "professional",
@@ -84,7 +91,6 @@ const ROLES: RoleCard[] = [
     icon: Building2,
     accent: "from-[oklch(0.7_0.15_280)] to-[oklch(0.55_0.18_290)]",
   },
-
   {
     key: "admin",
     title: "Administrator",
