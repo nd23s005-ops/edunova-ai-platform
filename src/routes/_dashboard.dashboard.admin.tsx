@@ -35,9 +35,10 @@ type Section = {
 };
 
 const SECTIONS: Section[] = [
+  { to: "/dashboard/admin/cms", label: "Course & Content CMS", description: "AI-powered course, curriculum & content management.", icon: BookOpen, superOnly: true },
   { to: "/dashboard/admin/users", label: "User Management", description: "View users across the platform.", icon: Users },
   { to: "/dashboard/admin/support", label: "Support Queue", description: "Review and respond to help desk tickets.", icon: LifeBuoy },
-  { to: "/dashboard/admin/courses", label: "Course Management", description: "Browse the course catalog.", icon: BookOpen },
+  { to: "/dashboard/admin/courses", label: "Course Catalog", description: "Browse the published course catalog.", icon: BookOpen },
   { to: "/dashboard/admin/organizations", label: "Organizations", description: "Review connected organizations.", icon: Building2 },
   { to: "/dashboard/admin/analytics", label: "Analytics", description: "Platform-wide learning analytics.", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", description: "Operational and compliance reports.", icon: FileText },
@@ -46,6 +47,7 @@ const SECTIONS: Section[] = [
   { to: "/dashboard/admin/settings", label: "Platform Settings", description: "Configure roles, permissions and AI.", icon: Settings, superOnly: true },
   { to: "/dashboard/admin/ai-configuration", label: "AI Configuration", description: "Manage models and prompts.", icon: Sparkles, superOnly: true },
 ];
+
 
 function AdminDashboard() {
   const access = useAdminAccess();
