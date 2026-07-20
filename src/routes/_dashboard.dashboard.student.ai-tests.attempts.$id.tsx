@@ -110,7 +110,9 @@ function AttemptRunner() {
   }
 
   const submitted = attempt.status !== "in_progress" || submitMut.data;
-  const result = submitMut.data ?? (submitted ? (attempt as unknown as typeof submitMut.data) : null);
+  const result: UniversalResult | null =
+    submitMut.data ?? (submitted ? (attempt as unknown as UniversalResult) : null);
+
 
   if (submitted && result) {
     return <ResultsView result={result} onRetry={() => navigate({ to: "/dashboard/student/ai-tests/new" })} />;
@@ -221,7 +223,7 @@ function QuestionInput({
   value,
   onChange,
 }: {
-  q: import("@/lib/ai/universal/universal.functions").UniversalQuestion;
+  q: UniversalQuestion;
   value: number | string | null;
   onChange: (v: number | string | null) => void;
 }) {
@@ -315,9 +317,8 @@ function ResultsView({
   result,
   onRetry,
 }: {
-  result: NonNullable<ReturnType<typeof useServerFn<typeof submitUniversalAssessment>>> extends never
-    ? never
-    : Awaited<ReturnType<typeof submitUniversalAssessment>>;
+  result: UniversalResult;
+
   onRetry: () => void;
 }) {
   const pct = result.percentage ?? 0;
