@@ -330,7 +330,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 }
 
 type ModuleRow = { id: string; title: string; description: string | null; order_index: number; status: string; ai_generated: boolean };
-type ChapterRow = { id: string; module_id: string | null; title: string; description: string | null; order_index: number; status: string; ai_generated: boolean };
+type ChapterRow = { id: string; module_id: string | null; title: string; summary: string | null; order_index: number; status: string; ai_generated: boolean };
 type LessonRow = { id: string; chapter_id: string; title: string; order_index: number; status: string; ai_generated: boolean };
 
 function CurriculumTab({
