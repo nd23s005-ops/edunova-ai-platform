@@ -390,7 +390,7 @@ export const transitionCourseStatus = createServerFn({ method: "POST" })
         break;
     }
     patch.cms_status = next;
-    const { error } = await context.supabase.from("courses").update(patch).eq("id", data.id);
+    const { error } = await context.supabase.from("courses").update(patch as never).eq("id", data.id);
     if (error) throw new Error(error.message);
     await context.supabase.from("course_approvals").insert({
       course_id: data.id,
