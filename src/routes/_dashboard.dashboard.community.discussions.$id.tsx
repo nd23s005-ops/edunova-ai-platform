@@ -66,7 +66,9 @@ function ThreadPage() {
 
   if (q.isLoading) return <p className="text-sm text-muted-foreground">Loading…</p>;
   if (!q.data) return <p className="text-sm text-muted-foreground">Not found. <Link to="/dashboard/community/discussions" className="text-primary">← Back</Link></p>;
-  const d = q.data.discussion;
+  const data = q.data;
+  const d = data.discussion;
+  const myVote = data.my_vote;
 
   return (
     <div className="space-y-6">
