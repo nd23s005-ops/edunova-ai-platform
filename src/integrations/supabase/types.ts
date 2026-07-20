@@ -192,6 +192,114 @@ export type Database = {
         }
         Relationships: []
       }
+      ai_universal_attempts: {
+        Row: {
+          accuracy: number | null
+          ai_feedback: Json | null
+          board: string | null
+          chapter_id: string | null
+          course_id: string | null
+          created_at: string
+          difficulty: string
+          fingerprint: string | null
+          grade: string | null
+          id: string
+          kind: string
+          lesson_id: string | null
+          letter_grade: string | null
+          per_question: Json
+          percentage: number | null
+          question_types: string[]
+          questions: Json
+          recommendations: Json | null
+          responses: Json
+          score: number | null
+          started_at: string
+          status: string
+          strong_topics: string[]
+          subject: string | null
+          submitted_at: string | null
+          time_limit_seconds: number | null
+          time_taken_seconds: number | null
+          topic: string | null
+          topic_breakdown: Json
+          total: number | null
+          updated_at: string
+          user_id: string
+          weak_topics: string[]
+        }
+        Insert: {
+          accuracy?: number | null
+          ai_feedback?: Json | null
+          board?: string | null
+          chapter_id?: string | null
+          course_id?: string | null
+          created_at?: string
+          difficulty?: string
+          fingerprint?: string | null
+          grade?: string | null
+          id?: string
+          kind: string
+          lesson_id?: string | null
+          letter_grade?: string | null
+          per_question?: Json
+          percentage?: number | null
+          question_types?: string[]
+          questions?: Json
+          recommendations?: Json | null
+          responses?: Json
+          score?: number | null
+          started_at?: string
+          status?: string
+          strong_topics?: string[]
+          subject?: string | null
+          submitted_at?: string | null
+          time_limit_seconds?: number | null
+          time_taken_seconds?: number | null
+          topic?: string | null
+          topic_breakdown?: Json
+          total?: number | null
+          updated_at?: string
+          user_id: string
+          weak_topics?: string[]
+        }
+        Update: {
+          accuracy?: number | null
+          ai_feedback?: Json | null
+          board?: string | null
+          chapter_id?: string | null
+          course_id?: string | null
+          created_at?: string
+          difficulty?: string
+          fingerprint?: string | null
+          grade?: string | null
+          id?: string
+          kind?: string
+          lesson_id?: string | null
+          letter_grade?: string | null
+          per_question?: Json
+          percentage?: number | null
+          question_types?: string[]
+          questions?: Json
+          recommendations?: Json | null
+          responses?: Json
+          score?: number | null
+          started_at?: string
+          status?: string
+          strong_topics?: string[]
+          subject?: string | null
+          submitted_at?: string | null
+          time_limit_seconds?: number | null
+          time_taken_seconds?: number | null
+          topic?: string | null
+          topic_breakdown?: Json
+          total?: number | null
+          updated_at?: string
+          user_id?: string
+          weak_topics?: string[]
+        }
+        Relationships: []
+      }
       ai_weekly_attempts: {
         Row: {
           ai_feedback: Json | null
@@ -661,6 +769,39 @@ export type Database = {
         }
         Relationships: []
       }
+      learner_achievements: {
+        Row: {
+          awarded_at: string
+          code: string
+          description: string | null
+          id: string
+          meta: Json | null
+          tier: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          awarded_at?: string
+          code: string
+          description?: string | null
+          id?: string
+          meta?: Json | null
+          tier?: string
+          title: string
+          user_id: string
+        }
+        Update: {
+          awarded_at?: string
+          code?: string
+          description?: string | null
+          id?: string
+          meta?: Json | null
+          tier?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       learner_context: {
         Row: {
           career_goal: string | null
@@ -700,6 +841,78 @@ export type Database = {
           updated_at?: string
           user_id?: string
           weak_topics?: string[]
+        }
+        Relationships: []
+      }
+      learner_readiness: {
+        Row: {
+          certification_readiness: number
+          completion_readiness: number
+          computed_at: string
+          confidence: number
+          course_id: string | null
+          id: string
+          interview_readiness: number | null
+          meta: Json | null
+          narrative: string | null
+          skill_level: string
+          user_id: string
+        }
+        Insert: {
+          certification_readiness?: number
+          completion_readiness?: number
+          computed_at?: string
+          confidence?: number
+          course_id?: string | null
+          id?: string
+          interview_readiness?: number | null
+          meta?: Json | null
+          narrative?: string | null
+          skill_level?: string
+          user_id: string
+        }
+        Update: {
+          certification_readiness?: number
+          completion_readiness?: number
+          computed_at?: string
+          confidence?: number
+          course_id?: string | null
+          id?: string
+          interview_readiness?: number | null
+          meta?: Json | null
+          narrative?: string | null
+          skill_level?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      learner_xp_events: {
+        Row: {
+          created_at: string
+          id: string
+          meta: Json | null
+          points: number
+          related_attempt_id: string | null
+          source: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          meta?: Json | null
+          points: number
+          related_attempt_id?: string | null
+          source: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          meta?: Json | null
+          points?: number
+          related_attempt_id?: string | null
+          source?: string
+          user_id?: string
         }
         Relationships: []
       }
