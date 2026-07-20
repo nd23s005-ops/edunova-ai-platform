@@ -94,17 +94,16 @@ export const updateLearnerContext = createServerFn({ method: "POST" })
   .inputValidator((v: unknown) => UpdateInput.parse(v))
   .handler(async ({ data, context }) => {
     const { supabase, userId } = context;
-    const payload: Record<string, unknown> = { user_id: userId };
-    if (data.skillLevel) payload.skill_level = data.skillLevel;
-    if (data.careerGoal !== undefined) payload.career_goal = data.careerGoal;
-    if (data.learningSpeed) payload.learning_speed = data.learningSpeed;
-    if (data.preferredDepth) payload.preferred_depth = data.preferredDepth;
-    if (data.interests) payload.interests = data.interests;
-
-    // Regenerate hash based on merged values.
-    const merged = shortHash(JSON.stringify(payload) + "|" + Date.now().toString(36));
-    payload.context_hash = merged;
-
+    const merged = shortHash(JSON.stringify(data) + "|" + Date.now().toString(36));
+    const payload = {
+      user_id: userId,
+      skill_level: data.skillLevel ?? "beginner",
+      career_goal: data.careerGoal ?? null,
+      learning_speed: data.learningSpeed ?? "balanced",
+      preferred_depth: data.preferredDepth ?? "balanced",
+      interests: data.interests ?? [],
+      context_hash: merged,
+    };
     const { error } = await supabase
       .from("learner_context")
       .upsert(payload, { onConflict: "user_id" });
