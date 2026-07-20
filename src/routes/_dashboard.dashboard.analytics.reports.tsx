@@ -36,7 +36,7 @@ function ReportsPage() {
 
   const runMut = useMutation({
     mutationFn: () => run({ data: { spec: { dataset, dimensions: [], limit } } }),
-    onSuccess: (r) => setRows((r.rows ?? []) as Record<string, unknown>[]),
+    onSuccess: (r) => setRows(((r.rows ?? []) as unknown) as Record<string, unknown>[]),
   });
 
   const exportMut = useMutation({
