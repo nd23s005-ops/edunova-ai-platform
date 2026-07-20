@@ -264,7 +264,7 @@ async function generateAndAttachCurriculum(
           course_id: courseId,
           module_id: moduleId,
           title: chap.title,
-          description: chap.description,
+          summary: chap.description,
           order_index: ci,
           status: "draft",
           ai_generated: true,
@@ -278,7 +278,7 @@ async function generateAndAttachCurriculum(
         await supabase.from("lessons").insert({
           chapter_id: chapterId,
           title: lesson.title,
-          content: lesson.summary,
+          theory: lesson.summary,
           order_index: li,
           status: "draft",
           ai_generated: true,
