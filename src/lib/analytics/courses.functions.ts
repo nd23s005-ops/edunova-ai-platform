@@ -19,16 +19,16 @@ export const getCourseAnalytics = createServerFn({ method: "POST" })
 
     const { data: enrolls } = await supabase
       .from("course_enrollments")
-      .select("course_id, completed_at")
+      .select("course_id, progress")
       .gte("enrolled_at", sinceIso)
       .limit(20000);
 
     const byCourse = new Map<string, { enrolls: number; completed: number }>();
     for (const row of enrolls ?? []) {
-      const r = row as { course_id: string; completed_at: string | null };
+      const r = row as { course_id: string; progress: number | null };
       const b = byCourse.get(r.course_id) ?? { enrolls: 0, completed: 0 };
       b.enrolls++;
-      if (r.completed_at) b.completed++;
+      if ((r.progress ?? 0) >= 100) b.completed++;
       byCourse.set(r.course_id, b);
     }
 
