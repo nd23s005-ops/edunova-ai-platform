@@ -31,6 +31,8 @@ import {
 
 import { Logo } from "@/components/brand/Logo";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { NotificationBell } from "@/components/dashboard/NotificationBell";
+import { CommandPalette } from "@/components/dashboard/CommandPalette";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
@@ -289,12 +291,14 @@ function DashboardLayout() {
           <div className="lg:hidden">
             <Logo />
           </div>
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2 sm:gap-3">
+            <CommandPalette />
             {role && (
-              <span className="hidden rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground sm:inline">
+              <span className="hidden rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground md:inline">
                 {ROLE_LABELS[role]}
               </span>
             )}
+            <NotificationBell />
             <ThemeToggle />
             <Link
               to="/dashboard/profile"
