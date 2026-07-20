@@ -464,7 +464,7 @@ export const getCmsCourse = createServerFn({ method: "POST" })
       .order("order_index");
     const { data: chapters } = await context.supabase
       .from("chapters")
-      .select("id, module_id, title, description, order_index, status, ai_generated")
+      .select("id, module_id, title, summary, intro, order_index, status, ai_generated")
       .eq("course_id", data.id)
       .order("order_index");
     const chapterIds = (chapters ?? []).map((c) => c.id);
