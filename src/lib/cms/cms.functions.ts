@@ -149,7 +149,7 @@ const CreateCourseSchema = z.object({
   visibility: z.enum(["public", "signed_in", "role_gated", "private"]).default("signed_in"),
   banner_url: z.string().url().optional().nullable(),
   cover_url: z.string().url().optional().nullable(),
-  board: z.enum(["cbse", "icse", "state", "ib", "other"]).default("other"),
+  board: z.enum(["cbse", "icse", "state_board", "ib", "cambridge", "nios", "other"]).default("other"),
   subject: z.string().default("General"),
   class_min: z.number().int().min(0).default(6),
   class_max: z.number().int().min(0).default(12),
@@ -187,7 +187,7 @@ export const createCourse = createServerFn({ method: "POST" })
     };
     const { data: course, error } = await context.supabase
       .from("courses")
-      .insert(insert)
+      .insert(insert as never)
       .select("id")
       .single();
     if (error || !course) throw new Error(error?.message ?? "Failed to create course");
