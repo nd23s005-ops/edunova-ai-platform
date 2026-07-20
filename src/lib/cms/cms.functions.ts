@@ -597,7 +597,7 @@ export const regenerateLessonContent = createServerFn({ method: "POST" })
     const md = renderLessonMarkdown(parsed);
     await context.supabase
       .from("lessons")
-      .update({ content: md, key_takeaways: parsed.key_takeaways, ai_generated: true })
+      .update({ theory: md, key_takeaways: parsed.key_takeaways, ai_generated: true })
       .eq("id", data.lesson_id);
     await writeAudit(context.supabase, context.userId, "update", "lesson", data.lesson_id, { regenerated: true });
     return { ok: true };
