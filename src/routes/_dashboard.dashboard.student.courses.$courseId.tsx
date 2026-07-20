@@ -38,6 +38,8 @@ import {
   useCourseTotalLessons,
   useNextCourseRecommendation,
 } from "@/lib/courses/hooks";
+import { CourseOverviewPanel } from "@/components/learning/CourseOverviewPanel";
+import { LevelTrack } from "@/components/learning/LevelTrack";
 
 
 export const Route = createFileRoute(
