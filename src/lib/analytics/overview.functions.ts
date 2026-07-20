@@ -92,7 +92,7 @@ export const getOverview = createServerFn({ method: "POST" })
         .from("lesson_progress")
         .select("id", { count: "exact", head: true })
         .eq("user_id", userId)
-        .eq("completed", true),
+        .not("completed_at", "is", null),
       supabase
         .from("ai_universal_attempts")
         .select("id", { count: "exact", head: true })
