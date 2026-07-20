@@ -21,6 +21,7 @@ import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
+import { Route as PSlugRouteImport } from './routes/p.$slug'
 import { Route as OnboardingStudentProfileRouteImport } from './routes/onboarding.student-profile'
 import { Route as ApiUpstreamStatusRouteImport } from './routes/api/upstream-status'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
@@ -54,12 +55,14 @@ import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboa
 import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_dashboard.dashboard.professional'
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
 import { Route as DashboardDashboardCollegeRouteImport } from './routes/_dashboard.dashboard.college'
+import { Route as DashboardDashboardCareerRouteImport } from './routes/_dashboard.dashboard.career'
 import { Route as DashboardDashboardAnalyticsRouteImport } from './routes/_dashboard.dashboard.analytics'
 import { Route as DashboardDashboardAiAssistantRouteImport } from './routes/_dashboard.dashboard.ai-assistant'
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as DashboardDashboardCareerIndexRouteImport } from './routes/_dashboard.dashboard.career.index'
 import { Route as DashboardDashboardAnalyticsIndexRouteImport } from './routes/_dashboard.dashboard.analytics.index'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ml-quick-revision-notes'
@@ -101,6 +104,20 @@ import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_d
 import { Route as DashboardDashboardStudentAssessmentsRouteImport } from './routes/_dashboard.dashboard.student.assessments'
 import { Route as DashboardDashboardStudentAiTestsRouteImport } from './routes/_dashboard.dashboard.student.ai-tests'
 import { Route as DashboardDashboardMockTestsTestIdRouteImport } from './routes/_dashboard.dashboard.mock-tests.$testId'
+import { Route as DashboardDashboardCareerSkillGapRouteImport } from './routes/_dashboard.dashboard.career.skill-gap'
+import { Route as DashboardDashboardCareerRoadmapRouteImport } from './routes/_dashboard.dashboard.career.roadmap'
+import { Route as DashboardDashboardCareerResumeRouteImport } from './routes/_dashboard.dashboard.career.resume'
+import { Route as DashboardDashboardCareerProjectsRouteImport } from './routes/_dashboard.dashboard.career.projects'
+import { Route as DashboardDashboardCareerProfileRouteImport } from './routes/_dashboard.dashboard.career.profile'
+import { Route as DashboardDashboardCareerPortfolioRouteImport } from './routes/_dashboard.dashboard.career.portfolio'
+import { Route as DashboardDashboardCareerJobsRouteImport } from './routes/_dashboard.dashboard.career.jobs'
+import { Route as DashboardDashboardCareerInterviewRouteImport } from './routes/_dashboard.dashboard.career.interview'
+import { Route as DashboardDashboardCareerInternshipsRouteImport } from './routes/_dashboard.dashboard.career.internships'
+import { Route as DashboardDashboardCareerGoalsRouteImport } from './routes/_dashboard.dashboard.career.goals'
+import { Route as DashboardDashboardCareerCodingRouteImport } from './routes/_dashboard.dashboard.career.coding'
+import { Route as DashboardDashboardCareerCertificationsRouteImport } from './routes/_dashboard.dashboard.career.certifications'
+import { Route as DashboardDashboardCareerAtsRouteImport } from './routes/_dashboard.dashboard.career.ats'
+import { Route as DashboardDashboardCareerAssistantRouteImport } from './routes/_dashboard.dashboard.career.assistant'
 import { Route as DashboardDashboardAnalyticsReportsRouteImport } from './routes/_dashboard.dashboard.analytics.reports'
 import { Route as DashboardDashboardAnalyticsPredictionsRouteImport } from './routes/_dashboard.dashboard.analytics.predictions'
 import { Route as DashboardDashboardAnalyticsInsightsRouteImport } from './routes/_dashboard.dashboard.analytics.insights'
@@ -190,6 +207,11 @@ const MarketingIndexRoute = MarketingIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => MarketingRoute,
+} as any)
+const PSlugRoute = PSlugRouteImport.update({
+  id: '/p/$slug',
+  path: '/p/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const OnboardingStudentProfileRoute =
   OnboardingStudentProfileRouteImport.update({
@@ -368,6 +390,12 @@ const DashboardDashboardCollegeRoute =
     path: '/dashboard/college',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardCareerRoute =
+  DashboardDashboardCareerRouteImport.update({
+    id: '/dashboard/career',
+    path: '/dashboard/career',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDashboardAnalyticsRoute =
   DashboardDashboardAnalyticsRouteImport.update({
     id: '/dashboard/analytics',
@@ -401,6 +429,12 @@ const DashboardDashboardMockTestsIndexRoute =
     id: '/dashboard/mock-tests/',
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardCareerIndexRoute =
+  DashboardDashboardCareerIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => DashboardDashboardCareerRoute,
   } as any)
 const DashboardDashboardAnalyticsIndexRoute =
   DashboardDashboardAnalyticsIndexRouteImport.update({
@@ -648,6 +682,90 @@ const DashboardDashboardMockTestsTestIdRoute =
     path: '/dashboard/mock-tests/$testId',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardCareerSkillGapRoute =
+  DashboardDashboardCareerSkillGapRouteImport.update({
+    id: '/skill-gap',
+    path: '/skill-gap',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerRoadmapRoute =
+  DashboardDashboardCareerRoadmapRouteImport.update({
+    id: '/roadmap',
+    path: '/roadmap',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerResumeRoute =
+  DashboardDashboardCareerResumeRouteImport.update({
+    id: '/resume',
+    path: '/resume',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerProjectsRoute =
+  DashboardDashboardCareerProjectsRouteImport.update({
+    id: '/projects',
+    path: '/projects',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerProfileRoute =
+  DashboardDashboardCareerProfileRouteImport.update({
+    id: '/profile',
+    path: '/profile',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerPortfolioRoute =
+  DashboardDashboardCareerPortfolioRouteImport.update({
+    id: '/portfolio',
+    path: '/portfolio',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerJobsRoute =
+  DashboardDashboardCareerJobsRouteImport.update({
+    id: '/jobs',
+    path: '/jobs',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerInterviewRoute =
+  DashboardDashboardCareerInterviewRouteImport.update({
+    id: '/interview',
+    path: '/interview',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerInternshipsRoute =
+  DashboardDashboardCareerInternshipsRouteImport.update({
+    id: '/internships',
+    path: '/internships',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerGoalsRoute =
+  DashboardDashboardCareerGoalsRouteImport.update({
+    id: '/goals',
+    path: '/goals',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerCodingRoute =
+  DashboardDashboardCareerCodingRouteImport.update({
+    id: '/coding',
+    path: '/coding',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerCertificationsRoute =
+  DashboardDashboardCareerCertificationsRouteImport.update({
+    id: '/certifications',
+    path: '/certifications',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerAtsRoute =
+  DashboardDashboardCareerAtsRouteImport.update({
+    id: '/ats',
+    path: '/ats',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
+const DashboardDashboardCareerAssistantRoute =
+  DashboardDashboardCareerAssistantRouteImport.update({
+    id: '/assistant',
+    path: '/assistant',
+    getParentRoute: () => DashboardDashboardCareerRoute,
+  } as any)
 const DashboardDashboardAnalyticsReportsRoute =
   DashboardDashboardAnalyticsReportsRouteImport.update({
     id: '/reports',
@@ -872,10 +990,12 @@ export interface FileRoutesByFullPath {
   '/api/health': typeof ApiHealthRoute
   '/api/upstream-status': typeof ApiUpstreamStatusRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
+  '/p/$slug': typeof PSlugRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
   '/dashboard/analytics': typeof DashboardDashboardAnalyticsRouteWithChildren
+  '/dashboard/career': typeof DashboardDashboardCareerRouteWithChildren
   '/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
@@ -899,6 +1019,20 @@ export interface FileRoutesByFullPath {
   '/dashboard/analytics/insights': typeof DashboardDashboardAnalyticsInsightsRoute
   '/dashboard/analytics/predictions': typeof DashboardDashboardAnalyticsPredictionsRoute
   '/dashboard/analytics/reports': typeof DashboardDashboardAnalyticsReportsRoute
+  '/dashboard/career/assistant': typeof DashboardDashboardCareerAssistantRoute
+  '/dashboard/career/ats': typeof DashboardDashboardCareerAtsRoute
+  '/dashboard/career/certifications': typeof DashboardDashboardCareerCertificationsRoute
+  '/dashboard/career/coding': typeof DashboardDashboardCareerCodingRoute
+  '/dashboard/career/goals': typeof DashboardDashboardCareerGoalsRoute
+  '/dashboard/career/internships': typeof DashboardDashboardCareerInternshipsRoute
+  '/dashboard/career/interview': typeof DashboardDashboardCareerInterviewRoute
+  '/dashboard/career/jobs': typeof DashboardDashboardCareerJobsRoute
+  '/dashboard/career/portfolio': typeof DashboardDashboardCareerPortfolioRoute
+  '/dashboard/career/profile': typeof DashboardDashboardCareerProfileRoute
+  '/dashboard/career/projects': typeof DashboardDashboardCareerProjectsRoute
+  '/dashboard/career/resume': typeof DashboardDashboardCareerResumeRoute
+  '/dashboard/career/roadmap': typeof DashboardDashboardCareerRoadmapRoute
+  '/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsRouteWithChildren
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -940,6 +1074,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/dashboard/analytics/': typeof DashboardDashboardAnalyticsIndexRoute
+  '/dashboard/career/': typeof DashboardDashboardCareerIndexRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
@@ -994,6 +1129,7 @@ export interface FileRoutesByTo {
   '/api/health': typeof ApiHealthRoute
   '/api/upstream-status': typeof ApiUpstreamStatusRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
+  '/p/$slug': typeof PSlugRoute
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
@@ -1019,6 +1155,20 @@ export interface FileRoutesByTo {
   '/dashboard/analytics/insights': typeof DashboardDashboardAnalyticsInsightsRoute
   '/dashboard/analytics/predictions': typeof DashboardDashboardAnalyticsPredictionsRoute
   '/dashboard/analytics/reports': typeof DashboardDashboardAnalyticsReportsRoute
+  '/dashboard/career/assistant': typeof DashboardDashboardCareerAssistantRoute
+  '/dashboard/career/ats': typeof DashboardDashboardCareerAtsRoute
+  '/dashboard/career/certifications': typeof DashboardDashboardCareerCertificationsRoute
+  '/dashboard/career/coding': typeof DashboardDashboardCareerCodingRoute
+  '/dashboard/career/goals': typeof DashboardDashboardCareerGoalsRoute
+  '/dashboard/career/internships': typeof DashboardDashboardCareerInternshipsRoute
+  '/dashboard/career/interview': typeof DashboardDashboardCareerInterviewRoute
+  '/dashboard/career/jobs': typeof DashboardDashboardCareerJobsRoute
+  '/dashboard/career/portfolio': typeof DashboardDashboardCareerPortfolioRoute
+  '/dashboard/career/profile': typeof DashboardDashboardCareerProfileRoute
+  '/dashboard/career/projects': typeof DashboardDashboardCareerProjectsRoute
+  '/dashboard/career/resume': typeof DashboardDashboardCareerResumeRoute
+  '/dashboard/career/roadmap': typeof DashboardDashboardCareerRoadmapRoute
+  '/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
@@ -1059,6 +1209,7 @@ export interface FileRoutesByTo {
   '/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/dashboard/analytics': typeof DashboardDashboardAnalyticsIndexRoute
+  '/dashboard/career': typeof DashboardDashboardCareerIndexRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
@@ -1116,11 +1267,13 @@ export interface FileRoutesById {
   '/api/health': typeof ApiHealthRoute
   '/api/upstream-status': typeof ApiUpstreamStatusRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
+  '/p/$slug': typeof PSlugRoute
   '/_marketing/': typeof MarketingIndexRoute
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
   '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/_dashboard/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
   '/_dashboard/dashboard/analytics': typeof DashboardDashboardAnalyticsRouteWithChildren
+  '/_dashboard/dashboard/career': typeof DashboardDashboardCareerRouteWithChildren
   '/_dashboard/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
@@ -1144,6 +1297,20 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/analytics/insights': typeof DashboardDashboardAnalyticsInsightsRoute
   '/_dashboard/dashboard/analytics/predictions': typeof DashboardDashboardAnalyticsPredictionsRoute
   '/_dashboard/dashboard/analytics/reports': typeof DashboardDashboardAnalyticsReportsRoute
+  '/_dashboard/dashboard/career/assistant': typeof DashboardDashboardCareerAssistantRoute
+  '/_dashboard/dashboard/career/ats': typeof DashboardDashboardCareerAtsRoute
+  '/_dashboard/dashboard/career/certifications': typeof DashboardDashboardCareerCertificationsRoute
+  '/_dashboard/dashboard/career/coding': typeof DashboardDashboardCareerCodingRoute
+  '/_dashboard/dashboard/career/goals': typeof DashboardDashboardCareerGoalsRoute
+  '/_dashboard/dashboard/career/internships': typeof DashboardDashboardCareerInternshipsRoute
+  '/_dashboard/dashboard/career/interview': typeof DashboardDashboardCareerInterviewRoute
+  '/_dashboard/dashboard/career/jobs': typeof DashboardDashboardCareerJobsRoute
+  '/_dashboard/dashboard/career/portfolio': typeof DashboardDashboardCareerPortfolioRoute
+  '/_dashboard/dashboard/career/profile': typeof DashboardDashboardCareerProfileRoute
+  '/_dashboard/dashboard/career/projects': typeof DashboardDashboardCareerProjectsRoute
+  '/_dashboard/dashboard/career/resume': typeof DashboardDashboardCareerResumeRoute
+  '/_dashboard/dashboard/career/roadmap': typeof DashboardDashboardCareerRoadmapRoute
+  '/_dashboard/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
   '/_dashboard/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/_dashboard/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsRouteWithChildren
   '/_dashboard/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -1185,6 +1352,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_dashboard/dashboard/analytics/': typeof DashboardDashboardAnalyticsIndexRoute
+  '/_dashboard/dashboard/career/': typeof DashboardDashboardCareerIndexRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
@@ -1242,10 +1410,12 @@ export interface FileRouteTypes {
     | '/api/health'
     | '/api/upstream-status'
     | '/onboarding/student-profile'
+    | '/p/$slug'
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/ai-assistant'
     | '/dashboard/analytics'
+    | '/dashboard/career'
     | '/dashboard/college'
     | '/dashboard/organization'
     | '/dashboard/professional'
@@ -1269,6 +1439,20 @@ export interface FileRouteTypes {
     | '/dashboard/analytics/insights'
     | '/dashboard/analytics/predictions'
     | '/dashboard/analytics/reports'
+    | '/dashboard/career/assistant'
+    | '/dashboard/career/ats'
+    | '/dashboard/career/certifications'
+    | '/dashboard/career/coding'
+    | '/dashboard/career/goals'
+    | '/dashboard/career/internships'
+    | '/dashboard/career/interview'
+    | '/dashboard/career/jobs'
+    | '/dashboard/career/portfolio'
+    | '/dashboard/career/profile'
+    | '/dashboard/career/projects'
+    | '/dashboard/career/resume'
+    | '/dashboard/career/roadmap'
+    | '/dashboard/career/skill-gap'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/ai-tests'
     | '/dashboard/student/assessments'
@@ -1310,6 +1494,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-quick-revision-notes'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/dashboard/analytics/'
+    | '/dashboard/career/'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/admin/cms/analytics'
@@ -1364,6 +1549,7 @@ export interface FileRouteTypes {
     | '/api/health'
     | '/api/upstream-status'
     | '/onboarding/student-profile'
+    | '/p/$slug'
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/ai-assistant'
@@ -1389,6 +1575,20 @@ export interface FileRouteTypes {
     | '/dashboard/analytics/insights'
     | '/dashboard/analytics/predictions'
     | '/dashboard/analytics/reports'
+    | '/dashboard/career/assistant'
+    | '/dashboard/career/ats'
+    | '/dashboard/career/certifications'
+    | '/dashboard/career/coding'
+    | '/dashboard/career/goals'
+    | '/dashboard/career/internships'
+    | '/dashboard/career/interview'
+    | '/dashboard/career/jobs'
+    | '/dashboard/career/portfolio'
+    | '/dashboard/career/profile'
+    | '/dashboard/career/projects'
+    | '/dashboard/career/resume'
+    | '/dashboard/career/roadmap'
+    | '/dashboard/career/skill-gap'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/assessments'
     | '/dashboard/student/browse'
@@ -1429,6 +1629,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-quick-revision-notes'
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/dashboard/analytics'
+    | '/dashboard/career'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/admin/cms/analytics'
@@ -1485,11 +1686,13 @@ export interface FileRouteTypes {
     | '/api/health'
     | '/api/upstream-status'
     | '/onboarding/student-profile'
+    | '/p/$slug'
     | '/_marketing/'
     | '/_dashboard/dashboard/$'
     | '/_dashboard/dashboard/admin'
     | '/_dashboard/dashboard/ai-assistant'
     | '/_dashboard/dashboard/analytics'
+    | '/_dashboard/dashboard/career'
     | '/_dashboard/dashboard/college'
     | '/_dashboard/dashboard/organization'
     | '/_dashboard/dashboard/professional'
@@ -1513,6 +1716,20 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/analytics/insights'
     | '/_dashboard/dashboard/analytics/predictions'
     | '/_dashboard/dashboard/analytics/reports'
+    | '/_dashboard/dashboard/career/assistant'
+    | '/_dashboard/dashboard/career/ats'
+    | '/_dashboard/dashboard/career/certifications'
+    | '/_dashboard/dashboard/career/coding'
+    | '/_dashboard/dashboard/career/goals'
+    | '/_dashboard/dashboard/career/internships'
+    | '/_dashboard/dashboard/career/interview'
+    | '/_dashboard/dashboard/career/jobs'
+    | '/_dashboard/dashboard/career/portfolio'
+    | '/_dashboard/dashboard/career/profile'
+    | '/_dashboard/dashboard/career/projects'
+    | '/_dashboard/dashboard/career/resume'
+    | '/_dashboard/dashboard/career/roadmap'
+    | '/_dashboard/dashboard/career/skill-gap'
     | '/_dashboard/dashboard/mock-tests/$testId'
     | '/_dashboard/dashboard/student/ai-tests'
     | '/_dashboard/dashboard/student/assessments'
@@ -1554,6 +1771,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-quick-revision-notes'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_dashboard/dashboard/analytics/'
+    | '/_dashboard/dashboard/career/'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/admin/cms/analytics'
@@ -1597,6 +1815,7 @@ export interface RootRouteChildren {
   ApiDiagnosticsRoute: typeof ApiDiagnosticsRoute
   ApiHealthRoute: typeof ApiHealthRoute
   ApiUpstreamStatusRoute: typeof ApiUpstreamStatusRoute
+  PSlugRoute: typeof PSlugRoute
   ApiDebugErrorsRoute: typeof ApiDebugErrorsRoute
 }
 
@@ -1685,6 +1904,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof MarketingIndexRouteImport
       parentRoute: typeof MarketingRoute
+    }
+    '/p/$slug': {
+      id: '/p/$slug'
+      path: '/p/$slug'
+      fullPath: '/p/$slug'
+      preLoaderRoute: typeof PSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/onboarding/student-profile': {
       id: '/onboarding/student-profile'
@@ -1917,6 +2143,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardCollegeRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/career': {
+      id: '/_dashboard/dashboard/career'
+      path: '/dashboard/career'
+      fullPath: '/dashboard/career'
+      preLoaderRoute: typeof DashboardDashboardCareerRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/dashboard/analytics': {
       id: '/_dashboard/dashboard/analytics'
       path: '/dashboard/analytics'
@@ -1958,6 +2191,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/'
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/career/': {
+      id: '/_dashboard/dashboard/career/'
+      path: '/'
+      fullPath: '/dashboard/career/'
+      preLoaderRoute: typeof DashboardDashboardCareerIndexRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
     }
     '/_dashboard/dashboard/analytics/': {
       id: '/_dashboard/dashboard/analytics/'
@@ -2245,6 +2485,104 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/$testId'
       preLoaderRoute: typeof DashboardDashboardMockTestsTestIdRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/career/skill-gap': {
+      id: '/_dashboard/dashboard/career/skill-gap'
+      path: '/skill-gap'
+      fullPath: '/dashboard/career/skill-gap'
+      preLoaderRoute: typeof DashboardDashboardCareerSkillGapRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/roadmap': {
+      id: '/_dashboard/dashboard/career/roadmap'
+      path: '/roadmap'
+      fullPath: '/dashboard/career/roadmap'
+      preLoaderRoute: typeof DashboardDashboardCareerRoadmapRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/resume': {
+      id: '/_dashboard/dashboard/career/resume'
+      path: '/resume'
+      fullPath: '/dashboard/career/resume'
+      preLoaderRoute: typeof DashboardDashboardCareerResumeRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/projects': {
+      id: '/_dashboard/dashboard/career/projects'
+      path: '/projects'
+      fullPath: '/dashboard/career/projects'
+      preLoaderRoute: typeof DashboardDashboardCareerProjectsRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/profile': {
+      id: '/_dashboard/dashboard/career/profile'
+      path: '/profile'
+      fullPath: '/dashboard/career/profile'
+      preLoaderRoute: typeof DashboardDashboardCareerProfileRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/portfolio': {
+      id: '/_dashboard/dashboard/career/portfolio'
+      path: '/portfolio'
+      fullPath: '/dashboard/career/portfolio'
+      preLoaderRoute: typeof DashboardDashboardCareerPortfolioRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/jobs': {
+      id: '/_dashboard/dashboard/career/jobs'
+      path: '/jobs'
+      fullPath: '/dashboard/career/jobs'
+      preLoaderRoute: typeof DashboardDashboardCareerJobsRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/interview': {
+      id: '/_dashboard/dashboard/career/interview'
+      path: '/interview'
+      fullPath: '/dashboard/career/interview'
+      preLoaderRoute: typeof DashboardDashboardCareerInterviewRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/internships': {
+      id: '/_dashboard/dashboard/career/internships'
+      path: '/internships'
+      fullPath: '/dashboard/career/internships'
+      preLoaderRoute: typeof DashboardDashboardCareerInternshipsRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/goals': {
+      id: '/_dashboard/dashboard/career/goals'
+      path: '/goals'
+      fullPath: '/dashboard/career/goals'
+      preLoaderRoute: typeof DashboardDashboardCareerGoalsRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/coding': {
+      id: '/_dashboard/dashboard/career/coding'
+      path: '/coding'
+      fullPath: '/dashboard/career/coding'
+      preLoaderRoute: typeof DashboardDashboardCareerCodingRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/certifications': {
+      id: '/_dashboard/dashboard/career/certifications'
+      path: '/certifications'
+      fullPath: '/dashboard/career/certifications'
+      preLoaderRoute: typeof DashboardDashboardCareerCertificationsRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/ats': {
+      id: '/_dashboard/dashboard/career/ats'
+      path: '/ats'
+      fullPath: '/dashboard/career/ats'
+      preLoaderRoute: typeof DashboardDashboardCareerAtsRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
+    }
+    '/_dashboard/dashboard/career/assistant': {
+      id: '/_dashboard/dashboard/career/assistant'
+      path: '/assistant'
+      fullPath: '/dashboard/career/assistant'
+      preLoaderRoute: typeof DashboardDashboardCareerAssistantRouteImport
+      parentRoute: typeof DashboardDashboardCareerRoute
     }
     '/_dashboard/dashboard/analytics/reports': {
       id: '/_dashboard/dashboard/analytics/reports'
@@ -2598,6 +2936,55 @@ const DashboardDashboardAnalyticsRouteWithChildren =
     DashboardDashboardAnalyticsRouteChildren,
   )
 
+interface DashboardDashboardCareerRouteChildren {
+  DashboardDashboardCareerAssistantRoute: typeof DashboardDashboardCareerAssistantRoute
+  DashboardDashboardCareerAtsRoute: typeof DashboardDashboardCareerAtsRoute
+  DashboardDashboardCareerCertificationsRoute: typeof DashboardDashboardCareerCertificationsRoute
+  DashboardDashboardCareerCodingRoute: typeof DashboardDashboardCareerCodingRoute
+  DashboardDashboardCareerGoalsRoute: typeof DashboardDashboardCareerGoalsRoute
+  DashboardDashboardCareerInternshipsRoute: typeof DashboardDashboardCareerInternshipsRoute
+  DashboardDashboardCareerInterviewRoute: typeof DashboardDashboardCareerInterviewRoute
+  DashboardDashboardCareerJobsRoute: typeof DashboardDashboardCareerJobsRoute
+  DashboardDashboardCareerPortfolioRoute: typeof DashboardDashboardCareerPortfolioRoute
+  DashboardDashboardCareerProfileRoute: typeof DashboardDashboardCareerProfileRoute
+  DashboardDashboardCareerProjectsRoute: typeof DashboardDashboardCareerProjectsRoute
+  DashboardDashboardCareerResumeRoute: typeof DashboardDashboardCareerResumeRoute
+  DashboardDashboardCareerRoadmapRoute: typeof DashboardDashboardCareerRoadmapRoute
+  DashboardDashboardCareerSkillGapRoute: typeof DashboardDashboardCareerSkillGapRoute
+  DashboardDashboardCareerIndexRoute: typeof DashboardDashboardCareerIndexRoute
+}
+
+const DashboardDashboardCareerRouteChildren: DashboardDashboardCareerRouteChildren =
+  {
+    DashboardDashboardCareerAssistantRoute:
+      DashboardDashboardCareerAssistantRoute,
+    DashboardDashboardCareerAtsRoute: DashboardDashboardCareerAtsRoute,
+    DashboardDashboardCareerCertificationsRoute:
+      DashboardDashboardCareerCertificationsRoute,
+    DashboardDashboardCareerCodingRoute: DashboardDashboardCareerCodingRoute,
+    DashboardDashboardCareerGoalsRoute: DashboardDashboardCareerGoalsRoute,
+    DashboardDashboardCareerInternshipsRoute:
+      DashboardDashboardCareerInternshipsRoute,
+    DashboardDashboardCareerInterviewRoute:
+      DashboardDashboardCareerInterviewRoute,
+    DashboardDashboardCareerJobsRoute: DashboardDashboardCareerJobsRoute,
+    DashboardDashboardCareerPortfolioRoute:
+      DashboardDashboardCareerPortfolioRoute,
+    DashboardDashboardCareerProfileRoute: DashboardDashboardCareerProfileRoute,
+    DashboardDashboardCareerProjectsRoute:
+      DashboardDashboardCareerProjectsRoute,
+    DashboardDashboardCareerResumeRoute: DashboardDashboardCareerResumeRoute,
+    DashboardDashboardCareerRoadmapRoute: DashboardDashboardCareerRoadmapRoute,
+    DashboardDashboardCareerSkillGapRoute:
+      DashboardDashboardCareerSkillGapRoute,
+    DashboardDashboardCareerIndexRoute: DashboardDashboardCareerIndexRoute,
+  }
+
+const DashboardDashboardCareerRouteWithChildren =
+  DashboardDashboardCareerRoute._addFileChildren(
+    DashboardDashboardCareerRouteChildren,
+  )
+
 interface DashboardDashboardStudentAiTestsRouteChildren {
   DashboardDashboardStudentAiTestsAnalyticsRoute: typeof DashboardDashboardStudentAiTestsAnalyticsRoute
   DashboardDashboardStudentAiTestsNewRoute: typeof DashboardDashboardStudentAiTestsNewRoute
@@ -2722,6 +3109,7 @@ interface DashboardRouteChildren {
   DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRouteWithChildren
   DashboardDashboardAiAssistantRoute: typeof DashboardDashboardAiAssistantRoute
   DashboardDashboardAnalyticsRoute: typeof DashboardDashboardAnalyticsRouteWithChildren
+  DashboardDashboardCareerRoute: typeof DashboardDashboardCareerRouteWithChildren
   DashboardDashboardCollegeRoute: typeof DashboardDashboardCollegeRoute
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
   DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
@@ -2742,6 +3130,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardAiAssistantRoute: DashboardDashboardAiAssistantRoute,
   DashboardDashboardAnalyticsRoute:
     DashboardDashboardAnalyticsRouteWithChildren,
+  DashboardDashboardCareerRoute: DashboardDashboardCareerRouteWithChildren,
   DashboardDashboardCollegeRoute: DashboardDashboardCollegeRoute,
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
   DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,
@@ -2930,6 +3319,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiDiagnosticsRoute: ApiDiagnosticsRoute,
   ApiHealthRoute: ApiHealthRoute,
   ApiUpstreamStatusRoute: ApiUpstreamStatusRoute,
+  PSlugRoute: PSlugRoute,
   ApiDebugErrorsRoute: ApiDebugErrorsRoute,
 }
 export const routeTree = rootRouteImport

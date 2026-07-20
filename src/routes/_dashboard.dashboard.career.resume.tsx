@@ -83,7 +83,7 @@ function ResumeEditor({ id }: { id: string }) {
   }, [q.data]);
 
   const sm = useMutation({
-    mutationFn: (create_version = false) => save({ data: { id, title, sections: sections as unknown as Record<string, unknown>, create_version } }),
+    mutationFn: (create_version: boolean) => save({ data: { id, title, sections: sections as unknown as Record<string, unknown>, create_version } }),
     onSuccess: () => { qc.invalidateQueries({ queryKey: ["career", "resume", id] }); qc.invalidateQueries({ queryKey: ["career", "resumes"] }); },
   });
   const [suggestBusy, setSuggestBusy] = useState<string | null>(null);
