@@ -217,6 +217,16 @@ function CourseOverviewPage() {
         </div>
       )}
 
+      {isEnrolled && (
+        <div className="mb-6">
+          <LevelTrack progress={percent} />
+        </div>
+      )}
+
+      <div className="mb-6">
+        <CourseOverviewPanel courseId={courseId} />
+      </div>
+
       {isEnrolled && isCompleted && (
         <div className="mb-6 rounded-2xl border border-primary/30 bg-primary/5 p-6 shadow-card">
           <div className="flex items-start gap-3">
