@@ -54,6 +54,7 @@ import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboa
 import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
 import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_dashboard.dashboard.professional'
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
+import { Route as DashboardDashboardCommunityRouteImport } from './routes/_dashboard.dashboard.community'
 import { Route as DashboardDashboardCollegeRouteImport } from './routes/_dashboard.dashboard.college'
 import { Route as DashboardDashboardCareerRouteImport } from './routes/_dashboard.dashboard.career'
 import { Route as DashboardDashboardAnalyticsRouteImport } from './routes/_dashboard.dashboard.analytics'
@@ -62,6 +63,7 @@ import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as DashboardDashboardCommunityIndexRouteImport } from './routes/_dashboard.dashboard.community.index'
 import { Route as DashboardDashboardCareerIndexRouteImport } from './routes/_dashboard.dashboard.career.index'
 import { Route as DashboardDashboardAnalyticsIndexRouteImport } from './routes/_dashboard.dashboard.analytics.index'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
@@ -104,6 +106,15 @@ import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_d
 import { Route as DashboardDashboardStudentAssessmentsRouteImport } from './routes/_dashboard.dashboard.student.assessments'
 import { Route as DashboardDashboardStudentAiTestsRouteImport } from './routes/_dashboard.dashboard.student.ai-tests'
 import { Route as DashboardDashboardMockTestsTestIdRouteImport } from './routes/_dashboard.dashboard.mock-tests.$testId'
+import { Route as DashboardDashboardCommunityStudyGroupsRouteImport } from './routes/_dashboard.dashboard.community.study-groups'
+import { Route as DashboardDashboardCommunityMentorsRouteImport } from './routes/_dashboard.dashboard.community.mentors'
+import { Route as DashboardDashboardCommunityLeaderboardRouteImport } from './routes/_dashboard.dashboard.community.leaderboard'
+import { Route as DashboardDashboardCommunityKnowledgeRouteImport } from './routes/_dashboard.dashboard.community.knowledge'
+import { Route as DashboardDashboardCommunityEventsRouteImport } from './routes/_dashboard.dashboard.community.events'
+import { Route as DashboardDashboardCommunityDoubtSolverRouteImport } from './routes/_dashboard.dashboard.community.doubt-solver'
+import { Route as DashboardDashboardCommunityDiscussionsRouteImport } from './routes/_dashboard.dashboard.community.discussions'
+import { Route as DashboardDashboardCommunityCommunitiesRouteImport } from './routes/_dashboard.dashboard.community.communities'
+import { Route as DashboardDashboardCommunityChatRouteImport } from './routes/_dashboard.dashboard.community.chat'
 import { Route as DashboardDashboardCareerSkillGapRouteImport } from './routes/_dashboard.dashboard.career.skill-gap'
 import { Route as DashboardDashboardCareerRoadmapRouteImport } from './routes/_dashboard.dashboard.career.roadmap'
 import { Route as DashboardDashboardCareerResumeRouteImport } from './routes/_dashboard.dashboard.career.resume'
@@ -137,6 +148,7 @@ import { Route as DashboardDashboardStudentAssessmentsAssessmentIdRouteImport } 
 import { Route as DashboardDashboardStudentAiTestsNewRouteImport } from './routes/_dashboard.dashboard.student.ai-tests.new'
 import { Route as DashboardDashboardStudentAiTestsAnalyticsRouteImport } from './routes/_dashboard.dashboard.student.ai-tests.analytics'
 import { Route as DashboardDashboardMockTestsAiCategoryIdRouteImport } from './routes/_dashboard.dashboard.mock-tests.ai.$categoryId'
+import { Route as DashboardDashboardCommunityDiscussionsIdRouteImport } from './routes/_dashboard.dashboard.community.discussions.$id'
 import { Route as DashboardDashboardAdminCmsPathsRouteImport } from './routes/_dashboard.dashboard.admin.cms.paths'
 import { Route as DashboardDashboardAdminCmsCoursesRouteImport } from './routes/_dashboard.dashboard.admin.cms.courses'
 import { Route as DashboardDashboardAdminCmsCategoriesRouteImport } from './routes/_dashboard.dashboard.admin.cms.categories'
@@ -384,6 +396,12 @@ const DashboardDashboardOrganizationRoute =
     path: '/dashboard/organization',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardCommunityRoute =
+  DashboardDashboardCommunityRouteImport.update({
+    id: '/dashboard/community',
+    path: '/dashboard/community',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDashboardCollegeRoute =
   DashboardDashboardCollegeRouteImport.update({
     id: '/dashboard/college',
@@ -429,6 +447,12 @@ const DashboardDashboardMockTestsIndexRoute =
     id: '/dashboard/mock-tests/',
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardCommunityIndexRoute =
+  DashboardDashboardCommunityIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
   } as any)
 const DashboardDashboardCareerIndexRoute =
   DashboardDashboardCareerIndexRouteImport.update({
@@ -682,6 +706,60 @@ const DashboardDashboardMockTestsTestIdRoute =
     path: '/dashboard/mock-tests/$testId',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardCommunityStudyGroupsRoute =
+  DashboardDashboardCommunityStudyGroupsRouteImport.update({
+    id: '/study-groups',
+    path: '/study-groups',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
+const DashboardDashboardCommunityMentorsRoute =
+  DashboardDashboardCommunityMentorsRouteImport.update({
+    id: '/mentors',
+    path: '/mentors',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
+const DashboardDashboardCommunityLeaderboardRoute =
+  DashboardDashboardCommunityLeaderboardRouteImport.update({
+    id: '/leaderboard',
+    path: '/leaderboard',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
+const DashboardDashboardCommunityKnowledgeRoute =
+  DashboardDashboardCommunityKnowledgeRouteImport.update({
+    id: '/knowledge',
+    path: '/knowledge',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
+const DashboardDashboardCommunityEventsRoute =
+  DashboardDashboardCommunityEventsRouteImport.update({
+    id: '/events',
+    path: '/events',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
+const DashboardDashboardCommunityDoubtSolverRoute =
+  DashboardDashboardCommunityDoubtSolverRouteImport.update({
+    id: '/doubt-solver',
+    path: '/doubt-solver',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
+const DashboardDashboardCommunityDiscussionsRoute =
+  DashboardDashboardCommunityDiscussionsRouteImport.update({
+    id: '/discussions',
+    path: '/discussions',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
+const DashboardDashboardCommunityCommunitiesRoute =
+  DashboardDashboardCommunityCommunitiesRouteImport.update({
+    id: '/communities',
+    path: '/communities',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
+const DashboardDashboardCommunityChatRoute =
+  DashboardDashboardCommunityChatRouteImport.update({
+    id: '/chat',
+    path: '/chat',
+    getParentRoute: () => DashboardDashboardCommunityRoute,
+  } as any)
 const DashboardDashboardCareerSkillGapRoute =
   DashboardDashboardCareerSkillGapRouteImport.update({
     id: '/skill-gap',
@@ -880,6 +958,12 @@ const DashboardDashboardMockTestsAiCategoryIdRoute =
     path: '/dashboard/mock-tests/ai/$categoryId',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardCommunityDiscussionsIdRoute =
+  DashboardDashboardCommunityDiscussionsIdRouteImport.update({
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => DashboardDashboardCommunityDiscussionsRoute,
+  } as any)
 const DashboardDashboardAdminCmsPathsRoute =
   DashboardDashboardAdminCmsPathsRouteImport.update({
     id: '/paths',
@@ -997,6 +1081,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/analytics': typeof DashboardDashboardAnalyticsRouteWithChildren
   '/dashboard/career': typeof DashboardDashboardCareerRouteWithChildren
   '/dashboard/college': typeof DashboardDashboardCollegeRoute
+  '/dashboard/community': typeof DashboardDashboardCommunityRouteWithChildren
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
@@ -1033,6 +1118,15 @@ export interface FileRoutesByFullPath {
   '/dashboard/career/resume': typeof DashboardDashboardCareerResumeRoute
   '/dashboard/career/roadmap': typeof DashboardDashboardCareerRoadmapRoute
   '/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
+  '/dashboard/community/chat': typeof DashboardDashboardCommunityChatRoute
+  '/dashboard/community/communities': typeof DashboardDashboardCommunityCommunitiesRoute
+  '/dashboard/community/discussions': typeof DashboardDashboardCommunityDiscussionsRouteWithChildren
+  '/dashboard/community/doubt-solver': typeof DashboardDashboardCommunityDoubtSolverRoute
+  '/dashboard/community/events': typeof DashboardDashboardCommunityEventsRoute
+  '/dashboard/community/knowledge': typeof DashboardDashboardCommunityKnowledgeRoute
+  '/dashboard/community/leaderboard': typeof DashboardDashboardCommunityLeaderboardRoute
+  '/dashboard/community/mentors': typeof DashboardDashboardCommunityMentorsRoute
+  '/dashboard/community/study-groups': typeof DashboardDashboardCommunityStudyGroupsRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsRouteWithChildren
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -1075,12 +1169,14 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/dashboard/analytics/': typeof DashboardDashboardAnalyticsIndexRoute
   '/dashboard/career/': typeof DashboardDashboardCareerIndexRoute
+  '/dashboard/community/': typeof DashboardDashboardCommunityIndexRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
   '/dashboard/admin/cms/categories': typeof DashboardDashboardAdminCmsCategoriesRoute
   '/dashboard/admin/cms/courses': typeof DashboardDashboardAdminCmsCoursesRouteWithChildren
   '/dashboard/admin/cms/paths': typeof DashboardDashboardAdminCmsPathsRoute
+  '/dashboard/community/discussions/$id': typeof DashboardDashboardCommunityDiscussionsIdRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
   '/dashboard/student/ai-tests/analytics': typeof DashboardDashboardStudentAiTestsAnalyticsRoute
   '/dashboard/student/ai-tests/new': typeof DashboardDashboardStudentAiTestsNewRoute
@@ -1169,6 +1265,15 @@ export interface FileRoutesByTo {
   '/dashboard/career/resume': typeof DashboardDashboardCareerResumeRoute
   '/dashboard/career/roadmap': typeof DashboardDashboardCareerRoadmapRoute
   '/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
+  '/dashboard/community/chat': typeof DashboardDashboardCommunityChatRoute
+  '/dashboard/community/communities': typeof DashboardDashboardCommunityCommunitiesRoute
+  '/dashboard/community/discussions': typeof DashboardDashboardCommunityDiscussionsRouteWithChildren
+  '/dashboard/community/doubt-solver': typeof DashboardDashboardCommunityDoubtSolverRoute
+  '/dashboard/community/events': typeof DashboardDashboardCommunityEventsRoute
+  '/dashboard/community/knowledge': typeof DashboardDashboardCommunityKnowledgeRoute
+  '/dashboard/community/leaderboard': typeof DashboardDashboardCommunityLeaderboardRoute
+  '/dashboard/community/mentors': typeof DashboardDashboardCommunityMentorsRoute
+  '/dashboard/community/study-groups': typeof DashboardDashboardCommunityStudyGroupsRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
@@ -1210,11 +1315,13 @@ export interface FileRoutesByTo {
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/dashboard/analytics': typeof DashboardDashboardAnalyticsIndexRoute
   '/dashboard/career': typeof DashboardDashboardCareerIndexRoute
+  '/dashboard/community': typeof DashboardDashboardCommunityIndexRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
   '/dashboard/admin/cms/categories': typeof DashboardDashboardAdminCmsCategoriesRoute
   '/dashboard/admin/cms/paths': typeof DashboardDashboardAdminCmsPathsRoute
+  '/dashboard/community/discussions/$id': typeof DashboardDashboardCommunityDiscussionsIdRoute
   '/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
   '/dashboard/student/ai-tests/analytics': typeof DashboardDashboardStudentAiTestsAnalyticsRoute
   '/dashboard/student/ai-tests/new': typeof DashboardDashboardStudentAiTestsNewRoute
@@ -1275,6 +1382,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/analytics': typeof DashboardDashboardAnalyticsRouteWithChildren
   '/_dashboard/dashboard/career': typeof DashboardDashboardCareerRouteWithChildren
   '/_dashboard/dashboard/college': typeof DashboardDashboardCollegeRoute
+  '/_dashboard/dashboard/community': typeof DashboardDashboardCommunityRouteWithChildren
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
@@ -1311,6 +1419,15 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/career/resume': typeof DashboardDashboardCareerResumeRoute
   '/_dashboard/dashboard/career/roadmap': typeof DashboardDashboardCareerRoadmapRoute
   '/_dashboard/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
+  '/_dashboard/dashboard/community/chat': typeof DashboardDashboardCommunityChatRoute
+  '/_dashboard/dashboard/community/communities': typeof DashboardDashboardCommunityCommunitiesRoute
+  '/_dashboard/dashboard/community/discussions': typeof DashboardDashboardCommunityDiscussionsRouteWithChildren
+  '/_dashboard/dashboard/community/doubt-solver': typeof DashboardDashboardCommunityDoubtSolverRoute
+  '/_dashboard/dashboard/community/events': typeof DashboardDashboardCommunityEventsRoute
+  '/_dashboard/dashboard/community/knowledge': typeof DashboardDashboardCommunityKnowledgeRoute
+  '/_dashboard/dashboard/community/leaderboard': typeof DashboardDashboardCommunityLeaderboardRoute
+  '/_dashboard/dashboard/community/mentors': typeof DashboardDashboardCommunityMentorsRoute
+  '/_dashboard/dashboard/community/study-groups': typeof DashboardDashboardCommunityStudyGroupsRoute
   '/_dashboard/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/_dashboard/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsRouteWithChildren
   '/_dashboard/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -1353,12 +1470,14 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
   '/_dashboard/dashboard/analytics/': typeof DashboardDashboardAnalyticsIndexRoute
   '/_dashboard/dashboard/career/': typeof DashboardDashboardCareerIndexRoute
+  '/_dashboard/dashboard/community/': typeof DashboardDashboardCommunityIndexRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
   '/_dashboard/dashboard/admin/cms/categories': typeof DashboardDashboardAdminCmsCategoriesRoute
   '/_dashboard/dashboard/admin/cms/courses': typeof DashboardDashboardAdminCmsCoursesRouteWithChildren
   '/_dashboard/dashboard/admin/cms/paths': typeof DashboardDashboardAdminCmsPathsRoute
+  '/_dashboard/dashboard/community/discussions/$id': typeof DashboardDashboardCommunityDiscussionsIdRoute
   '/_dashboard/dashboard/mock-tests/ai/$categoryId': typeof DashboardDashboardMockTestsAiCategoryIdRoute
   '/_dashboard/dashboard/student/ai-tests/analytics': typeof DashboardDashboardStudentAiTestsAnalyticsRoute
   '/_dashboard/dashboard/student/ai-tests/new': typeof DashboardDashboardStudentAiTestsNewRoute
@@ -1417,6 +1536,7 @@ export interface FileRouteTypes {
     | '/dashboard/analytics'
     | '/dashboard/career'
     | '/dashboard/college'
+    | '/dashboard/community'
     | '/dashboard/organization'
     | '/dashboard/professional'
     | '/dashboard/profile'
@@ -1453,6 +1573,15 @@ export interface FileRouteTypes {
     | '/dashboard/career/resume'
     | '/dashboard/career/roadmap'
     | '/dashboard/career/skill-gap'
+    | '/dashboard/community/chat'
+    | '/dashboard/community/communities'
+    | '/dashboard/community/discussions'
+    | '/dashboard/community/doubt-solver'
+    | '/dashboard/community/events'
+    | '/dashboard/community/knowledge'
+    | '/dashboard/community/leaderboard'
+    | '/dashboard/community/mentors'
+    | '/dashboard/community/study-groups'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/ai-tests'
     | '/dashboard/student/assessments'
@@ -1495,12 +1624,14 @@ export interface FileRouteTypes {
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/dashboard/analytics/'
     | '/dashboard/career/'
+    | '/dashboard/community/'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/admin/cms/analytics'
     | '/dashboard/admin/cms/categories'
     | '/dashboard/admin/cms/courses'
     | '/dashboard/admin/cms/paths'
+    | '/dashboard/community/discussions/$id'
     | '/dashboard/mock-tests/ai/$categoryId'
     | '/dashboard/student/ai-tests/analytics'
     | '/dashboard/student/ai-tests/new'
@@ -1589,6 +1720,15 @@ export interface FileRouteTypes {
     | '/dashboard/career/resume'
     | '/dashboard/career/roadmap'
     | '/dashboard/career/skill-gap'
+    | '/dashboard/community/chat'
+    | '/dashboard/community/communities'
+    | '/dashboard/community/discussions'
+    | '/dashboard/community/doubt-solver'
+    | '/dashboard/community/events'
+    | '/dashboard/community/knowledge'
+    | '/dashboard/community/leaderboard'
+    | '/dashboard/community/mentors'
+    | '/dashboard/community/study-groups'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/assessments'
     | '/dashboard/student/browse'
@@ -1630,11 +1770,13 @@ export interface FileRouteTypes {
     | '/resources/read/ml-step-by-step-learning-guide'
     | '/dashboard/analytics'
     | '/dashboard/career'
+    | '/dashboard/community'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/admin/cms/analytics'
     | '/dashboard/admin/cms/categories'
     | '/dashboard/admin/cms/paths'
+    | '/dashboard/community/discussions/$id'
     | '/dashboard/mock-tests/ai/$categoryId'
     | '/dashboard/student/ai-tests/analytics'
     | '/dashboard/student/ai-tests/new'
@@ -1694,6 +1836,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/analytics'
     | '/_dashboard/dashboard/career'
     | '/_dashboard/dashboard/college'
+    | '/_dashboard/dashboard/community'
     | '/_dashboard/dashboard/organization'
     | '/_dashboard/dashboard/professional'
     | '/_dashboard/dashboard/profile'
@@ -1730,6 +1873,15 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/career/resume'
     | '/_dashboard/dashboard/career/roadmap'
     | '/_dashboard/dashboard/career/skill-gap'
+    | '/_dashboard/dashboard/community/chat'
+    | '/_dashboard/dashboard/community/communities'
+    | '/_dashboard/dashboard/community/discussions'
+    | '/_dashboard/dashboard/community/doubt-solver'
+    | '/_dashboard/dashboard/community/events'
+    | '/_dashboard/dashboard/community/knowledge'
+    | '/_dashboard/dashboard/community/leaderboard'
+    | '/_dashboard/dashboard/community/mentors'
+    | '/_dashboard/dashboard/community/study-groups'
     | '/_dashboard/dashboard/mock-tests/$testId'
     | '/_dashboard/dashboard/student/ai-tests'
     | '/_dashboard/dashboard/student/assessments'
@@ -1772,12 +1924,14 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
     | '/_dashboard/dashboard/analytics/'
     | '/_dashboard/dashboard/career/'
+    | '/_dashboard/dashboard/community/'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/admin/cms/analytics'
     | '/_dashboard/dashboard/admin/cms/categories'
     | '/_dashboard/dashboard/admin/cms/courses'
     | '/_dashboard/dashboard/admin/cms/paths'
+    | '/_dashboard/dashboard/community/discussions/$id'
     | '/_dashboard/dashboard/mock-tests/ai/$categoryId'
     | '/_dashboard/dashboard/student/ai-tests/analytics'
     | '/_dashboard/dashboard/student/ai-tests/new'
@@ -2136,6 +2290,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardOrganizationRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/community': {
+      id: '/_dashboard/dashboard/community'
+      path: '/dashboard/community'
+      fullPath: '/dashboard/community'
+      preLoaderRoute: typeof DashboardDashboardCommunityRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/dashboard/college': {
       id: '/_dashboard/dashboard/college'
       path: '/dashboard/college'
@@ -2191,6 +2352,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/'
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/community/': {
+      id: '/_dashboard/dashboard/community/'
+      path: '/'
+      fullPath: '/dashboard/community/'
+      preLoaderRoute: typeof DashboardDashboardCommunityIndexRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
     }
     '/_dashboard/dashboard/career/': {
       id: '/_dashboard/dashboard/career/'
@@ -2486,6 +2654,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardMockTestsTestIdRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/community/study-groups': {
+      id: '/_dashboard/dashboard/community/study-groups'
+      path: '/study-groups'
+      fullPath: '/dashboard/community/study-groups'
+      preLoaderRoute: typeof DashboardDashboardCommunityStudyGroupsRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
+    '/_dashboard/dashboard/community/mentors': {
+      id: '/_dashboard/dashboard/community/mentors'
+      path: '/mentors'
+      fullPath: '/dashboard/community/mentors'
+      preLoaderRoute: typeof DashboardDashboardCommunityMentorsRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
+    '/_dashboard/dashboard/community/leaderboard': {
+      id: '/_dashboard/dashboard/community/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/dashboard/community/leaderboard'
+      preLoaderRoute: typeof DashboardDashboardCommunityLeaderboardRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
+    '/_dashboard/dashboard/community/knowledge': {
+      id: '/_dashboard/dashboard/community/knowledge'
+      path: '/knowledge'
+      fullPath: '/dashboard/community/knowledge'
+      preLoaderRoute: typeof DashboardDashboardCommunityKnowledgeRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
+    '/_dashboard/dashboard/community/events': {
+      id: '/_dashboard/dashboard/community/events'
+      path: '/events'
+      fullPath: '/dashboard/community/events'
+      preLoaderRoute: typeof DashboardDashboardCommunityEventsRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
+    '/_dashboard/dashboard/community/doubt-solver': {
+      id: '/_dashboard/dashboard/community/doubt-solver'
+      path: '/doubt-solver'
+      fullPath: '/dashboard/community/doubt-solver'
+      preLoaderRoute: typeof DashboardDashboardCommunityDoubtSolverRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
+    '/_dashboard/dashboard/community/discussions': {
+      id: '/_dashboard/dashboard/community/discussions'
+      path: '/discussions'
+      fullPath: '/dashboard/community/discussions'
+      preLoaderRoute: typeof DashboardDashboardCommunityDiscussionsRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
+    '/_dashboard/dashboard/community/communities': {
+      id: '/_dashboard/dashboard/community/communities'
+      path: '/communities'
+      fullPath: '/dashboard/community/communities'
+      preLoaderRoute: typeof DashboardDashboardCommunityCommunitiesRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
+    '/_dashboard/dashboard/community/chat': {
+      id: '/_dashboard/dashboard/community/chat'
+      path: '/chat'
+      fullPath: '/dashboard/community/chat'
+      preLoaderRoute: typeof DashboardDashboardCommunityChatRouteImport
+      parentRoute: typeof DashboardDashboardCommunityRoute
+    }
     '/_dashboard/dashboard/career/skill-gap': {
       id: '/_dashboard/dashboard/career/skill-gap'
       path: '/skill-gap'
@@ -2716,6 +2947,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/ai/$categoryId'
       preLoaderRoute: typeof DashboardDashboardMockTestsAiCategoryIdRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/community/discussions/$id': {
+      id: '/_dashboard/dashboard/community/discussions/$id'
+      path: '/$id'
+      fullPath: '/dashboard/community/discussions/$id'
+      preLoaderRoute: typeof DashboardDashboardCommunityDiscussionsIdRouteImport
+      parentRoute: typeof DashboardDashboardCommunityDiscussionsRoute
     }
     '/_dashboard/dashboard/admin/cms/paths': {
       id: '/_dashboard/dashboard/admin/cms/paths'
@@ -2985,6 +3223,62 @@ const DashboardDashboardCareerRouteWithChildren =
     DashboardDashboardCareerRouteChildren,
   )
 
+interface DashboardDashboardCommunityDiscussionsRouteChildren {
+  DashboardDashboardCommunityDiscussionsIdRoute: typeof DashboardDashboardCommunityDiscussionsIdRoute
+}
+
+const DashboardDashboardCommunityDiscussionsRouteChildren: DashboardDashboardCommunityDiscussionsRouteChildren =
+  {
+    DashboardDashboardCommunityDiscussionsIdRoute:
+      DashboardDashboardCommunityDiscussionsIdRoute,
+  }
+
+const DashboardDashboardCommunityDiscussionsRouteWithChildren =
+  DashboardDashboardCommunityDiscussionsRoute._addFileChildren(
+    DashboardDashboardCommunityDiscussionsRouteChildren,
+  )
+
+interface DashboardDashboardCommunityRouteChildren {
+  DashboardDashboardCommunityChatRoute: typeof DashboardDashboardCommunityChatRoute
+  DashboardDashboardCommunityCommunitiesRoute: typeof DashboardDashboardCommunityCommunitiesRoute
+  DashboardDashboardCommunityDiscussionsRoute: typeof DashboardDashboardCommunityDiscussionsRouteWithChildren
+  DashboardDashboardCommunityDoubtSolverRoute: typeof DashboardDashboardCommunityDoubtSolverRoute
+  DashboardDashboardCommunityEventsRoute: typeof DashboardDashboardCommunityEventsRoute
+  DashboardDashboardCommunityKnowledgeRoute: typeof DashboardDashboardCommunityKnowledgeRoute
+  DashboardDashboardCommunityLeaderboardRoute: typeof DashboardDashboardCommunityLeaderboardRoute
+  DashboardDashboardCommunityMentorsRoute: typeof DashboardDashboardCommunityMentorsRoute
+  DashboardDashboardCommunityStudyGroupsRoute: typeof DashboardDashboardCommunityStudyGroupsRoute
+  DashboardDashboardCommunityIndexRoute: typeof DashboardDashboardCommunityIndexRoute
+}
+
+const DashboardDashboardCommunityRouteChildren: DashboardDashboardCommunityRouteChildren =
+  {
+    DashboardDashboardCommunityChatRoute: DashboardDashboardCommunityChatRoute,
+    DashboardDashboardCommunityCommunitiesRoute:
+      DashboardDashboardCommunityCommunitiesRoute,
+    DashboardDashboardCommunityDiscussionsRoute:
+      DashboardDashboardCommunityDiscussionsRouteWithChildren,
+    DashboardDashboardCommunityDoubtSolverRoute:
+      DashboardDashboardCommunityDoubtSolverRoute,
+    DashboardDashboardCommunityEventsRoute:
+      DashboardDashboardCommunityEventsRoute,
+    DashboardDashboardCommunityKnowledgeRoute:
+      DashboardDashboardCommunityKnowledgeRoute,
+    DashboardDashboardCommunityLeaderboardRoute:
+      DashboardDashboardCommunityLeaderboardRoute,
+    DashboardDashboardCommunityMentorsRoute:
+      DashboardDashboardCommunityMentorsRoute,
+    DashboardDashboardCommunityStudyGroupsRoute:
+      DashboardDashboardCommunityStudyGroupsRoute,
+    DashboardDashboardCommunityIndexRoute:
+      DashboardDashboardCommunityIndexRoute,
+  }
+
+const DashboardDashboardCommunityRouteWithChildren =
+  DashboardDashboardCommunityRoute._addFileChildren(
+    DashboardDashboardCommunityRouteChildren,
+  )
+
 interface DashboardDashboardStudentAiTestsRouteChildren {
   DashboardDashboardStudentAiTestsAnalyticsRoute: typeof DashboardDashboardStudentAiTestsAnalyticsRoute
   DashboardDashboardStudentAiTestsNewRoute: typeof DashboardDashboardStudentAiTestsNewRoute
@@ -3111,6 +3405,7 @@ interface DashboardRouteChildren {
   DashboardDashboardAnalyticsRoute: typeof DashboardDashboardAnalyticsRouteWithChildren
   DashboardDashboardCareerRoute: typeof DashboardDashboardCareerRouteWithChildren
   DashboardDashboardCollegeRoute: typeof DashboardDashboardCollegeRoute
+  DashboardDashboardCommunityRoute: typeof DashboardDashboardCommunityRouteWithChildren
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
   DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
   DashboardDashboardProfileRoute: typeof DashboardDashboardProfileRoute
@@ -3132,6 +3427,8 @@ const DashboardRouteChildren: DashboardRouteChildren = {
     DashboardDashboardAnalyticsRouteWithChildren,
   DashboardDashboardCareerRoute: DashboardDashboardCareerRouteWithChildren,
   DashboardDashboardCollegeRoute: DashboardDashboardCollegeRoute,
+  DashboardDashboardCommunityRoute:
+    DashboardDashboardCommunityRouteWithChildren,
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
   DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,
   DashboardDashboardProfileRoute: DashboardDashboardProfileRoute,

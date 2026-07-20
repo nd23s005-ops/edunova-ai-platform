@@ -537,6 +537,35 @@ export type Database = {
         }
         Relationships: []
       }
+      article_reactions: {
+        Row: {
+          article_id: string
+          created_at: string
+          kind: string
+          user_id: string
+        }
+        Insert: {
+          article_id: string
+          created_at?: string
+          kind: string
+          user_id: string
+        }
+        Update: {
+          article_id?: string
+          created_at?: string
+          kind?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "article_reactions_article_id_fkey"
+            columns: ["article_id"]
+            isOneToOne: false
+            referencedRelation: "knowledge_articles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       assignment_questions: {
         Row: {
           assignment_id: string
@@ -930,6 +959,118 @@ export type Database = {
           },
         ]
       }
+      chat_conversations: {
+        Row: {
+          community_id: string | null
+          created_at: string
+          created_by: string
+          id: string
+          kind: Database["public"]["Enums"]["chat_kind"]
+          last_message_at: string
+          study_group_id: string | null
+          title: string | null
+        }
+        Insert: {
+          community_id?: string | null
+          created_at?: string
+          created_by: string
+          id?: string
+          kind?: Database["public"]["Enums"]["chat_kind"]
+          last_message_at?: string
+          study_group_id?: string | null
+          title?: string | null
+        }
+        Update: {
+          community_id?: string | null
+          created_at?: string
+          created_by?: string
+          id?: string
+          kind?: Database["public"]["Enums"]["chat_kind"]
+          last_message_at?: string
+          study_group_id?: string | null
+          title?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_conversations_community_id_fkey"
+            columns: ["community_id"]
+            isOneToOne: false
+            referencedRelation: "communities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chat_conversations_study_group_id_fkey"
+            columns: ["study_group_id"]
+            isOneToOne: false
+            referencedRelation: "study_groups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      chat_messages: {
+        Row: {
+          attachments: Json
+          body: string
+          conversation_id: string
+          created_at: string
+          id: string
+          sender_id: string
+        }
+        Insert: {
+          attachments?: Json
+          body: string
+          conversation_id: string
+          created_at?: string
+          id?: string
+          sender_id: string
+        }
+        Update: {
+          attachments?: Json
+          body?: string
+          conversation_id?: string
+          created_at?: string
+          id?: string
+          sender_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_messages_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "chat_conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      chat_participants: {
+        Row: {
+          conversation_id: string
+          joined_at: string
+          last_read_at: string
+          user_id: string
+        }
+        Insert: {
+          conversation_id: string
+          joined_at?: string
+          last_read_at?: string
+          user_id: string
+        }
+        Update: {
+          conversation_id?: string
+          joined_at?: string
+          last_read_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_participants_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "chat_conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       coding_challenges: {
         Row: {
           created_at: string
@@ -1024,6 +1165,237 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      communities: {
+        Row: {
+          category: string
+          cover_url: string | null
+          created_at: string
+          description: string | null
+          guidelines: string | null
+          id: string
+          is_featured: boolean
+          member_count: number
+          name: string
+          owner_id: string
+          slug: string
+          tags: string[]
+          updated_at: string
+          visibility: Database["public"]["Enums"]["community_visibility"]
+        }
+        Insert: {
+          category?: string
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          guidelines?: string | null
+          id?: string
+          is_featured?: boolean
+          member_count?: number
+          name: string
+          owner_id: string
+          slug: string
+          tags?: string[]
+          updated_at?: string
+          visibility?: Database["public"]["Enums"]["community_visibility"]
+        }
+        Update: {
+          category?: string
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          guidelines?: string | null
+          id?: string
+          is_featured?: boolean
+          member_count?: number
+          name?: string
+          owner_id?: string
+          slug?: string
+          tags?: string[]
+          updated_at?: string
+          visibility?: Database["public"]["Enums"]["community_visibility"]
+        }
+        Relationships: []
+      }
+      community_badges_earned: {
+        Row: {
+          awarded_at: string
+          badge_key: string
+          id: string
+          label: string
+          user_id: string
+        }
+        Insert: {
+          awarded_at?: string
+          badge_key: string
+          id?: string
+          label: string
+          user_id: string
+        }
+        Update: {
+          awarded_at?: string
+          badge_key?: string
+          id?: string
+          label?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      community_events: {
+        Row: {
+          capacity: number | null
+          community_id: string | null
+          cover_url: string | null
+          created_at: string
+          description: string | null
+          ends_at: string | null
+          host_id: string
+          id: string
+          is_public: boolean
+          kind: Database["public"]["Enums"]["event_kind"]
+          meeting_link: string | null
+          registered_count: number
+          resources: Json
+          starts_at: string
+          tags: string[]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          capacity?: number | null
+          community_id?: string | null
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          ends_at?: string | null
+          host_id: string
+          id?: string
+          is_public?: boolean
+          kind?: Database["public"]["Enums"]["event_kind"]
+          meeting_link?: string | null
+          registered_count?: number
+          resources?: Json
+          starts_at: string
+          tags?: string[]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          capacity?: number | null
+          community_id?: string | null
+          cover_url?: string | null
+          created_at?: string
+          description?: string | null
+          ends_at?: string | null
+          host_id?: string
+          id?: string
+          is_public?: boolean
+          kind?: Database["public"]["Enums"]["event_kind"]
+          meeting_link?: string | null
+          registered_count?: number
+          resources?: Json
+          starts_at?: string
+          tags?: string[]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "community_events_community_id_fkey"
+            columns: ["community_id"]
+            isOneToOne: false
+            referencedRelation: "communities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      community_follows: {
+        Row: {
+          community_id: string
+          created_at: string
+          user_id: string
+        }
+        Insert: {
+          community_id: string
+          created_at?: string
+          user_id: string
+        }
+        Update: {
+          community_id?: string
+          created_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "community_follows_community_id_fkey"
+            columns: ["community_id"]
+            isOneToOne: false
+            referencedRelation: "communities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      community_members: {
+        Row: {
+          community_id: string
+          id: string
+          joined_at: string
+          role: Database["public"]["Enums"]["community_member_role"]
+          user_id: string
+        }
+        Insert: {
+          community_id: string
+          id?: string
+          joined_at?: string
+          role?: Database["public"]["Enums"]["community_member_role"]
+          user_id: string
+        }
+        Update: {
+          community_id?: string
+          id?: string
+          joined_at?: string
+          role?: Database["public"]["Enums"]["community_member_role"]
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "community_members_community_id_fkey"
+            columns: ["community_id"]
+            isOneToOne: false
+            referencedRelation: "communities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      community_xp_events: {
+        Row: {
+          amount: number
+          created_at: string
+          id: string
+          reason: string
+          reference_id: string | null
+          reference_type: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: string
+          reason: string
+          reference_id?: string | null
+          reference_type?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: string
+          reason?: string
+          reference_id?: string | null
+          reference_type?: string | null
+          user_id?: string
+        }
+        Relationships: []
       }
       course_approvals: {
         Row: {
@@ -1601,6 +1973,245 @@ export type Database = {
         }
         Relationships: []
       }
+      discussion_answers: {
+        Row: {
+          attachments: Json
+          author_id: string
+          body: string
+          created_at: string
+          discussion_id: string
+          downvotes: number
+          id: string
+          is_accepted: boolean
+          is_ai: boolean
+          updated_at: string
+          upvotes: number
+        }
+        Insert: {
+          attachments?: Json
+          author_id: string
+          body: string
+          created_at?: string
+          discussion_id: string
+          downvotes?: number
+          id?: string
+          is_accepted?: boolean
+          is_ai?: boolean
+          updated_at?: string
+          upvotes?: number
+        }
+        Update: {
+          attachments?: Json
+          author_id?: string
+          body?: string
+          created_at?: string
+          discussion_id?: string
+          downvotes?: number
+          id?: string
+          is_accepted?: boolean
+          is_ai?: boolean
+          updated_at?: string
+          upvotes?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "discussion_answers_discussion_id_fkey"
+            columns: ["discussion_id"]
+            isOneToOne: false
+            referencedRelation: "discussions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      discussion_bookmarks: {
+        Row: {
+          created_at: string
+          discussion_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          discussion_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          discussion_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "discussion_bookmarks_discussion_id_fkey"
+            columns: ["discussion_id"]
+            isOneToOne: false
+            referencedRelation: "discussions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      discussion_comments: {
+        Row: {
+          answer_id: string | null
+          author_id: string
+          body: string
+          created_at: string
+          discussion_id: string | null
+          id: string
+        }
+        Insert: {
+          answer_id?: string | null
+          author_id: string
+          body: string
+          created_at?: string
+          discussion_id?: string | null
+          id?: string
+        }
+        Update: {
+          answer_id?: string | null
+          author_id?: string
+          body?: string
+          created_at?: string
+          discussion_id?: string | null
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "discussion_comments_answer_id_fkey"
+            columns: ["answer_id"]
+            isOneToOne: false
+            referencedRelation: "discussion_answers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "discussion_comments_discussion_id_fkey"
+            columns: ["discussion_id"]
+            isOneToOne: false
+            referencedRelation: "discussions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      discussion_votes: {
+        Row: {
+          created_at: string
+          target_id: string
+          target_type: string
+          user_id: string
+          value: number
+        }
+        Insert: {
+          created_at?: string
+          target_id: string
+          target_type: string
+          user_id: string
+          value: number
+        }
+        Update: {
+          created_at?: string
+          target_id?: string
+          target_type?: string
+          user_id?: string
+          value?: number
+        }
+        Relationships: []
+      }
+      discussions: {
+        Row: {
+          accepted_answer_id: string | null
+          answer_count: number
+          attachments: Json
+          author_id: string
+          body: string
+          community_id: string | null
+          created_at: string
+          downvotes: number
+          id: string
+          is_locked: boolean
+          status: string
+          tags: string[]
+          title: string
+          updated_at: string
+          upvotes: number
+          views: number
+        }
+        Insert: {
+          accepted_answer_id?: string | null
+          answer_count?: number
+          attachments?: Json
+          author_id: string
+          body?: string
+          community_id?: string | null
+          created_at?: string
+          downvotes?: number
+          id?: string
+          is_locked?: boolean
+          status?: string
+          tags?: string[]
+          title: string
+          updated_at?: string
+          upvotes?: number
+          views?: number
+        }
+        Update: {
+          accepted_answer_id?: string | null
+          answer_count?: number
+          attachments?: Json
+          author_id?: string
+          body?: string
+          community_id?: string | null
+          created_at?: string
+          downvotes?: number
+          id?: string
+          is_locked?: boolean
+          status?: string
+          tags?: string[]
+          title?: string
+          updated_at?: string
+          upvotes?: number
+          views?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "discussions_community_id_fkey"
+            columns: ["community_id"]
+            isOneToOne: false
+            referencedRelation: "communities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      event_registrations: {
+        Row: {
+          attended: boolean
+          event_id: string
+          registered_at: string
+          reminded: boolean
+          user_id: string
+        }
+        Insert: {
+          attended?: boolean
+          event_id: string
+          registered_at?: string
+          reminded?: boolean
+          user_id: string
+        }
+        Update: {
+          attended?: boolean
+          event_id?: string
+          registered_at?: string
+          reminded?: boolean
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_registrations_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "community_events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       internship_applications: {
         Row: {
           applied_at: string | null
@@ -1903,6 +2514,68 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      knowledge_articles: {
+        Row: {
+          author_id: string
+          body: string
+          community_id: string | null
+          cover_url: string | null
+          created_at: string
+          id: string
+          is_published: boolean
+          kind: Database["public"]["Enums"]["article_kind"]
+          likes: number
+          slug: string
+          summary: string | null
+          tags: string[]
+          title: string
+          updated_at: string
+          views: number
+        }
+        Insert: {
+          author_id: string
+          body?: string
+          community_id?: string | null
+          cover_url?: string | null
+          created_at?: string
+          id?: string
+          is_published?: boolean
+          kind?: Database["public"]["Enums"]["article_kind"]
+          likes?: number
+          slug: string
+          summary?: string | null
+          tags?: string[]
+          title: string
+          updated_at?: string
+          views?: number
+        }
+        Update: {
+          author_id?: string
+          body?: string
+          community_id?: string | null
+          cover_url?: string | null
+          created_at?: string
+          id?: string
+          is_published?: boolean
+          kind?: Database["public"]["Enums"]["article_kind"]
+          likes?: number
+          slug?: string
+          summary?: string | null
+          tags?: string[]
+          title?: string
+          updated_at?: string
+          views?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "knowledge_articles_community_id_fkey"
+            columns: ["community_id"]
+            isOneToOne: false
+            referencedRelation: "communities"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       learner_achievements: {
         Row: {
@@ -2358,6 +3031,146 @@ export type Database = {
           },
         ]
       }
+      mentor_profiles: {
+        Row: {
+          availability: Json
+          bio: string | null
+          created_at: string
+          expertise: string[]
+          headline: string
+          hourly_rate: number | null
+          is_accepting: boolean
+          linkedin_url: string | null
+          rating: number | null
+          session_count: number
+          updated_at: string
+          user_id: string
+          years_experience: number
+        }
+        Insert: {
+          availability?: Json
+          bio?: string | null
+          created_at?: string
+          expertise?: string[]
+          headline?: string
+          hourly_rate?: number | null
+          is_accepting?: boolean
+          linkedin_url?: string | null
+          rating?: number | null
+          session_count?: number
+          updated_at?: string
+          user_id: string
+          years_experience?: number
+        }
+        Update: {
+          availability?: Json
+          bio?: string | null
+          created_at?: string
+          expertise?: string[]
+          headline?: string
+          hourly_rate?: number | null
+          is_accepting?: boolean
+          linkedin_url?: string | null
+          rating?: number | null
+          session_count?: number
+          updated_at?: string
+          user_id?: string
+          years_experience?: number
+        }
+        Relationships: []
+      }
+      mentor_sessions: {
+        Row: {
+          created_at: string
+          duration_minutes: number
+          id: string
+          learner_feedback: string | null
+          learner_id: string
+          learner_rating: number | null
+          meeting_link: string | null
+          mentor_id: string
+          mentorship_id: string
+          notes: string | null
+          scheduled_at: string
+          status: string
+          topic: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          duration_minutes?: number
+          id?: string
+          learner_feedback?: string | null
+          learner_id: string
+          learner_rating?: number | null
+          meeting_link?: string | null
+          mentor_id: string
+          mentorship_id: string
+          notes?: string | null
+          scheduled_at: string
+          status?: string
+          topic?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          duration_minutes?: number
+          id?: string
+          learner_feedback?: string | null
+          learner_id?: string
+          learner_rating?: number | null
+          meeting_link?: string | null
+          mentor_id?: string
+          mentorship_id?: string
+          notes?: string | null
+          scheduled_at?: string
+          status?: string
+          topic?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mentor_sessions_mentorship_id_fkey"
+            columns: ["mentorship_id"]
+            isOneToOne: false
+            referencedRelation: "mentorships"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      mentorships: {
+        Row: {
+          created_at: string
+          goals: string | null
+          id: string
+          learner_id: string
+          mentor_id: string
+          message: string | null
+          status: Database["public"]["Enums"]["mentorship_status"]
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          goals?: string | null
+          id?: string
+          learner_id: string
+          mentor_id: string
+          message?: string | null
+          status?: Database["public"]["Enums"]["mentorship_status"]
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          goals?: string | null
+          id?: string
+          learner_id?: string
+          mentor_id?: string
+          message?: string | null
+          status?: Database["public"]["Enums"]["mentorship_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
       mock_test_attempts: {
         Row: {
           answers: Json
@@ -2473,6 +3286,51 @@ export type Database = {
           is_published?: boolean
           title?: string
           total_questions?: number
+        }
+        Relationships: []
+      }
+      moderation_reports: {
+        Row: {
+          ai_flags: Json
+          created_at: string
+          details: string | null
+          id: string
+          reason: string
+          reporter_id: string | null
+          resolution_note: string | null
+          resolved_by: string | null
+          status: Database["public"]["Enums"]["report_status"]
+          target_id: string
+          target_type: string
+          updated_at: string
+        }
+        Insert: {
+          ai_flags?: Json
+          created_at?: string
+          details?: string | null
+          id?: string
+          reason: string
+          reporter_id?: string | null
+          resolution_note?: string | null
+          resolved_by?: string | null
+          status?: Database["public"]["Enums"]["report_status"]
+          target_id: string
+          target_type: string
+          updated_at?: string
+        }
+        Update: {
+          ai_flags?: Json
+          created_at?: string
+          details?: string | null
+          id?: string
+          reason?: string
+          reporter_id?: string | null
+          resolution_note?: string | null
+          resolved_by?: string | null
+          status?: Database["public"]["Enums"]["report_status"]
+          target_id?: string
+          target_type?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -3157,6 +4015,77 @@ export type Database = {
         }
         Relationships: []
       }
+      study_group_members: {
+        Row: {
+          group_id: string
+          joined_at: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          group_id: string
+          joined_at?: string
+          role?: string
+          user_id: string
+        }
+        Update: {
+          group_id?: string
+          joined_at?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "study_group_members_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "study_groups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      study_groups: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          is_public: boolean
+          meeting_link: string | null
+          name: string
+          owner_id: string
+          resources: Json
+          schedule: string | null
+          topic: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_public?: boolean
+          meeting_link?: string | null
+          name: string
+          owner_id: string
+          resources?: Json
+          schedule?: string | null
+          topic?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_public?: boolean
+          meeting_link?: string | null
+          name?: string
+          owner_id?: string
+          resources?: Json
+          schedule?: string | null
+          topic?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       study_sessions: {
         Row: {
           created_at: string
@@ -3676,6 +4605,14 @@ export type Database = {
         | "offer"
         | "rejected"
         | "withdrawn"
+      article_kind:
+        | "article"
+        | "tutorial"
+        | "note"
+        | "research"
+        | "snippet"
+        | "showcase"
+        | "success_story"
       assignment_answer_type: "short" | "long" | "worksheet"
       assignment_status: "draft" | "submitted" | "graded"
       audit_action:
@@ -3691,6 +4628,9 @@ export type Database = {
         | "reject"
         | "request_changes"
       challenge_difficulty: "beginner" | "intermediate" | "advanced"
+      chat_kind: "direct" | "group" | "course" | "community" | "study_group"
+      community_member_role: "owner" | "moderator" | "member"
+      community_visibility: "public" | "private" | "unlisted"
       content_status: "draft" | "review" | "approved" | "published" | "archived"
       course_difficulty: "beginner" | "intermediate" | "advanced"
       course_level:
@@ -3709,6 +4649,14 @@ export type Database = {
         | "ib"
         | "nios"
         | "other"
+      event_kind:
+        | "live_class"
+        | "workshop"
+        | "webinar"
+        | "contest"
+        | "hackathon"
+        | "career"
+        | "qa"
       interview_kind: "hr" | "technical" | "mock"
       learning_resource_kind:
         | "beginner_guide"
@@ -3727,8 +4675,15 @@ export type Database = {
         | "glossary"
         | "reference"
         | "downloadable"
+      mentorship_status:
+        | "pending"
+        | "active"
+        | "completed"
+        | "declined"
+        | "cancelled"
       preferred_language: "english" | "tamil"
       quiz_question_type: "mcq" | "true_false" | "fill_blank" | "match"
+      report_status: "open" | "reviewing" | "resolved" | "dismissed"
       resource_kind:
         | "notes"
         | "pdf"
@@ -3893,6 +4848,15 @@ export const Constants = {
         "rejected",
         "withdrawn",
       ],
+      article_kind: [
+        "article",
+        "tutorial",
+        "note",
+        "research",
+        "snippet",
+        "showcase",
+        "success_story",
+      ],
       assignment_answer_type: ["short", "long", "worksheet"],
       assignment_status: ["draft", "submitted", "graded"],
       audit_action: [
@@ -3909,6 +4873,9 @@ export const Constants = {
         "request_changes",
       ],
       challenge_difficulty: ["beginner", "intermediate", "advanced"],
+      chat_kind: ["direct", "group", "course", "community", "study_group"],
+      community_member_role: ["owner", "moderator", "member"],
+      community_visibility: ["public", "private", "unlisted"],
       content_status: ["draft", "review", "approved", "published", "archived"],
       course_difficulty: ["beginner", "intermediate", "advanced"],
       course_level: [
@@ -3929,6 +4896,15 @@ export const Constants = {
         "nios",
         "other",
       ],
+      event_kind: [
+        "live_class",
+        "workshop",
+        "webinar",
+        "contest",
+        "hackathon",
+        "career",
+        "qa",
+      ],
       interview_kind: ["hr", "technical", "mock"],
       learning_resource_kind: [
         "beginner_guide",
@@ -3948,8 +4924,16 @@ export const Constants = {
         "reference",
         "downloadable",
       ],
+      mentorship_status: [
+        "pending",
+        "active",
+        "completed",
+        "declined",
+        "cancelled",
+      ],
       preferred_language: ["english", "tamil"],
       quiz_question_type: ["mcq", "true_false", "fill_blank", "match"],
+      report_status: ["open", "reviewing", "resolved", "dismissed"],
       resource_kind: [
         "notes",
         "pdf",

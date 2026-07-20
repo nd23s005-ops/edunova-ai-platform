@@ -81,6 +81,7 @@ const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student/quizzes", label: "Quizzes", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
+  { to: "/dashboard/community", label: "Community", icon: Users },
   AI_ASSISTANT,
 ];
 
@@ -93,6 +94,7 @@ const ORG_NAV: NavItem[] = [
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   { to: "/dashboard/organization/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/organization/reports", label: "Reports", icon: FileText },
+  { to: "/dashboard/community", label: "Community", icon: Users },
   AI_ASSISTANT,
 ];
 
@@ -119,6 +121,7 @@ const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/student/my-courses", label: "My courses", icon: BookOpen },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
+  { to: "/dashboard/community", label: "Community", icon: Users },
   AI_ASSISTANT,
 ];
 
@@ -132,6 +135,7 @@ const COLLEGE_NAV: NavItem[] = [
   { to: "/dashboard/student/quizzes", label: "AI Quizzes", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
+  { to: "/dashboard/community", label: "Community", icon: Users },
   AI_ASSISTANT,
 ];
 
