@@ -77,9 +77,9 @@ function ThreadPage() {
         <CardContent className="pt-6">
           <div className="flex gap-4">
             <div className="flex flex-col items-center gap-1">
-              <button aria-label="Upvote" onClick={() => vote.mutate({ t: "discussion", id: d.id, value: q.data.my_vote === 1 ? 0 : 1 })}><ChevronUp className={`h-6 w-6 ${q.data.my_vote === 1 ? "text-primary" : ""}`} /></button>
+              <button aria-label="Upvote" onClick={() => vote.mutate({ t: "discussion", id: d.id, value: myVote === 1 ? 0 : 1 })}><ChevronUp className={`h-6 w-6 ${myVote === 1 ? "text-primary" : ""}`} /></button>
               <span className="text-sm font-semibold">{d.upvotes - d.downvotes}</span>
-              <button aria-label="Downvote" onClick={() => vote.mutate({ t: "discussion", id: d.id, value: q.data.my_vote === -1 ? 0 : -1 })}><ChevronDown className={`h-6 w-6 ${q.data.my_vote === -1 ? "text-primary" : ""}`} /></button>
+              <button aria-label="Downvote" onClick={() => vote.mutate({ t: "discussion", id: d.id, value: myVote === -1 ? 0 : -1 })}><ChevronDown className={`h-6 w-6 ${myVote === -1 ? "text-primary" : ""}`} /></button>
               <button aria-label="Bookmark" onClick={() => bookmark.mutate(true)}><Bookmark className="h-5 w-5 text-muted-foreground" /></button>
             </div>
             <div className="min-w-0 flex-1">
@@ -98,9 +98,9 @@ function ThreadPage() {
       </Card>
 
       <div>
-        <h2 className="mb-3 text-lg font-semibold">{q.data.answers.length} answers</h2>
+        <h2 className="mb-3 text-lg font-semibold">{data.answers.length} answers</h2>
         <div className="space-y-3">
-          {q.data.answers.map((a: { id: string; body: string; upvotes: number; downvotes: number; is_accepted: boolean; is_ai: boolean; author_id: string }) => (
+          {data.answers.map((a: { id: string; body: string; upvotes: number; downvotes: number; is_accepted: boolean; is_ai: boolean; author_id: string }) => (
             <Card key={a.id} className={a.is_accepted ? "border-emerald-500" : ""}>
               <CardContent className="pt-4">
                 <div className="flex gap-4">
@@ -116,7 +116,7 @@ function ThreadPage() {
                     {!a.is_accepted && d.author_id && (
                       <Button size="sm" variant="ghost" className="mt-2" onClick={() => accept.mutate(a.id)}>Mark accepted</Button>
                     )}
-                    <CommentsBlock answerId={a.id} comments={q.data.comments.filter((c: Comment) => c.answer_id === a.id)} onAdd={(body) => commentFn({ data: { answer_id: a.id, body } }).then(() => qc.invalidateQueries({ queryKey: ["community", "discussion", id] }))} />
+                    <CommentsBlock answerId={a.id} comments={data.comments.filter((c: Comment) => c.answer_id === a.id)} onAdd={(body) => commentFn({ data: { answer_id: a.id, body } }).then(() => qc.invalidateQueries({ queryKey: ["community", "discussion", id] }))} />
                   </div>
                 </div>
               </CardContent>
