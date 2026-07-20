@@ -54,11 +54,13 @@ import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboa
 import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_dashboard.dashboard.professional'
 import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
 import { Route as DashboardDashboardCollegeRouteImport } from './routes/_dashboard.dashboard.college'
+import { Route as DashboardDashboardAnalyticsRouteImport } from './routes/_dashboard.dashboard.analytics'
 import { Route as DashboardDashboardAiAssistantRouteImport } from './routes/_dashboard.dashboard.ai-assistant'
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
+import { Route as DashboardDashboardAnalyticsIndexRouteImport } from './routes/_dashboard.dashboard.analytics.index'
 import { Route as MarketingResourcesReadMlStepByStepLearningGuideRouteImport } from './routes/_marketing.resources.read.ml-step-by-step-learning-guide'
 import { Route as MarketingResourcesReadMlQuickRevisionNotesRouteImport } from './routes/_marketing.resources.read.ml-quick-revision-notes'
 import { Route as MarketingResourcesReadMlPracticeQuestionsRouteImport } from './routes/_marketing.resources.read.ml-practice-questions'
@@ -99,6 +101,12 @@ import { Route as DashboardDashboardStudentBrowseRouteImport } from './routes/_d
 import { Route as DashboardDashboardStudentAssessmentsRouteImport } from './routes/_dashboard.dashboard.student.assessments'
 import { Route as DashboardDashboardStudentAiTestsRouteImport } from './routes/_dashboard.dashboard.student.ai-tests'
 import { Route as DashboardDashboardMockTestsTestIdRouteImport } from './routes/_dashboard.dashboard.mock-tests.$testId'
+import { Route as DashboardDashboardAnalyticsReportsRouteImport } from './routes/_dashboard.dashboard.analytics.reports'
+import { Route as DashboardDashboardAnalyticsPredictionsRouteImport } from './routes/_dashboard.dashboard.analytics.predictions'
+import { Route as DashboardDashboardAnalyticsInsightsRouteImport } from './routes/_dashboard.dashboard.analytics.insights'
+import { Route as DashboardDashboardAnalyticsCoursesRouteImport } from './routes/_dashboard.dashboard.analytics.courses'
+import { Route as DashboardDashboardAnalyticsAssessmentsRouteImport } from './routes/_dashboard.dashboard.analytics.assessments'
+import { Route as DashboardDashboardAnalyticsAiUsageRouteImport } from './routes/_dashboard.dashboard.analytics.ai-usage'
 import { Route as DashboardDashboardAdminSupportRouteImport } from './routes/_dashboard.dashboard.admin.support'
 import { Route as DashboardDashboardAdminDebugErrorsRouteImport } from './routes/_dashboard.dashboard.admin.debug-errors'
 import { Route as DashboardDashboardAdminCmsRouteImport } from './routes/_dashboard.dashboard.admin.cms'
@@ -360,6 +368,12 @@ const DashboardDashboardCollegeRoute =
     path: '/dashboard/college',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardAnalyticsRoute =
+  DashboardDashboardAnalyticsRouteImport.update({
+    id: '/dashboard/analytics',
+    path: '/dashboard/analytics',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDashboardAiAssistantRoute =
   DashboardDashboardAiAssistantRouteImport.update({
     id: '/dashboard/ai-assistant',
@@ -387,6 +401,12 @@ const DashboardDashboardMockTestsIndexRoute =
     id: '/dashboard/mock-tests/',
     path: '/dashboard/mock-tests/',
     getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardAnalyticsIndexRoute =
+  DashboardDashboardAnalyticsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => DashboardDashboardAnalyticsRoute,
   } as any)
 const MarketingResourcesReadMlStepByStepLearningGuideRoute =
   MarketingResourcesReadMlStepByStepLearningGuideRouteImport.update({
@@ -628,6 +648,42 @@ const DashboardDashboardMockTestsTestIdRoute =
     path: '/dashboard/mock-tests/$testId',
     getParentRoute: () => DashboardRoute,
   } as any)
+const DashboardDashboardAnalyticsReportsRoute =
+  DashboardDashboardAnalyticsReportsRouteImport.update({
+    id: '/reports',
+    path: '/reports',
+    getParentRoute: () => DashboardDashboardAnalyticsRoute,
+  } as any)
+const DashboardDashboardAnalyticsPredictionsRoute =
+  DashboardDashboardAnalyticsPredictionsRouteImport.update({
+    id: '/predictions',
+    path: '/predictions',
+    getParentRoute: () => DashboardDashboardAnalyticsRoute,
+  } as any)
+const DashboardDashboardAnalyticsInsightsRoute =
+  DashboardDashboardAnalyticsInsightsRouteImport.update({
+    id: '/insights',
+    path: '/insights',
+    getParentRoute: () => DashboardDashboardAnalyticsRoute,
+  } as any)
+const DashboardDashboardAnalyticsCoursesRoute =
+  DashboardDashboardAnalyticsCoursesRouteImport.update({
+    id: '/courses',
+    path: '/courses',
+    getParentRoute: () => DashboardDashboardAnalyticsRoute,
+  } as any)
+const DashboardDashboardAnalyticsAssessmentsRoute =
+  DashboardDashboardAnalyticsAssessmentsRouteImport.update({
+    id: '/assessments',
+    path: '/assessments',
+    getParentRoute: () => DashboardDashboardAnalyticsRoute,
+  } as any)
+const DashboardDashboardAnalyticsAiUsageRoute =
+  DashboardDashboardAnalyticsAiUsageRouteImport.update({
+    id: '/ai-usage',
+    path: '/ai-usage',
+    getParentRoute: () => DashboardDashboardAnalyticsRoute,
+  } as any)
 const DashboardDashboardAdminSupportRoute =
   DashboardDashboardAdminSupportRouteImport.update({
     id: '/support',
@@ -819,6 +875,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/$': typeof DashboardDashboardSplatRoute
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
+  '/dashboard/analytics': typeof DashboardDashboardAnalyticsRouteWithChildren
   '/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
@@ -836,6 +893,12 @@ export interface FileRoutesByFullPath {
   '/dashboard/admin/cms': typeof DashboardDashboardAdminCmsRouteWithChildren
   '/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
+  '/dashboard/analytics/ai-usage': typeof DashboardDashboardAnalyticsAiUsageRoute
+  '/dashboard/analytics/assessments': typeof DashboardDashboardAnalyticsAssessmentsRoute
+  '/dashboard/analytics/courses': typeof DashboardDashboardAnalyticsCoursesRoute
+  '/dashboard/analytics/insights': typeof DashboardDashboardAnalyticsInsightsRoute
+  '/dashboard/analytics/predictions': typeof DashboardDashboardAnalyticsPredictionsRoute
+  '/dashboard/analytics/reports': typeof DashboardDashboardAnalyticsReportsRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsRouteWithChildren
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -876,6 +939,7 @@ export interface FileRoutesByFullPath {
   '/resources/read/ml-practice-questions': typeof MarketingResourcesReadMlPracticeQuestionsRoute
   '/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
+  '/dashboard/analytics/': typeof DashboardDashboardAnalyticsIndexRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
@@ -949,6 +1013,12 @@ export interface FileRoutesByTo {
   '/resources': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
   '/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
+  '/dashboard/analytics/ai-usage': typeof DashboardDashboardAnalyticsAiUsageRoute
+  '/dashboard/analytics/assessments': typeof DashboardDashboardAnalyticsAssessmentsRoute
+  '/dashboard/analytics/courses': typeof DashboardDashboardAnalyticsCoursesRoute
+  '/dashboard/analytics/insights': typeof DashboardDashboardAnalyticsInsightsRoute
+  '/dashboard/analytics/predictions': typeof DashboardDashboardAnalyticsPredictionsRoute
+  '/dashboard/analytics/reports': typeof DashboardDashboardAnalyticsReportsRoute
   '/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
   '/dashboard/student/browse': typeof DashboardDashboardStudentBrowseRoute
@@ -988,6 +1058,7 @@ export interface FileRoutesByTo {
   '/resources/read/ml-practice-questions': typeof MarketingResourcesReadMlPracticeQuestionsRoute
   '/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
+  '/dashboard/analytics': typeof DashboardDashboardAnalyticsIndexRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
@@ -1049,6 +1120,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/$': typeof DashboardDashboardSplatRoute
   '/_dashboard/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/_dashboard/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
+  '/_dashboard/dashboard/analytics': typeof DashboardDashboardAnalyticsRouteWithChildren
   '/_dashboard/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
@@ -1066,6 +1138,12 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/admin/cms': typeof DashboardDashboardAdminCmsRouteWithChildren
   '/_dashboard/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
   '/_dashboard/dashboard/admin/support': typeof DashboardDashboardAdminSupportRoute
+  '/_dashboard/dashboard/analytics/ai-usage': typeof DashboardDashboardAnalyticsAiUsageRoute
+  '/_dashboard/dashboard/analytics/assessments': typeof DashboardDashboardAnalyticsAssessmentsRoute
+  '/_dashboard/dashboard/analytics/courses': typeof DashboardDashboardAnalyticsCoursesRoute
+  '/_dashboard/dashboard/analytics/insights': typeof DashboardDashboardAnalyticsInsightsRoute
+  '/_dashboard/dashboard/analytics/predictions': typeof DashboardDashboardAnalyticsPredictionsRoute
+  '/_dashboard/dashboard/analytics/reports': typeof DashboardDashboardAnalyticsReportsRoute
   '/_dashboard/dashboard/mock-tests/$testId': typeof DashboardDashboardMockTestsTestIdRoute
   '/_dashboard/dashboard/student/ai-tests': typeof DashboardDashboardStudentAiTestsRouteWithChildren
   '/_dashboard/dashboard/student/assessments': typeof DashboardDashboardStudentAssessmentsRouteWithChildren
@@ -1106,6 +1184,7 @@ export interface FileRoutesById {
   '/_marketing/resources/read/ml-practice-questions': typeof MarketingResourcesReadMlPracticeQuestionsRoute
   '/_marketing/resources/read/ml-quick-revision-notes': typeof MarketingResourcesReadMlQuickRevisionNotesRoute
   '/_marketing/resources/read/ml-step-by-step-learning-guide': typeof MarketingResourcesReadMlStepByStepLearningGuideRoute
+  '/_dashboard/dashboard/analytics/': typeof DashboardDashboardAnalyticsIndexRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
@@ -1166,6 +1245,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/dashboard/admin'
     | '/dashboard/ai-assistant'
+    | '/dashboard/analytics'
     | '/dashboard/college'
     | '/dashboard/organization'
     | '/dashboard/professional'
@@ -1183,6 +1263,12 @@ export interface FileRouteTypes {
     | '/dashboard/admin/cms'
     | '/dashboard/admin/debug-errors'
     | '/dashboard/admin/support'
+    | '/dashboard/analytics/ai-usage'
+    | '/dashboard/analytics/assessments'
+    | '/dashboard/analytics/courses'
+    | '/dashboard/analytics/insights'
+    | '/dashboard/analytics/predictions'
+    | '/dashboard/analytics/reports'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/ai-tests'
     | '/dashboard/student/assessments'
@@ -1223,6 +1309,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-practice-questions'
     | '/resources/read/ml-quick-revision-notes'
     | '/resources/read/ml-step-by-step-learning-guide'
+    | '/dashboard/analytics/'
     | '/dashboard/mock-tests/'
     | '/dashboard/upskilling/'
     | '/dashboard/admin/cms/analytics'
@@ -1296,6 +1383,12 @@ export interface FileRouteTypes {
     | '/resources'
     | '/dashboard/admin/debug-errors'
     | '/dashboard/admin/support'
+    | '/dashboard/analytics/ai-usage'
+    | '/dashboard/analytics/assessments'
+    | '/dashboard/analytics/courses'
+    | '/dashboard/analytics/insights'
+    | '/dashboard/analytics/predictions'
+    | '/dashboard/analytics/reports'
     | '/dashboard/mock-tests/$testId'
     | '/dashboard/student/assessments'
     | '/dashboard/student/browse'
@@ -1335,6 +1428,7 @@ export interface FileRouteTypes {
     | '/resources/read/ml-practice-questions'
     | '/resources/read/ml-quick-revision-notes'
     | '/resources/read/ml-step-by-step-learning-guide'
+    | '/dashboard/analytics'
     | '/dashboard/mock-tests'
     | '/dashboard/upskilling'
     | '/dashboard/admin/cms/analytics'
@@ -1395,6 +1489,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/$'
     | '/_dashboard/dashboard/admin'
     | '/_dashboard/dashboard/ai-assistant'
+    | '/_dashboard/dashboard/analytics'
     | '/_dashboard/dashboard/college'
     | '/_dashboard/dashboard/organization'
     | '/_dashboard/dashboard/professional'
@@ -1412,6 +1507,12 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/admin/cms'
     | '/_dashboard/dashboard/admin/debug-errors'
     | '/_dashboard/dashboard/admin/support'
+    | '/_dashboard/dashboard/analytics/ai-usage'
+    | '/_dashboard/dashboard/analytics/assessments'
+    | '/_dashboard/dashboard/analytics/courses'
+    | '/_dashboard/dashboard/analytics/insights'
+    | '/_dashboard/dashboard/analytics/predictions'
+    | '/_dashboard/dashboard/analytics/reports'
     | '/_dashboard/dashboard/mock-tests/$testId'
     | '/_dashboard/dashboard/student/ai-tests'
     | '/_dashboard/dashboard/student/assessments'
@@ -1452,6 +1553,7 @@ export interface FileRouteTypes {
     | '/_marketing/resources/read/ml-practice-questions'
     | '/_marketing/resources/read/ml-quick-revision-notes'
     | '/_marketing/resources/read/ml-step-by-step-learning-guide'
+    | '/_dashboard/dashboard/analytics/'
     | '/_dashboard/dashboard/mock-tests/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/admin/cms/analytics'
@@ -1815,6 +1917,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardCollegeRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/analytics': {
+      id: '/_dashboard/dashboard/analytics'
+      path: '/dashboard/analytics'
+      fullPath: '/dashboard/analytics'
+      preLoaderRoute: typeof DashboardDashboardAnalyticsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/dashboard/ai-assistant': {
       id: '/_dashboard/dashboard/ai-assistant'
       path: '/dashboard/ai-assistant'
@@ -1849,6 +1958,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/mock-tests/'
       preLoaderRoute: typeof DashboardDashboardMockTestsIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/analytics/': {
+      id: '/_dashboard/dashboard/analytics/'
+      path: '/'
+      fullPath: '/dashboard/analytics/'
+      preLoaderRoute: typeof DashboardDashboardAnalyticsIndexRouteImport
+      parentRoute: typeof DashboardDashboardAnalyticsRoute
     }
     '/_marketing/resources/read/ml-step-by-step-learning-guide': {
       id: '/_marketing/resources/read/ml-step-by-step-learning-guide'
@@ -2130,6 +2246,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardMockTestsTestIdRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/dashboard/analytics/reports': {
+      id: '/_dashboard/dashboard/analytics/reports'
+      path: '/reports'
+      fullPath: '/dashboard/analytics/reports'
+      preLoaderRoute: typeof DashboardDashboardAnalyticsReportsRouteImport
+      parentRoute: typeof DashboardDashboardAnalyticsRoute
+    }
+    '/_dashboard/dashboard/analytics/predictions': {
+      id: '/_dashboard/dashboard/analytics/predictions'
+      path: '/predictions'
+      fullPath: '/dashboard/analytics/predictions'
+      preLoaderRoute: typeof DashboardDashboardAnalyticsPredictionsRouteImport
+      parentRoute: typeof DashboardDashboardAnalyticsRoute
+    }
+    '/_dashboard/dashboard/analytics/insights': {
+      id: '/_dashboard/dashboard/analytics/insights'
+      path: '/insights'
+      fullPath: '/dashboard/analytics/insights'
+      preLoaderRoute: typeof DashboardDashboardAnalyticsInsightsRouteImport
+      parentRoute: typeof DashboardDashboardAnalyticsRoute
+    }
+    '/_dashboard/dashboard/analytics/courses': {
+      id: '/_dashboard/dashboard/analytics/courses'
+      path: '/courses'
+      fullPath: '/dashboard/analytics/courses'
+      preLoaderRoute: typeof DashboardDashboardAnalyticsCoursesRouteImport
+      parentRoute: typeof DashboardDashboardAnalyticsRoute
+    }
+    '/_dashboard/dashboard/analytics/assessments': {
+      id: '/_dashboard/dashboard/analytics/assessments'
+      path: '/assessments'
+      fullPath: '/dashboard/analytics/assessments'
+      preLoaderRoute: typeof DashboardDashboardAnalyticsAssessmentsRouteImport
+      parentRoute: typeof DashboardDashboardAnalyticsRoute
+    }
+    '/_dashboard/dashboard/analytics/ai-usage': {
+      id: '/_dashboard/dashboard/analytics/ai-usage'
+      path: '/ai-usage'
+      fullPath: '/dashboard/analytics/ai-usage'
+      preLoaderRoute: typeof DashboardDashboardAnalyticsAiUsageRouteImport
+      parentRoute: typeof DashboardDashboardAnalyticsRoute
+    }
     '/_dashboard/dashboard/admin/support': {
       id: '/_dashboard/dashboard/admin/support'
       path: '/support'
@@ -2407,6 +2565,39 @@ const DashboardDashboardAdminRouteWithChildren =
     DashboardDashboardAdminRouteChildren,
   )
 
+interface DashboardDashboardAnalyticsRouteChildren {
+  DashboardDashboardAnalyticsAiUsageRoute: typeof DashboardDashboardAnalyticsAiUsageRoute
+  DashboardDashboardAnalyticsAssessmentsRoute: typeof DashboardDashboardAnalyticsAssessmentsRoute
+  DashboardDashboardAnalyticsCoursesRoute: typeof DashboardDashboardAnalyticsCoursesRoute
+  DashboardDashboardAnalyticsInsightsRoute: typeof DashboardDashboardAnalyticsInsightsRoute
+  DashboardDashboardAnalyticsPredictionsRoute: typeof DashboardDashboardAnalyticsPredictionsRoute
+  DashboardDashboardAnalyticsReportsRoute: typeof DashboardDashboardAnalyticsReportsRoute
+  DashboardDashboardAnalyticsIndexRoute: typeof DashboardDashboardAnalyticsIndexRoute
+}
+
+const DashboardDashboardAnalyticsRouteChildren: DashboardDashboardAnalyticsRouteChildren =
+  {
+    DashboardDashboardAnalyticsAiUsageRoute:
+      DashboardDashboardAnalyticsAiUsageRoute,
+    DashboardDashboardAnalyticsAssessmentsRoute:
+      DashboardDashboardAnalyticsAssessmentsRoute,
+    DashboardDashboardAnalyticsCoursesRoute:
+      DashboardDashboardAnalyticsCoursesRoute,
+    DashboardDashboardAnalyticsInsightsRoute:
+      DashboardDashboardAnalyticsInsightsRoute,
+    DashboardDashboardAnalyticsPredictionsRoute:
+      DashboardDashboardAnalyticsPredictionsRoute,
+    DashboardDashboardAnalyticsReportsRoute:
+      DashboardDashboardAnalyticsReportsRoute,
+    DashboardDashboardAnalyticsIndexRoute:
+      DashboardDashboardAnalyticsIndexRoute,
+  }
+
+const DashboardDashboardAnalyticsRouteWithChildren =
+  DashboardDashboardAnalyticsRoute._addFileChildren(
+    DashboardDashboardAnalyticsRouteChildren,
+  )
+
 interface DashboardDashboardStudentAiTestsRouteChildren {
   DashboardDashboardStudentAiTestsAnalyticsRoute: typeof DashboardDashboardStudentAiTestsAnalyticsRoute
   DashboardDashboardStudentAiTestsNewRoute: typeof DashboardDashboardStudentAiTestsNewRoute
@@ -2530,6 +2721,7 @@ interface DashboardRouteChildren {
   DashboardDashboardSplatRoute: typeof DashboardDashboardSplatRoute
   DashboardDashboardAdminRoute: typeof DashboardDashboardAdminRouteWithChildren
   DashboardDashboardAiAssistantRoute: typeof DashboardDashboardAiAssistantRoute
+  DashboardDashboardAnalyticsRoute: typeof DashboardDashboardAnalyticsRouteWithChildren
   DashboardDashboardCollegeRoute: typeof DashboardDashboardCollegeRoute
   DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
   DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
@@ -2548,6 +2740,8 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardSplatRoute: DashboardDashboardSplatRoute,
   DashboardDashboardAdminRoute: DashboardDashboardAdminRouteWithChildren,
   DashboardDashboardAiAssistantRoute: DashboardDashboardAiAssistantRoute,
+  DashboardDashboardAnalyticsRoute:
+    DashboardDashboardAnalyticsRouteWithChildren,
   DashboardDashboardCollegeRoute: DashboardDashboardCollegeRoute,
   DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
   DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,

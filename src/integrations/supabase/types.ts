@@ -109,6 +109,48 @@ export type Database = {
           },
         ]
       }
+      ai_insights: {
+        Row: {
+          body: string
+          confidence: number | null
+          expires_at: string | null
+          generated_at: string
+          id: string
+          kind: string
+          meta: Json
+          recommendations: Json
+          scope_id: string | null
+          scope_type: string
+          title: string
+        }
+        Insert: {
+          body: string
+          confidence?: number | null
+          expires_at?: string | null
+          generated_at?: string
+          id?: string
+          kind: string
+          meta?: Json
+          recommendations?: Json
+          scope_id?: string | null
+          scope_type: string
+          title: string
+        }
+        Update: {
+          body?: string
+          confidence?: number | null
+          expires_at?: string | null
+          generated_at?: string
+          id?: string
+          kind?: string
+          meta?: Json
+          recommendations?: Json
+          scope_id?: string | null
+          scope_type?: string
+          title?: string
+        }
+        Relationships: []
+      }
       ai_lesson_content: {
         Row: {
           concepts: Json
@@ -225,6 +267,45 @@ export type Database = {
           total?: number
           user_id?: string
           weaknesses?: Json
+        }
+        Relationships: []
+      }
+      ai_predictions: {
+        Row: {
+          confidence: number | null
+          expires_at: string | null
+          features: Json
+          generated_at: string
+          id: string
+          kind: string
+          label: string | null
+          subject_id: string
+          subject_type: string
+          value: number | null
+        }
+        Insert: {
+          confidence?: number | null
+          expires_at?: string | null
+          features?: Json
+          generated_at?: string
+          id?: string
+          kind: string
+          label?: string | null
+          subject_id: string
+          subject_type: string
+          value?: number | null
+        }
+        Update: {
+          confidence?: number | null
+          expires_at?: string | null
+          features?: Json
+          generated_at?: string
+          id?: string
+          kind?: string
+          label?: string | null
+          subject_id?: string
+          subject_type?: string
+          value?: number | null
         }
         Relationships: []
       }
@@ -390,6 +471,69 @@ export type Database = {
           time_taken_seconds?: number | null
           user_id?: string
           week_start?: string
+        }
+        Relationships: []
+      }
+      analytics_daily_metrics: {
+        Row: {
+          created_at: string
+          day: string
+          id: string
+          meta: Json
+          metric_key: string
+          metric_value: number
+          scope_id: string | null
+          scope_type: string
+        }
+        Insert: {
+          created_at?: string
+          day: string
+          id?: string
+          meta?: Json
+          metric_key: string
+          metric_value?: number
+          scope_id?: string | null
+          scope_type: string
+        }
+        Update: {
+          created_at?: string
+          day?: string
+          id?: string
+          meta?: Json
+          metric_key?: string
+          metric_value?: number
+          scope_id?: string | null
+          scope_type?: string
+        }
+        Relationships: []
+      }
+      analytics_events: {
+        Row: {
+          created_at: string
+          entity_id: string | null
+          entity_type: string | null
+          event_type: string
+          id: string
+          meta: Json
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          entity_id?: string | null
+          entity_type?: string | null
+          event_type: string
+          id?: string
+          meta?: Json
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          entity_id?: string | null
+          entity_type?: string | null
+          event_type?: string
+          id?: string
+          meta?: Json
+          user_id?: string | null
         }
         Relationships: []
       }
@@ -2003,6 +2147,39 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      report_templates: {
+        Row: {
+          created_at: string
+          id: string
+          is_shared: boolean
+          name: string
+          owner_id: string
+          scope: string
+          spec: Json
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_shared?: boolean
+          name: string
+          owner_id: string
+          scope?: string
+          spec: Json
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_shared?: boolean
+          name?: string
+          owner_id?: string
+          scope?: string
+          spec?: Json
+          updated_at?: string
+        }
+        Relationships: []
       }
       resource_bookmarks: {
         Row: {
