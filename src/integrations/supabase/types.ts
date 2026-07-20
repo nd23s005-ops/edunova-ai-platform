@@ -661,6 +661,215 @@ export type Database = {
           },
         ]
       }
+      ats_reports: {
+        Row: {
+          ai_summary: string | null
+          created_at: string
+          id: string
+          jd_text: string
+          keywords_matched: Json | null
+          keywords_missing: Json | null
+          resume_id: string | null
+          score: number | null
+          suggestions: Json | null
+          user_id: string
+        }
+        Insert: {
+          ai_summary?: string | null
+          created_at?: string
+          id?: string
+          jd_text: string
+          keywords_matched?: Json | null
+          keywords_missing?: Json | null
+          resume_id?: string | null
+          score?: number | null
+          suggestions?: Json | null
+          user_id: string
+        }
+        Update: {
+          ai_summary?: string | null
+          created_at?: string
+          id?: string
+          jd_text?: string
+          keywords_matched?: Json | null
+          keywords_missing?: Json | null
+          resume_id?: string | null
+          score?: number | null
+          suggestions?: Json | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ats_reports_resume_id_fkey"
+            columns: ["resume_id"]
+            isOneToOne: false
+            referencedRelation: "resumes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      career_certifications: {
+        Row: {
+          created_at: string
+          credential_id: string | null
+          expires_at: string | null
+          id: string
+          issued_at: string | null
+          issuer: string | null
+          title: string
+          updated_at: string
+          url: string | null
+          user_id: string
+          verified: boolean
+        }
+        Insert: {
+          created_at?: string
+          credential_id?: string | null
+          expires_at?: string | null
+          id?: string
+          issued_at?: string | null
+          issuer?: string | null
+          title: string
+          updated_at?: string
+          url?: string | null
+          user_id: string
+          verified?: boolean
+        }
+        Update: {
+          created_at?: string
+          credential_id?: string | null
+          expires_at?: string | null
+          id?: string
+          issued_at?: string | null
+          issuer?: string | null
+          title?: string
+          updated_at?: string
+          url?: string | null
+          user_id?: string
+          verified?: boolean
+        }
+        Relationships: []
+      }
+      career_goals: {
+        Row: {
+          cadence: string
+          completed_at: string | null
+          created_at: string
+          due_at: string | null
+          id: string
+          progress: number
+          target: number | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          cadence?: string
+          completed_at?: string | null
+          created_at?: string
+          due_at?: string | null
+          id?: string
+          progress?: number
+          target?: number | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          cadence?: string
+          completed_at?: string | null
+          created_at?: string
+          due_at?: string | null
+          id?: string
+          progress?: number
+          target?: number | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      career_profiles: {
+        Row: {
+          bio: string | null
+          career_goal: string | null
+          created_at: string
+          experience_level: string | null
+          id: string
+          preferences: Json | null
+          preferred_locations: string[] | null
+          socials: Json | null
+          target_roles: string[] | null
+          updated_at: string
+          user_id: string
+          work_mode: string[] | null
+        }
+        Insert: {
+          bio?: string | null
+          career_goal?: string | null
+          created_at?: string
+          experience_level?: string | null
+          id?: string
+          preferences?: Json | null
+          preferred_locations?: string[] | null
+          socials?: Json | null
+          target_roles?: string[] | null
+          updated_at?: string
+          user_id: string
+          work_mode?: string[] | null
+        }
+        Update: {
+          bio?: string | null
+          career_goal?: string | null
+          created_at?: string
+          experience_level?: string | null
+          id?: string
+          preferences?: Json | null
+          preferred_locations?: string[] | null
+          socials?: Json | null
+          target_roles?: string[] | null
+          updated_at?: string
+          user_id?: string
+          work_mode?: string[] | null
+        }
+        Relationships: []
+      }
+      career_roadmaps: {
+        Row: {
+          ai_generated: boolean
+          created_at: string
+          id: string
+          milestones: Json
+          progress: number
+          role: string
+          status: Database["public"]["Enums"]["roadmap_status"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          ai_generated?: boolean
+          created_at?: string
+          id?: string
+          milestones?: Json
+          progress?: number
+          role: string
+          status?: Database["public"]["Enums"]["roadmap_status"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          ai_generated?: boolean
+          created_at?: string
+          id?: string
+          milestones?: Json
+          progress?: number
+          role?: string
+          status?: Database["public"]["Enums"]["roadmap_status"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       chapters: {
         Row: {
           ai_generated: boolean
@@ -717,6 +926,101 @@ export type Database = {
             columns: ["module_id"]
             isOneToOne: false
             referencedRelation: "modules"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      coding_challenges: {
+        Row: {
+          created_at: string
+          difficulty: Database["public"]["Enums"]["challenge_difficulty"]
+          id: string
+          prompt: string
+          slug: string
+          source: string | null
+          starter_code: Json | null
+          tags: string[] | null
+          tests: Json | null
+          title: string
+          topic: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          difficulty: Database["public"]["Enums"]["challenge_difficulty"]
+          id?: string
+          prompt: string
+          slug: string
+          source?: string | null
+          starter_code?: Json | null
+          tags?: string[] | null
+          tests?: Json | null
+          title: string
+          topic: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          difficulty?: Database["public"]["Enums"]["challenge_difficulty"]
+          id?: string
+          prompt?: string
+          slug?: string
+          source?: string | null
+          starter_code?: Json | null
+          tags?: string[] | null
+          tests?: Json | null
+          title?: string
+          topic?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      coding_submissions: {
+        Row: {
+          ai_feedback: string | null
+          challenge_id: string | null
+          code: string
+          created_at: string
+          id: string
+          language: string
+          passed: number | null
+          runtime_ms: number | null
+          total: number | null
+          user_id: string
+          verdict: string | null
+        }
+        Insert: {
+          ai_feedback?: string | null
+          challenge_id?: string | null
+          code: string
+          created_at?: string
+          id?: string
+          language: string
+          passed?: number | null
+          runtime_ms?: number | null
+          total?: number | null
+          user_id: string
+          verdict?: string | null
+        }
+        Update: {
+          ai_feedback?: string | null
+          challenge_id?: string | null
+          code?: string
+          created_at?: string
+          id?: string
+          language?: string
+          passed?: number | null
+          runtime_ms?: number | null
+          total?: number | null
+          user_id?: string
+          verdict?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "coding_submissions_challenge_id_fkey"
+            columns: ["challenge_id"]
+            isOneToOne: false
+            referencedRelation: "coding_challenges"
             referencedColumns: ["id"]
           },
         ]
@@ -1294,6 +1598,309 @@ export type Database = {
           max_age_hours?: number
           max_rows?: number
           updated_at?: string
+        }
+        Relationships: []
+      }
+      internship_applications: {
+        Row: {
+          applied_at: string | null
+          created_at: string
+          id: string
+          internship_id: string | null
+          manual_company: string | null
+          manual_title: string | null
+          notes: string | null
+          status: Database["public"]["Enums"]["application_status"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          applied_at?: string | null
+          created_at?: string
+          id?: string
+          internship_id?: string | null
+          manual_company?: string | null
+          manual_title?: string | null
+          notes?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          applied_at?: string | null
+          created_at?: string
+          id?: string
+          internship_id?: string | null
+          manual_company?: string | null
+          manual_title?: string | null
+          notes?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "internship_applications_internship_id_fkey"
+            columns: ["internship_id"]
+            isOneToOne: false
+            referencedRelation: "internships"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      internships: {
+        Row: {
+          ai_match_score: number | null
+          company: string | null
+          created_at: string
+          description: string | null
+          duration: string | null
+          external_id: string | null
+          id: string
+          location: string | null
+          mode: string | null
+          posted_at: string | null
+          skills: string[] | null
+          source: string
+          stipend: string | null
+          title: string
+          url: string | null
+          user_id: string
+        }
+        Insert: {
+          ai_match_score?: number | null
+          company?: string | null
+          created_at?: string
+          description?: string | null
+          duration?: string | null
+          external_id?: string | null
+          id?: string
+          location?: string | null
+          mode?: string | null
+          posted_at?: string | null
+          skills?: string[] | null
+          source?: string
+          stipend?: string | null
+          title: string
+          url?: string | null
+          user_id: string
+        }
+        Update: {
+          ai_match_score?: number | null
+          company?: string | null
+          created_at?: string
+          description?: string | null
+          duration?: string | null
+          external_id?: string | null
+          id?: string
+          location?: string | null
+          mode?: string | null
+          posted_at?: string | null
+          skills?: string[] | null
+          source?: string
+          stipend?: string | null
+          title?: string
+          url?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      interview_sessions: {
+        Row: {
+          ai_feedback: string | null
+          communication_score: number | null
+          completed_at: string | null
+          confidence_score: number | null
+          config: Json
+          created_at: string
+          id: string
+          kind: Database["public"]["Enums"]["interview_kind"]
+          overall_score: number | null
+          started_at: string
+          status: string
+          topic: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          ai_feedback?: string | null
+          communication_score?: number | null
+          completed_at?: string | null
+          confidence_score?: number | null
+          config?: Json
+          created_at?: string
+          id?: string
+          kind: Database["public"]["Enums"]["interview_kind"]
+          overall_score?: number | null
+          started_at?: string
+          status?: string
+          topic?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          ai_feedback?: string | null
+          communication_score?: number | null
+          completed_at?: string | null
+          confidence_score?: number | null
+          config?: Json
+          created_at?: string
+          id?: string
+          kind?: Database["public"]["Enums"]["interview_kind"]
+          overall_score?: number | null
+          started_at?: string
+          status?: string
+          topic?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      interview_turns: {
+        Row: {
+          content: string
+          created_at: string
+          feedback: Json | null
+          id: string
+          role: string
+          score: number | null
+          session_id: string
+          turn_index: number
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          feedback?: Json | null
+          id?: string
+          role: string
+          score?: number | null
+          session_id: string
+          turn_index: number
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          feedback?: Json | null
+          id?: string
+          role?: string
+          score?: number | null
+          session_id?: string
+          turn_index?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "interview_turns_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "interview_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      job_applications: {
+        Row: {
+          applied_at: string | null
+          created_at: string
+          id: string
+          job_id: string | null
+          manual_company: string | null
+          manual_title: string | null
+          notes: string | null
+          status: Database["public"]["Enums"]["application_status"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          applied_at?: string | null
+          created_at?: string
+          id?: string
+          job_id?: string | null
+          manual_company?: string | null
+          manual_title?: string | null
+          notes?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          applied_at?: string | null
+          created_at?: string
+          id?: string
+          job_id?: string | null
+          manual_company?: string | null
+          manual_title?: string | null
+          notes?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_applications_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "jobs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      jobs: {
+        Row: {
+          ai_match_score: number | null
+          company: string | null
+          created_at: string
+          description: string | null
+          employment_type: string | null
+          external_id: string | null
+          id: string
+          location: string | null
+          mode: string | null
+          posted_at: string | null
+          salary_range: string | null
+          skills: string[] | null
+          source: string
+          title: string
+          url: string | null
+          user_id: string
+        }
+        Insert: {
+          ai_match_score?: number | null
+          company?: string | null
+          created_at?: string
+          description?: string | null
+          employment_type?: string | null
+          external_id?: string | null
+          id?: string
+          location?: string | null
+          mode?: string | null
+          posted_at?: string | null
+          salary_range?: string | null
+          skills?: string[] | null
+          source?: string
+          title: string
+          url?: string | null
+          user_id: string
+        }
+        Update: {
+          ai_match_score?: number | null
+          company?: string | null
+          created_at?: string
+          description?: string | null
+          employment_type?: string | null
+          external_id?: string | null
+          id?: string
+          location?: string | null
+          mode?: string | null
+          posted_at?: string | null
+          salary_range?: string | null
+          skills?: string[] | null
+          source?: string
+          title?: string
+          url?: string | null
+          user_id?: string
         }
         Relationships: []
       }
@@ -1955,6 +2562,45 @@ export type Database = {
         }
         Relationships: []
       }
+      portfolios: {
+        Row: {
+          created_at: string
+          id: string
+          is_public: boolean
+          sections: Json
+          share_token: string | null
+          slug: string
+          theme: string
+          updated_at: string
+          user_id: string
+          view_count: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_public?: boolean
+          sections?: Json
+          share_token?: string | null
+          slug: string
+          theme?: string
+          updated_at?: string
+          user_id: string
+          view_count?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_public?: boolean
+          sections?: Json
+          share_token?: string | null
+          slug?: string
+          theme?: string
+          updated_at?: string
+          user_id?: string
+          view_count?: number
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -2003,6 +2649,51 @@ export type Database = {
           phone?: string | null
           theme_pref?: string | null
           updated_at?: string
+        }
+        Relationships: []
+      }
+      project_recommendations: {
+        Row: {
+          category: string | null
+          created_at: string
+          features: Json | null
+          id: string
+          learning_outcome: string | null
+          level: Database["public"]["Enums"]["challenge_difficulty"]
+          objective: string | null
+          saved: boolean
+          technologies: string[] | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          features?: Json | null
+          id?: string
+          learning_outcome?: string | null
+          level?: Database["public"]["Enums"]["challenge_difficulty"]
+          objective?: string | null
+          saved?: boolean
+          technologies?: string[] | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          features?: Json | null
+          id?: string
+          learning_outcome?: string | null
+          level?: Database["public"]["Enums"]["challenge_difficulty"]
+          objective?: string | null
+          saved?: boolean
+          technologies?: string[] | null
+          title?: string
+          updated_at?: string
+          user_id?: string
         }
         Relationships: []
       }
@@ -2310,6 +3001,125 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      resume_versions: {
+        Row: {
+          created_at: string
+          id: string
+          note: string | null
+          resume_id: string
+          snapshot: Json
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          note?: string | null
+          resume_id: string
+          snapshot: Json
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          note?: string | null
+          resume_id?: string
+          snapshot?: Json
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "resume_versions_resume_id_fkey"
+            columns: ["resume_id"]
+            isOneToOne: false
+            referencedRelation: "resumes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      resumes: {
+        Row: {
+          ats_score: number | null
+          created_at: string
+          id: string
+          is_primary: boolean
+          sections: Json
+          template: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          ats_score?: number | null
+          created_at?: string
+          id?: string
+          is_primary?: boolean
+          sections?: Json
+          template?: string
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          ats_score?: number | null
+          created_at?: string
+          id?: string
+          is_primary?: boolean
+          sections?: Json
+          template?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      skill_gap_reports: {
+        Row: {
+          ai_summary: string | null
+          created_at: string
+          current_skills: Json | null
+          estimated_learning_hours: number | null
+          id: string
+          missing_skills: Json | null
+          readiness_pct: number | null
+          recommendations: Json | null
+          strong_skills: Json | null
+          target_role: string | null
+          updated_at: string
+          user_id: string
+          weak_skills: Json | null
+        }
+        Insert: {
+          ai_summary?: string | null
+          created_at?: string
+          current_skills?: Json | null
+          estimated_learning_hours?: number | null
+          id?: string
+          missing_skills?: Json | null
+          readiness_pct?: number | null
+          recommendations?: Json | null
+          strong_skills?: Json | null
+          target_role?: string | null
+          updated_at?: string
+          user_id: string
+          weak_skills?: Json | null
+        }
+        Update: {
+          ai_summary?: string | null
+          created_at?: string
+          current_skills?: Json | null
+          estimated_learning_hours?: number | null
+          id?: string
+          missing_skills?: Json | null
+          readiness_pct?: number | null
+          recommendations?: Json | null
+          strong_skills?: Json | null
+          target_role?: string | null
+          updated_at?: string
+          user_id?: string
+          weak_skills?: Json | null
+        }
+        Relationships: []
       }
       student_profiles: {
         Row: {
@@ -2859,6 +3669,13 @@ export type Database = {
         | "professional"
         | "school_student"
         | "college_student"
+      application_status:
+        | "saved"
+        | "applied"
+        | "interview"
+        | "offer"
+        | "rejected"
+        | "withdrawn"
       assignment_answer_type: "short" | "long" | "worksheet"
       assignment_status: "draft" | "submitted" | "graded"
       audit_action:
@@ -2873,6 +3690,7 @@ export type Database = {
         | "approve"
         | "reject"
         | "request_changes"
+      challenge_difficulty: "beginner" | "intermediate" | "advanced"
       content_status: "draft" | "review" | "approved" | "published" | "archived"
       course_difficulty: "beginner" | "intermediate" | "advanced"
       course_level:
@@ -2891,6 +3709,7 @@ export type Database = {
         | "ib"
         | "nios"
         | "other"
+      interview_kind: "hr" | "technical" | "mock"
       learning_resource_kind:
         | "beginner_guide"
         | "roadmap"
@@ -2919,6 +3738,7 @@ export type Database = {
         | "pyq"
         | "mindmap"
         | "cheatsheet"
+      roadmap_status: "draft" | "active" | "completed" | "archived"
       ticket_category:
         | "login"
         | "dashboard"
@@ -3065,6 +3885,14 @@ export const Constants = {
         "school_student",
         "college_student",
       ],
+      application_status: [
+        "saved",
+        "applied",
+        "interview",
+        "offer",
+        "rejected",
+        "withdrawn",
+      ],
       assignment_answer_type: ["short", "long", "worksheet"],
       assignment_status: ["draft", "submitted", "graded"],
       audit_action: [
@@ -3080,6 +3908,7 @@ export const Constants = {
         "reject",
         "request_changes",
       ],
+      challenge_difficulty: ["beginner", "intermediate", "advanced"],
       content_status: ["draft", "review", "approved", "published", "archived"],
       course_difficulty: ["beginner", "intermediate", "advanced"],
       course_level: [
@@ -3100,6 +3929,7 @@ export const Constants = {
         "nios",
         "other",
       ],
+      interview_kind: ["hr", "technical", "mock"],
       learning_resource_kind: [
         "beginner_guide",
         "roadmap",
@@ -3130,6 +3960,7 @@ export const Constants = {
         "mindmap",
         "cheatsheet",
       ],
+      roadmap_status: ["draft", "active", "completed", "archived"],
       ticket_category: [
         "login",
         "dashboard",
