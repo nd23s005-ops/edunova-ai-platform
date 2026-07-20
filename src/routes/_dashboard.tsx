@@ -82,6 +82,7 @@ const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   { to: "/dashboard/community", label: "Community", icon: Users },
+  { to: "/dashboard/analytics", label: "My Analytics", icon: BarChart3 },
   AI_ASSISTANT,
 ];
 
@@ -92,7 +93,7 @@ const ORG_NAV: NavItem[] = [
   { to: "/dashboard/organization/course-assignment", label: "Course assignment", icon: BookOpen },
   { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
-  { to: "/dashboard/organization/analytics", label: "Analytics", icon: BarChart3 },
+  { to: "/dashboard/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/organization/reports", label: "Reports", icon: FileText },
   { to: "/dashboard/community", label: "Community", icon: Users },
   AI_ASSISTANT,
@@ -106,7 +107,7 @@ const ADMIN_NAV: NavItem[] = [
   { to: "/dashboard/admin/courses", label: "Course management", icon: BookOpen },
   { to: "/dashboard/admin/organizations", label: "Organizations", icon: Building2 },
   { to: "/dashboard/admin/support", label: "Support queue", icon: MessageSquare },
-  { to: "/dashboard/admin/analytics", label: "Analytics", icon: BarChart3 },
+  { to: "/dashboard/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", icon: FileText },
   { to: "/dashboard/admin/activity", label: "Activity logs", icon: Notebook },
   { to: "/dashboard/admin/settings", label: "Settings", icon: Settings },
@@ -122,6 +123,7 @@ const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   { to: "/dashboard/community", label: "Community", icon: Users },
+  { to: "/dashboard/analytics", label: "My Analytics", icon: BarChart3 },
   AI_ASSISTANT,
 ];
 
@@ -136,6 +138,7 @@ const COLLEGE_NAV: NavItem[] = [
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   { to: "/dashboard/community", label: "Community", icon: Users },
+  { to: "/dashboard/analytics", label: "My Analytics", icon: BarChart3 },
   AI_ASSISTANT,
 ];
 
