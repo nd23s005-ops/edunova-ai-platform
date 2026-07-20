@@ -180,6 +180,9 @@ function LessonPage() {
       />
 
       <div className="space-y-6">
+        <LessonEnhancerPanel lessonId={lessonId} />
+
+
         {lesson.theory ? (
           <Section title="Theory">
             <Markdown>{lesson.theory}</Markdown>
