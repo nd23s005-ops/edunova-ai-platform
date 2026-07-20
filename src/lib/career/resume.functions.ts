@@ -59,7 +59,7 @@ export const saveResume = createServerFn({ method: "POST" })
     if (data.title) patch.title = data.title;
     if (data.template) patch.template = data.template;
     const { data: row, error } = await supabase
-      .from("resumes").update(patch).eq("id", data.id).eq("user_id", userId).select("*").single();
+      .from("resumes").update(patch as never).eq("id", data.id).eq("user_id", userId).select("*").single();
     if (error) throw new Error(error.message);
     if (data.create_version) {
       await supabase.from("resume_versions").insert({

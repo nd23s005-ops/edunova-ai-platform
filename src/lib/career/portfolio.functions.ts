@@ -42,7 +42,7 @@ export const savePortfolio = createServerFn({ method: "POST" })
     if (data.sections !== undefined) patch.sections = data.sections;
 
     const { data: row, error } = await supabase
-      .from("portfolios").upsert(patch, { onConflict: "user_id" }).select("*").single();
+      .from("portfolios").upsert(patch as never, { onConflict: "user_id" }).select("*").single();
     if (error) throw new Error(error.message);
     return { portfolio: row };
   });
