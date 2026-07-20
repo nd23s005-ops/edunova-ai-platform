@@ -20,7 +20,7 @@ export const trackEvent = createServerFn({ method: "POST" })
       event_type: data.event_type,
       entity_type: data.entity_type ?? null,
       entity_id: data.entity_id ?? null,
-      meta: data.meta ?? {},
+      meta: (data.meta ?? {}) as never,
     });
     if (error) throw new Error(error.message);
     return { ok: true };
