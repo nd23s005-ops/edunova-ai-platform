@@ -306,7 +306,7 @@ const CATEGORY_OPTIONS = [
   { value: "account", label: "Account & Registration" },
   { value: "dashboard", label: "Dashboard Access" },
   { value: "courses", label: "Courses & Enrollment" },
-  { value: "organization", label: "Organizations" },
+  
   { value: "technical", label: "Technical Issue" },
   { value: "other", label: "Something else" },
 ] as const;
