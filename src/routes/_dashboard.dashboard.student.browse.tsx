@@ -26,7 +26,7 @@ import {
   type CatalogCourse,
   type CatalogScope,
 } from "@/lib/courses/catalog";
-import { ensureCatalogCourse } from "@/lib/courses/ensure.functions";
+import { ensureCatalogCourse, seedCourseSkeleton } from "@/lib/courses/ensure.functions";
 
 export const Route = createFileRoute("/_dashboard/dashboard/student/browse")({
   component: BrowseCoursesPage,
