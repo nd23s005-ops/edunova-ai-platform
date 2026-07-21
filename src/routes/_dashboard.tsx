@@ -25,6 +25,7 @@ import {
   Shield,
   Sparkles,
   Target,
+  Trophy,
   
   Users,
   X,
