@@ -56,6 +56,6 @@ export const DEMO_ADMIN_CREDENTIALS: ReadonlyArray<{
   email: string;
   password: string;
 }> = [
-  { label: "Demo Admin 1", email: "demo.admin1@edunova.ai", password: "DemoAdmin1!" },
-  { label: "Demo Admin 2", email: "demo.admin2@edunova.ai", password: "DemoAdmin2!" },
+  { label: "Demo Admin 1", email: "admin1@123", password: "admin1" },
+  { label: "Demo Admin 2", email: "admin2@123", password: "admin2" },
 ];

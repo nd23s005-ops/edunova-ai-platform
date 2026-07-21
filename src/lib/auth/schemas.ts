@@ -17,7 +17,9 @@ export const passwordSchema = z
   .refine((v) => /[0-9]/.test(v), { message: "Include at least one number" });
 
 export const loginSchema = z.object({
-  email: emailSchema,
+  // Accept any non-empty identifier (email or admin ID) for login; format is
+  // enforced by the auth provider. Registration uses `emailSchema` separately.
+  email: z.string().trim().min(1, { message: "Email is required" }).max(255),
   password: z.string().min(1, { message: "Password is required" }),
   remember: z.boolean(),
 });
