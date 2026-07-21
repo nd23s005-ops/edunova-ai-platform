@@ -171,8 +171,31 @@ function RootComponent() {
     let unsub: (() => void) | undefined;
     (async () => {
       const { supabase } = await import("@/integrations/supabase/client");
-      const { data } = supabase.auth.onAuthStateChange((event) => {
+      const { data } = supabase.auth.onAuthStateChange(async (event) => {
         if (event !== "SIGNED_IN" && event !== "SIGNED_OUT" && event !== "USER_UPDATED") return;
+
+        // On sign-in, apply the role the visitor picked during onboarding.
+        // OAuth redirect lands on "/" so the login/register post-callback
+        // code never runs — without this, every OAuth user keeps the
+        // trigger's default `student` role and sees the School Student
+        // dashboard.
+        if (event === "SIGNED_IN" && typeof window !== "undefined") {
+          try {
+            const raw = sessionStorage.getItem("edunova.onboarding");
+            const saved = raw ? (JSON.parse(raw) as { role?: string }) : null;
+            const role = saved?.role;
+            if (role === "student" || role === "college_student" || role === "professional") {
+              const { completeAuthRoleSelection } = await import(
+                "@/lib/auth/role-selection.functions"
+              );
+              await completeAuthRoleSelection({ data: role });
+              sessionStorage.removeItem("edunova.onboarding");
+            }
+          } catch {
+            // Non-fatal; user can still navigate and role can be corrected later.
+          }
+        }
+
         router.invalidate();
         if (event !== "SIGNED_OUT") queryClient.invalidateQueries();
       });
