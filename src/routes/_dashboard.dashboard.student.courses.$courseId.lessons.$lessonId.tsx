@@ -1,16 +1,18 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useEffect, useRef } from "react";
-import { ArrowLeft, ArrowRight, CheckCircle2, Image as ImageIcon, Loader2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Download, Image as ImageIcon, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
 import { RoleGate } from "@/components/auth/RoleGate";
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { EmptyContent, Markdown, Section } from "@/components/courses/CourseUI";
 import { LessonEnhancerPanel } from "@/components/learning/LessonEnhancerPanel";
 import { getReadingPosition, saveReadingPosition } from "@/lib/ai/engine/reading-position.functions";
+import { exportLessonToPDF } from "@/lib/lesson-export";
 
 export const Route = createFileRoute(
   "/_dashboard/dashboard/student/courses/$courseId/lessons/$lessonId",
@@ -42,16 +44,27 @@ function LessonPage() {
     },
   });
 
-  const { data: siblings } = useQuery({
-    queryKey: ["chapter", lesson?.chapter_id, "lessons-nav"],
-    enabled: !!lesson?.chapter_id,
+  // Full course lesson sequence for linear prev/next across chapters.
+  const { data: sequence } = useQuery({
+    queryKey: ["course", courseId, "lesson-sequence"],
     queryFn: async () => {
       const { data } = await supabase
-        .from("lessons")
-        .select("id, order_index, title")
-        .eq("chapter_id", lesson!.chapter_id)
+        .from("chapters")
+        .select("id, order_index, lessons:lessons (id, title, order_index)")
+        .eq("course_id", courseId)
         .order("order_index");
-      return data ?? [];
+      type Ch = {
+        id: string;
+        order_index: number;
+        lessons: { id: string; title: string; order_index: number }[] | null;
+      };
+      const chs = ((data ?? []) as unknown as Ch[]).sort((a, b) => a.order_index - b.order_index);
+      const flat: { id: string; title: string; chapterId: string }[] = [];
+      for (const ch of chs) {
+        const ls = (ch.lessons ?? []).slice().sort((a, b) => a.order_index - b.order_index);
+        for (const l of ls) flat.push({ id: l.id, title: l.title, chapterId: ch.id });
+      }
+      return flat;
     },
   });
 
@@ -81,11 +94,42 @@ function LessonPage() {
           { onConflict: "user_id,lesson_id" },
         );
       if (error) throw error;
+
+      // Recompute course progress and reflect it on the enrollment row so
+      // My Courses / dashboards update automatically.
+      const { data: chapters } = await supabase
+        .from("chapters")
+        .select("id, lessons:lessons (id)")
+        .eq("course_id", courseId);
+      type ChL = { id: string; lessons: { id: string }[] | null };
+      const allLessonIds = ((chapters ?? []) as unknown as ChL[])
+        .flatMap((c) => (c.lessons ?? []).map((l) => l.id));
+      const total = allLessonIds.length;
+      let percent = 0;
+      if (total > 0) {
+        const { data: done } = await supabase
+          .from("lesson_progress")
+          .select("lesson_id")
+          .eq("user_id", u.user.id)
+          .in("lesson_id", allLessonIds);
+        const doneCount = (done ?? []).length;
+        percent = Math.max(0, Math.min(100, Math.round((doneCount / total) * 100)));
+      }
+      await supabase
+        .from("course_enrollments")
+        .update({ progress: percent, updated_at: new Date().toISOString() })
+        .eq("user_id", u.user.id)
+        .eq("course_id", courseId);
+      return percent;
     },
     onSuccess: () => {
       toast.success("Lesson marked complete");
       qc.invalidateQueries({ queryKey: ["lesson", lessonId, "completed"] });
       qc.invalidateQueries({ queryKey: ["course", courseId, "progress"] });
+      qc.invalidateQueries({ queryKey: ["me", "enrollments"] });
+      qc.invalidateQueries({ queryKey: ["me", "enrollments", "with-course"] });
+      qc.invalidateQueries({ queryKey: ["me", "resume-map"] });
+      qc.invalidateQueries({ queryKey: ["me", "streak"] });
     },
     onError: (e: Error) => toast.error(e.message),
   });
@@ -133,6 +177,28 @@ function LessonPage() {
     };
   }, [lesson, lessonId, courseId, savePos]);
 
+  // Per-lesson notes (device-local; also embedded in PDF export).
+  const notesKey = `lesson-notes:${lessonId}`;
+  const [notes, setNotes] = useState("");
+  useEffect(() => {
+    try {
+      setNotes(window.localStorage.getItem(notesKey) ?? "");
+    } catch {
+      /* ignore */
+    }
+  }, [notesKey]);
+  useEffect(() => {
+    const t = setTimeout(() => {
+      try {
+        window.localStorage.setItem(notesKey, notes);
+      } catch {
+        /* ignore */
+      }
+    }, 400);
+    return () => clearTimeout(t);
+  }, [notes, notesKey]);
+
+
 
   if (isLoading || !lesson) {
     return (
@@ -148,9 +214,9 @@ function LessonPage() {
   const examples = (Array.isArray(lesson.examples) ? lesson.examples : []) as Example[];
   const practice = (Array.isArray(lesson.practice_items) ? lesson.practice_items : []) as Practice[];
 
-  const idx = siblings?.findIndex((s) => s.id === lessonId) ?? -1;
-  const prev = siblings && idx > 0 ? siblings[idx - 1] : undefined;
-  const next = siblings && idx >= 0 ? siblings[idx + 1] : undefined;
+  const idx = sequence?.findIndex((s) => s.id === lessonId) ?? -1;
+  const prev = sequence && idx > 0 ? sequence[idx - 1] : undefined;
+  const next = sequence && idx >= 0 ? sequence[idx + 1] : undefined;
 
   return (
     <RoleGate allow={["student"]}>
@@ -167,15 +233,35 @@ function LessonPage() {
         title={lesson.title}
         description={lesson.estimated_minutes ? `~${lesson.estimated_minutes} min` : undefined}
         actions={
-          <Button
-            variant={completed ? "secondary" : "default"}
-            disabled={complete.isPending || !!completed}
-            onClick={() => complete.mutate()}
-          >
-            {complete.isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            <CheckCircle2 className="mr-2 h-4 w-4" />
-            {completed ? "Completed" : "Mark complete"}
-          </Button>
+          <div className="flex flex-wrap gap-2">
+            <Button
+              variant="outline"
+              onClick={() =>
+                exportLessonToPDF({
+                  lessonTitle: lesson.title,
+                  estimatedMinutes: lesson.estimated_minutes,
+                  theory: lesson.theory,
+                  keyNotes: lesson.key_notes,
+                  examples,
+                  practice,
+                  illustrations,
+                  notes,
+                })
+              }
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Export PDF
+            </Button>
+            <Button
+              variant={completed ? "secondary" : "default"}
+              disabled={complete.isPending || !!completed}
+              onClick={() => complete.mutate()}
+            >
+              {complete.isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              <CheckCircle2 className="mr-2 h-4 w-4" />
+              {completed ? "Completed" : "Mark complete"}
+            </Button>
+          </div>
         }
       />
 
@@ -256,6 +342,18 @@ function LessonPage() {
           </Section>
         )}
 
+        <Section
+          title="My notes"
+          description="Saved on this device. Included when you export to PDF."
+        >
+          <Textarea
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            placeholder="Jot down key takeaways, questions to revisit, or your own summary…"
+            className="min-h-[140px]"
+          />
+        </Section>
+
         <div className="flex flex-wrap justify-between gap-2">
           {prev ? (
             <Button
@@ -289,12 +387,12 @@ function LessonPage() {
               onClick={() => {
                 if (!completed) complete.mutate();
                 navigate({
-                  to: "/dashboard/student/courses/$courseId/chapters/$chapterId",
-                  params: { courseId, chapterId: lesson.chapter_id },
+                  to: "/dashboard/student/courses/$courseId",
+                  params: { courseId },
                 });
               }}
             >
-              Back to chapter
+              Finish course
             </Button>
           )}
         </div>
