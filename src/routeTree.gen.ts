@@ -100,6 +100,7 @@ import { Route as MarketingResourcesReadSlugRouteImport } from './routes/_market
 import { Route as DashboardDashboardUpskillingCourseIdRouteImport } from './routes/_dashboard.dashboard.upskilling.$courseId'
 import { Route as DashboardDashboardStudentSyllabusRouteImport } from './routes/_dashboard.dashboard.student.syllabus'
 import { Route as DashboardDashboardStudentStudyPlanRouteImport } from './routes/_dashboard.dashboard.student.study-plan'
+import { Route as DashboardDashboardStudentResourcesRouteImport } from './routes/_dashboard.dashboard.student.resources'
 import { Route as DashboardDashboardStudentProgressRouteImport } from './routes/_dashboard.dashboard.student.progress'
 import { Route as DashboardDashboardStudentMyCoursesRouteImport } from './routes/_dashboard.dashboard.student.my-courses'
 import { Route as DashboardDashboardStudentDailyQuizRouteImport } from './routes/_dashboard.dashboard.student.daily-quiz'
@@ -672,6 +673,12 @@ const DashboardDashboardStudentStudyPlanRoute =
     path: '/study-plan',
     getParentRoute: () => DashboardDashboardStudentRoute,
   } as any)
+const DashboardDashboardStudentResourcesRoute =
+  DashboardDashboardStudentResourcesRouteImport.update({
+    id: '/resources',
+    path: '/resources',
+    getParentRoute: () => DashboardDashboardStudentRoute,
+  } as any)
 const DashboardDashboardStudentProgressRoute =
   DashboardDashboardStudentProgressRouteImport.update({
     id: '/progress',
@@ -1148,6 +1155,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/student/progress': typeof DashboardDashboardStudentProgressRoute
+  '/dashboard/student/resources': typeof DashboardDashboardStudentResourcesRoute
   '/dashboard/student/study-plan': typeof DashboardDashboardStudentStudyPlanRoute
   '/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
@@ -1295,6 +1303,7 @@ export interface FileRoutesByTo {
   '/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/dashboard/student/progress': typeof DashboardDashboardStudentProgressRoute
+  '/dashboard/student/resources': typeof DashboardDashboardStudentResourcesRoute
   '/dashboard/student/study-plan': typeof DashboardDashboardStudentStudyPlanRoute
   '/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
@@ -1452,6 +1461,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/student/daily-quiz': typeof DashboardDashboardStudentDailyQuizRoute
   '/_dashboard/dashboard/student/my-courses': typeof DashboardDashboardStudentMyCoursesRoute
   '/_dashboard/dashboard/student/progress': typeof DashboardDashboardStudentProgressRoute
+  '/_dashboard/dashboard/student/resources': typeof DashboardDashboardStudentResourcesRoute
   '/_dashboard/dashboard/student/study-plan': typeof DashboardDashboardStudentStudyPlanRoute
   '/_dashboard/dashboard/student/syllabus': typeof DashboardDashboardStudentSyllabusRoute
   '/_dashboard/dashboard/upskilling/$courseId': typeof DashboardDashboardUpskillingCourseIdRoute
@@ -1608,6 +1618,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
     | '/dashboard/student/progress'
+    | '/dashboard/student/resources'
     | '/dashboard/student/study-plan'
     | '/dashboard/student/syllabus'
     | '/dashboard/upskilling/$courseId'
@@ -1755,6 +1766,7 @@ export interface FileRouteTypes {
     | '/dashboard/student/daily-quiz'
     | '/dashboard/student/my-courses'
     | '/dashboard/student/progress'
+    | '/dashboard/student/resources'
     | '/dashboard/student/study-plan'
     | '/dashboard/student/syllabus'
     | '/dashboard/upskilling/$courseId'
@@ -1911,6 +1923,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/student/daily-quiz'
     | '/_dashboard/dashboard/student/my-courses'
     | '/_dashboard/dashboard/student/progress'
+    | '/_dashboard/dashboard/student/resources'
     | '/_dashboard/dashboard/student/study-plan'
     | '/_dashboard/dashboard/student/syllabus'
     | '/_dashboard/dashboard/upskilling/$courseId'
@@ -2634,6 +2647,13 @@ declare module '@tanstack/react-router' {
       path: '/study-plan'
       fullPath: '/dashboard/student/study-plan'
       preLoaderRoute: typeof DashboardDashboardStudentStudyPlanRouteImport
+      parentRoute: typeof DashboardDashboardStudentRoute
+    }
+    '/_dashboard/dashboard/student/resources': {
+      id: '/_dashboard/dashboard/student/resources'
+      path: '/resources'
+      fullPath: '/dashboard/student/resources'
+      preLoaderRoute: typeof DashboardDashboardStudentResourcesRouteImport
       parentRoute: typeof DashboardDashboardStudentRoute
     }
     '/_dashboard/dashboard/student/progress': {
@@ -3403,6 +3423,7 @@ interface DashboardDashboardStudentRouteChildren {
   DashboardDashboardStudentDailyQuizRoute: typeof DashboardDashboardStudentDailyQuizRoute
   DashboardDashboardStudentMyCoursesRoute: typeof DashboardDashboardStudentMyCoursesRoute
   DashboardDashboardStudentProgressRoute: typeof DashboardDashboardStudentProgressRoute
+  DashboardDashboardStudentResourcesRoute: typeof DashboardDashboardStudentResourcesRoute
   DashboardDashboardStudentStudyPlanRoute: typeof DashboardDashboardStudentStudyPlanRoute
   DashboardDashboardStudentSyllabusRoute: typeof DashboardDashboardStudentSyllabusRoute
   DashboardDashboardStudentIndexRoute: typeof DashboardDashboardStudentIndexRoute
@@ -3426,6 +3447,8 @@ const DashboardDashboardStudentRouteChildren: DashboardDashboardStudentRouteChil
       DashboardDashboardStudentMyCoursesRoute,
     DashboardDashboardStudentProgressRoute:
       DashboardDashboardStudentProgressRoute,
+    DashboardDashboardStudentResourcesRoute:
+      DashboardDashboardStudentResourcesRoute,
     DashboardDashboardStudentStudyPlanRoute:
       DashboardDashboardStudentStudyPlanRoute,
     DashboardDashboardStudentSyllabusRoute:
