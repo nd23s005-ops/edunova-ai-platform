@@ -90,6 +90,7 @@ function CourseOverviewPage() {
     },
   });
 
+  const seedFn = useServerFn(seedCourseSkeleton);
   const enroll = useMutation({
     mutationFn: async () => {
       const { data: u } = await supabase.auth.getUser();
@@ -97,12 +98,24 @@ function CourseOverviewPage() {
       const { error } = await supabase
         .from("course_enrollments")
         .insert({ user_id: u.user.id, course_id: courseId });
-      if (error) throw error;
+      if (error && !/duplicate|unique/i.test(error.message)) throw error;
+      // Materialize chapters / lessons / resources immediately so My Courses
+      // and the Resources page reflect the enrollment on the next render.
+      // Idempotent: skips work if already seeded.
+      try {
+        await seedFn({ data: { courseId } });
+      } catch {
+        // Non-fatal — the course page will retry seeding on open.
+      }
     },
     onSuccess: () => {
       toast.success("Enrolled");
       qc.invalidateQueries({ queryKey: ["me", "enrollment", courseId] });
       qc.invalidateQueries({ queryKey: ["me", "enrollments"] });
+      qc.invalidateQueries({ queryKey: ["me", "enrollments", "slugs"] });
+      qc.invalidateQueries({ queryKey: ["me", "resources", "enrolled"] });
+      qc.invalidateQueries({ queryKey: ["course", courseId, "resources"] });
+      qc.invalidateQueries({ queryKey: ["course", courseId, "chapters"] });
     },
     onError: (e: Error) => toast.error(e.message),
   });
