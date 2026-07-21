@@ -5,7 +5,7 @@ import {
   AlertTriangle,
   Users,
   BookOpen,
-  Building2,
+  
   BarChart3,
   FileText,
   Settings,
