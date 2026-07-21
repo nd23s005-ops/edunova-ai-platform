@@ -85,12 +85,14 @@ const ROLES: RoleCard[] = [
     accent: "from-[oklch(0.78_0.15_140)] to-[oklch(0.6_0.17_150)]",
   },
   {
-    key: "organization",
-    title: "Organization",
-    description: "Train teams at scale with cohort analytics and rollout tools.",
-    icon: Building2,
-    accent: "from-[oklch(0.7_0.15_280)] to-[oklch(0.55_0.18_290)]",
+    key: "professional",
+    title: "Working Professional",
+    description: "Upskill or switch careers with focused AI mentors.",
+    icon: Briefcase,
+    accent: "from-[oklch(0.78_0.15_140)] to-[oklch(0.6_0.17_150)]",
+    _dedupe: true,
   },
+
   {
     key: "admin",
     title: "Administrator",
