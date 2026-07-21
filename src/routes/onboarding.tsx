@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
   BookOpenCheck,
-  Building2,
   Briefcase,
   Shield,
   ArrowLeft,
@@ -24,7 +23,7 @@ export const Route = createFileRoute("/onboarding")({
       {
         name: "description",
         content:
-          "Personalize your EduNova AI experience — choose your role and learning preferences in a guided setup.",
+          "Choose your role and jump straight into your personalized EduNova AI workspace.",
       },
       { name: "robots", content: "noindex" },
     ],
@@ -36,7 +35,6 @@ export const Route = createFileRoute("/onboarding")({
     return out;
   },
   beforeLoad: async () => {
-    // A signed-in user with a role should never see role selection again.
     const { data } = await supabase.auth.getUser();
     if (data.user) {
       const { data: r } = await supabase
@@ -52,13 +50,12 @@ export const Route = createFileRoute("/onboarding")({
   component: OnboardingPage,
 });
 
-// ---------------------------------------------------------------- data
 type RoleCard = {
   key: AppRole;
   title: string;
   description: string;
   icon: typeof GraduationCap;
-  accent: string; // gradient class
+  accent: string;
   restricted?: boolean;
 };
 
@@ -94,30 +91,8 @@ const ROLES: RoleCard[] = [
   },
 ];
 
-
-const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[]> = {
-  student: [
-    { key: "school", label: "School Student", desc: "K-12 curriculum, exam prep, homework help." },
-    { key: "exam", label: "Competitive Exam Aspirant", desc: "JEE, NEET, UPSC, GRE — targeted practice." },
-    { key: "hobby", label: "Curious Learner", desc: "Explore new topics beyond the syllabus." },
-  ],
-  college_student: [
-    { key: "engineering", label: "Engineering / Tech", desc: "CS, coding, projects, placement prep." },
-    { key: "general", label: "General Degree", desc: "Arts, commerce, sciences and research support." },
-    { key: "postgrad", label: "Post-graduate / Research", desc: "Advanced coursework, thesis, publications." },
-  ],
-  professional: [
-    { key: "upskill", label: "Upskilling", desc: "Stay sharp in your current role." },
-    { key: "switch", label: "Career Switch", desc: "Move into a new domain confidently." },
-    { key: "skills", label: "New Skills", desc: "Master in-demand tools and topics." },
-  ],
-  admin: [],
-};
-
-
-// ---------------------------------------------------------------- storage
 const KEY = "edunova.onboarding";
-type Saved = { role?: AppRole; preference?: string };
+type Saved = { role?: AppRole };
 function loadSaved(): Saved {
   if (typeof window === "undefined") return {};
   try {
@@ -131,76 +106,62 @@ function saveSaved(v: Saved) {
   sessionStorage.setItem(KEY, JSON.stringify(v));
 }
 
-// ---------------------------------------------------------------- component
 function OnboardingPage() {
   const navigate = useNavigate();
   const { mode: entryMode } = Route.useSearch();
   const [step, setStep] = useState(1);
   const [role, setRole] = useState<AppRole | null>(null);
-  const [preference, setPreference] = useState<string | null>(null);
 
   useEffect(() => {
     const s = loadSaved();
     if (s.role) setRole(s.role);
-    if (s.preference) setPreference(s.preference);
   }, []);
 
   useEffect(() => {
-    saveSaved({ role: role ?? undefined, preference: preference ?? undefined });
-  }, [role, preference]);
+    saveSaved({ role: role ?? undefined });
+  }, [role]);
 
-  const totalSteps = role === "admin" ? 2 : 3;
-  const currentIndex = step;
-  const progress = (currentIndex / totalSteps) * 100;
-
-  const canNext =
-    (step === 1 && role) ||
-    (step === 2 && (role === "admin" || preference));
+  const totalSteps = 2;
+  const progress = (step / totalSteps) * 100;
+  const canNext = step === 1 && !!role;
 
   function next() {
     if (!canNext) return;
-    setStep((s) => s + 1);
+    setStep(2);
   }
-
 
   function back() {
     if (step === 1) {
       navigate({ to: "/" });
       return;
     }
-    setStep((s) => s - 1);
+    setStep(1);
   }
 
   function goToAuth(mode: "login" | "register") {
     if (!role) return;
-    if (role === "admin" && mode === "register") return; // no public register
+    if (role === "admin" && mode === "register") return;
     navigate({
       to: mode === "login" ? "/login" : "/register",
-      search: { role, preference: preference ?? undefined } as never,
+      search: { role } as never,
     });
   }
 
   return (
     <div className="dark relative min-h-dvh overflow-hidden bg-[#071018] text-[#F5F7FA]">
-      {/* background glow */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <div className="absolute -top-40 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-[oklch(0.7_0.19_40)]/10 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-[400px] w-[500px] rounded-full bg-[oklch(0.6_0.16_200)]/10 blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-dvh max-w-6xl flex-col px-4 py-6 sm:px-8">
-        {/* Header */}
         <header className="flex items-center justify-between">
           <Logo />
-          <Link
-            to="/"
-            className="text-xs font-medium text-white/60 transition hover:text-white"
-          >
+          <Link to="/" className="text-xs font-medium text-white/60 transition hover:text-white">
             Skip for now →
           </Link>
         </header>
 
-        {/* Progress */}
         <div className="mt-8">
           <div className="flex items-center justify-between text-xs">
             <span className="font-semibold uppercase tracking-[0.18em] text-white/50">
@@ -218,7 +179,6 @@ function OnboardingPage() {
           </div>
         </div>
 
-        {/* Body */}
         <main className="flex flex-1 flex-col justify-center py-10">
           <AnimatePresence mode="wait">
             {step === 1 && (
@@ -232,7 +192,7 @@ function OnboardingPage() {
                 <StepHeading
                   eyebrow="Personalize"
                   title="Who are you on EduNova AI?"
-                  subtitle="Choose your role to personalize your learning experience, dashboard, AI mentor, and platform features."
+                  subtitle="Pick your role — Nova tailors your dashboard, mentor, and courses to you."
                 />
                 <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {ROLES.map((r) => (
@@ -247,60 +207,9 @@ function OnboardingPage() {
               </motion.section>
             )}
 
-            {step === 2 && role && role !== "admin" && (
+            {step === 2 && role && (
               <motion.section
                 key="step2"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.35 }}
-              >
-                <StepHeading
-                  eyebrow="Learning preferences"
-                  title="What best describes you?"
-                  subtitle="Nova adapts the depth, pace, and examples in every session based on this."
-                />
-                <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-3">
-                  {PREFERENCES[role].map((p) => (
-                    <button
-                      key={p.key}
-                      onClick={() => setPreference(p.key)}
-                      className={`group rounded-2xl border p-5 text-left transition-all ${
-                        preference === p.key
-                          ? "border-[oklch(0.7_0.19_40)]/70 bg-white/[0.06]"
-                          : "border-white/[0.08] bg-white/[0.03] hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.05]"
-                      }`}
-                    >
-                      <div className="flex items-start justify-between">
-                        <p className="font-semibold">{p.label}</p>
-                        {preference === p.key && (
-                          <span className="grid h-6 w-6 place-items-center rounded-full bg-[oklch(0.7_0.19_40)] text-white">
-                            <Check className="h-3.5 w-3.5" />
-                          </span>
-                        )}
-                      </div>
-                      <p className="mt-2 text-sm text-white/50">{p.desc}</p>
-                    </button>
-                  ))}
-                </div>
-              </motion.section>
-            )}
-
-            {step === 2 && role === "admin" && (
-              <motion.section
-                key="step2-admin"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.35 }}
-              >
-                <AdminAccessCard onContinue={() => goToAuth("login")} />
-              </motion.section>
-            )}
-
-            {step === 3 && role && (
-              <motion.section
-                key="step3"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
@@ -317,8 +226,7 @@ function OnboardingPage() {
           </AnimatePresence>
         </main>
 
-        {/* Footer nav */}
-        {step < 3 && !(step === 2 && role === "admin") && (
+        {step < 2 && (
           <footer className="flex items-center justify-between gap-3 pb-4">
             <Button variant="ghost" onClick={back} className="gap-2 text-white/70 hover:bg-white/[0.06] hover:text-white">
               <ArrowLeft className="h-4 w-4" /> Back
@@ -329,7 +237,7 @@ function OnboardingPage() {
               size="lg"
               className="gap-2 bg-gradient-to-r from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] px-6 text-white hover:opacity-90 disabled:opacity-40"
             >
-              {step === 2 ? "Almost done" : "Continue"}
+              Continue
               <ArrowRight className="h-4 w-4" />
             </Button>
           </footer>
@@ -339,16 +247,7 @@ function OnboardingPage() {
   );
 }
 
-// ---------------------------------------------------------------- subcomponents
-function StepHeading({
-  eyebrow,
-  title,
-  subtitle,
-}: {
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-}) {
+function StepHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[oklch(0.82_0.16_55)]">
@@ -378,20 +277,16 @@ function RoleCardView({
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border p-6 text-left backdrop-blur-xl transition-colors ${
         selected
-          ? "border-[oklch(0.7_0.19_40)]/70 bg-white/[0.07] shadow-[0_0_0_1px_oklch(0.7_0.19_40)/40,0_30px_80px_-30px_oklch(0.7_0.19_40)/50]"
+          ? "border-[oklch(0.7_0.19_40)]/70 bg-white/[0.07]"
           : "border-white/[0.08] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05]"
       }`}
     >
-      {/* glow */}
       <div
         aria-hidden
         className={`pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br opacity-0 blur-xl transition-opacity ${role.accent} ${selected ? "opacity-30" : "group-hover:opacity-20"}`}
       />
-
       <div className="relative flex items-center gap-3">
-        <div
-          className={`grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br text-white shadow-lg ${role.accent}`}
-        >
+        <div className={`grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br text-white shadow-lg ${role.accent}`}>
           <Icon className="h-5 w-5" />
         </div>
         {role.restricted && (
@@ -405,35 +300,9 @@ function RoleCardView({
           </span>
         )}
       </div>
-
       <h3 className="relative mt-5 text-lg font-semibold">{role.title}</h3>
       <p className="relative mt-1.5 text-sm leading-relaxed text-white/55">{role.description}</p>
     </motion.button>
-  );
-}
-
-function AdminAccessCard({ onContinue }: { onContinue: () => void }) {
-  return (
-    <div className="mx-auto max-w-xl">
-      <div className="rounded-3xl border border-white/[0.08] bg-white/[0.04] p-8 text-center backdrop-blur-xl">
-        <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[oklch(0.45_0.05_240)] to-[oklch(0.3_0.04_240)] text-white">
-          <Shield className="h-6 w-6" />
-        </div>
-        <h2 className="mt-6 text-2xl font-bold">Administrator access</h2>
-        <p className="mt-3 text-sm text-white/60">
-          Administrator access is restricted to authorized personnel only. Public registration is disabled.
-          Future authentication may include admin invitation, secure credentials, and multi-factor authentication.
-        </p>
-        <Button
-          onClick={onContinue}
-          size="lg"
-          className="mt-6 gap-2 bg-gradient-to-r from-[oklch(0.82_0.16_55)] to-[oklch(0.7_0.19_40)] px-6 text-white hover:opacity-90"
-        >
-          Continue to admin sign in
-          <ArrowRight className="h-4 w-4" />
-        </Button>
-      </div>
-    </div>
   );
 }
 
@@ -460,7 +329,7 @@ function FinalCard({
       Login
     </Button>
   );
-  const secondaryBtn = (
+  const secondaryBtn = role === "admin" ? null : (
     <Button
       key="register"
       onClick={onRegister}
@@ -482,12 +351,12 @@ function FinalCard({
         </p>
         <h2 className="mt-2 text-2xl font-bold">Ready when you are</h2>
         <p className="mt-2 text-sm text-white/60">
-          {primary === "register"
-            ? `Create your ${cfg.title.toLowerCase()} account to get started with Nova, or sign in if you already have one.`
-            : `Sign in to continue, or create your ${cfg.title.toLowerCase()} account to get started with Nova.`}
+          {primary === "register" && role !== "admin"
+            ? `Create your ${cfg.title.toLowerCase()} account, or sign in if you already have one.`
+            : `Sign in to your ${cfg.title.toLowerCase()} workspace.`}
         </p>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          {primary === "register" ? [secondaryBtn, primaryBtn] : [primaryBtn, secondaryBtn]}
+        <div className={`mt-6 grid gap-3 ${secondaryBtn ? "sm:grid-cols-2" : ""}`}>
+          {primary === "register" && secondaryBtn ? [secondaryBtn, primaryBtn] : [primaryBtn, secondaryBtn].filter(Boolean)}
         </div>
       </div>
     </div>

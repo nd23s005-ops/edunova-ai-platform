@@ -15,6 +15,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { DashboardHeader, StatCard } from "@/components/dashboard/DashboardShared";
+import { AIBriefSections } from "@/components/dashboard/AIBriefSections";
 import {
   SectionHeader,
   DashCard,
@@ -86,6 +87,11 @@ function CollegeDashboard() {
         title={firstName ? `Welcome, ${firstName}` : "Welcome"}
         description="Your college workspace — courses, projects and placement prep."
       />
+
+      <div className="mb-10">
+        <AIBriefSections role="college_student" />
+      </div>
+
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard label="Enrolled" value={enrolled.length} icon={<BookOpen className="h-4 w-4" />} />

@@ -13,6 +13,7 @@ import {
   Compass,
 } from "lucide-react";
 import { DashboardHeader, StatCard } from "@/components/dashboard/DashboardShared";
+import { AIBriefSections } from "@/components/dashboard/AIBriefSections";
 import {
   SectionHeader,
   DashCard,
@@ -146,6 +147,10 @@ function ProfessionalDashboard() {
         title={firstName ? `Welcome back, ${firstName}` : "Professional workspace"}
         description="Career growth and upskilling paths powered by Nova AI."
       />
+
+      <div className="mb-10">
+        <AIBriefSections role="professional" />
+      </div>
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard label="Active paths" value={inProgress.length} icon={<Briefcase className="h-4 w-4" />} />
