@@ -29,11 +29,11 @@ export function RoleGate({ allow, children }: { allow: AppRole[]; children: Reac
     );
   }
 
-  // Every "student" gate implicitly permits college students so shared learning
-  // surfaces (courses, quizzes, syllabus) work for both education tracks
-  // without editing dozens of route files.
-  const expanded = allow.includes("student") && !allow.includes("college_student")
-    ? [...allow, "college_student" as AppRole]
+  // Every "student" gate implicitly permits college students and professionals
+  // so shared learning surfaces (courses, lessons, quizzes) work for all three
+  // learner tracks without editing dozens of route files.
+  const expanded = allow.includes("student")
+    ? Array.from(new Set([...allow, "college_student" as AppRole, "professional" as AppRole]))
     : allow;
 
   if (!data || !expanded.includes(data)) {
