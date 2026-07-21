@@ -2,7 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, CheckCircle2, Download, Image as ImageIcon, Loader2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Image as ImageIcon, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
 import { RoleGate } from "@/components/auth/RoleGate";
@@ -12,7 +12,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { EmptyContent, Markdown, Section } from "@/components/courses/CourseUI";
 import { LessonEnhancerPanel } from "@/components/learning/LessonEnhancerPanel";
 import { getReadingPosition, saveReadingPosition } from "@/lib/ai/engine/reading-position.functions";
-import { exportLessonToPDF } from "@/lib/lesson-export";
+import { LessonExportDialog } from "@/components/learning/LessonExportDialog";
 
 export const Route = createFileRoute(
   "/_dashboard/dashboard/student/courses/$courseId/lessons/$lessonId",
@@ -234,24 +234,18 @@ function LessonPage() {
         description={lesson.estimated_minutes ? `~${lesson.estimated_minutes} min` : undefined}
         actions={
           <div className="flex flex-wrap gap-2">
-            <Button
-              variant="outline"
-              onClick={() =>
-                exportLessonToPDF({
-                  lessonTitle: lesson.title,
-                  estimatedMinutes: lesson.estimated_minutes,
-                  theory: lesson.theory,
-                  keyNotes: lesson.key_notes,
-                  examples,
-                  practice,
-                  illustrations,
-                  notes,
-                })
-              }
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Export PDF
-            </Button>
+            <LessonExportDialog
+              data={{
+                lessonTitle: lesson.title,
+                estimatedMinutes: lesson.estimated_minutes,
+                theory: lesson.theory,
+                keyNotes: lesson.key_notes,
+                examples,
+                practice,
+                illustrations,
+                notes,
+              }}
+            />
             <Button
               variant={completed ? "secondary" : "default"}
               disabled={complete.isPending || !!completed}
