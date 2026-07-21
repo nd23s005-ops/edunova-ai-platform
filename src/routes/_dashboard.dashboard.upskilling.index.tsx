@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { Search, Sparkles, Clock, Layers, Star, ArrowRight, BookOpen } from "lucide-react";
+import { Search, Sparkles, Clock, Layers, ArrowRight, BookOpen } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
 import { Input } from "@/components/ui/input";
