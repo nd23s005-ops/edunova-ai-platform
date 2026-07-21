@@ -4,7 +4,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { ArrowLeft, Loader2, Shield } from "lucide-react";
+import { AlertCircle, ArrowLeft, ChevronDown, Loader2, Shield } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +18,7 @@ import { DemoCredentialsPopup } from "@/components/admin/DemoCredentialsPopup";
 import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
 import { homeForRole, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
+import { DEMO_ADMIN_CREDENTIALS } from "@/lib/admin/access";
 import type { AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_auth/login")({
@@ -62,14 +63,41 @@ function LoginPage() {
   const queryClient = useQueryClient();
   const { redirect: redirectTo, role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
+  const [adminError, setAdminError] = useState<string | null>(null);
 
   const form = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
     defaultValues: { email: "", password: "", remember: true },
   });
 
+  const isAdminFlow = selectedRole === "admin";
+  const allowedDemoEmails = new Set(DEMO_ADMIN_CREDENTIALS.map((c) => c.email.toLowerCase()));
+
+  const fillDemo = (email: string, password: string) => {
+    form.setValue("email", email, { shouldValidate: true });
+    form.setValue("password", password, { shouldValidate: true });
+    setAdminError(null);
+  };
+
   const onSubmit = async (values: LoginInput) => {
     setSubmitting(true);
+    setAdminError(null);
+
+    // For admin sign-in, catch obvious typos like "demo.admin1@edunova.ai"
+    // before hitting the auth server and point to the seeded demo IDs.
+    if (isAdminFlow) {
+      const entered = values.email.trim().toLowerCase();
+      const looksLikeDemoTypo = /^demo[._-]?admin/i.test(values.email) || entered.endsWith("@edunova.ai");
+      if (looksLikeDemoTypo && !allowedDemoEmails.has(entered)) {
+        const list = DEMO_ADMIN_CREDENTIALS.map((c) => c.email).join(" or ");
+        const message = `That admin account doesn't exist. Use ${list} — click "Fill" below to auto-fill a demo account.`;
+        setAdminError(message);
+        toast.error(message);
+        setSubmitting(false);
+        return;
+      }
+    }
+
     const { data, error } = await supabase.auth.signInWithPassword({
       email: values.email,
       password: values.password,
@@ -77,7 +105,12 @@ function LoginPage() {
 
     if (error) {
       const msg = error.message.toLowerCase();
-      if (msg.includes("invalid")) {
+      if (isAdminFlow && msg.includes("invalid")) {
+        const list = DEMO_ADMIN_CREDENTIALS.map((c) => `${c.email} / ${c.password}`).join(" — or — ");
+        const message = `Invalid Admin ID or password. Demo admins: ${list}. Click "Fill" below to auto-fill.`;
+        setAdminError(message);
+        toast.error("Invalid Admin ID or password — see demo credentials below.");
+      } else if (msg.includes("invalid")) {
         toast.error("Invalid email or password.");
       } else {
         toast.error(error.message);
@@ -109,7 +142,7 @@ function LoginPage() {
     navigate({ to: dest, replace: true });
   };
 
-  const isAdmin = selectedRole === "admin";
+  const isAdmin = isAdminFlow;
 
   return (
     <div>
@@ -151,7 +184,17 @@ function LoginPage() {
         </>
       )}
 
-      <form className={`space-y-4 ${isAdmin ? "mt-8" : ""}`} onSubmit={form.handleSubmit(onSubmit)} noValidate>
+      {isAdmin && adminError && (
+        <div
+          role="alert"
+          className="mb-4 flex items-start gap-2 rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive"
+        >
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+          <p className="leading-relaxed">{adminError}</p>
+        </div>
+      )}
+
+      <form className={`space-y-4 ${isAdmin ? "mt-6" : ""}`} onSubmit={form.handleSubmit(onSubmit)} noValidate>
         <div>
           <Label htmlFor="email">{isAdmin ? "Admin ID" : "Email"}</Label>
           <Input
@@ -215,7 +258,53 @@ function LoginPage() {
         </p>
       )}
 
-      {isAdmin && <DemoCredentialsPopup />}
+      {isAdmin && (
+        <div className="mt-8 space-y-4">
+          <DemoCredentialsPopup variant="inline" onFill={fillDemo} />
+          <details className="group rounded-xl border border-border/70 bg-card/60 p-4 text-sm">
+            <summary className="flex cursor-pointer list-none items-center justify-between font-semibold">
+              <span>Troubleshooting sign-in</span>
+              <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+            </summary>
+            <ul className="mt-3 space-y-3 text-xs text-muted-foreground">
+              <li>
+                <p className="font-semibold text-foreground">Wrong demo Admin ID</p>
+                <p>
+                  Only the accounts listed above work as demo admins. IDs like
+                  <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">demo.admin1@edunova.ai</code>
+                  don&apos;t exist — use <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">admin1@123</code>
+                  or <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">admin2@123</code>, or click <em>Fill</em>.
+                </p>
+              </li>
+              <li>
+                <p className="font-semibold text-foreground">Role mismatch after signing in</p>
+                <p>
+                  If you signed in but landed on a non-admin dashboard, your account isn&apos;t assigned the
+                  <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">admin</code> role. Sign out
+                  and use a listed demo admin, or contact a Super Administrator.
+                </p>
+              </li>
+              <li>
+                <p className="font-semibold text-foreground">Cached session or stuck redirect</p>
+                <p>
+                  Clear a stale session by opening this page in a private window, or sign out from{" "}
+                  <Link to="/session-expired" className="text-primary hover:underline">
+                    /session-expired
+                  </Link>
+                  , then try again.
+                </p>
+              </li>
+              <li>
+                <p className="font-semibold text-foreground">Password not accepted</p>
+                <p>
+                  Passwords are case-sensitive and have no trailing spaces. Use the <em>Fill</em> button to
+                  avoid copy-paste mistakes.
+                </p>
+              </li>
+            </ul>
+          </details>
+        </div>
+      )}
     </div>
   );
 }
