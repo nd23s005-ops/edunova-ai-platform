@@ -30,7 +30,7 @@ import { ProgressBar } from "@/components/courses/CourseUI";
 import { AIDailyQuizWidget } from "@/components/dashboard/AIDailyQuizWidget";
 import { supabase } from "@/integrations/supabase/client";
 
-export const Route = createFileRoute("/_dashboard/dashboard/student")({
+export const Route = createFileRoute("/_dashboard/dashboard/student/")({
   component: StudentDashboard,
 });
 
