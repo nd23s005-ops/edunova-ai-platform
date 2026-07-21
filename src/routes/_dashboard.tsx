@@ -75,6 +75,7 @@ const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student", label: "My workspace", icon: GraduationCap },
   { to: "/dashboard/student/my-courses", label: "My Courses", icon: BookOpen },
   { to: "/dashboard/student/browse", label: "Browse Courses", icon: BookOpen },
+  { to: "/dashboard/student/resources", label: "Resources", icon: FileText },
   { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   { to: "/dashboard/student/roadmap", label: "Learning Roadmap", icon: Target },
