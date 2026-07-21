@@ -160,7 +160,7 @@ Return JSON with this shape:
         weekly_hours: data.weeklyHours,
         target_date: data.targetDate ?? null,
         interests: data.interests ?? null,
-        plan: plan as unknown as Record<string, unknown>,
+        plan: JSON.parse(JSON.stringify(plan)),
       })
       .select("id")
       .single();

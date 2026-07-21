@@ -51,6 +51,7 @@ import { Route as MarketingFeaturesLearningAnalyticsRouteImport } from './routes
 import { Route as MarketingFeaturesKnowledgeGapAnalysisRouteImport } from './routes/_marketing.features.knowledge-gap-analysis'
 import { Route as MarketingFeaturesSlugRouteImport } from './routes/_marketing.features.$slug'
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
+import { Route as DashboardDashboardRoadmapRouteImport } from './routes/_dashboard.dashboard.roadmap'
 import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
 import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_dashboard.dashboard.professional'
 import { Route as DashboardDashboardCommunityRouteImport } from './routes/_dashboard.dashboard.community'
@@ -379,6 +380,12 @@ const DashboardDashboardStudentRoute =
   DashboardDashboardStudentRouteImport.update({
     id: '/dashboard/student',
     path: '/dashboard/student',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardRoadmapRoute =
+  DashboardDashboardRoadmapRouteImport.update({
+    id: '/dashboard/roadmap',
+    path: '/dashboard/roadmap',
     getParentRoute: () => DashboardRoute,
   } as any)
 const DashboardDashboardProfileRoute =
@@ -1105,6 +1112,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/community': typeof DashboardDashboardCommunityRouteWithChildren
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
+  '/dashboard/roadmap': typeof DashboardDashboardRoadmapRoute
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
@@ -1256,6 +1264,7 @@ export interface FileRoutesByTo {
   '/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
+  '/dashboard/roadmap': typeof DashboardDashboardRoadmapRoute
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   '/features/learning-analytics': typeof MarketingFeaturesLearningAnalyticsRoute
@@ -1411,6 +1420,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/community': typeof DashboardDashboardCommunityRouteWithChildren
   '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
+  '/_dashboard/dashboard/roadmap': typeof DashboardDashboardRoadmapRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/_marketing/features/$slug': typeof MarketingFeaturesSlugRoute
   '/_marketing/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
@@ -1568,6 +1578,7 @@ export interface FileRouteTypes {
     | '/dashboard/community'
     | '/dashboard/professional'
     | '/dashboard/profile'
+    | '/dashboard/roadmap'
     | '/dashboard/student'
     | '/features/$slug'
     | '/features/knowledge-gap-analysis'
@@ -1719,6 +1730,7 @@ export interface FileRouteTypes {
     | '/dashboard/college'
     | '/dashboard/professional'
     | '/dashboard/profile'
+    | '/dashboard/roadmap'
     | '/features/$slug'
     | '/features/knowledge-gap-analysis'
     | '/features/learning-analytics'
@@ -1873,6 +1885,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/community'
     | '/_dashboard/dashboard/professional'
     | '/_dashboard/dashboard/profile'
+    | '/_dashboard/dashboard/roadmap'
     | '/_dashboard/dashboard/student'
     | '/_marketing/features/$slug'
     | '/_marketing/features/knowledge-gap-analysis'
@@ -2304,6 +2317,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard/student'
       fullPath: '/dashboard/student'
       preLoaderRoute: typeof DashboardDashboardStudentRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/roadmap': {
+      id: '/_dashboard/dashboard/roadmap'
+      path: '/dashboard/roadmap'
+      fullPath: '/dashboard/roadmap'
+      preLoaderRoute: typeof DashboardDashboardRoadmapRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/dashboard/profile': {
@@ -3477,6 +3497,7 @@ interface DashboardRouteChildren {
   DashboardDashboardCommunityRoute: typeof DashboardDashboardCommunityRouteWithChildren
   DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
   DashboardDashboardProfileRoute: typeof DashboardDashboardProfileRoute
+  DashboardDashboardRoadmapRoute: typeof DashboardDashboardRoadmapRoute
   DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRouteWithChildren
   DashboardDashboardIndexRoute: typeof DashboardDashboardIndexRoute
   DashboardDashboardMockTestsTestIdRoute: typeof DashboardDashboardMockTestsTestIdRoute
@@ -3499,6 +3520,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
     DashboardDashboardCommunityRouteWithChildren,
   DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,
   DashboardDashboardProfileRoute: DashboardDashboardProfileRoute,
+  DashboardDashboardRoadmapRoute: DashboardDashboardRoadmapRoute,
   DashboardDashboardStudentRoute: DashboardDashboardStudentRouteWithChildren,
   DashboardDashboardIndexRoute: DashboardDashboardIndexRoute,
   DashboardDashboardMockTestsTestIdRoute:
