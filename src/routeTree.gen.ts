@@ -61,6 +61,7 @@ import { Route as DashboardDashboardAiAssistantRouteImport } from './routes/_das
 import { Route as DashboardDashboardAdminRouteImport } from './routes/_dashboard.dashboard.admin'
 import { Route as DashboardDashboardSplatRouteImport } from './routes/_dashboard.dashboard.$'
 import { Route as DashboardDashboardUpskillingIndexRouteImport } from './routes/_dashboard.dashboard.upskilling.index'
+import { Route as DashboardDashboardStudentIndexRouteImport } from './routes/_dashboard.dashboard.student.index'
 import { Route as DashboardDashboardMockTestsIndexRouteImport } from './routes/_dashboard.dashboard.mock-tests.index'
 import { Route as DashboardDashboardCommunityIndexRouteImport } from './routes/_dashboard.dashboard.community.index'
 import { Route as DashboardDashboardCareerIndexRouteImport } from './routes/_dashboard.dashboard.career.index'
@@ -434,6 +435,12 @@ const DashboardDashboardUpskillingIndexRoute =
     id: '/dashboard/upskilling/',
     path: '/dashboard/upskilling/',
     getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDashboardStudentIndexRoute =
+  DashboardDashboardStudentIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => DashboardDashboardStudentRoute,
   } as any)
 const DashboardDashboardMockTestsIndexRoute =
   DashboardDashboardMockTestsIndexRouteImport.update({
@@ -1163,6 +1170,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/career/': typeof DashboardDashboardCareerIndexRoute
   '/dashboard/community/': typeof DashboardDashboardCommunityIndexRoute
   '/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
+  '/dashboard/student/': typeof DashboardDashboardStudentIndexRoute
   '/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
   '/dashboard/admin/cms/categories': typeof DashboardDashboardAdminCmsCategoriesRoute
@@ -1224,7 +1232,6 @@ export interface FileRoutesByTo {
   '/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
-  '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
   '/features/$slug': typeof MarketingFeaturesSlugRoute
   '/features/knowledge-gap-analysis': typeof MarketingFeaturesKnowledgeGapAnalysisRoute
   '/features/learning-analytics': typeof MarketingFeaturesLearningAnalyticsRoute
@@ -1308,6 +1315,7 @@ export interface FileRoutesByTo {
   '/dashboard/career': typeof DashboardDashboardCareerIndexRoute
   '/dashboard/community': typeof DashboardDashboardCommunityIndexRoute
   '/dashboard/mock-tests': typeof DashboardDashboardMockTestsIndexRoute
+  '/dashboard/student': typeof DashboardDashboardStudentIndexRoute
   '/dashboard/upskilling': typeof DashboardDashboardUpskillingIndexRoute
   '/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
   '/dashboard/admin/cms/categories': typeof DashboardDashboardAdminCmsCategoriesRoute
@@ -1462,6 +1470,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/career/': typeof DashboardDashboardCareerIndexRoute
   '/_dashboard/dashboard/community/': typeof DashboardDashboardCommunityIndexRoute
   '/_dashboard/dashboard/mock-tests/': typeof DashboardDashboardMockTestsIndexRoute
+  '/_dashboard/dashboard/student/': typeof DashboardDashboardStudentIndexRoute
   '/_dashboard/dashboard/upskilling/': typeof DashboardDashboardUpskillingIndexRoute
   '/_dashboard/dashboard/admin/cms/analytics': typeof DashboardDashboardAdminCmsAnalyticsRoute
   '/_dashboard/dashboard/admin/cms/categories': typeof DashboardDashboardAdminCmsCategoriesRoute
@@ -1615,6 +1624,7 @@ export interface FileRouteTypes {
     | '/dashboard/career/'
     | '/dashboard/community/'
     | '/dashboard/mock-tests/'
+    | '/dashboard/student/'
     | '/dashboard/upskilling/'
     | '/dashboard/admin/cms/analytics'
     | '/dashboard/admin/cms/categories'
@@ -1676,7 +1686,6 @@ export interface FileRouteTypes {
     | '/dashboard/college'
     | '/dashboard/professional'
     | '/dashboard/profile'
-    | '/dashboard/student'
     | '/features/$slug'
     | '/features/knowledge-gap-analysis'
     | '/features/learning-analytics'
@@ -1760,6 +1769,7 @@ export interface FileRouteTypes {
     | '/dashboard/career'
     | '/dashboard/community'
     | '/dashboard/mock-tests'
+    | '/dashboard/student'
     | '/dashboard/upskilling'
     | '/dashboard/admin/cms/analytics'
     | '/dashboard/admin/cms/categories'
@@ -1913,6 +1923,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/career/'
     | '/_dashboard/dashboard/community/'
     | '/_dashboard/dashboard/mock-tests/'
+    | '/_dashboard/dashboard/student/'
     | '/_dashboard/dashboard/upskilling/'
     | '/_dashboard/dashboard/admin/cms/analytics'
     | '/_dashboard/dashboard/admin/cms/categories'
@@ -2325,6 +2336,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/upskilling/'
       preLoaderRoute: typeof DashboardDashboardUpskillingIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/dashboard/student/': {
+      id: '/_dashboard/dashboard/student/'
+      path: '/'
+      fullPath: '/dashboard/student/'
+      preLoaderRoute: typeof DashboardDashboardStudentIndexRouteImport
+      parentRoute: typeof DashboardDashboardStudentRoute
     }
     '/_dashboard/dashboard/mock-tests/': {
       id: '/_dashboard/dashboard/mock-tests/'
@@ -3345,6 +3363,7 @@ interface DashboardDashboardStudentRouteChildren {
   DashboardDashboardStudentMyCoursesRoute: typeof DashboardDashboardStudentMyCoursesRoute
   DashboardDashboardStudentProgressRoute: typeof DashboardDashboardStudentProgressRoute
   DashboardDashboardStudentSyllabusRoute: typeof DashboardDashboardStudentSyllabusRoute
+  DashboardDashboardStudentIndexRoute: typeof DashboardDashboardStudentIndexRoute
   DashboardDashboardStudentCoursesCourseIdRoute: typeof DashboardDashboardStudentCoursesCourseIdRouteWithChildren
   DashboardDashboardStudentQuizzesSubjectRoute: typeof DashboardDashboardStudentQuizzesSubjectRouteWithChildren
   DashboardDashboardStudentQuizzesIndexRoute: typeof DashboardDashboardStudentQuizzesIndexRoute
@@ -3365,6 +3384,7 @@ const DashboardDashboardStudentRouteChildren: DashboardDashboardStudentRouteChil
       DashboardDashboardStudentProgressRoute,
     DashboardDashboardStudentSyllabusRoute:
       DashboardDashboardStudentSyllabusRoute,
+    DashboardDashboardStudentIndexRoute: DashboardDashboardStudentIndexRoute,
     DashboardDashboardStudentCoursesCourseIdRoute:
       DashboardDashboardStudentCoursesCourseIdRouteWithChildren,
     DashboardDashboardStudentQuizzesSubjectRoute:
