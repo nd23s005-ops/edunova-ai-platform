@@ -53,7 +53,6 @@ import { Route as MarketingFeaturesSlugRouteImport } from './routes/_marketing.f
 import { Route as DashboardDashboardStudentRouteImport } from './routes/_dashboard.dashboard.student'
 import { Route as DashboardDashboardProfileRouteImport } from './routes/_dashboard.dashboard.profile'
 import { Route as DashboardDashboardProfessionalRouteImport } from './routes/_dashboard.dashboard.professional'
-import { Route as DashboardDashboardOrganizationRouteImport } from './routes/_dashboard.dashboard.organization'
 import { Route as DashboardDashboardCommunityRouteImport } from './routes/_dashboard.dashboard.community'
 import { Route as DashboardDashboardCollegeRouteImport } from './routes/_dashboard.dashboard.college'
 import { Route as DashboardDashboardCareerRouteImport } from './routes/_dashboard.dashboard.career'
@@ -388,12 +387,6 @@ const DashboardDashboardProfessionalRoute =
   DashboardDashboardProfessionalRouteImport.update({
     id: '/dashboard/professional',
     path: '/dashboard/professional',
-    getParentRoute: () => DashboardRoute,
-  } as any)
-const DashboardDashboardOrganizationRoute =
-  DashboardDashboardOrganizationRouteImport.update({
-    id: '/dashboard/organization',
-    path: '/dashboard/organization',
     getParentRoute: () => DashboardRoute,
   } as any)
 const DashboardDashboardCommunityRoute =
@@ -1082,7 +1075,6 @@ export interface FileRoutesByFullPath {
   '/dashboard/career': typeof DashboardDashboardCareerRouteWithChildren
   '/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/dashboard/community': typeof DashboardDashboardCommunityRouteWithChildren
-  '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
@@ -1230,7 +1222,6 @@ export interface FileRoutesByTo {
   '/dashboard/admin': typeof DashboardDashboardAdminRouteWithChildren
   '/dashboard/ai-assistant': typeof DashboardDashboardAiAssistantRoute
   '/dashboard/college': typeof DashboardDashboardCollegeRoute
-  '/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
@@ -1383,7 +1374,6 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/career': typeof DashboardDashboardCareerRouteWithChildren
   '/_dashboard/dashboard/college': typeof DashboardDashboardCollegeRoute
   '/_dashboard/dashboard/community': typeof DashboardDashboardCommunityRouteWithChildren
-  '/_dashboard/dashboard/organization': typeof DashboardDashboardOrganizationRoute
   '/_dashboard/dashboard/professional': typeof DashboardDashboardProfessionalRoute
   '/_dashboard/dashboard/profile': typeof DashboardDashboardProfileRoute
   '/_dashboard/dashboard/student': typeof DashboardDashboardStudentRouteWithChildren
@@ -1537,7 +1527,6 @@ export interface FileRouteTypes {
     | '/dashboard/career'
     | '/dashboard/college'
     | '/dashboard/community'
-    | '/dashboard/organization'
     | '/dashboard/professional'
     | '/dashboard/profile'
     | '/dashboard/student'
@@ -1685,7 +1674,6 @@ export interface FileRouteTypes {
     | '/dashboard/admin'
     | '/dashboard/ai-assistant'
     | '/dashboard/college'
-    | '/dashboard/organization'
     | '/dashboard/professional'
     | '/dashboard/profile'
     | '/dashboard/student'
@@ -1837,7 +1825,6 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/career'
     | '/_dashboard/dashboard/college'
     | '/_dashboard/dashboard/community'
-    | '/_dashboard/dashboard/organization'
     | '/_dashboard/dashboard/professional'
     | '/_dashboard/dashboard/profile'
     | '/_dashboard/dashboard/student'
@@ -2281,13 +2268,6 @@ declare module '@tanstack/react-router' {
       path: '/dashboard/professional'
       fullPath: '/dashboard/professional'
       preLoaderRoute: typeof DashboardDashboardProfessionalRouteImport
-      parentRoute: typeof DashboardRoute
-    }
-    '/_dashboard/dashboard/organization': {
-      id: '/_dashboard/dashboard/organization'
-      path: '/dashboard/organization'
-      fullPath: '/dashboard/organization'
-      preLoaderRoute: typeof DashboardDashboardOrganizationRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/dashboard/community': {
@@ -3406,7 +3386,6 @@ interface DashboardRouteChildren {
   DashboardDashboardCareerRoute: typeof DashboardDashboardCareerRouteWithChildren
   DashboardDashboardCollegeRoute: typeof DashboardDashboardCollegeRoute
   DashboardDashboardCommunityRoute: typeof DashboardDashboardCommunityRouteWithChildren
-  DashboardDashboardOrganizationRoute: typeof DashboardDashboardOrganizationRoute
   DashboardDashboardProfessionalRoute: typeof DashboardDashboardProfessionalRoute
   DashboardDashboardProfileRoute: typeof DashboardDashboardProfileRoute
   DashboardDashboardStudentRoute: typeof DashboardDashboardStudentRouteWithChildren
@@ -3429,7 +3408,6 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDashboardCollegeRoute: DashboardDashboardCollegeRoute,
   DashboardDashboardCommunityRoute:
     DashboardDashboardCommunityRouteWithChildren,
-  DashboardDashboardOrganizationRoute: DashboardDashboardOrganizationRoute,
   DashboardDashboardProfessionalRoute: DashboardDashboardProfessionalRoute,
   DashboardDashboardProfileRoute: DashboardDashboardProfileRoute,
   DashboardDashboardStudentRoute: DashboardDashboardStudentRouteWithChildren,
