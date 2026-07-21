@@ -175,19 +175,36 @@ function StudentDashboard() {
   const { data: recommendations } = useQuery({
     queryKey: ["me", "recommendations", profile?.board, profile?.current_class],
     queryFn: async () => {
-      if (!profile?.board || !profile?.current_class) return [] as RecommendedCourse[];
       const enrolledIds = new Set(enrolled.map((e) => e.course_id));
-      const { data } = await supabase
-        .from("courses")
-        .select("id, title, subject, difficulty")
-        .eq("is_published", true)
-        .eq("board", profile.board as never)
-        .lte("class_min", profile.current_class)
-        .gte("class_max", profile.current_class)
-        .limit(12);
-      return ((data ?? []) as RecommendedCourse[]).filter((c) => !enrolledIds.has(c.id)).slice(0, 4);
+      // Prefer real DB matches when the learner has picked a class/board.
+      if (profile?.board && profile?.current_class) {
+        const { data } = await supabase
+          .from("courses")
+          .select("id, title, subject, difficulty")
+          .eq("is_published", true)
+          .eq("board", profile.board as never)
+          .lte("class_min", profile.current_class)
+          .gte("class_max", profile.current_class)
+          .limit(12);
+        const rows = ((data ?? []) as RecommendedCourse[]).filter((c) => !enrolledIds.has(c.id));
+        if (rows.length >= 4) return rows.slice(0, 8);
+      }
+      // Fallback: pull a diverse set from the virtual catalog so this section is never empty.
+      const { CATALOG_BY_ROLE } = await import("@/lib/courses/catalog");
+      const scope = CATALOG_BY_ROLE.student;
+      const seen = new Set<string>();
+      const picks: RecommendedCourse[] = [];
+      for (const cat of scope.categories) {
+        for (const c of cat.courses) {
+          if (seen.has(c.subject)) continue;
+          seen.add(c.subject);
+          picks.push({ id: c.slug, title: c.title, subject: c.subject, difficulty: c.difficulty });
+          if (picks.length >= 8) break;
+        }
+        if (picks.length >= 8) break;
+      }
+      return picks;
     },
-    enabled: !!profile,
     staleTime: 60_000,
   });
 
