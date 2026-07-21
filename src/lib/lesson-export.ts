@@ -26,8 +26,21 @@ function stripMd(md: string): string {
     .trim();
 }
 
-export function exportLessonToPDF(data: LessonExportData) {
-  const doc = new jsPDF({ unit: "pt", format: "a4" });
+export type LessonExportSection = "reading" | "notes" | "qa" | "practice";
+export type LessonExportPaper = "a4" | "letter" | "legal";
+
+export type LessonExportOptions = {
+  sections?: LessonExportSection[];
+  paper?: LessonExportPaper;
+};
+
+const DEFAULT_SECTIONS: LessonExportSection[] = ["reading", "notes", "qa", "practice"];
+
+export function exportLessonToPDF(data: LessonExportData, options: LessonExportOptions = {}) {
+  const sections = new Set<LessonExportSection>(options.sections ?? DEFAULT_SECTIONS);
+  const paper: LessonExportPaper = options.paper ?? "a4";
+
+  const doc = new jsPDF({ unit: "pt", format: paper });
   const pageW = doc.internal.pageSize.getWidth();
   const pageH = doc.internal.pageSize.getHeight();
   const margin = 48;
@@ -70,29 +83,31 @@ export function exportLessonToPDF(data: LessonExportData) {
     .join(" · ");
   if (sub) writeText(sub, 10, false, 12);
 
-  if (data.theory) {
-    heading("Reading");
-    writeText(stripMd(data.theory), 11);
+  if (sections.has("reading")) {
+    if (data.theory) {
+      heading("Reading");
+      writeText(stripMd(data.theory), 11);
+    }
+    if (data.keyNotes) {
+      heading("Key notes");
+      writeText(stripMd(data.keyNotes), 11);
+    }
   }
-  if (data.keyNotes) {
-    heading("Key notes");
-    writeText(stripMd(data.keyNotes), 11);
-  }
-  if (data.examples && data.examples.length) {
+  if (sections.has("qa") && data.examples && data.examples.length) {
     heading("Worked examples");
     data.examples.forEach((ex, i) => {
       writeText(`Example ${i + 1}${ex.title ? `: ${ex.title}` : ""}`, 12, true, 2);
       if (ex.body) writeText(stripMd(ex.body), 11);
     });
   }
-  if (data.practice && data.practice.length) {
+  if (sections.has("practice") && data.practice && data.practice.length) {
     heading("Practice (Q&A)");
     data.practice.forEach((p, i) => {
       writeText(`Q${i + 1}. ${p.prompt ?? ""}`, 11, true, 2);
       if (p.answer) writeText(`A: ${stripMd(p.answer)}`, 11);
     });
   }
-  if (data.notes && data.notes.trim()) {
+  if (sections.has("notes") && data.notes && data.notes.trim()) {
     heading("My notes");
     writeText(data.notes.trim(), 11);
   }
@@ -100,3 +115,4 @@ export function exportLessonToPDF(data: LessonExportData) {
   const safe = data.lessonTitle.replace(/[^a-z0-9]+/gi, "-").slice(0, 60);
   doc.save(`${safe || "lesson"}.pdf`);
 }
+
