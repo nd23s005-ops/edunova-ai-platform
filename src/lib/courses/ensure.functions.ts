@@ -138,5 +138,31 @@ export const seedCourseSkeleton = createServerFn({ method: "POST" })
       });
     }
 
+    // Attach a resource bundle for this course. Idempotent: only when no
+    // resources already exist. Matches to the marketing library where
+    // possible so existing content is reused rather than duplicated.
+    const existingResources = await supabaseAdmin
+      .from("resources")
+      .select("id")
+      .eq("course_id", data.courseId)
+      .limit(1);
+    if ((existingResources.data?.length ?? 0) === 0) {
+      const { buildResourceSeeds } = await import("./resource-seed.server");
+      const seeds = buildResourceSeeds(entry.title);
+      if (seeds.length > 0) {
+        await supabaseAdmin.from("resources").insert(
+          seeds.map((s) => ({
+            course_id: data.courseId,
+            kind: s.kind,
+            title: s.title,
+            description: s.description,
+            url: s.url,
+            order_index: s.order_index,
+          })),
+        );
+      }
+    }
+
     return { seeded: true, chapters: skeleton.length };
   });
+
