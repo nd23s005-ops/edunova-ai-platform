@@ -234,24 +234,18 @@ function LessonPage() {
         description={lesson.estimated_minutes ? `~${lesson.estimated_minutes} min` : undefined}
         actions={
           <div className="flex flex-wrap gap-2">
-            <Button
-              variant="outline"
-              onClick={() =>
-                exportLessonToPDF({
-                  lessonTitle: lesson.title,
-                  estimatedMinutes: lesson.estimated_minutes,
-                  theory: lesson.theory,
-                  keyNotes: lesson.key_notes,
-                  examples,
-                  practice,
-                  illustrations,
-                  notes,
-                })
-              }
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Export PDF
-            </Button>
+            <LessonExportDialog
+              data={{
+                lessonTitle: lesson.title,
+                estimatedMinutes: lesson.estimated_minutes,
+                theory: lesson.theory,
+                keyNotes: lesson.key_notes,
+                examples,
+                practice,
+                illustrations,
+                notes,
+              }}
+            />
             <Button
               variant={completed ? "secondary" : "default"}
               disabled={complete.isPending || !!completed}
