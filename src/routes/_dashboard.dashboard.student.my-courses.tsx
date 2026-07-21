@@ -44,7 +44,7 @@ function MyCoursesPage() {
     },
   });
 
-  // Look up last opened lesson per enrollment (best effort).
+  // Best-effort: last opened lesson title per enrolled course.
   const { data: lastLessons } = useQuery({
     queryKey: ["me", "last-lesson-per-course"],
     enabled: !!enrollments && enrollments.length > 0,
@@ -55,15 +55,15 @@ function MyCoursesPage() {
       if (courseIds.length === 0) return new Map<string, string>();
       const { data } = await supabase
         .from("lesson_reading_position")
-        .select("course_id, lesson_title, updated_at")
+        .select("course_id, updated_at, lessons:lesson_id (title)")
         .eq("user_id", u.user.id)
         .in("course_id", courseIds)
         .order("updated_at", { ascending: false });
       const map = new Map<string, string>();
-      for (const row of (data ?? []) as Array<{ course_id: string; lesson_title: string | null }>) {
-        if (row.course_id && row.lesson_title && !map.has(row.course_id)) {
-          map.set(row.course_id, row.lesson_title);
-        }
+      type Row = { course_id: string | null; lessons: { title: string | null } | null };
+      for (const row of (data ?? []) as unknown as Row[]) {
+        const title = row.lessons?.title;
+        if (row.course_id && title && !map.has(row.course_id)) map.set(row.course_id, title);
       }
       return map;
     },
