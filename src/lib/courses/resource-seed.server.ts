@@ -96,7 +96,7 @@ export function buildResourceSeeds(courseTitle: string): ResourceSeed[] {
                   : k.kind === "pdf"
                     ? "reference-guide"
                     : "notes";
-      url = `/resources/${match.slug}/${kindSlug}`;
+      url = `/resources/read/${match.slug}-${kindSlug}`;
     }
     return {
       kind: k.kind,
