@@ -18,6 +18,7 @@ import { DemoCredentialsPopup } from "@/components/admin/DemoCredentialsPopup";
 import { supabase } from "@/integrations/supabase/client";
 import { loginSchema, type LoginInput } from "@/lib/auth/schemas";
 import { homeForRole, ROLE_LABELS, ROLES as ALL_ROLES } from "@/lib/auth/roles";
+import { DEMO_ADMIN_CREDENTIALS } from "@/lib/admin/access";
 import type { AppRole } from "@/lib/auth/roles";
 
 export const Route = createFileRoute("/_auth/login")({
