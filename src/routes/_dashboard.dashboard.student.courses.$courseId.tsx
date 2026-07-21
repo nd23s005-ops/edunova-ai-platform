@@ -140,7 +140,7 @@ function CourseOverviewPage() {
       .then((res) => {
         if (res?.seeded) {
           qc.invalidateQueries({ queryKey: ["course", courseId, "chapters"] });
-          qc.invalidateQueries({ queryKey: ["course", courseId, "total-lessons"] });
+          qc.invalidateQueries({ queryKey: ["course", courseId, "totalLessons"] });
         }
       })
       .catch((e: Error) => toast.error(e.message));
