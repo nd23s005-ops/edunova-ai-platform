@@ -84,6 +84,7 @@ function CollegeDashboard() {
   return (
     <RoleGate allow={["college_student"]}>
       <DashboardHeader
+        eyebrow="College Student Dashboard"
         title={firstName ? `Welcome, ${firstName}` : "Welcome"}
         description="Your college workspace — courses, projects and placement prep."
       />

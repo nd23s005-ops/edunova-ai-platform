@@ -233,6 +233,7 @@ function StudentDashboard() {
   return (
     <RoleGate allow={["student"]}>
       <DashboardHeader
+        eyebrow="School Student Dashboard"
         title={firstName ? `Welcome back, ${firstName}` : "Welcome back"}
         description={
           profile?.current_class

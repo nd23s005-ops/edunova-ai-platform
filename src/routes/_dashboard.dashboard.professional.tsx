@@ -144,6 +144,7 @@ function ProfessionalDashboard() {
   return (
     <RoleGate allow={["professional"]}>
       <DashboardHeader
+        eyebrow="Working Professional Dashboard"
         title={firstName ? `Welcome back, ${firstName}` : "Professional workspace"}
         description="Career growth and upskilling paths powered by Nova AI."
       />

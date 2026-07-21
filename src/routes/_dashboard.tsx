@@ -298,7 +298,7 @@ function DashboardLayout() {
             <CommandPalette />
             {role && (
               <span className="hidden rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground md:inline">
-                {ROLE_LABELS[role]}
+                {ROLE_LABELS[role]} Dashboard
               </span>
             )}
             <NotificationBell />
