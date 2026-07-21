@@ -199,7 +199,7 @@ function StudentDashboard() {
         for (const c of cat.courses) {
           if (seen.has(c.subject)) continue;
           seen.add(c.subject);
-          picks.push({ id: c.slug, title: c.title, subject: c.subject, difficulty: c.difficulty });
+          picks.push({ id: c.slug, title: c.title, subject: c.subject, difficulty: c.difficulty, isCatalog: true });
           if (picks.length >= 8) break;
         }
         if (picks.length >= 8) break;
