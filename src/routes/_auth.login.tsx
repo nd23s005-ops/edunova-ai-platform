@@ -81,6 +81,23 @@ function LoginPage() {
 
   const onSubmit = async (values: LoginInput) => {
     setSubmitting(true);
+    setAdminError(null);
+
+    // For admin sign-in, catch obvious typos like "demo.admin1@edunova.ai"
+    // before hitting the auth server and point to the seeded demo IDs.
+    if (isAdminFlow) {
+      const entered = values.email.trim().toLowerCase();
+      const looksLikeDemoTypo = /^demo[._-]?admin/i.test(values.email) || entered.endsWith("@edunova.ai");
+      if (looksLikeDemoTypo && !allowedDemoEmails.has(entered)) {
+        const list = DEMO_ADMIN_CREDENTIALS.map((c) => c.email).join(" or ");
+        const message = `That admin account doesn't exist. Use ${list} — click "Fill" below to auto-fill a demo account.`;
+        setAdminError(message);
+        toast.error(message);
+        setSubmitting(false);
+        return;
+      }
+    }
+
     const { data, error } = await supabase.auth.signInWithPassword({
       email: values.email,
       password: values.password,
@@ -88,7 +105,12 @@ function LoginPage() {
 
     if (error) {
       const msg = error.message.toLowerCase();
-      if (msg.includes("invalid")) {
+      if (isAdminFlow && msg.includes("invalid")) {
+        const list = DEMO_ADMIN_CREDENTIALS.map((c) => `${c.email} / ${c.password}`).join(" — or — ");
+        const message = `Invalid Admin ID or password. Demo admins: ${list}. Click "Fill" below to auto-fill.`;
+        setAdminError(message);
+        toast.error("Invalid Admin ID or password — see demo credentials below.");
+      } else if (msg.includes("invalid")) {
         toast.error("Invalid email or password.");
       } else {
         toast.error(error.message);
@@ -120,7 +142,7 @@ function LoginPage() {
     navigate({ to: dest, replace: true });
   };
 
-  const isAdmin = selectedRole === "admin";
+  const isAdmin = isAdminFlow;
 
   return (
     <div>
