@@ -123,9 +123,11 @@ export const generateDashboardBrief = createServerFn({ method: "POST" })
     // Best-effort cache write
     try {
       await supabase.from("ai_insights").insert({
-        user_id: userId,
+        scope_type: "user",
+        scope_id: userId,
         kind: cacheKey,
-        payload: brief as unknown as Record<string, unknown>,
+        title: "Dashboard brief",
+        body: JSON.stringify(brief),
       });
     } catch {
       // ignore
