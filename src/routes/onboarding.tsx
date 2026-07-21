@@ -85,13 +85,6 @@ const ROLES: RoleCard[] = [
     accent: "from-[oklch(0.78_0.15_140)] to-[oklch(0.6_0.17_150)]",
   },
   {
-    key: "organization",
-    title: "Organization",
-    description: "Train teams at scale with cohort analytics and rollout tools.",
-    icon: Building2,
-    accent: "from-[oklch(0.7_0.15_280)] to-[oklch(0.55_0.18_290)]",
-  },
-  {
     key: "admin",
     title: "Administrator",
     description: "Restricted access for authorized platform operators only.",
@@ -118,13 +111,9 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
     { key: "switch", label: "Career Switch", desc: "Move into a new domain confidently." },
     { key: "skills", label: "New Skills", desc: "Master in-demand tools and topics." },
   ],
-  organization: [
-    { key: "employee", label: "Employee Training", desc: "Structured onboarding & growth tracks." },
-    { key: "team", label: "Team Learning", desc: "Cohort programs and shared goals." },
-    { key: "analytics", label: "Corporate Analytics", desc: "Skill dashboards and ROI reports." },
-  ],
   admin: [],
 };
+
 
 // ---------------------------------------------------------------- storage
 const KEY = "edunova.onboarding";

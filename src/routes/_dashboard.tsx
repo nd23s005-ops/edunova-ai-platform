@@ -86,26 +86,12 @@ const STUDENT_NAV: NavItem[] = [
   AI_ASSISTANT,
 ];
 
-const ORG_NAV: NavItem[] = [
-  { to: "/dashboard/organization", label: "My workspace", icon: Building2 },
-  { to: "/dashboard/organization/employees", label: "Employees", icon: Users },
-  { to: "/dashboard/organization/students", label: "Students", icon: GraduationCap },
-  { to: "/dashboard/organization/course-assignment", label: "Course assignment", icon: BookOpen },
-  { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
-  { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
-  { to: "/dashboard/analytics", label: "Analytics", icon: BarChart3 },
-  { to: "/dashboard/organization/reports", label: "Reports", icon: FileText },
-  { to: "/dashboard/community", label: "Community", icon: Users },
-  AI_ASSISTANT,
-];
-
 // Admin sidebar. AI Assistant is intentionally excluded — admin dashboard has no chatbot.
 // Settings is Super Admin only; filtered at render time via useAdminAccess.
 const ADMIN_NAV: NavItem[] = [
   { to: "/dashboard/admin", label: "Overview", icon: Shield },
   { to: "/dashboard/admin/users", label: "User management", icon: Users },
   { to: "/dashboard/admin/courses", label: "Course management", icon: BookOpen },
-  { to: "/dashboard/admin/organizations", label: "Organizations", icon: Building2 },
   { to: "/dashboard/admin/support", label: "Support queue", icon: MessageSquare },
   { to: "/dashboard/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/admin/reports", label: "Reports", icon: FileText },
@@ -145,10 +131,10 @@ const COLLEGE_NAV: NavItem[] = [
 const NAV_BY_ROLE: Record<AppRole, NavItem[]> = {
   student: STUDENT_NAV,
   college_student: COLLEGE_NAV,
-  organization: ORG_NAV,
   admin: ADMIN_NAV,
   professional: PROFESSIONAL_NAV,
 };
+
 
 
 

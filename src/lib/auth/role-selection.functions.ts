@@ -6,8 +6,8 @@ const publicSignupRoleSchema = z.enum([
   "student",
   "college_student",
   "professional",
-  "organization",
 ]);
+
 
 export const completeAuthRoleSelection = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])

@@ -10,7 +10,7 @@ export const Route = createFileRoute("/_dashboard/dashboard/ai-assistant")({
 function AIAssistantPage() {
   // Admins never see any AI chat surface.
   return (
-    <RoleGate allow={["student", "organization", "professional"]}>
+    <RoleGate allow={["student", "college_student", "professional"]}>
       <DashboardHeader
         title="Nova AI Assistant"
         description="One assistant, context-aware — adapts to your role and where you are on EduNova AI."

@@ -117,18 +117,8 @@ const CATEGORIES: Category[] = [
       },
     ],
   },
-  {
-    id: "organization",
-    label: "Organizations",
-    icon: Building2,
-    description: "Managing employees, students, and assignments",
-    articles: [
-      {
-        q: "How do I add employees?",
-        a: "Open your Organization dashboard → Employees → 'Invite'. Enter their email and role; they'll get an invitation to join.",
-      },
-    ],
-  },
+
+
   {
     id: "technical",
     label: "Technical Issues",
@@ -316,7 +306,7 @@ const CATEGORY_OPTIONS = [
   { value: "account", label: "Account & Registration" },
   { value: "dashboard", label: "Dashboard Access" },
   { value: "courses", label: "Courses & Enrollment" },
-  { value: "organization", label: "Organizations" },
+  
   { value: "technical", label: "Technical Issue" },
   { value: "other", label: "Something else" },
 ] as const;
