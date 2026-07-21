@@ -121,6 +121,21 @@ export const seedCourseSkeleton = createServerFn({ method: "POST" })
       if (lessonRows.length > 0) {
         await supabaseAdmin.from("lessons").insert(lessonRows);
       }
+
+      // Chapter-level quiz stub (questions generated on demand elsewhere).
+      await supabaseAdmin.from("quizzes").insert({
+        chapter_id: chapterId,
+        title: `${ch.title} — Practice Quiz`,
+        pass_score: 60,
+        time_limit_seconds: 600,
+      });
+
+      // Chapter-level assignment stub.
+      await supabaseAdmin.from("assignments").insert({
+        chapter_id: chapterId,
+        title: `${ch.title} — Assignment`,
+        instructions: `Apply the concepts from "${ch.title}". Write a short response (150–300 words) demonstrating your understanding.`,
+      });
     }
 
     return { seeded: true, chapters: skeleton.length };
