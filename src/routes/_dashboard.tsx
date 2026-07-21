@@ -110,6 +110,7 @@ const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/student/browse", label: "Browse courses", icon: BookOpen },
   { to: "/dashboard/student/my-courses", label: "My courses", icon: BookOpen },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
+  { to: "/dashboard/student/achievements", label: "Achievements", icon: Trophy },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   { to: "/dashboard/community", label: "Community", icon: Users },
   { to: "/dashboard/analytics", label: "My Analytics", icon: BarChart3 },
