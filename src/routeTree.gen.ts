@@ -43,6 +43,7 @@ import { Route as AuthForgotPasswordRouteImport } from './routes/_auth.forgot-pa
 import { Route as AuthAccountCreatedRouteImport } from './routes/_auth.account-created'
 import { Route as MarketingResourcesIndexRouteImport } from './routes/_marketing.resources.index'
 import { Route as DashboardDashboardIndexRouteImport } from './routes/_dashboard.dashboard.index'
+import { Route as ApiPublicSeedAdminsRouteImport } from './routes/api/public/seed-admins'
 import { Route as ApiDebugErrorsRouteImport } from './routes/api/debug.errors'
 import { Route as MarketingResourcesCourseSlugRouteImport } from './routes/_marketing.resources.$courseSlug'
 import { Route as MarketingFeaturesSmartLearningPathsRouteImport } from './routes/_marketing.features.smart-learning-paths'
@@ -335,6 +336,11 @@ const DashboardDashboardIndexRoute = DashboardDashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
   getParentRoute: () => DashboardRoute,
+} as any)
+const ApiPublicSeedAdminsRoute = ApiPublicSeedAdminsRouteImport.update({
+  id: '/api/public/seed-admins',
+  path: '/api/public/seed-admins',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiDebugErrorsRoute = ApiDebugErrorsRouteImport.update({
   id: '/api/debug/errors',
@@ -1121,6 +1127,7 @@ export interface FileRoutesByFullPath {
   '/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
   '/api/debug/errors': typeof ApiDebugErrorsRoute
+  '/api/public/seed-admins': typeof ApiPublicSeedAdminsRoute
   '/dashboard/': typeof DashboardDashboardIndexRoute
   '/resources/': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/cms': typeof DashboardDashboardAdminCmsRouteWithChildren
@@ -1272,6 +1279,7 @@ export interface FileRoutesByTo {
   '/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
   '/api/debug/errors': typeof ApiDebugErrorsRoute
+  '/api/public/seed-admins': typeof ApiPublicSeedAdminsRoute
   '/dashboard': typeof DashboardDashboardIndexRoute
   '/resources': typeof MarketingResourcesIndexRoute
   '/dashboard/admin/debug-errors': typeof DashboardDashboardAdminDebugErrorsRoute
@@ -1429,6 +1437,7 @@ export interface FileRoutesById {
   '/_marketing/features/smart-learning-paths': typeof MarketingFeaturesSmartLearningPathsRoute
   '/_marketing/resources/$courseSlug': typeof MarketingResourcesCourseSlugRoute
   '/api/debug/errors': typeof ApiDebugErrorsRoute
+  '/api/public/seed-admins': typeof ApiPublicSeedAdminsRoute
   '/_dashboard/dashboard/': typeof DashboardDashboardIndexRoute
   '/_marketing/resources/': typeof MarketingResourcesIndexRoute
   '/_dashboard/dashboard/admin/cms': typeof DashboardDashboardAdminCmsRouteWithChildren
@@ -1587,6 +1596,7 @@ export interface FileRouteTypes {
     | '/features/smart-learning-paths'
     | '/resources/$courseSlug'
     | '/api/debug/errors'
+    | '/api/public/seed-admins'
     | '/dashboard/'
     | '/resources/'
     | '/dashboard/admin/cms'
@@ -1738,6 +1748,7 @@ export interface FileRouteTypes {
     | '/features/smart-learning-paths'
     | '/resources/$courseSlug'
     | '/api/debug/errors'
+    | '/api/public/seed-admins'
     | '/dashboard'
     | '/resources'
     | '/dashboard/admin/debug-errors'
@@ -1894,6 +1905,7 @@ export interface FileRouteTypes {
     | '/_marketing/features/smart-learning-paths'
     | '/_marketing/resources/$courseSlug'
     | '/api/debug/errors'
+    | '/api/public/seed-admins'
     | '/_dashboard/dashboard/'
     | '/_marketing/resources/'
     | '/_dashboard/dashboard/admin/cms'
@@ -2021,6 +2033,7 @@ export interface RootRouteChildren {
   ApiUpstreamStatusRoute: typeof ApiUpstreamStatusRoute
   PSlugRoute: typeof PSlugRoute
   ApiDebugErrorsRoute: typeof ApiDebugErrorsRoute
+  ApiPublicSeedAdminsRoute: typeof ApiPublicSeedAdminsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -2262,6 +2275,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/'
       preLoaderRoute: typeof DashboardDashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/api/public/seed-admins': {
+      id: '/api/public/seed-admins'
+      path: '/api/public/seed-admins'
+      fullPath: '/api/public/seed-admins'
+      preLoaderRoute: typeof ApiPublicSeedAdminsRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/debug/errors': {
       id: '/api/debug/errors'
@@ -3707,17 +3727,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiUpstreamStatusRoute: ApiUpstreamStatusRoute,
   PSlugRoute: PSlugRoute,
   ApiDebugErrorsRoute: ApiDebugErrorsRoute,
+  ApiPublicSeedAdminsRoute: ApiPublicSeedAdminsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
