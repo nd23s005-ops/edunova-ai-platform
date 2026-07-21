@@ -258,7 +258,53 @@ function LoginPage() {
         </p>
       )}
 
-      {isAdmin && <DemoCredentialsPopup />}
+      {isAdmin && (
+        <div className="mt-8 space-y-4">
+          <DemoCredentialsPopup variant="inline" onFill={fillDemo} />
+          <details className="group rounded-xl border border-border/70 bg-card/60 p-4 text-sm">
+            <summary className="flex cursor-pointer list-none items-center justify-between font-semibold">
+              <span>Troubleshooting sign-in</span>
+              <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+            </summary>
+            <ul className="mt-3 space-y-3 text-xs text-muted-foreground">
+              <li>
+                <p className="font-semibold text-foreground">Wrong demo Admin ID</p>
+                <p>
+                  Only the accounts listed above work as demo admins. IDs like
+                  <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">demo.admin1@edunova.ai</code>
+                  don&apos;t exist — use <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">admin1@123</code>
+                  or <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">admin2@123</code>, or click <em>Fill</em>.
+                </p>
+              </li>
+              <li>
+                <p className="font-semibold text-foreground">Role mismatch after signing in</p>
+                <p>
+                  If you signed in but landed on a non-admin dashboard, your account isn&apos;t assigned the
+                  <code className="mx-1 rounded bg-muted px-1 py-0.5 font-mono">admin</code> role. Sign out
+                  and use a listed demo admin, or contact a Super Administrator.
+                </p>
+              </li>
+              <li>
+                <p className="font-semibold text-foreground">Cached session or stuck redirect</p>
+                <p>
+                  Clear a stale session by opening this page in a private window, or sign out from{" "}
+                  <Link to="/session-expired" className="text-primary hover:underline">
+                    /session-expired
+                  </Link>
+                  , then try again.
+                </p>
+              </li>
+              <li>
+                <p className="font-semibold text-foreground">Password not accepted</p>
+                <p>
+                  Passwords are case-sensitive and have no trailing spaces. Use the <em>Fill</em> button to
+                  avoid copy-paste mistakes.
+                </p>
+              </li>
+            </ul>
+          </details>
+        </div>
+      )}
     </div>
   );
 }
