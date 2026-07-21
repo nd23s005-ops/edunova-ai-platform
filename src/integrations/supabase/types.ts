@@ -2828,6 +2828,45 @@ export type Database = {
           },
         ]
       }
+      learning_roadmaps: {
+        Row: {
+          created_at: string
+          goal: string
+          id: string
+          interests: string | null
+          level: string
+          plan: Json
+          role: string | null
+          target_date: string | null
+          user_id: string
+          weekly_hours: number
+        }
+        Insert: {
+          created_at?: string
+          goal: string
+          id?: string
+          interests?: string | null
+          level: string
+          plan?: Json
+          role?: string | null
+          target_date?: string | null
+          user_id: string
+          weekly_hours?: number
+        }
+        Update: {
+          created_at?: string
+          goal?: string
+          id?: string
+          interests?: string | null
+          level?: string
+          plan?: Json
+          role?: string | null
+          target_date?: string | null
+          user_id?: string
+          weekly_hours?: number
+        }
+        Relationships: []
+      }
       lesson_progress: {
         Row: {
           completed_at: string
