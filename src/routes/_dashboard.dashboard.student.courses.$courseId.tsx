@@ -41,6 +41,7 @@ import {
 } from "@/lib/courses/hooks";
 import { CourseOverviewPanel } from "@/components/learning/CourseOverviewPanel";
 import { LevelTrack } from "@/components/learning/LevelTrack";
+import { seedCourseSkeleton } from "@/lib/courses/ensure.functions";
 
 
 export const Route = createFileRoute(
