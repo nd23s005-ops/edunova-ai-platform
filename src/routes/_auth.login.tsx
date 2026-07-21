@@ -184,7 +184,17 @@ function LoginPage() {
         </>
       )}
 
-      <form className={`space-y-4 ${isAdmin ? "mt-8" : ""}`} onSubmit={form.handleSubmit(onSubmit)} noValidate>
+      {isAdmin && adminError && (
+        <div
+          role="alert"
+          className="mb-4 flex items-start gap-2 rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive"
+        >
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+          <p className="leading-relaxed">{adminError}</p>
+        </div>
+      )}
+
+      <form className={`space-y-4 ${isAdmin ? "mt-6" : ""}`} onSubmit={form.handleSubmit(onSubmit)} noValidate>
         <div>
           <Label htmlFor="email">{isAdmin ? "Admin ID" : "Email"}</Label>
           <Input
