@@ -11,73 +11,63 @@ export const Route = createFileRoute("/_dashboard/dashboard/student/my-courses")
   component: MyCoursesPage,
 });
 
-const BOARD_LABEL: Record<string, string> = {
-  state_board: "State Board",
-  cbse: "CBSE",
-  icse: "ICSE",
-  cambridge: "Cambridge",
-  ib: "IB",
-  nios: "NIOS",
-  other: "Other",
-};
-
 type EnrolledRow = {
   id: string;
   progress: number;
+  updated_at: string | null;
   course_id: string;
   courses: {
     id: string;
     title: string;
     description: string | null;
     subject: string;
-    board: string;
-    class_min: number;
-    class_max: number;
   } | null;
 };
 
 function MyCoursesPage() {
   const qc = useQueryClient();
 
-  const { data: profile } = useQuery({
-    queryKey: ["me", "student_profile"],
-    queryFn: async () => {
-      const { data: u } = await supabase.auth.getUser();
-      if (!u.user) return null;
-      const { data } = await supabase
-        .from("student_profiles")
-        .select("current_class, board")
-        .eq("user_id", u.user.id)
-        .maybeSingle();
-      return data;
-    },
-    staleTime: 60_000,
-  });
-
   const { data: enrollments, isLoading } = useQuery({
-    queryKey: ["me", "enrollments", "with-course", profile?.board, profile?.current_class],
-    enabled: !!profile,
+    queryKey: ["me", "enrollments", "with-course"],
     queryFn: async () => {
       const { data: u } = await supabase.auth.getUser();
       if (!u.user) return [];
       const { data, error } = await supabase
         .from("course_enrollments")
         .select(
-          "id, progress, course_id, courses:course_id (id, title, description, subject, board, class_min, class_max)",
+          "id, progress, updated_at, course_id, courses:course_id (id, title, description, subject)",
         )
         .eq("user_id", u.user.id)
         .order("enrolled_at", { ascending: false });
       if (error) throw error;
-      const rows = (data ?? []) as unknown as EnrolledRow[];
-      // Filter to only those matching current board & class
-      return rows.filter(
-        (r) =>
-          r.courses &&
-          r.courses.board === profile!.board &&
-          r.courses.class_min <= profile!.current_class &&
-          r.courses.class_max >= profile!.current_class,
-      );
+      return ((data ?? []) as unknown as EnrolledRow[]).filter((r) => r.courses);
     },
+  });
+
+  // Look up last opened lesson per enrollment (best effort).
+  const { data: lastLessons } = useQuery({
+    queryKey: ["me", "last-lesson-per-course"],
+    enabled: !!enrollments && enrollments.length > 0,
+    queryFn: async () => {
+      const { data: u } = await supabase.auth.getUser();
+      if (!u.user) return new Map<string, string>();
+      const courseIds = (enrollments ?? []).map((e) => e.course_id);
+      if (courseIds.length === 0) return new Map<string, string>();
+      const { data } = await supabase
+        .from("lesson_reading_position")
+        .select("course_id, lesson_title, updated_at")
+        .eq("user_id", u.user.id)
+        .in("course_id", courseIds)
+        .order("updated_at", { ascending: false });
+      const map = new Map<string, string>();
+      for (const row of (data ?? []) as Array<{ course_id: string; lesson_title: string | null }>) {
+        if (row.course_id && row.lesson_title && !map.has(row.course_id)) {
+          map.set(row.course_id, row.lesson_title);
+        }
+      }
+      return map;
+    },
+    staleTime: 30_000,
   });
 
   const unenroll = useMutation({
@@ -91,19 +81,17 @@ function MyCoursesPage() {
     onSuccess: () => {
       toast.success("Removed from My Courses");
       qc.invalidateQueries({ queryKey: ["me", "enrollments"] });
+      qc.invalidateQueries({ queryKey: ["me", "enrollments", "with-course"] });
+      qc.invalidateQueries({ queryKey: ["me", "enrollments", "slugs"] });
     },
     onError: (e: Error) => toast.error(e.message),
   });
 
   return (
-    <RoleGate allow={["student"]}>
+    <RoleGate allow={["student", "college_student", "professional"]}>
       <DashboardHeader
         title="My Courses"
-        description={
-          profile
-            ? `${BOARD_LABEL[profile.board] ?? profile.board} · Class ${profile.current_class}`
-            : "Your enrolled courses"
-        }
+        description="Everything you've enrolled in"
         actions={
           <Link to="/dashboard/student/browse">
             <Button variant="outline">Browse courses</Button>
@@ -118,9 +106,9 @@ function MyCoursesPage() {
       ) : !enrollments || enrollments.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-border bg-card/50 p-10 text-center">
           <Compass className="mx-auto h-6 w-6 text-muted-foreground" />
-          <p className="mt-3 text-sm font-semibold">No courses yet for your board & class</p>
+          <p className="mt-3 text-sm font-semibold">No courses yet</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            Browse the catalog to find courses tailored to your profile.
+            Browse the catalog to enroll in your first course. Content is generated by AI on demand.
           </p>
           <Link to="/dashboard/student/browse">
             <Button className="mt-5">Browse courses</Button>
@@ -130,27 +118,39 @@ function MyCoursesPage() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {enrollments.map((row) => {
             const c = row.courses!;
+            const percent = Math.max(0, Math.min(100, row.progress ?? 0));
+            const completed = percent >= 100;
+            const lastLesson = lastLessons?.get(row.course_id);
             return (
               <div key={row.id} className="rounded-2xl border border-border/60 bg-card p-5 shadow-card">
-                <div className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <BookOpen className="h-5 w-5" />
+                <div className="mb-3 flex items-start justify-between gap-2">
+                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <BookOpen className="h-5 w-5" />
+                  </div>
+                  {completed && (
+                    <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      Completed
+                    </span>
+                  )}
                 </div>
                 <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  {c.subject} · Class {c.class_min === c.class_max ? c.class_min : `${c.class_min}–${c.class_max}`}
+                  {c.subject}
                 </p>
-                <h3 className="mt-1 text-base font-semibold">{c.title}</h3>
-                {c.description && (
-                  <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{c.description}</p>
+                <h3 className="mt-1 text-base font-semibold leading-snug">{c.title}</h3>
+                {lastLesson && (
+                  <p className="mt-1 line-clamp-1 text-xs text-muted-foreground">
+                    Last opened: <span className="text-foreground">{lastLesson}</span>
+                  </p>
                 )}
                 <div className="mt-4">
                   <div className="mb-1 flex items-center justify-between text-xs text-muted-foreground">
                     <span>Progress</span>
-                    <span>{row.progress}%</span>
+                    <span>{percent}%</span>
                   </div>
                   <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
                     <div
                       className="h-full rounded-full bg-primary transition-all"
-                      style={{ width: `${row.progress}%` }}
+                      style={{ width: `${percent}%` }}
                     />
                   </div>
                 </div>
@@ -160,7 +160,7 @@ function MyCoursesPage() {
                     params={{ courseId: c.id }}
                     className="text-sm font-medium text-primary hover:underline"
                   >
-                    Continue →
+                    {completed ? "Review →" : "Continue learning →"}
                   </Link>
                   <button
                     onClick={() => unenroll.mutate(row.id)}
