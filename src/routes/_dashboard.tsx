@@ -78,7 +78,7 @@ const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student/resources", label: "Resources", icon: FileText },
   { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
-  { to: "/dashboard/student/roadmap", label: "Learning Roadmap", icon: Target },
+  { to: "/dashboard/roadmap", label: "Learning Roadmap", icon: Target },
   { to: "/dashboard/student/assignments", label: "Weekly Assignments", icon: ClipboardList },
   { to: "/dashboard/student/quizzes", label: "Quizzes", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
@@ -112,7 +112,9 @@ const PROFESSIONAL_NAV: NavItem[] = [
   { to: "/dashboard/student/my-courses", label: "My courses", icon: BookOpen },
   { to: "/dashboard/student/resources", label: "Resources", icon: FileText },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
+  { to: "/dashboard/roadmap", label: "Learning Roadmap", icon: Target },
   { to: "/dashboard/student/achievements", label: "Achievements", icon: Trophy },
+
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   { to: "/dashboard/community", label: "Community", icon: Users },
   { to: "/dashboard/analytics", label: "My Analytics", icon: BarChart3 },
@@ -128,8 +130,10 @@ const COLLEGE_NAV: NavItem[] = [
   { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
   { to: "/dashboard/student/quizzes", label: "AI Quizzes", icon: Target },
+  { to: "/dashboard/roadmap", label: "Learning Roadmap", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
   { to: "/dashboard/student/study-plan", label: "Study Plan", icon: Target },
+
   { to: "/dashboard/student/achievements", label: "Achievements", icon: Trophy },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   { to: "/dashboard/community", label: "Community", icon: Users },
@@ -175,15 +179,8 @@ function DashboardLayout() {
 
   const role = profile?.role ?? null;
 
-  useEffect(() => {
-    if (
-      role === "student" &&
-      profile?.onboardingCompleted === false &&
-      !pathname.startsWith("/onboarding")
-    ) {
-      navigate({ to: "/onboarding/student-profile", replace: true });
-    }
-  }, [role, profile?.onboardingCompleted, pathname, navigate]);
+  // Simplified flow: no post-signup profile step. Roles land straight on their dashboards.
+
 
   const rawNav = role ? NAV_BY_ROLE[role] : [];
   // Hide super-admin-only entries from Demo Admins. We look up admin_level inline
