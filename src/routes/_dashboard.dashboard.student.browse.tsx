@@ -26,7 +26,7 @@ import {
   type CatalogCourse,
   type CatalogScope,
 } from "@/lib/courses/catalog";
-import { ensureCatalogCourse } from "@/lib/courses/ensure.functions";
+import { ensureCatalogCourse, seedCourseSkeleton } from "@/lib/courses/ensure.functions";
 
 export const Route = createFileRoute("/_dashboard/dashboard/student/browse")({
   component: BrowseCoursesPage,
@@ -39,6 +39,7 @@ function BrowseCoursesPage() {
   const qc = useQueryClient();
   const navigate = useNavigate();
   const ensure = useServerFn(ensureCatalogCourse);
+  const seedFn = useServerFn(seedCourseSkeleton);
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>("all");
@@ -134,12 +135,20 @@ function BrowseCoursesPage() {
         .from("course_enrollments")
         .insert({ user_id: u.user.id, course_id: courseId });
       if (error && !/duplicate|unique/i.test(error.message)) throw error;
+      // Materialize chapters + mapped library resources so My Courses and
+      // the Resources page reflect the enrollment immediately. Idempotent.
+      try {
+        await seedFn({ data: { courseId } });
+      } catch {
+        // Non-fatal — the course page retries on open.
+      }
       return courseId;
     },
     onSuccess: (courseId) => {
       toast.success("Enrolled — opening course");
       qc.invalidateQueries({ queryKey: ["me", "enrollments"] });
       qc.invalidateQueries({ queryKey: ["me", "enrollments", "slugs"] });
+      qc.invalidateQueries({ queryKey: ["me", "resources", "enrolled"] });
       navigate({ to: "/dashboard/student/courses/$courseId", params: { courseId } });
     },
     onError: (e: Error) => toast.error(e.message),

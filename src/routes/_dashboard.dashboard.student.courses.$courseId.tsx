@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   BookOpen,
   CheckCircle2,
@@ -90,6 +90,7 @@ function CourseOverviewPage() {
     },
   });
 
+  const seedFn = useServerFn(seedCourseSkeleton);
   const enroll = useMutation({
     mutationFn: async () => {
       const { data: u } = await supabase.auth.getUser();
@@ -97,12 +98,24 @@ function CourseOverviewPage() {
       const { error } = await supabase
         .from("course_enrollments")
         .insert({ user_id: u.user.id, course_id: courseId });
-      if (error) throw error;
+      if (error && !/duplicate|unique/i.test(error.message)) throw error;
+      // Materialize chapters / lessons / resources immediately so My Courses
+      // and the Resources page reflect the enrollment on the next render.
+      // Idempotent: skips work if already seeded.
+      try {
+        await seedFn({ data: { courseId } });
+      } catch {
+        // Non-fatal — the course page will retry seeding on open.
+      }
     },
     onSuccess: () => {
       toast.success("Enrolled");
       qc.invalidateQueries({ queryKey: ["me", "enrollment", courseId] });
       qc.invalidateQueries({ queryKey: ["me", "enrollments"] });
+      qc.invalidateQueries({ queryKey: ["me", "enrollments", "slugs"] });
+      qc.invalidateQueries({ queryKey: ["me", "resources", "enrolled"] });
+      qc.invalidateQueries({ queryKey: ["course", courseId, "resources"] });
+      qc.invalidateQueries({ queryKey: ["course", courseId, "chapters"] });
     },
     onError: (e: Error) => toast.error(e.message),
   });
@@ -128,7 +141,6 @@ function CourseOverviewPage() {
   }, [percent, total, enrollment, courseId, qc]);
 
   // Auto-seed AI chapter skeleton when a course is opened with no content yet.
-  const seedFn = useServerFn(seedCourseSkeleton);
   const seedTriedRef = useRef<string | null>(null);
   useEffect(() => {
     if (!course) return;
@@ -435,29 +447,9 @@ function CourseOverviewPage() {
           </Section>
 
           <Section title="Resources" description="Notes, worksheets, and more">
-            {!resources || resources.length === 0 ? (
-              <EmptyContent title="No resources yet" />
-            ) : (
-              <ul className="space-y-2">
-                {resources.map((r) => (
-                  <li key={r.id}>
-                    <a
-                      href={r.url ?? "#"}
-                      target={r.url ? "_blank" : undefined}
-                      rel="noreferrer"
-                      className="flex items-start gap-3 rounded-lg border border-border/50 p-3 hover:bg-muted/40"
-                    >
-                      <FileText className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <div className="min-w-0">
-                        <p className="truncate text-sm font-medium">{r.title}</p>
-                        <p className="text-xs text-muted-foreground">{r.kind.replace("_", " ")}</p>
-                      </div>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <CourseResourceList resources={resources ?? []} />
           </Section>
+
 
           <Section title="AI Learning Assistant">
             <p className="text-sm text-muted-foreground">
@@ -506,5 +498,138 @@ function NextStepList({
         </ul>
       )}
     </div>
+  );
+}
+
+type ResourceRow = {
+  id: string;
+  kind: string;
+  title: string;
+  description: string | null;
+  url: string | null;
+  order_index: number | null;
+};
+
+const RESOURCE_KIND_LABEL: Record<string, string> = {
+  notes: "Notes",
+  pdf: "PDF",
+  worksheet: "Worksheet",
+  formula_sheet: "Formula Sheet",
+  question_bank: "Practice Questions",
+  pyq: "Interview Questions",
+  mindmap: "Mind Map",
+  cheatsheet: "Cheat Sheet",
+};
+
+function CourseResourceList({ resources }: { resources: ResourceRow[] }) {
+  const [query, setQuery] = useState("");
+  const [kind, setKind] = useState<string>("all");
+
+  const kinds = useMemo(() => {
+    const set = new Set<string>();
+    for (const r of resources) set.add(r.kind);
+    return Array.from(set).sort();
+  }, [resources]);
+
+  if (resources.length === 0) {
+    return <EmptyContent title="No resources yet" />;
+  }
+
+  const q = query.trim().toLowerCase();
+  const filtered = resources.filter((r) => {
+    if (kind !== "all" && r.kind !== kind) return false;
+    if (!q) return true;
+    return (
+      r.title.toLowerCase().includes(q) ||
+      (r.description ?? "").toLowerCase().includes(q) ||
+      (RESOURCE_KIND_LABEL[r.kind] ?? r.kind).toLowerCase().includes(q)
+    );
+  });
+
+  return (
+    <div>
+      <div className="mb-3 space-y-2">
+        <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-background px-2.5 py-1.5">
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search resources…"
+            className="w-full bg-transparent text-xs outline-none placeholder:text-muted-foreground"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => setQuery("")}
+              className="text-[10px] font-medium text-muted-foreground hover:text-foreground"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+        {kinds.length > 1 && (
+          <div className="flex flex-wrap gap-1">
+            <ResourceKindChip active={kind === "all"} onClick={() => setKind("all")}>
+              All
+            </ResourceKindChip>
+            {kinds.map((k) => (
+              <ResourceKindChip key={k} active={kind === k} onClick={() => setKind(k)}>
+                {RESOURCE_KIND_LABEL[k] ?? k}
+              </ResourceKindChip>
+            ))}
+          </div>
+        )}
+      </div>
+      {filtered.length === 0 ? (
+        <p className="rounded-lg border border-dashed border-border/50 p-3 text-center text-xs text-muted-foreground">
+          No resources match your filters.
+        </p>
+      ) : (
+        <ul className="space-y-2">
+          {filtered.map((r) => (
+            <li key={r.id}>
+              <a
+                href={r.url ?? "#"}
+                target={r.url ? "_blank" : undefined}
+                rel="noreferrer"
+                className="flex items-start gap-3 rounded-lg border border-border/50 p-3 hover:bg-muted/40"
+              >
+                <FileText className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium">{r.title}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {RESOURCE_KIND_LABEL[r.kind] ?? r.kind.replace("_", " ")}
+                  </p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+function ResourceKindChip({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={
+        "rounded-md px-2 py-0.5 text-[11px] font-medium transition " +
+        (active
+          ? "bg-primary text-primary-foreground"
+          : "bg-muted text-muted-foreground hover:text-foreground")
+      }
+    >
+      {children}
+    </button>
   );
 }
