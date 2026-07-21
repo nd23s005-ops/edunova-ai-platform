@@ -348,20 +348,34 @@ function StudentDashboard() {
         />
         {recommendations && recommendations.length > 0 ? (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {recommendations.map((r) => (
-              <Link
-                key={r.id}
-                to="/dashboard/student/courses/$courseId"
-                params={{ courseId: r.id }}
-                className="block rounded-2xl border border-border/60 bg-card p-4 shadow-card transition hover:border-primary/40"
-              >
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
-                  {r.subject}
-                </p>
-                <h3 className="mt-1 line-clamp-2 text-sm font-semibold">{r.title}</h3>
-                <p className="mt-3 text-xs text-muted-foreground capitalize">{r.difficulty}</p>
-              </Link>
-            ))}
+            {recommendations.map((r) =>
+              r.isCatalog ? (
+                <Link
+                  key={r.id}
+                  to="/dashboard/student/browse"
+                  className="block rounded-2xl border border-border/60 bg-card p-4 shadow-card transition hover:border-primary/40"
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
+                    {r.subject}
+                  </p>
+                  <h3 className="mt-1 line-clamp-2 text-sm font-semibold">{r.title}</h3>
+                  <p className="mt-3 text-xs text-muted-foreground capitalize">{r.difficulty}</p>
+                </Link>
+              ) : (
+                <Link
+                  key={r.id}
+                  to="/dashboard/student/courses/$courseId"
+                  params={{ courseId: r.id }}
+                  className="block rounded-2xl border border-border/60 bg-card p-4 shadow-card transition hover:border-primary/40"
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
+                    {r.subject}
+                  </p>
+                  <h3 className="mt-1 line-clamp-2 text-sm font-semibold">{r.title}</h3>
+                  <p className="mt-3 text-xs text-muted-foreground capitalize">{r.difficulty}</p>
+                </Link>
+              ),
+            )}
           </div>
         ) : (
           <EmptyState
