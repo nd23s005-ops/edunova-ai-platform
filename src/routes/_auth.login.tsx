@@ -156,9 +156,9 @@ function LoginPage() {
           <Label htmlFor="email">{isAdmin ? "Admin ID" : "Email"}</Label>
           <Input
             id="email"
-            type="email"
+            type={isAdmin ? "text" : "email"}
             autoComplete={isAdmin ? "username" : "email"}
-            placeholder={isAdmin ? "admin@edunova.ai" : "you@example.com"}
+            placeholder={isAdmin ? "admin ID" : "you@example.com"}
             className="mt-1.5"
             aria-invalid={!!form.formState.errors.email}
             {...form.register("email")}
