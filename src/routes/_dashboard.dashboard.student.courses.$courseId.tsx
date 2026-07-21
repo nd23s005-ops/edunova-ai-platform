@@ -141,6 +141,7 @@ function CourseOverviewPage() {
   }, [percent, total, enrollment, courseId, qc]);
 
   // Auto-seed AI chapter skeleton when a course is opened with no content yet.
+  const seedTriedRef = useRef<string | null>(null);
   useEffect(() => {
     if (!course) return;
     if (!chapters) return;
