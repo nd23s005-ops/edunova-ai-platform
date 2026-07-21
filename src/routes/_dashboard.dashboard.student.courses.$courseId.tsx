@@ -127,6 +127,26 @@ function CourseOverviewPage() {
       });
   }, [percent, total, enrollment, courseId, qc]);
 
+  // Auto-seed AI chapter skeleton when a course is opened with no content yet.
+  const seedFn = useServerFn(seedCourseSkeleton);
+  const seedTriedRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!course) return;
+    if (!chapters) return;
+    if (chapters.length > 0) return;
+    if (seedTriedRef.current === courseId) return;
+    seedTriedRef.current = courseId;
+    seedFn({ data: { courseId } })
+      .then((res) => {
+        if (res?.seeded) {
+          qc.invalidateQueries({ queryKey: ["course", courseId, "chapters"] });
+          qc.invalidateQueries({ queryKey: ["course", courseId, "total-lessons"] });
+        }
+      })
+      .catch((e: Error) => toast.error(e.message));
+  }, [course, chapters, courseId, qc, seedFn]);
+
+
   if (isLoading) {
     return (
       <RoleGate allow={["student"]}>
