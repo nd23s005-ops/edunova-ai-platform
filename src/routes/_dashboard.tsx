@@ -82,6 +82,7 @@ const STUDENT_NAV: NavItem[] = [
   { to: "/dashboard/student/quizzes", label: "Quizzes", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
   { to: "/dashboard/student/study-plan", label: "Study Plan", icon: Target },
+  { to: "/dashboard/student/achievements", label: "Achievements", icon: Trophy },
   { to: "/dashboard/career", label: "Career Accelerator", icon: Briefcase },
   { to: "/dashboard/community", label: "Community", icon: Users },
   { to: "/dashboard/analytics", label: "My Analytics", icon: BarChart3 },
