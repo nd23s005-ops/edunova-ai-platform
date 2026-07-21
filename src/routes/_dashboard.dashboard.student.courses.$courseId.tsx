@@ -447,29 +447,9 @@ function CourseOverviewPage() {
           </Section>
 
           <Section title="Resources" description="Notes, worksheets, and more">
-            {!resources || resources.length === 0 ? (
-              <EmptyContent title="No resources yet" />
-            ) : (
-              <ul className="space-y-2">
-                {resources.map((r) => (
-                  <li key={r.id}>
-                    <a
-                      href={r.url ?? "#"}
-                      target={r.url ? "_blank" : undefined}
-                      rel="noreferrer"
-                      className="flex items-start gap-3 rounded-lg border border-border/50 p-3 hover:bg-muted/40"
-                    >
-                      <FileText className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <div className="min-w-0">
-                        <p className="truncate text-sm font-medium">{r.title}</p>
-                        <p className="text-xs text-muted-foreground">{r.kind.replace("_", " ")}</p>
-                      </div>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <CourseResourceList resources={resources ?? []} />
           </Section>
+
 
           <Section title="AI Learning Assistant">
             <p className="text-sm text-muted-foreground">
