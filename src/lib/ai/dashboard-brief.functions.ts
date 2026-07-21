@@ -58,20 +58,22 @@ export const generateDashboardBrief = createServerFn({ method: "POST" })
     const roleKey = data.role;
     const cacheKey = `dashboard_brief:${roleKey}`;
 
-    // Try cache in ai_insights
+    // Try cache in ai_insights (payload stored as JSON in `body`)
     try {
       const { data: cached } = await supabase
         .from("ai_insights")
-        .select("payload, created_at")
-        .eq("user_id", userId)
+        .select("body, generated_at")
+        .eq("scope_type", "user")
+        .eq("scope_id", userId)
         .eq("kind", cacheKey)
-        .order("created_at", { ascending: false })
+        .order("generated_at", { ascending: false })
         .limit(1)
         .maybeSingle();
-      if (cached?.payload && cached.created_at) {
-        const age = Date.now() - new Date(cached.created_at as string).getTime();
+      if (cached?.body && cached.generated_at) {
+        const age = Date.now() - new Date(cached.generated_at as string).getTime();
         if (age < 12 * 60 * 60 * 1000) {
-          return cached.payload as DashboardBrief;
+          const parsed = safeParse<DashboardBrief>(cached.body as string);
+          if (parsed) return parsed;
         }
       }
     } catch {
