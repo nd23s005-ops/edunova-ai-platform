@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useEffect } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { useEffect, useRef } from "react";
 import {
   BookOpen,
   CheckCircle2,
@@ -40,6 +41,7 @@ import {
 } from "@/lib/courses/hooks";
 import { CourseOverviewPanel } from "@/components/learning/CourseOverviewPanel";
 import { LevelTrack } from "@/components/learning/LevelTrack";
+import { seedCourseSkeleton } from "@/lib/courses/ensure.functions";
 
 
 export const Route = createFileRoute(
@@ -124,6 +126,26 @@ function CourseOverviewPage() {
         qc.invalidateQueries({ queryKey: ["me", "enrollment", courseId] });
       });
   }, [percent, total, enrollment, courseId, qc]);
+
+  // Auto-seed AI chapter skeleton when a course is opened with no content yet.
+  const seedFn = useServerFn(seedCourseSkeleton);
+  const seedTriedRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!course) return;
+    if (!chapters) return;
+    if (chapters.length > 0) return;
+    if (seedTriedRef.current === courseId) return;
+    seedTriedRef.current = courseId;
+    seedFn({ data: { courseId } })
+      .then((res) => {
+        if (res?.seeded) {
+          qc.invalidateQueries({ queryKey: ["course", courseId, "chapters"] });
+          qc.invalidateQueries({ queryKey: ["course", courseId, "totalLessons"] });
+        }
+      })
+      .catch((e: Error) => toast.error(e.message));
+  }, [course, chapters, courseId, qc, seedFn]);
+
 
   if (isLoading) {
     return (
