@@ -63,11 +63,21 @@ function LoginPage() {
   const queryClient = useQueryClient();
   const { redirect: redirectTo, role: selectedRole } = Route.useSearch();
   const [submitting, setSubmitting] = useState(false);
+  const [adminError, setAdminError] = useState<string | null>(null);
 
   const form = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
     defaultValues: { email: "", password: "", remember: true },
   });
+
+  const isAdminFlow = selectedRole === "admin";
+  const allowedDemoEmails = new Set(DEMO_ADMIN_CREDENTIALS.map((c) => c.email.toLowerCase()));
+
+  const fillDemo = (email: string, password: string) => {
+    form.setValue("email", email, { shouldValidate: true });
+    form.setValue("password", password, { shouldValidate: true });
+    setAdminError(null);
+  };
 
   const onSubmit = async (values: LoginInput) => {
     setSubmitting(true);
