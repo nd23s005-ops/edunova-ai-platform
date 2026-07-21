@@ -14,6 +14,7 @@ import {
   Rocket,
 } from "lucide-react";
 import { DashboardHeader, StatCard } from "@/components/dashboard/DashboardShared";
+import { AIBriefSections } from "@/components/dashboard/AIBriefSections";
 import { ResumeLearningCard } from "@/components/learning/ResumeLearningCard";
 import {
   SectionHeader,
@@ -243,6 +244,12 @@ function StudentDashboard() {
       <div className="mb-6">
         <ResumeLearningCard />
       </div>
+
+      <div className="mb-10">
+        <AIBriefSections role="student" />
+      </div>
+
+
 
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
