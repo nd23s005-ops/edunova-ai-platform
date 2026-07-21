@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { BookOpen, Compass, Loader2, Trash2 } from "lucide-react";
+import { BookOpen, Compass, Loader2, PlayCircle, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { DashboardHeader } from "@/components/dashboard/DashboardShared";
 import { RoleGate } from "@/components/auth/RoleGate";
@@ -24,8 +24,11 @@ type EnrolledRow = {
   } | null;
 };
 
+type ResumeTarget = { lessonId: string; lessonTitle: string; percent: number | null };
+
 function MyCoursesPage() {
   const qc = useQueryClient();
+  const navigate = useNavigate();
 
   const { data: enrollments, isLoading } = useQuery({
     queryKey: ["me", "enrollments", "with-course"],
@@ -44,30 +47,76 @@ function MyCoursesPage() {
     },
   });
 
-  // Best-effort: last opened lesson title per enrolled course.
-  const { data: lastLessons } = useQuery({
-    queryKey: ["me", "last-lesson-per-course"],
+  // Per-course resume target: last opened lesson via lesson_reading_position;
+  // falls back to the first lesson of the first chapter for fresh enrollments.
+  const { data: resumeMap } = useQuery({
+    queryKey: ["me", "resume-map"],
     enabled: !!enrollments && enrollments.length > 0,
     queryFn: async () => {
       const { data: u } = await supabase.auth.getUser();
-      if (!u.user) return new Map<string, string>();
-      const courseIds = (enrollments ?? []).map((e) => e.course_id);
-      if (courseIds.length === 0) return new Map<string, string>();
-      const { data } = await supabase
+      if (!u.user || !enrollments) return new Map<string, ResumeTarget>();
+      const courseIds = enrollments.map((e) => e.course_id);
+      const map = new Map<string, ResumeTarget>();
+
+      // 1) Preferred: last opened lesson.
+      const { data: positions } = await supabase
         .from("lesson_reading_position")
-        .select("course_id, updated_at, lessons:lesson_id (title)")
+        .select("course_id, lesson_id, scroll_percent, updated_at, lessons:lesson_id (title)")
         .eq("user_id", u.user.id)
         .in("course_id", courseIds)
         .order("updated_at", { ascending: false });
-      const map = new Map<string, string>();
-      type Row = { course_id: string | null; lessons: { title: string | null } | null };
-      for (const row of (data ?? []) as unknown as Row[]) {
-        const title = row.lessons?.title;
-        if (row.course_id && title && !map.has(row.course_id)) map.set(row.course_id, title);
+      type PosRow = {
+        course_id: string | null;
+        lesson_id: string | null;
+        scroll_percent: number | null;
+        lessons: { title: string | null } | null;
+      };
+      for (const row of (positions ?? []) as unknown as PosRow[]) {
+        if (!row.course_id || !row.lesson_id || !row.lessons?.title) continue;
+        if (map.has(row.course_id)) continue;
+        map.set(row.course_id, {
+          lessonId: row.lesson_id,
+          lessonTitle: row.lessons.title,
+          percent: row.scroll_percent,
+        });
+      }
+
+      // 2) Fallback: first lesson of first chapter for courses without a position.
+      const missing = courseIds.filter((id) => !map.has(id));
+      if (missing.length > 0) {
+        const { data: chapters } = await supabase
+          .from("chapters")
+          .select("id, course_id, order_index, lessons:lessons (id, title, order_index)")
+          .in("course_id", missing)
+          .order("order_index");
+        type ChRow = {
+          id: string;
+          course_id: string;
+          order_index: number;
+          lessons: { id: string; title: string; order_index: number }[] | null;
+        };
+        const byCourse = new Map<string, ChRow[]>();
+        for (const c of (chapters ?? []) as unknown as ChRow[]) {
+          if (!byCourse.has(c.course_id)) byCourse.set(c.course_id, []);
+          byCourse.get(c.course_id)!.push(c);
+        }
+        for (const [cid, chs] of byCourse.entries()) {
+          const firstCh = chs.sort((a, b) => a.order_index - b.order_index)[0];
+          const firstLesson = (firstCh?.lessons ?? [])
+            .slice()
+            .sort((a, b) => a.order_index - b.order_index)[0];
+          if (firstLesson) {
+            map.set(cid, {
+              lessonId: firstLesson.id,
+              lessonTitle: firstLesson.title,
+              percent: 0,
+            });
+          }
+        }
       }
       return map;
     },
-    staleTime: 30_000,
+    staleTime: 15_000,
   });
 
   const unenroll = useMutation({
@@ -83,9 +132,23 @@ function MyCoursesPage() {
       qc.invalidateQueries({ queryKey: ["me", "enrollments"] });
       qc.invalidateQueries({ queryKey: ["me", "enrollments", "with-course"] });
       qc.invalidateQueries({ queryKey: ["me", "enrollments", "slugs"] });
+      qc.invalidateQueries({ queryKey: ["me", "resume-map"] });
     },
     onError: (e: Error) => toast.error(e.message),
   });
+
+  function continueLearning(courseId: string) {
+    const target = resumeMap?.get(courseId);
+    if (target?.lessonId) {
+      navigate({
+        to: "/dashboard/student/courses/$courseId/lessons/$lessonId",
+        params: { courseId, lessonId: target.lessonId },
+      });
+    } else {
+      // No content yet — open the course overview, which auto-seeds the AI skeleton.
+      navigate({ to: "/dashboard/student/courses/$courseId", params: { courseId } });
+    }
+  }
 
   return (
     <RoleGate allow={["student", "college_student", "professional"]}>
@@ -120,9 +183,9 @@ function MyCoursesPage() {
             const c = row.courses!;
             const percent = Math.max(0, Math.min(100, row.progress ?? 0));
             const completed = percent >= 100;
-            const lastLesson = lastLessons?.get(row.course_id);
+            const resume = resumeMap?.get(row.course_id);
             return (
-              <div key={row.id} className="rounded-2xl border border-border/60 bg-card p-5 shadow-card">
+              <div key={row.id} className="flex flex-col rounded-2xl border border-border/60 bg-card p-5 shadow-card">
                 <div className="mb-3 flex items-start justify-between gap-2">
                   <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
                     <BookOpen className="h-5 w-5" />
@@ -137,9 +200,9 @@ function MyCoursesPage() {
                   {c.subject}
                 </p>
                 <h3 className="mt-1 text-base font-semibold leading-snug">{c.title}</h3>
-                {lastLesson && (
+                {resume?.lessonTitle && (
                   <p className="mt-1 line-clamp-1 text-xs text-muted-foreground">
-                    Last opened: <span className="text-foreground">{lastLesson}</span>
+                    Up next: <span className="text-foreground">{resume.lessonTitle}</span>
                   </p>
                 )}
                 <div className="mt-4">
@@ -155,13 +218,14 @@ function MyCoursesPage() {
                   </div>
                 </div>
                 <div className="mt-4 flex items-center justify-between gap-2">
-                  <Link
-                    to="/dashboard/student/courses/$courseId"
-                    params={{ courseId: c.id }}
-                    className="text-sm font-medium text-primary hover:underline"
+                  <Button
+                    size="sm"
+                    variant={completed ? "secondary" : "default"}
+                    onClick={() => continueLearning(row.course_id)}
                   >
-                    {completed ? "Review →" : "Continue learning →"}
-                  </Link>
+                    <PlayCircle className="mr-1.5 h-3.5 w-3.5" />
+                    {completed ? "Review" : resume ? "Continue" : "Start"}
+                  </Button>
                   <button
                     onClick={() => unenroll.mutate(row.id)}
                     disabled={unenroll.isPending}
