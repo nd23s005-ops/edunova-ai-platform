@@ -1,38 +1,38 @@
-# Phase 1 — Dashboard-Specific Dynamic Course System
+## MASTER FIX 1 — Plan
 
-Large scope; splitting into 3 shippable milestones so each turn stays safe (no runtime/DB errors) and reviewable. I'll implement M1 immediately after you approve; M2/M3 follow in subsequent turns.
+Scope is large; I'll ship in one turn but split cleanly. No UI rewrites — only additive/targeted edits.
 
-## M1 — Remove Organization dashboard (this turn)
+### 1. Simplify onboarding flow
+- `src/routes/onboarding.tsx`: drop step 2 (learning preferences sub-categories). After picking a role, go straight to step 2 = auth CTA (Login / Create account). Admin flow unchanged.
+- Remove `PREFERENCES` map and its screen. `totalSteps` becomes 2. `preference` param dropped from navigation payloads.
+- `_auth.login.tsx` / `_auth.register.tsx`: keep accepting `role` in search; ignore `preference` if present (backwards-compatible).
 
-- `src/lib/auth/roles.ts`: drop `"organization"` from `AppRole`, `ROLES`, `SELF_SIGNUP_ROLES`, `ROLE_LABELS`, `ROLE_HOME`; keep string-tolerant `normalizeRole` returning `null` for `organization` so legacy rows fall through to `/dashboard`.
-- `src/routes/_dashboard.tsx`: remove `ORGANIZATION_NAV`, org branch in nav resolver, and any org menu entries.
-- Delete `src/routes/_dashboard.dashboard.organization.tsx` and any org-only sub-routes.
-- Scrub Organization from: onboarding role picker, admin user-mgmt filters, marketing copy where it advertises an "Organization dashboard" specifically. Keep the word "organization" where it just means a company/employer (career pages, jobs).
-- No DB migration — leaving the column values intact is safer; the role simply has no UI. Existing org accounts will land on `/dashboard` (fallback) and can be re-roled by admins.
+### 2. Correct dashboard identity
+- Add `src/lib/auth/role-labels.ts` exporting `roleLabel(role)` → "School Student" / "College Student" / "Working Professional" / "Administrator".
+- Update the dashboard shell (`_dashboard.tsx`) header + profile badge to use `roleLabel(currentRole)`.
+- Update each dashboard index (`.student.index.tsx`, `.college.tsx`, `.professional.tsx`) titles/breadcrumbs to use the correct label.
 
-## M2 — Dashboard-scoped Browse (next turn)
+### 3 + 4. AI-generated dashboard sections & categories
+- New server fn `src/lib/ai/dashboard-brief.functions.ts` — `generateDashboardBrief({ role, interests? })` returns JSON:
+  `{ featuredCourses[], recommendedLearning[], trendingTopics[], weeklyGoals[], learningSuggestions[], practiceRecommendations[], skillHighlights[], progressInsights[], categories[] }`. Uses Gemini via existing Lovable AI Gateway helper. Cached in `ai_insights` table (already exists) keyed by `user_id + role + 'dashboard_brief'` with 12h TTL.
+- Categories differ per role via role-specific system prompts (School = subjects; College = programming/CS/placement; Professional = upskilling/cloud/leadership etc).
+- New `src/components/dashboard/AIBriefSections.tsx` renders the 8 sections + categories as cards. Mounted on all three dashboard indexes below existing content (non-destructive).
 
-Turn `student.browse.tsx` into a router that dispatches by role, plus two sibling views:
+### 5. AI Custom Learning Roadmap
+- New table `learning_roadmaps` (id, user_id, goal, level, weekly_hours, target_date, interests, plan jsonb, created_at). GRANTs + RLS scoped to `auth.uid()`.
+- Server fn `generateRoadmap({ goal, level, hours, targetDate, interests })` — Gemini structured output → phases, courses, milestones, practice, assessments, resources, checkpoints. Store row, return plan.
+- Route `src/routes/_dashboard.dashboard.roadmap.tsx` (shared by all three roles) — form + rendered roadmap + regenerate button + history list.
+- Sidebar link "Custom Roadmap" in `_dashboard.tsx` for student/college/professional.
 
-- School (`role=student`): class picker (1–12) → subject grid (Math, Science, Physics, Chemistry, Biology, CS, English, Tamil, Social Science). "Open" launches AI course generator for `{class, subject}`.
-- College (`role=college_student`): curated catalog (Java, Python, C, C++, DSA, DBMS, OS, Networks, SE, Web, HTML/CSS/JS, React, Node, Express, Mongo, SQL, Cloud, CyberSec, AI, ML, DS, UI/UX, Aptitude, Placement).
-- Professional (`role=professional`): upskilling catalog (GenAI, MERN, DevOps, AWS/Azure/GCP, Docker, K8s, CyberSec, Data Analytics, Power BI, Excel, Prompt Eng, UI/UX, Leadership, Comms, PM, Digital Marketing, Finance, Entrepreneurship).
+### 6. Auto-link resources to courses
+- Existing `src/lib/courses/resource-seed.server.ts` already token-matches. Extend `seedCourseSkeleton` / `ensureCatalogCourse` path so that when a course is opened or enrolled, if `course_resources` has zero rows, we run the matcher against the marketing library slugs (already covered). Additionally: on the course detail page's resource tab, if empty → show friendly empty state (already partially present) + a "Notify me when added" placeholder button (no-op toast).
+- No duplicate resource creation — token-mapping is idempotent, verified.
 
-All three lists live as **metadata catalogs** in `src/lib/courses/catalog.ts` (title, slug, level, tags, hero prompt). No lesson text is stored here.
+### Non-goals / preserved
+- UI, animations, dark/light theme, routing, auth, DB schema (except one additive table), APIs.
+- No changes to existing course engine, quiz engine, assessments, community.
 
-## M3 — AI course generation on demand (next turn)
-
-- New server fn `generateAiCourse({ track, slug, classLevel? })` in `src/lib/ai/engine/ai-course.functions.ts`:
-  - Reuses `callGatewayJSON` + existing `ai_course_overviews`/`ai_lesson_content` tables (already personalized per user).
-  - New table `ai_generated_courses` (per-user, per-slug) storing generated syllabus (chapters + lessons skeleton) so navigation is stable across sessions.
-- Course viewer routes: reuse existing `student.courses.$courseId.*` pattern but resolve `courseId` as either a real UUID (existing catalog) OR an `ai:<slug>` id backed by `ai_generated_courses`. Lesson pages already call `getOrGenerateLessonContent` which regenerates intro/concepts/steps/examples/use-cases/summary/takeaways on demand — this covers the "AI generates lessons, notes, examples, practice, Q&A, revision" requirement without new infra.
-- Practice/MCQ/weekly quiz/mock test/assignment tie into the existing `ai_universal_attempts`, `ai_weekly_attempts`, `ai_mock_test_attempts` engines with the generated course as context.
-
-## Guardrails
-
-- No UI redesign — reuse existing `CourseUI`, `LessonEnhancerPanel`, quiz/test components.
-- No breaking DB changes; only additive tables in M3.
-- Every new server fn behind `requireSupabaseAuth`; RLS + GRANTs in the migration.
-- Typecheck after each milestone.
-
-Approve M1 to proceed, or tell me to bundle M1+M2 in one turn.
+### Technical notes
+- All AI calls: `google/gemini-3-flash-preview` via `createLovableAiGatewayProvider` + `Output.object` (structured), guarded with `NoObjectGeneratedError`.
+- All server fns use `requireSupabaseAuth`. New table + RLS + GRANTs in one migration.
+- Zero-crash guard: dashboard sections render skeletons while loading; on AI error fall back to a static role-specific mini set so dashboards never blank.
