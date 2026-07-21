@@ -105,10 +105,12 @@ function UpskillingHub() {
     return ["all", ...Array.from(set).sort()];
   }, [courses]);
 
+  const isSchool = role === "student";
+
   const filtered = useMemo(() => {
     const s = search.trim().toLowerCase();
     return courses.filter((c) => {
-      if (!matchesFeatured(c)) return false;
+      if (!isSchool && !matchesFeatured(c)) return false;
       if (role && !c.audience.includes(role)) return false;
       if (category !== "all" && c.category !== category) return false;
       if (difficulty !== "all" && c.difficulty !== difficulty) return false;
@@ -119,9 +121,10 @@ function UpskillingHub() {
       if (s && !`${c.title} ${c.category} ${c.description ?? ""}`.toLowerCase().includes(s)) return false;
       return true;
     });
-  }, [courses, role, category, difficulty, duration, search]);
+  }, [courses, role, isSchool, category, difficulty, duration, search]);
 
   const skillTiles = useMemo(() => {
+    if (isSchool) return [];
     return FEATURED_SKILLS.map((skill) => {
       const needle = skill.toLowerCase();
       const token = needle.split(/[^a-z0-9+.#]+/).filter((t) => t.length > 2)[0];
@@ -131,13 +134,49 @@ function UpskillingHub() {
       });
       return { skill, course: match ?? null };
     });
-  }, [filtered]);
+  }, [filtered, isSchool]);
+
+  const grouped = useMemo(() => {
+    if (!isSchool) return [] as Array<{ category: string; items: UpskillCourse[] }>;
+    const map = new Map<string, UpskillCourse[]>();
+    for (const c of filtered) {
+      const list = map.get(c.category) ?? [];
+      list.push(c);
+      map.set(c.category, list);
+    }
+    const CATEGORY_ORDER = [
+      "Digital Skills",
+      "Programming Basics",
+      "Artificial Intelligence Basics",
+      "Creative Skills",
+      "Communication Skills",
+      "Study Skills",
+      "Career Awareness",
+      "Productivity Tools",
+      "Career Preparation",
+      "Interview Preparation",
+      "Resume Building",
+      "Soft Skills",
+      "Competitive Exams",
+    ];
+    return Array.from(map.entries())
+      .sort((a, b) => {
+        const ai = CATEGORY_ORDER.indexOf(a[0]);
+        const bi = CATEGORY_ORDER.indexOf(b[0]);
+        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      })
+      .map(([category, items]) => ({ category, items }));
+  }, [filtered, isSchool]);
+
+  const heroDescription = isSchool
+    ? "Beginner-friendly skills for school students — digital, creative, communication, study, and career awareness."
+    : "Career-oriented, high-demand skills for higher education, internships and placements.";
 
   return (
     <>
       <DashboardHeader
-        title="Skill Up"
-        description="Career-oriented, high-demand skills for higher education, internships and placements."
+        title={isSchool ? "Upskilling for School Students" : "Skill Up"}
+        description={heroDescription}
         actions={
           <Link to="/dashboard/mock-tests">
             <Button variant="outline" size="sm" className="gap-2">
@@ -154,9 +193,9 @@ function UpskillingHub() {
             <Input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search skills…"
+              placeholder={isSchool ? "Search school upskilling…" : "Search skills…"}
               className="pl-9"
-              aria-label="Search skill up courses"
+              aria-label="Search upskilling courses"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -178,6 +217,28 @@ function UpskillingHub() {
 
       {isLoading ? (
         <p className="text-sm text-muted-foreground">Loading skills…</p>
+      ) : isSchool ? (
+        grouped.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-border/60 p-10 text-center text-sm text-muted-foreground">
+            No upskilling courses match your search.
+          </div>
+        ) : (
+          grouped.map(({ category: cat, items }) => (
+            <section key={cat} className="mb-8">
+              <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+                <BookOpen className="h-4 w-4 text-primary" /> {cat}
+                <span className="ml-1 text-xs font-normal text-muted-foreground/70">
+                  · {items.length} course{items.length === 1 ? "" : "s"}
+                </span>
+              </h2>
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {items.map((c) => (
+                  <CourseCard key={c.id} course={c} enrolled={enrolledIds.has(c.id)} />
+                ))}
+              </div>
+            </section>
+          ))
+        )
       ) : (
         <section>
           <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
@@ -219,6 +280,7 @@ function UpskillingHub() {
     </>
   );
 }
+
 
 function Select({
   value,
