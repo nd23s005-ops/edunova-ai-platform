@@ -57,6 +57,7 @@ type RecommendedCourse = {
   title: string;
   subject: string;
   difficulty: string;
+  isCatalog?: boolean;
 };
 
 function StudentDashboard() {
