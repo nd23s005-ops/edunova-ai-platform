@@ -39,6 +39,7 @@ function BrowseCoursesPage() {
   const qc = useQueryClient();
   const navigate = useNavigate();
   const ensure = useServerFn(ensureCatalogCourse);
+  const seedFn = useServerFn(seedCourseSkeleton);
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>("all");
