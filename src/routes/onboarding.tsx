@@ -83,9 +83,7 @@ const ROLES: RoleCard[] = [
     description: "Upskill or switch careers with focused AI mentors.",
     icon: Briefcase,
     accent: "from-[oklch(0.78_0.15_140)] to-[oklch(0.6_0.17_150)]",
-
-
-
+  },
   {
     key: "admin",
     title: "Administrator",
@@ -113,13 +111,9 @@ const PREFERENCES: Record<AppRole, { key: string; label: string; desc: string }[
     { key: "switch", label: "Career Switch", desc: "Move into a new domain confidently." },
     { key: "skills", label: "New Skills", desc: "Master in-demand tools and topics." },
   ],
-
-    { key: "employee", label: "Employee Training", desc: "Structured onboarding & growth tracks." },
-    { key: "team", label: "Team Learning", desc: "Cohort programs and shared goals." },
-    { key: "analytics", label: "Corporate Analytics", desc: "Skill dashboards and ROI reports." },
-  ],
   admin: [],
 };
+
 
 // ---------------------------------------------------------------- storage
 const KEY = "edunova.onboarding";
