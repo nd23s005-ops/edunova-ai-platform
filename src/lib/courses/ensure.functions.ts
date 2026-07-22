@@ -18,6 +18,9 @@ export const ensureCatalogCourse = createServerFn({ method: "POST" })
     const { getCatalogEntry } = await import("./ensure.server");
     const entry = getCatalogEntry(data.slug);
     if (!entry) throw new Error("Unknown course slug");
+    assertClassRange({ class_min: entry.class_min, class_max: entry.class_max }, `catalog entry ${entry.slug}`);
+
+
 
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
