@@ -20,6 +20,7 @@ import { RoleGate } from "@/components/auth/RoleGate";
 import { ProgressBar } from "@/components/courses/CourseUI";
 import {
   SUBJECTS,
+  COLLEGE_SUBJECTS,
   startSubjectQuiz,
   submitSubjectQuiz,
   getSubjectQuizHistory,
@@ -27,10 +28,12 @@ import {
   type SubjectHistoryItem,
 } from "@/lib/ai/subject-quiz.functions";
 
+const ALL = [...SUBJECTS, ...COLLEGE_SUBJECTS];
+
 export const Route = createFileRoute("/_dashboard/dashboard/student/quizzes/$subject/$setId")({
   beforeLoad: ({ params }) => {
     const setNum = Number(params.setId);
-    if (!SUBJECTS.some((s) => s.slug === params.subject)) throw notFound();
+    if (!ALL.some((s) => s.slug === params.subject)) throw notFound();
     if (!Number.isInteger(setNum) || setNum < 1 || setNum > 5) throw notFound();
   },
   component: TakeQuiz,
@@ -39,7 +42,7 @@ export const Route = createFileRoute("/_dashboard/dashboard/student/quizzes/$sub
 function TakeQuiz() {
   const { subject, setId } = Route.useParams();
   const quizSet = Number(setId);
-  const label = SUBJECTS.find((s) => s.slug === subject)?.label ?? subject;
+  const label = ALL.find((s) => s.slug === subject)?.label ?? subject;
   const navigate = useNavigate();
   const qc = useQueryClient();
 
@@ -134,7 +137,7 @@ function TakeQuiz() {
     const grade = pct >= 90 ? "A+" : pct >= 80 ? "A" : pct >= 70 ? "B" : pct >= 60 ? "C" : pct >= 50 ? "D" : "F";
 
     return (
-      <RoleGate allow={["student"]}>
+      <RoleGate allow={["student", "college_student"]}>
         <div className="mb-4">
           <Link
             to="/dashboard/student/quizzes/$subject"
@@ -306,7 +309,7 @@ function TakeQuiz() {
   if (attempt && q) {
     const chosen = answers[current];
     return (
-      <RoleGate allow={["student"]}>
+      <RoleGate allow={["student", "college_student"]}>
         <div className="mb-4 flex items-center justify-between">
           <Link
             to="/dashboard/student/quizzes/$subject"
@@ -414,7 +417,7 @@ function TakeQuiz() {
 
   // ------------- Start screen -------------
   return (
-    <RoleGate allow={["student"]}>
+    <RoleGate allow={["student", "college_student"]}>
       <div className="mb-4">
         <Link
           to="/dashboard/student/quizzes/$subject"

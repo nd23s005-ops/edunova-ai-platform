@@ -155,7 +155,9 @@ function BrowseCoursesPage() {
     onSuccess: (courseId) => {
       toast.success("Enrolled — opening course");
       qc.invalidateQueries({ queryKey: ["me", "enrollments"] });
+      qc.invalidateQueries({ queryKey: ["me", "enrollments", "with-course"] });
       qc.invalidateQueries({ queryKey: ["me", "enrollments", "slugs"] });
+      qc.invalidateQueries({ queryKey: ["me", "resume-map"] });
       qc.invalidateQueries({ queryKey: ["me", "resources", "enrolled"] });
       navigate({ to: "/dashboard/student/courses/$courseId", params: { courseId } });
     },

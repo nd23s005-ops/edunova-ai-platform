@@ -7,19 +7,42 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 // ---------------------------------------------------------------
 
 export const SUBJECTS = [
-  { slug: "physics", label: "Physics", accent: "from-blue-500/20 to-cyan-500/10" },
-  { slug: "chemistry", label: "Chemistry", accent: "from-emerald-500/20 to-teal-500/10" },
-  { slug: "mathematics", label: "Mathematics", accent: "from-amber-500/20 to-orange-500/10" },
-  { slug: "biology", label: "Biology", accent: "from-lime-500/20 to-green-500/10" },
-  { slug: "botany", label: "Botany", accent: "from-green-500/20 to-emerald-500/10" },
-  { slug: "zoology", label: "Zoology", accent: "from-rose-500/20 to-pink-500/10" },
-  { slug: "english", label: "English", accent: "from-violet-500/20 to-fuchsia-500/10" },
+  { slug: "physics", label: "Physics", accent: "from-blue-500/20 to-cyan-500/10", level: "school" },
+  { slug: "chemistry", label: "Chemistry", accent: "from-emerald-500/20 to-teal-500/10", level: "school" },
+  { slug: "mathematics", label: "Mathematics", accent: "from-amber-500/20 to-orange-500/10", level: "school" },
+  { slug: "biology", label: "Biology", accent: "from-lime-500/20 to-green-500/10", level: "school" },
+  { slug: "botany", label: "Botany", accent: "from-green-500/20 to-emerald-500/10", level: "school" },
+  { slug: "zoology", label: "Zoology", accent: "from-rose-500/20 to-pink-500/10", level: "school" },
+  { slug: "english", label: "English", accent: "from-violet-500/20 to-fuchsia-500/10", level: "school" },
 ] as const;
+
+export const COLLEGE_SUBJECTS = [
+  { slug: "programming", label: "Programming Fundamentals", accent: "from-indigo-500/20 to-blue-500/10", level: "college" },
+  { slug: "c-programming", label: "C Programming", accent: "from-slate-500/20 to-zinc-500/10", level: "college" },
+  { slug: "java", label: "Java", accent: "from-orange-500/20 to-amber-500/10", level: "college" },
+  { slug: "python", label: "Python", accent: "from-yellow-500/20 to-amber-500/10", level: "college" },
+  { slug: "javascript", label: "JavaScript", accent: "from-amber-500/20 to-yellow-500/10", level: "college" },
+  { slug: "react", label: "React", accent: "from-cyan-500/20 to-sky-500/10", level: "college" },
+  { slug: "nodejs", label: "Node.js", accent: "from-emerald-500/20 to-green-500/10", level: "college" },
+  { slug: "sql", label: "SQL", accent: "from-blue-500/20 to-indigo-500/10", level: "college" },
+  { slug: "dbms", label: "DBMS", accent: "from-teal-500/20 to-cyan-500/10", level: "college" },
+  { slug: "operating-systems", label: "Operating Systems", accent: "from-fuchsia-500/20 to-purple-500/10", level: "college" },
+  { slug: "computer-networks", label: "Computer Networks", accent: "from-sky-500/20 to-blue-500/10", level: "college" },
+  { slug: "dsa", label: "Data Structures & Algorithms", accent: "from-rose-500/20 to-red-500/10", level: "college" },
+  { slug: "system-design", label: "System Design", accent: "from-purple-500/20 to-violet-500/10", level: "college" },
+  { slug: "cloud-computing", label: "Cloud Computing", accent: "from-sky-500/20 to-cyan-500/10", level: "college" },
+  { slug: "cyber-security", label: "Cyber Security", accent: "from-red-500/20 to-rose-500/10", level: "college" },
+  { slug: "artificial-intelligence", label: "Artificial Intelligence", accent: "from-violet-500/20 to-fuchsia-500/10", level: "college" },
+  { slug: "machine-learning", label: "Machine Learning", accent: "from-pink-500/20 to-rose-500/10", level: "college" },
+  { slug: "prompt-engineering", label: "Prompt Engineering", accent: "from-emerald-500/20 to-teal-500/10", level: "college" },
+] as const;
+
+const ALL_SUBJECTS = [...SUBJECTS, ...COLLEGE_SUBJECTS] as ReadonlyArray<{ slug: string; label: string; accent: string; level: string }>;
 
 export const QUIZ_SETS = [1, 2, 3, 4, 5] as const;
 export const QUESTION_COUNT = 15;
 
-export type SubjectSlug = (typeof SUBJECTS)[number]["slug"];
+export type SubjectSlug = (typeof SUBJECTS)[number]["slug"] | (typeof COLLEGE_SUBJECTS)[number]["slug"];
 export type Difficulty = "easy" | "medium" | "hard" | "expert";
 
 export type SubjectQuestion = {
@@ -52,11 +75,15 @@ export type SubjectAttempt = {
 };
 
 function isSubject(v: string): v is SubjectSlug {
-  return SUBJECTS.some((s) => s.slug === v);
+  return ALL_SUBJECTS.some((s) => s.slug === v);
 }
 
 function subjectLabel(slug: string) {
-  return SUBJECTS.find((s) => s.slug === slug)?.label ?? slug;
+  return ALL_SUBJECTS.find((s) => s.slug === slug)?.label ?? slug;
+}
+
+function subjectLevel(slug: string): "school" | "college" {
+  return (ALL_SUBJECTS.find((s) => s.slug === slug)?.level ?? "school") as "school" | "college";
 }
 
 function shuffle<T>(arr: T[], seed: number): T[] {
@@ -151,18 +178,33 @@ async function generateQuestions(params: {
   avoid: string[];
   seed: string;
 }): Promise<SubjectQuestion[]> {
-  const gradeLine = params.grade
-    ? `Learner is in Class ${params.grade}.`
-    : `Learner is a school student (Classes 6-12).`;
-  const boardLine = params.board
-    ? `Follow the ${params.board.toUpperCase()} board syllabus.`
-    : `Follow CBSE or common state-board syllabus.`;
+  const level = subjectLevel(params.subject);
+  const isCollege = level === "college";
 
-  const system = `You are an expert quiz author for EduNova AI for ${subjectLabel(params.subject)} (Classes 6–12).
+  const gradeLine = isCollege
+    ? `Learner is a college / engineering undergraduate.`
+    : params.grade
+      ? `Learner is in Class ${params.grade}.`
+      : `Learner is a school student (Classes 6-12).`;
+  const boardLine = isCollege
+    ? `Follow a typical Indian university / engineering syllabus (BE / B.Tech / BCA level). Emphasise practical, industry-relevant depth.`
+    : params.board
+      ? `Follow the ${params.board.toUpperCase()} board syllabus.`
+      : `Follow CBSE or common state-board syllabus.`;
+
+  const scopeLine = isCollege
+    ? `Cover a MIX of core topics typical for "${subjectLabel(params.subject)}" at undergraduate level (theory + applied). Vary topics between attempts. Do NOT include school-level content (no Class 6-12 physics/chemistry/biology-style items).`
+    : `Cover a MIX of chapters typical for ${subjectLabel(params.subject)} at this class range. Vary chapters between attempts.`;
+
+  const numericalNote = isCollege
+    ? `- numerical (numerical / computation problem, 4 numeric options — only where applicable, e.g. DSA complexity, networks, OS calculations)`
+    : `- numerical (numerical problem, 4 numeric options — only for Physics/Chemistry/Math where applicable)`;
+
+  const system = `You are an expert quiz author for EduNova AI for ${subjectLabel(params.subject)}${isCollege ? " (college / undergraduate level)" : " (Classes 6–12)"}.
 ${gradeLine} ${boardLine}
 Generate a FRESH quiz of exactly ${QUESTION_COUNT} questions for "${subjectLabel(params.subject)} — Quiz Set ${params.quizSet}".
 Target overall difficulty: ${params.difficulty}.
-Cover a MIX of chapters typical for ${subjectLabel(params.subject)} at this class range. Vary chapters between attempts.
+${scopeLine}
 
 Use a variety of question TYPES:
 - mcq (standard multiple choice, 4 options)
@@ -170,7 +212,7 @@ Use a variety of question TYPES:
 - fill_blank (question contains "____"; 4 plausible fills)
 - match (question describes the pairs to match; 4 candidate pairing sets as choices)
 - assertion_reason (choices exactly ["Both A and R are true and R explains A","Both A and R are true but R does not explain A","A is true, R is false","A is false, R is true"])
-- numerical (numerical problem, 4 numeric options — only for Physics/Chemistry/Math where applicable)
+${numericalNote}
 - short (short analytical MCQ)
 
 Hard rules:

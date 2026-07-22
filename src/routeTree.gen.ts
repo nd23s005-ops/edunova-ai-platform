@@ -121,6 +121,7 @@ import { Route as DashboardDashboardCommunityDoubtSolverRouteImport } from './ro
 import { Route as DashboardDashboardCommunityDiscussionsRouteImport } from './routes/_dashboard.dashboard.community.discussions'
 import { Route as DashboardDashboardCommunityCommunitiesRouteImport } from './routes/_dashboard.dashboard.community.communities'
 import { Route as DashboardDashboardCommunityChatRouteImport } from './routes/_dashboard.dashboard.community.chat'
+import { Route as DashboardDashboardCollegeQuizzesRouteImport } from './routes/_dashboard.dashboard.college.quizzes'
 import { Route as DashboardDashboardCollegePlaygroundRouteImport } from './routes/_dashboard.dashboard.college.playground'
 import { Route as DashboardDashboardCollegePersonalizeRouteImport } from './routes/_dashboard.dashboard.college.personalize'
 import { Route as DashboardDashboardCareerSkillGapRouteImport } from './routes/_dashboard.dashboard.career.skill-gap'
@@ -804,6 +805,12 @@ const DashboardDashboardCommunityChatRoute =
     path: '/chat',
     getParentRoute: () => DashboardDashboardCommunityRoute,
   } as any)
+const DashboardDashboardCollegeQuizzesRoute =
+  DashboardDashboardCollegeQuizzesRouteImport.update({
+    id: '/quizzes',
+    path: '/quizzes',
+    getParentRoute: () => DashboardDashboardCollegeRoute,
+  } as any)
 const DashboardDashboardCollegePlaygroundRoute =
   DashboardDashboardCollegePlaygroundRouteImport.update({
     id: '/playground',
@@ -1176,6 +1183,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
   '/dashboard/college/personalize': typeof DashboardDashboardCollegePersonalizeRoute
   '/dashboard/college/playground': typeof DashboardDashboardCollegePlaygroundRoute
+  '/dashboard/college/quizzes': typeof DashboardDashboardCollegeQuizzesRoute
   '/dashboard/community/chat': typeof DashboardDashboardCommunityChatRoute
   '/dashboard/community/communities': typeof DashboardDashboardCommunityCommunitiesRoute
   '/dashboard/community/discussions': typeof DashboardDashboardCommunityDiscussionsRouteWithChildren
@@ -1328,6 +1336,7 @@ export interface FileRoutesByTo {
   '/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
   '/dashboard/college/personalize': typeof DashboardDashboardCollegePersonalizeRoute
   '/dashboard/college/playground': typeof DashboardDashboardCollegePlaygroundRoute
+  '/dashboard/college/quizzes': typeof DashboardDashboardCollegeQuizzesRoute
   '/dashboard/community/chat': typeof DashboardDashboardCommunityChatRoute
   '/dashboard/community/communities': typeof DashboardDashboardCommunityCommunitiesRoute
   '/dashboard/community/discussions': typeof DashboardDashboardCommunityDiscussionsRouteWithChildren
@@ -1490,6 +1499,7 @@ export interface FileRoutesById {
   '/_dashboard/dashboard/career/skill-gap': typeof DashboardDashboardCareerSkillGapRoute
   '/_dashboard/dashboard/college/personalize': typeof DashboardDashboardCollegePersonalizeRoute
   '/_dashboard/dashboard/college/playground': typeof DashboardDashboardCollegePlaygroundRoute
+  '/_dashboard/dashboard/college/quizzes': typeof DashboardDashboardCollegeQuizzesRoute
   '/_dashboard/dashboard/community/chat': typeof DashboardDashboardCommunityChatRoute
   '/_dashboard/dashboard/community/communities': typeof DashboardDashboardCommunityCommunitiesRoute
   '/_dashboard/dashboard/community/discussions': typeof DashboardDashboardCommunityDiscussionsRouteWithChildren
@@ -1652,6 +1662,7 @@ export interface FileRouteTypes {
     | '/dashboard/career/skill-gap'
     | '/dashboard/college/personalize'
     | '/dashboard/college/playground'
+    | '/dashboard/college/quizzes'
     | '/dashboard/community/chat'
     | '/dashboard/community/communities'
     | '/dashboard/community/discussions'
@@ -1804,6 +1815,7 @@ export interface FileRouteTypes {
     | '/dashboard/career/skill-gap'
     | '/dashboard/college/personalize'
     | '/dashboard/college/playground'
+    | '/dashboard/college/quizzes'
     | '/dashboard/community/chat'
     | '/dashboard/community/communities'
     | '/dashboard/community/discussions'
@@ -1965,6 +1977,7 @@ export interface FileRouteTypes {
     | '/_dashboard/dashboard/career/skill-gap'
     | '/_dashboard/dashboard/college/personalize'
     | '/_dashboard/dashboard/college/playground'
+    | '/_dashboard/dashboard/college/quizzes'
     | '/_dashboard/dashboard/community/chat'
     | '/_dashboard/dashboard/community/communities'
     | '/_dashboard/dashboard/community/discussions'
@@ -2857,6 +2870,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDashboardCommunityChatRouteImport
       parentRoute: typeof DashboardDashboardCommunityRoute
     }
+    '/_dashboard/dashboard/college/quizzes': {
+      id: '/_dashboard/dashboard/college/quizzes'
+      path: '/quizzes'
+      fullPath: '/dashboard/college/quizzes'
+      preLoaderRoute: typeof DashboardDashboardCollegeQuizzesRouteImport
+      parentRoute: typeof DashboardDashboardCollegeRoute
+    }
     '/_dashboard/dashboard/college/playground': {
       id: '/_dashboard/dashboard/college/playground'
       path: '/playground'
@@ -3382,6 +3402,7 @@ const DashboardDashboardCareerRouteWithChildren =
 interface DashboardDashboardCollegeRouteChildren {
   DashboardDashboardCollegePersonalizeRoute: typeof DashboardDashboardCollegePersonalizeRoute
   DashboardDashboardCollegePlaygroundRoute: typeof DashboardDashboardCollegePlaygroundRoute
+  DashboardDashboardCollegeQuizzesRoute: typeof DashboardDashboardCollegeQuizzesRoute
   DashboardDashboardCollegeIndexRoute: typeof DashboardDashboardCollegeIndexRoute
 }
 
@@ -3391,6 +3412,8 @@ const DashboardDashboardCollegeRouteChildren: DashboardDashboardCollegeRouteChil
       DashboardDashboardCollegePersonalizeRoute,
     DashboardDashboardCollegePlaygroundRoute:
       DashboardDashboardCollegePlaygroundRoute,
+    DashboardDashboardCollegeQuizzesRoute:
+      DashboardDashboardCollegeQuizzesRoute,
     DashboardDashboardCollegeIndexRoute: DashboardDashboardCollegeIndexRoute,
   }
 
@@ -3809,13 +3832,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

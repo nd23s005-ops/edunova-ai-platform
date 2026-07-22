@@ -8,20 +8,23 @@ import { RoleGate } from "@/components/auth/RoleGate";
 import {
   QUIZ_SETS,
   SUBJECTS,
+  COLLEGE_SUBJECTS,
   getSubjectQuizHistory,
   type SubjectHistoryItem,
 } from "@/lib/ai/subject-quiz.functions";
 
+const ALL = [...SUBJECTS, ...COLLEGE_SUBJECTS];
+
 export const Route = createFileRoute("/_dashboard/dashboard/student/quizzes/$subject")({
   beforeLoad: ({ params }) => {
-    if (!SUBJECTS.some((s) => s.slug === params.subject)) throw notFound();
+    if (!ALL.some((s) => s.slug === params.subject)) throw notFound();
   },
   component: SubjectQuizzes,
 });
 
 function SubjectQuizzes() {
   const { subject } = Route.useParams();
-  const label = SUBJECTS.find((s) => s.slug === subject)?.label ?? subject;
+  const label = ALL.find((s) => s.slug === subject)?.label ?? subject;
   const fetchHistory = useServerFn(getSubjectQuizHistory);
 
   const { data: history } = useQuery<SubjectHistoryItem[]>({
@@ -39,7 +42,8 @@ function SubjectQuizzes() {
   }
 
   return (
-    <RoleGate allow={["student"]}>
+    <RoleGate allow={["student", "college_student"]}>
+
       <div className="mb-4">
         <Link
           to="/dashboard/student/quizzes"
