@@ -18,10 +18,10 @@ const GoogleIcon = () => (
 );
 
 function getSavedSignupRole(role?: AppRole): AppRole | undefined {
-  if (role && (SELF_SIGNUP_ROLES as readonly string[]).includes(role)) return role;
   try {
     const saved = JSON.parse(sessionStorage.getItem("edunova.onboarding") || "{}") as { role?: string };
     sessionStorage.removeItem("edunova.onboarding");
+    if (role && (SELF_SIGNUP_ROLES as readonly string[]).includes(role)) return role;
     return saved.role && (SELF_SIGNUP_ROLES as readonly string[]).includes(saved.role)
       ? (saved.role as AppRole)
       : undefined;
