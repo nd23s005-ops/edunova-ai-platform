@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { Link } from "@tanstack/react-router";
+
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { getResumeCandidate } from "@/lib/ai/engine/reading-position.functions";
 import { Button } from "@/components/ui/button";
@@ -27,14 +27,11 @@ export function ResumeLearningCard() {
           </p>
         </div>
         <Button asChild size="sm">
-          <Link
-            to="/dashboard/student/courses/$courseId/lessons/$lessonId"
-            params={{ courseId: data.courseId, lessonId: data.lessonId }}
-          >
+          <a href={`/learn/${data.courseId}`} target="_blank" rel="noopener noreferrer">
             <PlayCircle className="mr-2 h-4 w-4" />
             Continue
             <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+          </a>
         </Button>
       </div>
       <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-muted">

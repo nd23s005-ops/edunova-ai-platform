@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -52,7 +52,7 @@ export const Route = createFileRoute(
 
 function CourseOverviewPage() {
   const { courseId } = Route.useParams();
-  const navigate = useNavigate();
+  
   const qc = useQueryClient();
 
   const { data: course, isLoading } = useCourse(courseId);
@@ -204,19 +204,11 @@ function CourseOverviewPage() {
           isEnrolled ? (
             <Button
               variant={isCompleted ? "secondary" : "default"}
-              onClick={() => {
-                const firstChapter = chapters?.[0];
-                if (firstChapter) {
-                  navigate({
-                    to: "/dashboard/student/courses/$courseId/chapters/$chapterId",
-                    params: { courseId, chapterId: firstChapter.id },
-                  });
-                } else {
-                  toast("Chapters coming soon");
-                }
-              }}
+              asChild
             >
-              {isCompleted ? "Review course" : "Continue learning"}
+              <a href={`/learn/${courseId}`} target="_blank" rel="noopener noreferrer">
+                {isCompleted ? "Review course" : "Continue learning"}
+              </a>
             </Button>
           ) : (
             <Button disabled={enroll.isPending} onClick={() => enroll.mutate()}>
@@ -289,16 +281,10 @@ function CourseOverviewPage() {
                 <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">{nextCourse.description}</p>
               )}
               <div className="mt-3 flex flex-wrap gap-2">
-                <Button
-                  size="sm"
-                  onClick={() =>
-                    navigate({
-                      to: "/dashboard/student/courses/$courseId",
-                      params: { courseId: nextCourse.id },
-                    })
-                  }
-                >
-                  Continue learning
+                <Button size="sm" asChild>
+                  <a href={`/learn/${nextCourse.id}`} target="_blank" rel="noopener noreferrer">
+                    Continue learning
+                  </a>
                 </Button>
                 <Link to="/dashboard/student/browse">
                   <Button size="sm" variant="outline">
