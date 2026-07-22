@@ -46,19 +46,27 @@ function BrowseCoursesPage() {
   const [sortMode, setSortMode] = useState<SortMode>("curated");
   const [pendingSlug, setPendingSlug] = useState<string | null>(null);
 
-  const { data: role, isLoading: roleLoading } = useQuery({
-    queryKey: ["me", "role"],
+  const { data: userId, isLoading: userLoading } = useQuery({
+    queryKey: ["me", "user-id"],
     queryFn: async () => {
       const { data: u } = await supabase.auth.getUser();
-      if (!u.user) return null;
+      return u.user?.id ?? null;
+    },
+    staleTime: 0,
+  });
+
+  const { data: role, isLoading: roleLoading } = useQuery({
+    queryKey: ["me", "role", userId],
+    enabled: !!userId,
+    queryFn: async () => {
       const { data } = await supabase
         .from("user_roles")
         .select("role")
-        .eq("user_id", u.user.id)
+        .eq("user_id", userId!)
         .maybeSingle();
       return normalizeRole((data?.role as string | undefined) ?? null);
     },
-    staleTime: 60_000,
+    staleTime: 0,
   });
 
   const { data: enrolledSlugs } = useQuery({
@@ -168,7 +176,7 @@ function BrowseCoursesPage() {
     onSettled: () => setPendingSlug(null),
   });
 
-  if (roleLoading || !scope) {
+  if (userLoading || roleLoading || !scope) {
     return (
       <RoleGate allow={["student", "college_student", "professional"]}>
         <div className="flex min-h-[40vh] items-center justify-center">

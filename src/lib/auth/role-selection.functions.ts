@@ -25,15 +25,20 @@ export const completeAuthRoleSelection = createServerFn({ method: "POST" })
 
     const { data: profile, error: profileError } = await supabaseAdmin
       .from("profiles")
-      .select("onboarding_completed")
+      .select("created_at, onboarding_completed")
       .eq("id", userId)
       .maybeSingle();
     if (profileError) throw profileError;
 
     if (currentRole?.role === "admin") return "admin";
 
-    if (profile?.onboarding_completed && currentRole?.role) {
-      if (currentRole.role === "school_student") return "student";
+    const profileCreatedAt = profile?.created_at ? new Date(profile.created_at).getTime() : 0;
+    const isFreshSignup = !profileCreatedAt || Date.now() - profileCreatedAt < 15 * 60 * 1000;
+
+    // Existing users keep their established dashboard identity. This prevents
+    // stale onboarding data in the browser from changing School/College/Pro
+    // roles on later logins.
+    if (currentRole?.role && !isFreshSignup) {
       return currentRole.role;
     }
 
@@ -50,13 +55,14 @@ export const completeAuthRoleSelection = createServerFn({ method: "POST" })
       if (error) throw error;
     }
 
-    // Only the school-student track keeps onboarding open (grade/board selection).
     const { error: updateError } = await supabaseAdmin
       .from("profiles")
       .upsert(
         {
           id: userId,
-          onboarding_completed: requestedRole !== "student",
+          onboarding_completed: true,
+          last_login_at: new Date().toISOString(),
+          is_active: true,
           updated_at: new Date().toISOString(),
         },
         { onConflict: "id" },

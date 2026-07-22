@@ -9,22 +9,30 @@ export const Route = createFileRoute("/_dashboard/dashboard/")({
 });
 
 function DashboardIndex() {
-  const { data, isLoading } = useQuery({
-    queryKey: ["me", "role"],
+  const { data: userId, isLoading: userLoading } = useQuery({
+    queryKey: ["me", "user-id"],
     queryFn: async () => {
       const { data: userData } = await supabase.auth.getUser();
-      if (!userData.user) return null;
+      return userData.user?.id ?? null;
+    },
+    staleTime: 0,
+  });
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["me", "role", userId],
+    enabled: !!userId,
+    queryFn: async () => {
       const { data: r } = await supabase
         .from("user_roles")
         .select("role")
-        .eq("user_id", userData.user.id)
+        .eq("user_id", userId!)
         .maybeSingle();
       return normalizeRole((r?.role as string | undefined) ?? null);
     },
-    staleTime: 60_000,
+    staleTime: 0,
   });
 
-  if (isLoading) {
+  if (userLoading || isLoading) {
     return (
       <div className="flex min-h-[40vh] items-center justify-center">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
@@ -34,7 +42,7 @@ function DashboardIndex() {
 
   // If the signed-in user somehow has no role row, send them through onboarding
   // once instead of looping on /dashboard → homeForRole(null) → /dashboard.
-  if (!data) return <Navigate to="/onboarding" replace />;
+  if (!userId || !data) return <Navigate to="/onboarding" replace />;
   const dest = homeForRole(data);
   return <Navigate to={dest} replace />;
 }

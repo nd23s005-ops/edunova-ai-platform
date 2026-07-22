@@ -24,7 +24,7 @@ function QuizzesIndex() {
     <RoleGate allow={["student"]}>
       <DashboardHeader
         title="AI Quizzes"
-        description="Practice Classes 6–12 with fresh AI-generated quizzes. Every attempt is unique."
+        description="Practice with fresh AI-generated quizzes across core subjects. Every attempt is unique."
       />
 
       <section className="mb-8">
