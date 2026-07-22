@@ -3500,15 +3500,19 @@ export type Database = {
       }
       profiles: {
         Row: {
+          auth_provider: string
           avatar_url: string | null
           bio: string | null
           country: string | null
           created_at: string
           dashboard_prefs: Json
           dob: string | null
+          email: string | null
           full_name: string | null
           id: string
+          is_active: boolean
           last_insight_at: string | null
+          last_login_at: string | null
           notif_prefs: Json
           onboarding_completed: boolean
           phone: string | null
@@ -3516,15 +3520,19 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          auth_provider?: string
           avatar_url?: string | null
           bio?: string | null
           country?: string | null
           created_at?: string
           dashboard_prefs?: Json
           dob?: string | null
+          email?: string | null
           full_name?: string | null
           id: string
+          is_active?: boolean
           last_insight_at?: string | null
+          last_login_at?: string | null
           notif_prefs?: Json
           onboarding_completed?: boolean
           phone?: string | null
@@ -3532,15 +3540,19 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          auth_provider?: string
           avatar_url?: string | null
           bio?: string | null
           country?: string | null
           created_at?: string
           dashboard_prefs?: Json
           dob?: string | null
+          email?: string | null
           full_name?: string | null
           id?: string
+          is_active?: boolean
           last_insight_at?: string | null
+          last_login_at?: string | null
           notif_prefs?: Json
           onboarding_completed?: boolean
           phone?: string | null
