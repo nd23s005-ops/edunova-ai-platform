@@ -281,16 +281,10 @@ function CourseOverviewPage() {
                 <p className="mt-2 line-clamp-2 text-xs text-muted-foreground">{nextCourse.description}</p>
               )}
               <div className="mt-3 flex flex-wrap gap-2">
-                <Button
-                  size="sm"
-                  onClick={() =>
-                    navigate({
-                      to: "/dashboard/student/courses/$courseId",
-                      params: { courseId: nextCourse.id },
-                    })
-                  }
-                >
-                  Continue learning
+                <Button size="sm" asChild>
+                  <a href={`/learn/${nextCourse.id}`} target="_blank" rel="noopener noreferrer">
+                    Continue learning
+                  </a>
                 </Button>
                 <Link to="/dashboard/student/browse">
                   <Button size="sm" variant="outline">
