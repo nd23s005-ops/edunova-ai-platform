@@ -110,19 +110,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "EduNova AI" },
       { name: "theme-color", content: "#0e6b7a" },
-      { property: "og:title", content: "EduNova AI — Learn Smarter. Grow Faster." },
+      { property: "og:title", content: "EduNova AI — Learn Smarter. Grow Faster. Powered by AI." },
       {
         property: "og:description",
         content:
-          "Adaptive AI learning for students, professionals, and organizations. Personalized paths, AI tutoring, and a premium resource library.",
+          "EduNova AI (Nova Learn AI) is an AI-powered self-learning platform for students, professionals, and organizations. Personalized courses, AI tutoring, and rich resources.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "EduNova AI" },
+      { name: "twitter:title", content: "EduNova AI — Learn Smarter. Grow Faster. Powered by AI." },
       {
         name: "twitter:description",
-        content: "AI-powered adaptive learning for the next generation of learners.",
+        content: "EduNova AI (Nova Learn AI) is an AI-powered self-learning platform for students, professionals, and organizations. Personalized courses, AI tutoring, and rich resources.",
       },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/90b3d067-2d2a-4592-a04d-14627746f82d" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/90b3d067-2d2a-4592-a04d-14627746f82d" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
