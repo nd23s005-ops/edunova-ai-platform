@@ -1,626 +1,555 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import { useMemo, useState } from "react";
 import {
-  BookOpen,
-  Sparkles,
-  Target,
-  Compass,
-  PlayCircle,
-  CheckCircle2,
-  Rocket,
+  Terminal,
   Code2,
-  Briefcase,
-  Award,
-  BarChart3,
-  GraduationCap,
-  Flame,
-  CalendarDays,
-  TrendingUp,
+  GitBranch,
+  Github,
   Trophy,
-  Lightbulb,
-  ArrowRight,
+  Rocket,
+  Briefcase,
   Bot,
+  Cpu,
+  Beaker,
+  Users,
+  FileText,
   Layers,
+  Flame,
+  Zap,
+  Target,
+  Sparkles,
+  ChevronRight,
+  Bell,
   Building2,
-  ClipboardList,
+  BookMarked,
+  ClipboardCheck,
+  Puzzle,
+  Wrench,
+  Calendar,
+  Activity,
+  ArrowUpRight,
 } from "lucide-react";
-import { DashboardHeader } from "@/components/dashboard/DashboardShared";
-import { AIBriefSections } from "@/components/dashboard/AIBriefSections";
-import {
-  SectionHeader,
-  DashCard,
-  EmptyState,
-  QuickActionsGrid,
-} from "@/components/dashboard/DashboardWidgets";
 import { RoleGate } from "@/components/auth/RoleGate";
-import { ProgressBar } from "@/components/courses/CourseUI";
 import { supabase } from "@/integrations/supabase/client";
-import { COLLEGE_CATALOG } from "@/lib/courses/catalog";
+import { generateCollegeBrief, type BriefEntry, type CollegeBrief } from "@/lib/ai/college-brief.functions";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_dashboard/dashboard/college")({
   head: () => ({
     meta: [
       { title: "College Student Dashboard — EduNova AI" },
+      { name: "description", content: "AI-powered workspace for CS undergraduates: DSA, projects, placements, and beyond." },
       { name: "robots", content: "noindex" },
     ],
   }),
   component: CollegeDashboard,
 });
 
-type EnrolledTile = {
-  id: string;
-  progress: number;
-  course_id: string;
-  updated_at: string;
-  courses: { id: string; title: string; subject: string; difficulty?: string } | null;
-};
-
-const CATEGORY_ICONS: Record<string, string> = {
-  programming: "💻",
-  "web-development": "🌐",
-  "mobile-development": "📱",
-  ai: "🧠",
-  "machine-learning": "🤖",
-  "data-science": "📊",
-  cloud: "☁️",
-  cybersecurity: "🛡️",
-  devops: "⚙️",
-  "ui-ux": "🎨",
-  "system-design": "🏗️",
-  database: "🗄️",
-  interview: "🎯",
-  placement: "💼",
-};
-
 function CollegeDashboard() {
+  return (
+    <RoleGate allow={["college_student"]}>
+      <CollegeDashboardInner />
+    </RoleGate>
+  );
+}
+
+function CollegeDashboardInner() {
   const { data: profile } = useQuery({
-    queryKey: ["me", "profile-mini"],
+    queryKey: ["me", "college-profile-mini"],
     queryFn: async () => {
       const { data: u } = await supabase.auth.getUser();
       if (!u.user) return null;
-      const { data } = await supabase
-        .from("profiles")
-        .select("full_name")
-        .eq("id", u.user.id)
-        .maybeSingle();
+      const { data } = await supabase.from("profiles").select("full_name").eq("id", u.user.id).maybeSingle();
       return data as { full_name?: string | null } | null;
     },
     staleTime: 60_000,
   });
 
-  const { data: enrollments } = useQuery({
-    queryKey: ["me", "enrollments", "college-tiles"],
-    queryFn: async () => {
-      const { data: u } = await supabase.auth.getUser();
-      if (!u.user) return [];
-      const { data } = await supabase
-        .from("course_enrollments")
-        .select(
-          "id, progress, course_id, updated_at, courses:course_id (id, title, subject, difficulty)",
-        )
-        .eq("user_id", u.user.id)
-        .order("updated_at", { ascending: false })
-        .limit(12);
-      return (data ?? []) as unknown as EnrolledTile[];
-    },
-    staleTime: 15_000,
+  const briefFn = useServerFn(generateCollegeBrief);
+  const { data: brief, isLoading } = useQuery({
+    queryKey: ["college-brief"],
+    queryFn: () => briefFn(),
+    staleTime: 12 * 60 * 60 * 1000,
+    retry: 1,
   });
 
-  const { data: roadmapCount } = useQuery({
-    queryKey: ["me", "roadmaps-count"],
-    queryFn: async () => {
-      const { data: u } = await supabase.auth.getUser();
-      if (!u.user) return 0;
-      const { count } = await supabase
-        .from("learning_roadmaps")
-        .select("id", { count: "exact", head: true })
-        .eq("user_id", u.user.id);
-      return count ?? 0;
-    },
-    staleTime: 60_000,
-  });
-
-  const enrolled = enrollments ?? [];
-  const inProgress = enrolled.filter((e) => (e.progress ?? 0) < 100);
-  const completedCount = enrolled.filter((e) => (e.progress ?? 0) >= 100).length;
-  const continueLearning = inProgress[0];
-  const avgProgress =
-    inProgress.length > 0
-      ? Math.round(inProgress.reduce((a, e) => a + (e.progress ?? 0), 0) / inProgress.length)
-      : 0;
-
-  // Derived "semester" progress: rolling completion % across current enrollments.
-  const semesterProgress =
-    enrolled.length > 0
-      ? Math.round(enrolled.reduce((a, e) => a + (e.progress ?? 0), 0) / enrolled.length)
-      : 0;
-
-  // Simple streak heuristic from most-recent updated_at (visual only).
-  const streak = useMemo(() => {
-    if (!enrolled.length) return 0;
-    const last = new Date(enrolled[0].updated_at).getTime();
-    const days = Math.max(1, Math.round((Date.now() - last) / 86_400_000));
-    return days <= 3 ? 7 - days : Math.max(1, 10 - days);
-  }, [enrolled]);
-
-  const firstName = (profile?.full_name ?? "").split(" ")[0] || "there";
-
-  // Recommended & trending — sample from COLLEGE_CATALOG (deterministic slice).
-  const catalogPool = useMemo(
-    () => COLLEGE_CATALOG.categories.flatMap((c) => c.courses.map((co) => ({ ...co, cat: c }))),
-    [],
-  );
-  const recommended = catalogPool.slice(0, 6);
-  const trending = catalogPool.slice(6, 12);
-
-  const today = new Date().toLocaleDateString(undefined, {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-  });
+  const firstName = (profile?.full_name ?? "").split(" ")[0] || "developer";
+  const b: CollegeBrief | undefined = brief;
 
   return (
-    <RoleGate allow={["college_student"]}>
-      <DashboardHeader
-        eyebrow="College Student Dashboard"
-        title={`Welcome back, ${firstName} 👋`}
-        description="Welcome to your personalized College Student Dashboard."
-      />
+    <div className="space-y-8">
+      {/* ── Terminal Hero ─────────────────────────────────────────────────── */}
+      <TerminalHero name={firstName} brief={b} loading={isLoading} />
 
-      {/* Hero AI summary strip */}
-      <div className="mb-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <HeroCard
-          icon={<Target className="h-5 w-5" />}
-          label="Today's learning goal"
-          value="Ship 1 lesson + 30-min practice"
-          hint={today}
-          tone="primary"
-        />
-        <HeroCard
-          icon={<TrendingUp className="h-5 w-5" />}
-          label="Weekly progress"
-          value={`${Math.min(100, avgProgress + 12)}%`}
-          hint={`${inProgress.length} active courses`}
-        />
-        <HeroCard
-          icon={<Layers className="h-5 w-5" />}
-          label="Semester progress"
-          value={`${semesterProgress}%`}
-          hint={`${completedCount} of ${enrolled.length || 0} complete`}
-        />
-        <HeroCard
-          icon={<Flame className="h-5 w-5" />}
-          label="Learning streak"
-          value={`${streak} days`}
-          hint="Keep the momentum going"
-          tone="accent"
-        />
-      </div>
+      {/* ── Metric strip: unique ring-based visualisation ─────────────────── */}
+      <MetricRings brief={b} />
 
-      {/* AI recommendation + upcoming */}
-      <div className="mb-10 grid gap-5 lg:grid-cols-3">
-        <DashCard className="lg:col-span-2 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
-          <div className="relative flex items-start gap-4">
-            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-elegant">
-              <Lightbulb className="h-5 w-5" />
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                AI recommendation of the day
-              </p>
-              <h3 className="mt-1 text-lg font-semibold">
-                Focus block: 45 min of DSA + 1 system design flashcard set
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Based on your recent activity and placement goals, prioritise problem-solving
-                fluency this week. Follow it up with a short mock interview to lock in the pattern.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Link
-                  to="/dashboard/roadmap"
-                  className="inline-flex items-center gap-1 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground hover:bg-primary/90"
-                >
-                  Open AI Roadmap <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-                <Link
-                  to="/dashboard/mock-tests"
-                  className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-3 py-1.5 text-xs font-semibold hover:bg-muted"
-                >
-                  Start mock test
-                </Link>
-              </div>
-            </div>
-          </div>
-        </DashCard>
-
-        <DashCard>
-          <div className="flex items-center gap-2">
-            <CalendarDays className="h-4 w-4 text-primary" />
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Upcoming
-            </p>
-          </div>
-          <ul className="mt-3 space-y-3 text-sm">
-            <UpcomingItem label="Mid-sem quiz" when="in 2 days" />
-            <UpcomingItem label="Mini project checkpoint" when="in 5 days" />
-            <UpcomingItem label="Mock placement drive" when="next week" />
-          </ul>
-          <div className="mt-4 rounded-xl border border-dashed border-border/60 bg-muted/30 p-3">
-            <p className="text-xs font-medium text-muted-foreground">Next milestone</p>
-            <p className="mt-0.5 text-sm font-semibold">
-              {completedCount + 1}× course completions → Placement Ready phase
-            </p>
-          </div>
-        </DashCard>
-      </div>
-
-      {/* Existing AI brief (role-specific) */}
-      <div className="mb-10">
-        <AIBriefSections role="college_student" />
-      </div>
-
-      {/* Personalised roadmap CTA */}
-      <section className="mb-10">
-        <SectionHeader
-          title="Your AI personalised roadmap"
-          action={{ to: "/dashboard/roadmap", label: roadmapCount ? "Open roadmap" : "Generate" }}
-        />
-        <div className="grid gap-4 md:grid-cols-5">
-          {[
-            { name: "Foundation", icon: <BookOpen className="h-4 w-4" /> },
-            { name: "Intermediate", icon: <Code2 className="h-4 w-4" /> },
-            { name: "Advanced", icon: <Rocket className="h-4 w-4" /> },
-            { name: "Placement Ready", icon: <Briefcase className="h-4 w-4" /> },
-            { name: "Industry Ready", icon: <Trophy className="h-4 w-4" /> },
-          ].map((p, i) => (
-            <div
-              key={p.name}
-              className="rounded-2xl border border-border/60 bg-card p-4 shadow-card"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  Phase {i + 1}
-                </span>
-                <span className="grid h-7 w-7 place-items-center rounded-lg bg-primary/10 text-primary">
-                  {p.icon}
-                </span>
-              </div>
-              <p className="mt-2 text-sm font-semibold">{p.name}</p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Weekly goals, projects & assessments
-              </p>
-            </div>
-          ))}
+      {/* ── Main workspace: two-column asymmetric layout ──────────────────── */}
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+        {/* Primary column */}
+        <div className="space-y-6">
+          <AIFocusPanel brief={b} />
+          <RoadmapRail brief={b} />
+          <WorkspaceTabs brief={b} />
+          <ToolGrid />
         </div>
-      </section>
 
-      {/* Continue learning */}
-      {continueLearning?.courses && (
-        <section className="mb-10">
-          <SectionHeader title="Continue learning" />
-          <DashCard className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
-              <PlayCircle className="h-7 w-7" />
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                {continueLearning.courses.subject}
-              </p>
-              <h3 className="mt-1 text-lg font-semibold">{continueLearning.courses.title}</h3>
-              <div className="mt-3 max-w-md">
-                <div className="mb-1 flex items-center justify-between text-xs">
-                  <span className="text-muted-foreground">Progress</span>
-                  <span className="font-semibold text-primary">
-                    {continueLearning.progress ?? 0}%
-                  </span>
-                </div>
-                <ProgressBar value={continueLearning.progress ?? 0} />
-              </div>
-            </div>
-            <Link
-              to="/dashboard/student/courses/$courseId"
-              params={{ courseId: continueLearning.courses.id }}
-              className="inline-flex items-center gap-1 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-elegant hover:bg-primary/90"
-            >
-              Resume →
-            </Link>
-          </DashCard>
-        </section>
-      )}
-
-      {/* My courses */}
-      <section className="mb-10">
-        <SectionHeader
-          title="My courses"
-          action={
-            enrolled.length > 0
-              ? { to: "/dashboard/student/my-courses", label: "View all" }
-              : undefined
-          }
-        />
-        {enrolled.length > 0 ? (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {enrolled.slice(0, 6).map((row) => {
-              const c = row.courses;
-              if (!c) return null;
-              const isDone = (row.progress ?? 0) >= 100;
-              return (
-                <Link
-                  key={row.id}
-                  to="/dashboard/student/courses/$courseId"
-                  params={{ courseId: c.id }}
-                  className="block rounded-2xl border border-border/60 bg-card p-5 shadow-card transition hover:border-primary/40"
-                >
-                  <div className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                    <BookOpen className="h-5 w-5" />
-                  </div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    {c.subject}
-                  </p>
-                  <h3 className="mt-1 line-clamp-2 text-base font-semibold">{c.title}</h3>
-                  <div className="mt-4">
-                    <div className="mb-1 flex items-center justify-between text-xs">
-                      <span className="text-muted-foreground">
-                        {isDone ? "Completed" : "Progress"}
-                      </span>
-                      <span className="font-semibold text-primary">{row.progress ?? 0}%</span>
-                    </div>
-                    <ProgressBar value={row.progress ?? 0} />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        ) : (
-          <EmptyState
-            icon={<Compass className="h-5 w-5" />}
-            title="Explore your first course"
-            description="Curated engineering, CS, and career tracks tailored to college learners."
-            action={{ to: "/dashboard/student/browse", label: "Browse catalog" }}
+        {/* Side rail */}
+        <aside className="space-y-6">
+          <ContribGrid streak={b?.codingStreakDays ?? 0} />
+          <RailList
+            icon={<Bell className="h-4 w-4" />}
+            title="AI Notifications"
+            items={b?.notifications ?? []}
           />
-        )}
-      </section>
-
-      {/* Recommended courses (from College catalog) */}
-      <section className="mb-10">
-        <SectionHeader
-          title="Recommended for you"
-          action={{ to: "/dashboard/student/browse", label: "See all" }}
-        />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {recommended.map((c) => (
-            <CatalogCard key={c.slug} course={c} label="Recommended" />
-          ))}
-        </div>
-      </section>
-
-      {/* Trending */}
-      <section className="mb-10">
-        <SectionHeader title="Trending now" />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {trending.map((c) => (
-            <CatalogCard key={c.slug} course={c} label="Trending" tone="accent" />
-          ))}
-        </div>
-      </section>
-
-      {/* Quick actions */}
-      <section className="mb-10">
-        <SectionHeader title="Quick actions" />
-        <QuickActionsGrid
-          items={[
-            {
-              to: "/dashboard/roadmap",
-              label: "AI Roadmap",
-              description: "5-phase personalised path to industry ready",
-              icon: <Sparkles className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/upskilling",
-              label: "Upskilling Hub",
-              description: "GenAI, cloud, front-end, data — job-ready tracks",
-              icon: <Rocket className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/student/browse",
-              label: "Browse catalog",
-              description: "College-level subjects and specialisations",
-              icon: <Compass className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/mock-tests",
-              label: "Mock Tests",
-              description: "Placement, aptitude and coding practice",
-              icon: <Target className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/student/quizzes",
-              label: "AI Quizzes",
-              description: "Fresh questions across core subjects",
-              icon: <Sparkles className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/student/progress",
-              label: "Progress Tracker",
-              description: "Skills, streaks and study hours",
-              icon: <BarChart3 className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/ai-assistant",
-              label: "Nova AI Mentor",
-              description: "Career, projects and study help",
-              icon: <Bot className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/upskilling",
-              label: "Coding Practice",
-              description: "DSA, algorithms and interview prep",
-              icon: <Code2 className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/profile",
-              label: "Resume & Career",
-              description: "Portfolio, resume and career recs",
-              icon: <Briefcase className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/student/my-courses",
-              label: "Achievements",
-              description: "Milestones and completions",
-              icon: <Award className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/analytics",
-              label: "Skill analytics",
-              description: "Deep insights across every skill you learn",
-              icon: <BarChart3 className="h-5 w-5" />,
-            },
-            {
-              to: "/dashboard/community",
-              label: "Community",
-              description: "Ask doubts, join study groups & mentors",
-              icon: <GraduationCap className="h-5 w-5" />,
-            },
-          ]}
-        />
-      </section>
-
-      {/* Categories showcase */}
-      <section>
-        <SectionHeader
-          title="Explore college categories"
-          action={{ to: "/dashboard/student/browse", label: "Open catalog" }}
-        />
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {COLLEGE_CATALOG.categories.slice(0, 12).map((cat) => (
-            <Link
-              key={cat.key}
-              to="/dashboard/student/browse"
-              className="group flex items-center gap-3 rounded-xl border border-border/60 bg-card p-4 transition hover:border-primary/40 hover:shadow-card"
-            >
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-lg">
-                {CATEGORY_ICONS[cat.key] ?? cat.emoji ?? "📚"}
-              </span>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold">{cat.label}</p>
-                <p className="truncate text-xs text-muted-foreground">
-                  {cat.courses.length} courses
-                </p>
-              </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-primary" />
-            </Link>
-          ))}
-        </div>
-      </section>
-    </RoleGate>
-  );
-}
-
-/* --- local building blocks --- */
-
-function HeroCard({
-  icon,
-  label,
-  value,
-  hint,
-  tone,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string | number;
-  hint?: string;
-  tone?: "primary" | "accent";
-}) {
-  const toneCls =
-    tone === "primary"
-      ? "from-primary/15 via-primary/5"
-      : tone === "accent"
-        ? "from-orange-500/15 via-orange-500/5"
-        : "from-muted via-transparent";
-  return (
-    <div
-      className={`relative overflow-hidden rounded-2xl border border-border/60 bg-card p-5 shadow-card`}
-    >
-      <div
-        className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${toneCls} to-transparent`}
-      />
-      <div className="relative">
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-background/70 text-primary">
-            {icon}
-          </span>
-          <span className="text-xs font-medium uppercase tracking-wider">{label}</span>
-        </div>
-        <p className="mt-3 text-2xl font-bold tracking-tight">{value}</p>
-        {hint && <p className="mt-1 text-xs text-muted-foreground">{hint}</p>}
+          <SkillRadar data={b?.skillRadar ?? []} />
+          <RailList
+            icon={<Building2 className="h-4 w-4" />}
+            title="Company Spotlight"
+            items={b?.companySpotlight ?? []}
+          />
+          <RailList
+            icon={<Trophy className="h-4 w-4" />}
+            title="Hackathons & Contests"
+            items={b?.hackathons ?? []}
+          />
+          <RailList
+            icon={<GitBranch className="h-4 w-4" />}
+            title="Open Source Picks"
+            items={b?.openSource ?? []}
+          />
+          <GithubSyncCard />
+        </aside>
       </div>
     </div>
   );
 }
 
-function UpcomingItem({ label, when }: { label: string; when: string }) {
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Terminal Hero                                                              */
+/* ────────────────────────────────────────────────────────────────────────── */
+function TerminalHero({ name, brief, loading }: { name: string; brief?: CollegeBrief; loading: boolean }) {
+  const today = new Date().toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
   return (
-    <li className="flex items-center justify-between gap-3 rounded-lg border border-border/50 bg-background/50 px-3 py-2">
-      <div className="flex items-center gap-2 min-w-0">
-        <ClipboardList className="h-4 w-4 text-primary shrink-0" />
-        <span className="truncate">{label}</span>
+    <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-[oklch(0.16_0.02_260)] text-[oklch(0.94_0.02_260)] shadow-elegant">
+      <div className="absolute inset-0 opacity-40 [background:radial-gradient(1200px_400px_at_100%_0%,oklch(0.6_0.18_280/.35),transparent),radial-gradient(800px_300px_at_0%_100%,oklch(0.6_0.18_180/.25),transparent)]" />
+      <div className="relative">
+        {/* window chrome */}
+        <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.7_0.2_25)]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.85_0.18_90)]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.75_0.18_150)]" />
+          <span className="ml-3 flex items-center gap-2 text-xs font-medium text-white/60">
+            <Terminal className="h-3.5 w-3.5" /> edunova/college — {today}
+          </span>
+          <span className="ml-auto rounded-full border border-white/15 bg-white/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white/70">
+            College Student Dashboard
+          </span>
+        </div>
+
+        {/* body */}
+        <div className="grid gap-6 p-6 md:grid-cols-[1.2fr_1fr] md:p-8">
+          <div className="font-mono text-sm leading-7">
+            <p className="text-white/50">$ whoami</p>
+            <p className="text-white">
+              <span className="text-[oklch(0.85_0.16_170)]">›</span> Welcome back, <span className="font-bold text-white">{name}</span> 👋
+            </p>
+            <p className="mt-2 text-white/50">$ edunova today --role college_student</p>
+            <p className="text-white">
+              <span className="text-[oklch(0.85_0.16_170)]">›</span>{" "}
+              {loading ? "Compiling your personalised plan…" : brief?.headline ?? "Ship one lesson, one problem, one commit today."}
+            </p>
+            <p className="mt-2 text-white/50">$ focus.today()</p>
+            <p className="text-[oklch(0.9_0.14_90)]">
+              → {loading ? "…" : brief?.focusOfTheDay ?? "45 min DSA + 30 min system design"}
+            </p>
+            <p className="mt-3 text-white/50">
+              <span className="mr-1">$</span>
+              <span className="animate-pulse text-white">▍</span>
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 self-center">
+            <HeroChip icon={<Code2 className="h-4 w-4" />} label="Coding Playground" to="/dashboard/career/coding" />
+            <HeroChip icon={<Puzzle className="h-4 w-4" />} label="DSA Practice" to="/dashboard/mock-tests" />
+            <HeroChip icon={<Bot className="h-4 w-4" />} label="AI Mentor" to="/dashboard/ai-assistant" />
+            <HeroChip icon={<Rocket className="h-4 w-4" />} label="Roadmap" to="/dashboard/roadmap" />
+            <HeroChip icon={<Briefcase className="h-4 w-4" />} label="Placement Prep" to="/dashboard/career/interview" />
+            <HeroChip icon={<FileText className="h-4 w-4" />} label="Resume Builder" to="/dashboard/career/resume" />
+          </div>
+        </div>
       </div>
-      <span className="text-xs text-muted-foreground shrink-0">{when}</span>
-    </li>
+    </div>
   );
 }
 
-type CatalogCardCourse = {
-  slug: string;
-  title: string;
-  subject: string;
-  description: string;
-  difficulty: string;
-  estimated_hours: number;
-  cat: { label: string; emoji: string; key: string };
-};
-
-function CatalogCard({
-  course,
-  label,
-  tone,
-}: {
-  course: CatalogCardCourse;
-  label: string;
-  tone?: "accent";
-}) {
+function HeroChip({ icon, label, to }: { icon: React.ReactNode; label: string; to: string }) {
   return (
     <Link
-      to="/dashboard/student/browse"
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card transition hover:border-primary/40"
+      to={to}
+      className="group flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-xs font-medium text-white/90 backdrop-blur transition hover:border-white/25 hover:bg-white/10"
     >
-      <div
-        className={`relative h-24 w-full ${
-          tone === "accent"
-            ? "bg-gradient-to-br from-orange-500/25 via-orange-500/10 to-transparent"
-            : "bg-gradient-to-br from-primary/25 via-primary/10 to-transparent"
-        }`}
-      >
-        <span className="absolute left-3 top-3 rounded-full bg-background/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
-          {label}
-        </span>
-        <span className="absolute bottom-2 right-3 text-3xl">{course.cat.emoji}</span>
-      </div>
-      <div className="flex flex-1 flex-col p-4">
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-          {course.cat.label}
-        </p>
-        <h3 className="mt-1 line-clamp-2 text-sm font-semibold">{course.title}</h3>
-        <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{course.description}</p>
-        <div className="mt-3 flex items-center justify-between text-[11px] text-muted-foreground">
-          <span className="inline-flex items-center gap-1">
-            <Building2 className="h-3 w-3" /> {course.difficulty}
-          </span>
-          <span>{course.estimated_hours}h</span>
+      <span className="grid h-6 w-6 place-items-center rounded-md bg-white/10">{icon}</span>
+      <span className="truncate">{label}</span>
+      <ArrowUpRight className="ml-auto h-3.5 w-3.5 opacity-0 transition group-hover:opacity-100" />
+    </Link>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Metric rings                                                                */
+/* ────────────────────────────────────────────────────────────────────────── */
+function MetricRings({ brief }: { brief?: CollegeBrief }) {
+  const items = [
+    { label: "Productivity", value: brief?.productivityScore ?? 0, suffix: "", icon: <Activity className="h-4 w-4" />, hue: 280 },
+    { label: "Coding streak", value: Math.min(100, (brief?.codingStreakDays ?? 0) * 4), display: `${brief?.codingStreakDays ?? 0}d`, icon: <Flame className="h-4 w-4" />, hue: 30 },
+    { label: "DSA / week", value: Math.min(100, (brief?.dsaSolvedThisWeek ?? 0) * 4), display: String(brief?.dsaSolvedThisWeek ?? 0), icon: <Zap className="h-4 w-4" />, hue: 200 },
+    { label: "Semester", value: brief?.semesterProgressPct ?? 0, suffix: "%", icon: <Layers className="h-4 w-4" />, hue: 160 },
+  ];
+  return (
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {items.map((it) => (
+        <div key={it.label} className="flex items-center gap-4 rounded-2xl border border-border/60 bg-card p-4 shadow-card">
+          <Ring value={it.value} hue={it.hue}>
+            <span className="text-sm font-bold tabular-nums">{it.display ?? `${it.value}${it.suffix ?? ""}`}</span>
+          </Ring>
+          <div className="min-w-0">
+            <p className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              {it.icon}
+              {it.label}
+            </p>
+            <p className="mt-1 text-lg font-semibold">
+              {it.display ?? `${it.value}${it.suffix ?? ""}`}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Ring({ value, hue, children }: { value: number; hue: number; children: React.ReactNode }) {
+  const clamped = Math.max(0, Math.min(100, value));
+  const stroke = `oklch(0.68 0.18 ${hue})`;
+  const track = `oklch(0.68 0.18 ${hue} / 0.15)`;
+  const r = 26;
+  const c = 2 * Math.PI * r;
+  const dash = (clamped / 100) * c;
+  return (
+    <svg viewBox="0 0 64 64" className="h-16 w-16 -rotate-90">
+      <circle cx="32" cy="32" r={r} fill="none" stroke={track} strokeWidth="6" />
+      <circle
+        cx="32" cy="32" r={r} fill="none" stroke={stroke} strokeWidth="6" strokeLinecap="round"
+        strokeDasharray={`${dash} ${c}`}
+      />
+      <foreignObject x="0" y="0" width="64" height="64" transform="rotate(90 32 32)">
+        <div className="flex h-16 w-16 items-center justify-center">{children}</div>
+      </foreignObject>
+    </svg>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* AI Focus panel                                                              */
+/* ────────────────────────────────────────────────────────────────────────── */
+function AIFocusPanel({ brief }: { brief?: CollegeBrief }) {
+  const recs = brief?.aiRecommendations ?? [];
+  return (
+    <section className="rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/5 via-card to-card p-5 shadow-card">
+      <div className="flex items-center gap-2">
+        <div className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
+          <Sparkles className="h-4 w-4" />
+        </div>
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-primary">AI Recommendations</p>
+          <h2 className="text-lg font-semibold">Your next best moves</h2>
         </div>
       </div>
-    </Link>
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        {recs.slice(0, 4).map((r, i) => (
+          <div key={i} className="rounded-xl border border-border/60 bg-background/40 p-4 backdrop-blur">
+            <div className="flex items-start justify-between gap-2">
+              <p className="text-sm font-semibold">{r.title}</p>
+              {r.tag && <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">{r.tag}</span>}
+            </div>
+            {r.detail && <p className="mt-1 text-xs text-muted-foreground">{r.detail}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Roadmap rail — horizontal timeline                                          */
+/* ────────────────────────────────────────────────────────────────────────── */
+function RoadmapRail({ brief }: { brief?: CollegeBrief }) {
+  const phases = brief?.roadmapPhases ?? [];
+  const current = 1; // Intermediate — visual placeholder
+  return (
+    <section className="rounded-2xl border border-border/60 bg-card p-5 shadow-card">
+      <div className="mb-4 flex items-center justify-between">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">AI Personalised Roadmap</p>
+          <h2 className="text-lg font-semibold">From foundation → industry ready</h2>
+        </div>
+        <Link to="/dashboard/roadmap" className="inline-flex items-center gap-1 rounded-lg border border-border/60 px-3 py-1.5 text-xs font-semibold hover:bg-muted">
+          Open <ChevronRight className="h-3.5 w-3.5" />
+        </Link>
+      </div>
+      <div className="relative">
+        <div className="absolute left-3 right-3 top-6 h-1 rounded-full bg-muted" />
+        <div className="absolute left-3 top-6 h-1 rounded-full bg-primary transition-all"
+             style={{ width: `${((current + 0.5) / Math.max(1, phases.length)) * 96}%` }} />
+        <div className="relative grid gap-4 md:grid-cols-5">
+          {phases.slice(0, 5).map((p, i) => {
+            const state = i < current ? "done" : i === current ? "active" : "todo";
+            return (
+              <div key={i} className="text-center">
+                <div
+                  className={cn(
+                    "mx-auto grid h-12 w-12 place-items-center rounded-full border-2 text-xs font-bold",
+                    state === "active" && "border-primary bg-primary text-primary-foreground shadow-elegant",
+                    state === "done" && "border-primary/60 bg-primary/10 text-primary",
+                    state === "todo" && "border-border bg-background text-muted-foreground",
+                  )}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <p className="mt-2 text-xs font-semibold">{p.title}</p>
+                {p.detail && <p className="mt-1 line-clamp-2 text-[11px] text-muted-foreground">{p.detail}</p>}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Workspace Tabs                                                              */
+/* ────────────────────────────────────────────────────────────────────────── */
+type TabKey = "challenges" | "dsa" | "projects" | "interview" | "weekly" | "study" | "career";
+const TABS: { key: TabKey; label: string; icon: React.ReactNode }[] = [
+  { key: "challenges", label: "Coding Challenges", icon: <Code2 className="h-4 w-4" /> },
+  { key: "dsa", label: "DSA Practice", icon: <Puzzle className="h-4 w-4" /> },
+  { key: "projects", label: "Project Lab", icon: <Beaker className="h-4 w-4" /> },
+  { key: "interview", label: "Interview Prep", icon: <ClipboardCheck className="h-4 w-4" /> },
+  { key: "weekly", label: "Weekly Challenges", icon: <Target className="h-4 w-4" /> },
+  { key: "study", label: "Study Planner", icon: <Calendar className="h-4 w-4" /> },
+  { key: "career", label: "Career Guidance", icon: <Briefcase className="h-4 w-4" /> },
+];
+
+function WorkspaceTabs({ brief }: { brief?: CollegeBrief }) {
+  const [tab, setTab] = useState<TabKey>("challenges");
+  const items: BriefEntry[] = useMemo(() => {
+    if (!brief) return [];
+    switch (tab) {
+      case "challenges": return brief.codingChallenges;
+      case "dsa": return brief.dsaProblems;
+      case "projects": return brief.projectIdeas;
+      case "interview": return brief.interviewQuestions;
+      case "weekly": return brief.weeklyChallenges;
+      case "study": return brief.studyPlan;
+      case "career": return brief.careerGuidance;
+    }
+  }, [brief, tab]);
+
+  return (
+    <section className="rounded-2xl border border-border/60 bg-card shadow-card">
+      <div className="flex flex-wrap gap-1 border-b border-border/60 p-2">
+        {TABS.map((t) => (
+          <button
+            key={t.key}
+            type="button"
+            onClick={() => setTab(t.key)}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium transition",
+              tab === t.key ? "bg-primary text-primary-foreground shadow-elegant" : "text-muted-foreground hover:bg-muted",
+            )}
+          >
+            {t.icon}
+            {t.label}
+          </button>
+        ))}
+      </div>
+      <div className="grid gap-3 p-5 md:grid-cols-2">
+        {items.length === 0 ? (
+          <div className="col-span-full py-8 text-center text-sm text-muted-foreground">
+            Generating fresh AI content for this section…
+          </div>
+        ) : items.slice(0, 6).map((it, i) => (
+          <div key={i} className="rounded-xl border border-border/60 bg-background/40 p-4 transition hover:border-primary/40">
+            <div className="flex items-start justify-between gap-2">
+              <p className="text-sm font-semibold leading-snug">{it.title}</p>
+              {it.tag && <span className="shrink-0 rounded-full bg-muted px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{it.tag}</span>}
+            </div>
+            {it.detail && <p className="mt-1 text-xs text-muted-foreground line-clamp-3">{it.detail}</p>}
+            {it.meta && <p className="mt-2 text-[10px] uppercase tracking-wider text-primary/80">{it.meta}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Tool grid (unique to college)                                               */
+/* ────────────────────────────────────────────────────────────────────────── */
+function ToolGrid() {
+  const tools = [
+    { to: "/dashboard/career/coding", label: "Coding Playground", desc: "Multi-language sandbox", icon: <Terminal className="h-5 w-5" /> },
+    { to: "/dashboard/ai-assistant", label: "AI Code Assistant", desc: "Explain, debug, refactor", icon: <Cpu className="h-5 w-5" /> },
+    { to: "/dashboard/career/projects", label: "Project Lab", desc: "Ship portfolio projects", icon: <Beaker className="h-5 w-5" /> },
+    { to: "/dashboard/career/portfolio", label: "Portfolio Builder", desc: "Public developer profile", icon: <Wrench className="h-5 w-5" /> },
+    { to: "/dashboard/career/resume", label: "Resume Builder", desc: "ATS-scored resumes", icon: <FileText className="h-5 w-5" /> },
+    { to: "/dashboard/career/interview", label: "Mock Interviews", desc: "Technical + behavioural", icon: <Users className="h-5 w-5" /> },
+    { to: "/dashboard/career/internships", label: "Internships", desc: "Curated openings", icon: <Briefcase className="h-5 w-5" /> },
+    { to: "/dashboard/career/skill-gap", label: "Skill Analytics", desc: "Where to focus next", icon: <Activity className="h-5 w-5" /> },
+    { to: "/dashboard/career/certifications", label: "Certifications", desc: "Track & verify", icon: <BookMarked className="h-5 w-5" /> },
+  ];
+  return (
+    <section>
+      <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">Developer Toolbelt</p>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {tools.map((t) => (
+          <Link
+            key={t.label}
+            to={t.to}
+            className="group flex items-start gap-3 rounded-xl border border-border/60 bg-card p-4 shadow-card transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-elegant"
+          >
+            <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+              {t.icon}
+            </span>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold">{t.label}</p>
+              <p className="text-xs text-muted-foreground">{t.desc}</p>
+            </div>
+            <ArrowUpRight className="ml-auto h-4 w-4 text-muted-foreground opacity-0 transition group-hover:opacity-100" />
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Contribution grid (GitHub-style)                                            */
+/* ────────────────────────────────────────────────────────────────────────── */
+function ContribGrid({ streak }: { streak: number }) {
+  // 7x14 grid seeded from streak value for deterministic visual
+  const cells = useMemo(() => {
+    const arr: number[] = [];
+    for (let i = 0; i < 7 * 14; i++) {
+      const seed = (i * 9301 + streak * 49297) % 233280;
+      const rnd = seed / 233280;
+      const boost = i > 7 * 14 - streak ? 0.35 : 0;
+      const v = Math.max(0, Math.min(4, Math.floor((rnd + boost) * 5)));
+      arr.push(v);
+    }
+    return arr;
+  }, [streak]);
+  return (
+    <div className="rounded-2xl border border-border/60 bg-card p-4 shadow-card">
+      <div className="mb-3 flex items-center justify-between">
+        <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          <Flame className="h-4 w-4 text-primary" /> Coding streak
+        </p>
+        <span className="text-xs font-bold tabular-nums text-primary">{streak}d</span>
+      </div>
+      <div className="grid grid-cols-14 gap-1" style={{ gridTemplateColumns: "repeat(14, minmax(0, 1fr))" }}>
+        {cells.map((v, i) => (
+          <span
+            key={i}
+            className="aspect-square rounded-[3px]"
+            style={{
+              background:
+                v === 0 ? "oklch(0.9 0.01 260 / 0.4)" :
+                `oklch(${0.85 - v * 0.08} 0.16 260 / ${0.35 + v * 0.16})`,
+            }}
+          />
+        ))}
+      </div>
+      <p className="mt-3 text-[11px] text-muted-foreground">Commit today to keep the streak alive.</p>
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Side-rail generic list                                                      */
+/* ────────────────────────────────────────────────────────────────────────── */
+function RailList({ icon, title, items }: { icon: React.ReactNode; title: string; items: BriefEntry[] }) {
+  return (
+    <div className="rounded-2xl border border-border/60 bg-card p-4 shadow-card">
+      <p className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+        <span className="text-primary">{icon}</span> {title}
+      </p>
+      <ul className="space-y-2.5">
+        {items.slice(0, 4).map((it, i) => (
+          <li key={i} className="rounded-lg border border-border/40 bg-background/40 p-2.5">
+            <div className="flex items-start justify-between gap-2">
+              <p className="text-xs font-semibold leading-snug">{it.title}</p>
+              {it.tag && <span className="shrink-0 rounded-full bg-primary/10 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-primary">{it.tag}</span>}
+            </div>
+            {it.detail && <p className="mt-1 text-[11px] text-muted-foreground line-clamp-2">{it.detail}</p>}
+          </li>
+        ))}
+        {items.length === 0 && <li className="text-xs text-muted-foreground">Generating…</li>}
+      </ul>
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Skill radar (bars)                                                          */
+/* ────────────────────────────────────────────────────────────────────────── */
+function SkillRadar({ data }: { data: { skill: string; level: number }[] }) {
+  return (
+    <div className="rounded-2xl border border-border/60 bg-card p-4 shadow-card">
+      <p className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+        <Activity className="h-4 w-4 text-primary" /> Skill Analytics
+      </p>
+      <ul className="space-y-2.5">
+        {data.slice(0, 6).map((s) => (
+          <li key={s.skill}>
+            <div className="mb-0.5 flex items-center justify-between text-[11px]">
+              <span className="font-semibold">{s.skill}</span>
+              <span className="tabular-nums text-muted-foreground">{s.level}%</span>
+            </div>
+            <div className="h-1.5 overflow-hidden rounded-full bg-muted">
+              <div className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60"
+                   style={{ width: `${s.level}%` }} />
+            </div>
+          </li>
+        ))}
+        {data.length === 0 && <li className="text-xs text-muted-foreground">Awaiting analysis…</li>}
+      </ul>
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* GitHub sync card                                                            */
+/* ────────────────────────────────────────────────────────────────────────── */
+function GithubSyncCard() {
+  return (
+    <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-[oklch(0.18_0.02_260)] to-[oklch(0.22_0.03_280)] p-4 text-white shadow-card">
+      <div className="flex items-center gap-2">
+        <Github className="h-5 w-5" />
+        <p className="text-sm font-bold">GitHub Integration</p>
+      </div>
+      <p className="mt-1 text-xs text-white/70">
+        Sync repositories, showcase pinned projects, and count commits toward your coding streak.
+      </p>
+      <Link
+        to="/dashboard/career/portfolio"
+        className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-semibold text-black hover:bg-white/90"
+      >
+        Connect GitHub <ArrowUpRight className="h-3.5 w-3.5" />
+      </Link>
+    </div>
   );
 }
