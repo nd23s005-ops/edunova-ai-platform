@@ -152,10 +152,13 @@ const CreateCourseSchema = z.object({
   cover_url: z.string().url().optional().nullable(),
   board: z.enum(["cbse", "icse", "state_board", "ib", "cambridge", "nios", "other"]).default("other"),
   subject: z.string().default("General"),
-  class_min: z.number().int().min(0).default(6),
-  class_max: z.number().int().min(0).default(12),
+  class_min: z.number().int().min(CLASS_MIN_BOUND).max(CLASS_MAX_BOUND).default(6),
+  class_max: z.number().int().min(CLASS_MIN_BOUND).max(CLASS_MAX_BOUND).default(12),
   difficulty: z.enum(["beginner", "intermediate", "advanced"]).default("beginner"),
   generate_curriculum: z.boolean().default(true),
+}).superRefine((val, ctx) => {
+  const check = validateClassRange({ class_min: val.class_min, class_max: val.class_max });
+  if (!check.ok) ctx.addIssue({ code: z.ZodIssueCode.custom, message: check.reason, path: ["class_max"] });
 });
 
 export const createCourse = createServerFn({ method: "POST" })
