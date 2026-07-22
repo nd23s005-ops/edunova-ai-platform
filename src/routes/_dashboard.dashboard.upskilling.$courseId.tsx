@@ -184,22 +184,40 @@ function UpskillCourseDetail() {
               <ProgressBar value={enrollment?.progress ?? 0} />
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {!enrollment ? (
               <Button onClick={() => enroll.mutate()} disabled={enroll.isPending}>
                 {enroll.isPending ? "Enrolling…" : "Enroll now"}
               </Button>
-            ) : isCompleted ? (
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary">
-                <CheckCircle2 className="h-4 w-4" /> Course completed
-              </span>
             ) : (
-              <span className="text-sm text-muted-foreground">
-                {completedSet.size} of {totalModules} modules complete
-              </span>
+              <>
+                <a
+                  href={`/learn-pro/${courseId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  {isCompleted ? "Review workspace" : "Continue Learning"}
+                </a>
+                {isCompleted ? (
+                  <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary">
+                    <CheckCircle2 className="h-4 w-4" /> Course completed
+                  </span>
+                ) : (
+                  <span className="text-xs text-muted-foreground">
+                    {completedSet.size} of {totalModules} modules complete
+                  </span>
+                )}
+              </>
             )}
           </div>
         </div>
+        {enrollment && (
+          <p className="mt-3 text-xs text-muted-foreground">
+            Opens the AI Learning Workspace in a new tab — 5 weeks × 7 units, fully personalized.
+          </p>
+        )}
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
