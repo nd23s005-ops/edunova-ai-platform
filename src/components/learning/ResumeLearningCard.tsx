@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { Link } from "@tanstack/react-router";
+
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { getResumeCandidate } from "@/lib/ai/engine/reading-position.functions";
 import { Button } from "@/components/ui/button";
