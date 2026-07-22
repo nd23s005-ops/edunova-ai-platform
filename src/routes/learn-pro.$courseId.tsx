@@ -34,28 +34,28 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import {
-  generateCourseOutline,
-  generateUnitContent,
-  generateWeeklyAssessment,
-  generateFinalExam,
-  listCourseResources,
-  saveCourseProgress,
-  type CourseOutline,
-  type UnitContent,
-  type WeeklyAssessment,
-  type FinalExam,
-  type AttachedResource,
-} from "@/lib/ai/learning-path.functions";
+  generateProCourseOutline as generateCourseOutline,
+  generateProUnitContent as generateUnitContent,
+  generateProWeeklyAssessment as generateWeeklyAssessment,
+  generateProFinalCapstone as generateFinalExam,
+  listProCourseResources as listCourseResources,
+  saveProCourseProgress as saveCourseProgress,
+  type ProCourseOutline as CourseOutline,
+  type ProUnitContent as UnitContent,
+  type ProWeeklyAssessment as WeeklyAssessment,
+  type ProFinalExam as FinalExam,
+  type ProAttachedResource as AttachedResource,
+} from "@/lib/ai/pro-learning-path.functions";
 import {
   generateWorkspaceContent,
   type WorkspacePayload,
 } from "@/lib/ai/workspace.functions";
 
-export const Route = createFileRoute("/learn/$courseId")({
+export const Route = createFileRoute("/learn-pro/$courseId")({
   head: () => ({
     meta: [
-      { title: "AI Learning Workspace — EduNova AI" },
-      { name: "description", content: "Premium AI-powered learning workspace with a 10-week, 7-unit curriculum." },
+      { title: "Executive Upskilling Workspace — EduNova AI" },
+      { name: "description", content: "Premium AI-powered executive upskilling workspace with a 5-week, 7-unit curriculum." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -88,7 +88,7 @@ const UNIT_TABS: { id: UnitTab; label: string; icon: React.ComponentType<{ class
 ];
 
 function completionKey(courseId: string) {
-  return `edunova.learn.done.${courseId}`;
+  return `edunova.learn.pro.done.${courseId}`;
 }
 function loadCompleted(courseId: string): Set<string> {
   try {
@@ -126,8 +126,8 @@ function LearnWorkspacePage() {
     queryKey: ["learn", "course", courseId],
     queryFn: async () => {
       const { data } = await supabase
-        .from("courses")
-        .select("id, title, subject, description, difficulty, estimated_hours")
+        .from("upskill_courses")
+        .select("id, title, category, description, difficulty, estimated_hours")
         .eq("id", courseId)
         .maybeSingle();
       return data;
@@ -161,7 +161,7 @@ function LearnWorkspacePage() {
     () => [...completed].filter((k) => k.startsWith("u:")).length,
     [completed],
   );
-  const percent = Math.round((doneUnits / 70) * 100);
+  const percent = Math.round((doneUnits / 35) * 100);
   useEffect(() => {
     // Best-effort sync to enrollment
     progressFn({ data: { courseId, completedUnits: doneUnits } }).catch(() => {});
@@ -184,7 +184,7 @@ function LearnWorkspacePage() {
     });
   };
 
-  const currentWeek = view.kind === "unit" || view.kind === "assessment" ? view.week : view.kind === "final" ? 10 : 1;
+  const currentWeek = view.kind === "unit" || view.kind === "assessment" ? view.week : view.kind === "final" ? 5 : 1;
 
   return (
     <div className="fixed inset-0 flex flex-col bg-background text-foreground">
@@ -195,19 +195,19 @@ function LearnWorkspacePage() {
             <Sparkles className="h-4 w-4" />
           </div>
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-primary">AI Learning Workspace</p>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-primary">Executive Upskilling Workspace</p>
             <h1 className="truncate text-sm font-semibold sm:text-base">{course?.title ?? "Loading course…"}</h1>
           </div>
         </div>
         <div className="ml-auto flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5" />{course?.subject ?? "—"}</span>
-          <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />10 weeks · 70 units</span>
+          <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />5 weeks · 35 units</span>
           <span className="inline-flex items-center gap-1.5"><Flame className="h-3.5 w-3.5 text-orange-500" />Week {currentWeek}</span>
           <span className="inline-flex items-center gap-1.5"><Trophy className="h-3.5 w-3.5 text-primary" /><span className="font-semibold text-foreground">{percent}%</span></span>
           <div className="h-2 w-32 overflow-hidden rounded-full bg-muted">
             <div className="h-full bg-primary transition-all" style={{ width: `${percent}%` }} />
           </div>
-          <span className="rounded-full bg-primary/10 px-2 py-0.5 font-semibold text-primary">{doneUnits}/70 XP units</span>
+          <span className="rounded-full bg-primary/10 px-2 py-0.5 font-semibold text-primary">{doneUnits}/35 XP units</span>
         </div>
       </header>
 
@@ -216,12 +216,12 @@ function LearnWorkspacePage() {
         <aside className="hidden w-80 shrink-0 flex-col border-r border-border/60 bg-card/40 md:flex">
           <div className="border-b border-border/60 px-4 py-3">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Course Outline</p>
-            <p className="mt-1 text-xs">Beginner → Advanced · 10 weeks × 7 units</p>
+            <p className="mt-1 text-xs">Beginner → Advanced · 5 weeks × 7 units</p>
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto px-2 py-2">
             {outlineLoading && (
               <div className="flex items-center gap-2 px-3 py-4 text-xs text-muted-foreground">
-                <Loader2 className="h-4 w-4 animate-spin" /> Nova is designing your 10-week curriculum…
+                <Loader2 className="h-4 w-4 animate-spin" /> Nova is designing your 5-week executive curriculum…
               </div>
             )}
             {outline?.weeks.map((w) => {
@@ -292,7 +292,7 @@ function LearnWorkspacePage() {
                     view.kind === "final" ? "bg-primary text-primary-foreground" : "text-primary hover:bg-primary/10",
                   )}
                 >
-                  <Trophy className="h-4 w-4" /> Final Examination
+                  <Trophy className="h-4 w-4" /> Final Capstone
                 </button>
                 <button
                   onClick={() => setView({ kind: "resources" })}
@@ -338,7 +338,7 @@ function LearnWorkspacePage() {
                 onComplete={() => markComplete(`w:${view.week}`)}
                 completed={completed.has(`w:${view.week}`)}
                 onNext={() => {
-                  if (view.week < 10) { setView({ kind: "unit", week: view.week + 1, unit: 1 }); setExpandedWeeks((p) => new Set(p).add(view.week + 1)); }
+                  if (view.week < 5) { setView({ kind: "unit", week: view.week + 1, unit: 1 }); setExpandedWeeks((p) => new Set(p).add(view.week + 1)); }
                   else setView({ kind: "final" });
                 }}
               />
@@ -707,7 +707,7 @@ function AssessmentView({ courseId, outline, week, onComplete, completed, onNext
           <Button size="sm" variant={completed ? "secondary" : "default"} onClick={onComplete} disabled={completed}>
             <CheckCircle2 className="mr-2 h-4 w-4" />{completed ? "Marked complete" : "Mark week complete"}
           </Button>
-          <Button size="sm" variant="outline" onClick={onNext}>{week < 10 ? `Next week →` : `→ Final Exam`}</Button>
+          <Button size="sm" variant="outline" onClick={onNext}>{week < 5 ? `Next week →` : `→ Final Capstone`}</Button>
           <Button size="sm" variant="ghost" onClick={() => refetch()} disabled={isFetching}>
             {isFetching ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}Regenerate
           </Button>
@@ -822,10 +822,10 @@ function FinalView({ courseId, onComplete, completed }: { courseId: string; onCo
     <article className="space-y-5">
       <header className="rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/15 via-card to-card p-6 shadow-card">
         <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-primary">
-          Final Examination
+          Final Capstone
         </span>
         <h2 className="mt-2 text-3xl font-bold tracking-tight">{data?.title ?? "Comprehensive Assessment"}</h2>
-        <p className="mt-1 text-sm text-muted-foreground">Comprehensive Assessment · Project Submission · Course Completion Test</p>
+        <p className="mt-1 text-sm text-muted-foreground">Comprehensive Assessment · Capstone Project · Practical Evaluation · AI Review</p>
         <div className="mt-3 flex flex-wrap gap-2">
           <Button size="sm" variant={completed ? "secondary" : "default"} onClick={onComplete} disabled={completed}>
             <Trophy className="mr-2 h-4 w-4" />{completed ? "Course marked complete" : "Mark course complete"}

@@ -24,6 +24,7 @@ import { Route as MarketingIndexRouteImport } from './routes/_marketing.index'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
 import { Route as OnboardingStudentProfileRouteImport } from './routes/onboarding.student-profile'
 import { Route as LearnCourseIdRouteImport } from './routes/learn.$courseId'
+import { Route as LearnProCourseIdRouteImport } from './routes/learn-pro.$courseId'
 import { Route as ApiUpstreamStatusRouteImport } from './routes/api/upstream-status'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as ApiDiagnosticsRouteImport } from './routes/api/diagnostics'
@@ -244,6 +245,11 @@ const OnboardingStudentProfileRoute =
 const LearnCourseIdRoute = LearnCourseIdRouteImport.update({
   id: '/learn/$courseId',
   path: '/learn/$courseId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnProCourseIdRoute = LearnProCourseIdRouteImport.update({
+  id: '/learn-pro/$courseId',
+  path: '/learn-pro/$courseId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiUpstreamStatusRoute = ApiUpstreamStatusRouteImport.update({
@@ -1142,6 +1148,7 @@ export interface FileRoutesByFullPath {
   '/api/diagnostics': typeof ApiDiagnosticsRoute
   '/api/health': typeof ApiHealthRoute
   '/api/upstream-status': typeof ApiUpstreamStatusRoute
+  '/learn-pro/$courseId': typeof LearnProCourseIdRoute
   '/learn/$courseId': typeof LearnCourseIdRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/p/$slug': typeof PSlugRoute
@@ -1303,6 +1310,7 @@ export interface FileRoutesByTo {
   '/api/diagnostics': typeof ApiDiagnosticsRoute
   '/api/health': typeof ApiHealthRoute
   '/api/upstream-status': typeof ApiUpstreamStatusRoute
+  '/learn-pro/$courseId': typeof LearnProCourseIdRoute
   '/learn/$courseId': typeof LearnCourseIdRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/p/$slug': typeof PSlugRoute
@@ -1459,6 +1467,7 @@ export interface FileRoutesById {
   '/api/diagnostics': typeof ApiDiagnosticsRoute
   '/api/health': typeof ApiHealthRoute
   '/api/upstream-status': typeof ApiUpstreamStatusRoute
+  '/learn-pro/$courseId': typeof LearnProCourseIdRoute
   '/learn/$courseId': typeof LearnCourseIdRoute
   '/onboarding/student-profile': typeof OnboardingStudentProfileRoute
   '/p/$slug': typeof PSlugRoute
@@ -1624,6 +1633,7 @@ export interface FileRouteTypes {
     | '/api/diagnostics'
     | '/api/health'
     | '/api/upstream-status'
+    | '/learn-pro/$courseId'
     | '/learn/$courseId'
     | '/onboarding/student-profile'
     | '/p/$slug'
@@ -1785,6 +1795,7 @@ export interface FileRouteTypes {
     | '/api/diagnostics'
     | '/api/health'
     | '/api/upstream-status'
+    | '/learn-pro/$courseId'
     | '/learn/$courseId'
     | '/onboarding/student-profile'
     | '/p/$slug'
@@ -1940,6 +1951,7 @@ export interface FileRouteTypes {
     | '/api/diagnostics'
     | '/api/health'
     | '/api/upstream-status'
+    | '/learn-pro/$courseId'
     | '/learn/$courseId'
     | '/onboarding/student-profile'
     | '/p/$slug'
@@ -2092,6 +2104,7 @@ export interface RootRouteChildren {
   ApiDiagnosticsRoute: typeof ApiDiagnosticsRoute
   ApiHealthRoute: typeof ApiHealthRoute
   ApiUpstreamStatusRoute: typeof ApiUpstreamStatusRoute
+  LearnProCourseIdRoute: typeof LearnProCourseIdRoute
   LearnCourseIdRoute: typeof LearnCourseIdRoute
   PSlugRoute: typeof PSlugRoute
   ApiDebugErrorsRoute: typeof ApiDebugErrorsRoute
@@ -2202,6 +2215,13 @@ declare module '@tanstack/react-router' {
       path: '/learn/$courseId'
       fullPath: '/learn/$courseId'
       preLoaderRoute: typeof LearnCourseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn-pro/$courseId': {
+      id: '/learn-pro/$courseId'
+      path: '/learn-pro/$courseId'
+      fullPath: '/learn-pro/$courseId'
+      preLoaderRoute: typeof LearnProCourseIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/upstream-status': {
@@ -3846,6 +3866,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiDiagnosticsRoute: ApiDiagnosticsRoute,
   ApiHealthRoute: ApiHealthRoute,
   ApiUpstreamStatusRoute: ApiUpstreamStatusRoute,
+  LearnProCourseIdRoute: LearnProCourseIdRoute,
   LearnCourseIdRoute: LearnCourseIdRoute,
   PSlugRoute: PSlugRoute,
   ApiDebugErrorsRoute: ApiDebugErrorsRoute,
