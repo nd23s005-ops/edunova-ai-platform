@@ -134,7 +134,7 @@ function TakeQuiz() {
     const grade = pct >= 90 ? "A+" : pct >= 80 ? "A" : pct >= 70 ? "B" : pct >= 60 ? "C" : pct >= 50 ? "D" : "F";
 
     return (
-      <RoleGate allow={["student"]}>
+      <RoleGate allow={["student", "college_student"]}>
         <div className="mb-4">
           <Link
             to="/dashboard/student/quizzes/$subject"
@@ -306,7 +306,7 @@ function TakeQuiz() {
   if (attempt && q) {
     const chosen = answers[current];
     return (
-      <RoleGate allow={["student"]}>
+      <RoleGate allow={["student", "college_student"]}>
         <div className="mb-4 flex items-center justify-between">
           <Link
             to="/dashboard/student/quizzes/$subject"
@@ -414,7 +414,7 @@ function TakeQuiz() {
 
   // ------------- Start screen -------------
   return (
-    <RoleGate allow={["student"]}>
+    <RoleGate allow={["student", "college_student"]}>
       <div className="mb-4">
         <Link
           to="/dashboard/student/quizzes/$subject"
