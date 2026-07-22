@@ -42,7 +42,7 @@ export const Route = createFileRoute("/_dashboard/dashboard/student/quizzes/$sub
 function TakeQuiz() {
   const { subject, setId } = Route.useParams();
   const quizSet = Number(setId);
-  const label = SUBJECTS.find((s) => s.slug === subject)?.label ?? subject;
+  const label = ALL.find((s) => s.slug === subject)?.label ?? subject;
   const navigate = useNavigate();
   const qc = useQueryClient();
 
