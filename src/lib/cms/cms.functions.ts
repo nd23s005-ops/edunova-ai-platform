@@ -166,6 +166,7 @@ export const createCourse = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => CreateCourseSchema.parse(input))
   .handler(async ({ data, context }) => {
     await assertAdmin(context);
+    assertClassRange({ class_min: data.class_min, class_max: data.class_max }, "new course");
     const slug = slugify(`${data.title}-${Date.now().toString(36).slice(-4)}`);
     const insert = {
       title: data.title,
