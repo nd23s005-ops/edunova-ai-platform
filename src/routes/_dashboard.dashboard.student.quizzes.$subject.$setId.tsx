@@ -20,6 +20,7 @@ import { RoleGate } from "@/components/auth/RoleGate";
 import { ProgressBar } from "@/components/courses/CourseUI";
 import {
   SUBJECTS,
+  COLLEGE_SUBJECTS,
   startSubjectQuiz,
   submitSubjectQuiz,
   getSubjectQuizHistory,
@@ -27,10 +28,12 @@ import {
   type SubjectHistoryItem,
 } from "@/lib/ai/subject-quiz.functions";
 
+const ALL = [...SUBJECTS, ...COLLEGE_SUBJECTS];
+
 export const Route = createFileRoute("/_dashboard/dashboard/student/quizzes/$subject/$setId")({
   beforeLoad: ({ params }) => {
     const setNum = Number(params.setId);
-    if (!SUBJECTS.some((s) => s.slug === params.subject)) throw notFound();
+    if (!ALL.some((s) => s.slug === params.subject)) throw notFound();
     if (!Number.isInteger(setNum) || setNum < 1 || setNum > 5) throw notFound();
   },
   component: TakeQuiz,
