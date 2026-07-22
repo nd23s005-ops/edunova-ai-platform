@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { z } from "zod";
+import { assertClassRange, CLASS_MAX_BOUND, CLASS_MIN_BOUND, validateClassRange } from "@/lib/courses/classRange";
 import {
   buildCurriculumPrompt,
   buildLessonContentPrompt,
