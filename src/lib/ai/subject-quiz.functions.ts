@@ -7,19 +7,42 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 // ---------------------------------------------------------------
 
 export const SUBJECTS = [
-  { slug: "physics", label: "Physics", accent: "from-blue-500/20 to-cyan-500/10" },
-  { slug: "chemistry", label: "Chemistry", accent: "from-emerald-500/20 to-teal-500/10" },
-  { slug: "mathematics", label: "Mathematics", accent: "from-amber-500/20 to-orange-500/10" },
-  { slug: "biology", label: "Biology", accent: "from-lime-500/20 to-green-500/10" },
-  { slug: "botany", label: "Botany", accent: "from-green-500/20 to-emerald-500/10" },
-  { slug: "zoology", label: "Zoology", accent: "from-rose-500/20 to-pink-500/10" },
-  { slug: "english", label: "English", accent: "from-violet-500/20 to-fuchsia-500/10" },
+  { slug: "physics", label: "Physics", accent: "from-blue-500/20 to-cyan-500/10", level: "school" },
+  { slug: "chemistry", label: "Chemistry", accent: "from-emerald-500/20 to-teal-500/10", level: "school" },
+  { slug: "mathematics", label: "Mathematics", accent: "from-amber-500/20 to-orange-500/10", level: "school" },
+  { slug: "biology", label: "Biology", accent: "from-lime-500/20 to-green-500/10", level: "school" },
+  { slug: "botany", label: "Botany", accent: "from-green-500/20 to-emerald-500/10", level: "school" },
+  { slug: "zoology", label: "Zoology", accent: "from-rose-500/20 to-pink-500/10", level: "school" },
+  { slug: "english", label: "English", accent: "from-violet-500/20 to-fuchsia-500/10", level: "school" },
 ] as const;
+
+export const COLLEGE_SUBJECTS = [
+  { slug: "programming", label: "Programming Fundamentals", accent: "from-indigo-500/20 to-blue-500/10", level: "college" },
+  { slug: "c-programming", label: "C Programming", accent: "from-slate-500/20 to-zinc-500/10", level: "college" },
+  { slug: "java", label: "Java", accent: "from-orange-500/20 to-amber-500/10", level: "college" },
+  { slug: "python", label: "Python", accent: "from-yellow-500/20 to-amber-500/10", level: "college" },
+  { slug: "javascript", label: "JavaScript", accent: "from-amber-500/20 to-yellow-500/10", level: "college" },
+  { slug: "react", label: "React", accent: "from-cyan-500/20 to-sky-500/10", level: "college" },
+  { slug: "nodejs", label: "Node.js", accent: "from-emerald-500/20 to-green-500/10", level: "college" },
+  { slug: "sql", label: "SQL", accent: "from-blue-500/20 to-indigo-500/10", level: "college" },
+  { slug: "dbms", label: "DBMS", accent: "from-teal-500/20 to-cyan-500/10", level: "college" },
+  { slug: "operating-systems", label: "Operating Systems", accent: "from-fuchsia-500/20 to-purple-500/10", level: "college" },
+  { slug: "computer-networks", label: "Computer Networks", accent: "from-sky-500/20 to-blue-500/10", level: "college" },
+  { slug: "dsa", label: "Data Structures & Algorithms", accent: "from-rose-500/20 to-red-500/10", level: "college" },
+  { slug: "system-design", label: "System Design", accent: "from-purple-500/20 to-violet-500/10", level: "college" },
+  { slug: "cloud-computing", label: "Cloud Computing", accent: "from-sky-500/20 to-cyan-500/10", level: "college" },
+  { slug: "cyber-security", label: "Cyber Security", accent: "from-red-500/20 to-rose-500/10", level: "college" },
+  { slug: "artificial-intelligence", label: "Artificial Intelligence", accent: "from-violet-500/20 to-fuchsia-500/10", level: "college" },
+  { slug: "machine-learning", label: "Machine Learning", accent: "from-pink-500/20 to-rose-500/10", level: "college" },
+  { slug: "prompt-engineering", label: "Prompt Engineering", accent: "from-emerald-500/20 to-teal-500/10", level: "college" },
+] as const;
+
+const ALL_SUBJECTS = [...SUBJECTS, ...COLLEGE_SUBJECTS] as ReadonlyArray<{ slug: string; label: string; accent: string; level: string }>;
 
 export const QUIZ_SETS = [1, 2, 3, 4, 5] as const;
 export const QUESTION_COUNT = 15;
 
-export type SubjectSlug = (typeof SUBJECTS)[number]["slug"];
+export type SubjectSlug = (typeof SUBJECTS)[number]["slug"] | (typeof COLLEGE_SUBJECTS)[number]["slug"];
 export type Difficulty = "easy" | "medium" | "hard" | "expert";
 
 export type SubjectQuestion = {
@@ -52,11 +75,15 @@ export type SubjectAttempt = {
 };
 
 function isSubject(v: string): v is SubjectSlug {
-  return SUBJECTS.some((s) => s.slug === v);
+  return ALL_SUBJECTS.some((s) => s.slug === v);
 }
 
 function subjectLabel(slug: string) {
-  return SUBJECTS.find((s) => s.slug === slug)?.label ?? slug;
+  return ALL_SUBJECTS.find((s) => s.slug === slug)?.label ?? slug;
+}
+
+function subjectLevel(slug: string): "school" | "college" {
+  return (ALL_SUBJECTS.find((s) => s.slug === slug)?.level ?? "school") as "school" | "college";
 }
 
 function shuffle<T>(arr: T[], seed: number): T[] {
