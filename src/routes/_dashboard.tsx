@@ -129,7 +129,7 @@ const COLLEGE_NAV: NavItem[] = [
   { to: "/dashboard/student/resources", label: "Resources", icon: FileText },
   { to: "/dashboard/upskilling", label: "Upskilling Hub", icon: Sparkles },
   { to: "/dashboard/mock-tests", label: "Mock Tests", icon: Target },
-  { to: "/dashboard/student/quizzes", label: "AI Quizzes", icon: Target },
+  { to: "/dashboard/college/quizzes", label: "AI Quizzes", icon: Target },
   { to: "/dashboard/roadmap", label: "Learning Roadmap", icon: Target },
   { to: "/dashboard/student/progress", label: "Progress Tracker", icon: BarChart3 },
   { to: "/dashboard/student/study-plan", label: "Study Plan", icon: Target },
