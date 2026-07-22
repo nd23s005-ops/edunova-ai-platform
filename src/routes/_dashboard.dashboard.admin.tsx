@@ -38,6 +38,21 @@ const overviewQuery = {
 };
 
 export const Route = createFileRoute("/_dashboard/dashboard/admin")({
+  beforeLoad: async () => {
+    const { redirect } = await import("@tanstack/react-router");
+    const { supabase } = await import("@/integrations/supabase/client");
+    const { homeForRole } = await import("@/lib/auth/roles");
+    const { data: userData } = await supabase.auth.getUser();
+    if (!userData.user) throw redirect({ to: "/login" });
+    const { data: r } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", userData.user.id)
+      .maybeSingle();
+    if (r?.role !== "admin") {
+      throw redirect({ to: homeForRole((r?.role as string | null) ?? null) });
+    }
+  },
   loader: ({ context }) => context.queryClient.ensureQueryData(overviewQuery),
   component: AdminDashboard,
   errorComponent: ({ error }) => (
@@ -46,6 +61,7 @@ export const Route = createFileRoute("/_dashboard/dashboard/admin")({
     </div>
   ),
 });
+
 
 type Section = {
   to: string;
