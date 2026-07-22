@@ -285,13 +285,14 @@ function StudentDashboard() {
                 <ProgressBar value={continueLearning.progress ?? 0} />
               </div>
             </div>
-            <Link
-              to="/dashboard/student/courses/$courseId"
-              params={{ courseId: continueLearning.courses.id }}
+            <a
+              href={`/learn/${continueLearning.courses.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-elegant hover:bg-primary/90"
             >
               Resume →
-            </Link>
+            </a>
           </DashCard>
         </section>
       )}
