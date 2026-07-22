@@ -22,7 +22,6 @@ import {
   Sparkles,
   ChevronRight,
   Bell,
-  Building2,
   BookMarked,
   ClipboardCheck,
   Puzzle,
@@ -105,12 +104,6 @@ function CollegeDashboardInner() {
             icon={<Bell className="h-4 w-4" />}
             title="AI Notifications"
             items={b?.notifications ?? []}
-          />
-          <SkillRadar data={b?.skillRadar ?? []} />
-          <RailList
-            icon={<Building2 className="h-4 w-4" />}
-            title="Company Spotlight"
-            items={b?.companySpotlight ?? []}
           />
           <RailList
             icon={<Trophy className="h-4 w-4" />}
@@ -405,15 +398,14 @@ function WorkspaceTabs({ brief }: { brief?: CollegeBrief }) {
 /* ────────────────────────────────────────────────────────────────────────── */
 function ToolGrid() {
   const tools = [
-    { to: "/dashboard/career/coding", label: "Coding Playground", desc: "Multi-language sandbox", icon: <Terminal className="h-5 w-5" /> },
+    { to: "/dashboard/college/playground", label: "Coding Playground", desc: "Multi-language sandbox", icon: <Terminal className="h-5 w-5" /> },
     { to: "/dashboard/ai-assistant", label: "AI Code Assistant", desc: "Explain, debug, refactor", icon: <Cpu className="h-5 w-5" /> },
     { to: "/dashboard/career/projects", label: "Project Lab", desc: "Ship portfolio projects", icon: <Beaker className="h-5 w-5" /> },
     { to: "/dashboard/career/portfolio", label: "Portfolio Builder", desc: "Public developer profile", icon: <Wrench className="h-5 w-5" /> },
     { to: "/dashboard/career/resume", label: "Resume Builder", desc: "ATS-scored resumes", icon: <FileText className="h-5 w-5" /> },
     { to: "/dashboard/career/interview", label: "Mock Interviews", desc: "Technical + behavioural", icon: <Users className="h-5 w-5" /> },
     { to: "/dashboard/career/internships", label: "Internships", desc: "Curated openings", icon: <Briefcase className="h-5 w-5" /> },
-    { to: "/dashboard/career/skill-gap", label: "Skill Analytics", desc: "Where to focus next", icon: <Activity className="h-5 w-5" /> },
-    { to: "/dashboard/career/certifications", label: "Certifications", desc: "Track & verify", icon: <BookMarked className="h-5 w-5" /> },
+    { to: "/dashboard/college/quizzes", label: "AI Quizzes", desc: "CS & engineering subjects", icon: <BookMarked className="h-5 w-5" /> },
   ];
   return (
     <section>
@@ -507,33 +499,6 @@ function RailList({ icon, title, items }: { icon: React.ReactNode; title: string
   );
 }
 
-/* ────────────────────────────────────────────────────────────────────────── */
-/* Skill radar (bars)                                                          */
-/* ────────────────────────────────────────────────────────────────────────── */
-function SkillRadar({ data }: { data: { skill: string; level: number }[] }) {
-  return (
-    <div className="rounded-2xl border border-border/60 bg-card p-4 shadow-card">
-      <p className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-        <Activity className="h-4 w-4 text-primary" /> Skill Analytics
-      </p>
-      <ul className="space-y-2.5">
-        {data.slice(0, 6).map((s) => (
-          <li key={s.skill}>
-            <div className="mb-0.5 flex items-center justify-between text-[11px]">
-              <span className="font-semibold">{s.skill}</span>
-              <span className="tabular-nums text-muted-foreground">{s.level}%</span>
-            </div>
-            <div className="h-1.5 overflow-hidden rounded-full bg-muted">
-              <div className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60"
-                   style={{ width: `${s.level}%` }} />
-            </div>
-          </li>
-        ))}
-        {data.length === 0 && <li className="text-xs text-muted-foreground">Awaiting analysis…</li>}
-      </ul>
-    </div>
-  );
-}
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /* GitHub sync card                                                            */
