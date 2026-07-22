@@ -52,7 +52,7 @@ export const Route = createFileRoute(
 
 function CourseOverviewPage() {
   const { courseId } = Route.useParams();
-  const navigate = useNavigate();
+  
   const qc = useQueryClient();
 
   const { data: course, isLoading } = useCourse(courseId);
