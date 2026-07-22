@@ -23,12 +23,8 @@ export const completeAuthRoleSelection = createServerFn({ method: "POST" })
       .maybeSingle();
     if (roleError) throw roleError;
 
-    const { data: profile, error: profileError } = await supabaseAdmin
-      .from("profiles")
-      .select("created_at, onboarding_completed")
-      .eq("id", userId)
-      .maybeSingle();
-    if (profileError) throw profileError;
+
+
 
     if (currentRole?.role === "admin") return "admin";
 
