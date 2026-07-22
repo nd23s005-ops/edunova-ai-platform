@@ -66,7 +66,7 @@ export const generateWorkspaceContent = createServerFn({ method: "POST" })
         .eq("user_id", userId)
         .eq("course_id", data.courseId)
         .maybeSingle(),
-      supabase.from("profiles").select("full_name, current_class").eq("id", userId).maybeSingle(),
+      supabase.from("profiles").select("full_name").eq("id", userId).maybeSingle(),
     ]);
 
     const course = courseRes.data;
