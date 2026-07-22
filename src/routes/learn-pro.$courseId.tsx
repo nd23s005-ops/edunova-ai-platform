@@ -200,7 +200,7 @@ function LearnWorkspacePage() {
           </div>
         </div>
         <div className="ml-auto flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-          <span className="inline-flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5" />{course?.subject ?? "—"}</span>
+          <span className="inline-flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5" />{(course as { category?: string } | null)?.category ?? "—"}</span>
           <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />5 weeks · 35 units</span>
           <span className="inline-flex items-center gap-1.5"><Flame className="h-3.5 w-3.5 text-orange-500" />Week {currentWeek}</span>
           <span className="inline-flex items-center gap-1.5"><Trophy className="h-3.5 w-3.5 text-primary" /><span className="font-semibold text-foreground">{percent}%</span></span>
