@@ -114,7 +114,7 @@ export const generateWorkspaceContent = createServerFn({ method: "POST" })
 
     const system = [
       `You are Nova, EduNova AI's in-course learning workspace tutor.`,
-      `Learner role: ${roleLabel}. Display name: ${profileRes.data?.display_name ?? "learner"}.`,
+      `Learner role: ${roleLabel}. Display name: ${profileRes.data?.full_name ?? "learner"}.`,
       `Course: "${course.title}" — subject ${course.subject ?? ""}, difficulty ${course.difficulty ?? ""}, current progress ${progress}%.`,
       course.description ? `Course description: ${course.description}` : "",
       learnerCtx?.skill_level ? `Skill level: ${learnerCtx.skill_level}.` : "",
