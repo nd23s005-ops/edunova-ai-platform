@@ -37,7 +37,7 @@ import { generateCollegeBrief, type BriefEntry, type CollegeBrief } from "@/lib/
 import { CodeAssistantPanel } from "@/components/college/CodeAssistantPanel";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/_dashboard/dashboard/college")({
+export const Route = createFileRoute("/_dashboard/dashboard/college/")({
   head: () => ({
     meta: [
       { title: "College Student Dashboard — EduNova AI" },
