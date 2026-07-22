@@ -178,18 +178,33 @@ async function generateQuestions(params: {
   avoid: string[];
   seed: string;
 }): Promise<SubjectQuestion[]> {
-  const gradeLine = params.grade
-    ? `Learner is in Class ${params.grade}.`
-    : `Learner is a school student (Classes 6-12).`;
-  const boardLine = params.board
-    ? `Follow the ${params.board.toUpperCase()} board syllabus.`
-    : `Follow CBSE or common state-board syllabus.`;
+  const level = subjectLevel(params.subject);
+  const isCollege = level === "college";
 
-  const system = `You are an expert quiz author for EduNova AI for ${subjectLabel(params.subject)} (Classes 6–12).
+  const gradeLine = isCollege
+    ? `Learner is a college / engineering undergraduate.`
+    : params.grade
+      ? `Learner is in Class ${params.grade}.`
+      : `Learner is a school student (Classes 6-12).`;
+  const boardLine = isCollege
+    ? `Follow a typical Indian university / engineering syllabus (BE / B.Tech / BCA level). Emphasise practical, industry-relevant depth.`
+    : params.board
+      ? `Follow the ${params.board.toUpperCase()} board syllabus.`
+      : `Follow CBSE or common state-board syllabus.`;
+
+  const scopeLine = isCollege
+    ? `Cover a MIX of core topics typical for "${subjectLabel(params.subject)}" at undergraduate level (theory + applied). Vary topics between attempts. Do NOT include school-level content (no Class 6-12 physics/chemistry/biology-style items).`
+    : `Cover a MIX of chapters typical for ${subjectLabel(params.subject)} at this class range. Vary chapters between attempts.`;
+
+  const numericalNote = isCollege
+    ? `- numerical (numerical / computation problem, 4 numeric options — only where applicable, e.g. DSA complexity, networks, OS calculations)`
+    : `- numerical (numerical problem, 4 numeric options — only for Physics/Chemistry/Math where applicable)`;
+
+  const system = `You are an expert quiz author for EduNova AI for ${subjectLabel(params.subject)}${isCollege ? " (college / undergraduate level)" : " (Classes 6–12)"}.
 ${gradeLine} ${boardLine}
 Generate a FRESH quiz of exactly ${QUESTION_COUNT} questions for "${subjectLabel(params.subject)} — Quiz Set ${params.quizSet}".
 Target overall difficulty: ${params.difficulty}.
-Cover a MIX of chapters typical for ${subjectLabel(params.subject)} at this class range. Vary chapters between attempts.
+${scopeLine}
 
 Use a variety of question TYPES:
 - mcq (standard multiple choice, 4 options)
@@ -197,7 +212,7 @@ Use a variety of question TYPES:
 - fill_blank (question contains "____"; 4 plausible fills)
 - match (question describes the pairs to match; 4 candidate pairing sets as choices)
 - assertion_reason (choices exactly ["Both A and R are true and R explains A","Both A and R are true but R does not explain A","A is true, R is false","A is false, R is true"])
-- numerical (numerical problem, 4 numeric options — only for Physics/Chemistry/Math where applicable)
+${numericalNote}
 - short (short analytical MCQ)
 
 Hard rules:
