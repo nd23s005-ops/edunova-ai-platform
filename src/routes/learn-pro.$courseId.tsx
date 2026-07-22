@@ -216,7 +216,7 @@ function LearnWorkspacePage() {
         <aside className="hidden w-80 shrink-0 flex-col border-r border-border/60 bg-card/40 md:flex">
           <div className="border-b border-border/60 px-4 py-3">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Course Outline</p>
-            <p className="mt-1 text-xs">Beginner → Advanced · 5 weeks × 7 units</p>
+            <p className="mt-1 text-xs">Foundations → Capstone · 5 weeks × 7 units</p>
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto px-2 py-2">
             {outlineLoading && (
