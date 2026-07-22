@@ -23,37 +23,31 @@ export const completeAuthRoleSelection = createServerFn({ method: "POST" })
       .maybeSingle();
     if (roleError) throw roleError;
 
-    const { data: profile, error: profileError } = await supabaseAdmin
-      .from("profiles")
-      .select("created_at, onboarding_completed")
-      .eq("id", userId)
-      .maybeSingle();
-    if (profileError) throw profileError;
+
+
 
     if (currentRole?.role === "admin") return "admin";
 
-    const profileCreatedAt = profile?.created_at ? new Date(profile.created_at).getTime() : 0;
-    const isFreshSignup = !profileCreatedAt || Date.now() - profileCreatedAt < 15 * 60 * 1000;
-
-    // Existing users keep their established dashboard identity. This prevents
-    // stale onboarding data in the browser from changing School/College/Pro
-    // roles on later logins.
-    if (currentRole?.role && !isFreshSignup) {
-      return currentRole.role;
-    }
+    // The caller reached this fn only because they explicitly selected a role
+    // during onboarding (sessionStorage `edunova.onboarding` is set and cleared
+    // by the auth buttons / register flow before calling this). Honor that
+    // selection — do not protect stale non-admin roles from being updated.
 
     if (currentRole?.role) {
-      const { error } = await supabaseAdmin
-        .from("user_roles")
-        .update({ role: requestedRole })
-        .eq("user_id", userId);
-      if (error) throw error;
+      if (currentRole.role !== requestedRole) {
+        const { error } = await supabaseAdmin
+          .from("user_roles")
+          .update({ role: requestedRole })
+          .eq("user_id", userId);
+        if (error) throw error;
+      }
     } else {
       const { error } = await supabaseAdmin
         .from("user_roles")
         .insert({ user_id: userId, role: requestedRole });
       if (error) throw error;
     }
+
 
     const { error: updateError } = await supabaseAdmin
       .from("profiles")
