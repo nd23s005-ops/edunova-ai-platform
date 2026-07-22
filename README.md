@@ -360,7 +360,7 @@ README.md
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/edunova-ai.git
+https://github.com/nd23s005-ops/edunova-ai-platform
 ```
 
 Navigate into the project
