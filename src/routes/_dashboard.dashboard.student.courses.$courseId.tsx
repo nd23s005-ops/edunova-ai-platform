@@ -204,19 +204,11 @@ function CourseOverviewPage() {
           isEnrolled ? (
             <Button
               variant={isCompleted ? "secondary" : "default"}
-              onClick={() => {
-                const firstChapter = chapters?.[0];
-                if (firstChapter) {
-                  navigate({
-                    to: "/dashboard/student/courses/$courseId/chapters/$chapterId",
-                    params: { courseId, chapterId: firstChapter.id },
-                  });
-                } else {
-                  toast("Chapters coming soon");
-                }
-              }}
+              asChild
             >
-              {isCompleted ? "Review course" : "Continue learning"}
+              <a href={`/learn/${courseId}`} target="_blank" rel="noopener noreferrer">
+                {isCompleted ? "Review course" : "Continue learning"}
+              </a>
             </Button>
           ) : (
             <Button disabled={enroll.isPending} onClick={() => enroll.mutate()}>
