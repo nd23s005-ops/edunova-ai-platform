@@ -34,6 +34,7 @@ import {
 import { RoleGate } from "@/components/auth/RoleGate";
 import { supabase } from "@/integrations/supabase/client";
 import { generateCollegeBrief, type BriefEntry, type CollegeBrief } from "@/lib/ai/college-brief.functions";
+import { CodeAssistantPanel } from "@/components/college/CodeAssistantPanel";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/_dashboard/dashboard/college")({
@@ -91,6 +92,7 @@ function CollegeDashboardInner() {
         {/* Primary column */}
         <div className="space-y-6">
           <AIFocusPanel brief={b} />
+          <CodeAssistantPanel />
           <RoadmapRail brief={b} />
           <WorkspaceTabs brief={b} />
           <ToolGrid />
@@ -172,12 +174,14 @@ function TerminalHero({ name, brief, loading }: { name: string; brief?: CollegeB
           </div>
 
           <div className="grid grid-cols-2 gap-3 self-center">
-            <HeroChip icon={<Code2 className="h-4 w-4" />} label="Coding Playground" to="/dashboard/career/coding" />
+            <HeroChip icon={<Code2 className="h-4 w-4" />} label="Coding Playground" to="/dashboard/college/playground" />
             <HeroChip icon={<Puzzle className="h-4 w-4" />} label="DSA Practice" to="/dashboard/mock-tests" />
             <HeroChip icon={<Bot className="h-4 w-4" />} label="AI Mentor" to="/dashboard/ai-assistant" />
             <HeroChip icon={<Rocket className="h-4 w-4" />} label="Roadmap" to="/dashboard/roadmap" />
             <HeroChip icon={<Briefcase className="h-4 w-4" />} label="Placement Prep" to="/dashboard/career/interview" />
             <HeroChip icon={<FileText className="h-4 w-4" />} label="Resume Builder" to="/dashboard/career/resume" />
+            <HeroChip icon={<Wrench className="h-4 w-4" />} label="Portfolio Builder" to="/dashboard/career/portfolio" />
+            <HeroChip icon={<Target className="h-4 w-4" />} label="Personalize" to="/dashboard/college/personalize" />
           </div>
         </div>
       </div>
