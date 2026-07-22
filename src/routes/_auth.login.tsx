@@ -138,6 +138,7 @@ function LoginPage() {
     toast.success("Signed in — welcome back!");
     await queryClient.cancelQueries();
     queryClient.clear();
+    if (typeof window !== "undefined") sessionStorage.removeItem("edunova.onboarding");
     await router.invalidate();
     navigate({ to: dest, replace: true });
   };

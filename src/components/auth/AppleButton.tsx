@@ -21,10 +21,12 @@ function getSavedSignupRole(role?: AppRole): AppRole | undefined {
   if (role && (SELF_SIGNUP_ROLES as readonly string[]).includes(role)) return role;
   try {
     const saved = JSON.parse(sessionStorage.getItem("edunova.onboarding") || "{}") as { role?: string };
+    sessionStorage.removeItem("edunova.onboarding");
     return saved.role && (SELF_SIGNUP_ROLES as readonly string[]).includes(saved.role)
       ? (saved.role as AppRole)
       : undefined;
   } catch {
+    sessionStorage.removeItem("edunova.onboarding");
     return undefined;
   }
 }
@@ -71,6 +73,7 @@ export function AppleButton({
       await queryClient.cancelQueries();
       queryClient.clear();
       await router.invalidate();
+      queryClient.invalidateQueries({ queryKey: ["me"] });
       navigate({ to: dest, replace: true });
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Apple sign-in failed");

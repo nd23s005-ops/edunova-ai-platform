@@ -174,7 +174,7 @@ function DashboardLayout() {
         onboardingCompleted: p?.onboarding_completed ?? false,
       };
     },
-    staleTime: 60_000,
+    staleTime: 0,
   });
 
   const role = profile?.role ?? null;
@@ -206,6 +206,7 @@ function DashboardLayout() {
   const handleSignOut = async () => {
     await queryClient.cancelQueries();
     queryClient.clear();
+    if (typeof window !== "undefined") sessionStorage.removeItem("edunova.onboarding");
     await supabase.auth.signOut();
     navigate({ to: "/login", replace: true });
   };

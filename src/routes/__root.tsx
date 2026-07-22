@@ -167,37 +167,60 @@ function RootComponent() {
       installClientErrorReporter();
     });
 
+    const readPendingSignupRole = () => {
+      if (typeof window === "undefined") return null;
+      try {
+        const raw = sessionStorage.getItem("edunova.onboarding");
+        const saved = raw ? (JSON.parse(raw) as { role?: string }) : null;
+        const role = saved?.role;
+        sessionStorage.removeItem("edunova.onboarding");
+        return role === "student" || role === "college_student" || role === "professional"
+          ? role
+          : null;
+      } catch {
+        sessionStorage.removeItem("edunova.onboarding");
+        return null;
+      }
+    };
+
+    const applyPendingSignupRole = async () => {
+      const role = readPendingSignupRole();
+      if (!role) return;
+      const { completeAuthRoleSelection } = await import("@/lib/auth/role-selection.functions");
+      await completeAuthRoleSelection({ data: role });
+      queryClient.invalidateQueries({ queryKey: ["me"] });
+      queryClient.invalidateQueries({ queryKey: ["dashboard-brief"] });
+    };
+
     // Lazy-load client to avoid SSR touching localStorage
     let unsub: (() => void) | undefined;
     (async () => {
       const { supabase } = await import("@/integrations/supabase/client");
+      const initialSession = await supabase.auth.getSession();
+      if (initialSession.data.session) {
+        try {
+          await applyPendingSignupRole();
+        } catch {
+          // Non-fatal; existing user role remains protected server-side.
+        }
+      }
       const { data } = supabase.auth.onAuthStateChange(async (event) => {
         if (event !== "SIGNED_IN" && event !== "SIGNED_OUT" && event !== "USER_UPDATED") return;
 
-        // On sign-in, apply the role the visitor picked during onboarding.
-        // OAuth redirect lands on "/" so the login/register post-callback
-        // code never runs — without this, every OAuth user keeps the
-        // trigger's default `student` role and sees the School Student
-        // dashboard.
-        if (event === "SIGNED_IN" && typeof window !== "undefined") {
+        if (event === "SIGNED_OUT" && typeof window !== "undefined") {
+          sessionStorage.removeItem("edunova.onboarding");
+        }
+
+        if (event === "SIGNED_IN") {
           try {
-            const raw = sessionStorage.getItem("edunova.onboarding");
-            const saved = raw ? (JSON.parse(raw) as { role?: string }) : null;
-            const role = saved?.role;
-            if (role === "student" || role === "college_student" || role === "professional") {
-              const { completeAuthRoleSelection } = await import(
-                "@/lib/auth/role-selection.functions"
-              );
-              await completeAuthRoleSelection({ data: role });
-              sessionStorage.removeItem("edunova.onboarding");
-            }
+            await applyPendingSignupRole();
           } catch {
-            // Non-fatal; user can still navigate and role can be corrected later.
+            // Non-fatal; existing user role remains protected server-side.
           }
         }
 
         router.invalidate();
-        if (event !== "SIGNED_OUT") queryClient.invalidateQueries();
+        if (event !== "SIGNED_OUT") queryClient.invalidateQueries({ queryKey: ["me"] });
       });
       unsub = () => data.subscription.unsubscribe();
     })();

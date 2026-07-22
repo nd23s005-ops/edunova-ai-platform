@@ -54,7 +54,7 @@ function SubjectQuizzes() {
       />
 
       <section className="mb-10">
-        <SectionHeader title="Quiz sets" hint="Adaptive · Classes 6–12" />
+        <SectionHeader title="Quiz sets" hint="Adaptive · Fresh questions every attempt" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {QUIZ_SETS.map((n) => {
             const best = bestBySet.get(n);

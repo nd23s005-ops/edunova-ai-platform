@@ -175,6 +175,7 @@ function RegisterPage() {
     toast.success("Welcome to EduNova AI!");
     await queryClient.cancelQueries();
     queryClient.clear();
+    if (typeof window !== "undefined") sessionStorage.removeItem("edunova.onboarding");
     await router.invalidate();
     navigate({ to: homeForRole(values.role as AppRole), replace: true });
   };
