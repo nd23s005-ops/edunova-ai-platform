@@ -1,8 +1,10 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { assertClassRange } from "./classRange";
 
 const EnsureInput = z.object({ slug: z.string().min(3).max(160) });
+
 
 /**
  * Ensures a catalog course exists in the `courses` table. Idempotent: subsequent
